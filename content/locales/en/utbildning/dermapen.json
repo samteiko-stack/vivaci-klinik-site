@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "slug": "dermapen",
+  "path": "/utbildning/dermapen",
+  "title": "Dermapen / microneedling",
+  "metaDescription": "Dermapen 4: nåldjup, protokoll, serum och indikationer — Vivaci Academy.",
+  "hero": {
+    "title": "Dermapen / microneedling",
+    "intro": "Microneedling med Dermapen 4 — sterila rutiner, nåldjup per område, serumval och indikationer från ärr och porer till hudföryngring.",
+    "audience": "Hudterapeuter i medicinsk miljö, sjuksköterskor och läkare.",
+    "image": "/images/Fillers_0055.webp",
+    "ctaPrimary": {
+      "label": "Anmäl intresse",
+      "href": "/kontakt"
+    }
+  },
+  "summary": {
+    "intro": "Halvdag med checklistor för samtycke, foto och uppföljning. Kliniska protokoll ingår.",
+    "fee": "32 900 kr",
+    "feeNote": " / deltagare exkl. moms",
+    "level": "Klinisk modul",
+    "duration": "Halvdag · 13:00–17:30",
+    "location": "Vivaci Klinik, Råsundavägen 4, Solna"
+  },
+  "dates": [
+    {
+      "label": "22 mar 2026",
+      "time": "13:00 – 17:30",
+      "seats": "8 platser",
+      "enrollHref": "/kontakt"
+    },
+    {
+      "label": "3 jul 2026",
+      "time": "13:00 – 17:30",
+      "seats": "12 platser",
+      "enrollHref": "/kontakt"
+    }
+  ],
+  "about": {
+    "html": "<p>Dermapen används dagligen i Vivacis hudprogram. Kursen kopplar teknik till evidens och till hur du säljer serier mot patient.</p>\n<h4>Innehåll</h4>\n<ul role=\"list\"><li>Enhet, engångsnålar och hygien</li><li>Djupkartor: ansikte, hals, kropp</li><li>Serum och mesoterapi-lösningar</li><li>Ärr, striae, porer och PIH-risk</li></ul>\n<h4>Agenda</h4>\n<h5>13:00 – 14:30 · Teori</h5>\n<h5>14:30 – 15:30 · Demo</h5>\n<h5>15:30 – 17:30 · Praktik &amp; checklistor</h5>\n<p>Digitala samtyckes- och uppföljningsmallar skickas efter kursen.</p>"
+  },
+  "instructors": {
+    "enabled": true,
+    "heading": "Instruktörer",
+    "intro": "",
+    "items": [
+      {
+        "name": "Karin Ek",
+        "role": "Klinikansvarig hud",
+        "image": "/images/2149152764_12149152764.webp"
+      },
+      {
+        "name": "Maja Holm, RN",
+        "role": "Microneedling & laser",
+        "image": "/images/Morpheus8_0146.webp"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "intro": "",
+    "items": [
+      {
+        "question": "Ingår leverantörscert?",
+        "answer": "Vivaci klinisk modul; separat Dermapen-cert kan bokas om kliniken kräver det."
+      },
+      {
+        "question": "Kombination med PRP?",
+        "answer": "Protokoll och kontraindikationer gås igenom under kursen."
+      }
+    ]
+  }
+}

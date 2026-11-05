@@ -1,0 +1,131 @@
+{
+  "version": 1,
+  "category": "plastikkirurgi",
+  "slug": "buccal-fat-removal",
+  "path": "/plastikkirurgi/buccal-fat-removal",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/buccal-fat-removal",
+  "title": "Bukfettborttagning",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Bukfettborttagning",
+      "intro": "Bukfettborttagning (buccal fat removal) är ett kirurgiskt ingrepp som avlägsnar fettvävnad från kinderna för en slankare, mer konturerad ansiktsform. På Vivaci Klinik i Solna utförs ingreppet av erfarna kirurger i en trygg, medicinsk miljö."
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": []
+    },
+    "overview": {
+      "enabled": false,
+      "tagline": "Om behandlingen",
+      "heading": "Bukfettborttagning",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "",
+          "enabled": false
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": false,
+      "items": []
+    },
+    "howItWorks": {
+      "enabled": false,
+      "heading": "Så fungerar det",
+      "body": "",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "items": [
+        {
+          "question": "Vad är bukfettborttagning?",
+          "answer": "Det är ett kirurgiskt ingrepp där fettkuddarna på insidan av kinderna avlägsnas för att skapa en slankare, mer konturerad ansiktsform."
+        },
+        {
+          "question": "Är resultatet permanent?",
+          "answer": "Den borttagna fettvävnaden kommer inte tillbaka. Viktförändringar och naturligt åldrande kan dock påverka ansiktets utseende över tid."
+        },
+        {
+          "question": "Syns det ärr efter ingreppet?",
+          "answer": "Incisionen görs på insidan av munnen, så inga synliga ärr syns utvändigt på ansiktet."
+        },
+        {
+          "question": "Hur lång är återhämtningen?",
+          "answer": "De flesta kan återgå till vardagen inom några dagar. Svullnad kan kvarstå i 1–2 veckor, och slutresultatet utvecklas gradvis över flera veckor."
+        },
+        {
+          "question": "Kan bukfettborttagning kombineras med andra ingrepp?",
+          "answer": "Ja, det kan ofta kombineras med till exempel fettsugning eller ansiktskonturering. Vi planerar detta individuellt vid konsultation."
+        }
+      ]
+    },
+    "related": {
+      "enabled": false,
+      "heading": "Relaterat",
+      "items": []
+    },
+    "beforeAfterCare": {
+      "enabled": false,
+      "introBefore": "",
+      "before": [],
+      "introAfter": "",
+      "after": []
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true
+    },
+    "beforeAfterGallery": {
+      "enabled": false
+    },
+    "bottomCta": {
+      "enabled": true
+    }
+  }
+}

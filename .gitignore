@@ -1,0 +1,7 @@
+.DS_Store
+*.zip
+.cursor/
+scripts/.venv/
+content/shopify/storefront-config.json
+.env
+.env.*

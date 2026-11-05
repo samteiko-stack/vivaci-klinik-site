@@ -1,0 +1,33 @@
+/* Vivaci Academy — course detail (enroll triggers on date rows + hero) */
+
+a.is-vivaci-enroll-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--_ui-styles---radius--medium);
+  border: var(--vivaci-border-width, 1px) solid var(--color-scheme-1--brand-2, #15190d);
+  background-color: var(--color-scheme-1--brand-2, #15190d);
+  color: var(--_primitives---colors--white);
+  font-size: inherit;
+  line-height: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+a.is-vivaci-enroll-trigger:hover {
+  background-color: var(--_primitives---colors--neutral-darkest);
+  border-color: var(--_primitives---colors--neutral-darkest);
+}
+
+/* Tillgängliga datum — Anmäl nu */
+.career21_top-wrapper a.is-vivaci-enroll-trigger {
+  padding: 0.5rem 1.25rem;
+}
+
+.career21_top-wrapper .button-group {
+  flex-shrink: 0;
+}

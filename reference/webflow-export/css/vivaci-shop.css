@@ -1,0 +1,676 @@
+/**
+ * Shopify cart drawer + shop UI (design-system aligned).
+ */
+
+:root {
+  --vivaci-shop-overlay: rgba(21, 25, 13, 0.45);
+  --vivaci-cart-drawer-bg: var(--color-scheme-1--background, #fff);
+}
+
+.vivaci-cart-trigger {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.vivaci-cart-trigger svg {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.vivaci-cart-trigger__count {
+  position: absolute;
+  top: -0.35rem;
+  right: -0.35rem;
+  min-width: 1.125rem;
+  height: 1.125rem;
+  padding: 0 0.25rem;
+  border-radius: 999px;
+  background: var(--color-scheme-1--brand-2, #15190d);
+  color: #fff;
+  font-size: 0.625rem;
+  line-height: 1.125rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.vivaci-cart-trigger__count:empty,
+.vivaci-cart-trigger__count[data-count="0"] {
+  display: none;
+}
+
+.vivaci-cart-root {
+  position: fixed;
+  inset: 0;
+  z-index: var(--vivaci-z-cart, 10001);
+  pointer-events: none;
+}
+
+.vivaci-cart-root.is-open {
+  pointer-events: auto;
+}
+
+.vivaci-cart-overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--vivaci-shop-overlay);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.vivaci-cart-root.is-open .vivaci-cart-overlay {
+  opacity: 1;
+}
+
+.vivaci-cart-drawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: min(100%, 28rem);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--vivaci-cart-drawer-bg);
+  border-left: var(--vivaci-border);
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vivaci-cart-root.is-open .vivaci-cart-drawer {
+  transform: translateX(0);
+}
+
+.vivaci-cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: var(--vivaci-border);
+}
+
+.vivaci-cart-header h2 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.vivaci-cart-close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: 0.25rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.vivaci-cart-body {
+  flex: 1;
+  overflow: auto;
+  padding: 1rem 1.5rem;
+}
+
+.vivaci-cart-empty {
+  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  font-size: 0.875rem;
+}
+
+.vivaci-cart-line {
+  display: grid;
+  grid-template-columns: 4.5rem minmax(0, 1fr);
+  gap: 0.75rem;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: var(--vivaci-border);
+}
+
+.vivaci-cart-line__img {
+  width: 4.5rem;
+  height: 4.5rem;
+  object-fit: cover;
+  border-radius: 0.25rem;
+  background: var(--color-scheme-1--brand-3, #f5f2f0);
+  border: var(--vivaci-border-light);
+}
+
+.vivaci-cart-line__img--empty {
+  background: var(--color-scheme-1--brand-3, #f5f2f0);
+}
+
+.vivaci-cart-line__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.vivaci-cart-line__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.vivaci-cart-line__title {
+  flex: 1;
+  min-width: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 0;
+}
+
+.vivaci-cart-line__meta {
+  font-size: 0.75rem;
+  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  margin: -0.25rem 0 0;
+}
+
+.vivaci-cart-line__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.vivaci-cart-line__remove {
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  font-size: 0.75rem;
+  line-height: 1.25;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.vivaci-cart-line__remove:hover {
+  color: var(--color-scheme-1--text, #15190d);
+  opacity: 0.75;
+}
+
+.vivaci-cart-line__remove:focus-visible {
+  outline: none;
+  color: var(--color-scheme-1--text, #15190d);
+}
+
+.vivaci-cart-qty {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  padding: 0.15rem;
+}
+
+.vivaci-cart-qty button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.vivaci-cart-qty span {
+  min-width: 1.25rem;
+  text-align: center;
+  font-size: 0.875rem;
+}
+
+.vivaci-cart-line__price {
+  flex-shrink: 0;
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.vivaci-cart-footer {
+  padding: 1rem 1.5rem 1.5rem;
+  border-top: var(--vivaci-border);
+}
+
+.vivaci-cart-shipping-note {
+  margin: 0 0 0.75rem;
+}
+
+.vivaci-cart-subtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.vivaci-cart-payments {
+  margin-bottom: 1rem;
+}
+
+.vivaci-cart-payments__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vivaci-cart-footer__actions .button + .button {
+  margin-top: 0.5rem;
+}
+
+.vivaci-cart-payments__logo {
+  display: block;
+  width: 2.375rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+.vivaci-cart-footer__actions {
+  padding-top: 1rem;
+  border-top: var(--vivaci-divider-light);
+}
+
+.vivaci-cart-footer__actions .button {
+  width: 100%;
+  text-align: center;
+}
+
+.navbar14_cart-slot {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem;
+}
+
+.product4_item-link.is-clickable {
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* PDP accordions — beats Webflow .product-header1_* (black dividers) */
+#vivaci-product .product-header1_accordion-wrapper {
+  border-bottom: var(--vivaci-divider);
+}
+
+#vivaci-product .product-header1_heading {
+  border-top: var(--vivaci-divider);
+}
+
+#vivaci-product .product-header1_default-state {
+  margin-bottom: 0;
+}
+
+#vivaci-product .product-header1_accordion-wrapper {
+  margin-top: 1.25rem;
+}
+
+#vivaci-product .product-header1_details > .margin-bottom {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
+}
+
+#vivaci-product .vivaci-product-trust {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: var(--vivaci-divider-light);
+}
+
+#vivaci-product .vivaci-product-trust__label {
+  margin: 0 0 0.625rem;
+}
+
+#vivaci-product .vivaci-product-trust__list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#vivaci-product .vivaci-product-trust__item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: none;
+  background: transparent;
+}
+
+/* Shopify checkout payment badges (38×24) — icons include their own frame */
+#vivaci-product .vivaci-product-trust__logo {
+  display: block;
+  width: 2.375rem;
+  height: 1.5rem;
+  object-fit: contain;
+}
+
+#vivaci-shop .product4_title-wrapper {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.25rem;
+  text-align: center;
+  width: 100%;
+}
+
+#vivaci-shop .product4_title-wrapper .text-size-regular,
+#vivaci-shop .product4_title-wrapper .text-size-small {
+  width: 100%;
+  text-align: center;
+}
+
+#vivaci-shop .product4_title-wrapper .text-size-small {
+  font-weight: 600;
+}
+
+/* —— Webshop filters + grid motion (desktop sidebar) —— */
+@media screen and (min-width: 992px) {
+  #vivaci-shop .filters2_layout {
+    align-items: start;
+    grid-template-columns: minmax(var(--vivaci-sticky-sidebar-min), 0.34fr) minmax(0, 1fr);
+    grid-column-gap: var(--vivaci-sticky-gap);
+    grid-row-gap: var(--vivaci-sticky-gap);
+  }
+
+  #vivaci-shop .filters2_filters-wrapper {
+    position: sticky;
+    top: var(--vivaci-nav-offset);
+    align-self: start;
+    z-index: 2;
+    max-width: var(--vivaci-sticky-sidebar-max);
+    padding-right: 0.75rem;
+    /* Chip filters are short — no CMS drawer scroll (see .filters2_scroll-wrapper 80vh in Webflow CSS) */
+    max-height: none;
+    overflow: visible;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  /* Vivaci mobile shop: chips + counts in page flow (not Webflow filter drawer) */
+  #vivaci-shop .filters2_layout {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  #vivaci-shop .filters2_filters-wrapper {
+    position: relative !important;
+    inset: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: none !important;
+    height: auto !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    z-index: 1 !important;
+    background: transparent !important;
+  }
+
+  #vivaci-shop .filters2_form-header {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    padding-right: 0;
+  }
+
+  #vivaci-shop .filters2_heading {
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  #vivaci-shop .filters2_results-wrapper {
+    margin-bottom: 0.75rem;
+  }
+
+  #vivaci-shop .filters2_tablet-filters-button,
+  #vivaci-shop .filters2_tablet-modal-close-button {
+    display: none !important;
+  }
+
+  #vivaci-shop .filters2_tablet-modal-menu {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0 0 0.5rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+  }
+
+  #vivaci-shop [data-vivaci-shop-filter-apply] {
+    display: none !important;
+  }
+
+  #vivaci-shop .filters2_feed {
+    width: 100%;
+    min-width: 0;
+  }
+
+  #vivaci-shop .product4_list.vivaci-shop-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-column-gap: 1rem;
+    grid-row-gap: 2.5rem;
+    place-items: stretch;
+    width: 100%;
+  }
+}
+
+#vivaci-shop .filters2_scroll-wrapper.vivaci-shop-filters-scroll {
+  height: auto;
+  max-height: none;
+  padding-bottom: 1.5rem;
+  padding-right: 0;
+  overflow: visible;
+}
+
+#vivaci-shop .vivaci-shop-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0;
+}
+
+#vivaci-shop .filters2_category-link.is-vivaci-filter-chip,
+#vivaci-prislista .filters2_category-link.is-vivaci-filter-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  border: var(--vivaci-border-light);
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background-color: var(--color-scheme-1--brand-1, #f7f7f3);
+  color: inherit;
+  font-size: 0.875rem;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: var(--vivaci-transition-interactive, background-color 0.2s ease);
+}
+
+#vivaci-shop .filters2_category-link.is-vivaci-filter-chip:hover,
+#vivaci-prislista .filters2_category-link.is-vivaci-filter-chip:hover {
+  text-decoration: none;
+  border: var(--vivaci-border-light);
+  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+}
+
+#vivaci-shop .filters2_category-link.is-vivaci-filter-chip.is-active,
+#vivaci-prislista .filters2_category-link.is-vivaci-filter-chip.is-active {
+  text-decoration: none;
+  border-width: var(--vivaci-border-width);
+  border-style: solid;
+  border-color: var(--color-scheme-1--brand-2, #15190d);
+  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+}
+
+#vivaci-shop .filters2_tablet-filters-button.is-vivaci-filter-chip {
+  border: var(--vivaci-border-light);
+}
+
+#vivaci-shop .filters2_results-text {
+  font-size: 0.875rem;
+  color: var(--_primitives---colors--neutral-dark, #575d5f);
+}
+
+#vivaci-shop .vivaci-shop-grid.is-filtering {
+  pointer-events: none;
+}
+
+#vivaci-shop .vivaci-shop-grid .vivaci-shop-empty {
+  grid-column: 1 / -1;
+  margin: 0;
+  padding: 2rem 0;
+  color: var(--_primitives---colors--neutral-dark, #575d5f);
+}
+
+@keyframes vivaci-shop-card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--vivaci-motion-distance-sm, 0.75rem));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes vivaci-shop-card-exit {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+}
+
+#vivaci-shop .product4_item.vivaci-shop-card-enter {
+  animation: vivaci-shop-card-enter var(--vivaci-motion-duration-normal, 320ms)
+    var(--vivaci-motion-ease-out, cubic-bezier(0.22, 1, 0.36, 1)) both;
+}
+
+#vivaci-shop .product4_item.vivaci-shop-card-exit {
+  animation: vivaci-shop-card-exit var(--vivaci-motion-duration-fast, 200ms)
+    var(--vivaci-motion-ease-in, cubic-bezier(0.4, 0, 0.95, 1)) forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #vivaci-shop .product4_item.vivaci-shop-card-enter,
+  #vivaci-shop .product4_item.vivaci-shop-card-exit {
+    animation: none;
+  }
+}
+
+.product4_image-wrapper,
+.product-header1_image-wrapper {
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.product4_image,
+.product-header1_image {
+  object-fit: contain;
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.treatments-grid-outer.is-vivaci-grid-only {
+  display: block;
+}
+
+/* Listing cards (utbildning / behandlingar hub) */
+.treatment-grid.is-vivaci-simple-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  align-items: stretch;
+}
+
+@media screen and (max-width: 991px) {
+  .treatment-grid.is-vivaci-simple-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .treatment-grid.is-vivaci-simple-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.vivaci-listing-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border: var(--vivaci-border-light, var(--vivaci-border));
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background-color: var(--color-scheme-1--brand-1, #fff);
+  overflow: hidden;
+}
+
+.vivaci-listing-card__media {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-bottom: var(--vivaci-border-light, var(--vivaci-border));
+}
+
+.vivaci-listing-card__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-listing-card__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.5rem;
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.vivaci-listing-card__title {
+  margin: 0;
+}
+
+.vivaci-listing-card__desc {
+  margin: 0;
+  flex: 1;
+}
+
+.vivaci-listing-card__actions {
+  margin-top: 0.75rem;
+  width: 100%;
+}
+
+.vivaci-listing-card__actions .button {
+  justify-content: center;
+  text-align: center;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+

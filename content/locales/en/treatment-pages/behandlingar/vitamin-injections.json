@@ -1,0 +1,119 @@
+{
+  "version": 1,
+  "category": "behandlingar",
+  "slug": "vitamin-injections",
+  "path": "/behandlingar/vitamin-injections",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/behandlingar/vitamin-injections",
+  "title": "Vitamin Injections",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Vitamin Injections",
+      "intro": "Vitamin Injections är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö."
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": []
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Om behandlingen",
+      "heading": "Vitamin Injections",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "Vitamin Injections är en avancerad behandling inom estetisk medicin som används för att förbättra hudens eller kroppens utseende och kvalitet.\n\nPå Vivaci Klinik kombinerar vi medicinsk expertis med modern teknik för att leverera säkra, naturliga resultat.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "",
+          "enabled": false
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": false,
+      "items": []
+    },
+    "howItWorks": {
+      "enabled": false,
+      "heading": "Så fungerar det",
+      "body": "",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "items": [
+        {
+          "question": "Hur lång tid tar Vitamin Injections?",
+          "answer": "Behandlingstiden varierar men de flesta sessioner tar mellan 30 och 90 minuter."
+        },
+        {
+          "question": "När ser jag resultat?",
+          "answer": "Resultat kan synas gradvis. Tidslinjen beror på behandlingstyp och individuella förutsättningar."
+        }
+      ]
+    },
+    "related": {
+      "enabled": false,
+      "heading": "Relaterat",
+      "items": []
+    },
+    "beforeAfterCare": {
+      "enabled": false,
+      "introBefore": "",
+      "before": [],
+      "introAfter": "",
+      "after": []
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true
+    },
+    "beforeAfterGallery": {
+      "enabled": false
+    },
+    "bottomCta": {
+      "enabled": true
+    }
+  }
+}

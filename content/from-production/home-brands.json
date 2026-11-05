@@ -1,0 +1,126 @@
+{
+  "heading": "Varumärken",
+  "subtitle": "Vi arbetar endast med ledande produkter och teknologier",
+  "items": [
+    {
+      "name": "LPG",
+      "slug": "lpg",
+      "image": "/images/railway/brands/lpg.png"
+    },
+    {
+      "name": "BTL Aesthetics",
+      "slug": "btl-aesthetics",
+      "image": "/images/railway/brands/btl-aesthetics.png"
+    },
+    {
+      "name": "Exilis Ultra 360",
+      "slug": "btl-exilis",
+      "image": "/images/railway/brands/btl-exilis.png"
+    },
+    {
+      "name": "BTL Emtone",
+      "slug": "btl-emtone",
+      "image": "/images/railway/brands/btl-emtone.png"
+    },
+    {
+      "name": "Ultraformer III",
+      "slug": "ultraformer-iii",
+      "image": "/images/railway/brands/ultraformer-iii.png"
+    },
+    {
+      "name": "Plaxpot",
+      "slug": "plaxpot",
+      "image": "/images/railway/brands/plaxpot.png"
+    },
+    {
+      "name": "Clarity II",
+      "slug": "clarity-ii",
+      "image": "/images/railway/brands/clarity-ii.png"
+    },
+    {
+      "name": "Sculptra",
+      "slug": "sculptra",
+      "image": "/images/railway/brands/sculptra.png"
+    },
+    {
+      "name": "Profhilo",
+      "slug": "profhilo",
+      "image": "/images/railway/brands/profhilo.png"
+    },
+    {
+      "name": "Jalupro",
+      "slug": "jalupro",
+      "image": "/images/railway/brands/jalupro.png"
+    },
+    {
+      "name": "MicroAire",
+      "slug": "microaire",
+      "image": "/images/railway/brands/microaire.png"
+    },
+    {
+      "name": "NOUVAG",
+      "slug": "nouvag",
+      "image": "/images/railway/brands/nouvag.png"
+    },
+    {
+      "name": "PRX-T33",
+      "slug": "prx-t33",
+      "image": "/images/railway/brands/prx-t33.png"
+    },
+    {
+      "name": "Skin Tech",
+      "slug": "skin-tech",
+      "image": "/images/railway/brands/skin-tech.png"
+    },
+    {
+      "name": "HydraFacial",
+      "slug": "hydrafacial",
+      "image": "/images/railway/brands/hydrafacial.png"
+    },
+    {
+      "name": "Dermapen 4",
+      "slug": "dermapen",
+      "image": "/images/railway/brands/dermapen.png"
+    },
+    {
+      "name": "Meline",
+      "slug": "meline",
+      "image": "/images/railway/brands/meline.png"
+    },
+    {
+      "name": "Toskani",
+      "slug": "toskani",
+      "image": "/images/railway/brands/toskani.png"
+    },
+    {
+      "name": "Innoaesthetics",
+      "slug": "innoaesthetics",
+      "image": "/images/railway/brands/innoaesthetics.png"
+    },
+    {
+      "name": "i-model Esthetic",
+      "slug": "imodel",
+      "image": "/images/railway/brands/imodel.png"
+    },
+    {
+      "name": "i-Face Esthetic",
+      "slug": "iface",
+      "image": "/images/railway/brands/iface.png"
+    },
+    {
+      "name": "TAUMED",
+      "slug": "taumed",
+      "image": "/images/railway/brands/taumed.png"
+    },
+    {
+      "name": "VISBODY",
+      "slug": "visbody",
+      "image": "/images/railway/brands/visbody.png"
+    },
+    {
+      "name": "OBSERV 520x",
+      "slug": "observ-520x",
+      "image": "/images/railway/brands/observ-520x.png"
+    }
+  ]
+}

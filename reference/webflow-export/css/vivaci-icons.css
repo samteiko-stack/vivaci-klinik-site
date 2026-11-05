@@ -1,0 +1,25 @@
+/**
+ * Vivaci — Lucide inline SVGs inside Webflow icon embeds.
+ * All UI icons use stroke Lucide paths (class="lucide lucide-*").
+ */
+
+.icon-embed-xxsmall svg.lucide,
+.icon-embed-xsmall svg.lucide,
+.icon-embed-small svg.lucide,
+.icon-embed-medium svg.lucide,
+.icon-embed-large svg.lucide,
+.dropdown-chevron svg.lucide,
+.menu-icon2 svg.lucide,
+.blog-post3-header_social-icon svg.lucide {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+svg.lucide {
+  flex-shrink: 0;
+}
+
+svg.lucide[fill="none"] {
+  fill: none;
+}

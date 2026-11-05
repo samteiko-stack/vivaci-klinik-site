@@ -1,0 +1,70 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
+  "heading": "Utvalda behandlingar",
+  "cta": {
+    "label": "Se alla behandlingar",
+    "href": "/behandlingar"
+  },
+  "items": [
+    {
+      "name": "Visbody Body Analysis",
+      "href": "/behandlingar/visbody-body-analysis",
+      "slug": "visbody-body-analysis",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "Hair Analysis",
+      "href": "/behandlingar/hair-analysis",
+      "slug": "hair-analysis",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "OligoCheck",
+      "href": "/behandlingar/oligocheck",
+      "slug": "oligocheck",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "SO/Check",
+      "href": "/behandlingar/so-check",
+      "slug": "so-check",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "OBSERV 520X Skin Analysis",
+      "href": "/behandlingar/observ-520x-skin-analysis",
+      "slug": "observ-520x-skin-analysis",
+      "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "IV Therapy",
+      "href": "/behandlingar/iv-therapy",
+      "slug": "iv-therapy",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "Vitamin Injections",
+      "href": "/behandlingar/vitamin-injections",
+      "slug": "vitamin-injections",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "Health Check & Blood Tests",
+      "href": "/behandlingar/health-check-blood-tests",
+      "slug": "health-check-blood-tests",
+      "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "Medical Weight Loss",
+      "href": "/behandlingar/medical-weight-loss",
+      "slug": "medical-weight-loss",
+      "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=900&h=1200&q=85"
+    },
+    {
+      "name": "Laserhårborttagning",
+      "href": "/behandlingar/laser-hair-removal",
+      "slug": "laser-hair-removal",
+      "image": "https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&w=900&h=1200&q=85"
+    }
+  ]
+}

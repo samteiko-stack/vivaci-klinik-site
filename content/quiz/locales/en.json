@@ -1,0 +1,498 @@
+{
+  "locale": "sv",
+  "version": 1,
+  "meta": {
+    "title": "Hitta rätt behandling",
+    "navUrl": "/content/from-production/nav.json"
+  },
+  "ui": {
+    "close": "Stäng",
+    "back": "Tillbaka",
+    "next": "Nästa",
+    "finish": "Se mina rekommendationer",
+    "start": "Starta quizet",
+    "restart": "Gör om quizet",
+    "stepOf": "Steg {current} av {total}",
+    "selectOne": "Välj ett alternativ",
+    "selectMany": "Välj alla som stämmer",
+    "resultsTitle": "Dina rekommenderade behandlingar",
+    "resultsLead": "Baserat på dina svar har vi tagit fram behandlingar som kan passa dig. Varje förslag bygger på det du berättat — en konsultation avgör alltid vad som är rätt i ditt fall.",
+    "whyHeading": "Varför vi tror detta passar",
+    "readMore": "Läs om behandlingen",
+    "emptyResults": "Vi kunde inte matcha några behandlingar utifrån dina svar. Boka gärna en kostnadsfri konsultation så hjälper vi dig personligen.",
+    "consultCta": "Boka gratis konsultation",
+    "consultHref": "/kontakt"
+  },
+  "intro": {
+    "eyebrow": "Behandlingsguide",
+    "heading": "Osäker på vad du behöver?",
+    "body": "Svara på några korta frågor om dina mål och utmaningar. Vi matchar dig med behandlingar på Vivaci och förklarar varför de kan vara relevanta — utan förpliktelser.",
+    "durationHint": "Ca 2–3 minuter · 7 frågor"
+  },
+  "questions": [
+    {
+      "id": "main_goal",
+      "type": "single",
+      "prompt": "Vad vill du främst förbättra?",
+      "subtitle": "Välj det område som känns viktigast just nu.",
+      "options": [
+        {
+          "id": "skin",
+          "label": "Hudton & hudproblem",
+          "hint": "Acne, pigment, porer, känslighet med mera",
+          "weights": {},
+          "reasons": {}
+        },
+        {
+          "id": "aging",
+          "label": "Rynkor & tecken på ålder",
+          "hint": "Linjer, volymförlust, slapp hud",
+          "weights": {},
+          "reasons": {}
+        },
+        {
+          "id": "face",
+          "label": "Form & uttryck i ansiktet",
+          "hint": "Läppar, konturer, ögonområdet",
+          "weights": {},
+          "reasons": {}
+        },
+        {
+          "id": "body",
+          "label": "Kropp & silhuett",
+          "hint": "Fett, kontur, cellulite, vikt",
+          "weights": {},
+          "reasons": {}
+        },
+        {
+          "id": "hair",
+          "label": "Hår & hårbotten",
+          "hint": "Håravfall, tunnare hår, oönskat hår",
+          "weights": {},
+          "reasons": {}
+        },
+        {
+          "id": "surgery",
+          "label": "Kirurgi & ingrepp",
+          "hint": "Permanent förändring med kirurgi",
+          "weights": {},
+          "reasons": {}
+        }
+      ]
+    },
+    {
+      "id": "skin_concerns",
+      "type": "multi",
+      "prompt": "Vilka hudutmaningar känner du igen?",
+      "subtitle": "Välj alla som stämmer.",
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "skin"
+      },
+      "options": [
+        {
+          "id": "acne",
+          "label": "Acne & utbrott",
+          "weights": {
+            "/problem/acne": 4
+          },
+          "reasons": {
+            "/problem/acne": "Du beskrev acne och utbrott som ett huvudproblem."
+          }
+        },
+        {
+          "id": "acne_scars",
+          "label": "Acnärr",
+          "weights": {
+            "/problem/acne-scars": 4,
+            "/problem/scars": 2
+          },
+          "reasons": {
+            "/problem/acne-scars": "Du nämnde märken efter acne.",
+            "/problem/scars": "Ärrbehandling kan komplettera arbetet med hudtextur."
+          }
+        },
+        {
+          "id": "pigment",
+          "label": "Pigmentfläckar & ojämn hudton",
+          "weights": {
+            "/problem/pigmentation": 4,
+            "/problem/melasma": 3,
+            "/problem/uneven-skin-tone": 3
+          },
+          "reasons": {
+            "/problem/pigmentation": "Du vill jämna ut pigment och fläckar.",
+            "/problem/melasma": "Melasma kräver ofta en skonsam, medicinskt anpassad plan.",
+            "/problem/uneven-skin-tone": "En mer enhetlig hudton var viktig för dig."
+          }
+        },
+        {
+          "id": "pores",
+          "label": "Förstorade porer & struktur",
+          "weights": {
+            "/problem/enlarged-pores": 4,
+            "/problem/dull-skin": 2
+          },
+          "reasons": {
+            "/problem/enlarged-pores": "Finare porer och struktur var centralt i dina svar.",
+            "/problem/dull-skin": "Glans och lyster kan förbättras samtidigt."
+          }
+        },
+        {
+          "id": "redness",
+          "label": "Rodnad, känslighet & rosacea",
+          "weights": {
+            "/problem/rosacea": 4,
+            "/problem/sensitive-skin": 3,
+            "/problem/broken-capillaries": 2
+          },
+          "reasons": {
+            "/problem/rosacea": "Du beskrev rodnad eller rosacea.",
+            "/problem/sensitive-skin": "Känslig hud behöver en skonsam, stabiliserande approach.",
+            "/problem/broken-capillaries": "Synliga kärl kan behandlas riktat."
+          }
+        },
+        {
+          "id": "dry_dull",
+          "label": "Torr, tråkig eller glanslös hud",
+          "weights": {
+            "/problem/dry-skin": 4,
+            "/problem/dull-skin": 4,
+            "/problem/skin-quality-hydration": 3
+          },
+          "reasons": {
+            "/problem/dry-skin": "Du efterfrågade mer fukt och komfort.",
+            "/problem/dull-skin": "Du vill ha mer lyster i huden.",
+            "/problem/skin-quality-hydration": "Injektionsbaserad hudkvalitet kan stärka fukt och spänst."
+          }
+        },
+        {
+          "id": "lesions",
+          "label": "Hudförändringar jag vill ha bedömda",
+          "weights": {
+            "/problem/skin-lesions": 5
+          },
+          "reasons": {
+            "/problem/skin-lesions": "Du vill få hudförändringar medicinskt bedömda."
+          }
+        }
+      ]
+    },
+    {
+      "id": "aging_concerns",
+      "type": "multi",
+      "prompt": "Vad stör dig mest med ålder eller rynkor?",
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "aging"
+      },
+      "options": [
+        {
+          "id": "lines",
+          "label": "Fina linjer & rynkor",
+          "weights": {
+            "/problem/fine-lines-wrinkles": 4,
+            "/problem/wrinkles": 4
+          },
+          "reasons": {
+            "/problem/fine-lines-wrinkles": "Du fokuserade på linjer och rynkor.",
+            "/problem/wrinkles": "Rynkor i rörelse kan mjukt behandlas med injektioner."
+          }
+        },
+        {
+          "id": "volume",
+          "label": "Volymförlust & hängande konturer",
+          "weights": {
+            "/problem/volume-loss": 4,
+            "/problem/loose-skin": 3
+          },
+          "reasons": {
+            "/problem/volume-loss": "Volymförlust var central i dina svar.",
+            "/problem/loose-skin": "Slapp hud kan förbättras med stramande behandlingar."
+          }
+        },
+        {
+          "id": "eyes",
+          "label": "Ögonområdet — ringar, påsar, linjer",
+          "weights": {
+            "/problem/dark-circles": 3,
+            "/problem/eye-bags": 3,
+            "/plastikkirurgi/eyelid-surgery": 2
+          },
+          "reasons": {
+            "/problem/dark-circles": "Mörka ringar nämnde du som concern.",
+            "/problem/eye-bags": "Påsar under ögonen var viktigt för dig.",
+            "/plastikkirurgi/eyelid-surgery": "Vid mer permanent påverkan kan ögonlocksplastik vara aktuellt."
+          }
+        },
+        {
+          "id": "quality",
+          "label": "Huden känns tunnare eller trött",
+          "weights": {
+            "/problem/skin-quality-hydration": 4,
+            "/problem/dull-skin": 2
+          },
+          "reasons": {
+            "/problem/skin-quality-hydration": "Du vill förbättra hudkvalitet och spänst.",
+            "/problem/dull-skin": "Mer lyster kan kombineras i samma plan."
+          }
+        }
+      ]
+    },
+    {
+      "id": "face_concerns",
+      "type": "multi",
+      "prompt": "Vad vill du justera i ansiktet?",
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "face"
+      },
+      "options": [
+        {
+          "id": "lips",
+          "label": "Läppar & leende",
+          "weights": {
+            "/problem/lip-enhancement": 4,
+            "/problem/gummy-smile": 3
+          },
+          "reasons": {
+            "/problem/lip-enhancement": "Du vill forma eller ge volym åt läpparna.",
+            "/problem/gummy-smile": "Du nämnde att tandköttet syns när du ler."
+          }
+        },
+        {
+          "id": "contour",
+          "label": "Kindben, haka & konturer",
+          "weights": {
+            "/problem/facial-contouring": 5,
+            "/problem/double-chin": 3
+          },
+          "reasons": {
+            "/problem/facial-contouring": "Ansiktskonturering matchar dina mål om definition.",
+            "/problem/double-chin": "Dubbelhaka kan definieras utan kirurgi i många fall."
+          }
+        },
+        {
+          "id": "sweat",
+          "label": "Överdriven svettning",
+          "weights": {
+            "/problem/excessive-sweating": 5
+          },
+          "reasons": {
+            "/problem/excessive-sweating": "Du beskrev svett som ett problem vi kan behandla medicinskt."
+          }
+        },
+        {
+          "id": "skin_glow",
+          "label": "Fräschare hud överlag",
+          "weights": {
+            "/problem/skin-quality-hydration": 3,
+            "/problem/dull-skin": 3
+          },
+          "reasons": {
+            "/problem/skin-quality-hydration": "Hudkvalitet och hydrering stämmer med ditt önskade uttryck.",
+            "/problem/dull-skin": "Du vill ha ett piggare, mer utvilat intryck."
+          }
+        }
+      ]
+    },
+    {
+      "id": "body_concerns",
+      "type": "multi",
+      "prompt": "Vad vill du förbättra kring kroppen?",
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "body"
+      },
+      "options": [
+        {
+          "id": "fat",
+          "label": "Envis fett & lokala fettdepåer",
+          "weights": {
+            "/problem/stubborn-fat": 4,
+            "/problem/body-contouring": 3,
+            "/plastikkirurgi/liposuction": 2
+          },
+          "reasons": {
+            "/problem/stubborn-fat": "Envis fett var centralt i dina svar.",
+            "/problem/body-contouring": "Kroppsskulptering kan forma silhuett och kontur.",
+            "/plastikkirurgi/liposuction": "Vid större behov av reduktion kan fettsugning vara aktuellt."
+          }
+        },
+        {
+          "id": "cellulite",
+          "label": "Cellulite & ojämn yta",
+          "weights": {
+            "/problem/cellulite": 5
+          },
+          "reasons": {
+            "/problem/cellulite": "Du nämnde cellulite eller gropig hud."
+          }
+        },
+        {
+          "id": "loose",
+          "label": "Slapp hud efter vikt eller ålder",
+          "weights": {
+            "/problem/loose-skin-body": 4,
+            "/problem/stretch-marks-body": 2
+          },
+          "reasons": {
+            "/problem/loose-skin-body": "Stramare hud på kroppen var viktigt för dig.",
+            "/problem/stretch-marks-body": "Stretchmärken kan dämpas med rätt protokoll."
+          }
+        },
+        {
+          "id": "weight",
+          "label": "Vikt & livsstil",
+          "weights": {
+            "/problem/overweight-weight-loss": 5
+          },
+          "reasons": {
+            "/problem/overweight-weight-loss": "Du sökte medicinskt stöd kring vikt."
+          }
+        },
+        {
+          "id": "swelling",
+          "label": "Svullnad & vätskeansamling",
+          "weights": {
+            "/problem/swelling-lymphatic-drainage": 4
+          },
+          "reasons": {
+            "/problem/swelling-lymphatic-drainage": "Lymfdränage kan minska svullnad och stödja återhämtning."
+          }
+        }
+      ]
+    },
+    {
+      "id": "hair_concerns",
+      "type": "multi",
+      "prompt": "Vad beskriver ditt hår eller hårbotten bäst?",
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "hair"
+      },
+      "options": [
+        {
+          "id": "loss",
+          "label": "Håravfall eller tunnare hår",
+          "weights": {
+            "/problem/hair-loss": 4,
+            "/problem/thinning-hair": 4,
+            "/problem/alopecia": 3,
+            "/plastikkirurgi/hair-transplant": 2
+          },
+          "reasons": {
+            "/problem/hair-loss": "Håravfall var ditt huvudspår.",
+            "/problem/thinning-hair": "Tunnare hår kan stärkas med riktade behandlingar.",
+            "/problem/alopecia": "Fläckvis eller autoimmun håravfall kräver individuell plan.",
+            "/plastikkirurgi/hair-transplant": "Vid permanent återuppbyggnad kan transplantation vara aktuellt."
+          }
+        },
+        {
+          "id": "unwanted",
+          "label": "Oönskat hår på kroppen",
+          "weights": {
+            "/problem/unwanted-hair": 5
+          },
+          "reasons": {
+            "/problem/unwanted-hair": "Permanent hårminskning matchar ditt mål."
+          }
+        }
+      ]
+    },
+    {
+      "id": "surgery_interest",
+      "type": "multi",
+      "prompt": "Vilket kirurgiskt område är du nyfiken på?",
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "surgery"
+      },
+      "options": [
+        {
+          "id": "body_surgery",
+          "label": "Kropp — fettsugning, bukfett",
+          "weights": {
+            "/plastikkirurgi/liposuction": 4,
+            "/plastikkirurgi/buccal-fat-removal": 3
+          },
+          "reasons": {
+            "/plastikkirurgi/liposuction": "Du utforskade kirurgisk kroppskontur.",
+            "/plastikkirurgi/buccal-fat-removal": "Kind-/bukfett kan formas kirurgiskt."
+          }
+        },
+        {
+          "id": "face_surgery",
+          "label": "Ansikte — ögonlock, ögonbryn",
+          "weights": {
+            "/plastikkirurgi/eyelid-surgery": 4,
+            "/plastikkirurgi/eyebrow-lift": 3
+          },
+          "reasons": {
+            "/plastikkirurgi/eyelid-surgery": "Ögonlocksplastik passar ditt kirurgiska fokus.",
+            "/plastikkirurgi/eyebrow-lift": "Ett lyft av ögonbryn kan ge ett piggare uttryck."
+          }
+        },
+        {
+          "id": "other_surgery",
+          "label": "Öron, kindgropar, hårtransplantation",
+          "weights": {
+            "/plastikkirurgi/otoplasty": 3,
+            "/plastikkirurgi/dimples": 3,
+            "/plastikkirurgi/hair-transplant": 3
+          },
+          "reasons": {
+            "/plastikkirurgi/otoplasty": "Öronkorrigering kan balansera profilen.",
+            "/plastikkirurgi/dimples": "Kindgropar skapas permanent med ett mindre ingrepp.",
+            "/plastikkirurgi/hair-transplant": "Hårtransplantation kan återställa hårlinjen."
+          }
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "type": "single",
+      "prompt": "Hur vill du helst nå ditt mål?",
+      "subtitle": "Det här hjälper oss prioritera skonsamma vs mer ingripande alternativ.",
+      "options": [
+        {
+          "id": "gentle",
+          "label": "Skonsamt & gradvis",
+          "hint": "Minimal downtime, bygga resultat över tid",
+          "weights": {
+            "/problem/skin-quality-hydration": 1,
+            "/problem/dull-skin": 1
+          },
+          "reasons": {}
+        },
+        {
+          "id": "balanced",
+          "label": "Balans — tydlig effekt men vardagsvänligt",
+          "hint": "Kombinationer när det behövs",
+          "weights": {},
+          "reasons": {}
+        },
+        {
+          "id": "definitive",
+          "label": "Tydlig förändring, även kirurgi om det passar",
+          "hint": "Jag vill överväga alla alternativ",
+          "weights": {
+            "/plastikkirurgi/liposuction": 1,
+            "/plastikkirurgi/eyelid-surgery": 1
+          },
+          "reasons": {}
+        },
+        {
+          "id": "unsure",
+          "label": "Jag vet inte än — vill ha vägledning",
+          "weights": {},
+          "reasons": {}
+        }
+      ]
+    }
+  ],
+  "results": {
+    "maxItems": 5,
+    "minScore": 2
+  }
+}

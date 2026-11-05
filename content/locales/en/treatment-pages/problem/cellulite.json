@@ -1,0 +1,154 @@
+{
+  "version": 1,
+  "category": "problem",
+  "slug": "cellulite",
+  "path": "/problem/cellulite",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/cellulite",
+  "title": "Cellulite",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Cellulite",
+      "intro": "Här förklarar vi vad cellulite är, varför det uppstår och hur vi kan hjälpa till att förbättra hudens utseende. Du får också veta mer om olika typer av cellulite, bidragande faktorer och tillgängliga behandlingsalternativ för slätare, fastare hud."
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Typ",
+          "value": "Hudproblem",
+          "icon": "layout-grid"
+        },
+        {
+          "label": "Konsultation",
+          "value": "Kostnadsfri",
+          "icon": "calendar-check"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Hudproblem",
+      "heading": "Fakta om Cellulite",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Vad är det?",
+          "body": "Cellulite är ett mycket vanligt hudproblem som får huden att se ojämn eller gropig ut. Det drabbar oftast lår, rumpa, höfter och mage, men kan förekomma på andra kroppsdelar.\n\nDet uppstår när fett under huden trycker mot bindväven och skapar det karakteristiska \"apelsinhud\"-utseendet. Cellulite är helt normalt och påverkar personer i alla kroppsformer, även de som tränar regelbundet och har normal vikt.\n\nÄven om cellulite inte är ett medicinskt tillstånd väljer många att behandla det av estetiska skäl för att förbättra hudens utseende och struktur.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "Du kan ha cellulite om du märker: gropig eller ojämn hudstruktur, apelsinhud, små fördjupningar i huden, mindre slät hud på vissa områden, förändringar på lår, rumpa, höfter eller mage.",
+          "enabled": true
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "Cellulite utvecklas till följd av flera faktorer snarare än en enda orsak.\n\nGenetik: dina gener påverkar hudtjocklek, bindvävsstruktur och fettfördelning.\n\nHormoner: hormonella förändringar, särskilt östrogen, kan påverka fettlagring och cirkulation.\n\nÅldrande: minskad kollagen och elastin gör huden tunnare och cellulite mer synlig.\n\nBindväv: strukturen och styrkan i bindväven under huden spelar stor roll.\n\nLivsstil: aktivitet, kroppssammansättning och cirkulation kan påverka, men är sällan den enda orsaken.",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Varje behandling börjar med en professionell konsultation.\n\nVi bedömer: cellulitens grad, hudkvalitet och elasticitet, kroppssammansättning, områden du vill förbättra, tidigare behandlingar och dina mål.\n\nVid behov kan vi rekommendera kroppssammansättningsanalys eller klinisk fotografering för att följa dina resultat.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "howItWorks": {
+      "enabled": false,
+      "heading": "",
+      "body": "",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "items": []
+    },
+    "benefits": {
+      "enabled": false,
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "items": [
+        {
+          "question": "Kan cellulite tas bort helt?",
+          "answer": "Cellulite kan inte alltid elimineras helt, men moderna behandlingar kan förbättra utseendet avsevärt."
+        },
+        {
+          "question": "Hur många behandlingar behöver jag?",
+          "answer": "Antalet sessioner beror på cellulitens grad och den behandlingsplan som rekommenderas vid konsultationen."
+        },
+        {
+          "question": "Vilken behandling är mest effektiv?",
+          "answer": "Den bästa behandlingen varierar. I många fall ger kombinationer av behandlingar mest märkbara resultat."
+        },
+        {
+          "question": "Finns det någon återhämtningstid?",
+          "answer": "De flesta cellulitebehandlingar har minimal downtime, men det varierar beroende på vald metod."
+        },
+        {
+          "question": "Kan cellulite komma tillbaka?",
+          "answer": "Cellulite kan bli mer synlig över tid på grund av åldrande och hormonella förändringar. Underhållsbehandlingar kan hjälpa."
+        }
+      ]
+    },
+    "related": {
+      "enabled": true,
+      "heading": "Relaterade behandlingar",
+      "items": [
+        {
+          "title": "kropp LPG Alliance LPG Alliance är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certi",
+          "href": "/behandlingar/lpg-alliance"
+        },
+        {
+          "title": "kropp EMTONE EMTONE är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade expe",
+          "href": "/behandlingar/emtone"
+        },
+        {
+          "title": "kropp Carboxy Therapy Carboxy Therapy är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av",
+          "href": "/behandlingar/carboxy-therapy-body"
+        },
+        {
+          "title": "kropp Subcision Subcision är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierad",
+          "href": "/behandlingar/subcision"
+        }
+      ]
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true
+    },
+    "beforeAfterCare": {
+      "enabled": false
+    },
+    "beforeAfterGallery": {
+      "enabled": false
+    },
+    "bottomCta": {
+      "enabled": true
+    }
+  }
+}

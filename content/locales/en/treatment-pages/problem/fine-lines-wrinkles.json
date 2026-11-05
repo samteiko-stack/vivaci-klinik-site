@@ -1,0 +1,146 @@
+{
+  "version": 1,
+  "category": "problem",
+  "slug": "fine-lines-wrinkles",
+  "path": "/problem/fine-lines-wrinkles",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/fine-lines-wrinkles",
+  "title": "Fina linjer & rynkor",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Fina linjer & rynkor",
+      "intro": "Här förklarar vi vad fina linjer & rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov."
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Typ",
+          "value": "Hudproblem",
+          "icon": "layout-grid"
+        },
+        {
+          "label": "Konsultation",
+          "value": "Kostnadsfri",
+          "icon": "calendar-check"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Hudproblem",
+      "heading": "Fakta om Fina linjer & rynkor",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Vad är det?",
+          "body": "Fina linjer & rynkor är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
+          "enabled": true
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till fina linjer & rynkor och skapar en behandlingsplan baserad på din unika situation.",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "howItWorks": {
+      "enabled": false,
+      "heading": "",
+      "body": "",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "items": []
+    },
+    "benefits": {
+      "enabled": false,
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "items": [
+        {
+          "question": "Kan fina linjer & rynkor behandlas helt?",
+          "answer": "Resultat varierar beroende på individuella förutsättningar. Målet är att uppnå en tydlig förbättring med naturliga, harmoniska resultat."
+        },
+        {
+          "question": "Hur många behandlingar behövs?",
+          "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        },
+        {
+          "question": "Finns det någon återhämtningstid?",
+          "answer": "De flesta behandlingar har minimal eller ingen downtime. Du får tydliga instruktioner före och efter."
+        }
+      ]
+    },
+    "related": {
+      "enabled": true,
+      "heading": "Relaterade behandlingar",
+      "items": [
+        {
+          "title": "injektion Botulinum Toxin Botulinum Toxin är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utför",
+          "href": "/behandlingar/botulinum-toxin"
+        },
+        {
+          "title": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs",
+          "href": "/behandlingar/dermal-fillers"
+        },
+        {
+          "title": "injektion Sculptra Sculptra är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifier",
+          "href": "/behandlingar/sculptra"
+        },
+        {
+          "title": "hud Dermapen 4 Dermapen 4 är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierad",
+          "href": "/behandlingar/dermapen-4"
+        }
+      ]
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true
+    },
+    "beforeAfterCare": {
+      "enabled": false
+    },
+    "beforeAfterGallery": {
+      "enabled": false
+    },
+    "bottomCta": {
+      "enabled": true
+    }
+  }
+}

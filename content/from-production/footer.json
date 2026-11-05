@@ -1,0 +1,128 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
+  "contact": {
+    "address": {
+      "label": "Solna Centrum, Torg 3, Plan 2 171 45 Solna",
+      "href": "https://www.google.com/maps/search/?api=1&query=Solna%20Torg%203%2C%20Plan%202%2C%20171%2045%20Solna"
+    },
+    "phone": {
+      "label": "08-509 275 08",
+      "href": "tel:+46850927508"
+    },
+    "email": {
+      "label": "info@vivaci.se",
+      "href": "mailto:info@vivaci.se"
+    },
+    "social": [
+      {
+        "network": "facebook",
+        "href": "https://www.facebook.com/Vivaciklinik",
+        "label": "Facebook"
+      },
+      {
+        "network": "instagram",
+        "href": "https://www.instagram.com/vivaciklinik",
+        "label": "Instagram"
+      },
+      {
+        "network": "tiktok",
+        "href": "https://www.tiktok.com/@vivaciklinik",
+        "label": "TikTok"
+      }
+    ]
+  },
+  "linkColumns": [
+    {
+      "title": "Utforska",
+      "links": [
+        {
+          "label": "Före & Efter",
+          "href": "/fore-efter"
+        },
+        {
+          "label": "Patientrecensioner",
+          "href": "/recensioner"
+        },
+        {
+          "label": "Varumärken",
+          "href": "/varumarken"
+        },
+        {
+          "label": "Vanliga frågor",
+          "href": "/faq"
+        },
+        {
+          "label": "Nyheter & tips",
+          "href": "/nyheter"
+        },
+        {
+          "label": "Betalningsalternativ",
+          "href": "/betalning"
+        }
+      ]
+    },
+    {
+      "title": "Kliniken",
+      "links": [
+        {
+          "label": "Prislista",
+          "href": "/prislista"
+        },
+        {
+          "label": "Kontakt",
+          "href": "/kontakt"
+        },
+        {
+          "label": "Om oss",
+          "href": "/om-oss"
+        },
+        {
+          "label": "Möt våra experter",
+          "href": "/experter"
+        },
+        {
+          "label": "Vår metod",
+          "href": "/var-metod"
+        },
+        {
+          "label": "Varför Vivaci",
+          "href": "/varfor-vivaci"
+        },
+        {
+          "label": "Patientsäkerhet",
+          "href": "/patientsakerhet"
+        },
+        {
+          "label": "Karriär",
+          "href": "/karriar"
+        }
+      ]
+    }
+  ],
+  "newsletter": {
+    "sectionTitle": "Nyhetsbrev",
+    "title": "Håll dig uppdaterad",
+    "description": "Få nyheter, behandlingstips och exklusiva erbjudanden från Vivaci Klinik.",
+    "placeholder": "Din e-postadress",
+    "submitLabel": "Prenumerera"
+  },
+  "legal": [
+    {
+      "label": "Integritetspolicy",
+      "href": "/integritetspolicy"
+    },
+    {
+      "label": "Cookiepolicy",
+      "href": "/cookies"
+    },
+    {
+      "label": "Köpvillkor",
+      "href": "/villkor"
+    },
+    {
+      "label": "Avbokning & återbetalning",
+      "href": "/avbokning"
+    }
+  ],
+  "copyright": "© 2026 Vivaci Klinik . Alla rättigheter förbehållna."
+}

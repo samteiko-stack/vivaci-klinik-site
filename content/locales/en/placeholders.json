@@ -1,0 +1,171 @@
+{
+  "note": "Non-treatment slots only. Treatments use content/from-production/treatment-images.json.",
+  "items": {
+    "hero-clinic": {
+      "path": "/images/stock/hero-clinic.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2400&q=85",
+      "label": "Clinic environment"
+    },
+    "section-plastikkirurgi": {
+      "path": "/images/stock/section-plastikkirurgi.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=85",
+      "label": "Medical consultation"
+    },
+    "section-method": {
+      "path": "/images/stock/section-method.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=85",
+      "label": "Calm clinical care"
+    },
+    "team-1": {
+      "path": "/images/stock/team-1.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85",
+      "label": "Professional portrait"
+    },
+    "team-2": {
+      "path": "/images/stock/team-2.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85",
+      "label": "Professional portrait"
+    },
+    "team-3": {
+      "path": "/images/stock/team-3.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=85",
+      "label": "Professional portrait"
+    },
+    "team-4": {
+      "path": "/images/stock/team-4.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=85",
+      "label": "Professional portrait"
+    },
+    "blog-1": {
+      "path": "/images/stock/blog-1.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1600&q=85",
+      "label": "Wellness editorial"
+    },
+    "blog-2": {
+      "path": "/images/stock/blog-2.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=1600&q=85",
+      "label": "Skincare editorial"
+    },
+    "blog-3": {
+      "path": "/images/stock/blog-3.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1600&q=85",
+      "label": "Beauty editorial"
+    },
+    "blog-4": {
+      "path": "/images/stock/blog-4.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1600&q=85",
+      "label": "Spa editorial"
+    },
+    "blog-nav-1": {
+      "path": "/images/stock/blog-nav-1.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=85",
+      "label": "Nav blog thumb"
+    },
+    "blog-nav-2": {
+      "path": "/images/stock/blog-nav-2.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=600&q=85",
+      "label": "Nav blog thumb"
+    },
+    "cta-bottom": {
+      "path": "/images/stock/cta-bottom.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2400&q=85",
+      "label": "Booking CTA background"
+    },
+    "blog-author": {
+      "path": "/images/stock/blog-author.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=85",
+      "label": "Author portrait"
+    },
+    "product-1": {
+      "path": "/images/stock/product-1.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&w=800&q=85",
+      "label": "Skincare product"
+    },
+    "product-2": {
+      "path": "/images/stock/product-2.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?auto=format&fit=crop&w=800&q=85",
+      "label": "Serum bottle"
+    },
+    "product-3": {
+      "path": "/images/stock/product-3.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=85",
+      "label": "Cosmetic jars"
+    },
+    "product-4": {
+      "path": "/images/stock/product-4.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85",
+      "label": "Cream product"
+    },
+    "product-5": {
+      "path": "/images/stock/product-5.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=800&q=85",
+      "label": "Bathroom shelf products"
+    },
+    "product-6": {
+      "path": "/images/stock/product-6.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=800&q=85",
+      "label": "Skincare flat lay"
+    },
+    "product-7": {
+      "path": "/images/stock/product-7.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=85",
+      "label": "Dropper bottle"
+    },
+    "product-8": {
+      "path": "/images/stock/product-8.jpg",
+      "source": "unsplash",
+      "remoteUrl": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=85",
+      "label": "Beauty product"
+    }
+  },
+  "pools": {
+    "team": [
+      "team-1",
+      "team-2",
+      "team-3",
+      "team-4"
+    ],
+    "blogCarousel": [
+      "blog-1",
+      "blog-2",
+      "blog-3",
+      "blog-4"
+    ],
+    "navBlog": [
+      "blog-nav-1",
+      "blog-nav-2"
+    ],
+    "products": [
+      "product-1",
+      "product-2",
+      "product-3",
+      "product-4",
+      "product-5",
+      "product-6",
+      "product-7",
+      "product-8"
+    ]
+  }
+}

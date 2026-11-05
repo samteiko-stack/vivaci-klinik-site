@@ -1,0 +1,205 @@
+/**
+ * Unified Swiper carousel + arrow controls (design system).
+ */
+
+.layout47_content-right {
+  min-width: 0;
+}
+
+.swiper-tuesday {
+  width: 100%;
+  min-width: 0;
+  overflow: visible !important;
+  clip-path: inset(-100vw -100vw -100vw 0);
+}
+
+.swiper-tuesday .swiper-wrapper {
+  min-width: 0;
+}
+
+.swiper-tuesday .swiper-slide {
+  flex-shrink: 0;
+  position: relative;
+}
+
+.swiper-tuesday .swiper-slide > *:first-child {
+  transform-origin: center center;
+  will-change: transform, opacity, filter;
+}
+
+.swiper-tuesday-controls {
+  width: 100%;
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.swiper-tuesday-arrows,
+.vivaci-swiper-arrow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* —— Unified arrow buttons —— */
+.vivaci-swiper-btn,
+.swiper-tuesday-prev,
+.swiper-tuesday-next,
+a.swiper-arrow.button-prev-3,
+a.swiper-arrow.button-next-3,
+button.swiper-arrow.button-prev-3,
+button.swiper-arrow.button-next-3 {
+  box-sizing: border-box;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--vivaci-border);
+  border-radius: 0.25rem;
+  background: transparent !important;
+  background-image: none !important;
+  filter: none !important;
+  color: #9c8b76;
+  cursor: pointer;
+  text-decoration: none;
+  border-width: var(--_ui-styles---stroke--border-width);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.vivaci-swiper-btn svg,
+.swiper-tuesday-prev svg,
+.swiper-tuesday-next svg,
+a.swiper-arrow svg {
+  width: 1.25rem;
+  height: 1.25rem;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.swiper-tuesday-prev svg,
+.vivaci-swiper-btn.is-prev svg {
+  transform: rotate(180deg);
+}
+
+a.swiper-arrow.button-prev-3,
+button.swiper-arrow.button-prev-3 {
+  /* Override legacy Webflow rotate on the whole control */
+  transform: none;
+}
+
+a.swiper-arrow.button-prev-3 svg,
+button.swiper-arrow.button-prev-3 svg {
+  transform: rotate(180deg);
+}
+
+.vivaci-swiper-btn:hover,
+.swiper-tuesday-prev:hover,
+.swiper-tuesday-next:hover,
+a.swiper-arrow.button-prev-3:hover,
+a.swiper-arrow.button-next-3:hover,
+button.swiper-arrow.button-prev-3:hover,
+button.swiper-arrow.button-next-3:hover {
+  background-color: #ddd5c9 !important;
+  border-color: var(--vivaci-border-color);
+  border-width: var(--vivaci-border-width);
+}
+
+.swiper-tuesday-next:hover svg,
+.vivaci-swiper-btn.is-next:hover svg,
+a.swiper-arrow.button-next-3:hover svg {
+  transform: translateX(1px);
+}
+
+.swiper-tuesday-prev:hover svg,
+.vivaci-swiper-btn.is-prev:hover svg,
+a.swiper-arrow.button-prev-3:hover svg,
+button.swiper-arrow.button-prev-3:hover svg {
+  transform: rotate(180deg) translateX(1px);
+}
+
+a.swiper-arrow.button-prev-3:hover,
+button.swiper-arrow.button-prev-3:hover {
+  transform: none;
+}
+
+.vivaci-swiper-btn:active,
+.swiper-tuesday-prev:active,
+.swiper-tuesday-next:active,
+a.swiper-arrow.button-prev-3:active,
+a.swiper-arrow.button-next-3:active,
+button.swiper-arrow.button-prev-3:active,
+button.swiper-arrow.button-next-3:active {
+  background-color: #ddd5c9 !important;
+  border-color: var(--vivaci-border-color);
+  border-width: var(--vivaci-border-width);
+}
+
+.swiper-tuesday-prev.swiper-button-disabled,
+.swiper-tuesday-next.swiper-button-disabled,
+.vivaci-swiper-btn.swiper-button-disabled,
+a.swiper-arrow.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.swiper-tuesday-controls .swiper-tuesday-pagination {
+  position: static !important;
+  width: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end;
+  gap: 8px !important;
+}
+
+.swiper-tuesday-controls .swiper-tuesday-pagination .swiper-pagination-bullet {
+  display: block !important;
+  flex: 0 0 6px !important;
+  width: 6px !important;
+  min-width: 6px !important;
+  max-width: 6px !important;
+  height: 6px !important;
+  min-height: 6px !important;
+  max-height: 6px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  background: #ddd5c9 !important;
+  opacity: 1 !important;
+  transform: none !important;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.swiper-tuesday-controls .swiper-tuesday-pagination .swiper-pagination-bullet-active {
+  background: #9c8b76 !important;
+  transform: scale(1.15) !important;
+}
+
+.swiper3.swiper {
+  overflow: visible !important;
+}
+
+/* —— Varumärken marquee logos (uniform size) —— */
+.logo-marquee_item {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: var(--vivaci-brand-logo-height, 3rem);
+}
+
+.logo-marquee_item img.logo-promo-banner {
+  display: block;
+  width: auto;
+  height: var(--vivaci-brand-logo-height, 3rem);
+  max-width: var(--vivaci-brand-logo-max-width, 9rem);
+  object-fit: contain;
+  object-position: center;
+}

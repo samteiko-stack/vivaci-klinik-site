@@ -1,0 +1,572 @@
+/* Vivaci treatment quiz modal */
+html.vivaci-quiz-open {
+  overflow: hidden;
+}
+
+.vivaci-quiz-root {
+  position: relative;
+  z-index: var(--vivaci-z-modal, 10000);
+}
+
+.vivaci-quiz-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: var(--_primitives---opacity--neutral-darkest-40);
+  backdrop-filter: blur(4px);
+  opacity: 1;
+}
+
+.vivaci-quiz-root.is-open .vivaci-quiz-panel {
+  will-change: transform, opacity;
+}
+
+.vivaci-quiz-dialog {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  pointer-events: none;
+}
+
+.vivaci-quiz-dialog:not([hidden]) {
+  pointer-events: auto;
+}
+
+.vivaci-quiz-dialog:focus {
+  outline: none;
+}
+
+.vivaci-quiz-panel {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  max-height: min(90vh, 52rem);
+  overflow: auto;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--large);
+  background-color: var(--_primitives---colors--white);
+  box-shadow: 0 24px 64px var(--_primitives---opacity--neutral-darkest-15);
+  padding: 2.75rem 1.5rem 1.5rem;
+}
+
+.vivaci-quiz-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  margin: 0;
+  padding: 0;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium);
+  background-color: var(--_primitives---colors--white);
+  color: var(--_primitives---colors--neutral-darkest);
+  cursor: pointer;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-quiz-close:hover {
+  background-color: var(--color-scheme-1--brand-3);
+  border-color: var(--vivaci-border-color);
+}
+
+.vivaci-quiz-close:focus-visible {
+  outline: 2px solid var(--_primitives---colors--neutral-darkest);
+  outline-offset: 2px;
+}
+
+.vivaci-quiz-close .icon-embed-xsmall {
+  width: 1rem;
+  height: 1rem;
+  line-height: 0;
+}
+
+.vivaci-quiz-panel-inner {
+  position: relative;
+}
+
+/* Shared modal forms (course enrollment, etc.) — placeholders only, tight */
+.vivaci-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0;
+}
+
+.vivaci-modal-form .form_field-wrapper {
+  margin-bottom: 0;
+}
+
+.vivaci-modal-form .form_field-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+@media (max-width: 479px) {
+  .vivaci-modal-form .form_field-2col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.is-vivaci-form-tight {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.is-vivaci-form-tight .form_field-wrapper {
+  margin-bottom: 0;
+}
+
+.is-vivaci-form-tight .form_field-label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 400;
+}
+
+.is-vivaci-form-tight .form_field-2col {
+  gap: 0.5rem;
+}
+
+.is-vivaci-form-tight .form_input,
+.is-vivaci-form-tight .form_input.is-text-area {
+  padding: 0.625rem 0.875rem;
+}
+
+.vivaci-enroll-panel {
+  display: flex;
+  flex-direction: column;
+  max-width: 36rem;
+  max-height: min(90vh, 52rem);
+  padding: 0;
+  overflow: hidden;
+}
+
+.vivaci-enroll-panel .vivaci-quiz-panel-inner {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  padding: 0 1.5rem 1.5rem;
+}
+
+.vivaci-enroll-panel .vivaci-quiz-close {
+  top: 1rem;
+  right: 1rem;
+}
+
+.vivaci-enroll-header {
+  margin: 0 -1.5rem 0.75rem;
+  padding: 1.25rem 1.5rem 1rem;
+  background-color: var(--color-scheme-1--brand-1);
+  border-bottom: var(--vivaci-divider-light, var(--vivaci-border-light, 1px solid var(--color-scheme-1--brand-4, #ebe7e4)));
+}
+
+.vivaci-enroll-course {
+  margin: 0.35rem 0 0;
+  color: var(--color-scheme-1--text);
+}
+
+.vivaci-enroll-session {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: var(--vivaci-border-light, var(--vivaci-border, 1px solid var(--color-scheme-1--brand-4, #ebe7e4)));
+  border-radius: var(--_ui-styles---radius--medium);
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-enroll-session-icon {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.125rem;
+  color: var(--color-scheme-1--brand-2);
+}
+
+.vivaci-enroll-session-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.vivaci-enroll-session-eyebrow {
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+.vivaci-enroll-session-value {
+  margin: 0;
+}
+
+.vivaci-enroll-hint {
+  margin: -0.35rem 0 0;
+}
+
+.vivaci-enroll-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-top: 0;
+}
+
+.vivaci-enroll-panel .vivaci-modal-form {
+  gap: 0.5rem;
+}
+
+.vivaci-enroll-panel .form_input,
+.vivaci-enroll-panel .form_input.is-text-area,
+.vivaci-enroll-panel .form_input.is-select-input {
+  margin-bottom: 0;
+  padding: 0.625rem 0.875rem;
+  min-height: 2.75rem;
+  border: var(--vivaci-border-light, var(--vivaci-border, 1px solid var(--color-scheme-1--brand-4, #ebe7e4)));
+  border-radius: var(--_ui-styles---radius--medium);
+  background-color: var(--_primitives---colors--white);
+  transition: var(--vivaci-transition-interactive, border-color 0.2s ease, background-color 0.2s ease);
+}
+
+.vivaci-enroll-panel .form_input.is-text-area {
+  min-height: 4.5rem;
+  padding-top: 0.625rem;
+}
+
+.vivaci-enroll-panel .form_input:focus,
+.vivaci-enroll-panel .form_input.is-text-area:focus,
+.vivaci-enroll-panel .form_input.is-select-input:focus {
+  border-color: var(--color-scheme-1--brand-2);
+  outline: none;
+}
+
+.vivaci-enroll-actions {
+  margin-top: 0.125rem;
+  padding-top: 0.75rem;
+  border-top: var(--vivaci-divider-light, var(--vivaci-border-light, 1px solid var(--color-scheme-1--brand-4, #ebe7e4)));
+}
+
+.vivaci-enroll-actions .vivaci-quiz-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: center;
+}
+
+.vivaci-enroll-success {
+  align-items: center;
+  text-align: center;
+  padding: 2rem 0 0.5rem;
+}
+
+.vivaci-enroll-success-icon {
+  width: 2.75rem;
+  height: 2.75rem;
+  color: var(--color-scheme-1--brand-2);
+}
+
+.vivaci-enroll-success .button {
+  margin-top: 0.5rem;
+}
+
+.faq3_answer {
+  height: 0;
+  overflow: hidden;
+}
+
+.faq3_question {
+  cursor: pointer;
+}
+
+.faq3_icon-wrapper {
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.vivaci-quiz-intro,
+.vivaci-quiz-step,
+.vivaci-quiz-results {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vivaci-quiz-eyebrow {
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.vivaci-quiz-progress {
+  height: 0.25rem;
+  border-radius: 999rem;
+  background-color: var(--color-scheme-1--brand-3);
+  overflow: hidden;
+}
+
+.vivaci-quiz-progress span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background-color: var(--_primitives---colors--neutral-darkest);
+  transition: width var(--vivaci-motion-duration-normal) var(--vivaci-motion-ease-out);
+}
+
+.vivaci-quiz-hint {
+  margin: 0;
+}
+
+.vivaci-quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.vivaci-quiz-option {
+  position: relative;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0.875rem 1rem;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium);
+  background-color: var(--color-scheme-1--brand-3);
+  cursor: pointer;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-quiz-option:hover {
+  border-color: var(--vivaci-border-color);
+  background-color: var(--_primitives---colors--white);
+}
+
+.vivaci-quiz-option.is-selected {
+  border-color: var(--vivaci-border-color);
+  background-color: var(--_primitives---colors--white);
+}
+
+.vivaci-quiz-option-input {
+  position: absolute;
+  left: 1rem;
+  top: 1.05rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.vivaci-quiz-control {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.15rem;
+  border: var(--vivaci-border);
+  background-color: var(--_primitives---colors--white);
+  transition: var(--vivaci-transition-interactive);
+  pointer-events: none;
+}
+
+.vivaci-quiz-option[data-option-type="radio"] .vivaci-quiz-control {
+  border-radius: 50%;
+}
+
+.vivaci-quiz-option[data-option-type="checkbox"] .vivaci-quiz-control {
+  border-radius: var(--_ui-styles---radius--small);
+}
+
+.vivaci-quiz-control-mark {
+  display: block;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out),
+    opacity var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out),
+    background-color var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out);
+}
+
+.vivaci-quiz-option[data-option-type="radio"] .vivaci-quiz-control-mark {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--_primitives---colors--neutral-darkest);
+}
+
+.vivaci-quiz-option[data-option-type="checkbox"] .vivaci-quiz-control-mark {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.vivaci-quiz-control-icon {
+  width: 0.75rem;
+  height: 0.75rem;
+  color: var(--_primitives---colors--white);
+  line-height: 0;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out),
+    opacity var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out);
+}
+
+.vivaci-quiz-option.is-selected .vivaci-quiz-control {
+  border-color: var(--_primitives---colors--neutral-darkest);
+  background-color: var(--_primitives---colors--neutral-darkest);
+}
+
+.vivaci-quiz-option.is-selected[data-option-type="radio"] .vivaci-quiz-control {
+  background-color: var(--_primitives---colors--white);
+}
+
+.vivaci-quiz-option.is-selected .vivaci-quiz-control-mark {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.vivaci-quiz-option.is-selected .vivaci-quiz-control-icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.vivaci-quiz-option-input:focus-visible + .vivaci-quiz-control {
+  outline: 2px solid var(--_primitives---colors--neutral-darkest);
+  outline-offset: 2px;
+}
+
+.vivaci-quiz-option-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.vivaci-quiz-option-label {
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.vivaci-quiz-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding-top: 1rem;
+  border-top: var(--vivaci-border);
+}
+
+.vivaci-quiz-actions.is-results {
+  flex-wrap: wrap;
+}
+
+.vivaci-quiz-primary {
+  margin-left: auto;
+}
+
+.vivaci-quiz-primary[disabled] {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.vivaci-quiz-result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.vivaci-quiz-result-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium);
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-quiz-why-list {
+  margin: 0;
+  padding-left: 1.125rem;
+  color: var(--_primitives---opacity--neutral-darkest-60);
+  font-size: 0.875rem;
+  line-height: 1.45;
+}
+
+.vivaci-quiz-why-list li + li {
+  margin-top: 0.25rem;
+}
+
+.vivaci-quiz-loading {
+  text-align: center;
+  padding: 3rem 1rem;
+  animation: vivaci-quiz-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes vivaci-quiz-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 479px) {
+  .vivaci-quiz-panel {
+    max-height: 92vh;
+    padding: 1.5rem 1rem 1rem;
+  }
+
+  .vivaci-quiz-actions {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .vivaci-quiz-primary {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .vivaci-quiz-back {
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivaci-quiz-progress span {
+    transition: none;
+  }
+
+  .vivaci-quiz-loading {
+    animation: none;
+    opacity: 0.7;
+  }
+
+  .vivaci-quiz-control,
+  .vivaci-quiz-control-mark,
+  .vivaci-quiz-control-icon,
+  .vivaci-quiz-option {
+    transition: none;
+  }
+
+  .vivaci-quiz-root.is-open .vivaci-quiz-panel {
+    will-change: auto;
+  }
+}

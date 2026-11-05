@@ -1,0 +1,249 @@
+{
+  "version": 1,
+  "category": "behandlingar",
+  "slug": "laser-hair-removal",
+  "path": "/behandlingar/laser-hair-removal",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/behandlingar/laser-hair-removal",
+  "title": "Laserhårborttagning",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Laserhårborttagning",
+      "intro": "Permanent reduktion av oönskat hår med Clarity II på Vivaci Klinik i Solna. Behandlingen utförs av utbildad personal i en lugn, medicinsk miljö — med individuell bedömning och tydlig vägledning före, under och efter varje session.",
+      "primaryCta": {
+        "label": "Boka gratis konsultation",
+        "href": "/kontakt"
+      },
+      "secondaryCta": {
+        "label": "Boka behandling",
+        "href": "/kontakt"
+      }
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Behandlingstid",
+          "value": "30–90 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "Ofta samma dag",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Låg till måttlig",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 995 kr",
+          "icon": "wallet"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Om behandlingen",
+      "heading": "Laserhårborttagning",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "Laserhårborttagning är en medicinsk estetisk behandling som använder laserljus för att rikta in sig på pigment i hårsäcken och gradvis minska hårväxten.\n\nPå Vivaci Klinik arbetar vi med Clarity II — en avancerad dual-wavelength-plattform som kan anpassas efter din hud- och hårtyp för säkra, effektiva resultat.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "De flesta beskriver känslan som små, snabba värmestick eller ett lätt “snärt” — ungefär som ett gummiband mot huden.\n\nObehaget varierar med område och känslighet. Vi anpassar tempot efter din komfort under behandlingen.",
+          "enabled": true
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "Lasern avger ljus som absorberas av melanin i håret. Energin omvandlas till värme som påverkar hårsäcken och bromsar framtida tillväxt.\n\nHår växer i cykler, vilket är anledningen till att flera sessioner behövs. Vi kalibrerar inställningarna efter område, hårfärg, hudton och din individuella respons.",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Laserhårborttagning passar bäst vid mörkt hår på ljusare till medelmörk hud, men med Clarity II kan fler hudtoner behandlas säkert när inställningarna anpassas korrekt.\n\nVid konsultationen bedömer vi om behandlingen är lämplig för dig utifrån medicinsk historik, mediciner, graviditet/amning och dina förväntningar.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": true,
+      "items": [
+        {
+          "title": "Märkbar reduktion av oönskat hår över en serie…",
+          "body": "Märkbar reduktion av oönskat hår över en serie behandlingar."
+        },
+        {
+          "title": "Snabba sessioner med minimal återhämtningstid…",
+          "body": "Snabba sessioner med minimal återhämtningstid för de flesta områden."
+        },
+        {
+          "title": "Personlig plan utifrån dina mål, hudtyp",
+          "body": "Personlig plan utifrån dina mål, hudtyp och behandlingsområde."
+        }
+      ]
+    },
+    "howItWorks": {
+      "enabled": true,
+      "heading": "Så fungerar det",
+      "body": "Lasern avger ljus som absorberas av melanin i håret. Energin omvandlas till värme som påverkar hårsäcken och bromsar framtida tillväxt.\n\nHår växer i cykler, vilket är anledningen till att flera sessioner behövs. Vi kalibrerar inställningarna efter område, hårfärg, hudton och din individuella respons.",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Laserhårborttagning. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Boka kostnadsfri konsultation",
+        "href": "/kontakt"
+      },
+      "items": [
+        {
+          "question": "Vad behöver jag göra för att förbereda mig inför laserhårborttagning?",
+          "answer": "Raka behandlingsområdet cirka 24 timmar före besöket. Undvik vaxning, plockning och trådning i minst 4–6 veckor innan — lasern behöver hårsäcken intakt. Undvik sol, solarium och självbrunare i minst 2–4 veckor före behandling. Kom utan kräm, deodorant eller parfym på området som ska behandlas. Vid konsultationen går vi igenom medicinsk historik och mediciner så att behandlingen är säker för dig."
+        },
+        {
+          "question": "Vilka biverkningar kan laserhårborttagning ge?",
+          "answer": "Lätt rodnad, svullnad eller en varm känsla direkt efter behandlingen är normalt och brukar lägga sig inom några timmar till ett dygn. Tillfällig rodnad runt hårsäckarna kan också förekomma. Allvarligare reaktioner är ovanliga när behandlingen utförs av utbildad personal med inställningar anpassade till din hud. Vi förklarar vad du kan förvänta dig och hur du sköter huden efteråt."
+        },
+        {
+          "question": "Kan jag behandla hår över tatueringar med laser?",
+          "answer": "Nej — vi behandlar inte direkt över tatueringar. Laserljuset kan påverka tatueringspigment och huden ovanför, vilket ökar risken för missfärgning eller skada. Vi kan ofta behandla områden runt tatueringen och anpassar din behandlingsplan vid konsultation."
+        },
+        {
+          "question": "Kan jag göra laserhårborttagning om jag använder p-piller eller annan hormonell preventivmedel?",
+          "answer": "I de flesta fall ja. Hormonell preventivmedel påverkar inte behandlingen i sig, men kan påverka hårväxt över tid. Berätta alltid vilka mediciner du tar vid konsultationen så att vi kan bedöma om behandlingen passar dig."
+        },
+        {
+          "question": "Kan jag göra laserhårborttagning under graviditet?",
+          "answer": "Vi rekommenderar att vänta med laserhårborttagning under graviditet och amning, eftersom det finns begränsad forskning och huden kan reagera annorlunda. Vi hjälper dig gärna planera behandling efteråt."
+        },
+        {
+          "question": "Gör laserhårborttagning ont?",
+          "answer": "De flesta beskriver känslan som små, snabba värmestick eller ett lätt “snärt” — ungefär som ett gummiband mot huden. Obehaget varierar med område och känslighet. Behandlingen går snabbt och vi anpassar tempot efter din komfort."
+        },
+        {
+          "question": "Hur lång tid ska det gå mellan behandlingstillfällena?",
+          "answer": "Intervall beror på kroppsdel och hårcykel. Ungefärliga riktlinjer: ansikte 4–6 veckor, kropp 6–8 veckor, ben och rygg ofta 8–10 veckor. Vi bokar nästa tid utifrån hur ditt hår svarar — inte en fast mall."
+        },
+        {
+          "question": "Hur snart efter laserhårborttagning kan jag sola eller brunna?",
+          "answer": "Undvik sol, solarium och självbrunare i minst 2–4 veckor efter behandling, eller tills rodnad och irritation lagt sig helt. UV-exponering ökar risken för pigmentförändringar på behandlat hudområde."
+        },
+        {
+          "question": "Passar laserhårborttagning mig?",
+          "answer": "Bäst resultat får man oftast vid mörkt hår och ljusare hudton, men med rätt inställningar kan fler hudtyper behandlas säkert. Vid en kostnadsfri konsultation i Solna bedömer vi hår- och hudtyp, medicinsk historik och dina mål — och rekommenderar bara behandling om den är lämplig för dig."
+        },
+        {
+          "question": "Vilken hårfärg kan behandlas med laser?",
+          "answer": "Laser riktar sig mot melanin (mörkt pigment) i håret. Mörkt brunt och svart hår ger oftast bäst resultat. Vitt, grått, rött och mycket ljust blond hår svarar sämre — vi bedömer detta vid konsultation och är ärliga om förväntade resultat."
+        },
+        {
+          "question": "Vad ingår i en fullkroppsbehandling med laserhårborttagning?",
+          "answer": "Vår fullkroppsbehandling omfattar hela armar, hela ben, bikinilinje och armhålor. Vid konsultationen går vi igenom exakt vad som ingår i din plan och svarar på frågor om eventuella tilläggszoner."
+        },
+        {
+          "question": "Hur ska jag sköta huden efter laserhårborttagning?",
+          "answer": "Undvik sol och solarium, varm dusch/bastu och intensiv träning det första dygnet. Använd mild produkt och återfukta huden. Kladda inte, vaxa eller nyp hår i behandlat område mellan sessionerna — raka vid behov enligt våra instruktioner. Kontakta oss om du får ovanlig rodnad, blåsor eller smärta."
+        },
+        {
+          "question": "Vilken är lägsta ålder för laserhårborttagning?",
+          "answer": "Vi behandlar patienter från 15 år när menscykeln är stabil och behandlingen bedöms som medicinskt lämplig. För patienter under 18 år krävs skriftligt samtycke från vårdnadshavare. Beslutet fattas alltid individuellt vid konsultation."
+        },
+        {
+          "question": "Vilken laser använder ni för hårborttagning?",
+          "answer": "På Vivaci arbetar vi med Clarity II — en medicinsk laserplattform med dubbla våglängder som kan anpassas efter hud- och hårtyp. Vid konsultationen förklarar vi hur tekniken fungerar och vilka inställningar som passar just dig."
+        },
+        {
+          "question": "Vilka hudtoner kan behandlas med laserhårborttagning?",
+          "answer": "Med Clarity II och rätt inställningar kan vi behandla ett brett spektrum av hudtoner, inklusive mörkare hud. Säkerheten beror på individuell bedömning och korrekt kalibrering. Vi gör alltid en testpuls och individuell bedömning innan en full serie startar."
+        }
+      ]
+    },
+    "related": {
+      "enabled": true,
+      "heading": "Relaterat",
+      "items": [
+        {
+          "title": "Oönskat hår Här förklarar vi vad oönskat hår är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får o",
+          "href": "/problem/unwanted-hair"
+        }
+      ]
+    },
+    "beforeAfterCare": {
+      "enabled": true,
+      "introBefore": "Raka behandlingsområdet cirka 24 timmar före besöket.",
+      "before": [
+        "Undvik vaxning, plockning och trådning i minst 4–6 veckor innan.",
+        "Undvik sol, solarium och självbrunare i minst 2–4 veckor före behandling.",
+        "Kom utan kräm, deodorant eller parfym på området som ska behandlas."
+      ],
+      "introAfter": "Undvik sol och solarium i minst 2–4 veckor, eller tills rodnad lagt sig.",
+      "after": [
+        "Undvik varm dusch, bastu och intensiv träning det första dygnet.",
+        "Använd mild produkt och återfukta huden. Raka vid behov enligt instruktion — vaxa eller nyp inte hår mellan sessionerna."
+      ]
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Boka en kostnadsfri konsultation med en av våra erfarna behandlare. Vi lyssnar på dina mål, bedömer dina förutsättningar och tar fram en plan som är skräddarsydd för dig — helt utan köptvång.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Gör vårt gratis quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Boka din kostnadsfria konsultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Kontakta oss",
+        "href": "/kontakt"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
+    }
+  }
+}

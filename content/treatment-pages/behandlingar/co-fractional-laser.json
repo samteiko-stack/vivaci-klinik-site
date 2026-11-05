@@ -1,0 +1,233 @@
+{
+  "version": 1,
+  "category": "behandlingar",
+  "slug": "co-fractional-laser",
+  "path": "/behandlingar/co-fractional-laser",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/behandlingar/co-fractional-laser",
+  "title": "CO₂ Fractional Laser",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "CO₂ Fractional Laser",
+      "intro": "CO₂ Fractional Laser är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+      "primaryCta": {
+        "label": "Boka gratis konsultation",
+        "href": "/kontakt"
+      },
+      "secondaryCta": {
+        "label": "Boka behandling",
+        "href": "/kontakt"
+      }
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Behandlingstid",
+          "value": "30–90 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "Ofta samma dag",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Låg till måttlig",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 4 990 kr",
+          "icon": "wallet"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Om behandlingen",
+      "heading": "CO₂ Fractional Laser",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "CO₂ Fractional Laser är en avancerad behandling inom estetisk medicin som används för att förbättra hudens eller kroppens utseende och kvalitet.\n\nPå Vivaci Klinik kombinerar vi medicinsk expertis med modern teknik för att leverera säkra, naturliga resultat.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "De flesta patienter upplever minimalt obehag. Vi prioriterar din komfort genom hela behandlingen.",
+          "enabled": true
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "Behandlingen verkar genom att stimulera kroppens naturliga reparations- och förnyelseprocesser.\n\nExakt mekanism och teknik förklaras i detalj under din konsultation så att du känner dig trygg och informerad.",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Under konsultationen bedömer vi om CO₂ Fractional Laser är rätt behandling för dig baserat på hudtyp, medicinsk historik och estetiska mål.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": true,
+      "items": [
+        {
+          "title": "Förbättrad hudkvalitet",
+          "body": "Förbättrad hudkvalitet och synliga resultat över tid."
+        },
+        {
+          "title": "Minimal downtime",
+          "body": "Minimal downtime och skräddarsydd plan utifrån dina mål."
+        },
+        {
+          "title": "Behaglig upplevelse",
+          "body": "De flesta patienter upplever minimalt obehag. Vi prioriterar din komfort genom hela behandlingen."
+        }
+      ]
+    },
+    "howItWorks": {
+      "enabled": true,
+      "heading": "Så fungerar det",
+      "body": "Behandlingen verkar genom att stimulera kroppens naturliga reparations- och förnyelseprocesser.\n\nExakt mekanism och teknik förklaras i detalj under din konsultation så att du känner dig trygg och informerad.",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om CO₂ Fractional Laser. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Boka kostnadsfri konsultation",
+        "href": "/kontakt"
+      },
+      "items": [
+        {
+          "question": "Hur lång tid tar CO₂ Fractional Laser?",
+          "answer": "Behandlingstiden varierar men de flesta sessioner tar mellan 30 och 90 minuter."
+        },
+        {
+          "question": "När ser jag resultat?",
+          "answer": "Resultat kan synas gradvis. Tidslinjen beror på behandlingstyp och individuella förutsättningar."
+        },
+        {
+          "question": "Hur bokar jag CO₂ Fractional Laser?",
+          "answer": "Kontakta Vivaci Klinik i Solna eller boka via webbplatsen. Vi börjar med en kostnadsfri konsultation där vi går igenom om CO₂ Fractional Laser passar dina mål och förutsättningar."
+        },
+        {
+          "question": "Finns det återhämtningstid?",
+          "answer": "Det varierar mellan behandlingar. Vi informerar om eventuell rodnad, svullnad eller vila och ger konkret eftervård så att du vet vad som gäller efteråt."
+        },
+        {
+          "question": "Vad kostar CO₂ Fractional Laser?",
+          "answer": "Priset beror på omfattning och individuell plan. Efter konsultationen får du ett tydligt prisförslag innan du bokar behandling."
+        }
+      ]
+    },
+    "related": {
+      "enabled": true,
+      "heading": "Relaterat",
+      "items": [
+        {
+          "title": "Pigmentering Här förklarar vi vad pigmentering är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får",
+          "href": "/problem/pigmentation"
+        }
+      ]
+    },
+    "beforeAfterCare": {
+      "enabled": true,
+      "introBefore": "Följ instruktionerna du får vid konsultationen. Undvik sol, vissa produkter och mediciner enligt anvisning.",
+      "before": [],
+      "introAfter": "Följ eftervårdsinstruktionerna noggrant. Undvik direkt solljus och använd rekommenderade produkter.",
+      "after": []
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Boka en kostnadsfri konsultation med en av våra erfarna behandlare. Vi lyssnar på dina mål, bedömer dina förutsättningar och tar fram en plan som är skräddarsydd för dig — helt utan köptvång.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Gör vårt gratis quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Boka din kostnadsfria konsultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Kontakta oss",
+        "href": "/kontakt"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": true,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": [
+        {
+          "title": "Pigmentering",
+          "beforeImage": "/images/photoshoot/frame-04.jpg",
+          "afterImage": "/images/photoshoot/frame-06.jpg"
+        },
+        {
+          "title": "Exempel 1",
+          "beforeImage": "/images/photoshoot/frame-01.jpg",
+          "afterImage": "/images/photoshoot/frame-02.jpg"
+        },
+        {
+          "title": "Exempel 2",
+          "beforeImage": "/images/photoshoot/frame-02.jpg",
+          "afterImage": "/images/photoshoot/frame-03.jpg"
+        },
+        {
+          "title": "Exempel 3",
+          "beforeImage": "/images/photoshoot/frame-03.jpg",
+          "afterImage": "/images/photoshoot/frame-04.jpg"
+        },
+        {
+          "title": "Exempel 4",
+          "beforeImage": "/images/photoshoot/frame-04.jpg",
+          "afterImage": "/images/photoshoot/frame-05.jpg"
+        },
+        {
+          "title": "Exempel 5",
+          "beforeImage": "/images/photoshoot/frame-05.jpg",
+          "afterImage": "/images/photoshoot/frame-06.jpg"
+        }
+      ]
+    }
+  }
+}

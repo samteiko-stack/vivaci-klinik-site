@@ -1,0 +1,1605 @@
+/**
+ * Stacking: Webflow sets .div-block-302 (nav shell) to z-index 99999, which
+ * beats quiz/cart on body. Keep nav on a normal layer; overlays sit above.
+ */
+:root {
+  /* Below shop filter drawer (9999) but above page content; modals/cart still higher */
+  --vivaci-z-nav: 9000;
+  --vivaci-z-nav-overlay: 9000;
+  --vivaci-z-modal: 10000;
+  --vivaci-z-cart: 10001;
+  /* Fixed nav height + breathing room for sticky sidebars */
+  --vivaci-nav-offset: 8rem;
+  /* Left sticky columns (Webflow default: shop .25fr + 3rem gap; treatment .35fr + 5vw) */
+  --vivaci-sticky-sidebar-min: 18rem;
+  --vivaci-sticky-sidebar-max: 22rem;
+  --vivaci-sticky-gap: 4.5rem;
+  --vivaci-sticky-gap-vw: 6vw;
+  --vivaci-nav-drawer-pad-x: 1.25rem;
+  --vivaci-nav-font-size: 1rem;
+  --vivaci-nav-font-size-sub: 0.875rem;
+  --vivaci-nav-font-size-desc: 0.6875rem;
+  --vivaci-nav-desc-color: var(
+    --_primitives---opacity--neutral-darkest-60,
+    rgba(21, 25, 13, 0.55)
+  );
+  --vivaci-nav-line-height: 1.25;
+  --vivaci-menu-line-shift: 8px;
+
+  /* Stroke width is shared; use --vivaci-border-light for soft dividers/outlines (brand-4) */
+  --vivaci-border-width: var(--_ui-styles---stroke--border-width, 1px);
+  --vivaci-divider-width: var(--_ui-styles---stroke--divider-width, 1px);
+  --vivaci-border-light-color: var(--color-scheme-1--brand-4, #ebe7e4);
+  --vivaci-border-light: var(--vivaci-border-width) solid var(--vivaci-border-light-color);
+  --vivaci-divider-light: var(--vivaci-divider-width) solid var(--vivaci-border-light-color);
+  /* Stronger than brand-4 — PDP accordions, readable dividers */
+  --vivaci-divider-color: var(--_primitives---colors--neutral-lighter, #ccc);
+  --vivaci-divider: var(--vivaci-divider-width) solid var(--vivaci-divider-color);
+  /* Shorthand used by Vivaci CSS (cart, quiz, shop) — same light color */
+  --vivaci-border-color: var(--vivaci-border-light-color);
+  --vivaci-border: var(--vivaci-border-light);
+  /* Aliases */
+  --vivaci-border-color-faint: var(--vivaci-border-light-color);
+  --vivaci-border-faint: var(--vivaci-border-light);
+  /* Secondary outline — between brand-4 (too faint) and Webflow #000 */
+  --vivaci-button-secondary-border-color: var(
+    --_primitives---colors--neutral-lighter,
+    #ccc
+  );
+  --vivaci-button-secondary-border-color-hover: var(
+    --_primitives---colors--neutral-light,
+    #aaa
+  );
+}
+
+.div-block-302 {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: var(--vivaci-z-nav) !important;
+}
+
+.navbar2_component .navbar14_container {
+  border-width: var(--vivaci-border-width);
+  border-style: solid;
+  border-color: var(--color-scheme-1--brand-3, #f5f2f0);
+}
+
+/* Nav typography — one size on bar + utilities; sub only for mega descriptions */
+.navbar2_component .navbar14_dropdown-toggle,
+.navbar2_component .navbar14_link {
+  font-size: var(--vivaci-nav-font-size);
+  line-height: var(--vivaci-nav-line-height);
+}
+
+.navbar2_component .navbar14_dropdown-link,
+.navbar2_component .navbar12_dropdown-link .text-weight-semibold {
+  font-size: var(--vivaci-nav-font-size);
+  line-height: var(--vivaci-nav-line-height);
+}
+
+.navbar2_component .navbar10_blog-list {
+  justify-items: start;
+  text-align: left;
+}
+
+.navbar2_component .vivaci-nav-highlights-label {
+  grid-column: 1 / -1;
+  justify-self: start;
+  align-self: start;
+  width: 100%;
+  margin: 0 0 0.35rem;
+  padding: 0.15rem 0 0;
+  font-size: var(--vivaci-nav-font-size-desc);
+  line-height: 1.35;
+  color: var(--vivaci-nav-desc-color);
+  text-align: left;
+  opacity: 1;
+}
+
+.navbar2_component .navbar12_dropdown-link .text-size-tiny.text-style-muted,
+.navbar2_component .navbar12_text-wrapper .text-size-tiny.text-style-muted,
+.navbar2_component .navbar10_blog-item .text-size-tiny.text-style-muted,
+.navbar2_component .navbar14_dropdown-link .text-size-tiny.text-style-muted {
+  font-size: var(--vivaci-nav-font-size-desc);
+  line-height: 1.35;
+  color: var(--vivaci-nav-desc-color);
+  opacity: 1;
+  margin: 0.125rem 0 0;
+  max-width: 22rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.vivaci-nav-actions__cluster {
+  font-size: var(--vivaci-nav-font-size);
+  line-height: var(--vivaci-nav-line-height);
+}
+
+/* Mobile menu button — hamburger morphs to X when open */
+.navbar14_menu-button .menu-icon2_line-top,
+.navbar14_menu-button .menu-icon2_line-middle,
+.navbar14_menu-button .menu-icon2_line-bottom {
+  transform: none;
+  transition:
+    transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.22s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.navbar14_menu-button.w--open .menu-icon2_line-top {
+  transform: translateY(var(--vivaci-menu-line-shift)) rotate(45deg);
+}
+
+.navbar14_menu-button.w--open .menu-icon2_line-middle {
+  opacity: 0;
+  transform: scaleX(0.35);
+}
+
+.navbar14_menu-button.w--open .menu-icon2_line-bottom {
+  transform: translateY(calc(-1 * var(--vivaci-menu-line-shift))) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar14_menu-button .menu-icon2_line-top,
+  .navbar14_menu-button .menu-icon2_line-middle,
+  .navbar14_menu-button .menu-icon2_line-bottom {
+    transition: none;
+  }
+}
+
+/* Homepage hero — floating map preview (opens Google Maps on click) */
+.vivaci-hitta-oss-map {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  line-height: 0;
+  background: var(--color-scheme-1--brand-3, #f5f2f0);
+}
+
+.vivaci-hitta-oss-map__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+/* 404 */
+#vivaci-404 .vivaci-404__inner {
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#vivaci-404 .vivaci-404__code {
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+#vivaci-404 .vivaci-404__lead {
+  margin: 0.75rem 0 0;
+}
+
+.navbar2_component .navbar14_logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+  float: none;
+}
+
+.navbar2_component .navbar14_logo {
+  display: block;
+  width: auto;
+  max-width: none;
+}
+
+.navbar2_component .navbar14_logo-link::after {
+  content: "";
+  display: block;
+  width: var(--vivaci-divider-width, 1px);
+  height: 1.25rem;
+  margin-left: 1rem;
+  background-color: var(--vivaci-border-light-color);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Hide nav utilities until JS mount (prevents cart badge / cluster flash) */
+html:not(.vivaci-nav-ready) [data-vivaci-nav-actions]:not([data-vivaci-nav-actions-mounted="true"]) {
+  visibility: hidden;
+  pointer-events: none;
+  min-height: var(--vivaci-nav-action-height, 2.5rem);
+}
+
+[data-vivaci-nav-actions][data-vivaci-nav-actions-mounted="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Nav search + varukorg cluster */
+.navbar14_container .vivaci-nav-actions-slot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.vivaci-nav-actions,
+.navbar14_button-wrapper.vivaci-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-column-gap: 0.5rem;
+  margin-left: auto;
+}
+
+.vivaci-nav-actions__cluster {
+  --vivaci-nav-action-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: var(--vivaci-nav-action-height);
+}
+
+.vivaci-nav-actions__divider {
+  flex-shrink: 0;
+  align-self: center;
+  width: 0;
+  height: 1.25rem;
+  margin: 0 0.375rem;
+  border-left: var(--vivaci-divider-light);
+}
+
+.vivaci-nav-search-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--vivaci-nav-action-height);
+  height: var(--vivaci-nav-action-height);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-nav-search-trigger:hover {
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-nav-search-trigger:focus-visible {
+  outline: 2px solid var(--_primitives---colors--neutral-darkest);
+  outline-offset: 2px;
+}
+
+.vivaci-nav-search-trigger svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.vivaci-nav-lang {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--vivaci-nav-action-height);
+}
+
+.vivaci-nav-lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: var(--vivaci-nav-action-height);
+  min-width: var(--vivaci-nav-action-height);
+  margin: 0;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-nav-lang-trigger:hover,
+.vivaci-nav-lang.is-open .vivaci-nav-lang-trigger {
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-nav-lang-trigger:focus-visible {
+  outline: 2px solid var(--_primitives---colors--neutral-darkest);
+  outline-offset: 2px;
+}
+
+.vivaci-nav-lang-trigger__code {
+  font-size: inherit;
+  letter-spacing: normal;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.vivaci-nav-lang-trigger__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  line-height: 0;
+}
+
+.vivaci-nav-lang-trigger__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vivaci-nav-lang-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  z-index: calc(var(--vivaci-z-modal, 10000) + 2);
+  min-width: 9rem;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: none;
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background-color: var(--_primitives---colors--white);
+  box-shadow: 0 12px 32px var(--_primitives---opacity--neutral-darkest-15);
+}
+
+.vivaci-nav-lang-option {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: none;
+  border-radius: calc(var(--_ui-styles---radius--medium, 0.25rem) - 2px);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: background-color 0.2s ease;
+}
+
+.vivaci-nav-lang-option:hover,
+.vivaci-nav-lang-option:focus-visible {
+  background-color: var(--color-scheme-1--brand-3);
+  outline: none;
+}
+
+.vivaci-nav-lang-option.is-active {
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-cart-nav-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 0.375rem;
+  height: var(--vivaci-nav-action-height);
+  margin: 0;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-cart-nav-btn:hover {
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+.vivaci-cart-nav-btn:focus-visible {
+  outline: 2px solid var(--_primitives---colors--neutral-darkest);
+  outline-offset: 2px;
+}
+
+.vivaci-cart-nav-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+.vivaci-cart-nav-btn__label {
+  font-size: inherit;
+  line-height: 1;
+}
+
+.vivaci-cart-nav-btn .vivaci-cart-trigger__count {
+  position: static;
+  min-width: 1.125rem;
+  margin-left: 0.15rem;
+}
+
+html.vivaci-nav-search-open {
+  overflow: hidden;
+}
+
+.vivaci-nav-search {
+  position: fixed;
+  inset: 0;
+  z-index: var(--vivaci-z-modal, 10000);
+  pointer-events: none;
+}
+
+.vivaci-nav-search.is-open {
+  pointer-events: auto;
+}
+
+.vivaci-nav-search.is-open .vivaci-nav-search__panel {
+  will-change: transform, opacity;
+}
+
+.vivaci-nav-search__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: var(--_primitives---opacity--neutral-darkest-40, rgba(21, 25, 13, 0.45));
+  backdrop-filter: blur(4px);
+  opacity: 0;
+}
+
+.vivaci-nav-search__dialog {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6rem 1rem 1rem;
+  pointer-events: none;
+}
+
+.vivaci-nav-search.is-open .vivaci-nav-search__dialog {
+  pointer-events: auto;
+}
+
+.vivaci-nav-search__panel {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  padding: 1.25rem;
+  border: var(--vivaci-border-light, var(--vivaci-border));
+  border-radius: var(--_ui-styles---radius--large, 0.5rem);
+  background: var(--color-scheme-1--brand-1, #fff);
+  box-shadow: 0 24px 64px var(--_primitives---opacity--neutral-darkest-15, rgba(0, 0, 0, 0.12));
+  opacity: 0;
+  pointer-events: auto;
+}
+
+.vivaci-nav-search__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.vivaci-nav-search__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background: var(--color-scheme-1--brand-1, #fff);
+  cursor: pointer;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-nav-search__close:hover {
+  background-color: var(--color-scheme-1--brand-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivaci-nav-search__backdrop,
+  .vivaci-nav-search__panel {
+    transition: none !important;
+  }
+}
+
+.vivaci-nav-search__results {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  max-height: 18rem;
+  overflow-y: auto;
+}
+
+.vivaci-nav-search__hit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0;
+  border-bottom: var(--vivaci-divider-light, var(--vivaci-border-light));
+  text-decoration: none;
+  color: inherit;
+}
+
+.vivaci-nav-search__empty {
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.button:not(.is-link) {
+  border-width: var(--vivaci-border-width);
+}
+
+.button.is-secondary:not(.is-alternate) {
+  border-color: var(--vivaci-button-secondary-border-color);
+  transition: var(--vivaci-transition-interactive);
+}
+
+.button.is-secondary:not(.is-alternate):hover {
+  border-color: var(--vivaci-button-secondary-border-color-hover);
+}
+
+.form_input {
+  border-width: var(--vivaci-border-width);
+}
+
+/* Desktop mega-menu — bridge gap between nav pill and full-width panel */
+@media screen and (min-width: 992px) {
+  /* Keep logo/actions above mega-menu; do NOT position .navbar14_menu — that
+     becomes the width containing block for left/right:0 dropdown panels. */
+  .navbar2_component .navbar14_logo-link,
+  .navbar2_component .vivaci-nav-actions-slot,
+  .navbar2_component .w-nav-button {
+    position: relative;
+    z-index: 3;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open,
+  .navbar2_component .navbar14_dropdown-list.w--open {
+    z-index: 2;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open {
+    pointer-events: auto;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open::before {
+    content: "";
+    position: absolute;
+    top: -0.875rem;
+    left: 0;
+    right: 0;
+    height: 0.875rem;
+  }
+
+  .navbar2_component .navbar14_dropdown-list.w--open::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+  }
+}
+
+/* Desktop mega-menu — instant show when user prefers reduced motion (GSAP skipped) */
+@media screen and (min-width: 992px) and (prefers-reduced-motion: reduce) {
+  .navbar2_component .navbar7_dropdown-list.w--open,
+  .navbar2_component .navbar14_dropdown-list.w--open,
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar12_dropdown-link,
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar14_dropdown-link,
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar10_blog-item,
+  .navbar2_component .navbar14_dropdown-list.w--open .navbar14_dropdown-link {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+/* Tablet/mobile nav — Webflow moves the menu into .w-nav-overlay when open */
+@media screen and (max-width: 991px) {
+  .div-block-302 {
+    overflow: visible;
+  }
+
+  .navbar2_component.w-nav {
+    position: relative;
+    z-index: 1000;
+    background-color: #fff;
+  }
+
+  .navbar2_component .navbar14_container {
+    position: relative;
+    z-index: 1001;
+    background-color: #fff;
+  }
+
+  /* Full-height drawer (Webflow overlay is otherwise document-tall) */
+  .navbar2_component .w-nav-overlay {
+    position: fixed !important;
+    top: 3.5rem !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    background-color: #fff !important;
+    z-index: var(--vivaci-z-nav-overlay) !important;
+  }
+
+  .navbar2_component .w-nav-overlay .navbar14_menu.w-nav-menu[data-nav-menu-open] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    float: none !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background-color: #fff !important;
+    z-index: 1 !important;
+    box-shadow: none;
+    text-align: left !important;
+  }
+
+  /* Fallback if menu opens in-place (not reparented) */
+  .navbar2_component .navbar14_container > .navbar14_menu.w-nav-menu[data-nav-menu-open] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 100% !important;
+    width: 100% !important;
+    max-height: calc(100dvh - 3.5rem) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background-color: #fff !important;
+    z-index: var(--vivaci-z-nav-overlay) !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
+    text-align: left !important;
+  }
+
+  .navbar2_component .navbar14_menu-link-wrapper {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    border: none !important;
+    padding: 0.5rem 0 1.25rem !important;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar14_menu-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    display: flex !important;
+  }
+
+  .navbar2_component .navbar7_menu-dropdown,
+  .navbar2_component .navbar14_menu-dropdown {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    isolation: isolate;
+  }
+
+  .navbar2_component .navbar14_dropdown-toggle {
+    width: 100% !important;
+    justify-content: space-between !important;
+    border-bottom: var(--vivaci-divider-light) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0.85rem var(--vivaci-nav-drawer-pad-x) !important;
+    font-size: var(--vivaci-nav-font-size) !important;
+    line-height: var(--vivaci-nav-line-height) !important;
+    position: relative;
+    z-index: 2;
+    flex: none;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  .navbar2_component .w-dropdown.w--open > .navbar14_dropdown-toggle {
+    background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+    border-bottom-color: var(--vivaci-border-light-color, var(--color-scheme-1--brand-4, #ebe7e4));
+  }
+
+  .navbar2_component .navbar14_link {
+    width: 100% !important;
+    border-bottom: var(--vivaci-divider-light) !important;
+    padding: 0.85rem var(--vivaci-nav-drawer-pad-x) !important;
+    font-size: var(--vivaci-nav-font-size) !important;
+    line-height: var(--vivaci-nav-line-height) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar14_menu .navbar14_button-wrapper {
+    width: 100% !important;
+    margin-top: 1rem !important;
+    padding: 0 var(--vivaci-nav-drawer-pad-x) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar14_menu [data-vivaci-nav-actions] {
+    display: none !important;
+  }
+
+  .navbar14_container {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .navbar14_container > .vivaci-nav-actions-slot,
+  .navbar14_container > .vivaci-nav-actions-slot.vivaci-nav-actions,
+  .navbar14_container > .navbar14_button-wrapper.vivaci-nav-actions[data-vivaci-nav-actions-mounted="true"] {
+    display: flex !important;
+    align-items: center;
+    order: 2;
+    width: auto !important;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: 0.35rem;
+    padding: 0 !important;
+    flex-shrink: 0;
+  }
+
+  .navbar2_component .w-nav-button {
+    order: 3;
+    flex-shrink: 0;
+  }
+
+  .navbar14_container .navbar14_logo-link {
+    order: 0;
+    flex-shrink: 0;
+  }
+
+  .navbar14_container .navbar14_menu {
+    order: 1;
+  }
+
+  .navbar2_component .vivaci-nav-actions__cluster {
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  .vivaci-cart-nav-btn__label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .vivaci-cart-nav-btn {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .navbar2_component .nav-menu-divider,
+  .navbar2_component .navbar10_blog-list {
+    display: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-content,
+  .navbar2_component .div-7 {
+    display: block !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .navbar2_component .navbar7_container.container-large {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-list,
+  .navbar2_component .navbar14_dropdown-list {
+    position: relative !important;
+    z-index: 1;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: var(--color-scheme-1--brand-1, #fff);
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open::before,
+  .navbar2_component .navbar14_dropdown-list.w--open::before {
+    display: none;
+  }
+
+  .navbar2_component .navbar7_dropdown-list:not(.w--open),
+  .navbar2_component .navbar14_dropdown-list:not(.w--open) {
+    display: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open,
+  .navbar2_component .navbar14_dropdown-list.w--open {
+    display: block !important;
+  }
+
+  .navbar2_component .navbar12_dropdown-content {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    padding: 0.35rem var(--vivaci-nav-drawer-pad-x) 0.65rem !important;
+    background: var(--color-scheme-1--brand-1, #fff) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar12_dropdown-link,
+  .navbar2_component .navbar14_dropdown-link {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    padding: 0.6rem 0 !important;
+    font-size: var(--vivaci-nav-font-size) !important;
+    line-height: var(--vivaci-nav-line-height) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar12_dropdown-link .text-size-tiny.text-style-muted,
+  .navbar2_component .navbar10_blog-item .text-size-tiny.text-style-muted,
+  .navbar2_component .navbar14_dropdown-link .text-size-tiny.text-style-muted {
+    font-size: var(--vivaci-nav-font-size-desc) !important;
+    line-height: 1.35 !important;
+    color: var(--vivaci-nav-desc-color) !important;
+    opacity: 1 !important;
+    max-width: none !important;
+  }
+
+  .navbar2_component .navbar12_text-wrapper .text-weight-semibold,
+  .navbar2_component .navbar10_blog-item {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-list,
+  .navbar2_component .navbar14_dropdown-list {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Override Webflow default horizontal flex on collapsed breakpoint */
+  .navbar2_component .navbar14_menu.w-nav-menu[data-nav-menu-open] {
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+}
+
+/* Category finder (home, /behandlingar, /utbildning) */
+[data-vivaci-category-finder] .treatment-finder-category-links,
+#vivaci-treatment-finder .treatment-finder-category-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link,
+#vivaci-treatment-finder .left-treatment-nav-link {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link[aria-disabled="true"],
+#vivaci-treatment-finder .left-treatment-nav-link[aria-disabled="true"] {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link:hover,
+[data-vivaci-category-finder] .left-treatment-nav-link.is-active,
+#vivaci-treatment-finder .left-treatment-nav-link:hover,
+#vivaci-treatment-finder .left-treatment-nav-link.is-active {
+  padding-right: 1rem;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link.is-active,
+#vivaci-treatment-finder .left-treatment-nav-link.is-active {
+  background-color: var(--color-scheme-1--brand-4);
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-wrapper .icon-embed-xsmall,
+#vivaci-treatment-finder .left-treatment-nav-wrapper .icon-embed-xsmall {
+  width: 1rem;
+  height: 1rem;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-wrapper .icon-embed-xsmall .lucide,
+#vivaci-treatment-finder .left-treatment-nav-wrapper .icon-embed-xsmall .lucide {
+  stroke-width: 1.5;
+}
+
+@keyframes vivaci-treatment-grid-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-vivaci-category-finder] .treatment-grid .layout527_card-large.is-entering,
+#vivaci-treatment-finder .treatment-grid .layout527_card-large.is-entering {
+  animation: vivaci-treatment-grid-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-vivaci-category-finder] a.layout527_card-large,
+#vivaci-treatment-finder a.layout527_card-large {
+  text-decoration: none;
+  color: var(--_primitives---colors--white);
+}
+
+/* Homepage Hudproblem slider — card stays div; invisible link overlay (no underlined titles) */
+#vivaci-home-problems .layout527_card-large {
+  position: relative;
+}
+
+#vivaci-home-problems a.layout527_card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  text-decoration: none;
+  color: transparent;
+}
+
+[data-vivaci-section][hidden],
+[data-vivaci-block][hidden],
+.line-divider[hidden] {
+  display: none !important;
+}
+
+/* Treatment page — sticky snabba fakta column (page-shell) */
+.page-shell {
+  align-items: start;
+  grid-template-columns: minmax(var(--vivaci-sticky-sidebar-min), 0.42fr) minmax(0, 1fr);
+  grid-column-gap: var(--vivaci-sticky-gap-vw);
+  grid-row-gap: var(--vivaci-sticky-gap-vw);
+}
+
+.page-shell .floating-section {
+  position: sticky;
+  top: var(--vivaci-nav-offset);
+  align-self: start;
+  z-index: 1;
+}
+
+.page-shell .layout364_card-content {
+  position: relative;
+  top: auto;
+}
+
+.page-shell [data-vivaci-section="facts"] .icon-embed-xsmall {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Resultat över tid — vertical step timeline */
+[data-vivaci-section="resultsTimeline"] .section-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+[data-vivaci-section="resultsTimeline"] .vivaci-results-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0.25rem 0 0;
+  margin: 0;
+  width: 100%;
+  max-width: 28rem;
+}
+
+[data-vivaci-section="resultsTimeline"] .vivaci-results-timeline .layout32_item {
+  position: relative;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 0 1.75rem;
+  margin: 0;
+}
+
+[data-vivaci-section="resultsTimeline"] .vivaci-results-timeline .layout32_item:last-child {
+  padding-bottom: 0;
+}
+
+[data-vivaci-section="resultsTimeline"] .layout32_item-icon-wrapper {
+  position: relative;
+  flex: none;
+  width: 2.625rem;
+  height: 2.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-scheme-1--background, #fff);
+  border: var(--vivaci-border-light, 1px solid #ebe7e4);
+  box-sizing: border-box;
+}
+
+[data-vivaci-section="resultsTimeline"]
+  .vivaci-results-timeline
+  .layout32_item:not(:last-child)
+  .layout32_item-icon-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: calc(1.75rem + 0.125rem);
+  width: var(--vivaci-divider-width, 1px);
+  transform: translateX(-50%);
+  background-color: var(--vivaci-divider-color, #ccc);
+  pointer-events: none;
+}
+
+[data-vivaci-section="resultsTimeline"] .layout32_item-icon-wrapper .icon-embed-xsmall {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--color-scheme-1--text, #1a1a1a);
+}
+
+[data-vivaci-section="resultsTimeline"] .layout32_item-text-wrapper {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.2rem;
+  gap: 0.375rem;
+}
+
+[data-vivaci-section="resultsTimeline"] .layout32_item-text-wrapper .text-size-medium {
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+[data-vivaci-section="resultsTimeline"] .layout32_item-text-wrapper .text-style-muted {
+  margin: 0;
+  line-height: 1.55;
+  font-size: 0.9375rem;
+}
+
+/* Passar bra / Kräver bedömning — step list (matches Resultat över tid); no panel fill */
+.page-content [data-vivaci-section="suitability"].vivaci-suitability {
+  align-items: start;
+  gap: 1.25rem;
+}
+
+[data-vivaci-section="suitability"] .vivaci-suitability-panel {
+  align-self: start;
+  min-width: 0;
+}
+
+[data-vivaci-section="suitability"] .vivaci-suitability-panel .heading-style-h5 {
+  margin: 0;
+  line-height: 1.35;
+}
+
+[data-vivaci-section="suitability"] .vivaci-suitability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+[data-vivaci-section="suitability"] .vivaci-suitability-list .layout65_item {
+  position: relative;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0 0 1.25rem;
+  margin: 0;
+}
+
+[data-vivaci-section="suitability"] .vivaci-suitability-list .layout65_item:last-child {
+  padding-bottom: 0;
+}
+
+[data-vivaci-section="suitability"] .layout65_item-icon-wrapper {
+  position: relative;
+  flex: none;
+  width: 2.625rem;
+  height: 2.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-scheme-1--background, #fff);
+  border: var(--vivaci-border-light, 1px solid #ebe7e4);
+  box-sizing: border-box;
+}
+
+[data-vivaci-section="suitability"]
+  .vivaci-suitability-list
+  .layout65_item:not(:last-child)
+  .layout65_item-icon-wrapper::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: calc(1.25rem + 0.125rem);
+  width: var(--vivaci-divider-width, 1px);
+  transform: translateX(-50%);
+  background-color: var(--vivaci-divider-color, #ccc);
+  pointer-events: none;
+}
+
+[data-vivaci-section="suitability"] .layout65_item-icon-wrapper .icon-embed-xsmall {
+  width: 1.125rem;
+  height: 1.125rem;
+  color: var(--color-scheme-1--text, #1a1a1a);
+}
+
+[data-vivaci-section="suitability"] .layout65_item-text-wrapper {
+  flex: 1;
+  min-width: 0;
+  padding-top: 0.35rem;
+}
+
+[data-vivaci-section="suitability"] .layout65_item-text-wrapper p {
+  margin: 0;
+  line-height: 1.55;
+  font-size: 0.9375rem;
+}
+
+/* Treatment overview — Visa mer / mindre (animated expand) */
+.vivaci-read-more__content {
+  will-change: max-height;
+}
+
+.vivaci-read-more__content.is-truncated {
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 calc(100% - 2.75rem),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 calc(100% - 2.75rem),
+    transparent 100%
+  );
+}
+
+.vivaci-read-more__content.is-expanded {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.vivaci-read-more__actions {
+  opacity: 0;
+  transform: translateY(0.25rem);
+  transition:
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vivaci-read-more__actions.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vivaci-read-more [data-vivaci-read-more-icon] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vivaci-read-more [data-vivaci-read-more-toggle][aria-expanded="true"] [data-vivaci-read-more-icon] {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivaci-read-more__content {
+    will-change: auto;
+  }
+
+  .vivaci-read-more__actions,
+  .vivaci-read-more [data-vivaci-read-more-icon] {
+    transition: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-shell .floating-section {
+    position: relative;
+    top: auto;
+  }
+
+  .page-shell .layout364_card-content {
+    position: relative;
+    top: auto;
+  }
+
+}
+
+/* Treatment page — text + image rows (Så fungerar det, Resultat över tid, etc.) */
+.page-content .inner-section-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.page-content .inner-section-grid .section-image-wrapper {
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: var(--_ui-styles---radius--medium);
+}
+
+.page-content .inner-section-grid .section-img {
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  aspect-ratio: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--_ui-styles---radius--medium);
+}
+
+@media (max-width: 991px) {
+  .page-content .inner-section-grid .section-img {
+    min-height: 14rem;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Treatment page — Så fungerar det (simple bullets) */
+.vivaci-how-list {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  list-style: disc;
+}
+
+.vivaci-how-list li {
+  margin: 0 0 0.625rem;
+  padding: 0;
+  line-height: 1.55;
+}
+
+.vivaci-how-list li:last-child {
+  margin-bottom: 0;
+}
+
+.vivaci-ba-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.vivaci-ba-header {
+  max-width: var(--vivaci-max-width-medium, 40rem);
+}
+
+.vivaci-ba-intro {
+  margin: 0;
+}
+
+.vivaci-ba-slider-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.vivaci-ba-disclaimer {
+  margin-bottom: 0;
+  max-width: var(--vivaci-max-width-medium, 40rem);
+}
+
+.vivaci-ba-slide-card {
+  background: var(--color-scheme-1--background, #fff);
+  border: var(--vivaci-border-light, 1px solid #ebe7e4);
+  border-radius: var(--vivaci-radius-md, 0.75rem);
+  padding: var(--vivaci-space-4, 1rem);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.vivaci-ba-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vivaci-space-3, 0.75rem);
+}
+
+.vivaci-ba-frame {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vivaci-space-2, 0.5rem);
+  min-width: 0;
+}
+
+.vivaci-ba-label {
+  font-size: var(--vivaci-text-xs, 0.75rem);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-scheme-1--text-muted, #6b6b6b);
+}
+
+.vivaci-ba-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--vivaci-radius-sm, 0.5rem);
+  border: var(--vivaci-border-light, 1px solid #ebe7e4);
+}
+
+[data-vivaci-section="beforeAfterGallery"] .swiper-tuesday .swiper-slide > *:first-child {
+  height: 100%;
+}
+
+[data-vivaci-category-finder] a.layout527_card-large .heading-style-h6,
+#vivaci-treatment-finder a.layout527_card-large .heading-style-h6 {
+  color: inherit;
+}
+
+.treatments-grid-outer.is-vivaci-listing {
+  grid-template-columns: minmax(var(--vivaci-sticky-sidebar-min), 0.34fr) minmax(0, 1fr);
+  grid-column-gap: var(--vivaci-sticky-gap);
+  grid-row-gap: var(--vivaci-sticky-gap);
+  align-items: start;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-wrapper {
+  top: var(--vivaci-nav-offset);
+}
+
+/* Kontakt — info list reads as text, not inline links */
+.contact6_contact-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact6_contact-list a:hover {
+  color: var(--color-scheme-1--text, inherit);
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+/* Footer — legal link grid only (stack order stays Webflow column-reverse) */
+@media screen and (max-width: 991px) {
+  footer.is-section.bg-dark .logo4_list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.625rem 1.25rem;
+    align-items: start;
+    justify-items: start;
+  }
+
+  footer.is-section.bg-dark .footer5_legal-link {
+    display: block;
+    line-height: 1.4;
+    text-underline-offset: 0.2em;
+  }
+}
+
+/* Prislista — table rows only (layout matches listing pages in Webflow) */
+#vivaci-prislista .filters2_category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#vivaci-prislista .vivaci-prislista-section {
+  scroll-margin-top: calc(var(--vivaci-nav-offset, 5rem) + 0.75rem);
+}
+
+.vivaci-prislista-table-head,
+.vivaci-prislista-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: var(--vivaci-divider-light);
+}
+
+.vivaci-prislista-table-head {
+  padding-top: 0.25rem;
+}
+
+.vivaci-prislista-row:last-child {
+  border-bottom: none;
+}
+
+.vivaci-prislista-table-head__label,
+.vivaci-prislista-row__label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.vivaci-prislista-table-head__price,
+.vivaci-prislista-row__price {
+  flex: 0 0 auto;
+  max-width: 42%;
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.vivaci-prislista-row__label {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vivaci-prislista-row__label:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media screen and (max-width: 479px) {
+  .vivaci-prislista-table-head__price,
+  .vivaci-prislista-row__price {
+    max-width: none;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  footer.is-section.bg-dark .logo4_list {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+}
+
+/* Breadcrumbs */
+.breadcrumb_component,
+.blog-post3-header_breadcrumb,
+nav.breadcrumb-group {
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.375rem;
+}
+
+nav.breadcrumb-group {
+  display: flex;
+  column-gap: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumb_component > .breadcrumb-link:first-of-type,
+  .blog-post3-header_breadcrumb > .breadcrumb-link:first-of-type,
+  nav.breadcrumb-group > .breadcrumb-link:first-of-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .breadcrumb_component > .breadcrumb-link:first-of-type::before,
+  .blog-post3-header_breadcrumb > .breadcrumb-link:first-of-type::before,
+  nav.breadcrumb-group > .breadcrumb-link:first-of-type::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: currentColor;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+}
+
+/* Treatment page — Därför väljer patienter Vivaci */
+.vivaci-trust__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.55fr);
+  gap: 2rem 4rem;
+  align-items: start;
+}
+
+.vivaci-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.vivaci-trust__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.25rem 1.375rem 1.375rem;
+  border-radius: var(--_ui-styles---radius--medium, 0.75rem);
+  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+  border: var(--vivaci-border-light);
+  min-height: 100%;
+}
+
+.vivaci-trust__index {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: 0.6875rem;
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--vivaci-nav-desc-color);
+  text-transform: uppercase;
+}
+
+.vivaci-trust__card .heading-style-h6 {
+  margin: 0;
+}
+
+.vivaci-trust__card .text-size-small {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .vivaci-trust__layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 479px) {
+  .vivaci-trust__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

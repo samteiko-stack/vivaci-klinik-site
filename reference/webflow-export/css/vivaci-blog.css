@@ -1,0 +1,86 @@
+/**
+ * Blog / nyheter — category pills and post tags (brand tokens).
+ * Borders: --vivaci-border-light (nav-fixes). No hover font-weight change.
+ */
+
+.section_blog-post3-content .blog-post3-content_tag-item,
+.blog34_meta-wrapper .tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1rem;
+  border: var(--vivaci-border-light, 1px solid var(--color-scheme-1--brand-4, #ebe7e4));
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background-color: var(--color-scheme-1--brand-1, #f7f7f3);
+  color: var(--color-scheme-1--text, var(--_primitives---colors--neutral-darkest));
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.25;
+  text-decoration: none;
+  transition: var(--vivaci-transition-interactive, background-color 0.2s ease, border-color 0.2s ease);
+}
+
+.section_blog-post3-content .blog-post3-content_tag-item:hover,
+.section_blog-post3-content .blog-post3-content_tag-item:focus-visible,
+.blog34_meta-wrapper .tag:hover,
+.blog34_meta-wrapper .tag:focus-visible {
+  text-decoration: none;
+  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+  border-width: var(--vivaci-border-width, 1px);
+  border-style: solid;
+  border-color: var(--vivaci-border-light-color, var(--color-scheme-1--brand-4, #ebe7e4));
+}
+
+.section_blog-post3-content .blog-post3-content_tag-item.w--current {
+  border-width: var(--vivaci-border-width, 1px);
+  border-style: solid;
+  border-color: var(--color-scheme-1--brand-2, #15190d);
+  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+}
+
+.section_blog-post3-content .blog-post3-content_tag-item:focus-visible,
+.blog34_meta-wrapper .tag:focus-visible {
+  outline: none;
+  border-color: var(--color-scheme-1--brand-2, #15190d);
+}
+
+/* Share row — same tokens as tag pills, circular icon buttons */
+.blog-post3-header_social-link,
+.blog-post3-content_social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+  border: var(--vivaci-border-light, 1px solid var(--color-scheme-1--brand-4, #ebe7e4));
+  border-radius: 999px;
+  padding: 0.35rem;
+  color: var(--color-scheme-1--text, var(--_primitives---colors--neutral-darkest));
+  text-decoration: none;
+  transition: var(
+    --vivaci-transition-interactive,
+    background-color 0.2s ease,
+    border-color 0.2s ease
+  );
+}
+
+.blog-post3-header_social-link:hover,
+.blog-post3-header_social-link:focus-visible,
+.blog-post3-content_social-link:hover,
+.blog-post3-content_social-link:focus-visible {
+  background-color: var(--color-scheme-1--brand-4, #ebe7e4);
+  border-color: var(--vivaci-border-light-color, var(--color-scheme-1--brand-4, #ebe7e4));
+  text-decoration: none;
+}
+
+.blog-post3-header_social-link:focus-visible,
+.blog-post3-content_social-link:focus-visible {
+  outline: none;
+  border-color: var(--color-scheme-1--brand-2, #15190d);
+}
+
+.blog-post3-header_social-icon,
+.blog-post3-content_social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

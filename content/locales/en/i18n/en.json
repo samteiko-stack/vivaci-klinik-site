@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "language": "Language",
+    "search": "Search",
+    "searchTitle": "Search",
+    "searchPlaceholder": "Search treatments or pages",
+    "searchEmpty": "No results.",
+    "close": "Close",
+    "cart": "Cart",
+    "popularTreatments": "Popular treatments"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty.",
+    "shippingNote": "Shipping is calculated at checkout.",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "continueShopping": "Continue shopping",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
+    "remove": "Remove",
+    "payments": "Payment options"
+  },
+  "footer": {
+    "contact": "Contact"
+  },
+  "finder": {
+    "searchPlaceholder": "Search treatments",
+    "emptySearch": "No treatments match your search.",
+    "emptyCategory": "No treatments in this category."
+  },
+  "page404": {
+    "title": "Page not found",
+    "lead": "The page you are looking for does not exist or has moved.",
+    "homeCta": "Back to home"
+  }
+}
