@@ -439,65 +439,68 @@ def wrap_html(raw: str) -> bytes:
     return raw.encode("utf-8")
 
 
+def _path_suffix(path: str) -> str:
+    clean = path.split("?", 1)[0].split("#", 1)[0]
+    return Path(clean).suffix.lower()
+
+
+def build_get_response(request_path: str) -> tuple[int, dict[str, str], bytes]:
+    """Return (status, headers, body) for a GET request path (no query string)."""
+    parsed_path = unquote(request_path.split("?", 1)[0].split("#", 1)[0])
+    file_path = resolve_file(parsed_path)
+
+    if file_path is None or not file_path.is_file():
+        if _path_suffix(parsed_path) in ASSET_SUFFIXES:
+            body = f"Not found: {parsed_path}".encode("utf-8")
+            return 404, {"Content-Type": "text/plain; charset=utf-8"}, body
+        if not NOT_FOUND_HTML.is_file():
+            body = f"Not found: {parsed_path}".encode("utf-8")
+            return 404, {"Content-Type": "text/plain; charset=utf-8"}, body
+        raw_html = NOT_FOUND_HTML.read_text(encoding="utf-8")
+        body = wrap_html(raw_html)
+        return (
+            404,
+            {"Content-Type": "text/html; charset=utf-8", "Content-Length": str(len(body))},
+            body,
+        )
+
+    suffix = file_path.suffix.lower()
+    if suffix in {".html", ".htm"}:
+        raw_html = file_path.read_text(encoding="utf-8")
+        slug = course_slug_from_path(parsed_path)
+        if slug and file_path.name in ("course-page.html", f"{slug}.html"):
+            raw_html = hydrate_course_page_response(raw_html, parsed_path)
+        nslug = nyhet_slug_from_path(parsed_path)
+        if nslug and file_path.name in ("blog-page.html", f"{nslug}.html"):
+            raw_html = hydrate_blog_post_response(raw_html, parsed_path)
+        if file_path.name == "prislista.html":
+            from hydrate_prislista import hydrate_prislista
+
+            raw_html = hydrate_prislista(raw_html)
+        body = wrap_html(raw_html)
+        return (
+            200,
+            {"Content-Type": "text/html; charset=utf-8", "Content-Length": str(len(body))},
+            body,
+        )
+
+    data = file_path.read_bytes()
+    ctype = mimetypes.guess_type(str(file_path))[0] or "application/octet-stream"
+    return 200, {"Content-Type": ctype, "Content-Length": str(len(data))}, data
+
+
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt: str, *args) -> None:
         print(f"{self.address_string()} {fmt % args}")
 
-    def _path_suffix(self, path: str) -> str:
-        clean = path.split("?", 1)[0].split("#", 1)[0]
-        return Path(clean).suffix.lower()
-
-    def _send_not_found_page(self, path: str) -> None:
-        if not NOT_FOUND_HTML.is_file():
-            self.send_error(404, f"Not found: {path}")
-            return
-        raw_html = NOT_FOUND_HTML.read_text(encoding="utf-8")
-        body = wrap_html(raw_html)
-        self.send_response(404)
-        self.send_header("Content-Type", "text/html; charset=utf-8")
-        self.send_header("Content-Length", str(len(body)))
-        self.end_headers()
-        self.wfile.write(body)
-
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
-        file_path = resolve_file(parsed.path)
-
-        if file_path is None or not file_path.is_file():
-            if self._path_suffix(parsed.path) in ASSET_SUFFIXES:
-                self.send_error(404, f"Not found: {parsed.path}")
-            else:
-                self._send_not_found_page(parsed.path)
-            return
-
-        suffix = file_path.suffix.lower()
-        if suffix in {".html", ".htm"}:
-            raw_html = file_path.read_text(encoding="utf-8")
-            slug = course_slug_from_path(parsed.path)
-            if slug and file_path.name in ("course-page.html", f"{slug}.html"):
-                raw_html = hydrate_course_page_response(raw_html, parsed.path)
-            nslug = nyhet_slug_from_path(parsed.path)
-            if nslug and file_path.name in ("blog-page.html", f"{nslug}.html"):
-                raw_html = hydrate_blog_post_response(raw_html, parsed.path)
-            if file_path.name == "prislista.html":
-                from hydrate_prislista import hydrate_prislista
-
-                raw_html = hydrate_prislista(raw_html)
-            body = wrap_html(raw_html)
-            self.send_response(200)
-            self.send_header("Content-Type", "text/html; charset=utf-8")
-            self.send_header("Content-Length", str(len(body)))
-            self.end_headers()
-            self.wfile.write(body)
-            return
-
-        data = file_path.read_bytes()
-        ctype = mimetypes.guess_type(str(file_path))[0] or "application/octet-stream"
-        self.send_response(200)
-        self.send_header("Content-Type", ctype)
-        self.send_header("Content-Length", str(len(data)))
+        status, headers, body = build_get_response(parsed.path)
+        self.send_response(status)
+        for key, value in headers.items():
+            self.send_header(key, value)
         self.end_headers()
-        self.wfile.write(data)
+        self.wfile.write(body)
 
 
 def main() -> None:
