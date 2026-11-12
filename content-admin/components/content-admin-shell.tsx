@@ -1,6 +1,7 @@
 "use client";
 
 import type { CSSProperties, ReactNode } from "react";
+import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { ExternalLink, Save } from "lucide-react";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -143,7 +144,9 @@ export default function ContentAdminShell({ children }: Props) {
         } as CSSProperties
       }
     >
-      <AppSidebar />
+      <Suspense fallback={null}>
+        <AppSidebar />
+      </Suspense>
       <SidebarInset className="min-w-0 overflow-hidden bg-background">
         <EditorHeader />
         <main className="flex min-h-0 flex-1 flex-col overflow-hidden">{children}</main>

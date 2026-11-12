@@ -1,3 +1,9 @@
 "use client";
 
-export { SimpleContentWorkspaceBlogg as BloggClient } from "@/components/simple-content-workspace";
+"use client";
+
+import { SimpleContentWorkspaceBlogg } from "@/components/simple-content-workspace";
+
+export function BloggClient({ initialSlug }: { initialSlug: string | null }) {
+  return <SimpleContentWorkspaceBlogg initialSlug={initialSlug} />;
+}

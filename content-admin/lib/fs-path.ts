@@ -19,6 +19,10 @@ export async function readContentFile(filePath: string): Promise<string> {
   return fsPromises.readFile(/* turbopackIgnore: true */ filePath, "utf8");
 }
 
+export async function mkdirContentDir(dirPath: string): Promise<void> {
+  await fsPromises.mkdir(/* turbopackIgnore: true */ dirPath, { recursive: true });
+}
+
 export async function writeContentFile(filePath: string, data: string): Promise<void> {
   await fsPromises.writeFile(/* turbopackIgnore: true */ filePath, data, "utf8");
 }

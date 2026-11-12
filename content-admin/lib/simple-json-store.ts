@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import { REPO_ROOT } from "./content-path";
+import { mirrorPublicContentJson } from "./content-mirror";
 import {
   joinContentPath,
   readContentFile,
@@ -83,4 +84,5 @@ export async function writeSimpleContent(
   const tmp = `${file}.tmp`;
   await writeContentFile(tmp, json);
   await renameContentFile(tmp, file);
+  await mirrorPublicContentJson(joinContentPath(kind, `${slug}.json`), json);
 }

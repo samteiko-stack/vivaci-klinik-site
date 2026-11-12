@@ -37,19 +37,7 @@ export const REPO_ROOT = resolveRepoRoot();
 
 function resolveTreatmentPagesDir(): string {
   const fromRepo = joinContentPath(REPO_ROOT, "content", "treatment-pages");
-  if (contentPathExists(fromRepo)) {
-    return fromRepo;
-  }
-  // Static bundle from vercel-build (content copied into Next public/).
-  const fromPublic = joinContentPath(
-    process.cwd(),
-    "public",
-    "content",
-    "treatment-pages"
-  );
-  if (contentPathExists(fromPublic)) {
-    return fromPublic;
-  }
+  // Always edit source of truth; site reads mirrored copies under `public/content/`.
   return fromRepo;
 }
 

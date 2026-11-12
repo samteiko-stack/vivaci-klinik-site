@@ -2,10 +2,11 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 import { BookOpen, ExternalLink, FileText, GraduationCap, LogOut } from "lucide-react";
 import { logoutAction } from "@/app/actions/auth";
+import { SimplePagePicker, type SimplePageMeta } from "@/components/simple-page-picker";
 import { TreatmentPagePickerCommand } from "@/components/TreatmentPagePicker";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
 import { vivaciLogoForDarkBgAdminUrl } from "@/lib/site-image-url";
@@ -30,7 +31,11 @@ const PREVIEW_SITE_URL = "/";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
+  const router = useRouter();
+  const searchParams = useSearchParams();
   const onTreatments = pathname.startsWith("/treatment-pages");
+  const onUtbildning = pathname.startsWith("/utbildning");
+  const onBlogg = pathname.startsWith("/blogg");
   const {
     filteredPages,
     pages,
@@ -39,6 +44,27 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     activePageId,
     requestPageSelect,
   } = useTreatmentPages();
+
+  const [simplePages, setSimplePages] = React.useState<SimplePageMeta[]>([]);
+  const [simpleQuery, setSimpleQuery] = React.useState("");
+  const simpleListApi = onUtbildning
+    ? "/api/utbildning"
+    : onBlogg
+      ? "/api/nyheter"
+      : null;
+  const simpleRoute = onUtbildning ? "/utbildning" : onBlogg ? "/blogg" : null;
+  const activeSlug = searchParams.get("slug") ?? "";
+
+  React.useEffect(() => {
+    if (!simpleListApi) {
+      setSimplePages([]);
+      return;
+    }
+    fetch(simpleListApi, { credentials: "same-origin" })
+      .then((res) => (res.ok ? res.json() : Promise.reject()))
+      .then((data: { pages: SimplePageMeta[] }) => setSimplePages(data.pages))
+      .catch(() => setSimplePages([]));
+  }, [simpleListApi]);
 
   return (
     <Sidebar variant="inset" collapsible="offcanvas" {...props}>
@@ -104,10 +130,10 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarGroupContent>
         </SidebarGroup>
 
-        {onTreatments ? (
-          <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
-            <SidebarGroupLabel>Sidbibliotek</SidebarGroupLabel>
-            <SidebarGroupContent className="flex min-h-0 flex-1 flex-col">
+        <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
+          <SidebarGroupLabel>Sidbibliotek</SidebarGroupLabel>
+          <SidebarGroupContent className="flex min-h-0 flex-1 flex-col">
+            {onTreatments ? (
               <TreatmentPagePickerCommand
                 pages={filteredPages}
                 query={query}
@@ -116,17 +142,24 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 onSelect={requestPageSelect}
                 className="min-h-0 flex-1 bg-transparent"
               />
-            </SidebarGroupContent>
-          </SidebarGroup>
-        ) : (
-          <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
-            <SidebarGroupLabel>Sidbibliotek</SidebarGroupLabel>
-            <SidebarGroupContent className="px-2 text-xs leading-relaxed text-sidebar-foreground/60">
-              Välj en sida i listan till höger (på desktop) eller öppna en artikel
-              från menyn ovan.
-            </SidebarGroupContent>
-          </SidebarGroup>
-        )}
+            ) : simpleRoute ? (
+              <SimplePagePicker
+                pages={simplePages}
+                query={simpleQuery}
+                onQueryChange={setSimpleQuery}
+                activeSlug={activeSlug}
+                onSelect={(slug) =>
+                  router.push(`${simpleRoute}?slug=${encodeURIComponent(slug)}`)
+                }
+                className="min-h-0 flex-1 bg-transparent"
+              />
+            ) : (
+              <p className="px-2 text-xs text-sidebar-foreground/60">
+                Välj en arbetsyta ovan.
+              </p>
+            )}
+          </SidebarGroupContent>
+        </SidebarGroup>
       </SidebarContent>
       <SidebarFooter className="border-t border-sidebar-border">
         <SidebarMenu>

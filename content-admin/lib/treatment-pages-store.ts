@@ -7,6 +7,7 @@ import {
   resolveContentPath,
   writeContentFile,
 } from "./fs-path";
+import { mirrorPublicContentJson } from "./content-mirror";
 import { validateTreatmentPageBody } from "./treatment-page-schema";
 
 const CATEGORIES = ["behandlingar", "problem", "plastikkirurgi"] as const;
@@ -68,4 +69,8 @@ export async function writeTreatmentPage(category: string, slug: string, data: u
   const tmp = `${file}.tmp`;
   await writeContentFile(tmp, json);
   await renameContentFile(tmp, file);
+  await mirrorPublicContentJson(
+    joinContentPath("treatment-pages", category, `${slug}.json`),
+    json
+  );
 }
