@@ -57,9 +57,15 @@ HTML_ROUTES: dict[str, str] = {
     "/integritetspolicy": "legal/integritetspolicy.html",
     "/villkor": "legal/kopvillkor.html",
     "/avbokning": "legal/avbokning.html",
-    "/legal/cookies.html": "legal/cookies.html",
-    "/legal/integritetspolicy.html": "legal/integritetspolicy.html",
     "/cookies": "legal/cookies.html",
+    "/legal/integritetspolicy": "legal/integritetspolicy.html",
+    "/legal/integritetspolicy.html": "legal/integritetspolicy.html",
+    "/legal/kopvillkor": "legal/kopvillkor.html",
+    "/legal/kopvillkor.html": "legal/kopvillkor.html",
+    "/legal/avbokning": "legal/avbokning.html",
+    "/legal/avbokning.html": "legal/avbokning.html",
+    "/legal/cookies": "legal/cookies.html",
+    "/legal/cookies.html": "legal/cookies.html",
     "/404": "404.html",
 }
 
@@ -598,6 +604,13 @@ def build_get_response(request_path: str) -> tuple[int, dict[str, str], bytes]:
             from hydrate_prislista import hydrate_prislista
 
             raw_html = hydrate_prislista(raw_html)
+        if file_path.parent.name == "legal" and file_path.suffix.lower() == ".html":
+            from hydrate_legal_page import hydrate_legal_page
+
+            raw_html = hydrate_legal_page(raw_html, file_path.stem)
+        from vivaci_legal_urls import normalize_site_legal_hrefs
+
+        raw_html = normalize_site_legal_hrefs(raw_html)
         body = wrap_html(raw_html)
         return (
             200,

@@ -6,6 +6,10 @@ import {
   renderBlogPostSection,
 } from "@/components/content-editors/blog-post-editor";
 import {
+  LEGAL_PAGE_SECTIONS,
+  renderLegalPageSection,
+} from "@/components/content-editors/legal-page-editor";
+import {
   UTBILDNING_COURSE_SECTIONS,
   renderUtbildningCourseSection,
 } from "@/components/content-editors/utbildning-course-editor";
@@ -44,7 +48,9 @@ export function SimpleContentClient({
     ? HUB_SECTIONS
     : kind === "utbildning"
       ? UTBILDNING_COURSE_SECTIONS
-      : BLOG_POST_SECTIONS;
+      : kind === "legal"
+        ? LEGAL_PAGE_SECTIONS
+        : BLOG_POST_SECTIONS;
 
   const hasPage = Boolean(slug && doc);
 
@@ -70,6 +76,9 @@ export function SimpleContentClient({
         }
         if (kind === "utbildning") {
           return renderUtbildningCourseSection(sectionId, doc, (next) => setDoc(next));
+        }
+        if (kind === "legal") {
+          return renderLegalPageSection(sectionId, doc, (next) => setDoc(next));
         }
         return renderBlogPostSection(sectionId, doc, (next) => setDoc(next));
       }}

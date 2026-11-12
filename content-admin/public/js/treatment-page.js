@@ -672,7 +672,7 @@
           ".faq3_answer .text-style-muted, .faq3_answer-text, .text-size-regular"
         );
       if (q) setText(q, faq.question);
-      if (a) setRichBody(a, faq.answer);
+      if (a) setText(a, faq.answer);
       parent.appendChild(node);
       if (i > 0) {
         var toggle = node.querySelector(".faq3_question");

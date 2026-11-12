@@ -34,9 +34,20 @@ def prebuild_html_sources() -> None:
     """Generate listing + article HTML in the export tree before static wrap."""
     from build_nyheter_listing import build as build_nyheter_listing
     from hydrate_blog_post import build_all as build_blog_posts
+    from hydrate_legal_page import build_all as build_legal_pages
+    from vivaci_legal_urls import normalize_site_legal_hrefs
 
     build_nyheter_listing()
     build_blog_posts(EXPORT / "nyheter", EXPORT / "blog-page.html")
+    legal_tpl = EXPORT / "legal-page.html"
+    if legal_tpl.is_file():
+        build_legal_pages(EXPORT / "legal", legal_tpl)
+
+    for html in EXPORT.rglob("*.html"):
+        text = html.read_text(encoding="utf-8")
+        normalized = normalize_site_legal_hrefs(text)
+        if normalized != text:
+            html.write_text(normalized, encoding="utf-8")
 
 
 def sync_en_locale_for_deploy() -> None:
@@ -95,7 +106,11 @@ def main() -> None:
         _status, _headers, body = build_get_response(req_path)
         out = public_dir / rel
         out.parent.mkdir(parents=True, exist_ok=True)
-        out.write_bytes(body)
+        from vivaci_legal_urls import normalize_site_legal_hrefs
+
+        text = body.decode("utf-8")
+        text = normalize_site_legal_hrefs(text)
+        out.write_text(text, encoding="utf-8")
 
     # Pretty-url aliases (e.g. /blogg → nyheter.html) need their own static file on Vercel.
     html_routes: dict[str, str] = _mod.HTML_ROUTES

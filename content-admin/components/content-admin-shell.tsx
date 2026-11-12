@@ -7,6 +7,7 @@ import { ExternalLink, Save } from "lucide-react";
 import { AppSidebar } from "@/components/app-sidebar";
 import {
   ADMIN_BLOGG,
+  ADMIN_LEGAL,
   ADMIN_TREATMENTS,
   ADMIN_UTBILDNING,
 } from "@/lib/admin-routes";
@@ -36,12 +37,14 @@ interface Props {
 function workspaceLabel(pathname: string): string {
   if (pathname.startsWith(ADMIN_UTBILDNING)) return "Utbildning";
   if (pathname.startsWith(ADMIN_BLOGG)) return "Blogg";
+  if (pathname.startsWith(ADMIN_LEGAL)) return "Juridik";
   return "Behandlingssidor";
 }
 
 function workspaceHref(pathname: string): string {
   if (pathname.startsWith(ADMIN_UTBILDNING)) return ADMIN_UTBILDNING;
   if (pathname.startsWith(ADMIN_BLOGG)) return ADMIN_BLOGG;
+  if (pathname.startsWith(ADMIN_LEGAL)) return ADMIN_LEGAL;
   return ADMIN_TREATMENTS;
 }
 

@@ -15,3 +15,9 @@ export function SimpleContentWorkspaceBlogg() {
     <SimpleContentWorkspace emptyHint="Välj en bloggartikel i sidofältet." />
   );
 }
+
+export function SimpleContentWorkspaceLegal() {
+  return (
+    <SimpleContentWorkspace emptyHint="Välj en juridisk sida i sidofältet." />
+  );
+}

@@ -4,19 +4,23 @@
 (function () {
   var SLUG_BY_PATH = {
     "/integritetspolicy": "integritetspolicy",
+    "/legal/integritetspolicy": "integritetspolicy",
     "/legal/integritetspolicy.html": "integritetspolicy",
     "/cookies": "cookies",
+    "/legal/cookies": "cookies",
     "/legal/cookies.html": "cookies",
     "/villkor": "kopvillkor",
+    "/legal/kopvillkor": "kopvillkor",
     "/legal/kopvillkor.html": "kopvillkor",
     "/avbokning": "avbokning",
+    "/legal/avbokning": "avbokning",
     "/legal/avbokning.html": "avbokning",
   };
 
   function slugFromPath() {
     var path = window.location.pathname.replace(/\/$/, "") || "/";
     if (SLUG_BY_PATH[path]) return SLUG_BY_PATH[path];
-    var m = path.match(/\/legal\/([^/]+)\.html$/);
+    var m = path.match(/\/legal\/([^/]+?)(?:\.html)?$/);
     return m ? m[1] : null;
   }
 

@@ -47,6 +47,9 @@ const nextConfig: NextConfig = {
       "./content-admin/content/nyheter/**/*",
       "./content-admin/public/content/nyheter/**/*",
     ],
+    "/api/legal": ["./content/legal/**/*", "./content-admin/content/legal/**/*"],
+    "/api/legal/[slug]": ["./content/legal/**/*", "./content-admin/content/legal/**/*"],
+    "/admin/juridik": ["./content/legal/**/*", "./content-admin/content/legal/**/*"],
   },
   async redirects() {
     return [

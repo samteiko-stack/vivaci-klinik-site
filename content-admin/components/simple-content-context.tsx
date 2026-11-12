@@ -11,9 +11,9 @@ import {
 } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import { toast } from "sonner";
-import { ADMIN_BLOGG, ADMIN_UTBILDNING } from "@/lib/admin-routes";
+import { ADMIN_BLOGG, ADMIN_LEGAL, ADMIN_UTBILDNING } from "@/lib/admin-routes";
 
-type Kind = "utbildning" | "nyheter";
+type Kind = "utbildning" | "nyheter" | "legal";
 
 type SimpleContentContextValue = {
   kind: Kind | null;
@@ -40,6 +40,9 @@ function resolveWorkspace(pathname: string): { kind: Kind; apiBase: string } | n
   }
   if (pathname.startsWith(ADMIN_BLOGG)) {
     return { kind: "nyheter", apiBase: "/api/nyheter" };
+  }
+  if (pathname.startsWith(ADMIN_LEGAL)) {
+    return { kind: "legal", apiBase: "/api/legal" };
   }
   return null;
 }
@@ -107,6 +110,15 @@ export function SimpleContentProvider({ children }: { children: ReactNode }) {
     if (typeof doc.path === "string" && doc.path.startsWith("/")) return doc.path;
     if (kind === "utbildning") {
       return slug === "index" ? "/utbildning" : `/utbildning/${slug}`;
+    }
+    if (kind === "legal") {
+      const paths: Record<string, string> = {
+        integritetspolicy: "/integritetspolicy",
+        kopvillkor: "/villkor",
+        avbokning: "/avbokning",
+        cookies: "/cookies",
+      };
+      return paths[slug] ?? `/legal/${slug}`;
     }
     return slug === "listing" ? "/blogg" : `/nyheter/${slug}`;
   }, [doc, kind, slug]);

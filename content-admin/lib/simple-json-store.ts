@@ -41,11 +41,20 @@ import type { SimpleContentMeta } from "./simple-json-store-types";
 
 export type { SimpleContentMeta };
 
-function contentDir(kind: "utbildning" | "nyheter"): string {
+type SimpleContentKind = "utbildning" | "nyheter" | "legal";
+
+const LEGAL_PUBLIC_PATH: Record<string, string> = {
+  integritetspolicy: "/integritetspolicy",
+  kopvillkor: "/villkor",
+  avbokning: "/avbokning",
+  cookies: "/cookies",
+};
+
+function contentDir(kind: SimpleContentKind): string {
   return resolveContentSubdir(kind);
 }
 
-function fileForSlug(kind: "utbildning" | "nyheter", slug: string): string {
+function fileForSlug(kind: SimpleContentKind, slug: string): string {
   if (SPECIAL_SLUG_FILE[slug]) {
     return joinContentPath(contentDir(kind), SPECIAL_SLUG_FILE[slug]!);
   }
@@ -53,7 +62,7 @@ function fileForSlug(kind: "utbildning" | "nyheter", slug: string): string {
   return joinContentPath(contentDir(kind), `${slug}.json`);
 }
 
-function fileFor(kind: "utbildning" | "nyheter", slug: string): string {
+function fileFor(kind: SimpleContentKind, slug: string): string {
   const file = fileForSlug(kind, slug);
   const resolved = resolveContentPath(file);
   const base = resolveContentPath(contentDir(kind));
@@ -61,8 +70,13 @@ function fileFor(kind: "utbildning" | "nyheter", slug: string): string {
   return resolved;
 }
 
-function pathForMeta(kind: "utbildning" | "nyheter", slug: string, data: Record<string, unknown>): string {
+function pathForMeta(
+  kind: SimpleContentKind,
+  slug: string,
+  data: Record<string, unknown>
+): string {
   if (typeof data.path === "string" && data.path.startsWith("/")) return data.path;
+  if (kind === "legal") return LEGAL_PUBLIC_PATH[slug] ?? `/legal/${slug}`;
   if (kind === "utbildning") return `/utbildning/${slug}`;
   return `/nyheter/${slug}`;
 }
@@ -74,9 +88,13 @@ function slugFromHref(href: unknown): string | null {
 }
 
 async function mergeFromHubJson(
-  kind: "utbildning" | "nyheter",
+  kind: SimpleContentKind,
   pages: SimpleContentMeta[]
 ): Promise<SimpleContentMeta[]> {
+  if (kind === "legal") {
+    pages.sort((a, b) => a.title.localeCompare(b.title, "sv"));
+    return pages;
+  }
   const hubFile = kind === "utbildning" ? "index.json" : "listing.json";
   const dir = contentDir(kind);
   try {
@@ -117,10 +135,11 @@ async function mergeFromHubJson(
 }
 
 export async function listSimpleContent(
-  kind: "utbildning" | "nyheter"
+  kind: SimpleContentKind
 ): Promise<SimpleContentMeta[]> {
   const dir = contentDir(kind);
-  const pages: SimpleContentMeta[] = [HUB_PAGES[kind]];
+  const pages: SimpleContentMeta[] =
+    kind === "utbildning" || kind === "nyheter" ? [HUB_PAGES[kind]] : [];
 
   let files: string[];
   try {
@@ -147,14 +166,14 @@ export async function listSimpleContent(
   return mergeFromHubJson(kind, pages);
 }
 
-export async function readSimpleContent(kind: "utbildning" | "nyheter", slug: string) {
+export async function readSimpleContent(kind: SimpleContentKind, slug: string) {
   const file = fileFor(kind, slug);
   const raw = await readContentFile(file);
   return JSON.parse(raw) as Record<string, unknown>;
 }
 
 export async function writeSimpleContent(
-  kind: "utbildning" | "nyheter",
+  kind: SimpleContentKind,
   slug: string,
   data: Record<string, unknown>
 ) {

@@ -11,12 +11,18 @@ import {
   FileText,
   GraduationCap,
   LogOut,
+  Scale,
 } from "lucide-react";
 import { logoutAction } from "@/app/actions/auth";
 import { SidebarPagePicker } from "@/components/sidebar-page-picker";
 import { TreatmentPagePickerCommand } from "@/components/TreatmentPagePicker";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
-import { ADMIN_BLOGG, ADMIN_TREATMENTS, ADMIN_UTBILDNING } from "@/lib/admin-routes";
+import {
+  ADMIN_BLOGG,
+  ADMIN_LEGAL,
+  ADMIN_TREATMENTS,
+  ADMIN_UTBILDNING,
+} from "@/lib/admin-routes";
 import type { SimpleContentMeta } from "@/lib/simple-json-store-types";
 import { vivaciLogoForDarkBgAdminUrl } from "@/lib/site-image-url";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
@@ -60,6 +66,12 @@ const WORKSPACES = [
     label: "Blogg",
     icon: BookOpen,
   },
+  {
+    key: "juridik",
+    href: ADMIN_LEGAL,
+    label: "Juridik",
+    icon: Scale,
+  },
 ] as const;
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
@@ -69,6 +81,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const onTreatments = pathname.startsWith(ADMIN_TREATMENTS);
   const onUtbildning = pathname.startsWith(ADMIN_UTBILDNING);
   const onBlogg = pathname.startsWith(ADMIN_BLOGG);
+  const onLegal = pathname.startsWith(ADMIN_LEGAL);
   const {
     filteredPages,
     pages,
@@ -84,17 +97,27 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     ? "/api/utbildning"
     : onBlogg
       ? "/api/nyheter"
-      : null;
-  const simpleRoute = onUtbildning ? ADMIN_UTBILDNING : onBlogg ? ADMIN_BLOGG : null;
+      : onLegal
+        ? "/api/legal"
+        : null;
+  const simpleRoute = onUtbildning
+    ? ADMIN_UTBILDNING
+    : onBlogg
+      ? ADMIN_BLOGG
+      : onLegal
+        ? ADMIN_LEGAL
+        : null;
   const activeSlug = searchParams.get("slug") ?? "";
 
   const workspaceLabel = onUtbildning
     ? "Utbildning"
     : onBlogg
       ? "Blogg"
-      : onTreatments
-        ? "Behandlingssidor"
-        : "Innehåll";
+      : onLegal
+        ? "Juridik"
+        : onTreatments
+          ? "Behandlingssidor"
+          : "Innehåll";
 
   React.useEffect(() => {
     if (!simpleListApi) {
