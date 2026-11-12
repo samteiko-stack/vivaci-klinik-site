@@ -1,5 +1,6 @@
 "use client";
 
+import type { EditorSectionDef } from "@/components/sectioned-page-editor";
 import {
   CardListEditor,
   CtaFields,
@@ -11,7 +12,6 @@ import {
 import { ImagePathField } from "@/components/treatment-pages/image-path-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function patchObject(
   doc: Record<string, unknown>,
@@ -29,18 +29,26 @@ function patchNested(
   const prev = doc[key];
   const base =
     prev && typeof prev === "object" && !Array.isArray(prev)
-      ? (prev as Record<string, unknown>)
+      ? (doc[key] as Record<string, unknown>)
       : {};
   return { ...doc, [key]: { ...base, ...patch } };
 }
 
-export function UtbildningCourseEditor({
-  doc,
-  onChange,
-}: {
-  doc: Record<string, unknown>;
-  onChange: (next: Record<string, unknown>) => void;
-}) {
+export const UTBILDNING_COURSE_SECTIONS: EditorSectionDef[] = [
+  { id: "grund", label: "Grund", description: "Titel, SEO och URL." },
+  { id: "hero", label: "Hero", description: "Rubrik, intro, målgrupp och bild." },
+  { id: "summary", label: "Sammanfattning", description: "Pris, nivå, längd och plats." },
+  { id: "dates", label: "Kurstillfällen", description: "Datum, tider och platser kvar." },
+  { id: "about", label: "Om kursen", description: "Längre HTML-innehåll och agenda." },
+  { id: "instructors", label: "Instruktörer", description: "Team som visas på kurssidan." },
+  { id: "faq", label: "FAQ", description: "Vanliga frågor och svar." },
+];
+
+export function renderUtbildningCourseSection(
+  sectionId: string,
+  doc: Record<string, unknown>,
+  onChange: (next: Record<string, unknown>) => void
+) {
   const hero =
     doc.hero && typeof doc.hero === "object" && !Array.isArray(doc.hero)
       ? (doc.hero as Record<string, unknown>)
@@ -65,19 +73,9 @@ export function UtbildningCourseEditor({
       ? (hero.ctaPrimary as Record<string, unknown>)
       : {};
 
-  return (
-    <Tabs defaultValue="grund" className="flex min-h-0 flex-1 flex-col gap-4">
-      <TabsList className="w-full justify-start overflow-x-auto">
-        <TabsTrigger value="grund">Grund</TabsTrigger>
-        <TabsTrigger value="hero">Hero</TabsTrigger>
-        <TabsTrigger value="summary">Sammanfattning</TabsTrigger>
-        <TabsTrigger value="dates">Kurstillfällen</TabsTrigger>
-        <TabsTrigger value="about">Om kursen</TabsTrigger>
-        <TabsTrigger value="instructors">Instruktörer</TabsTrigger>
-        <TabsTrigger value="faq">FAQ</TabsTrigger>
-      </TabsList>
-
-      <TabsContent value="grund" className="mt-0">
+  switch (sectionId) {
+    case "grund":
+      return (
         <SectionFormBody>
           <FieldGroup label="Titel">
             <Input
@@ -101,9 +99,9 @@ export function UtbildningCourseEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="hero" className="mt-0">
+      );
+    case "hero":
+      return (
         <SectionFormBody>
           <FieldGroup label="Rubrik">
             <Input
@@ -145,9 +143,9 @@ export function UtbildningCourseEditor({
             }
           />
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="summary" className="mt-0">
+      );
+    case "summary":
+      return (
         <SectionFormBody>
           <FieldGroup label="Intro">
             <Textarea
@@ -201,13 +199,10 @@ export function UtbildningCourseEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="dates" className="mt-0">
+      );
+    case "dates":
+      return (
         <SectionFormBody>
-          <p className="text-xs text-muted-foreground">
-            Tillgängliga datum, tider och platser som visas i anmälningsblocket.
-          </p>
           <CardListEditor
             items={dates as Record<string, unknown>[]}
             fields={[
@@ -219,9 +214,9 @@ export function UtbildningCourseEditor({
             onChange={(items) => onChange(patchObject(doc, "dates", items))}
           />
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="about" className="mt-0">
+      );
+    case "about":
+      return (
         <SectionFormBody>
           <FieldGroup label="Brödtext (HTML)">
             <Textarea
@@ -240,9 +235,9 @@ export function UtbildningCourseEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="instructors" className="mt-0">
+      );
+    case "instructors":
+      return (
         <SectionFormBody>
           <SectionEnabled
             checked={Boolean(instructors.enabled ?? true)}
@@ -281,9 +276,9 @@ export function UtbildningCourseEditor({
             }
           />
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="faq" className="mt-0">
+      );
+    case "faq":
+      return (
         <SectionFormBody>
           <SectionEnabled
             checked={Boolean(faq.enabled ?? true)}
@@ -309,7 +304,8 @@ export function UtbildningCourseEditor({
             onChange={(items) => onChange(patchNested(doc, "faq", { items }))}
           />
         </SectionFormBody>
-      </TabsContent>
-    </Tabs>
-  );
+      );
+    default:
+      return null;
+  }
 }

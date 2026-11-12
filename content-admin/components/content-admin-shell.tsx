@@ -5,7 +5,12 @@ import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { ExternalLink, Save } from "lucide-react";
 import { AppSidebar } from "@/components/app-sidebar";
-import { ADMIN_TREATMENTS } from "@/lib/admin-routes";
+import {
+  ADMIN_BLOGG,
+  ADMIN_TREATMENTS,
+  ADMIN_UTBILDNING,
+} from "@/lib/admin-routes";
+import { useSimpleContent } from "@/components/simple-content-context";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -28,9 +33,32 @@ interface Props {
   children: ReactNode;
 }
 
+function workspaceLabel(pathname: string): string {
+  if (pathname.startsWith(ADMIN_UTBILDNING)) return "Utbildning";
+  if (pathname.startsWith(ADMIN_BLOGG)) return "Blogg";
+  return "Behandlingssidor";
+}
+
+function workspaceHref(pathname: string): string {
+  if (pathname.startsWith(ADMIN_UTBILDNING)) return ADMIN_UTBILDNING;
+  if (pathname.startsWith(ADMIN_BLOGG)) return ADMIN_BLOGG;
+  return ADMIN_TREATMENTS;
+}
+
 function EditorBreadcrumbs() {
-  const { pageTitle, activePageId, doc } = useTreatmentPages();
-  const hasPage = Boolean(activePageId && doc);
+  const pathname = usePathname();
+  const treatments = useTreatmentPages();
+  const simple = useSimpleContent();
+  const onTreatments = pathname.startsWith(ADMIN_TREATMENTS);
+  const wsLabel = workspaceLabel(pathname);
+  const wsHref = workspaceHref(pathname);
+
+  const pageTitle = onTreatments
+    ? treatments.pageTitle
+    : simple?.pageTitle ?? "";
+  const hasPage = onTreatments
+    ? Boolean(treatments.activePageId && treatments.doc)
+    : Boolean(simple?.slug && simple?.doc);
 
   return (
     <Breadcrumb>
@@ -41,9 +69,9 @@ function EditorBreadcrumbs() {
         <BreadcrumbSeparator className="hidden xl:block" />
         <BreadcrumbItem className="hidden lg:block">
           {hasPage ? (
-            <BreadcrumbLink href={ADMIN_TREATMENTS}>Behandlingssidor</BreadcrumbLink>
+            <BreadcrumbLink href={wsHref}>{wsLabel}</BreadcrumbLink>
           ) : (
-            <BreadcrumbPage>Behandlingssidor</BreadcrumbPage>
+            <BreadcrumbPage>{wsLabel}</BreadcrumbPage>
           )}
         </BreadcrumbItem>
         {hasPage ? (
@@ -63,21 +91,23 @@ function EditorBreadcrumbs() {
 
 function EditorHeader() {
   const pathname = usePathname();
-  const onTreatmentEditor = pathname.startsWith(ADMIN_TREATMENTS);
-  const { doc, dirty, saving, loadingPage, save } = useTreatmentPages();
+  const onTreatments = pathname.startsWith(ADMIN_TREATMENTS);
+  const treatments = useTreatmentPages();
+  const simple = useSimpleContent();
 
-  if (!onTreatmentEditor) {
-    return (
-      <header className="flex h-14 shrink-0 items-center gap-2 border-b bg-background/95 px-3 backdrop-blur supports-backdrop-filter:bg-background/80 md:px-4">
-        <SidebarTrigger className="-ml-1" />
-        <Separator
-          orientation="vertical"
-          className="mr-1 data-[orientation=vertical]:h-4"
-        />
-        <span className="text-sm text-muted-foreground">Innehållsadmin</span>
-      </header>
-    );
-  }
+  const dirty = onTreatments ? treatments.dirty : simple?.dirty ?? false;
+  const saving = onTreatments ? treatments.saving : simple?.saving ?? false;
+  const loading = onTreatments ? treatments.loadingPage : simple?.loading ?? false;
+  const canSave = onTreatments
+    ? Boolean(treatments.doc)
+  : Boolean(simple?.doc);
+  const previewPath = onTreatments
+    ? treatments.doc?.path
+    : simple?.pagePath;
+
+  const save = onTreatments
+    ? () => void treatments.save()
+    : () => void simple?.save();
 
   return (
     <header className="flex h-14 shrink-0 items-center justify-between gap-3 border-b bg-background/95 px-3 backdrop-blur supports-backdrop-filter:bg-background/80 md:px-4">
@@ -91,7 +121,7 @@ function EditorHeader() {
       </div>
 
       <div className="flex shrink-0 items-center gap-2">
-        {doc ? (
+        {canSave ? (
           <Badge
             variant={dirty ? "secondary" : "outline"}
             className="hidden gap-1.5 font-normal sm:inline-flex"
@@ -103,17 +133,13 @@ function EditorHeader() {
             {dirty ? "Osparad" : "Sparad"}
           </Badge>
         ) : null}
-        {doc?.path ? (
+        {previewPath ? (
           <Button
             variant="outline"
             size="sm"
             nativeButton={false}
             render={
-              <a
-                href={doc.path}
-                target="_blank"
-                rel="noreferrer"
-              />
+              <a href={previewPath} target="_blank" rel="noreferrer" />
             }
           >
             <ExternalLink data-icon="inline-start" />
@@ -123,8 +149,8 @@ function EditorHeader() {
         <Button
           type="button"
           size="sm"
-          disabled={!doc || !dirty || saving || loadingPage}
-          onClick={() => void save()}
+          disabled={!canSave || !dirty || saving || loading}
+          onClick={save}
         >
           <Save data-icon="inline-start" />
           {saving ? "Sparar…" : "Spara"}

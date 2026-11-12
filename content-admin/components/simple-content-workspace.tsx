@@ -3,39 +3,15 @@
 import { SimpleContentClient } from "@/components/simple-content-client";
 
 type WorkspaceProps = {
-  initialSlug: string | null;
-  apiBase: string;
   emptyHint: string;
-  kind: "utbildning" | "nyheter";
 };
 
-export function SimpleContentWorkspace({
-  initialSlug,
-  apiBase,
-  emptyHint,
-  kind,
-}: WorkspaceProps) {
-  return (
-    <SimpleContentClient
-      kind={kind}
-      apiBase={apiBase}
-      slug={initialSlug}
-      emptyHint={emptyHint}
-    />
-  );
+export function SimpleContentWorkspace({ emptyHint }: WorkspaceProps) {
+  return <SimpleContentClient emptyHint={emptyHint} />;
 }
 
-export function SimpleContentWorkspaceBlogg({
-  initialSlug,
-}: {
-  initialSlug: string | null;
-}) {
+export function SimpleContentWorkspaceBlogg() {
   return (
-    <SimpleContentWorkspace
-      initialSlug={initialSlug}
-      kind="nyheter"
-      apiBase="/api/nyheter"
-      emptyHint="Välj en bloggartikel i sidofältet."
-    />
+    <SimpleContentWorkspace emptyHint="Välj en bloggartikel i sidofältet." />
   );
 }

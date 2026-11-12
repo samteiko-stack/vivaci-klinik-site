@@ -4,7 +4,6 @@ import {
   CardListEditor,
   FieldGroup,
   SectionFormBody,
-  SectionSubheading,
   SubsectionCard,
 } from "@/components/treatment-pages/editor-fields";
 import { Input } from "@/components/ui/input";
@@ -41,7 +40,6 @@ export function HubCategoriesEditor({
 
   return (
     <SectionFormBody>
-      <SectionSubheading>Kategorier på översiktssidan</SectionSubheading>
       <p className="text-xs text-muted-foreground">
         Samma kort som visas på webbplatsens lista. Varje kategori grupperar länkar till enskilda sidor.
       </p>

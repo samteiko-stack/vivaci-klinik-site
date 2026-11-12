@@ -1,5 +1,6 @@
 "use client";
 
+import type { EditorSectionDef } from "@/components/sectioned-page-editor";
 import {
   FieldGroup,
   SectionFormBody,
@@ -8,7 +9,6 @@ import {
 import { ImagePathField } from "@/components/treatment-pages/image-path-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function patchObject(
   doc: Record<string, unknown>,
@@ -26,34 +26,32 @@ function patchNested(
   const prev = doc[key];
   const base =
     prev && typeof prev === "object" && !Array.isArray(prev)
-      ? (prev as Record<string, unknown>)
+      ? (doc[key] as Record<string, unknown>)
       : {};
   return { ...doc, [key]: { ...base, ...patch } };
 }
 
-export function BlogPostEditor({
-  doc,
-  onChange,
-}: {
-  doc: Record<string, unknown>;
-  onChange: (next: Record<string, unknown>) => void;
-}) {
+export const BLOG_POST_SECTIONS: EditorSectionDef[] = [
+  { id: "grund", label: "Grund", description: "Titel, SEO, utdrag och metadata." },
+  { id: "hero", label: "Hero", description: "Artikelns huvudbild." },
+  { id: "author", label: "Författare", description: "Författarbox på artikeln." },
+  { id: "body", label: "Brödtext", description: "HTML-innehåll i artikeln." },
+];
+
+export function renderBlogPostSection(
+  sectionId: string,
+  doc: Record<string, unknown>,
+  onChange: (next: Record<string, unknown>) => void
+) {
   const author =
     doc.author && typeof doc.author === "object" && !Array.isArray(doc.author)
       ? (doc.author as Record<string, unknown>)
       : {};
   const tags = Array.isArray(doc.tags) ? doc.tags.map(String) : [];
 
-  return (
-    <Tabs defaultValue="grund" className="flex min-h-0 flex-1 flex-col gap-4">
-      <TabsList className="w-full justify-start overflow-x-auto">
-        <TabsTrigger value="grund">Grund</TabsTrigger>
-        <TabsTrigger value="hero">Hero</TabsTrigger>
-        <TabsTrigger value="author">Författare</TabsTrigger>
-        <TabsTrigger value="body">Brödtext</TabsTrigger>
-      </TabsList>
-
-      <TabsContent value="grund" className="mt-0">
+  switch (sectionId) {
+    case "grund":
+      return (
         <SectionFormBody>
           <FieldGroup label="Titel">
             <Input
@@ -115,9 +113,9 @@ export function BlogPostEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="hero" className="mt-0">
+      );
+    case "hero":
+      return (
         <SectionFormBody>
           <FieldGroup label="Hero-bild">
             <ImagePathField
@@ -126,9 +124,9 @@ export function BlogPostEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="author" className="mt-0">
+      );
+    case "author":
+      return (
         <SectionFormBody>
           <SectionSubheading>Författarbox</SectionSubheading>
           <div className="grid gap-4 sm:grid-cols-2">
@@ -165,9 +163,9 @@ export function BlogPostEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-
-      <TabsContent value="body" className="mt-0">
+      );
+    case "body":
+      return (
         <SectionFormBody>
           <FieldGroup label="Brödtext (HTML)">
             <Textarea
@@ -177,7 +175,8 @@ export function BlogPostEditor({
             />
           </FieldGroup>
         </SectionFormBody>
-      </TabsContent>
-    </Tabs>
-  );
+      );
+    default:
+      return null;
+  }
 }

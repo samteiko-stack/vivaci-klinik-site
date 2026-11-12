@@ -7,5 +7,5 @@ import { ADMIN_BLOGG } from "@/lib/admin-routes";
 export function BloggClient({ initialSlug }: { initialSlug: string | null }) {
   useAutoSelectSlug(ADMIN_BLOGG, "/api/nyheter", initialSlug);
 
-  return <SimpleContentWorkspaceBlogg initialSlug={initialSlug} />;
+  return <SimpleContentWorkspaceBlogg />;
 }
