@@ -52,9 +52,11 @@ export function SectionedPageEditor({
 }: Props) {
   const [activeSection, setActiveSection] = useState(sections[0]?.id ?? "");
 
+  const sectionSeed = sections.map((s) => s.id).join("|");
+
   useEffect(() => {
     setActiveSection(sections[0]?.id ?? "");
-  }, [pageKey, sections]);
+  }, [pageKey, sectionSeed]);
 
   return (
     <div className="flex min-h-0 flex-1 flex-col bg-muted/35">

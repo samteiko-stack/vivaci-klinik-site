@@ -1,17 +1,15 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
-export function useAutoSelectSlug(
-  adminRoute: string,
-  listApi: string,
-  initialSlug: string | null
-) {
+export function useAutoSelectSlug(adminRoute: string, listApi: string) {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const slug = searchParams.get("slug");
 
   useEffect(() => {
-    if (initialSlug) return;
+    if (slug) return;
     let cancelled = false;
     fetch(listApi, { credentials: "same-origin" })
       .then((res) => (res.ok ? res.json() : Promise.reject()))
@@ -19,9 +17,7 @@ export function useAutoSelectSlug(
         if (cancelled) return;
         const first = data.pages?.[0]?.slug;
         if (first) {
-          router.replace(
-            `${adminRoute}?slug=${encodeURIComponent(first)}`
-          );
+          router.replace(`${adminRoute}?slug=${encodeURIComponent(first)}`);
         }
       })
       .catch(() => {
@@ -30,5 +26,5 @@ export function useAutoSelectSlug(
     return () => {
       cancelled = true;
     };
-  }, [adminRoute, initialSlug, listApi, router]);
+  }, [adminRoute, listApi, router, slug]);
 }

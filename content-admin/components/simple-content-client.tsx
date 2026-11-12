@@ -52,7 +52,7 @@ export function SimpleContentClient({
     <SectionedPageEditor
       pageTitle={pageTitle || (slug ? slug : "")}
       sections={sections}
-      loading={loading && Boolean(slug)}
+      loading={loading && Boolean(slug) && !doc}
       hasPage={hasPage}
       pageKey={slug ?? undefined}
       emptyTitle="Välj en sida"

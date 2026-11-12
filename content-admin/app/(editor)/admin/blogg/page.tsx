@@ -1,12 +1,10 @@
+import { Suspense } from "react";
 import { BloggClient } from "@/components/blogg-client";
 
-type SearchParams = Promise<{ slug?: string }>;
-
-export default async function BloggPage({
-  searchParams,
-}: {
-  searchParams: SearchParams;
-}) {
-  const { slug } = await searchParams;
-  return <BloggClient initialSlug={slug ?? null} />;
+export default function BloggPage() {
+  return (
+    <Suspense fallback={null}>
+      <BloggClient />
+    </Suspense>
+  );
 }

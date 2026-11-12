@@ -59,9 +59,10 @@ export function SimpleContentProvider({ children }: { children: ReactNode }) {
   const kind = workspace?.kind ?? null;
 
   useEffect(() => {
-    if (!workspace || !slug) {
+    if (!kind || !apiBase || !slug) {
       setDoc(null);
       setSaved(null);
+      setLoading(false);
       return;
     }
     let cancelled = false;
@@ -86,7 +87,7 @@ export function SimpleContentProvider({ children }: { children: ReactNode }) {
     return () => {
       cancelled = true;
     };
-  }, [apiBase, slug, workspace]);
+  }, [apiBase, kind, slug]);
 
   const dirty = useMemo(() => {
     if (!doc || !saved) return false;

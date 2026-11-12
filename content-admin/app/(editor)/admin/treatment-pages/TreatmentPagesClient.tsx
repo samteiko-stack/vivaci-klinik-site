@@ -66,7 +66,7 @@ export default function TreatmentPagesClient() {
         className="min-h-0 flex-1"
       >
         <div className="mr-auto flex w-full max-w-7xl flex-col gap-6 px-4 py-6 md:px-6 lg:px-8 lg:py-8">
-          {loadingPage ? (
+          {loadingPage && !doc ? (
             <div className="space-y-6" aria-label="Laddar sida">
               <div className="space-y-2">
                 <Skeleton className="h-4 w-40" />
