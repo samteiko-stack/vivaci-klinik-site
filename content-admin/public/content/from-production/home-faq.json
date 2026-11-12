@@ -9,10 +9,12 @@
   },
   "items": [
     {
+      "anchorId": "vivaci-faq-bokning",
       "question": "Hur bokar jag en konsultation?",
       "answer": "Kontakta oss via telefon, e-post eller kontaktsidan. Konsultationen är kostnadsfri."
     },
     {
+      "anchorId": "vivaci-faq-betalning",
       "question": "Vilka betalningsalternativ erbjuder ni?",
       "answer": "Vi accepterar kort, Swish och erbjuder delbetalning."
     },

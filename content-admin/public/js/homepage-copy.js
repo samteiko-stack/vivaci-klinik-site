@@ -121,6 +121,7 @@
     parent.innerHTML = "";
     faqs.forEach(function (faq, i) {
       var node = template.cloneNode(true);
+      if (faq.anchorId) node.id = faq.anchorId;
       var q = node.querySelector(
         ".faq3_question .heading-style-h5, .faq3_question-text, .text-size-medium"
       );
@@ -136,6 +137,41 @@
     });
   }
 
+  function scrollHomeFaqDeepLink(listEl) {
+    var path = (window.location.pathname || "").replace(/\/$/, "") || "/";
+    if (path === "/faq") {
+      var section = document.getElementById("vivaci-home-faq");
+      if (section) {
+        requestAnimationFrame(function () {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+      }
+      return;
+    }
+    var hash = window.location.hash;
+    if (!hash || hash.charAt(0) !== "#") return;
+    var id = hash.slice(1);
+    if (!id) return;
+    var safeId =
+      typeof CSS !== "undefined" && CSS.escape
+        ? CSS.escape(id)
+        : id.replace(/[^a-zA-Z0-9_-]/g, "");
+    var target =
+      document.getElementById(id) ||
+      (listEl && listEl.querySelector("#" + safeId));
+    if (!target) return;
+    requestAnimationFrame(function () {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+      if (id.indexOf("vivaci-faq-") === 0) {
+        target.classList.add("is-open");
+        var toggle = target.querySelector(".faq3_question");
+        if (toggle) toggle.setAttribute("aria-expanded", "true");
+        var answer = target.querySelector(".faq3_answer");
+        if (answer) answer.style.height = "auto";
+      }
+    });
+  }
+
   function applyFaq(data) {
     var root = document.getElementById("vivaci-home-faq");
     if (!root || !data) return;
@@ -148,6 +184,7 @@
     if (window.VivaciFaqAccordion && listEl) {
       window.VivaciFaqAccordion.refresh(listEl);
     }
+    scrollHomeFaqDeepLink(listEl);
   }
 
   function hydrateHomepageCopy() {

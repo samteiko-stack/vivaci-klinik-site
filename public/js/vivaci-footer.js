@@ -7,6 +7,43 @@
 
   var DATA_URL = "/content/from-production/footer.json";
 
+  var FALLBACK_FOOTER = {
+    linkColumns: [
+      {
+        title: "Utforska",
+        links: [
+          { label: "Före & Efter", href: "/behandlingar/hydrafacial#results" },
+          {
+            label: "Patientrecensioner",
+            href: "https://www.bokadirekt.se/places/vivaci-klinik-51774",
+          },
+          { label: "Varumärken", href: "/#vivaci-home-brands" },
+          { label: "Vanliga frågor", href: "/#vivaci-home-faq" },
+          { label: "Nyheter & tips", href: "/blogg" },
+          { label: "Betalningsalternativ", href: "/#vivaci-faq-betalning" },
+        ],
+      },
+      {
+        title: "Om Vivaci",
+        links: [
+          { label: "Om oss", href: "/om-oss" },
+          { label: "Möt våra experter", href: "/om-oss#vivaci-om-team" },
+          { label: "Vår metod", href: "/om-oss#vivaci-om-method" },
+          { label: "Varför Vivaci", href: "/om-oss#vivaci-om-values" },
+          { label: "Patientsäkerhet", href: "/om-oss#vivaci-om-values" },
+          { label: "Karriär", href: "/kontakt" },
+        ],
+      },
+    ],
+    legal: [
+      { label: "Integritetspolicy", href: "/integritetspolicy" },
+      { label: "Allmänna villkor", href: "/villkor" },
+      { label: "Avbokning & återbetalning", href: "/avbokning" },
+      { label: "Cookieinställningar", href: "/cookies" },
+    ],
+    copyright: "© 2026 Vivaci Klinik. Alla rättigheter förbehållna.",
+  };
+
   function localizedHref(href) {
     if (!href || !window.VivaciLocaleRouting || !window.VivaciLocaleRouting.localizeHref) {
       return href;
@@ -165,8 +202,13 @@
     column.links.forEach(function (item) {
       var a = document.createElement("a");
       a.className = "footer5_link";
-      a.href = localizedHref(item.href || "#");
+      var href = item.href || "#";
+      a.href = localizedHref(href);
       a.textContent = item.label || "";
+      if (/^https?:\/\//i.test(href)) {
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+      }
       wrap.appendChild(a);
     });
   }
@@ -383,12 +425,17 @@
     applyLegal(root, data.legal, data.copyright);
   }
 
+  function applyFooterAll(data) {
+    document.querySelectorAll("footer.is-section.bg-dark").forEach(function (el) {
+      applyFooter(el, data);
+    });
+  }
+
   function hydrate() {
+    applyFooterAll(FALLBACK_FOOTER);
     return fetchContent(DATA_URL)
       .then(function (data) {
-        document.querySelectorAll("footer.is-section.bg-dark").forEach(function (el) {
-          applyFooter(el, data);
-        });
+        applyFooterAll(data);
         return data;
       })
       .catch(function (err) {

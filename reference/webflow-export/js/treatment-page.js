@@ -1255,8 +1255,18 @@
     return heroImagePromise;
   }
 
+  function scrollToTreatmentHash() {
+    if (window.location.hash !== "#results") return;
+    var el = document.getElementById("results");
+    if (!el || el.hidden) return;
+    requestAnimationFrame(function () {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   function signalTreatmentPageReady() {
     document.documentElement.classList.remove("vivaci-content-pending");
+    scrollToTreatmentHash();
     document.dispatchEvent(new CustomEvent("vivaci:treatment-page-ready"));
   }
 

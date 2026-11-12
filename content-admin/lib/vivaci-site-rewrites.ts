@@ -11,6 +11,7 @@ export const vivaciSiteBeforeFileRewrites: Rewrite[] = [
   { source: "/prislista", destination: "/prislista.html" },
   { source: "/behandlingar", destination: "/behandlingar.html" },
   { source: "/utbildning", destination: "/utbildning.html" },
+  { source: "/faq", destination: "/index.html" },
   { source: "/blogg", destination: "/nyheter.html" },
   { source: "/nyheter", destination: "/nyheter.html" },
   { source: "/produkter", destination: "/webshop.html" },

@@ -41,7 +41,7 @@
         },
         {
           "label": "Patientrecensioner",
-          "href": "/#vivaci-home-why"
+          "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
         },
         {
           "label": "Varumärken",
@@ -57,7 +57,7 @@
         },
         {
           "label": "Payment options",
-          "href": "/#vivaci-home-faq"
+          "href": "/#vivaci-faq-betalning"
         }
       ]
     },
@@ -82,7 +82,7 @@
         },
         {
           "label": "Patientsäkerhet",
-          "href": "/#vivaci-home-why"
+          "href": "/om-oss#vivaci-om-values"
         },
         {
           "label": "Karriär",
@@ -118,10 +118,6 @@
     {
       "label": "Cookieinställningar",
       "href": "/cookies"
-    },
-    {
-      "label": "Temporary admin link",
-      "href": "/content-admin"
     }
   ],
   "copyright": "© 2026 Vivaci Klinik. Alla rättigheter förbehållna."
