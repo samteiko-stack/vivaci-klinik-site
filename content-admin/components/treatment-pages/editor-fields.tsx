@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { Separator } from "@/components/ui/separator";
 import { Switch } from "@/components/ui/switch";
+import { RichTextField } from "@/components/ui/rich-text-field";
 import { Textarea } from "@/components/ui/textarea";
 import { ImagePathField } from "@/components/treatment-pages/image-path-field";
 import { cn } from "@/lib/utils";
@@ -195,7 +196,7 @@ export function StringListEditor({ items, onChange, itemLabel = "Punkt" }: Strin
 type FieldDef = {
   key: string;
   label: string;
-  kind?: "textarea" | "image";
+  kind?: "textarea" | "image" | "richtext";
   rows?: number;
   placeholder?: string;
 };
@@ -222,10 +223,22 @@ export function CardListEditor({
                 key={f.key}
                 label={f.label}
                 className={
-                  f.kind === "textarea" || f.kind === "image" ? "sm:col-span-2" : undefined
+                  f.kind === "textarea" || f.kind === "image" || f.kind === "richtext"
+                    ? "sm:col-span-2"
+                    : undefined
                 }
               >
-                {f.kind === "textarea" ? (
+                {f.kind === "richtext" ? (
+                  <RichTextField
+                    value={String(item[f.key] ?? "")}
+                    onChange={(val) => {
+                      const next = list.map((row, i) =>
+                        i === idx ? { ...row, [f.key]: val } : row
+                      );
+                      onChange(next);
+                    }}
+                  />
+                ) : f.kind === "textarea" ? (
                   <Textarea
                     rows={f.rows ?? 3}
                     value={String(item[f.key] ?? "")}

@@ -77,6 +77,17 @@
     }).join("");
   }
 
+  /** Plain text (\\n\\n paragraphs) or trusted HTML from innehållsadmin. */
+  function setRichBody(el, text) {
+    if (!el || text == null || !String(text).trim()) return;
+    var s = String(text).trim();
+    if (/<[a-z][\s\S]*>/i.test(s)) {
+      el.innerHTML = s;
+      return;
+    }
+    setHtmlParagraphs(el, s);
+  }
+
   /** Lines like "1. Markering…" from Railway ingreppssteg / process copy. */
   function parseNumberedSteps(body) {
     if (!body) return null;
@@ -135,7 +146,7 @@
       }
       if (proseEl) {
         proseEl.hidden = false;
-        if (how.body) setHtmlParagraphs(proseEl, how.body);
+        if (how.body) setRichBody(proseEl, how.body);
       }
     }
   }
@@ -607,7 +618,7 @@
       var h = node.querySelector("h3, h6, .heading-style-h6");
       var p = node.querySelector("p");
       if (h) setText(h, item.title || item.name || "");
-      if (p) setText(p, item.body || item.description || "");
+      if (p) setRichBody(p, item.body || item.description || "");
       parent.appendChild(node);
     });
   }
@@ -624,7 +635,7 @@
       var titleEl = node.querySelector(".text-weight-bold, .text-size-medium");
       var bodyEl = node.querySelector(".text-style-muted");
       if (titleEl) setText(titleEl, item.title || "");
-      if (bodyEl) setText(bodyEl, item.body || "");
+      if (bodyEl) setRichBody(bodyEl, item.body || "");
       setTimelineItemIcon(node, item, index);
       parent.appendChild(node);
     });
@@ -958,7 +969,7 @@
       var h = blockEl.querySelector("h2, h5");
       var bodyWrap = blockEl.querySelector("[data-vivaci-block-body]");
       if (h && data.heading) setText(h, data.heading);
-      if (bodyWrap && data.body) setHtmlParagraphs(bodyWrap, data.body);
+      if (bodyWrap && data.body) setRichBody(bodyWrap, data.body);
     });
     initOverviewReadMore(section);
   }

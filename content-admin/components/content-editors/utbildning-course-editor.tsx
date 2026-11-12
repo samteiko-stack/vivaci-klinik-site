@@ -10,6 +10,7 @@ import {
   SectionSubheading,
 } from "@/components/treatment-pages/editor-fields";
 import { ImagePathField } from "@/components/treatment-pages/image-path-field";
+import { RichTextField } from "@/components/ui/rich-text-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -218,18 +219,18 @@ export function renderUtbildningCourseSection(
     case "about":
       return (
         <SectionFormBody>
-          <FieldGroup label="Brödtext (HTML)">
-            <Textarea
-              className="min-h-[28rem] font-mono text-sm"
+          <FieldGroup label="Brödtext">
+            <RichTextField
+              minHeightClassName="min-h-[28rem]"
               value={String(
                 doc.about && typeof doc.about === "object" && !Array.isArray(doc.about)
                   ? (doc.about as { html?: string }).html ?? ""
                   : ""
               )}
-              onChange={(e) =>
+              onChange={(html) =>
                 onChange({
                   ...doc,
-                  about: { html: e.target.value },
+                  about: { html },
                 })
               }
             />
@@ -298,7 +299,7 @@ export function renderUtbildningCourseSection(
             items={faqItems as Record<string, unknown>[]}
             fields={[
               { key: "question", label: "Fråga" },
-              { key: "answer", label: "Svar", kind: "textarea", rows: 3 },
+              { key: "answer", label: "Svar", kind: "richtext" },
             ]}
             emptyItem={{ question: "", answer: "" }}
             onChange={(items) => onChange(patchNested(doc, "faq", { items }))}

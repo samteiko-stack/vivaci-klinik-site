@@ -16,6 +16,7 @@ import {
 import { ImagePathField } from "@/components/treatment-pages/image-path-field";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { RichTextField } from "@/components/ui/rich-text-field";
 import { Textarea } from "@/components/ui/textarea";
 import {
   FACT_ICONS,
@@ -276,21 +277,18 @@ export function SectionForm({
                     }
                   />
                 </FieldGroup>
-                <FieldGroup
-                  label="Brödtext"
-                  hint="Dubbla radbrytningar = nytt stycke"
-                >
-                  <Textarea
-                    rows={8}
+                <FieldGroup label="Brödtext">
+                  <RichTextField
                     value={String(block.body ?? "")}
-                    onChange={(e) =>
+                    minHeightClassName="min-h-[12rem]"
+                    onChange={(html) =>
                       mutateSection("overview", (sec) => {
                         const list = [...((sec.blocks as Record<string, unknown>[]) ?? [])];
                         const i = list.findIndex((b) => b.id === id);
                         const row =
                           i >= 0
-                            ? { ...list[i], body: e.target.value }
-                            : { id, heading: "", body: e.target.value, enabled: false };
+                            ? { ...list[i], body: html }
+                            : { id, heading: "", body: html, enabled: false };
                         if (i >= 0) list[i] = row;
                         else list.push(row);
                         sec.blocks = list;
@@ -313,7 +311,7 @@ export function SectionForm({
             items={(section.items ?? []) as Record<string, unknown>[]}
             fields={[
               { key: "title", label: "Rubrik" },
-              { key: "body", label: "Text", kind: "textarea", rows: 2 },
+              { key: "body", label: "Text", kind: "richtext" },
             ]}
             emptyItem={{ title: "", body: "" }}
             onChange={(items) => patch(mutateSection, "treatmentAreas", { items })}
@@ -349,7 +347,7 @@ export function SectionForm({
             items={(section.items ?? []) as Record<string, unknown>[]}
             fields={[
               { key: "title", label: "Rubrik" },
-              { key: "body", label: "Text", kind: "textarea", rows: 3 },
+              { key: "body", label: "Text", kind: "richtext" },
             ]}
             emptyItem={{ title: "", body: "" }}
             onChange={(items) => patch(mutateSection, "benefits", { items })}
@@ -368,10 +366,9 @@ export function SectionForm({
             />
           </FieldGroup>
           <FieldGroup label="Brödtext (om inga steg finns)">
-            <Textarea
-              rows={6}
+            <RichTextField
               value={String(section.body ?? "")}
-              onChange={(e) => patch(mutateSection, "howItWorks", { body: e.target.value })}
+              onChange={(html) => patch(mutateSection, "howItWorks", { body: html })}
             />
           </FieldGroup>
           <SectionSubheading>Steg (ersätter brödtext om minst ett steg finns)</SectionSubheading>
@@ -379,7 +376,7 @@ export function SectionForm({
             items={(section.steps ?? []) as Record<string, unknown>[]}
             fields={[
               { key: "title", label: "Stegnamn" },
-              { key: "body", label: "Beskrivning", kind: "textarea", rows: 3 },
+              { key: "body", label: "Beskrivning", kind: "richtext" },
             ]}
             emptyItem={{ title: "", body: "" }}
             onChange={(steps) => patch(mutateSection, "howItWorks", { steps })}
@@ -401,7 +398,7 @@ export function SectionForm({
             items={(section.items ?? []) as Record<string, unknown>[]}
             fields={[
               { key: "title", label: "Etikett (t.ex. Dag 0)" },
-              { key: "body", label: "Beskrivning", kind: "textarea", rows: 2 },
+              { key: "body", label: "Beskrivning", kind: "richtext" },
             ]}
             emptyItem={{ title: "", body: "" }}
             onChange={(items) => patch(mutateSection, "resultsTimeline", { items })}
@@ -504,7 +501,7 @@ export function SectionForm({
             items={(section.items ?? []) as Record<string, unknown>[]}
             fields={[
               { key: "question", label: "Fråga" },
-              { key: "answer", label: "Svar", kind: "textarea", rows: 4 },
+              { key: "answer", label: "Svar", kind: "richtext" },
             ]}
             emptyItem={{ question: "", answer: "" }}
             onChange={(items) => patch(mutateSection, "faq", { items })}

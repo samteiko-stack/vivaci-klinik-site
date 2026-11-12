@@ -7,6 +7,7 @@ import {
   SectionSubheading,
 } from "@/components/treatment-pages/editor-fields";
 import { ImagePathField } from "@/components/treatment-pages/image-path-field";
+import { RichTextField } from "@/components/ui/rich-text-field";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
@@ -35,7 +36,7 @@ export const BLOG_POST_SECTIONS: EditorSectionDef[] = [
   { id: "grund", label: "Grund", description: "Titel, SEO, utdrag och metadata." },
   { id: "hero", label: "Hero", description: "Artikelns huvudbild." },
   { id: "author", label: "Författare", description: "Författarbox på artikeln." },
-  { id: "body", label: "Brödtext", description: "HTML-innehåll i artikeln." },
+  { id: "body", label: "Brödtext", description: "Artikelns huvudinnehåll." },
 ];
 
 export function renderBlogPostSection(
@@ -167,11 +168,11 @@ export function renderBlogPostSection(
     case "body":
       return (
         <SectionFormBody>
-          <FieldGroup label="Brödtext (HTML)">
-            <Textarea
-              className="min-h-[28rem] font-mono text-sm"
+          <FieldGroup label="Brödtext">
+            <RichTextField
+              minHeightClassName="min-h-[28rem]"
               value={String(doc.bodyHtml ?? "")}
-              onChange={(e) => onChange(patchObject(doc, "bodyHtml", e.target.value))}
+              onChange={(html) => onChange(patchObject(doc, "bodyHtml", html))}
             />
           </FieldGroup>
         </SectionFormBody>
