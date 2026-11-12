@@ -1,6 +1,12 @@
 import fs from "node:fs/promises";
-import path from "node:path";
 import { REPO_ROOT } from "./content-path";
+import {
+  joinContentPath,
+  readContentFile,
+  renameContentFile,
+  resolveContentPath,
+  writeContentFile,
+} from "./fs-path";
 
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
@@ -13,15 +19,15 @@ export type SimpleContentMeta = {
 };
 
 function contentDir(kind: "utbildning" | "nyheter"): string {
-  const fromRepo = path.join(REPO_ROOT, "content", kind);
+  const fromRepo = joinContentPath(REPO_ROOT, "content", kind);
   return fromRepo;
 }
 
 function fileFor(kind: "utbildning" | "nyheter", slug: string): string {
   if (!SLUG_RE.test(slug)) throw new Error("Invalid slug");
-  const file = path.join(contentDir(kind), `${slug}.json`);
-  const resolved = path.resolve(file);
-  if (!resolved.startsWith(path.resolve(contentDir(kind)))) {
+  const file = joinContentPath(contentDir(kind), `${slug}.json`);
+  const resolved = resolveContentPath(file);
+  if (!resolved.startsWith(resolveContentPath(contentDir(kind)))) {
     throw new Error("Invalid path");
   }
   return resolved;
@@ -46,7 +52,7 @@ export async function listSimpleContent(
   const pages: SimpleContentMeta[] = [];
   for (const file of files.filter((f) => f.endsWith(".json") && !EXCLUDE.has(f))) {
     const slug = file.replace(/\.json$/, "");
-    const raw = await fs.readFile(path.join(dir, file), "utf8");
+    const raw = await readContentFile(joinContentPath(dir, file));
     const data = JSON.parse(raw) as Record<string, unknown>;
     const title =
       (typeof data.title === "string" && data.title) ||
@@ -63,7 +69,7 @@ export async function listSimpleContent(
 
 export async function readSimpleContent(kind: "utbildning" | "nyheter", slug: string) {
   const file = fileFor(kind, slug);
-  const raw = await fs.readFile(file, "utf8");
+  const raw = await readContentFile(file);
   return JSON.parse(raw) as Record<string, unknown>;
 }
 
@@ -75,6 +81,6 @@ export async function writeSimpleContent(
   const file = fileFor(kind, slug);
   const json = `${JSON.stringify(data, null, 2)}\n`;
   const tmp = `${file}.tmp`;
-  await fs.writeFile(tmp, json, "utf8");
-  await fs.rename(tmp, file);
+  await writeContentFile(tmp, json);
+  await renameContentFile(tmp, file);
 }

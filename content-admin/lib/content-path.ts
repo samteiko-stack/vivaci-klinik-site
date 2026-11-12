@@ -1,24 +1,27 @@
 import "server-only";
 
-import fs from "node:fs";
-import path from "node:path";
+import {
+  contentPathExists,
+  joinContentPath,
+  resolveContentPath,
+} from "./fs-path";
 
 function hasTreatmentPagesContent(root: string): boolean {
-  return fs.existsSync(path.join(root, "content", "treatment-pages"));
+  return contentPathExists(joinContentPath(root, "content", "treatment-pages"));
 }
 
 /** Vivaci monorepo root — resolves regardless of where `next` was started. */
 function resolveRepoRoot(): string {
   const fromEnv = process.env.VIVACI_REPO_ROOT?.trim();
   if (fromEnv) {
-    return path.resolve(fromEnv);
+    return resolveContentPath(fromEnv);
   }
 
   const cwd = process.cwd();
   const candidates = [
     cwd,
-    path.resolve(cwd, ".."),
-    path.resolve(cwd, "content-admin", ".."),
+    resolveContentPath(cwd, ".."),
+    resolveContentPath(cwd, "content-admin", ".."),
   ];
 
   for (const root of candidates) {
@@ -27,19 +30,24 @@ function resolveRepoRoot(): string {
     }
   }
 
-  return path.resolve(cwd, "..");
+  return resolveContentPath(cwd, "..");
 }
 
 export const REPO_ROOT = resolveRepoRoot();
 
 function resolveTreatmentPagesDir(): string {
-  const fromRepo = path.join(REPO_ROOT, "content", "treatment-pages");
-  if (fs.existsSync(fromRepo)) {
+  const fromRepo = joinContentPath(REPO_ROOT, "content", "treatment-pages");
+  if (contentPathExists(fromRepo)) {
     return fromRepo;
   }
   // Static bundle from vercel-build (content copied into Next public/).
-  const fromPublic = path.join(process.cwd(), "public", "content", "treatment-pages");
-  if (fs.existsSync(fromPublic)) {
+  const fromPublic = joinContentPath(
+    process.cwd(),
+    "public",
+    "content",
+    "treatment-pages"
+  );
+  if (contentPathExists(fromPublic)) {
     return fromPublic;
   }
   return fromRepo;

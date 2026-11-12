@@ -189,10 +189,10 @@ export function SimpleContentClient({ kind, apiBase, slug, emptyHint }: Props) {
                   onChange={(v) => setDoc({ ...doc, heroImage: v })}
                 />
               </div>
-              <motionTextarea
+              <FormTextarea
                 label="Brödtext (HTML)"
                 value={typeof doc.bodyHtml === "string" ? doc.bodyHtml : ""}
-                onChange={(v) => setDoc({ ...doc, bodyHtml: v })}
+                onChange={(v: string) => setDoc({ ...doc, bodyHtml: v })}
               />
             </>
           ) : (
@@ -200,12 +200,12 @@ export function SimpleContentClient({ kind, apiBase, slug, emptyHint }: Props) {
               <Field
                 label="Hero — rubrik"
                 value={getNested(doc, ["hero", "title"])}
-                onChange={(v) => setDoc(setNested(doc, ["hero", "title"], v))}
+                onChange={(v: string) => setDoc(setNested(doc, ["hero", "title"], v))}
               />
-              <motionTextarea
+              <FormTextarea
                 label="Hero — intro"
                 value={getNested(doc, ["hero", "intro"])}
-                onChange={(v) => setDoc(setNested(doc, ["hero", "intro"], v))}
+                onChange={(v: string) => setDoc(setNested(doc, ["hero", "intro"], v))}
               />
               <div className="flex flex-col gap-2">
                 <Label>Hero-bild</Label>
@@ -247,7 +247,7 @@ function Field({
   );
 }
 
-function motionTextarea({
+function FormTextarea({
   label,
   value,
   onChange,

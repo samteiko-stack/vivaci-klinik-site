@@ -1,12 +1,11 @@
-import fs from "node:fs";
-import path from "node:path";
 import { REPO_ROOT } from "@/lib/content-path";
+import { joinContentPath, readContentFileSync } from "@/lib/fs-path";
 
 const DEFAULT_HERO_IMAGE = "/images/Morpheus8_0146.webp";
 
 const HOMEPAGE_COPY_CANDIDATES = [
-  path.join(REPO_ROOT, "content", "homepage-copy.json"),
-  path.join(REPO_ROOT, "public", "content", "homepage-copy.json"),
+  joinContentPath(REPO_ROOT, "content", "homepage-copy.json"),
+  joinContentPath(REPO_ROOT, "public", "content", "homepage-copy.json"),
 ] as const;
 
 type HomepageCopy = {
@@ -18,7 +17,7 @@ type HomepageCopy = {
 function readHomepageCopy(): HomepageCopy | null {
   for (const filePath of HOMEPAGE_COPY_CANDIDATES) {
     try {
-      const raw = fs.readFileSync(filePath, "utf8");
+      const raw = readContentFileSync(filePath);
       return JSON.parse(raw) as HomepageCopy;
     } catch {
       continue;
@@ -38,7 +37,7 @@ export function getHomeHeroImagePath(): string {
 /** Absolute path to the file under repo `public/`. */
 export function resolveMarketingPublicFile(webPath: string): string {
   const normalized = webPath.startsWith("/") ? webPath.slice(1) : webPath;
-  return path.join(REPO_ROOT, "public", normalized);
+  return joinContentPath(REPO_ROOT, "public", normalized);
 }
 
 /** Same hero file via content-admin (no duplicated assets in `public/`). */
