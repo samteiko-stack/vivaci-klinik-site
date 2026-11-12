@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import * as React from "react";
-import { ExternalLink, FileText, LogOut } from "lucide-react";
+import { BookOpen, ExternalLink, FileText, GraduationCap, LogOut } from "lucide-react";
 import { logoutAction } from "@/app/actions/auth";
 import { TreatmentPagePickerCommand } from "@/components/TreatmentPagePicker";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
@@ -25,9 +26,11 @@ import {
   SidebarSeparator,
 } from "@/components/ui/sidebar";
 
-const PREVIEW_SITE_URL = "http://127.0.0.1:8765/";
+const PREVIEW_SITE_URL = "/";
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const pathname = usePathname();
+  const onTreatments = pathname.startsWith("/treatment-pages");
   const {
     filteredPages,
     pages,
@@ -45,7 +48,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton
               size="lg"
               className="h-14"
-              render={<Link href="/treatment-pages" aria-label="Vivaci Klinik admin" />}
+              render={<Link href="/treatment-pages" aria-label="Vivaci innehållsadmin" />}
             >
               <Image
                 src={vivaciLogoForDarkBgAdminUrl()}
@@ -66,7 +69,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenu>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  isActive
+                  isActive={onTreatments}
                   className="hover:bg-sidebar-accent/80 data-active:bg-sidebar-accent"
                   render={<Link href="/treatment-pages" />}
                 >
@@ -77,30 +80,60 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   {pages.length}
                 </SidebarMenuBadge>
               </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  isActive={pathname.startsWith("/utbildning")}
+                  className="hover:bg-sidebar-accent/80 data-active:bg-sidebar-accent"
+                  render={<Link href="/utbildning" />}
+                >
+                  <GraduationCap aria-hidden />
+                  <span>Utbildning</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton
+                  isActive={pathname.startsWith("/blogg")}
+                  className="hover:bg-sidebar-accent/80 data-active:bg-sidebar-accent"
+                  render={<Link href="/blogg" />}
+                >
+                  <BookOpen aria-hidden />
+                  <span>Blogg</span>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
 
-        <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
-          <SidebarGroupLabel>Sidbibliotek</SidebarGroupLabel>
-          <SidebarGroupContent className="flex min-h-0 flex-1 flex-col">
-            <TreatmentPagePickerCommand
-              pages={filteredPages}
-              query={query}
-              onQueryChange={setQuery}
-              activePageId={activePageId}
-              onSelect={requestPageSelect}
-              className="min-h-0 flex-1 bg-transparent"
-            />
-          </SidebarGroupContent>
-        </SidebarGroup>
+        {onTreatments ? (
+          <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
+            <SidebarGroupLabel>Sidbibliotek</SidebarGroupLabel>
+            <SidebarGroupContent className="flex min-h-0 flex-1 flex-col">
+              <TreatmentPagePickerCommand
+                pages={filteredPages}
+                query={query}
+                onQueryChange={setQuery}
+                activePageId={activePageId}
+                onSelect={requestPageSelect}
+                className="min-h-0 flex-1 bg-transparent"
+              />
+            </SidebarGroupContent>
+          </SidebarGroup>
+        ) : (
+          <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
+            <SidebarGroupLabel>Sidbibliotek</SidebarGroupLabel>
+            <SidebarGroupContent className="px-2 text-xs leading-relaxed text-sidebar-foreground/60">
+              Välj en sida i listan till höger (på desktop) eller öppna en artikel
+              från menyn ovan.
+            </SidebarGroupContent>
+          </SidebarGroup>
+        )}
       </SidebarContent>
       <SidebarFooter className="border-t border-sidebar-border">
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton
               render={
-                <a href={PREVIEW_SITE_URL} target="_blank" rel="noreferrer" />
+                <a href={PREVIEW_SITE_URL} />
               }
             >
               <ExternalLink className="size-4" aria-hidden />

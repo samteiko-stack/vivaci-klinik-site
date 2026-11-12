@@ -12,7 +12,7 @@ CONTENT = ROOT / "content"
 OUT = CONTENT / "locales" / "en"
 SITE_URLS = CONTENT / "site-urls.json"
 CONTENT_ADMIN_URL = json.loads(SITE_URLS.read_text(encoding="utf-8")).get(
-    "contentAdminUrl", "http://localhost:4000/treatment-pages"
+    "contentAdminUrl", "/content-admin"
 )
 
 LABELS = {
