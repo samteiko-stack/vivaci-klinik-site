@@ -3,11 +3,13 @@
 import { useCallback, useEffect, useMemo, useState, type ReactNode } from "react";
 import { ExternalLink, Save } from "lucide-react";
 import { toast } from "sonner";
-import { ImagePathField } from "@/components/treatment-pages/image-path-field";
+import { BlogPostEditor } from "@/components/content-editors/blog-post-editor";
+import { HubCategoriesEditor } from "@/components/content-editors/hub-categories-editor";
+import { UtbildningCourseEditor } from "@/components/content-editors/utbildning-course-editor";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { Skeleton } from "@/components/ui/skeleton";
 
 type Kind = "utbildning" | "nyheter";
 
@@ -23,36 +25,6 @@ type Props = {
   slug: string | null;
   emptyHint: string;
 };
-
-function setNested(
-  doc: Record<string, unknown>,
-  keys: string[],
-  value: string
-): Record<string, unknown> {
-  const next = { ...doc };
-  let cur: Record<string, unknown> = next;
-  for (let i = 0; i < keys.length - 1; i++) {
-    const k = keys[i]!;
-    const child = cur[k];
-    const branch =
-      child && typeof child === "object" && !Array.isArray(child)
-        ? { ...(child as Record<string, unknown>) }
-        : {};
-    cur[k] = branch;
-    cur = branch;
-  }
-  cur[keys[keys.length - 1]!] = value;
-  return next;
-}
-
-function getNested(doc: Record<string, unknown>, keys: string[]): string {
-  let cur: unknown = doc;
-  for (const k of keys) {
-    if (!cur || typeof cur !== "object") return "";
-    cur = (cur as Record<string, unknown>)[k];
-  }
-  return typeof cur === "string" ? cur : "";
-}
 
 export function SimpleContentClient({ kind, apiBase, slug, emptyHint }: Props) {
   const [meta, setMeta] = useState<SimplePageMeta | null>(null);
@@ -83,12 +55,21 @@ export function SimpleContentClient({ kind, apiBase, slug, emptyHint }: Props) {
         setMeta({
           slug: payload.slug,
           title:
-            (typeof data.title === "string" && data.title) || payload.slug,
+            (typeof data.title === "string" && data.title) ||
+            (slug === "index"
+              ? "Utbildningsöversikt"
+              : slug === "listing"
+                ? "Bloggöversikt"
+                : payload.slug),
           path:
             (typeof data.path === "string" && data.path) ||
             (kind === "utbildning"
-              ? `/utbildning/${payload.slug}`
-              : `/nyheter/${payload.slug}`),
+              ? slug === "index"
+                ? "/utbildning"
+                : `/utbildning/${payload.slug}`
+              : slug === "listing"
+                ? "/blogg"
+                : `/nyheter/${payload.slug}`),
         });
       })
       .catch(() => {
@@ -132,138 +113,82 @@ export function SimpleContentClient({ kind, apiBase, slug, emptyHint }: Props) {
   }
 
   if (loading || !doc) {
-    return <EmptyState>Laddar…</EmptyState>;
+    return (
+      <div className="flex min-h-0 flex-1 flex-col bg-muted/35 p-6">
+        <Skeleton className="mb-4 h-8 w-64" />
+        <Skeleton className="h-96 w-full max-w-3xl rounded-xl" />
+      </div>
+    );
   }
 
   const previewPath = meta?.path ?? "/";
+  const isHub =
+    (kind === "utbildning" && slug === "index") ||
+    (kind === "nyheter" && slug === "listing");
 
   return (
-    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
-      <div className="flex shrink-0 items-center justify-end gap-2 border-b px-4 py-2">
-        <Button
-          variant="outline"
-          size="sm"
-          nativeButton={false}
-          render={
-            <a href={previewPath} target="_blank" rel="noreferrer" />
-          }
-        >
-          <ExternalLink data-icon="inline-start" />
-          Förhandsgranska
-        </Button>
-        <Button type="button" size="sm" disabled={!dirty || saving} onClick={() => void save()}>
-          <Save data-icon="inline-start" />
-          {saving ? "Sparar…" : "Spara"}
-        </Button>
-      </div>
-      <div className="min-h-0 flex-1 overflow-y-auto p-4 md:p-6">
-        <div className="mx-auto flex max-w-2xl flex-col gap-6">
-          <Field
-            label="Titel"
-            value={typeof doc.title === "string" ? doc.title : ""}
-            onChange={(v) => setDoc({ ...doc, title: v })}
-          />
-          <Field
-            label="Meta (SEO)"
-            value={
-              typeof doc.metaDescription === "string" ? doc.metaDescription : ""
-            }
-            onChange={(v) => setDoc({ ...doc, metaDescription: v })}
-          />
-          {kind === "nyheter" ? (
-            <>
-              <Field
-                label="Utdrag"
-                value={typeof doc.excerpt === "string" ? doc.excerpt : ""}
-                onChange={(v) => setDoc({ ...doc, excerpt: v })}
-              />
-              <Field
-                label="Datum"
-                value={typeof doc.date === "string" ? doc.date : ""}
-                onChange={(v) => setDoc({ ...doc, date: v })}
-              />
-              <div className="flex flex-col gap-2">
-                <Label>Hero-bild</Label>
-                <ImagePathField
-                  value={typeof doc.heroImage === "string" ? doc.heroImage : ""}
-                  onChange={(v) => setDoc({ ...doc, heroImage: v })}
-                />
-              </div>
-              <FormTextarea
-                label="Brödtext (HTML)"
-                value={typeof doc.bodyHtml === "string" ? doc.bodyHtml : ""}
-                onChange={(v: string) => setDoc({ ...doc, bodyHtml: v })}
-              />
-            </>
-          ) : (
-            <>
-              <Field
-                label="Hero — rubrik"
-                value={getNested(doc, ["hero", "title"])}
-                onChange={(v: string) => setDoc(setNested(doc, ["hero", "title"], v))}
-              />
-              <FormTextarea
-                label="Hero — intro"
-                value={getNested(doc, ["hero", "intro"])}
-                onChange={(v: string) => setDoc(setNested(doc, ["hero", "intro"], v))}
-              />
-              <div className="flex flex-col gap-2">
-                <Label>Hero-bild</Label>
-                <ImagePathField
-                  value={getNested(doc, ["hero", "image"])}
-                  onChange={(v) => setDoc(setNested(doc, ["hero", "image"], v))}
-                />
-              </div>
-            </>
-          )}
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden bg-muted/35">
+      <div className="flex shrink-0 items-center justify-between gap-3 border-b bg-background/95 px-4 py-2">
+        <div className="min-w-0">
+          <p className="truncate text-sm font-medium">{meta?.title}</p>
+          <p className="truncate text-xs text-muted-foreground">{previewPath}</p>
+        </div>
+        <div className="flex shrink-0 items-center gap-2">
+          <Badge variant={dirty ? "secondary" : "outline"} className="hidden sm:inline-flex">
+            {dirty ? "Osparad" : "Sparad"}
+          </Badge>
+          <Button
+            variant="outline"
+            size="sm"
+            nativeButton={false}
+            render={<a href={previewPath} target="_blank" rel="noreferrer" />}
+          >
+            <ExternalLink data-icon="inline-start" />
+            Förhandsgranska
+          </Button>
+          <Button type="button" size="sm" disabled={!dirty || saving} onClick={() => void save()}>
+            <Save data-icon="inline-start" />
+            {saving ? "Sparar…" : "Spara"}
+          </Button>
         </div>
       </div>
+      <ScrollArea className="min-h-0 flex-1">
+        <div className="mx-auto w-full max-w-4xl px-4 py-6 md:px-8">
+          {isHub ? (
+            <HubCategoriesEditor
+              doc={doc}
+              onChange={setDoc}
+              itemFields={
+                kind === "utbildning"
+                  ? [
+                      { key: "href", label: "Länk (path)" },
+                      { key: "label", label: "Rubrik" },
+                      { key: "description", label: "Beskrivning", kind: "textarea", rows: 2 },
+                      { key: "image", label: "Bild", kind: "image" as const },
+                    ]
+                  : [
+                      { key: "href", label: "Länk (path)" },
+                      { key: "label", label: "Rubrik" },
+                      { key: "description", label: "Beskrivning", kind: "textarea", rows: 2 },
+                      { key: "image", label: "Bild", kind: "image" as const },
+                    ]
+              }
+            />
+          ) : kind === "utbildning" ? (
+            <UtbildningCourseEditor doc={doc} onChange={setDoc} />
+          ) : (
+            <BlogPostEditor doc={doc} onChange={setDoc} />
+          )}
+        </div>
+      </ScrollArea>
     </div>
   );
 }
 
 function EmptyState({ children }: { children: ReactNode }) {
   return (
-    <div className="flex flex-1 items-center justify-center p-8 text-center text-sm text-muted-foreground">
+    <div className="flex flex-1 items-center justify-center bg-muted/35 p-8 text-center text-sm text-muted-foreground">
       {children}
-    </div>
-  );
-}
-
-function Field({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-}) {
-  return (
-    <div className="flex flex-col gap-2">
-      <Label>{label}</Label>
-      <Input value={value} onChange={(e) => onChange(e.target.value)} />
-    </div>
-  );
-}
-
-function FormTextarea({
-  label,
-  value,
-  onChange,
-}: {
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-}) {
-  return (
-    <div className="flex flex-col gap-2">
-      <Label>{label}</Label>
-      <Textarea
-        className="min-h-28 font-mono text-sm"
-        value={value}
-        onChange={(e) => onChange(e.target.value)}
-      />
     </div>
   );
 }

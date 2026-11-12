@@ -10,6 +10,12 @@ import {
   CommandItem,
   CommandList,
 } from "@/components/ui/command";
+import {
+  sidebarCommandClassName,
+  sidebarCommandInputClassName,
+  sidebarCommandItemActiveClassName,
+  sidebarCommandListClassName,
+} from "@/lib/sidebar-command-styles";
 import { cn } from "@/lib/utils";
 
 export type TreatmentPageMeta = {
@@ -80,22 +86,19 @@ export function TreatmentPagePickerCommand({
   return (
     <Command
       shouldFilter={false}
-      className={cn(
-        "relative gap-1 rounded-none bg-transparent p-0 text-sidebar-foreground shadow-none [&_[data-slot=input-group]]:border-sidebar-border [&_[data-slot=input-group]]:bg-sidebar-accent [&_[data-slot=input-group-addon]]:text-sidebar-foreground/50",
-        className
-      )}
+      className={sidebarCommandClassName(className)}
     >
       <CommandInput
         placeholder="Sök efter sida…"
         value={query}
         onValueChange={onQueryChange}
-        className="text-sidebar-foreground placeholder:text-sidebar-foreground/45"
+        className={sidebarCommandInputClassName}
       />
       <CommandList
         ref={listRef}
         aria-label="Behandlingssidor"
         onScroll={updateScrollHint}
-        className="max-h-none flex-1 overflow-y-auto pb-8 pr-1 [scrollbar-width:thin] [&::-webkit-scrollbar]:block [&::-webkit-scrollbar]:w-1.5 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-sidebar-foreground/20 [&::-webkit-scrollbar-track]:bg-transparent"
+        className={sidebarCommandListClassName}
       >
         <CommandEmpty className="text-sidebar-foreground/60">
           Inga sidor matchar sökningen.
@@ -115,11 +118,7 @@ export function TreatmentPagePickerCommand({
                   value={id}
                   aria-current={active ? "page" : undefined}
                   onSelect={() => onSelect(id)}
-                  className={cn(
-                    "cursor-pointer rounded-md px-2.5 py-2.5 text-sidebar-foreground/70 transition-colors data-selected:bg-sidebar-accent/70 data-selected:text-sidebar-accent-foreground [&>svg:last-child]:hidden",
-                    active &&
-                      "bg-sidebar-accent text-sidebar-accent-foreground data-selected:bg-sidebar-accent"
-                  )}
+                  className={cn(sidebarCommandItemActiveClassName(active))}
                 >
                   <span className="truncate font-medium">{page.title}</span>
                 </CommandItem>
