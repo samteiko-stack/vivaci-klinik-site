@@ -6,8 +6,13 @@ import {
   resolveContentPath,
 } from "./fs-path";
 
-function hasTreatmentPagesContent(root: string): boolean {
-  return contentPathExists(joinContentPath(root, "content", "treatment-pages"));
+function hasRepoContentTree(root: string): boolean {
+  return (
+    contentPathExists(joinContentPath(root, "content", "treatment-pages")) ||
+    contentPathExists(joinContentPath(root, "public", "content", "treatment-pages")) ||
+    contentPathExists(joinContentPath(root, "content", "utbildning")) ||
+    contentPathExists(joinContentPath(root, "public", "content", "utbildning"))
+  );
 }
 
 /** Vivaci monorepo root — resolves regardless of where `next` was started. */
@@ -25,7 +30,7 @@ function resolveRepoRoot(): string {
   ];
 
   for (const root of candidates) {
-    if (hasTreatmentPagesContent(root)) {
+    if (hasRepoContentTree(root)) {
       return root;
     }
   }
@@ -35,10 +40,31 @@ function resolveRepoRoot(): string {
 
 export const REPO_ROOT = resolveRepoRoot();
 
+/**
+ * Resolve a directory under `content/` (editable JSON).
+ * On Vercel the project root is `content-admin` only — parent `content/` is not deployed,
+ * so we fall back to `content-admin/content/` (build copy) or `public/content/` (site mirror).
+ */
+export function resolveContentSubdir(...segments: string[]): string {
+  const cwd = process.cwd();
+  const candidates = [
+    joinContentPath(REPO_ROOT, "content", ...segments),
+    joinContentPath(cwd, "content", ...segments),
+    joinContentPath(cwd, "public", "content", ...segments),
+    joinContentPath(REPO_ROOT, "public", "content", ...segments),
+  ];
+
+  for (const dir of candidates) {
+    if (contentPathExists(dir)) {
+      return dir;
+    }
+  }
+
+  return joinContentPath(REPO_ROOT, "content", ...segments);
+}
+
 function resolveTreatmentPagesDir(): string {
-  const fromRepo = joinContentPath(REPO_ROOT, "content", "treatment-pages");
-  // Always edit source of truth; site reads mirrored copies under `public/content/`.
-  return fromRepo;
+  return resolveContentSubdir("treatment-pages");
 }
 
 export const TREATMENT_PAGES_DIR = resolveTreatmentPagesDir();

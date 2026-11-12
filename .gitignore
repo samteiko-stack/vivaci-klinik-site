@@ -8,5 +8,6 @@ content/shopify/storefront-config.json
 .vercel
 node_modules/
 content-admin/.next/
+content-admin/content/
 __pycache__/
 *.pyc

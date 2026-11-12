@@ -80,6 +80,12 @@ def main() -> None:
 
     shutil.copytree(ROOT / "content", public_dir / "content", dirs_exist_ok=True)
 
+    # Vercel Root Directory is `content-admin`; API routes need `content/` on disk there too.
+    admin_content = ROOT / "content-admin" / "content"
+    if admin_content.exists():
+        shutil.rmtree(admin_content)
+    shutil.copytree(ROOT / "content", admin_content)
+
     for html in EXPORT.rglob("*.html"):
         rel = html.relative_to(EXPORT).as_posix()
         if rel == "index.html":

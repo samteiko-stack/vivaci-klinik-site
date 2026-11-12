@@ -12,13 +12,41 @@ const repoRoot = path.resolve(contentAdminRoot, "..");
 const nextConfig: NextConfig = {
   outputFileTracingRoot: repoRoot,
   outputFileTracingIncludes: {
-    "/api/treatment-pages": ["./content/treatment-pages/**/*"],
-    "/api/treatment-pages/[category]/[slug]": ["./content/treatment-pages/**/*"],
-    "/admin/treatment-pages": ["./content/treatment-pages/**/*"],
-    "/api/utbildning": ["./content/utbildning/**/*"],
-    "/api/utbildning/[slug]": ["./content/utbildning/**/*"],
-    "/api/nyheter": ["./content/nyheter/**/*"],
-    "/api/nyheter/[slug]": ["./content/nyheter/**/*"],
+    "/api/treatment-pages": [
+      "./content/treatment-pages/**/*",
+      "./content-admin/content/treatment-pages/**/*",
+      "./content-admin/public/content/treatment-pages/**/*",
+    ],
+    "/api/treatment-pages/[category]/[slug]": [
+      "./content/treatment-pages/**/*",
+      "./content-admin/content/treatment-pages/**/*",
+      "./content-admin/public/content/treatment-pages/**/*",
+    ],
+    "/admin/treatment-pages": [
+      "./content/treatment-pages/**/*",
+      "./content-admin/content/treatment-pages/**/*",
+      "./content-admin/public/content/treatment-pages/**/*",
+    ],
+    "/api/utbildning": [
+      "./content/utbildning/**/*",
+      "./content-admin/content/utbildning/**/*",
+      "./content-admin/public/content/utbildning/**/*",
+    ],
+    "/api/utbildning/[slug]": [
+      "./content/utbildning/**/*",
+      "./content-admin/content/utbildning/**/*",
+      "./content-admin/public/content/utbildning/**/*",
+    ],
+    "/api/nyheter": [
+      "./content/nyheter/**/*",
+      "./content-admin/content/nyheter/**/*",
+      "./content-admin/public/content/nyheter/**/*",
+    ],
+    "/api/nyheter/[slug]": [
+      "./content/nyheter/**/*",
+      "./content-admin/content/nyheter/**/*",
+      "./content-admin/public/content/nyheter/**/*",
+    ],
   },
   async redirects() {
     return [

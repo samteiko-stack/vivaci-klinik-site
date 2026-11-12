@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { REPO_ROOT } from "./content-path";
+import { resolveContentSubdir } from "./content-path";
 import { mirrorPublicContentJson } from "./content-mirror";
 import {
   joinContentPath,
@@ -20,8 +20,7 @@ export type SimpleContentMeta = {
 };
 
 function contentDir(kind: "utbildning" | "nyheter"): string {
-  const fromRepo = joinContentPath(REPO_ROOT, "content", kind);
-  return fromRepo;
+  return resolveContentSubdir(kind);
 }
 
 function fileFor(kind: "utbildning" | "nyheter", slug: string): string {
