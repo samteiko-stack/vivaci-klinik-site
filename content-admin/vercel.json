@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "cd .. && pip install --break-system-packages -r requirements.txt && npm install",
-  "buildCommand": "cd .. && VIVACI_PUBLIC_DIR=content-admin/public python3 scripts/vercel-build.py && npm run build"
+  "framework": "nextjs",
+  "installCommand": "pip install --break-system-packages -r ../scripts/python-requirements.txt && npm install",
+  "buildCommand": "cd .. && VIVACI_PUBLIC_DIR=content-admin/public python3 scripts/vercel-build.py && cd content-admin && npm run build"
 }

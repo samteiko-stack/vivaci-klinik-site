@@ -4,8 +4,11 @@
   "private": true,
   "description": "Vivaci treatment-page CMS built with Next.js and shadcn/ui.",
   "scripts": {
-    "predev": "cd .. && npm run sync:public",
+    "build:css": "cd .. && python3 scripts/bundle-vivaci-css.py",
+    "sync:public": "cd .. && VIVACI_PUBLIC_DIR=content-admin/public VIVACI_SKIP_LOCALE_SYNC=1 python3 scripts/vercel-build.py",
+    "predev": "npm run build:css && npm run sync:public",
     "dev": "node ../scripts/print-dev-url.mjs && next dev --webpack -p ${PORT:-4000}",
+    "dev:legacy": "npm run build:css && cd .. && python3 scripts/dev-server.py",
     "build": "next build",
     "build:vivaci-static": "cd .. && VIVACI_PUBLIC_DIR=content-admin/public python3 scripts/vercel-build.py",
     "start": "next start -p 4000",

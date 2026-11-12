@@ -4,7 +4,7 @@ Pulls content from **https://vivaci-klinik-production.up.railway.app/** into `co
 
 ```bash
 python3 -m venv scripts/.venv   # once
-scripts/.venv/bin/pip install -r scripts/requirements.txt   # once
+scripts/.venv/bin/pip install -r scripts/python-requirements.txt   # once
 scripts/.venv/bin/python scripts/pull-production-content.py
 scripts/.venv/bin/python scripts/build-nav.py
 scripts/.venv/bin/python scripts/build-treatment-pages.py
@@ -15,7 +15,7 @@ scripts/.venv/bin/python scripts/build-treatment-pages.py
 One command, one URL — same origin as Vercel production:
 
 ```bash
-npm run dev
+cd content-admin && npm run dev
 ```
 
 Open **http://localhost:4000/** (home), **/login** (admin), **/treatment-pages** (editor). `/content-admin` in the footer redirects to `/treatment-pages` on the same host.
@@ -23,7 +23,7 @@ Open **http://localhost:4000/** (home), **/login** (admin), **/treatment-pages**
 Legacy Python site-only preview (Railway-style, port 8765):
 
 ```bash
-npm run dev:legacy
+cd content-admin && npm run dev:legacy
 # or: scripts/.venv/bin/python scripts/dev-server.py
 ```
 

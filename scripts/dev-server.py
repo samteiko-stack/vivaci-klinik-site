@@ -690,7 +690,7 @@ def main() -> None:
     from vivaci_admin import auth
 
     server = ThreadingHTTPServer((HOST, PORT), Handler)
-    print("Legacy Python site server (prefer `npm run dev` at repo root for one localhost).")
+    print("Legacy Python site server (prefer `cd content-admin && npm run dev` for one localhost).")
     print(f"Vivaci site → http://localhost:{PORT}/")
     print(f"Legacy Python admin → http://localhost:{PORT}/admin")
     print(f"/content-admin → /treatment-pages (same origin when CONTENT_ADMIN_ORIGIN=same-origin)")

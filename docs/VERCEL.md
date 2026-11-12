@@ -10,7 +10,7 @@ One GitHub repo and one Vercel project serves the static Vivaci site and the Nex
 | **Framework Preset** | Next.js (auto) |
 | **Build / Install** | Leave default — `content-admin/vercel.json` overrides |
 
-If the root directory is still the repo root, use root `vercel.json` instead (same build, `framework: nextjs`).
+**Git import:** Vercel may list extra folders; import **`content-admin` only** (sole deployable app in this repo).
 
 ## Environment variables
 
@@ -60,7 +60,7 @@ For durable production editing you need a follow-up (e.g. GitHub Contents API co
 One command, one URL (matches production: marketing + admin on the same origin):
 
 ```bash
-npm run dev                            # http://localhost:4000
+cd content-admin && npm run dev        # http://localhost:4000
 ```
 
 This bundles CSS, syncs marketing static into `content-admin/public/`, then starts Next.js. Try `/`, `/login`, `/treatment-pages`, and `/content-admin`.
@@ -68,7 +68,7 @@ This bundles CSS, syncs marketing static into `content-admin/public/`, then star
 Legacy Python site-only server (optional):
 
 ```bash
-npm run dev:legacy                     # http://localhost:8765 — no Next admin UI
+cd content-admin && npm run dev:legacy # http://localhost:8765 — no Next admin UI
 ```
 
 ## Deploy
