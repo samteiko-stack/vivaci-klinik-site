@@ -40,9 +40,7 @@ export function resolveMarketingPublicFile(webPath: string): string {
   return joinContentPath(REPO_ROOT, "public", normalized);
 }
 
-/** Same hero file via content-admin (no duplicated assets in `public/`). */
+/** Hero preview on login — file under `public/`. */
 export function getHomeHeroImageAdminUrl(): string {
-  const webPath = getHomeHeroImagePath();
-  const relative = webPath.startsWith("/") ? webPath.slice(1) : webPath;
-  return `/api/site-assets/${relative}`;
+  return getHomeHeroImagePath();
 }

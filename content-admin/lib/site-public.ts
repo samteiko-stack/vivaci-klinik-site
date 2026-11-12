@@ -19,11 +19,20 @@ const IMAGE_EXTENSIONS = new Set([
   ".avif",
 ]);
 
-/** Repo marketing `public/` (falls back to Next `public/` when synced alone). */
+/** Repo marketing `public/` (prefer Next app `public/` with `images/` on Vercel). */
 export function getSitePublicRoot(): string {
-  const fromRepo = joinContentPath(REPO_ROOT, "public");
-  if (contentPathExists(fromRepo)) return fromRepo;
-  return joinContentPath(process.cwd(), "public");
+  const cwd = process.cwd();
+  const candidates = [
+    joinContentPath(cwd, "public"),
+    joinContentPath(REPO_ROOT, "public"),
+    joinContentPath(REPO_ROOT, "content-admin", "public"),
+  ];
+  for (const dir of candidates) {
+    if (contentPathExists(joinContentPath(dir, "images"))) {
+      return dir;
+    }
+  }
+  return joinContentPath(cwd, "public");
 }
 
 export const SITE_PUBLIC_ROOT = getSitePublicRoot();

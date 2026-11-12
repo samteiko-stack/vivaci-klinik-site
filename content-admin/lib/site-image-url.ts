@@ -28,11 +28,11 @@ export function isPreviewableLocalImage(path: string): boolean {
   return Boolean(p && p.startsWith("/") && !/^https?:\/\//i.test(p));
 }
 
-/** Serve repo marketing assets through content-admin without copying binaries. */
+/**
+ * URL for marketing images in the admin UI.
+ * Assets live under `content-admin/public/` (same as the live site) — serve via `/images/…`
+ * so `next/image` and static hosting work on Vercel without bundling binaries into API routes.
+ */
 export function siteAssetAdminUrl(webPath: string): string {
-  const normalized = normalizeImageWebPath(webPath);
-  if (!normalized) return "";
-  if (/^https?:\/\//i.test(normalized)) return normalized;
-  const relative = normalized.startsWith("/") ? normalized.slice(1) : normalized;
-  return `/api/site-assets/${relative.split("/").map(encodeURIComponent).join("/")}`;
+  return normalizeImageWebPath(webPath);
 }

@@ -50,6 +50,18 @@ const nextConfig: NextConfig = {
     "/api/legal": ["./content/legal/**/*", "./content-admin/content/legal/**/*"],
     "/api/legal/[slug]": ["./content/legal/**/*", "./content-admin/content/legal/**/*"],
     "/admin/juridik": ["./content/legal/**/*", "./content-admin/content/legal/**/*"],
+    "/api/site-assets/[...path]": [
+      "./content-admin/public/images/**/*",
+      "./public/images/**/*",
+    ],
+    "/api/site-images": [
+      "./content-admin/public/images/**/*",
+      "./public/images/**/*",
+    ],
+    "/api/site-assets/upload": [
+      "./content-admin/public/images/**/*",
+      "./public/images/**/*",
+    ],
   },
   async redirects() {
     return [
