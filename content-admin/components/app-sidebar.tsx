@@ -9,6 +9,7 @@ import { logoutAction } from "@/app/actions/auth";
 import { SimplePagePicker, type SimplePageMeta } from "@/components/simple-page-picker";
 import { TreatmentPagePickerCommand } from "@/components/TreatmentPagePicker";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
+import { ADMIN_BLOGG, ADMIN_TREATMENTS, ADMIN_UTBILDNING } from "@/lib/admin-routes";
 import { vivaciLogoForDarkBgAdminUrl } from "@/lib/site-image-url";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
@@ -33,9 +34,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const onTreatments = pathname.startsWith("/treatment-pages");
-  const onUtbildning = pathname.startsWith("/utbildning");
-  const onBlogg = pathname.startsWith("/blogg");
+  const onTreatments = pathname.startsWith(ADMIN_TREATMENTS);
+  const onUtbildning = pathname.startsWith(ADMIN_UTBILDNING);
+  const onBlogg = pathname.startsWith(ADMIN_BLOGG);
   const {
     filteredPages,
     pages,
@@ -52,7 +53,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     : onBlogg
       ? "/api/nyheter"
       : null;
-  const simpleRoute = onUtbildning ? "/utbildning" : onBlogg ? "/blogg" : null;
+  const simpleRoute = onUtbildning ? ADMIN_UTBILDNING : onBlogg ? ADMIN_BLOGG : null;
   const activeSlug = searchParams.get("slug") ?? "";
 
   React.useEffect(() => {
@@ -74,7 +75,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             <SidebarMenuButton
               size="lg"
               className="h-14"
-              render={<Link href="/treatment-pages" aria-label="Vivaci innehållsadmin" />}
+              render={<Link href={ADMIN_TREATMENTS} aria-label="Vivaci innehållsadmin" />}
             >
               <Image
                 src={vivaciLogoForDarkBgAdminUrl()}
@@ -97,7 +98,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarMenuButton
                   isActive={onTreatments}
                   className="hover:bg-sidebar-accent/80 data-active:bg-sidebar-accent"
-                  render={<Link href="/treatment-pages" />}
+                  render={<Link href={ADMIN_TREATMENTS} />}
                 >
                   <FileText aria-hidden />
                   <span>Behandlingssidor</span>
@@ -108,9 +109,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  isActive={pathname.startsWith("/utbildning")}
+                  isActive={pathname.startsWith(ADMIN_UTBILDNING)}
                   className="hover:bg-sidebar-accent/80 data-active:bg-sidebar-accent"
-                  render={<Link href="/utbildning" />}
+                  render={<Link href={ADMIN_UTBILDNING} />}
                 >
                   <GraduationCap aria-hidden />
                   <span>Utbildning</span>
@@ -118,9 +119,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               </SidebarMenuItem>
               <SidebarMenuItem>
                 <SidebarMenuButton
-                  isActive={pathname.startsWith("/blogg")}
+                  isActive={pathname.startsWith(ADMIN_BLOGG)}
                   className="hover:bg-sidebar-accent/80 data-active:bg-sidebar-accent"
-                  render={<Link href="/blogg" />}
+                  render={<Link href={ADMIN_BLOGG} />}
                 >
                   <BookOpen aria-hidden />
                   <span>Blogg</span>
@@ -166,11 +167,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           <SidebarMenuItem>
             <SidebarMenuButton
               render={
-                <a href={PREVIEW_SITE_URL} />
+                <a href={PREVIEW_SITE_URL} target="_blank" rel="noreferrer" />
               }
             >
               <ExternalLink className="size-4" aria-hidden />
-              <span>Webbplats</span>
+              <span>Visa webbplats</span>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

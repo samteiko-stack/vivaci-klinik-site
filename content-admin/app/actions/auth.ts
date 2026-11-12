@@ -27,7 +27,7 @@ export async function loginAction(
   }
 
   await createAdminSession();
-  redirect("/treatment-pages");
+  redirect("/admin/treatment-pages");
 }
 
 export async function logoutAction() {

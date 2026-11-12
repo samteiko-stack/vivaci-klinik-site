@@ -20,7 +20,7 @@ export function getVivaciNavSections(): VivaciNavSection[] {
       key: "content",
       label: "Innehåll",
       items: [
-        { key: "treatment-pages", href: "/treatment-pages", icon: FileText },
+        { key: "treatment-pages", href: "/admin/treatment-pages", icon: FileText },
         {
           key: "preview",
           href: "http://127.0.0.1:8765/",

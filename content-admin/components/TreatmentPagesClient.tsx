@@ -1,1 +1,1 @@
-export { default } from "@/app/(editor)/treatment-pages/TreatmentPagesClient";
+export { default } from "@/app/(editor)/admin/treatment-pages/TreatmentPagesClient";

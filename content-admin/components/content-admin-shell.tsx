@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { ExternalLink, Save } from "lucide-react";
 import { AppSidebar } from "@/components/app-sidebar";
+import { ADMIN_TREATMENTS } from "@/lib/admin-routes";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,12 +36,12 @@ function EditorBreadcrumbs() {
     <Breadcrumb>
       <BreadcrumbList>
         <BreadcrumbItem className="hidden xl:block">
-          <BreadcrumbLink href="/treatment-pages">Innehåll</BreadcrumbLink>
+          <BreadcrumbLink href={ADMIN_TREATMENTS}>Innehåll</BreadcrumbLink>
         </BreadcrumbItem>
         <BreadcrumbSeparator className="hidden xl:block" />
         <BreadcrumbItem className="hidden lg:block">
           {hasPage ? (
-            <BreadcrumbLink href="/treatment-pages">Behandlingssidor</BreadcrumbLink>
+            <BreadcrumbLink href={ADMIN_TREATMENTS}>Behandlingssidor</BreadcrumbLink>
           ) : (
             <BreadcrumbPage>Behandlingssidor</BreadcrumbPage>
           )}
@@ -62,7 +63,7 @@ function EditorBreadcrumbs() {
 
 function EditorHeader() {
   const pathname = usePathname();
-  const onTreatmentEditor = pathname.startsWith("/treatment-pages");
+  const onTreatmentEditor = pathname.startsWith(ADMIN_TREATMENTS);
   const { doc, dirty, saving, loadingPage, save } = useTreatmentPages();
 
   if (!onTreatmentEditor) {

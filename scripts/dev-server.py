@@ -554,7 +554,7 @@ def redirect_content_admin(path: str) -> tuple[int, dict[str, str], bytes] | Non
         return None
     origin = CONTENT_ADMIN_ORIGIN.strip()
     if not origin or origin.lower() in {"same-origin", "same", "production"}:
-        target = "/treatment-pages"
+        target = "/admin/treatment-pages"
     elif origin.startswith("/"):
         target = f"{origin.rstrip('/')}/treatment-pages"
     elif "://" in origin:

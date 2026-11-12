@@ -14,7 +14,7 @@ import { getHomeHeroImageAdminUrl } from "@/lib/site-hero";
 import { vivaciLogoDarkAdminUrl } from "@/lib/site-image-url";
 
 export default async function LoginPage() {
-  if (await hasAdminSession()) redirect("/treatment-pages");
+  if (await hasAdminSession()) redirect("/admin/treatment-pages");
 
   const heroImageSrc = getHomeHeroImageAdminUrl();
 
@@ -23,7 +23,7 @@ export default async function LoginPage() {
       <div className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-center gap-2 md:justify-start">
           <Link
-            href="/treatment-pages"
+            href="/admin/treatment-pages"
             className="flex items-center gap-2 font-medium text-foreground"
             aria-label="Vivaci innehållsadmin"
           >

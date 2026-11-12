@@ -14,7 +14,7 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/api/treatment-pages": ["./content/treatment-pages/**/*"],
     "/api/treatment-pages/[category]/[slug]": ["./content/treatment-pages/**/*"],
-    "/(editor)/treatment-pages": ["./content/treatment-pages/**/*"],
+    "/admin/treatment-pages": ["./content/treatment-pages/**/*"],
     "/api/utbildning": ["./content/utbildning/**/*"],
     "/api/utbildning/[slug]": ["./content/utbildning/**/*"],
     "/api/nyheter": ["./content/nyheter/**/*"],
@@ -24,22 +24,32 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/content-admin",
-        destination: "/treatment-pages",
+        destination: "/admin/treatment-pages",
         permanent: false,
       },
       {
         source: "/content-admin/",
-        destination: "/treatment-pages",
+        destination: "/admin/treatment-pages",
         permanent: false,
       },
       {
         source: "/en/content-admin",
-        destination: "/treatment-pages",
+        destination: "/admin/treatment-pages",
         permanent: false,
       },
       {
         source: "/en/content-admin/",
-        destination: "/treatment-pages",
+        destination: "/admin/treatment-pages",
+        permanent: false,
+      },
+      {
+        source: "/treatment-pages",
+        destination: "/admin/treatment-pages",
+        permanent: false,
+      },
+      {
+        source: "/treatment-pages/",
+        destination: "/admin/treatment-pages",
         permanent: false,
       },
     ];
