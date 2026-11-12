@@ -9,13 +9,42 @@
     "hero": {
       "enabled": true,
       "title": "Chemical Peels",
-      "intro": "Chemical Peels är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö."
+      "intro": "Chemical Peels är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
     },
     "facts": {
       "enabled": true,
       "title": "Snabba fakta",
       "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
-      "items": []
+      "items": [
+        {
+          "label": "Treatment time",
+          "value": "30–90 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "Ofta samma dag",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Låg till måttlig",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 1 895 kr",
+          "icon": "wallet"
+        }
+      ]
     },
     "overview": {
       "enabled": true,
@@ -31,20 +60,20 @@
         {
           "id": "symptoms",
           "heading": "Tecken & symtom",
-          "body": "",
-          "enabled": false
+          "body": "De flesta patienter upplever minimalt obehag. Vi prioriterar din komfort genom hela behandlingen.",
+          "enabled": true
         },
         {
           "id": "causes",
           "heading": "Orsaker",
-          "body": "",
-          "enabled": false
+          "body": "The treatment works by stimulating the body's natural repair and renewal processes.\n\nThe exact mechanism and technology are explained in detail during your consultation so that you feel safe and informed.",
+          "enabled": true
         },
         {
           "id": "assessment",
           "heading": "Hur vi bedömer det",
-          "body": "",
-          "enabled": false
+          "body": "Under konsultationen bedömer vi om Chemical Peels är rätt behandling för dig baserat på hudtyp, medicinsk historik och estetiska mål.",
+          "enabled": true
         }
       ]
     },
@@ -54,13 +83,26 @@
       "needsAssessment": []
     },
     "benefits": {
-      "enabled": false,
-      "items": []
+      "enabled": true,
+      "items": [
+        {
+          "title": "Förbättrad hudkvalitet",
+          "body": "Förbättrad hudkvalitet och synliga resultat över tid."
+        },
+        {
+          "title": "Minimal downtime",
+          "body": "Minimal downtime och skräddarsydd plan utifrån dina mål."
+        },
+        {
+          "title": "Enjoyable experience",
+          "body": "De flesta patienter upplever minimalt obehag. Vi prioriterar din komfort genom hela behandlingen."
+        }
+      ]
     },
     "howItWorks": {
-      "enabled": false,
+      "enabled": true,
       "heading": "Så fungerar det",
-      "body": "",
+      "body": "The treatment works by stimulating the body's natural repair and renewal processes.\n\nThe exact mechanism and technology are explained in detail during your consultation so that you feel safe and informed.",
       "steps": []
     },
     "resultsTimeline": {
@@ -74,14 +116,31 @@
     },
     "faq": {
       "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Chemical Peels. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Book a free consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
       "items": [
         {
           "question": "Hur lång tid tar Chemical Peels?",
-          "answer": "Behandlingstiden varierar men de flesta sessioner tar mellan 30 och 90 minuter."
+          "answer": "Processing time varies but most sessions take between 30 and 90 minutes."
         },
         {
           "question": "När ser jag resultat?",
           "answer": "Resultat kan synas gradvis. Tidslinjen beror på behandlingstyp och individuella förutsättningar."
+        },
+        {
+          "question": "Hur bokar jag Chemical Peels?",
+          "answer": "Kontakta Vivaci Klinik i Solna eller boka via webbplatsen. Vi börjar med en kostnadsfri konsultation där vi går igenom om Chemical Peels passar dina mål och förutsättningar."
+        },
+        {
+          "question": "Finns det återhämtningstid?",
+          "answer": "Det varierar mellan behandlingar. Vi informerar om eventuell rodnad, svullnad eller vila och ger konkret eftervård så att du vet vad som gäller efteråt."
+        },
+        {
+          "question": "Vad kostar Chemical Peels?",
+          "answer": "Priset beror på omfattning och individuell plan. Efter konsultationen får du ett tydligt prisförslag innan du bokar behandling."
         }
       ]
     },
@@ -90,7 +149,7 @@
       "heading": "Relaterat",
       "items": [
         {
-          "title": "Acne Här förklarar vi vad acne är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer",
+          "title": "Acne Here we explain what acne is, why it occurs and how we at Vivaci Clinic can help you. You'll also learn more",
           "href": "/problem/acne"
         },
         {
@@ -100,10 +159,10 @@
       ]
     },
     "beforeAfterCare": {
-      "enabled": false,
-      "introBefore": "",
+      "enabled": true,
+      "introBefore": "Följ instruktionerna du får vid konsultationen. Undvik sol, vissa produkter och mediciner enligt anvisning.",
       "before": [],
-      "introAfter": "",
+      "introAfter": "Följ eftervårdsinstruktionerna noggrant. Undvik direkt solljus och använd rekommenderade produkter.",
       "after": []
     },
     "method": {
@@ -116,13 +175,32 @@
       "enabled": true
     },
     "quizCta": {
-      "enabled": true
-    },
-    "beforeAfterGallery": {
-      "enabled": false
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
     },
     "bottomCta": {
-      "enabled": true
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
     }
   }
 }

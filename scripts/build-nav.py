@@ -20,7 +20,7 @@ LISTING_PATH = ROOT / "content/behandlingar/listing.json"
 CATEGORY_ORDER = ["Plastikkirurgi", "Hud", "Injektion", "Kropp", "Hår"]
 
 TREATMENT_IMAGES_PATH = ROOT / "content/from-production/treatment-images.json"
-HERO_IMAGE = "/images/Morpheus8_0146.webp"
+AK_PLACEHOLDER_IMAGE = "/images/ak/treatments/hydrafacial.jpg"
 
 # Display labels in mega-menu (canonical slugs unchanged)
 NAV_LABEL_OVERRIDES: dict[str, str] = {
@@ -33,6 +33,7 @@ INJEKTION_HIGHLIGHT_HREFS = (
 )
 
 MER_LINKS = [
+    {"href": "/blogg", "label": "Blogg"},
     {"href": "/prislista", "label": "Prislista"},
     {"href": "/kontakt", "label": "Kontakta oss"},
 ]
@@ -50,7 +51,7 @@ def image_for_href(href: str, image_by_href: dict[str, str]) -> str:
     return (
         image_by_href.get(key)
         or image_by_href.get(href or "")
-        or HERO_IMAGE
+        or AK_PLACEHOLDER_IMAGE
     )
 
 
@@ -249,6 +250,7 @@ def main() -> None:
             attach_descriptions(raw, descriptions),
             image_by_href,
         )
+        items = [it for it in items if not is_overview_item(it)]
         categories.append(
             {
                 "label": name,
@@ -272,6 +274,7 @@ def main() -> None:
     }
     OUT.write_text(json.dumps(payload, indent=2, ensure_ascii=False), encoding="utf-8")
     print(f"Wrote {OUT} — production nav only")
+    print("  Tip: run python3 scripts/build_en_locale.py to refresh English nav.json")
     for g in categories:
         print(f"  {g['label']}: {len(g['items'])} links")
     print(f"  utility: {len(payload['utilityLinks'])} links")

@@ -5,52 +5,46 @@
       "label": "Plastikkirurgi",
       "items": [
         {
-          "href": "/plastikkirurgi",
-          "label": "All plastikkirurgi",
-          "description": "Överblick över våra kirurgiska ingrepp och erfarna specialister.",
-          "image": "/images/railway/plastikkirurgi.jpg"
-        },
-        {
           "href": "/plastikkirurgi/buccal-fat-removal",
           "label": "Bukfettborttagning",
           "description": "Smalare kindkontur genom avlägsnande av buccalt fett.",
-          "image": "/images/railway/plastikkirurgi-buccal-fat-removal.jpg"
+          "image": "/images/ak/treatments/buccal-fat-removal.png"
         },
         {
           "href": "/plastikkirurgi/liposuction",
           "label": "Fettsugning",
           "description": "Forma kroppen genom selektiv borttagning av fettvävnad.",
-          "image": "/images/railway/plastikkirurgi-liposuction.jpg"
+          "image": "/images/ak/treatments/liposuction.jpg"
         },
         {
           "href": "/plastikkirurgi/dimples",
           "label": "Gropbildning (kindergropar)",
           "description": "Permanent kindgrop för ett naturligt, uttrycksfullt leende.",
-          "image": "/images/railway/plastikkirurgi-dimples.jpg"
+          "image": "/images/ak/treatments/dimples.jpg"
         },
         {
           "href": "/plastikkirurgi/hair-transplant",
           "label": "Hårtransplantation",
           "description": "Återställ hårlinjen med avancerad transplantationsmetod.",
-          "image": "/images/railway/plastikkirurgi-hair-transplant.jpg"
+          "image": "/images/ak/treatments/hair-transplant.jpg"
         },
         {
           "href": "/plastikkirurgi/eyebrow-lift",
           "label": "Ögonbrynslyft",
           "description": "Lyft ögonbryn för ett piggare, mer vaket uttryck.",
-          "image": "/images/railway/plastikkirurgi-eyebrow-lift.jpg"
+          "image": "/images/ak/treatments/eyebrow-lift.jpg"
         },
         {
           "href": "/plastikkirurgi/eyelid-surgery",
           "label": "Ögonlocksplastik",
           "description": "Minska tunga ögonlock och förbättra sikt och utseende.",
-          "image": "/images/railway/plastikkirurgi-eyelid-surgery.jpg"
+          "image": "/images/ak/treatments/eyelid-surgery.jpg"
         },
         {
           "href": "/plastikkirurgi/otoplasty",
           "label": "Otoplastik (öronkorrigering)",
           "description": "Korrigera utstickande öron för bättre balans i profil.",
-          "image": "/images/railway/plastikkirurgi-otoplasty.jpg"
+          "image": "/images/ak/treatments/otoplasty.jpg"
         }
       ],
       "highlights": [
@@ -58,13 +52,13 @@
           "href": "/plastikkirurgi/dimples",
           "label": "Gropbildning (kindergropar)",
           "description": "Permanent kindgrop för ett naturligt, uttrycksfullt leende.",
-          "image": "/images/railway/plastikkirurgi-dimples.jpg"
+          "image": "/images/ak/treatments/dimples.jpg"
         },
         {
           "href": "/plastikkirurgi/buccal-fat-removal",
           "label": "Bukfettborttagning",
           "description": "Smalare kindkontur genom avlägsnande av buccalt fett.",
-          "image": "/images/railway/plastikkirurgi-buccal-fat-removal.jpg"
+          "image": "/images/ak/treatments/buccal-fat-removal.png"
         }
       ]
     },
@@ -202,37 +196,37 @@
           "href": "/behandlingar/botulinum-toxin",
           "label": "Botox",
           "description": "Mjukt upp mimiska rynkor med naturligt resultat — ofta kallat Botox.",
-          "image": "/images/railway/behandlingar-botulinum-toxin.webp"
+          "image": "/images/ak/treatments/botulinum-toxin.jpg"
         },
         {
           "href": "/behandlingar/dermal-fillers",
           "label": "Dermal Fillers",
           "description": "Återställ volym och forma konturer med hyaluronsyra.",
-          "image": "/images/railway/behandlingar-dermal-fillers.jpg"
+          "image": "/images/ak/treatments/dermal-fillers.png"
         },
         {
           "href": "/behandlingar/sculptra",
           "label": "Sculptra",
           "description": "Stimulera kollagen för gradvis, naturlig volymförbättring.",
-          "image": "/images/railway/behandlingar-sculptra.jpg"
+          "image": "/images/ak/treatments/sculptra.jpg"
         },
         {
           "href": "/behandlingar/skin-boosters",
           "label": "Skin Boosters",
           "description": "Djup återfuktning och bättre hudkvalitet från insidan.",
-          "image": "/images/railway/behandlingar-skin-boosters.jpg"
+          "image": "/images/ak/treatments/skin-boosters.jpg"
         },
         {
           "href": "/behandlingar/plasma-lift",
           "label": "Plasma Lift",
           "description": "Egen plasma för spänst och lyster i huden.",
-          "image": "/images/railway/behandlingar-plasma-lift.jpg"
+          "image": "/images/ak/treatments/plasma-lift.png"
         },
         {
           "href": "/behandlingar/vitamin-injections",
           "label": "Vitamin Injections",
           "description": "Vitaminer och näringsämnen direkt där kroppen behöver dem.",
-          "image": "/images/railway/behandlingar-vitamin-injections.jpg"
+          "image": "/images/ak/treatments/vitamin-injections.jpg"
         },
         {
           "href": "/problem/facial-contouring",
@@ -282,13 +276,13 @@
           "href": "/behandlingar/botulinum-toxin",
           "label": "Botox",
           "description": "Mjukt upp mimiska rynkor med naturligt resultat — ofta kallat Botox.",
-          "image": "/images/railway/behandlingar-botulinum-toxin.webp"
+          "image": "/images/ak/treatments/botulinum-toxin.jpg"
         },
         {
           "href": "/behandlingar/dermal-fillers",
           "label": "Dermal Fillers",
           "description": "Återställ volym och forma konturer med hyaluronsyra.",
-          "image": "/images/railway/behandlingar-dermal-fillers.jpg"
+          "image": "/images/ak/treatments/dermal-fillers.png"
         }
       ]
     },
@@ -404,6 +398,14 @@
     }
   ],
   "moreLinks": [
+    {
+      "href": "/blogg",
+      "label": "Blogg"
+    },
+    {
+      "href": "/om-oss",
+      "label": "Om oss"
+    },
     {
       "href": "/prislista",
       "label": "Prislista"

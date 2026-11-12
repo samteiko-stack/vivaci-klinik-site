@@ -1,0 +1,44 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
+  "tagline": "FAQ",
+  "heading": "Vanliga frågor",
+  "intro": "Här hittar du svar på de vanligaste frågorna om bokning, behandlingar och besök hos oss.",
+  "cta": {
+    "label": "Se alla frågor",
+    "href": "/#vivaci-home-faq"
+  },
+  "items": [
+    {
+      "question": "Hur bokar jag en konsultation?",
+      "answer": "Kontakta oss via telefon, e-post eller kontaktsidan. Konsultationen är kostnadsfri."
+    },
+    {
+      "question": "Vilka betalningsalternativ erbjuder ni?",
+      "answer": "Vi accepterar kort, Swish och erbjuder delbetalning."
+    },
+    {
+      "question": "Var ligger kliniken?",
+      "answer": "Solna Torg 3, Plan 2, 171 45 Solna — mitt i Solna Centrum."
+    },
+    {
+      "question": "Gör behandlingarna ont?",
+      "answer": "De flesta behandlingar upplevs som milt obehag. Vid behov använder vi bedövning för ökad komfort."
+    },
+    {
+      "question": "Hur snart ser jag resultat?",
+      "answer": "Det beror på behandlingen. Vissa resultat syns direkt, andra utvecklas under dagar till veckor."
+    },
+    {
+      "question": "Do I need to take sick leave after treatment?",
+      "answer": "Vanligtvis inte. Många återgår till vardagen samma dag. Vi ger alltid individuella råd vid besöket."
+    },
+    {
+      "question": "Är behandlingarna säkra?",
+      "answer": "Vi arbetar enligt medicinska riktlinjer med godkända produkter och erfarna specialister."
+    },
+    {
+      "question": "Kan jag boka om eller avboka?",
+      "answer": "Ja. Se vår sida för avbokning och återbetalning för tider, avgifter och villkor."
+    }
+  ]
+}

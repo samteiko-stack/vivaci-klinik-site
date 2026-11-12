@@ -20,6 +20,7 @@ _mod = importlib.util.module_from_spec(_spec)
 assert _spec.loader is not None
 _spec.loader.exec_module(_mod)
 build_get_response = _mod.build_get_response
+redirect_content_admin = _mod.redirect_content_admin
 
 
 def _request_path(handler: BaseHTTPRequestHandler) -> str:
@@ -35,7 +36,11 @@ def _request_path(handler: BaseHTTPRequestHandler) -> str:
 class handler(BaseHTTPRequestHandler):
     def do_GET(self) -> None:
         path = _request_path(self)
-        status, headers, body = build_get_response(path)
+        redirected = redirect_content_admin(path)
+        if redirected is not None:
+            status, headers, body = redirected
+        else:
+            status, headers, body = build_get_response(path)
         self.send_response(status)
         for key, value in headers.items():
             self.send_header(key, value)

@@ -61,6 +61,10 @@
         return;
       }
       if (kind === "course") {
+        if (root.getAttribute("data-vivaci-course-hydrated")) {
+          finish();
+          return;
+        }
         document.addEventListener("vivaci:course-page-ready", finish, { once: true });
         return;
       }

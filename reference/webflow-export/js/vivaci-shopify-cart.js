@@ -377,6 +377,7 @@
         window.location.href = cart.checkoutUrl;
       }
     },
+    syncNavCount: syncNavCount,
   };
 
   function cartPaymentsHtml() {
@@ -571,6 +572,23 @@
     });
   }
 
+  function syncNavCount() {
+    var qty = 0;
+    if (cartState.cart && cartState.cart.totalQuantity) {
+      qty = cartState.cart.totalQuantity;
+    } else {
+      try {
+        var raw = localStorage.getItem(CART_QTY_KEY);
+        qty = parseInt(raw || "0", 10);
+        if (!isFinite(qty) || qty < 0) qty = 0;
+      } catch (e) {
+        qty = 0;
+      }
+    }
+    updateTrigger(qty);
+    return qty;
+  }
+
   function wireCartTriggers() {
     document.querySelectorAll("[data-vivaci-cart-trigger]").forEach(function (btn) {
       if (btn.getAttribute("data-vivaci-cart-wired") === "true") return;
@@ -583,12 +601,9 @@
     wireCartTriggers();
   }
 
-  window.addEventListener("vivaci:cart-updated", function (e) {
-    renderCart(e.detail && e.detail.cart);
-  });
-
-  document.addEventListener("DOMContentLoaded", function () {
+  function bootCartShell() {
     mountNavTrigger();
+    syncNavCount();
     if (window.VivaciShopify) {
       window.VivaciShopifyCart.init().finally(function () {
         emitCartHydrated();
@@ -596,9 +611,25 @@
     } else {
       emitCartHydrated();
     }
+  }
+
+  window.addEventListener("vivaci:cart-updated", function (e) {
+    renderCart(e.detail && e.detail.cart);
   });
 
-  document.addEventListener("vivaci:nav-ready", mountNavTrigger);
-  document.addEventListener("vivaci:nav-actions-ready", mountNavTrigger);
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", bootCartShell);
+  } else {
+    bootCartShell();
+  }
+
+  document.addEventListener("vivaci:nav-ready", function () {
+    mountNavTrigger();
+    syncNavCount();
+  });
+  document.addEventListener("vivaci:nav-actions-ready", function () {
+    mountNavTrigger();
+    syncNavCount();
+  });
   document.addEventListener("vivaci:i18n-ready", applyCartI18n);
 })();

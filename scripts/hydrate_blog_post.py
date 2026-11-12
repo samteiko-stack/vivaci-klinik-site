@@ -12,12 +12,22 @@ from bs4 import BeautifulSoup, Tag
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "nyheter"
 
+# Listing/page JSON is for the category finder and hero — not article detail pages.
+NON_POST_JSON = frozenset({"index.json", "listing.json", "page.json"})
+
+
+def _is_post_document(data: dict[str, Any]) -> bool:
+    return bool(data.get("title") and data.get("bodyHtml"))
+
 
 def load_post(slug: str) -> dict[str, Any] | None:
     path = CONTENT / f"{slug}.json"
-    if not path.is_file():
+    if not path.is_file() or path.name in NON_POST_JSON:
         return None
-    return json.loads(path.read_text(encoding="utf-8"))
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not _is_post_document(data):
+        return None
+    return data
 
 
 def _set_text(el: Tag | None, text: str | None) -> None:
@@ -71,7 +81,7 @@ def _fill_tags(soup: BeautifulSoup, tags: list[str] | None) -> None:
         )
         if not item:
             continue
-        item["href"] = "/nyheter"
+        item["href"] = "/blogg"
         div = item.find("div")
         if div:
             div.string = label
@@ -83,11 +93,11 @@ def _ensure_blog_styles(soup: BeautifulSoup) -> None:
     if not head:
         return
     html = str(head)
-    if "vivaci-blog.css" not in html:
+    if "vivaci.css" not in html:
         head.append(
             soup.new_tag(
                 "link",
-                href="/css/vivaci-blog.css",
+                href="/css/vivaci.css",
                 rel="stylesheet",
                 type="text/css",
             )
@@ -125,14 +135,14 @@ def hydrate_blog_html(raw: str, data: dict[str, Any]) -> str:
 
     crumb_root = soup.select_one('[data-vivaci-field="breadcrumb-root"]')
     if crumb_root:
-        crumb_root["href"] = "/nyheter"
+        crumb_root["href"] = "/blogg"
         div = crumb_root.find("div")
         if div:
             div.string = "Nyheter & tips"
 
     crumb_cat = soup.select_one('[data-vivaci-field="breadcrumb-category"]')
     if crumb_cat:
-        crumb_cat["href"] = "/nyheter"
+        crumb_cat["href"] = "/blogg"
         div = crumb_cat.find("div")
         if div:
             div.string = data.get("category") or "Nyheter"
@@ -176,10 +186,12 @@ def build_all(out_dir: Path, template_path: Path) -> list[Path]:
     template = template_path.read_text(encoding="utf-8")
     written: list[Path] = []
     for path in sorted(CONTENT.glob("*.json")):
-        if path.name == "index.json":
+        if path.name in NON_POST_JSON:
             continue
         slug = path.stem
         data = json.loads(path.read_text(encoding="utf-8"))
+        if not _is_post_document(data):
+            continue
         data.setdefault("slug", slug)
         html_out = hydrate_blog_html(template, data)
         dest = out_dir / f"{slug}.html"

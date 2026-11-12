@@ -10,8 +10,7 @@
     "audience": "Hudterapeuter, sjuksköterskor och läkare som ska arbeta med HydraFacial på klinik. Ingen tidigare HydraFacial-erfarenhet krävs.",
     "image": "/images/Morpheus8_0146.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
@@ -26,14 +25,12 @@
     {
       "label": "28 feb 2026",
       "time": "10:00 – 16:00",
-      "seats": "5 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "5 platser kvar"
     },
     {
       "label": "18 apr 2026",
       "time": "10:00 – 16:00",
-      "seats": "8 platser",
-      "enrollHref": "/kontakt"
+      "seats": "8 platser"
     }
   ],
   "about": {
@@ -58,8 +55,12 @@
   },
   "faq": {
     "enabled": true,
-    "intro": "",
+    "intro": "Praktisk information om anmälan, certifiering och kursdagen.",
     "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Hudterapeut, sjuksköterska eller läkare som ska arbeta med HydraFacial på klinik. Ingen tidigare HydraFacial-erfarenhet krävs."
+      },
       {
         "question": "Behöver kliniken redan ha en enhet?",
         "answer": "Nej — utbildning sker på Vivacis utrustning. Inköpsstöd kan ges efter certifiering."
@@ -67,6 +68,14 @@
       {
         "question": "Hur länge gäller certifikatet?",
         "answer": "Enligt HydraFacials riktlinjer; refresher rekommenderas vart tredje år."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Avbokningsregler?",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
       }
     ]
   }

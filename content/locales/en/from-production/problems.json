@@ -5,7 +5,7 @@
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/acne",
     "name": "Acne",
     "heroIntro": "Här förklarar vi vad acne är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
-    "whatIsIt": "Acne är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+    "whatIsIt": "Acne is a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
     "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till acne och skapar en behandlingsplan baserad på din unika situation.",
     "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.",
@@ -38,7 +38,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -54,19 +54,19 @@
       "Vilken behandling passar mig?",
       "Före & Efter",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "acne-scars",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/acne-scars",
-    "name": "Acnärr",
+    "name": "Acne scars",
     "heroIntro": "Här förklarar vi vad acnärr är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
-    "whatIsIt": "Acnärr är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+    "whatIsIt": "Acnärr is a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
     "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till acnärr och skapar en behandlingsplan baserad på din unika situation.",
     "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
@@ -78,7 +78,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -91,19 +91,19 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "alopecia",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/alopecia",
-    "name": "Alopecia",
+    "name": "Alopeciaa",
     "heroIntro": "Här förklarar vi vad alopecia är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
-    "whatIsIt": "Alopecia är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+    "whatIsIt": "Alopecia is a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
     "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till alopecia och skapar en behandlingsplan baserad på din unika situation.",
     "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
@@ -115,7 +115,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -128,17 +128,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "body-contouring",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/body-contouring",
-    "name": "Kroppsskulptering",
+    "name": "Body sculpting",
     "heroIntro": "Här förklarar vi vad kroppsskulptering är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Kroppsskulptering är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -152,7 +152,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -165,19 +165,19 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "broken-capillaries",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/broken-capillaries",
-    "name": "Brutna kapillärer",
+    "name": "Broken capillaries",
     "heroIntro": "Här förklarar vi vad brutna kapillärer är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
-    "whatIsIt": "Brutna kapillärer är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+    "whatIsIt": "Broken capillaries are a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
     "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till brutna kapillärer och skapar en behandlingsplan baserad på din unika situation.",
     "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
@@ -189,7 +189,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -202,10 +202,10 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
@@ -247,7 +247,7 @@
       },
       {
         "question": "Hur många behandlingar behöver jag?",
-        "answer": "Antalet sessioner beror på cellulitens grad och den behandlingsplan som rekommenderas vid konsultationen."
+        "answer": "The number of sessions depends on the degree of cellulitis and the treatment plan recommended at the consultation."
       },
       {
         "question": "Vilken behandling är mest effektiv?",
@@ -271,17 +271,17 @@
       "Vilken behandling passar mig?",
       "Före & Efter",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "dark-circles",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/dark-circles",
-    "name": "Mörka ringar",
+    "name": "Dark circles",
     "heroIntro": "Här förklarar vi vad mörka ringar är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Mörka ringar är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -295,7 +295,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -308,17 +308,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "double-chin",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/double-chin",
-    "name": "Dubbelhaka",
+    "name": "Double chin",
     "heroIntro": "Här förklarar vi vad dubbelhaka är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Dubbelhaka är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -327,7 +327,7 @@
     "recommendedTreatments": [
       {
         "slug": "dermal-fillers",
-        "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs",
+        "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs ",
         "url": "/behandlingar/dermal-fillers"
       },
       {
@@ -343,7 +343,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -359,17 +359,17 @@
       "Vilken behandling passar mig?",
       "Före & Efter",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "dry-skin",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/dry-skin",
-    "name": "Torr hud",
+    "name": "Dry skin",
     "heroIntro": "Här förklarar vi vad torr hud är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Torr hud är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -383,7 +383,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -396,17 +396,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "dull-skin",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/dull-skin",
-    "name": "Tråkig hud",
+    "name": "Dull skin",
     "heroIntro": "Här förklarar vi vad tråkig hud är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Tråkig hud är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -420,7 +420,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -433,17 +433,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "enlarged-pores",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/enlarged-pores",
-    "name": "Förstorade porer",
+    "name": "Enlarged pores",
     "heroIntro": "Här förklarar vi vad förstorade porer är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Förstorade porer är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -457,7 +457,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -470,17 +470,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "excessive-sweating",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/excessive-sweating",
-    "name": "Överdriven svettning",
+    "name": "Excessive sweating",
     "heroIntro": "Här förklarar vi vad överdriven svettning är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Överdriven svettning är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -494,7 +494,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -507,17 +507,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "eye-bags",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/eye-bags",
-    "name": "Påsar under ögonen",
+    "name": "Under-eye bags",
     "heroIntro": "Här förklarar vi vad påsar under ögonen är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Påsar under ögonen är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -531,7 +531,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -544,19 +544,19 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "facial-contouring",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/facial-contouring",
-    "name": "Ansiktskonturering",
+    "name": "Facial contouring",
     "heroIntro": "Här förklarar vi vad ansiktskonturering är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
-    "whatIsIt": "Ansiktskonturering är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+    "whatIsIt": "Facial contouring is a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
     "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till ansiktskonturering och skapar en behandlingsplan baserad på din unika situation.",
     "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
@@ -568,7 +568,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -581,17 +581,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "fine-lines-wrinkles",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/fine-lines-wrinkles",
-    "name": "Fina linjer & rynkor",
+    "name": "Fine lines & wrinkles",
     "heroIntro": "Här förklarar vi vad fina linjer & rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Fina linjer & rynkor är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -605,7 +605,7 @@
       },
       {
         "slug": "dermal-fillers",
-        "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs",
+        "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs ",
         "url": "/behandlingar/dermal-fillers"
       },
       {
@@ -626,7 +626,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -642,10 +642,10 @@
       "Vilken behandling passar mig?",
       "Före & Efter",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
@@ -666,7 +666,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -679,17 +679,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "hair-loss",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/hair-loss",
-    "name": "Håravfall",
+    "name": "Hair loss",
     "heroIntro": "Här förklarar vi vad håravfall är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Håravfall är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -714,7 +714,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -729,17 +729,17 @@
       "Rekommenderade behandlingar",
       "Vilken behandling passar mig?",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "lip-enhancement",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/lip-enhancement",
-    "name": "Läppförstoring",
+    "name": "Lip enhancement",
     "heroIntro": "Här förklarar vi vad läppförstoring är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Läppförstoring är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -753,7 +753,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -766,17 +766,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "loose-skin",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/loose-skin",
-    "name": "Slapp hud",
+    "name": "Loose skin",
     "heroIntro": "Här förklarar vi vad slapp hud är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Slapp hud är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -790,7 +790,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -803,17 +803,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "loose-skin-body",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/loose-skin-body",
-    "name": "Slapp hud",
+    "name": "Loose skin",
     "heroIntro": "Här förklarar vi vad slapp hud är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Slapp hud är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -827,7 +827,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -840,10 +840,10 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
@@ -864,7 +864,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -877,17 +877,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "overweight-weight-loss",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/overweight-weight-loss",
-    "name": "Övervikt & viktnedgång",
+    "name": "Overweight & weight loss",
     "heroIntro": "Här förklarar vi vad övervikt & viktnedgång är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Övervikt & viktnedgång är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -901,7 +901,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -914,17 +914,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "pigmentation",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/pigmentation",
-    "name": "Pigmentering",
+    "name": "Pigmentation",
     "heroIntro": "Här förklarar vi vad pigmentering är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Pigmentering är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -954,7 +954,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -970,10 +970,10 @@
       "Vilken behandling passar mig?",
       "Före & Efter",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
@@ -994,7 +994,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1008,17 +1008,17 @@
       "Hur vi bedömer det",
       "Före & Efter",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "scars",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/scars",
-    "name": "Ärr",
+    "name": "Scars",
     "heroIntro": "Här förklarar vi vad ärr är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Ärr är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1032,7 +1032,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1045,17 +1045,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "sensitive-skin",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/sensitive-skin",
-    "name": "Känslig hud",
+    "name": "Sensitive skin",
     "heroIntro": "Här förklarar vi vad känslig hud är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Känslig hud är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1069,7 +1069,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1082,17 +1082,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "skin-lesions",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/skin-lesions",
-    "name": "Hudförändringar",
+    "name": "Skin lesions",
     "heroIntro": "Här förklarar vi vad hudförändringar är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Hudförändringar är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1106,7 +1106,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1119,17 +1119,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "skin-quality-hydration",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/skin-quality-hydration",
-    "name": "Hudkvalitet & hydrering",
+    "name": "Skin quality & hydration",
     "heroIntro": "Här förklarar vi vad hudkvalitet & hydrering är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Hudkvalitet & hydrering är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1143,7 +1143,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1156,17 +1156,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "stretch-marks",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/stretch-marks",
-    "name": "Stretchmärken",
+    "name": "Stretch marks",
     "heroIntro": "Här förklarar vi vad stretchmärken är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Stretchmärken är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1180,7 +1180,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1193,17 +1193,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "stretch-marks-body",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/stretch-marks-body",
-    "name": "Stretchmärken",
+    "name": "Stretch marks",
     "heroIntro": "Här förklarar vi vad stretchmärken är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Stretchmärken är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1217,7 +1217,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1230,17 +1230,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "stubborn-fat",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/stubborn-fat",
-    "name": "Envis fett",
+    "name": "Stubborn fat",
     "heroIntro": "Här förklarar vi vad envis fett är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Envis fett är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1254,7 +1254,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1267,17 +1267,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "swelling-lymphatic-drainage",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/swelling-lymphatic-drainage",
-    "name": "Svullnad & lymfdränage",
+    "name": "Swelling & lymphatic drainage",
     "heroIntro": "Här förklarar vi vad svullnad & lymfdränage är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Svullnad & lymfdränage är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1291,7 +1291,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1304,17 +1304,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "thinning-hair",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/thinning-hair",
-    "name": "Tunnare hår",
+    "name": "Thinning hair",
     "heroIntro": "Här förklarar vi vad tunnare hår är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Tunnare hår är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1328,7 +1328,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1341,17 +1341,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "uneven-skin-tone",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/uneven-skin-tone",
-    "name": "Ojämn hudton",
+    "name": "Uneven skin tone",
     "heroIntro": "Här förklarar vi vad ojämn hudton är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Ojämn hudton är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1365,7 +1365,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1378,17 +1378,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "unwanted-hair",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/unwanted-hair",
-    "name": "Oönskat hår",
+    "name": "Unwanted hair",
     "heroIntro": "Här förklarar vi vad oönskat hår är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Oönskat hår är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1397,7 +1397,7 @@
     "recommendedTreatments": [
       {
         "slug": "laser-hair-removal",
-        "name": "har Laserhårborttagning Permanent reduktion av oönskat hår med Clarity II på Vivaci Klinik i Solna. Behandlingen utförs",
+        "name": "har Laserhårborttagning Permanent reduktion av oönskat hår med Clarity II på Vivaci Klinik i Solna. Behandlingen utförs ",
         "url": "/behandlingar/laser-hair-removal"
       }
     ],
@@ -1408,7 +1408,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1423,17 +1423,17 @@
       "Rekommenderade behandlingar",
       "Vilken behandling passar mig?",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "volume-loss",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/volume-loss",
-    "name": "Volymförlust",
+    "name": "Volume loss",
     "heroIntro": "Här förklarar vi vad volymförlust är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Volymförlust är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1447,7 +1447,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1460,17 +1460,17 @@
       "Orsaker",
       "Hur vi bedömer det",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "problem",
     "slug": "wrinkles",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/wrinkles",
-    "name": "Rynkor",
+    "name": "Wrinkles",
     "heroIntro": "Här förklarar vi vad rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
     "whatIsIt": "Rynkor är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
     "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -1484,7 +1484,7 @@
       },
       {
         "slug": "dermal-fillers",
-        "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs",
+        "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs ",
         "url": "/behandlingar/dermal-fillers"
       }
     ],
@@ -1495,7 +1495,7 @@
       },
       {
         "question": "Hur många behandlingar behövs?",
-        "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+        "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
       },
       {
         "question": "Finns det någon återhämtningstid?",
@@ -1510,10 +1510,10 @@
       "Rekommenderade behandlingar",
       "Vilken behandling passar mig?",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   }
 ]

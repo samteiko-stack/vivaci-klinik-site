@@ -1,0 +1,1675 @@
+{
+  "common": {
+    "appName": "Tandfokus CRM",
+    "loading": "Loading…",
+    "save": "Save",
+    "saving": "Saving…",
+    "working": "Working…",
+    "deleting": "Deleting…",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "create": "Create",
+    "archive": "Archive",
+    "unarchive": "Unarchive",
+    "yes": "Yes",
+    "no": "No",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "search": "Search",
+    "clear": "Clear",
+    "clearSearch": "Clear search",
+    "stepDown": "Decrease",
+    "stepUp": "Increase",
+    "close": "Close",
+    "confirm": "Confirm",
+    "back": "Back",
+    "invite": "Invite",
+    "language": "Language",
+    "english": "English",
+    "swedish": "Swedish",
+    "switchingLanguage": "Switching language…",
+    "switchToLanguage": "Switch to {language}",
+    "noResults": "No results",
+    "actions": "Actions",
+    "rowActions": "Row actions",
+    "status": "Status",
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "role": "Role",
+    "slug": "Slug",
+    "clinics": "Clinics",
+    "showInactive": "Show inactive",
+    "hideInactive": "Hide inactive",
+    "showDeactivated": "Show deactivated",
+    "showActive": "Show active",
+    "users": "users",
+    "signOut": "Sign out",
+    "profile": "Profile",
+    "settings": "Settings",
+    "openMenu": "Open menu",
+    "today": "Today",
+    "yesterday": "Yesterday",
+    "all": "All",
+    "from": "From",
+    "to": "To",
+    "networkError": "Network error",
+    "dismiss": "Dismiss",
+    "selectDate": "Select date",
+    "clearDate": "Clear date",
+    "copyToClipboard": "Copy to clipboard",
+    "dismissNotification": "Dismiss notification",
+    "clearSelection": "Clear selection",
+    "selectionCount": "{count, plural, one {# item selected} other {# items selected}}",
+    "bulkActions": "Bulk actions",
+    "closePreview": "Close preview",
+    "deleteNote": "Delete note",
+    "closeMenu": "Close menu",
+    "mainNavigation": "Main navigation",
+    "filterList": "Filter list",
+    "dates": {
+      "justNow": "just now",
+      "minutesAgo": "{count, plural, one {# minute ago} other {# minutes ago}}",
+      "hoursAgo": "{count, plural, one {# hour ago} other {# hours ago}}",
+      "daysAgo": "{count, plural, one {# day ago} other {# days ago}}",
+      "unknown": "Unknown"
+    }
+  },
+  "auth": {
+    "welcome": "Welcome",
+    "signInSubtitle": "Sign in to your account to continue.",
+    "email": "Email",
+    "password": "Password",
+    "emailPlaceholder": "you@example.com",
+    "forgotPassword": "Forgot password?",
+    "sending": "Sending…",
+    "signIn": "Sign in",
+    "signingIn": "Signing in…",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "resetSent": "Reset email sent to {email}. Check your inbox.",
+    "tagline": "CRM for Tandfokus",
+    "errors": {
+      "linkExpired": "That link expired or is invalid. Request a new reset email below.",
+      "loginFailed": "Login failed. You may not have access.",
+      "noAgentRecord": "No CRM agent record found for this email.",
+      "invalidCredentials": "Invalid email or password.",
+      "enterEmailForReset": "Enter your email address above, then click Forgot password.",
+      "resetFailed": "Could not send reset email. Check the address and try again."
+    },
+    "resetPassword": {
+      "setPassword": "Set your password",
+      "setNewPassword": "Set a new password",
+      "inviteIntro": "Choose a password to activate your Tandfokus CRM account.",
+      "resetIntro": "Choose a new password for your account.",
+      "newPassword": "New password",
+      "confirmPassword": "Confirm password",
+      "updatePassword": "Update password",
+      "passwordTooShort": "Password must be at least 8 characters.",
+      "passwordMismatch": "Passwords do not match.",
+      "updateFailed": "Could not update password.",
+      "updateFailedRetry": "Could not update password. Request a new link and try again."
+    }
+  },
+  "adminShell": {
+    "roles": {
+      "admin": "System admin",
+      "agent": "Clinic staff",
+      "team_lead": "Team lead",
+      "administrator": "Administrator"
+    }
+  },
+  "nav": {
+    "access": {
+      "adminOnly": "Available to administrators only"
+    },
+    "sections": {
+      "insights": "Insights",
+      "team": "Team",
+      "organization": "Organization",
+      "system": "System"
+    },
+    "items": {
+      "leads": "Leads",
+      "contacts": "Contacts",
+      "pipeline": "Pipeline",
+      "forms": "Forms",
+      "analytics": "Analytics",
+      "logs": "Activity log",
+      "agents": "Users",
+      "clinics": "Clinics",
+      "practitioners": "Practitioners",
+      "campaigns": "Campaigns",
+      "settings": "Settings",
+      "emailLog": "Email log"
+    },
+    "pages": {
+      "leadDetails": "Lead Details",
+      "contact": "Contact",
+      "contacts": "Contacts",
+      "leads": "Leads",
+      "pipeline": "Pipeline",
+      "forms": "Forms",
+      "users": "Users",
+      "clinics": "Clinics",
+      "practitioners": "Practitioners",
+      "campaigns": "Campaigns",
+      "analytics": "Analytics",
+      "settings": "Settings",
+      "profile": "Profile",
+      "activityLog": "Activity Log",
+      "default": "Tandfokus CRM",
+      "emailLog": "Email Log"
+    }
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "Good morning",
+      "afternoon": "Good afternoon",
+      "evening": "Good evening"
+    },
+    "importCsv": "Import CSV",
+    "newLead": "New Lead",
+    "fallbackName": "there"
+  },
+  "leads": {
+    "table": {
+      "searchPlaceholder": "Search name, phone, email…",
+      "filters": {
+        "allStatuses": "All Statuses",
+        "allPractitioners": "All practitioners",
+        "allCampaigns": "All campaigns",
+        "allClinics": "All clinics",
+        "clearDateFilter": "Clear date filter"
+      },
+      "datePresets": {
+        "today": "Today",
+        "thisWeek": "This week",
+        "thisMonth": "This month",
+        "last30d": "Last 30d"
+      },
+      "archived": {
+        "show": "Show archived",
+        "hide": "Hide archived"
+      },
+      "columns": {
+        "date": "Date",
+        "name": "Name",
+        "phone": "Phone",
+        "email": "Email",
+        "calls": "Calls",
+        "status": "Status",
+        "comment": "Comment",
+        "clinic": "Clinic",
+        "contact": "Contact",
+        "lastActivity": "Last activity",
+        "created": "Created"
+      },
+      "bulk": {
+        "archive": "Archive",
+        "archiveLeads": "Archive leads",
+        "unarchive": "Unarchive",
+        "deletePermanently": "Delete permanently",
+        "noLeadsToArchive": "Selected contacts have no leads to archive.",
+        "archiveFailed": "Bulk archive failed. Please try again.",
+        "deleteFailed": "Bulk delete failed. Please try again."
+      },
+      "rowActions": {
+        "openLead": "Open lead",
+        "openContact": "Open contact",
+        "quickEdit": "Quick edit",
+        "archive": "Archive",
+        "unarchive": "Unarchive",
+        "deletePermanently": "Delete permanently"
+      },
+      "empty": {
+        "noLeads": "No leads yet",
+        "noLeadsFiltered": "No leads match your filters",
+        "noContacts": "No contacts in the sales book yet",
+        "noContactsFiltered": "No contacts match your filters",
+        "noLeadsHint": "New enquiries land here automatically. You can also add one by hand or import a list.",
+        "noArchivedLeads": "No archived leads",
+        "noArchivedHint": "Archived leads appear here when you archive them from the main list. Turn off “Show archived” to return to active leads.",
+        "noContactsHint": "Contacts appear here once a lead is promoted to the sales book.",
+        "filteredHint": "Try widening the date range or clearing a filter to see more results."
+      },
+      "pagination": {
+        "prev": "Prev",
+        "next": "Next",
+        "ariaLabel": "Pagination"
+      },
+      "emailOnly": "Email only",
+      "clearFilters": "Clear filters",
+      "count": {
+        "matches": "matches",
+        "contacts": "contacts",
+        "leads": "leads",
+        "showingOfLeads": "Showing {shown} of {total} leads",
+        "showingOfMatches": "Showing {shown} of {total} matches"
+      },
+      "contactsScopeHint": "People in the sales book — one row per contact, linked to qualified leads only.",
+      "leadCount": "{count, plural, one {# lead} other {# leads}}",
+      "actionsFor": "Actions for {name}",
+      "openFullPage": "Open {name} full page",
+      "openFullPageShort": "Open full page",
+      "dateLabel": {
+        "lastActivity": "Last activity",
+        "created": "Created",
+        "from": "From {date}",
+        "until": "Until {date}",
+        "range": "{from} – {to}"
+      },
+      "errors": {
+        "refreshLeads": "Couldn't refresh leads. Try again in a moment.",
+        "refreshContacts": "Couldn't refresh contacts. Try again in a moment.",
+        "deleteFailed": "Could not delete lead. Please try again.",
+        "bulkArchiveFailedCount": "Failed to archive {count} lead(s).",
+        "bulkUnarchiveFailedCount": "Failed to unarchive {count} lead(s).",
+        "bulkDeleteFailedCount": "Failed to delete {count} lead(s).",
+        "archiveLeadFailedArchive": "Failed to archive {name}.",
+        "archiveLeadFailedUnarchive": "Failed to unarchive {name}."
+      }
+    },
+    "modals": {
+      "new": {
+        "title": "New lead",
+        "nameRequired": "Name *",
+        "namePlaceholder": "John Smith",
+        "phoneHint": "Swedish number, e.g. 070-123 45 67. Leave empty if not available.",
+        "campaignPlaceholder": "Walk-in, referral, etc.",
+        "phoneOrEmailRequired": "Phone or email is required",
+        "createFailed": "Failed to create lead",
+        "createFailedRetry": "Failed to create lead. Please try again.",
+        "creating": "Creating…",
+        "createLead": "Create lead",
+        "campaign": "Campaign"
+      },
+      "edit": {
+        "title": "Edit lead",
+        "phoneHint": "Swedish number, e.g. 070-123 45 67. Leave empty if this lead only has an email.",
+        "locked": "Locked",
+        "emailLockedHint": "This lead has email history. Changing the address would break reply routing for messages sent from the current email.",
+        "loadFailed": "Failed to load lead",
+        "saveFailed": "Failed to save",
+        "campaign": "Campaign",
+        "campaignPlaceholder": "Summer campaign"
+      },
+      "quickEdit": {
+        "fullPage": "Full page",
+        "commentPlaceholder": "Call notes, booking details…",
+        "organizationSection": "Organization",
+        "none": "None",
+        "nameRequired": "Name is required",
+        "loadPartial": "Could not refresh all fields — showing list data.",
+        "loadFailed": "Could not load lead",
+        "saveFailed": "Failed to save lead",
+        "leadFallback": "Lead",
+        "comment": "Comment",
+        "clinic": "Clinic",
+        "practitioner": "Practitioner",
+        "campaign": "Campaign",
+        "calls": "Calls",
+        "decreaseCalls": "Decrease calls",
+        "increaseCalls": "Increase calls",
+        "leadInfoSection": "Lead info",
+        "submissionsSection": "Form submissions",
+        "created": "Created",
+        "source": "Source",
+        "form": "Form",
+        "language": "Language",
+        "formMessage": "Message from form",
+        "formMessageHint": "From the embedded intake form (read-only).",
+        "formMessageHintNamed": "From form “{form}” (read-only)."
+      },
+      "import": {
+        "title": "Import leads from CSV",
+        "intro": "Required columns: {required}, plus phone or email · Optional: {optional}",
+        "requiredColumns": "name, source",
+        "optionalColumns": "campaign, form, language",
+        "csvOnly": "Please upload a .csv file.",
+        "dropzoneTitle": "Drop your CSV file here or click to browse",
+        "sourceHint": "Source must be one of: meta, tiktok, website, manual",
+        "downloadTemplate": "Download template CSV",
+        "rowsParsed": "{count} rows parsed",
+        "invalid": "{count} invalid",
+        "changeFile": "Change file",
+        "importing": "Importing…",
+        "importCount": "Import {count, plural, one {# lead} other {# leads}}",
+        "done": "Done",
+        "previewColumns": {
+          "index": "#",
+          "name": "Name",
+          "phone": "Phone",
+          "email": "Email",
+          "source": "Source",
+          "campaign": "Campaign"
+        },
+        "missing": "missing",
+        "importFailed": "Import failed ({status})",
+        "resultCreated": "{count, plural, one {# new lead imported} other {# new leads imported}}",
+        "resultReopened": "{count, plural, one {# existing lead reopened} other {# existing leads reopened}}",
+        "resultSkipped": "{count} skipped",
+        "moreErrors": "…and {count} more errors"
+      }
+    },
+    "confirm": {
+      "archive": {
+        "title": "Archive {count, plural, one {lead} other {leads}}?",
+        "unarchiveTitle": "Unarchive {count, plural, one {lead} other {leads}}?",
+        "contactBulkTitle": "Archive leads for {count, plural, one {# contact} other {# contacts}}?",
+        "singleTitleArchive": "Archive {name}?",
+        "singleTitleUnarchive": "Unarchive {name}?",
+        "contactArchiveDescription": "Qualified leads linked to these contacts will be archived. Contacts stay in the directory.",
+        "unarchiveDescription": "Selected leads will reappear in your active leads list.",
+        "archiveDescription": "Selected leads will be moved to archived leads. You can unarchive them later.",
+        "singleUnarchiveDescription": "This lead will reappear in your active leads list.",
+        "singleArchiveDescription": "This lead will be moved to archived leads. You can unarchive it later.",
+        "confirmArchive": "Archive",
+        "confirmUnarchive": "Unarchive",
+        "confirmArchiveLeads": "Archive leads"
+      },
+      "delete": {
+        "bulkTitle": "Delete {count, plural, one {lead} other {leads}} permanently?",
+        "singleTitle": "Delete lead permanently?",
+        "singleTitleNamed": "Delete {name} permanently?",
+        "bulkDescription": "This permanently deletes the selected leads, including messages, notes, files, and call history. This cannot be undone.",
+        "singleDescription": "This permanently deletes this lead, including messages, notes, files, and call history. This cannot be undone.",
+        "confirmLabel": "Delete permanently"
+      }
+    },
+    "lostReasons": {
+      "price": "Price too high",
+      "timing": "Bad timing",
+      "competitor": "Went with competitor",
+      "no_response": "No response",
+      "not_interested": "Not interested",
+      "other": "Other reason"
+    },
+    "clinicRail": {
+      "allClinics": "All clinics",
+      "loading": "Loading clinics…"
+    },
+    "sources": {
+      "meta": "Meta",
+      "tiktok": "TikTok",
+      "website": "Website",
+      "webflow": "Webflow",
+      "manual": "Manual",
+      "unknown": "Unknown"
+    },
+    "assign": {
+      "unassigned": "Unassigned",
+      "unassign": "Unassign",
+      "unassignConfirmTitle": "Unassign lead?",
+      "unassignConfirmDescription": "This lead will no longer be assigned to anyone.",
+      "assignFailed": "Failed to assign lead"
+    },
+    "detail": {
+      "backToLeads": "Back to leads",
+      "added": "Added {date}",
+      "tabs": {
+        "record": "Record",
+        "messages": "Messages",
+        "phone": "Phone",
+        "sectionsAriaLabel": "Lead sections"
+      },
+      "sections": {
+        "contact": "Contact",
+        "details": "Details",
+        "files": "Files",
+        "submissions": "Form submissions",
+        "noSubmissions": "No form submissions for this lead."
+      },
+      "fields": {
+        "phone": "Phone",
+        "email": "Email",
+        "altEmail": "Alt email",
+        "altPhone": "Alt phone",
+        "contactRecord": "Contact record",
+        "viewFullContact": "View full contact",
+        "status": "Status",
+        "clinic": "Clinic",
+        "campaignLink": "Campaign link",
+        "practitioner": "Practitioner",
+        "lostReason": "Lost reason",
+        "callCount": "Calls"
+      },
+      "notProvided": "Not provided",
+      "identityConflict": {
+        "navLabel": "Conflict",
+        "title": "Possible identity conflict",
+        "description": "Phone and email match different existing contacts. Review before linking or merging.",
+        "reviewAction": "Review contacts",
+        "markReviewed": "Mark as reviewed"
+      },
+      "archiveFailed": "Failed to update archive status",
+      "deleteFailed": "Could not delete lead",
+      "confirm": {
+        "unarchiveTitle": "Unarchive lead?",
+        "archiveTitle": "Archive lead?",
+        "unarchiveDescription": "This lead will reappear in your active leads list.",
+        "archiveDescription": "This lead will be moved to archived leads. You can unarchive it later.",
+        "deleteTitle": "Delete lead permanently?",
+        "deleteDescription": "This permanently deletes {name}, including notes, files, and call history. This cannot be undone."
+      }
+    },
+    "email": {
+      "tab": "Email",
+      "loading": "Loading email…",
+      "noEmailTitle": "No email on file",
+      "noEmailDescription": "This lead was submitted without an email address.",
+      "loadErrorTitle": "Couldn't load emails",
+      "loadErrorDescription": "Couldn't load emails. Refresh to try again.",
+      "emptyTitle": "No emails yet",
+      "emptyDescription": "Send the first one below.",
+      "subject": "Subject",
+      "subjectPlaceholder": "Subject (optional)",
+      "replyingTo": "Replying to",
+      "placeholder": "Email {name}…",
+      "send": "Send email",
+      "sending": "Sending…",
+      "emptyMessage": "Message can't be empty.",
+      "sendFailed": "Failed to send email",
+      "defaultSubject": "Message from Tandfokus",
+      "rePrefix": "Re: ",
+      "you": "You",
+      "today": "Today",
+      "yesterday": "Yesterday",
+      "unknownDate": "Unknown",
+      "noMessagesYet": "No messages yet",
+      "youPrefix": "You: ",
+      "linkPlaceholder": "https://",
+      "editorPlaceholder": "Type your message…",
+      "insertLinkTitle": "Insert link",
+      "insertLink": "Insert link",
+      "urlLabel": "URL"
+    },
+    "notes": {
+      "tab": "Notes",
+      "placeholder": "Add a note about this lead…",
+      "addNote": "Add note",
+      "empty": "No notes yet.",
+      "title": "Note",
+      "deleteConfirm": "Delete this note?",
+      "loadFailed": "Couldn't load notes.",
+      "saveFailed": "Failed to save note",
+      "deleteFailed": "Failed to delete note"
+    },
+    "calls": {
+      "noPhoneTitle": "No phone number",
+      "noPhoneDescription": "This lead was submitted without a phone number. Contact them via email instead.",
+      "phoneSection": "Phone",
+      "historySection": "Call history",
+      "call": "Call",
+      "hangUp": "Hang Up",
+      "resetLine": "Reset line",
+      "status": {
+        "ready": "Ready",
+        "calling": "Calling…",
+        "ringing": "Ringing",
+        "connected": "Connected",
+        "preparing": "Preparing call…",
+        "almostReady": "Almost ready…",
+        "connecting": "Connecting line…",
+        "tryingAgain": "Trying again…",
+        "refreshing": "Refreshing line…",
+        "dialing": "Dialing…"
+      },
+      "notices": {
+        "noAnswer": "No answer",
+        "readyToCall": "Ready to call.",
+        "tapToRetry": "Tap Call to try again.",
+        "historySaveFailed": "Call ended but history could not be saved",
+        "micBlocked": "Microphone blocked — allow mic access in your browser",
+        "micBlockedSettings": "Microphone blocked — allow mic access in your browser settings",
+        "callDropped": "Call dropped — tap Call to try again",
+        "couldNotAnswer": "Could not answer the call — try again",
+        "customerUnavailable": "Customer unavailable",
+        "noValidPhone": "This lead has no valid phone number"
+      },
+      "logs": {
+        "loading": "Loading call history…",
+        "loadFailed": "Couldn't load call history.",
+        "loadErrorTitle": "Couldn't load calls",
+        "empty": "No calls yet",
+        "answered": "Answered · {duration}",
+        "failed": "Call failed",
+        "noAnswer": "No answer",
+        "unknownAgent": "Unknown agent"
+      }
+    },
+    "files": {
+      "title": "Files",
+      "add": "Add",
+      "addFile": "Add file",
+      "uploading": "Uploading…",
+      "empty": "No files yet.",
+      "deleteFile": "Delete file",
+      "deleteConfirm": "Delete this file?",
+      "sourceEmail": "Email",
+      "sourceUploaded": "Uploaded",
+      "loadFailed": "Failed to load files",
+      "uploadFailed": "Upload failed",
+      "deleteFailed": "Failed to delete file",
+      "fileTooLarge": "{name} is too large (max 10 MB)."
+    }
+  },
+  "pipeline": {
+    "toolbar": {
+      "searchPlaceholder": "Search pipeline…",
+      "activeCount": "{count} active",
+      "activeLabel": "active",
+      "undo": "Undo",
+      "undoAriaLabel": "Undo move for {leadName}"
+    },
+    "errors": {
+      "refresh": "Couldn't refresh pipeline. Try again in a moment.",
+      "updateStatus": "Could not update status",
+      "restoreLead": "Could not restore lead",
+      "undoMove": "Could not undo move"
+    },
+    "board": {
+      "noStages": "No pipeline stages configured",
+      "noLeads": "No leads"
+    },
+    "lostModal": {
+      "title": "Mark as lost",
+      "intro": "Select why {leadName} was lost. The lead will be archived.",
+      "introFallback": "Select why this lead was lost. The lead will be archived.",
+      "selectReasonPlaceholder": "Select a reason…",
+      "selectReasonError": "Select a reason before confirming."
+    },
+    "wonModal": {
+      "title": "Mark {leadName} as won?",
+      "titleFallback": "Mark lead as won?",
+      "description": "This archives the lead. You can find it again with Show archived on the leads list.",
+      "confirmLabel": "Mark as won"
+    },
+    "statusSelect": {
+      "updated": "Status updated",
+      "changeTitle": "Change status to {status}?",
+      "changeDescription": "This updates the lead on the pipeline and leads list.",
+      "confirm": "Change status"
+    }
+  },
+  "forms": {
+    "tabs": {
+      "build": "Build",
+      "settings": "Settings",
+      "share": "Share",
+      "submissions": "Submissions",
+      "preview": "Preview",
+      "customize": "Customize"
+    },
+    "status": {
+      "live": "Live",
+      "paused": "Paused",
+      "archived": "Archived"
+    },
+    "filters": {
+      "activeForms": "Active forms",
+      "live": "Live",
+      "paused": "Paused",
+      "archived": "Archived",
+      "allForms": "All forms",
+      "allGroups": "All groups",
+      "none": "None"
+    },
+    "groupBy": {
+      "label": "Group by",
+      "none": "No grouping",
+      "group": "Group",
+      "status": "Status",
+      "source": "Source",
+      "clinic": "Clinic",
+      "campaign": "Campaign"
+    },
+    "groups": {
+      "manageAction": "Manage groups",
+      "manageTitle": "Form groups",
+      "manageDescription": "Rename groups or review how many forms belong to each. Assign groups from the list or in form settings.",
+      "newGroup": "New group…",
+      "createTitle": "Create group",
+      "createDescription": "Pick a name used across forms. The form you started from will be assigned to this group.",
+      "createLabel": "Create group",
+      "nameLabel": "Group name",
+      "namePlaceholder": "e.g. Website, Meta ads",
+      "renameAction": "Rename",
+      "renameLabel": "Rename {name}",
+      "formCount": "{count, plural, one {# form} other {# forms}}",
+      "empty": "No active forms yet.",
+      "updated": "Group updated",
+      "created": "Group “{name}” created",
+      "renamed": "Group renamed to “{name}”",
+      "updateFailed": "Could not update group"
+    },
+    "list": {
+      "searchPlaceholder": "Search forms…",
+      "emptyTitle": "No forms yet",
+      "emptyFilteredTitle": "No matching forms",
+      "emptyDescription": "Build hosted forms and embeds that feed leads straight into the CRM.",
+      "emptyFilteredDescription": "Try a different search or filter.",
+      "newForm": "New form",
+      "untitledForm": "Untitled form",
+      "uncategorized": "Uncategorized",
+      "showArchived": "Show archived",
+      "hideArchived": "Active forms",
+      "formCount": "{count, plural, one {# form} other {# forms}}",
+      "countLabel": "forms"
+    },
+    "table": {
+      "columns": {
+        "status": "Status",
+        "group": "Group",
+        "source": "Source",
+        "campaign": "Campaign",
+        "clinic": "Clinic",
+        "submissions": "Submissions",
+        "updated": "Updated"
+      }
+    },
+    "builder": {
+      "customize": "Customize",
+      "customizeHint": "Edit labels, choices, and requirements",
+      "previewHint": "See how visitors will experience your form",
+      "fieldDefault": "Field",
+      "formNameRequired": "Form name is required."
+    },
+    "fields": {
+      "formName": "Form name",
+      "group": "Group",
+      "urlSlug": "URL slug",
+      "description": "Internal notes",
+      "descriptionPlaceholder": "e.g. which site pages use this form — not shown to visitors",
+      "descriptionHint": "Staff-only. Use for routing notes, page paths, or reminders. Never shown on public forms.",
+      "source": "Source",
+      "clinic": "Clinic",
+      "practitioner": "Practitioner",
+      "campaign": "Campaign",
+      "campaignHint": "Links new leads to a marketing campaign for reporting and GTM attribution. Optional.",
+      "metaVirtualUrlPath": "URL path",
+      "metaVirtualUrlPathPlaceholder": "/meta-submitform",
+      "metaVirtualUrlPathHint": "Same path as your Meta custom conversion rule (e.g. /meta-submitform).",
+      "buttonText": "Button text",
+      "successMessage": "Success message",
+      "redirectUrl": "Redirect URL",
+      "redirectPlaceholder": "https://…",
+      "redirectHint": "Optional thank-you page after submit. Leave empty to show the success message on the form."
+    },
+    "defaults": {
+      "buttonText": "Submit",
+      "successMessage": "Thank you! We will be in touch soon."
+    },
+    "share": {
+      "copyHostedLink": "Copy hosted link?",
+      "copyEmbedCode": "Copy embed code?",
+      "copyEmbed": "Copy embed code",
+      "copyLink": "Copy link",
+      "openHosted": "Open form",
+      "hostedLink": "Hosted link",
+      "hostedLinkHint": "Copy or open the hosted form — the link is not shown here."
+    },
+    "confirm": {
+      "saveTitle": "Save this form?",
+      "saveDescription": "Your changes will be stored and the hosted link will use the updated version.",
+      "saveLabel": "Save form",
+      "createTitle": "Create a new form?",
+      "createDescription": "Opens a blank form builder. Save when you are ready to publish.",
+      "createLabel": "Create form",
+      "deleteTitle": "Delete form?",
+      "deleteDescription": "This permanently removes the form. It has no submissions, so nothing is kept in the CRM.",
+      "deleteLabel": "Delete form",
+      "archiveTitle": "Archive form?",
+      "archiveDescription": "Hides this form from the active list and stops the hosted link. You can restore it later.",
+      "archiveLabel": "Archive form",
+      "restoreTitle": "Restore form?",
+      "restoreDescription": "Moves this form back to the active list. It stays paused until you go live.",
+      "restoreLabel": "Restore form",
+      "duplicateTitle": "Duplicate form?",
+      "duplicateDescription": "Creates a paused copy you can edit separately.",
+      "duplicateLabel": "Duplicate",
+      "pauseTitle": "Pause form?",
+      "pauseDescription": "The hosted link and embed will stop accepting submissions until you go live again.",
+      "pauseLabel": "Pause form",
+      "goLiveTitle": "Go live?",
+      "goLiveDescription": "The hosted link and embed will start accepting submissions.",
+      "goLiveLabel": "Go live",
+      "copyTitle": "Copy to clipboard?",
+      "copyLabel": "Copy",
+      "removeFieldTitle": "Remove field?",
+      "removeFieldDescription": "Removes this field from the form layout.",
+      "removeFieldLabel": "Remove field"
+    },
+    "toast": {
+      "copied": "Copied to clipboard",
+      "copyFailed": "Could not copy",
+      "created": "Form created",
+      "saved": "Form saved",
+      "deleted": "Form deleted",
+      "archived": "Form archived",
+      "restored": "Form restored",
+      "live": "Form is live",
+      "paused": "Form paused",
+      "duplicated": "Form duplicated",
+      "error": "Something went wrong"
+    },
+    "actions": {
+      "createForm": "Create form",
+      "saveForm": "Save form",
+      "loadError": "Could not load forms",
+      "createFirstForm": "Create your first form",
+      "copyLink": "Copy link",
+      "viewSubmissions": "View submissions",
+      "duplicate": "Duplicate",
+      "pause": "Pause",
+      "goLive": "Go live",
+      "restore": "Restore"
+    },
+    "editor": {
+      "allForms": "All forms",
+      "formDetails": "Form details",
+      "leadRouting": "Lead routing",
+      "afterSubmit": "After submit",
+      "shareTitle": "Share",
+      "embedCode": "Embed code",
+      "hosted": "Hosted",
+      "embed": "Embed",
+      "done": "Done",
+      "preview": "Preview",
+      "formIsLive": "Form is live",
+      "pausedFormsHint": "Paused forms cannot be opened or embedded.",
+      "nameSlugHint": "Display name shown to leads and in the CRM.",
+      "groupHint": "Organize forms on the list. You can also assign a group directly from the forms table.",
+      "groupPlaceholder": "e.g. Website, Meta ads",
+      "routingHint": "Optional — assign clinic, practitioner, or campaign to new leads.",
+      "settingsNavLabel": "Form settings sections",
+      "settingsSections": {
+        "details": "Details",
+        "routing": "Routing",
+        "meta": "Meta",
+        "submit": "After submit"
+      },
+      "metaTrackingTitle": "Meta conversion",
+      "metaTrackingHint": "Match your Events Manager custom conversion. We only use URL-based rules — copy the path from Meta (usually /meta-submitform).",
+      "newFormName": "New form",
+      "formCount": "{count, plural, one {# form} other {# forms}}",
+      "updated": "Updated {date}",
+      "submissionCount": "{count, plural, one {# submission} other {# submissions}}"
+    },
+    "submissions": {
+      "title": "Submissions",
+      "hint": "Each submission creates a contact and a new lead in the CRM.",
+      "loading": "Loading submissions…",
+      "loadFailed": "Could not load submissions",
+      "emptyTitle": "No submissions yet",
+      "emptyDescription": "Submissions appear here once someone fills out this form.",
+      "openLead": "Open lead",
+      "unknownContact": "Unknown contact"
+    },
+    "palette": {
+      "addFields": "Add fields",
+      "addFieldsHint": "Drag a field into your form",
+      "formLayout": "Form layout",
+      "formLayoutHint": "Drop, reorder, and click to customize",
+      "canvasEmpty": "Drag fields here to start",
+      "longAnswerPlaceholder": "Long answer…",
+      "choosePlaceholder": "Choose…",
+      "addChoices": "Add choices…",
+      "choicesCount": "{count} choices",
+      "reorderAria": "Reorder {label}"
+    },
+    "fieldEditor": {
+      "choices": "Choices",
+      "choicePlaceholder": "Choice {index}",
+      "removeChoiceAria": "Remove choice {index}",
+      "addChoice": "Add choice",
+      "required": "Required",
+      "placeholderOptional": "Placeholder (optional)",
+      "placeholderHint": "Shown inside the empty field",
+      "selectPlaceholderHint": "e.g. Select a service",
+      "removeField": "Remove field",
+      "headingText": "Heading text",
+      "instructions": "Instructions",
+      "question": "Question",
+      "clinicOptionsHint": "Choices are loaded from active clinics in the CRM and update automatically when clinics change."
+    },
+    "public": {
+      "loading": "Loading form…",
+      "selectPlaceholder": "Select…",
+      "selectPlaceholderClinic": "Select clinic…",
+      "selectPlaceholderFromLabel": "Select {label}…",
+      "sending": "Sending…",
+      "submitError": "Could not submit form. Try again.",
+      "networkError": "Could not reach the server. Check your connection and try again.",
+      "rateLimitError": "Too many attempts. Wait a moment and try again.",
+      "serverError": "Something went wrong. Try again in a few minutes.",
+      "validationRequired": "Please fill in all required fields.",
+      "captchaRequired": "Security check required. Try submitting again.",
+      "captchaFailed": "Security check failed. Try again.",
+      "captchaUnavailable": "Security check is temporarily unavailable. Try again shortly.",
+      "invalidPhone": "Enter a valid phone number, e.g. 070-123 45 67.",
+      "previewNote": "Preview only — submissions are disabled."
+    },
+    "errors": {
+      "saveFailed": "Could not save form",
+      "deleteFailed": "Could not delete form",
+      "archiveFailed": "Could not archive form",
+      "restoreFailed": "Could not restore form",
+      "updateFailed": "Could not update form",
+      "duplicateFailed": "Could not duplicate form",
+      "nameFieldRequired": "Add a name field.",
+      "contactFieldRequired": "Add at least an email or phone field so leads can be matched.",
+      "dropdownNeedsChoice": "Dropdown “{label}” needs at least one choice."
+    },
+    "confirmNamed": {
+      "deleteTitle": "Delete “{name}”?",
+      "archiveTitle": "Archive “{name}”?",
+      "archiveWithSubmissions": "This form has {count, plural, one {# submission} other {# submissions}}. Archiving hides it from the active list and stops the hosted link. Submissions stay in the CRM.",
+      "restoreTitle": "Restore “{name}”?",
+      "duplicateTitle": "Duplicate “{name}”?",
+      "pauseTitle": "Pause “{name}”?",
+      "goLiveTitle": "Go live with “{name}”?",
+      "copyLinkTitle": "Copy link for “{name}”?",
+      "removeFieldTitle": "Remove “{label}”?"
+    }
+  },
+  "settings": {
+    "page": {
+      "title": "Settings",
+      "subtitle": "Manage your CRM configuration, credentials, and integrations."
+    },
+    "tabs": {
+      "general": "General",
+      "webhooks": "Webhook URLs",
+      "intake": "Intake API Key",
+      "statuses": "Lead Statuses",
+      "integrations": "Integrations",
+      "advanced": "Advanced"
+    },
+    "sections": {
+      "branding": {
+        "title": "Branding",
+        "description": "Displayed throughout the app."
+      },
+      "companyName": "Company Name",
+      "appUrl": {
+        "title": "App URL",
+        "description": "Your deployed app URL. Used to auto-generate webhook URLs."
+      },
+      "productionUrl": "Production URL",
+      "webhooks": {
+        "title": "Webhook & Endpoint URLs",
+        "description": "Copy these into the respective dashboards. They update automatically when you change your App URL."
+      },
+      "importEmails": {
+        "title": "Import received emails",
+        "description": "If Resend received a reply but it did not appear in a lead thread, run a sync to import recent inbound mail from Resend."
+      },
+      "intakeKey": {
+        "title": "Intake API Key",
+        "description": "Used to authenticate POST requests to /api/intake from external sources like Meta, Zapier, or Webflow."
+      },
+      "pipelineStages": {
+        "title": "Lead Pipeline Stages",
+        "description": "Changes sync automatically across the pipeline and lead pages."
+      },
+      "telnyxVoice": {
+        "title": "Telnyx Voice (Browser Calling)",
+        "description": "Call leads from the CRM."
+      },
+      "websiteForms": {
+        "title": "Website Forms (Any Platform)",
+        "description": "Connect forms from any website builder (Webflow, Framer, WordPress, etc.) to automatically capture leads."
+      },
+      "systemDiagnostics": {
+        "title": "System & Diagnostics",
+        "description": "Access advanced features and system logs."
+      }
+    },
+    "statuses": {
+      "newStage": "New Stage",
+      "minOneStage": "You must keep at least one pipeline stage.",
+      "syncing": "Syncing…",
+      "synced": "Synced",
+      "saveFailed": "Failed to save statuses",
+      "loading": "Loading statuses…",
+      "dragHint": "Drag stages to reorder your pipeline.",
+      "dropHere": "Drop here",
+      "addStage": "Add Stage",
+      "labelPlaceholder": "e.g. Qualified",
+      "removeStatusTitle": "Remove status",
+      "removeConfirmTitle": "Remove “{label}”?",
+      "removeConfirmDescription": "This stage will be removed from your pipeline immediately.",
+      "removeLabel": "Remove",
+      "reorderAria": "Drag {label}",
+      "tip": "Tip: Stages are shown in this order throughout the app. Drag the grip handle to reorder them to match your sales process."
+    },
+    "actions": {
+      "rotateKey": "Rotate Key",
+      "generateKey": "Generate Key",
+      "generating": "Generating…",
+      "syncInbound": "Sync inbound mail"
+    },
+    "confirm": {
+      "rotateKeyTitle": "Rotate intake API key?",
+      "generateKeyTitle": "Generate intake API key?",
+      "rotateKeyDescription": "The current key will stop working immediately. Update all external sources with the new key before continuing."
+    },
+    "errors": {
+      "saveFailed": "Failed to save",
+      "rotateFailed": "Failed to rotate key",
+      "inboundSyncFailed": "Inbound sync failed."
+    },
+    "general": {
+      "companyPlaceholder": "e.g. Tandfokus",
+      "appUrlPlaceholder": "https://your-app.vercel.app",
+      "appUrlHint": "No trailing slash. Must be publicly accessible for webhooks."
+    },
+    "saveBar": {
+      "saveChanges": "Save Changes",
+      "saved": "Saved"
+    },
+    "webhooks": {
+      "intakeEndpoint": "Lead Intake Endpoint (POST)",
+      "resendInbound": "Resend Inbound Email Webhook",
+      "telnyxVoice": "Telnyx Voice Webhook (Credential Connection)",
+      "whereToPaste": "Where to paste these",
+      "metaZapierTitle": "Meta / Zapier → Lead Source",
+      "metaZapierDesc": "Send leads via POST to the Lead Intake Endpoint with your API key in the Authorization header.",
+      "resendTitle": "Resend → Inbound Email Webhook",
+      "resendDesc": "Use your free @*.resend.app address (Resend → Emails → Receiving). Set RESEND_INBOUND_DOMAIN and RESEND_WEBHOOK_SECRET in Vercel, then subscribe the webhook to email.received.",
+      "telnyxTitle": "Telnyx → Voice",
+      "telnyxDesc": "Configure your Telnyx Credential Connection webhook for browser calling.",
+      "syncResult": "Synced {processed} received emails: {stored} imported, {duplicates} already in CRM, {skipped} skipped."
+    },
+    "intake": {
+      "newKeyReveal": "New key — copy it now, it won't be shown again",
+      "currentKeyMasked": "Current key (masked)",
+      "noKeyYet": "No key generated yet. Click Generate to create one.",
+      "rotateWarning": "Rotating the key will immediately invalidate the old one.",
+      "rotateWarningDetail": "Update all external sources (Zapier, Meta, etc.) with the new key before rotating.",
+      "howToUse": "How to use this key",
+      "generateDescription": "A new API key will be created for lead intake requests.",
+      "requiredFields": "Required:",
+      "optionalFields": "Optional:",
+      "requiredFieldsList": "name, source, and phone or email",
+      "optionalFieldsList": "campaign, form, language. Phone accepts Swedish formats (e.g. 070-123 45 67) and is stored as +46…"
+    },
+    "advanced": {
+      "activityLogTitle": "Activity Log",
+      "activityLogDesc": "Agent and admin actions on leads",
+      "activityLogNote": "Note: The activity log reads from your database. Use it sparingly on large date ranges."
+    },
+    "integrations": {
+      "telnyx": {
+        "configStatus": "Configuration status",
+        "checking": "Checking server environment…",
+        "ready": "Voice calling is ready",
+        "readyWithNumber": "Voice calling is ready · {number}",
+        "notReady": "Add the environment variables below, then redeploy",
+        "refresh": "Refresh",
+        "loadFailed": "Could not load Telnyx status",
+        "step1Title": "Create a Credential Connection",
+        "step1Body": "In Telnyx → Programmable Voice, create a Credential connection named e.g. Tandfokus CRM.",
+        "webhookUrl": "Webhook URL (required by Telnyx):",
+        "webhookUrlHint": "Use your production URL from Settings → General → App URL if different.",
+        "webhookApiVersion": "Webhook API version:",
+        "step2Title": "Create an Outbound Voice Profile",
+        "step2Body": "Go to Outbound Voice Profiles → Add new profile. Link your Credential Connection and allow Sweden (SE) under destinations — the default profile only allows US/CA.",
+        "step3Title": "Assign your number",
+        "step3Body": "Open your purchased number and assign it to the Credential Connection so it can be used as caller ID on outbound calls.",
+        "step4Title": "Create a telephony credential",
+        "step4Body": "On the Credential Connection, create an on-demand telephony credential. Copy its ID into TELNYX_TELEPHONY_CREDENTIAL_ID. The CRM uses this to mint short-lived browser login tokens via /api/token.",
+        "step5Title": "Set server environment variables",
+        "step5Body": "Add these to Vercel (or your host) and redeploy:",
+        "step6Title": "Test from a lead",
+        "step6Body": "Open any lead with a phone number → Calls tab → Call via Browser. Allow microphone access when prompted — calls cannot connect without it. Calls are logged automatically in call history.",
+        "troubleshooting": "Troubleshooting.",
+        "troubleshootingBody": "If the UI shows ringing but the other phone never rings, check Telnyx → Voice → Logs. WebRTC calls need mic permission and a working network path to Telnyx EU media servers. A +468 Stockholm local number often connects to Swedish mobiles more reliably than a +4610 national number.",
+        "docsLink": "Telnyx WebRTC docs",
+        "envHints": {
+          "apiKey": "API v2 key from Telnyx Portal → API Keys",
+          "phoneNumber": "Your purchased number in E.164 format, e.g. +46701234567",
+          "telephonyCredentialId": "On-demand telephony credential ID from your Credential Connection",
+          "callControlAppId": "Call Control Application ID (Programmable Voice → Call Control Apps)"
+        }
+      },
+      "shared": {
+        "url": "URL:",
+        "payloadType": "Payload Type:",
+        "headers": "Headers:",
+        "data": "Data:",
+        "trigger": "Trigger:",
+        "action": "Action:",
+        "json": "JSON",
+        "tip": "Tip:",
+        "createZapierAccount": "Create a Zapier Account",
+        "zapierSignupPrefix": "Sign up at",
+        "zapierSignupSuffix": "(free tier includes 100 leads/month)",
+        "createNewZap": "Create New Zap",
+        "configureWebhook": "Configure Webhook Action",
+        "connectAccount": "Connect your {platform} account",
+        "selectAdAccount": "Select your ad account",
+        "selectLeadForm": "Select your lead form",
+        "getApiKey": "Get Your API Key",
+        "testActivate": "Test & Activate",
+        "intakeApiKeyTab": "Intake API Key"
+      },
+      "websiteForms": {
+        "gtmTitle": "Google Tag Manager",
+        "gtmBody": "Lead forms push a generate_lead event to dataLayer after the CRM saves the lead — not on click, only on confirmed success. Use the same GTM container on Webflow and create one Custom Event trigger.",
+        "gtmContainerLabel": "GTM container ID (hosted forms only)",
+        "gtmContainerPlaceholder": "GTM-XXXXXXX",
+        "gtmHostedHint": "Injected on hosted form pages (/f/…). Webflow sites keep GTM in Project Settings → Custom Code.",
+        "gtmSave": "Save GTM ID",
+        "gtmTriggerTitle": "GTM trigger setup:",
+        "gtmTriggerType": "Trigger type: Custom Event",
+        "gtmTriggerEvent": "Event name:",
+        "gtmTriggerVars": "Optional data layer variables: form_source, campaign, lead_source, form_slug",
+        "metaTitle": "Meta Lead tracking",
+        "metaBody": "After a hosted or embedded form saves in the CRM, Meta Conversions API sends Lead (plus optional virtual PageView when a path is set on the form). Browser pixel events only fire if your site loads the Meta pixel. GTM should listen for generate_lead on the dataLayer.",
+        "metaTest": "Test Meta connection",
+        "metaTesting": "Testing…",
+        "metaTestOk": "Meta accepted Lead, the test custom conversion, and the virtual PageView. Check Events Manager in a few minutes.",
+        "metaTestFail": "Meta test failed",
+        "openaiTitle": "OpenAI Ads",
+        "openaiBody": "Successful enquiry forms fire dataLayer event generate_lead (same signal as GTM). OpenAI lead_created runs alongside it when the pixel is loaded. Set NEXT_PUBLIC_OPENAI_ADS_PIXEL_ID on Vercel for hosted /f/ forms. On Webflow: paste Richard’s init snippet in site head, then load /tandfokus-openai-ads.js (auto-fires on generate_lead). Booking and phone clicks: TandfokusOpenAi.measureAppointmentScheduled() and measurePhoneClick() on the confirmation / tel: handlers.",
+        "step1Title": "Get Your API Credentials",
+        "step1BodyPrefix": "First, generate an API key from the",
+        "step1BodySuffix": "tab above. Copy both values:",
+        "apiEndpoint": "API Endpoint:",
+        "apiKeyLine": "API Key: Your generated key",
+        "step2Title": "Add Campaign Tracking to Your Forms",
+        "step2Body": "Add a custom attribute data-campaign to each form element to track lead sources:",
+        "step2Hint": "Change this value for each form/page to track where leads come from",
+        "step3Title": "Add Custom JavaScript (Site-Wide)",
+        "step3BodyPrefix": "Add this code to your site footer. It will automatically handle ALL forms with",
+        "turnstileActiveHint": "Bot protection is enabled — this snippet includes invisible Cloudflare Turnstile. Re-paste it in Webflow after updating keys.",
+        "turnstileNotConfiguredHint": "Bot protection is off — set TURNSTILE_SITE_KEY and TURNSTILE_SECRET_KEY in Vercel (Production env) to enable Cloudflare Turnstile on hosted, embed, and Webflow forms.",
+        "step4Title": "Update Form Field Names",
+        "step4Body": "Make sure your form fields have these exact name attributes:",
+        "fieldNameRequired": "Required",
+        "fieldPhoneOrEmail": "At least one required",
+        "fieldEmailOptional": "Optional if phone is set",
+        "fieldMessageOptional": "Optional (creates a note)",
+        "step5Title": "Connect GTM on Webflow",
+        "step5Body": "Install your existing GTM container in Webflow, then create one trigger for the intake script event:",
+        "step5WebflowInstall": "Webflow → Project Settings → Custom Code → Footer — paste your GTM container snippet (same as today).",
+        "step5Trigger": "GTM → Triggers → New → Custom Event → Event name: generate_lead",
+        "step5Preview": "Use GTM Preview mode, submit a test lead, confirm generate_lead fires with campaign from data-campaign.",
+        "highlightTitle": "Works With Any Website Builder",
+        "webflowHint": "Webflow: Add in Project Settings → Footer Code",
+        "framerHint": "Framer: Add in Site Settings → Custom Code",
+        "wordpressHint": "WordPress: Add via theme footer or plugin",
+        "customHtmlHint": "Custom HTML: Add before closing </body> tag",
+        "highlightFooter": "All forms automatically tracked with source: \"website\""
+      },
+      "tiktok": {
+        "title": "TikTok Lead Generation Ads",
+        "description": "Automatically sync leads from TikTok ads via Zapier.",
+        "trigger": "\"TikTok Lead Generation\" → \"New Lead\"",
+        "action": "\"Webhooks by Zapier\" → \"POST\"",
+        "dataMap": "Data (map TikTok fields):",
+        "fieldHint": "TikTok field names may vary - check your form's fields in Zapier",
+        "apiKeyBodyPrefix": "Go to",
+        "apiKeyBodySuffix": "tab above and generate an API key. Replace YOUR_API_KEY in the Authorization header.",
+        "testBody": "Click \"Test\" in Zapier to send a test lead, then turn on your Zap. New TikTok leads will automatically appear in your CRM!",
+        "tip": "Create separate Zaps for each campaign to track which TikTok ads perform best.",
+        "platform": "TikTok Business"
+      },
+      "meta": {
+        "title": "Meta Lead Ads (Facebook & Instagram)",
+        "description": "Automatically sync leads from Facebook and Instagram ads via Zapier.",
+        "trigger": "\"Facebook Lead Ads\" → \"New Lead\"",
+        "action": "\"Webhooks by Zapier\" → \"POST\"",
+        "dataMap": "Data (map Facebook fields):",
+        "testBody": "Click \"Test\" in Zapier to send a test lead, then turn on your Zap. New Facebook leads will automatically appear in your CRM!",
+        "tip": "Create separate Zaps for each campaign to track lead source accurately.",
+        "platform": "Facebook"
+      }
+    }
+  },
+  "profile": {
+    "title": "Profile",
+    "subtitle": "Manage your account details and password.",
+    "saved": "Saved",
+    "account": {
+      "title": "Account",
+      "description": "Your name and sign-in email."
+    },
+    "fields": {
+      "fullName": "Full name",
+      "email": "Email"
+    },
+    "password": {
+      "title": "Password",
+      "description": "Change your sign-in password.",
+      "current": "Current password",
+      "new": "New password",
+      "confirm": "Confirm new password",
+      "change": "Change password",
+      "changing": "Changing…",
+      "updated": "Password updated",
+      "tooShort": "Password must be at least 8 characters.",
+      "mismatch": "Passwords do not match.",
+      "updateFailed": "Failed to update password."
+    },
+    "errors": {
+      "updateNameFailed": "Failed to update name.",
+      "updateEmailFailed": "Failed to update email."
+    },
+    "roles": {
+      "admin": "Admin",
+      "agent": "Agent"
+    },
+    "edit": "Edit",
+    "memberSince": "Member since",
+    "emailUpdated": "Email updated",
+    "passwordUpdatedSuccess": "Password updated successfully.",
+    "currentPasswordIncorrect": "Current password is incorrect.",
+    "genericError": "Something went wrong. Please try again.",
+    "passwordMismatchNew": "New passwords don't match.",
+    "passwordTooShortNew": "New password must be at least 8 characters."
+  },
+  "analytics": {
+    "periods": {
+      "thisMonth": "This month",
+      "lastMonth": "Last month",
+      "lastQuarter": "Last quarter",
+      "thisYear": "This year"
+    },
+    "tabs": {
+      "allLeads": "All leads",
+      "new": "New",
+      "booked": "Booked",
+      "lost": "Lost"
+    },
+    "metrics": {
+      "newLeads": "New leads",
+      "booked": "Booked",
+      "unassigned": "Unassigned",
+      "contactRate": "Contact rate",
+      "needsAssignment": "Needs assignment",
+      "allAssigned": "All leads assigned",
+      "activeAgents": "{count} active agents"
+    },
+    "overview": {
+      "title": "Leads overview"
+    },
+    "sections": {
+      "bySource": "Leads by source",
+      "recentActivity": "Recent activity",
+      "pipelineBreakdown": "Pipeline breakdown"
+    },
+    "page": {
+      "title": "Analytics",
+      "subtitle": "Pipeline performance and team metrics",
+      "emptyTitle": "No leads yet",
+      "emptyDescription": "Analytics will appear once leads are added to the pipeline."
+    },
+    "topSources": {
+      "title": "Top sources",
+      "subtitle": "Top 5 channels by lead volume",
+      "empty": "No source data for this period"
+    },
+    "recentActivityPanel": {
+      "subtitle": "Latest leads in this period",
+      "viewAll": "View all",
+      "empty": "No leads match this filter"
+    },
+    "emptyPeriod": {
+      "title": "No leads in this period",
+      "hint": "Try another date range."
+    },
+    "chart": {
+      "newLeads": "New leads",
+      "booked": "Booked",
+      "ariaLabel": "New leads and booked leads for {period}"
+    }
+  },
+  "errors": {
+    "page": {
+      "title": "Something went wrong",
+      "description": "The page failed to load. Try again, or sign out and back in.",
+      "errorId": "Error ID: {digest}",
+      "tryAgain": "Try again",
+      "backToLogin": "Back to login"
+    }
+  },
+  "users": {
+    "pageLead": "CRM login users — invite clinic staff or system admins and assign clinics.",
+    "searchPlaceholder": "Search users…",
+    "emptyActiveTitle": "No team members yet",
+    "emptyActiveDescription": "Invite your first team member to get started.",
+    "emptyDeactivatedTitle": "No deactivated users",
+    "emptyDeactivatedDescription": "Deactivated accounts appear here.",
+    "table": {
+      "columns": {
+        "role": "Role",
+        "clinics": "Clinics",
+        "status": "Status"
+      },
+      "allClinics": "All clinics",
+      "noClinics": "—"
+    },
+    "status": {
+      "invitePending": "Invite pending",
+      "active": "Active",
+      "inactive": "Inactive"
+    },
+    "roles": {
+      "agent": "Clinic staff",
+      "admin": "System admin"
+    },
+    "gender": {
+      "female": "Female",
+      "male": "Male"
+    },
+    "rowActions": {
+      "editAgent": "Edit agent",
+      "resendInvite": "Resend invite",
+      "sendPasswordReset": "Send password reset",
+      "makeSuperadmin": "Make superadmin",
+      "removeSuperadmin": "Remove superadmin",
+      "deactivate": "Deactivate",
+      "reactivate": "Reactivate",
+      "deletePermanently": "Delete permanently"
+    },
+    "modals": {
+      "inviteTitle": "Invite team member",
+      "inviteSubtitle": "They'll get an email to set their password and sign in.",
+      "editTitle": "Edit team member",
+      "fullName": "Full Name",
+      "fullNamePlaceholder": "Jane Smith",
+      "emailPlaceholder": "jane@company.com",
+      "gender": "Gender",
+      "sendInvite": "Send invite",
+      "saveChanges": "Save Changes"
+    },
+    "confirm": {
+      "adminInviteTitle": "Confirm system admin access",
+      "adminInviteDescription": "{name} will have full control across all clinics — manage users, view all leads, edit settings, and delete data.",
+      "adminInviteFallback": "This person",
+      "adminInviteQuestion": "Are you sure you want to grant system admin access?",
+      "adminInviteLabel": "Yes, invite as system admin",
+      "adminPromoteTitle": "Confirm promotion to system admin",
+      "adminPromoteQuestion": "Are you sure you want to promote this person to system admin?",
+      "adminPromoteLabel": "Yes, promote to system admin",
+      "superadminPromoteTitle": "Promote to Superadmin",
+      "superadminRemoveTitle": "Remove Superadmin Status",
+      "superadminPromoteLabel": "Yes, Promote",
+      "superadminRemoveLabel": "Yes, Remove",
+      "reactivateTitle": "Reactivate user?",
+      "reactivateLabel": "Reactivate",
+      "resendInviteTitle": "Resend invite?",
+      "resendInviteLabel": "Send invite",
+      "passwordResetTitle": "Send password reset?",
+      "passwordResetLabel": "Send reset email",
+      "deactivateBulkTitle": "Deactivate users?",
+      "deactivateBulkDescription": "Selected users will immediately lose access to the CRM.",
+      "deactivateLabel": "Deactivate",
+      "reactivateBulkTitle": "Reactivate users?",
+      "reactivateBulkDescription": "Selected users will regain access to the CRM.",
+      "deleteTitle": "Delete user permanently?",
+      "deleteDescription": "This removes their accounts and logins. Assigned leads are unassigned. This cannot be undone.",
+      "deleteLabel": "Delete permanently"
+    },
+    "toast": {
+      "inviteSent": "Invite sent",
+      "inviteResent": "Invite resent",
+      "passwordResetSent": "Password reset email sent",
+      "updated": "User updated",
+      "deactivated": "User deactivated",
+      "reactivated": "User reactivated",
+      "deleted": "User deleted",
+      "superadminUpdated": "Superadmin status updated",
+      "bulkUpdateFailed": "Bulk update failed",
+      "bulkDeleteFailed": "Bulk delete failed",
+      "resendFailed": "Failed to resend invite",
+      "resetFailed": "Failed to send password reset",
+      "updateFailed": "Failed to update",
+      "deleteFailed": "Failed to delete user",
+      "superadminFailed": "Failed to update superadmin status"
+    },
+    "errors": {
+      "selectClinic": "Select at least one clinic for clinic staff",
+      "inviteFailed": "Failed to send invite"
+    },
+    "bulk": {
+      "deactivate": "Deactivate",
+      "reactivate": "Reactivate",
+      "deletePermanently": "Delete permanently",
+      "deactivateCount": "Deactivate {count} users?",
+      "reactivateCount": "Reactivate {count} users?",
+      "deleteCount": "Delete {count} users permanently?",
+      "reactivatedToast": "{count} users reactivated",
+      "deactivatedToast": "{count} users deactivated",
+      "deletedToast": "{count, plural, one {# user deleted} other {# users deleted}}"
+    },
+    "superadmin": {
+      "badge": "Superadmin",
+      "promotePrivileges": "{name} will gain superadmin privileges:",
+      "cannotDeactivate": "Cannot be deactivated",
+      "canPromoteDemote": "Can promote/demote other superadmins",
+      "fullAccess": "Has full system access",
+      "maxNote": "Note: Maximum 3 superadmins allowed. Only admins can be promoted.",
+      "removeDescription": "{name} will lose superadmin protection and can be managed normally by other admins.",
+      "promotedToast": "{name} promoted to superadmin",
+      "removedToast": "{name} is no longer superadmin",
+      "processing": "Processing…",
+      "goBack": "Go back",
+      "saving": "Saving…",
+      "sending": "Sending…"
+    },
+    "deactivate": {
+      "title": "Deactivate {name}?",
+      "description": "{name} will immediately lose access to the CRM and won't be able to log in.",
+      "whatHappens": "What happens:",
+      "dataIntact": "All their data remains intact (leads, activity logs, call history)",
+      "leadsStay": "Assigned leads stay with them until manually reassigned",
+      "canReactivate": "They can be reactivated anytime",
+      "confirmLabel": "Yes, Deactivate",
+      "toast": "{name} deactivated",
+      "reactivatedToast": "{name} reactivated",
+      "updateFailed": "Could not update {name}"
+    },
+    "delete": {
+      "title": "Delete {name}?",
+      "description": "This permanently removes {name} from the CRM and deletes their login. This cannot be undone.",
+      "whatHappens": "What happens:",
+      "accountDeleted": "Their account and login are deleted",
+      "leadsUnassigned": "Assigned leads are unassigned",
+      "notesStay": "Notes and activity stay on leads but lose this agent's name",
+      "historyRemoved": "Their call history and audit entries for this user are removed",
+      "removedToast": "{name} was permanently removed"
+    },
+    "invite": {
+      "resentToast": "Invite resent to {email}",
+      "sentToast": "Invite sent to {email}",
+      "resendTitle": "Resend invite to {name}?",
+      "resendDescription": "A new invite email will be sent to {email}. They can use the link to set their password and activate their account. The link expires in 7 days.",
+      "resendLinkLabel": "Resend invite email"
+    },
+    "passwordReset": {
+      "title": "Send password reset to {name}?",
+      "description": "A reset email will be sent to {email}. The link expires in 1 hour.",
+      "sentToast": "Password reset sent to {email}",
+      "linkLabel": "Send password reset email"
+    },
+    "edit": {
+      "updatedToast": "{name} updated",
+      "clinicHint": "Staff only see leads from assigned clinics.",
+      "clinicsLabel": "Clinics"
+    },
+    "adminPromote": {
+      "editDescription": "{name} will have full control across all clinics — manage users, view all leads, edit settings, and delete data."
+    },
+    "reactivate": {
+      "title": "Reactivate {name}?",
+      "description": "{name} will regain access to the CRM and be able to log in again."
+    }
+  },
+  "organization": {
+    "openClinic": "Open clinic",
+    "relatedPractitioners": "Practitioners",
+    "clinicsSubtitle": "Dental clinic locations. Leads and forms can be linked to a clinic.",
+    "clinicsListHint": "Open a clinic to set its lead notification email and other details.",
+    "clinicsNotificationHint": "Lead notifications — enter the clinic inbox that receives an email when a new lead is submitted from a form for that clinic. Click the field, type the address, then tab out to save.",
+    "practitionersSubtitle": "Dentists and staff — assign to clinics. Not CRM login users.",
+    "campaignsSubtitle": "Marketing campaigns — optionally scoped to a clinic. Forms can link to a campaign.",
+    "table": {
+      "columns": {
+        "slug": "Slug",
+        "notificationEmail": "Lead notifications",
+        "title": "Title",
+        "clinic": "Clinic",
+        "clinics": "Clinics"
+      },
+      "notificationEmailPlaceholder": "email@clinic.se",
+      "notificationEmailUnset": "Not set — open clinic",
+      "noClinicsAssigned": "No clinics assigned",
+      "allClinics": "All clinics",
+      "allClinicsOrgWide": "All clinics (org-wide)",
+      "orgWideCampaign": "Org-wide campaign"
+    },
+    "search": {
+      "clinics": "Search clinics…",
+      "practitioners": "Search practitioners…",
+      "campaigns": "Search campaigns…"
+    },
+    "empty": {
+      "clinicsTitle": "No clinics yet",
+      "clinicsDescription": "Add your first clinic location.",
+      "practitionersTitle": "No practitioners yet",
+      "practitionersDescription": "Add dentists and staff, then assign them to clinics.",
+      "campaignsTitle": "No campaigns yet",
+      "campaignsDescription": "Create a campaign to track marketing sources on forms and leads."
+    },
+    "modals": {
+      "addClinic": "Add clinic",
+      "addPractitioner": "Add practitioner",
+      "addCampaign": "Add campaign",
+      "clinicName": "Clinic name",
+      "practitionerName": "Name",
+      "practitionerNamePlaceholder": "Dr. Anna Svensson",
+      "practitionerTitle": "Title",
+      "practitionerTitlePlaceholder": "Dentist",
+      "campaignName": "Campaign name",
+      "clinicOptional": "Clinic (optional)"
+    },
+    "rowActions": {
+      "deactivate": "Deactivate",
+      "reactivate": "Reactivate",
+      "deletePermanently": "Delete permanently",
+      "assignClinics": "Assign clinics",
+      "openClinic": "Open clinic"
+    },
+    "confirm": {
+      "deleteClinicDescription": "This permanently removes the clinic. Linked leads, forms, and campaigns stay in the system but will no longer reference this clinic.",
+      "deletePractitionerDescription": "This permanently removes the practitioner. Linked leads and forms stay in the system but will no longer reference them.",
+      "deleteCampaignDescription": "This permanently removes the campaign. Linked leads and forms stay in the system but will no longer reference it.",
+      "deactivateLabel": "Deactivate",
+      "reactivateLabel": "Reactivate",
+      "deleteLabel": "Delete permanently"
+    },
+    "toast": {
+      "clinicCreated": "Clinic created",
+      "clinicUpdated": "Clinic updated",
+      "practitionerCreated": "Practitioner created",
+      "practitionerUpdated": "Practitioner updated",
+      "campaignCreated": "Campaign created",
+      "campaignUpdated": "Campaign updated",
+      "deactivated": "Deactivated",
+      "deleted": "Deleted",
+      "bulkDeleteFailed": "Bulk delete failed",
+      "bulkUpdateFailed": "Bulk update failed"
+    },
+    "countLabels": {
+      "clinics": "clinics",
+      "practitioners": "practitioners",
+      "campaigns": "campaigns"
+    },
+    "placeholders": {
+      "clinicName": "e.g. Gränbystorget",
+      "campaignName": "e.g. Våghustorget Invisalign"
+    },
+    "detail": {
+      "backToClinics": "Back to clinics",
+      "nameRequired": "Clinic name is required.",
+      "notificationEmailHint": "This inbox receives an email when a new lead is submitted from a form linked to this clinic.",
+      "sections": {
+        "general": "General"
+      }
+    },
+    "assignClinicsTitle": "Assign clinics — {name}",
+    "deactivateTitle": "Deactivate {name}?",
+    "deactivateDescription": "Existing leads and forms keep their links. This hides the item from selectors.",
+    "bulkDeactivateTitle": "Deactivate {count} selected?",
+    "bulkDeactivateDescription": "Existing leads and forms keep their links. Selected items will be hidden from selectors.",
+    "bulkReactivateTitle": "Reactivate {count} selected?",
+    "bulkReactivateDescription": "Selected items will appear in selectors again.",
+    "bulkDeleteTitle": "Delete {count} selected permanently?",
+    "deleteTitle": "Delete {name} permanently?",
+    "errors": {
+      "createClinicFailed": "Failed to create clinic",
+      "updateClinicFailed": "Failed to update clinic",
+      "createPractitionerFailed": "Failed to create practitioner",
+      "updatePractitionerFailed": "Failed to update practitioner",
+      "createCampaignFailed": "Failed to create campaign",
+      "updateCampaignFailed": "Failed to update campaign",
+      "deactivateFailed": "Failed to deactivate",
+      "deleteFailed": "Failed to delete"
+    }
+  },
+  "logs": {
+    "pageLead": "Agent and admin actions on leads — not incoming customer messages.",
+    "searchPlaceholder": "Search lead or agent…",
+    "emptyTitle": "No activity found",
+    "eventCount": "{count, plural, one {# event} other {# events}}",
+    "showingCount": " · showing {shown}",
+    "filters": {
+      "allTypes": "All types",
+      "allAgents": "All agents",
+      "datePresets": {
+        "today": "Today",
+        "last7d": "Last 7d",
+        "last30d": "Last 30d",
+        "last90d": "Last 90d"
+      }
+    },
+    "eventTypes": {
+      "assign": "Assignment",
+      "status": "Status change",
+      "call": "Calls",
+      "email_sent": "Emails sent",
+      "note": "Notes",
+      "edit": "Field edits",
+      "created": "Lead created"
+    },
+    "actors": {
+      "agent": "Agent",
+      "admin": "Admin",
+      "unknownAgent": "Unknown agent",
+      "unknownLead": "Unknown lead"
+    },
+    "errors": {
+      "refreshFailed": "Could not refresh activity. Try again."
+    },
+    "actions": {
+      "added": "added",
+      "createdLead": "created lead",
+      "reassigned": "reassigned",
+      "updatedStatusOf": "updated status of",
+      "addedNoteOn": "added a note on",
+      "emailed": "emailed",
+      "sentWhatsAppTo": "sent WhatsApp to",
+      "edited": "edited",
+      "called": "called",
+      "updated": "updated",
+      "toLeads": "to leads"
+    },
+    "changes": {
+      "assignedTo": "assigned to",
+      "reason": "Reason:"
+    },
+    "callStatus": {
+      "initiated": "Initiated",
+      "completed": "Completed",
+      "no-answer": "No answer",
+      "failed": "Failed"
+    },
+    "loadMore": "Load more ({count} remaining)"
+  },
+  "contacts": {
+    "backToContacts": "Back to contacts",
+    "duplicates": {
+      "listTitle": "Possible duplicate contacts",
+      "listDescription": "{groups, plural, one {# group} other {# groups}} · {contacts} contacts may need review",
+      "detailTitle": "Possible duplicate",
+      "matchOne": "May match {name}",
+      "matchMany": "May match {count} other contacts",
+      "samePhone": "same phone",
+      "sameEmail": "same email",
+      "review": "Review",
+      "reviewMerge": "Review & merge"
+    },
+    "merge": {
+      "title": "Review possible duplicate",
+      "intro": "These contacts may be the same person ({match}). Choose which record to keep — lead records and form submissions from the others will move here.",
+      "noContactInfo": "No phone or email",
+      "leadRecords": "{count, plural, one {# lead record} other {# lead records}}",
+      "mergeContacts": "Merge contacts",
+      "confirmTitle": "Merge contacts?",
+      "confirmDescription": "{count, plural, one {# contact will be removed} other {# contacts will be removed}} and their lead records moved to the contact you selected. This cannot be undone.",
+      "merge": "Merge",
+      "sharedPhone": "Shared phone {label}",
+      "sharedEmail": "Shared email {label}",
+      "failed": "Could not merge contacts"
+    },
+    "submissions": {
+      "emptyTitle": "No form submissions",
+      "emptyDescription": "Website and ad form inquiries will appear here."
+    },
+    "leadRecordsList": {
+      "emptyTitle": "No lead records yet",
+      "emptyDescription": "When this contact is linked to a pipeline lead, it will show here so you can open messages and activity.",
+      "pipelineLead": "Pipeline lead",
+      "active": "Active",
+      "archived": "Archived",
+      "openLead": "Open {name} lead workspace"
+    }
+  },
+  "emailLog": {
+    "searchPlaceholder": "Search recipient or subject…",
+    "countLabel": "{count, plural, one {# email} other {# emails}}",
+    "emptyTitle": "No emails sent yet",
+    "emptyDescription": "Invites, password resets, lead notifications and lead emails appear here once sent.",
+    "emptyFilteredTitle": "No emails match your filters",
+    "emptyFilteredDescription": "Try a different search, status, type or date range.",
+    "columns": {
+      "sent": "Sent",
+      "to": "To",
+      "subject": "Subject",
+      "type": "Type"
+    },
+    "types": {
+      "invite": "User invite",
+      "password_reset": "Password reset",
+      "new_lead": "New lead notification",
+      "lead_outbound": "Lead email"
+    },
+    "status": {
+      "sent": "Sent",
+      "failed": "Failed"
+    },
+    "filters": {
+      "allStatuses": "All statuses",
+      "allTypes": "All types",
+      "clearDateFilter": "Clear date filter"
+    },
+    "datePresets": {
+      "today": "Today",
+      "last7d": "Last 7d",
+      "last30d": "Last 30d"
+    },
+    "dateLabel": {
+      "range": "{from} – {to}",
+      "from": "From {date}",
+      "until": "Until {date}"
+    },
+    "detail": {
+      "from": "From",
+      "providerId": "Provider ID",
+      "lead": "Lead",
+      "openLead": "Open lead",
+      "error": "Error",
+      "preview": "Preview",
+      "noPreview": "No preview stored for this email."
+    },
+    "errors": {
+      "loadFailed": "Could not load the email log. Try again."
+    }
+  }
+}

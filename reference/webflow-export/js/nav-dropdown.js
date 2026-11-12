@@ -1,13 +1,17 @@
 /**
  * Desktop mega-menu motion (>= 992px), synced with Webflow w--open.
  * Open/close is handled by vivaci-nav-dropdown-fix.js; this file animates panels.
+ * Single panel fade + short translate — no child stagger, scale, or blur.
  */
 (function () {
   var ROOT = ".navbar2_component";
   var SELECTOR =
     ROOT + " .navbar7_menu-dropdown, " + ROOT + " .navbar14_menu-dropdown";
   var DESKTOP_MQ = "(min-width: 992px)";
-  var SWITCH_MS = 280;
+  var SWITCH_MS = 180;
+  var PANEL_IN_S = 0.2;
+  var PANEL_OUT_S = 0.16;
+  var PANEL_Y_PX = 6;
 
   var mql = window.matchMedia(DESKTOP_MQ);
   var activeDropdown = null;
@@ -46,11 +50,8 @@
     };
   }
 
-  function setToggleBackground(dropdown, isOpen) {
-    if (!isDesktop()) return;
-    var toggle = dropdown.querySelector(".navbar14_dropdown-toggle");
-    if (!toggle) return;
-    toggle.style.backgroundColor = isOpen ? "#F5F2F0" : "";
+  function setToggleBackground() {
+    /* Open/hover fill: nav-fixes.css (.w-dropdown.w--open > .navbar14_dropdown-toggle) */
   }
 
   function killAnimations(elements) {
@@ -81,8 +82,9 @@
     document.querySelectorAll(SELECTOR).forEach(resetDropdown);
   }
 
-  function staggerEach(count) {
-    return Math.min(0.014, count > 0 ? 0.42 / count : 0.014);
+  function setLinksVisible(elements) {
+    if (!elements || typeof gsap === "undefined") return;
+    gsap.set(elements.links, { opacity: 1, y: 0, filter: "none" });
   }
 
   function animateClose(dropdown, fast) {
@@ -92,30 +94,20 @@
     }
     var elements = getElements(dropdown);
     if (!elements) return;
-    var links = elements.links;
-    var dur = fast ? 0.18 : 0.26;
+    var dur = fast ? PANEL_OUT_S : PANEL_OUT_S * 1.15;
     killAnimations(elements);
+    setLinksVisible(elements);
     gsap.to(elements.list, {
       opacity: 0,
-      y: fast ? 8 : 12,
-      scale: 0.98,
-      transformOrigin: "top center",
+      y: PANEL_Y_PX,
       duration: dur,
-      ease: "power2.in",
-      overwrite: true,
-    });
-    gsap.to(links, {
-      opacity: 0,
-      y: 6,
-      duration: dur * 0.85,
-      stagger: { each: staggerEach(links.length) * 0.6, from: "end" },
       ease: "power2.in",
       overwrite: true,
     });
     if (elements.chevron) {
       gsap.to(elements.chevron, {
         rotation: 0,
-        duration: 0.2,
+        duration: PANEL_OUT_S,
         ease: "power2.out",
         overwrite: true,
       });
@@ -130,7 +122,6 @@
     }
     var elements = getElements(dropdown);
     if (!elements) return;
-    var links = elements.links;
 
     if (activeDropdown && activeDropdown !== dropdown) {
       switching = true;
@@ -144,40 +135,27 @@
 
     activeDropdown = dropdown;
     killAnimations(elements);
+    resetDropdown(dropdown);
     setToggleBackground(dropdown, true);
+    setLinksVisible(elements);
 
     gsap.set(elements.list, { transformOrigin: "top center", opacity: 1 });
     gsap.fromTo(
       elements.list,
-      { opacity: 0, y: 14, scale: 0.98 },
+      { opacity: 0, y: PANEL_Y_PX },
       {
         opacity: 1,
         y: 0,
-        scale: 1,
-        duration: 0.34,
-        ease: "power3.out",
+        duration: PANEL_IN_S,
+        ease: "power2.out",
         overwrite: true,
       }
     );
-    if (links.length) {
-      gsap.fromTo(
-        links,
-        { opacity: 0, y: 10 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 0.3,
-          stagger: { each: staggerEach(links.length), from: "start" },
-          ease: "power2.out",
-          overwrite: true,
-        }
-      );
-    }
     if (elements.chevron) {
       gsap.to(elements.chevron, {
         rotation: 180,
-        duration: 0.22,
-        ease: "power3.out",
+        duration: PANEL_IN_S,
+        ease: "power2.out",
         overwrite: true,
       });
     }
@@ -215,22 +193,18 @@
         setToggleBackground(dropdown, isOpen);
 
         if (isOpen) {
-          animateOpen(dropdown);
+          requestAnimationFrame(function () {
+            if (!list.classList.contains("w--open")) return;
+            animateOpen(dropdown);
+          });
           return;
         }
 
-        if (activeDropdown !== dropdown) {
-          resetDropdown(dropdown);
-          return;
+        if (activeDropdown === dropdown) {
+          activeDropdown = null;
         }
-
-        activeDropdown = null;
-        animateClose(dropdown, false);
-        gsap.delayedCall(0.32, function () {
-          if (!list.classList.contains("w--open")) {
-            resetDropdown(dropdown);
-          }
-        });
+        /* Panel is display:none once w--open drops — clear GSAP inline, skip close tween. */
+        resetDropdown(dropdown);
       });
 
       observer.observe(list, {

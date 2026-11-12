@@ -9,7 +9,15 @@
     "hero": {
       "enabled": true,
       "title": "Botulinum Toxin",
-      "intro": "Botulinum Toxin är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö."
+      "intro": "Botulinum Toxin is one of our premium treatments at Vivaci Klinik in Solna. The treatment is performed by certified experts in a calm, exclusive environment.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
     },
     "facts": {
       "enabled": true,
@@ -17,20 +25,24 @@
       "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
       "items": [
         {
-          "label": "Behandlingstid",
-          "value": "15–30 min"
+          "label": "Treatment time",
+          "value": "15–30 min",
+          "icon": "timer"
         },
         {
           "label": "Återhämtning",
-          "value": "Ingen"
+          "value": "Ingen",
+          "icon": "heart-pulse"
         },
         {
           "label": "Smärtnivå",
-          "value": "Låg"
+          "value": "Låg",
+          "icon": "bandage"
         },
         {
-          "label": "Pris från",
-          "value": "Vid konsultation"
+          "label": "Pris",
+          "value": "fr. 2 990 kr",
+          "icon": "wallet"
         }
       ]
     },
@@ -47,21 +59,21 @@
         },
         {
           "id": "symptoms",
-          "heading": "Tecken & symtom",
-          "body": "",
-          "enabled": false
+          "heading": "Passar bra för dig som",
+          "body": "The treatment often suits you as:\n\n• Wants to soften mimic wrinkles on the forehead, glabella or around the eyes\n• Seeking a natural, rested result — not a \"frozen\" expression\n• Want to prevent dynamic lines from getting deeper over time\n• Prefer a quick treatment with no recovery time",
+          "enabled": true
         },
         {
           "id": "causes",
           "heading": "Orsaker",
-          "body": "",
-          "enabled": false
+          "body": "Botulinumtoxin blockerar tillfälligt nervsignalerna till den behandlade muskeln. När muskeln slappnar av slätas huden ovanför ut — och de linjer som mimiken skapat blir mjukare eller försvinner.\n\nEffekten utvecklas gradvis: de första förändringarna märks efter 3–7 dagar och full effekt nås efter cirka två veckor. Därefter håller resultatet vanligtvis i 3–6 månader innan muskelaktiviteten gradvis återkommer.\n\nEftersom effekten är tillfällig och reversibel kan behandlingen anpassas över tid — dos och områden justeras utifrån hur du svarar och vad du vill uppnå.",
+          "enabled": true
         },
         {
           "id": "assessment",
           "heading": "Hur vi bedömer det",
-          "body": "",
-          "enabled": false
+          "body": "Vi går igenom din mimik, dina mål och din medicinska historik. Du får en ärlig bedömning av vad behandlingen kan — och inte kan — åstadkomma.\n\nGraviditet eller amning — vi rekommenderar att vänta\n\nNeuromuskulära sjukdomar eller vissa mediciner\n\nPågående hudinfektion i behandlingsområdet\n\nTidigare reaktioner på botulinumtoxin",
+          "enabled": true
         }
       ]
     },
@@ -101,7 +113,7 @@
         },
         {
           "title": "Väldokumenterad säkerhet",
-          "body": "Botulinumtoxin har använts medicinskt i decennier och är en av världens mest studerade estetiska behandlingar."
+          "body": "Botulinum toxin has been used medically for decades and is one of the world's most studied aesthetic treatments."
         },
         {
           "title": "Reversibel effekt",
@@ -115,16 +127,16 @@
       "body": "Botulinumtoxin blockerar tillfälligt nervsignalerna till den behandlade muskeln. När muskeln slappnar av slätas huden ovanför ut — och de linjer som mimiken skapat blir mjukare eller försvinner.\n\nEffekten utvecklas gradvis: de första förändringarna märks efter 3–7 dagar och full effekt nås efter cirka två veckor. Därefter håller resultatet vanligtvis i 3–6 månader innan muskelaktiviteten gradvis återkommer.\n\nEftersom effekten är tillfällig och reversibel kan behandlingen anpassas över tid — dos och områden justeras utifrån hur du svarar och vad du vill uppnå.",
       "steps": [
         {
+          "title": "Treatm.",
+          "body": "Injektionerna görs med mycket fin nål och tar 15–30 minuter. De flesta upplever endast små, snabba stick."
+        },
+        {
           "title": "Kostnadsfri konsultation",
           "body": "Vi går igenom din mimik, dina mål och din medicinska historik. Du får en ärlig bedömning av vad behandlingen kan — och inte kan — åstadkomma."
         },
         {
           "title": "Uppföljning",
           "body": "Efter cirka två veckor utvärderar vi resultatet. Vid behov finjusterar vi doseringen — så att resultatet blir precis rätt."
-        },
-        {
-          "title": "Behandling",
-          "body": "Injektionerna görs med mycket fin nål och tar 15–30 minuter. De flesta upplever endast små, snabba stick."
         },
         {
           "title": "Individuell plan",
@@ -138,7 +150,7 @@
       "items": [
         {
           "title": "Dag 0",
-          "body": "Behandling — 15–30 min, direkt tillbaka till vardagen"
+          "body": "Treatment — 15–30 min, directly back to everyday life"
         },
         {
           "title": "Dag 3–7",
@@ -163,14 +175,14 @@
         },
         {
           "title": "Glabella",
-          "body": "Bekymmersrynkan mellan ögonbrynen — området som ger ett \"argt\" intryck."
+          "body": "Worry wrinkle between the eyebrows — the area that gives an \"angry\" impression."
         },
         {
           "title": "Kråksparkar",
           "body": "Solfjäderformade linjer vid ögonens yttre hörn som syns när du ler."
         },
         {
-          "title": "Ögonbrynslyft",
+          "title": "Brow lift",
           "body": "Subtil lyftning av ögonbrynen för en öppnare blick."
         },
         {
@@ -179,12 +191,17 @@
         },
         {
           "title": "Käkmuskler",
-          "body": "Avslappning av spända käkmuskler — kan även mjuka upp ansiktsformen."
+          "body": "Relaxation of tense jaw muscles — can also soften the face shape."
         }
       ]
     },
     "faq": {
       "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Botulinum Toxin. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Book a free consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
       "items": [
         {
           "question": "Hur snabbt ser jag resultat av botox?",
@@ -230,15 +247,23 @@
     },
     "related": {
       "enabled": true,
-      "heading": "Relaterat",
+      "heading": "Relaterade behandlingar",
       "items": [
         {
-          "title": "Fina linjer & rynkor",
-          "href": "/problem/fine-lines-wrinkles"
+          "title": "Dermal Fillers",
+          "href": "/behandlingar/dermal-fillers"
         },
         {
-          "title": "Rynkor",
-          "href": "/problem/wrinkles"
+          "title": "Sculptra",
+          "href": "/behandlingar/sculptra"
+        },
+        {
+          "title": "Skin boosters",
+          "href": "/behandlingar/skin-boosters"
+        },
+        {
+          "title": "PRP hud",
+          "href": "/behandlingar/prp-skin"
         }
       ]
     },
@@ -249,12 +274,21 @@
         "Kom osminkad i behandlingsområdet, eller så rengör vi huden på plats.",
         "Undvik alkohol i 24 timmar före behandlingen — det minskar risken för blåmärken.",
         "Undvik blodförtunnande receptfria preparat (t.ex. ipren, omega-3) några dagar innan, om din läkare godkänner det.",
-        "Berätta om alla mediciner och kosttillskott du tar vid konsultationen.",
+        "Tell us about all the medications and supplements you take at the consultation.",
         "Meddela oss om du är gravid, ammar eller har någon neuromuskulär sjukdom.",
         "Planera inte behandlingen tätt inpå viktiga händelser — ge resultatet två veckor att sätta sig."
       ],
-      "introAfter": "Små förberedelser gör behandlingen både säkrare och bekvämare.",
-      "after": []
+      "introAfter": "Det första dygnet påverkar hur jämnt resultatet blir. Så här tar du hand om huden.",
+      "after": [
+        "Rör, gnugga eller massera inte det behandlade området under de första 4 timmarna.",
+        "Håll dig upprätt — undvik att ligga ner de första 4 timmarna efter behandlingen.",
+        "Träna gärna mimiken lätt (le, rynka pannan) första timmen — det kan hjälpa upptaget.",
+        "Undvik intensiv träning, bastu och varma bad det första dygnet.",
+        "Undvik alkohol och blodförtunnande preparat det första dygnet.",
+        "Vänta minst två veckor med ansiktsbehandlingar och massage i området.",
+        "Lätt rodnad eller små svullnader vid sticken är normalt och lägger sig inom några timmar.",
+        "Kontakta oss vid ovanliga besvär — vi finns här för dig även efter behandlingen."
+      ]
     },
     "method": {
       "enabled": true
@@ -266,13 +300,63 @@
       "enabled": true
     },
     "quizCta": {
-      "enabled": true
-    },
-    "beforeAfterGallery": {
-      "enabled": false
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
     },
     "bottomCta": {
-      "enabled": true
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": true,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": [
+        {
+          "title": "Fine lines & wrinkles",
+          "beforeImage": "/images/photoshoot/frame-05.jpg",
+          "afterImage": "/images/photoshoot/frame-01.jpg"
+        },
+        {
+          "title": "Exempel 1",
+          "beforeImage": "/images/photoshoot/frame-01.jpg",
+          "afterImage": "/images/photoshoot/frame-02.jpg"
+        },
+        {
+          "title": "Exempel 2",
+          "beforeImage": "/images/photoshoot/frame-02.jpg",
+          "afterImage": "/images/photoshoot/frame-03.jpg"
+        },
+        {
+          "title": "Exempel 3",
+          "beforeImage": "/images/photoshoot/frame-03.jpg",
+          "afterImage": "/images/photoshoot/frame-04.jpg"
+        },
+        {
+          "title": "Exempel 4",
+          "beforeImage": "/images/photoshoot/frame-04.jpg",
+          "afterImage": "/images/photoshoot/frame-05.jpg"
+        },
+        {
+          "title": "Exempel 5",
+          "beforeImage": "/images/photoshoot/frame-05.jpg",
+          "afterImage": "/images/photoshoot/frame-06.jpg"
+        }
+      ]
     }
   }
 }

@@ -14,31 +14,37 @@
 
   function fillSlide(templateSlide, item) {
     var slide = templateSlide.cloneNode(true);
+    var href = item.href || "/problem/" + (item.slug || "");
+    var payload = {
+      name: item.name || "",
+      href: href,
+      image: item.image || "",
+    };
+
+    if (window.vivaciHydrateTreatmentCard) {
+      window.vivaciHydrateTreatmentCard(slide, payload, { linkMode: "overlay" });
+      return slide;
+    }
+
     var card = slide.querySelector(".layout527_card-large");
     if (!card) return slide;
 
-    var href = item.href || "/problem/" + item.slug;
-
     var img = card.querySelector(".layout527_background-image");
-    if (img && item.image) {
-      img.src = item.image;
-      img.alt = item.name || "";
+    if (img && payload.image) {
+      img.src = payload.image;
+      img.alt = payload.name;
       img.removeAttribute("srcset");
       img.removeAttribute("sizes");
       img.loading = "lazy";
     }
 
-    var title = card.querySelector(".heading-medium");
-    if (title) {
-      title.textContent = item.name || "";
-      var strong = title.querySelector("strong");
-      if (strong) strong.replaceWith(document.createTextNode(strong.textContent));
-    }
+    var title = card.querySelector(".heading-medium, .heading-style-h6");
+    if (title) title.textContent = payload.name;
 
     var overlay = document.createElement("a");
     overlay.href = href;
     overlay.className = "layout527_card-hit";
-    overlay.setAttribute("aria-label", item.name || "");
+    overlay.setAttribute("aria-label", payload.name);
     card.appendChild(overlay);
 
     return slide;

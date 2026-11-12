@@ -1,0 +1,169 @@
+/**
+ * Vivaci design tokens — custom CSS source of truth.
+ *
+ * Beige family: exactly three steps (sync with Webflow Color scheme 1 brand-1/3/4).
+ * Ink accent: --vivaci-brand-2 (#15190d) for text & strong UI — not a beige. Filled .button uses --vivaci-button-filled-bg (neutral dark).
+ *
+ * Rebrand: change the three hex values below + Webflow export, then run audit-design-tokens.py.
+ */
+
+:root {
+  /* Beige ramp — light → mid → deep */
+  --vivaci-brand-1: var(--color-scheme-1--brand-1, #f7f7f3);
+  --vivaci-brand-3: var(--color-scheme-1--brand-3, #f5f2f0);
+  --vivaci-brand-4: var(--color-scheme-1--brand-4, #ebe7e4);
+
+  /* Ink (olive-black) — primary text & accents; not default button fill */
+  --vivaci-brand-2: var(--color-scheme-1--brand-2, #15190d);
+
+  /* Neutrals */
+  --vivaci-white: var(--_primitives---colors--white, #fff);
+  --vivaci-black: var(--_primitives---colors--neutral-darkest, #000);
+  --vivaci-ink: var(--vivaci-brand-2);
+  --vivaci-text: var(--color-scheme-1--text, var(--vivaci-ink));
+  --vivaci-text-muted: var(--_primitives---colors--neutral, #666);
+  --vivaci-text-subtle: #6b6b6b;
+  --vivaci-text-nav-desc: rgb(21 25 13 / 0.55);
+  --vivaci-neutral-lighter: var(--_primitives---colors--neutral-lighter, #ccc);
+  --vivaci-neutral-light: var(--_primitives---colors--neutral-light, #aaa);
+
+  /* Surfaces (beige ramp only) */
+  --vivaci-surface-page: var(--color-scheme-1--background, var(--vivaci-white));
+  --vivaci-surface-raised: var(--vivaci-brand-1);
+  --vivaci-surface-muted: var(--vivaci-brand-3);
+  --vivaci-surface-deep: var(--vivaci-brand-4);
+  /* Grid / inline promo tiles (e.g. treatment-finder orphan CTA) — darker than nav shell */
+  --vivaci-surface-cta-tile: var(--vivaci-surface-deep);
+  --vivaci-surface-inverse: #2d2d2d;
+  /*
+   * Pairing rule — never stack adjacent beige fills (e.g. brand-1 on brand-3).
+   * Cream shell (brand-1) → white callouts/fields + brand-4 border.
+   * Page white → section bands may use brand-1 or brand-3 (one step apart from page).
+   */
+  --vivaci-surface-modal: var(--vivaci-brand-1);
+  --vivaci-surface-field: var(--vivaci-white);
+  --vivaci-surface-callout: var(--vivaci-surface-field);
+  /* @deprecated alias — same as callout (do not use brand-3 fills inside modals) */
+  --vivaci-surface-modal-inset: var(--vivaci-surface-callout);
+
+  /* Status */
+  --vivaci-status-success: #3ecf8e;
+
+  /* Overlays & scrims */
+  --vivaci-overlay-media-hover: rgb(0 0 0 / 0.27);
+  --vivaci-overlay-scrim: var(--_primitives---opacity--neutral-darkest-40, rgb(21 25 13 / 0.45));
+  --vivaci-overlay-shadow-soft: var(--_primitives---opacity--neutral-darkest-15, rgb(0 0 0 / 0.12));
+  --vivaci-shadow-ink-30: rgb(21 25 13 / 0.3);
+  --vivaci-text-disabled: rgb(21 25 13 / 0.6);
+  --vivaci-overlay-shadow-dropdown: rgb(0 0 0 / 0.08);
+  /* team8 expert portraits — warm dark beige scrim at card foot (no ink / brand-2) */
+  --vivaci-overlay-team-scrim-mid: color-mix(
+    in srgb,
+    transparent 56%,
+    color-mix(in srgb, var(--vivaci-brand-4) 40%, #6d6158 60%) 44%
+  );
+  --vivaci-overlay-team-scrim-end: color-mix(
+    in srgb,
+    var(--vivaci-brand-4) 26%,
+    #524840 74%
+  );
+
+  /* Nav on home hero (white on imagery) */
+  --vivaci-hero-nav-hover-bg: rgb(255 255 255 / 0.12);
+  --vivaci-hero-nav-hover-bg-strong: rgb(255 255 255 / 0.14);
+  --vivaci-hero-nav-fg: var(--vivaci-white);
+  --vivaci-hero-nav-badge-bg: rgb(255 255 255 / 0.94);
+  --vivaci-hero-nav-divider: rgb(255 255 255 / 0.35);
+  --vivaci-hero-nav-outline: rgb(255 255 255 / 0.95);
+
+  /* Footer on dark */
+  --vivaci-footer-control-bg: rgb(255 255 255 / 0.1);
+  --vivaci-footer-control-bg-hover: rgb(255 255 255 / 0.16);
+
+  /* Shop / drawer */
+  --vivaci-shop-overlay: rgb(21 25 13 / 0.45);
+
+  /*
+   * Treatment card component (.is-vivaci-treatment-card on layout527_card-large)
+   * — carousel sliders (.swiper-tuesday) + PDP (.is-vivaci-treatment-cards) + finder grid (.is-grid).
+   * Canonical title class: heading-style-h6 (set in vivaci-treatment-card.js).
+   */
+  --vivaci-treatment-card-width: min(65%, 22rem);
+  --vivaci-treatment-card-width-md: min(42%, 20rem);
+  --vivaci-treatment-card-min-height-md: var(--vivaci-layout527-card-min-height-md);
+  --vivaci-treatment-card-min-height-sm: var(--vivaci-layout527-card-min-height-sm);
+  --vivaci-treatment-card-aspect-md: var(--vivaci-layout527-card-aspect-md);
+  --vivaci-treatment-card-aspect-sm: var(--vivaci-layout527-card-aspect-sm);
+  --vivaci-treatment-card-title-size: var(--vivaci-text-xl);
+  --vivaci-treatment-card-title-size-sm: var(--vivaci-text-lg);
+  --vivaci-treatment-card-title-line-height: 1.4;
+  --vivaci-treatment-card-subtitle-size: var(--vivaci-text-sm);
+  --vivaci-treatment-card-subtitle-line-height: 1.35;
+
+  /* Carousel nav — readable on white + beige section backgrounds */
+  --vivaci-swiper-control-size: 2.5rem;
+  --vivaci-swiper-control-bg: var(--vivaci-surface-field);
+  --vivaci-swiper-control-border: rgb(21 25 13 / 0.38);
+  --vivaci-swiper-control-shadow: 0 1px 3px rgb(21 25 13 / 0.1);
+  --vivaci-swiper-control-hover-bg: var(--vivaci-brand-1);
+  --vivaci-swiper-control-hover-border: var(--vivaci-brand-2);
+  /* On dark / image heroes */
+  --vivaci-swiper-control-bg-on-dark: rgb(255 255 255 / 0.94);
+  --vivaci-swiper-control-border-on-dark: rgb(255 255 255 / 0.55);
+  --vivaci-swiper-control-fg-on-dark: var(--vivaci-brand-2);
+
+  /* Primary button (.button) — frosted neutral dark (Webflow neutral-darkest), not brand-2 ink */
+  --vivaci-button-backdrop-blur: 5px;
+  --vivaci-button-filled-bg: color-mix(in srgb, var(--vivaci-black) 78%, transparent);
+
+  /*
+   * Spacing — 4px base (Client-First–compatible steps).
+   * Prefer these over raw rem in Vivaci-owned CSS.
+   */
+  --vivaci-space-1: 0.25rem;
+  --vivaci-space-2: 0.5rem;
+  --vivaci-space-3: 0.75rem;
+  --vivaci-space-4: 1rem;
+  --vivaci-space-5: 1.25rem;
+  --vivaci-space-6: 1.5rem;
+  --vivaci-space-7: 1.75rem;
+  --vivaci-space-8: 2rem;
+
+  /*
+   * Type scale — aligns with Webflow utility classes (text-size-tiny/small/medium).
+   */
+  --vivaci-text-2xs: 0.6875rem;
+  --vivaci-text-xs: 0.75rem;
+  --vivaci-text-sm: 0.875rem;
+  --vivaci-text-base: 0.9375rem;
+  --vivaci-text-md: 1rem;
+  --vivaci-text-lg: 1.125rem;
+  --vivaci-text-xl: 1.25rem;
+
+  /*
+   * Corner radii — Webflow UI tokens (vivaci-dev.webflow.css) + Vivaci editorial scale.
+   * Never use --_ui-styles---radius--medium with a 0.5rem/0.75rem fallback (Webflow medium is 0.25rem).
+   */
+  --vivaci-radius-ui-small: var(--_ui-styles---radius--small, 0.15rem);
+  --vivaci-radius-ui-medium: var(--_ui-styles---radius--medium, 0.25rem);
+  --vivaci-radius-ui-large: var(--_ui-styles---radius--large, 0.5rem);
+  --vivaci-radius-sm: var(--vivaci-radius-ui-large);
+  --vivaci-radius-md: var(--vivaci-space-3);
+  --vivaci-radius-lg: var(--vivaci-space-4);
+  --vivaci-media-radius: var(--vivaci-radius-md);
+
+  /* Step list — icon circle + vertical connector (.is-vivaci-step-list) */
+  --vivaci-step-list-circle-size: var(--vivaci-space-8);
+  --vivaci-step-list-icon-size: var(--vivaci-text-sm);
+  --vivaci-step-list-lucide-stroke: 1.5;
+  --vivaci-step-list-item-gap: var(--vivaci-space-2);
+  --vivaci-step-list-item-pad-bottom: var(--vivaci-space-3);
+  --vivaci-step-list-circle-size-comfortable: 2.625rem;
+  --vivaci-step-list-icon-size-comfortable: var(--vivaci-text-lg);
+  --vivaci-step-list-lucide-stroke-comfortable: 2;
+  --vivaci-step-list-item-gap-comfortable: var(--vivaci-space-4);
+  --vivaci-step-list-item-pad-bottom-comfortable: var(--vivaci-space-7);
+  --vivaci-step-list-first-line-nudge: var(--vivaci-space-1);
+  /* Client-First padding-section-large — header36 edge spacers (nav-fixes) */
+  --vivaci-section-pad-y: 7rem;
+}

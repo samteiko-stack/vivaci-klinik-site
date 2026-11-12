@@ -10,8 +10,7 @@
     "audience": "Legitimerad läkare, tandläkare med särskild behörighet eller sjuksköterska med vidareutbildning inom estetisk medicin. Minst ett års erfarenhet av kliniskt patientarbete. Vi begär legitimation vid anmälan.",
     "image": "/images/Fillers_0055.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
@@ -26,20 +25,17 @@
     {
       "label": "14 mar 2026",
       "time": "09:00 – 17:00",
-      "seats": "6 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "6 platser kvar"
     },
     {
       "label": "11 apr 2026",
       "time": "09:00 – 17:00",
-      "seats": "Reservlista",
-      "enrollHref": "/kontakt"
+      "seats": "Reservlista"
     },
     {
       "label": "16 maj 2026",
       "time": "09:00 – 17:00",
-      "seats": "10 platser",
-      "enrollHref": "/kontakt"
+      "seats": "10 platser"
     }
   ],
   "about": {
@@ -80,7 +76,7 @@
       },
       {
         "question": "Hur anmäler jag mig?",
-        "answer": "Klicka Anmäl intresse eller Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
       },
       {
         "question": "Avbokningsregler?",

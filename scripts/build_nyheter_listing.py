@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Generate nyheter.html from the same listing shell as utbildning.html."""
+"""Generate nyheter.html from the same listing shell as utbildning.html.
+
+Hero (header50) pattern: match utbildning/kontakt — eyebrow tagline, H1, intro, CTAs only.
+Do not add breadcrumb markup in header50 heroes on new static/listing pages.
+"""
 
 from __future__ import annotations
 
@@ -24,11 +28,11 @@ CATEGORY_ORDER = "Nyhet,Utbildande,Bloggartikel,Erbjudande"
 
 def _ensure_blog_css(soup: BeautifulSoup) -> None:
     head = soup.head
-    if not head or "vivaci-blog.css" in str(head):
+    if not head or "vivaci.css" in str(head):
         return
     link = soup.new_tag(
         "link",
-        href="css/vivaci-blog.css",
+        href="css/vivaci.css",
         rel="stylesheet",
         type="text/css",
     )

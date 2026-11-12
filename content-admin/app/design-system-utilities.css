@@ -1,0 +1,233 @@
+/* ============================================================
+   DS utilities — layout, spacing, text color, field feedback
+   No inline styles in components; use these classes only.
+   ============================================================ */
+
+/* Margin — every value comes from the spacing primitives */
+.ds-mt-2  { margin-top: var(--space-2); }
+.ds-mt-4  { margin-top: var(--space-4); }
+.ds-mt-6  { margin-top: var(--space-6); }
+.ds-mt-8  { margin-top: var(--space-8); }
+.ds-mb-20 { margin-bottom: var(--space-20); }
+.ds-mb-24 { margin-bottom: var(--space-24); }
+
+/* Gap */
+/* Semantic gaps — prefer xs/sm/md/lg/xl in feature code */
+.ds-gap-xs   { gap: var(--spacing-xs); }
+.ds-gap-sm   { gap: var(--spacing-sm); }
+.ds-gap-md   { gap: var(--spacing-md); }
+.ds-gap-lg   { gap: var(--spacing-lg); }
+.ds-gap-xl   { gap: var(--spacing-xl); }
+
+.ds-gap-4    { gap: var(--space-4); }
+.ds-gap-6    { gap: var(--space-6); }
+.ds-gap-8    { gap: var(--space-8); }
+.ds-gap-10   { gap: var(--space-10); }
+.ds-gap-12   { gap: var(--space-12); }
+.ds-gap-14   { gap: var(--space-14); }
+.ds-gap-16   { gap: var(--space-16); }
+.ds-gap-20   { gap: var(--space-20); }
+.ds-gap-half { gap: var(--toolbar-inline-gap); }
+
+/* Display + flex alignment */
+.ds-block { display: block; }
+.ds-flex-1 { flex: 1; min-width: 0; }
+.ds-flex-end { justify-content: flex-end; }
+.ds-flex-wrap { flex-wrap: wrap; }
+.ds-items-start { align-items: flex-start; }
+.ds-items-center { align-items: center; }
+.ds-items-baseline { align-items: baseline; }
+.ds-justify-between { justify-content: space-between; }
+.ds-shrink-0 { flex-shrink: 0; }
+.ds-min-w-0 { min-width: 0; }
+
+/* Icon sizing */
+.ds-icon-2xs { width: var(--space-12); height: var(--space-12); flex-shrink: 0; }
+.ds-icon-xs { width: var(--icon-size-xs); height: var(--icon-size-xs); flex-shrink: 0; }
+.ds-icon-sm { width: var(--icon-size-sm); height: var(--icon-size-sm); flex-shrink: 0; }
+.ds-icon-md { width: var(--icon-size-md); height: var(--icon-size-md); flex-shrink: 0; }
+.ds-icon-lg { width: var(--icon-size-lg); height: var(--icon-size-lg); flex-shrink: 0; }
+.ds-icon-xl { width: var(--icon-size-xl); height: var(--icon-size-xl); flex-shrink: 0; }
+.ds-icon-dim { color: var(--color-text-dim); }
+
+/* Text */
+.ds-text-center { text-align: center; }
+.ds-text-danger { color: var(--color-danger); }
+.ds-text-success { color: var(--color-success); }
+.ds-text-warning { color: var(--color-warning); }
+
+/* Field feedback */
+.ds-field-error {
+  margin-top: var(--space-6);
+  display: block;
+  color: var(--color-danger);
+}
+
+.ds-field-success {
+  margin-top: var(--space-8);
+  display: block;
+  color: var(--color-success);
+}
+
+/* Alert dismiss row */
+.ds-alert-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ds-alert-dismiss {
+  width: 28px;
+  height: 28px;
+  color: var(--color-danger);
+}
+
+/* Modal */
+.ds-modal-footer-actions {
+  justify-content: flex-end;
+}
+
+.ds-modal-warning-row {
+  align-items: flex-start;
+  margin-bottom: var(--space-20);
+}
+
+.ds-modal-warning-icon {
+  color: var(--color-amber);
+  flex-shrink: 0;
+  margin-top: var(--space-2);
+}
+
+.ds-lost-reason-list {
+  margin-bottom: var(--space-20);
+}
+
+.ds-lost-reason-btn {
+  justify-content: flex-start;
+}
+
+.ds-lost-reason-btn--selected {
+  background: var(--color-amber-bg);
+  border-color: var(--color-amber);
+  font-weight: var(--font-weight-title);
+}
+
+.ds-page-header-eyebrow {
+  margin-bottom: var(--space-4);
+  color: var(--color-text-dim);
+}
+
+.ds-main--flush { padding: 0; }
+
+/* Same horizontal inset as .crm-top-nav — never use a different gutter on compact pages */
+.ds-main--compact {
+  padding-top: var(--page-padding-top);
+  padding-right: var(--page-gutter);
+  padding-bottom: var(--page-padding-bottom);
+  padding-left: var(--page-gutter);
+}
+
+.ds-avatar {
+  border-radius: var(--radius-circle);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.ds-avatar--xs { width: var(--avatar-size-xs); height: var(--avatar-size-xs); }
+.ds-avatar--sm { width: var(--avatar-size-sm); height: var(--avatar-size-sm); }
+.ds-avatar--md { width: var(--avatar-size-md); height: var(--avatar-size-md); }
+.ds-avatar--lg { width: var(--avatar-size-lg); height: var(--avatar-size-lg); }
+.ds-avatar--xl { width: var(--avatar-size-xl); height: var(--avatar-size-xl); }
+
+.ds-contact-avatar {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-muted);
+  color: var(--color-text-muted);
+}
+
+.ds-contact-avatar__icon {
+  width: 50%;
+  height: 50%;
+}
+
+.ds-avatar-bg-0 { background: var(--color-avatar-1); }
+.ds-avatar-bg-1 { background: var(--color-avatar-2); }
+.ds-avatar-bg-2 { background: var(--color-avatar-3); }
+.ds-avatar-bg-3 { background: var(--color-avatar-4); }
+.ds-avatar-bg-4 { background: var(--color-avatar-5); }
+.ds-avatar-bg-5 { background: var(--color-avatar-6); }
+
+.ds-avatar__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.ds-avatar--contact-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ds-avatar--contact-fallback .ds-avatar__person-icon {
+  color: var(--color-text-muted);
+  flex-shrink: 0;
+}
+
+.ds-avatar--xs .ds-avatar__person-icon { width: var(--icon-size-xs); height: var(--icon-size-xs); }
+.ds-avatar--sm .ds-avatar__person-icon { width: var(--icon-size-sm); height: var(--icon-size-sm); }
+.ds-avatar--md .ds-avatar__person-icon { width: var(--icon-size-sm); height: var(--icon-size-sm); }
+.ds-avatar--lg .ds-avatar__person-icon { width: var(--icon-size-md); height: var(--icon-size-md); }
+.ds-avatar--xl .ds-avatar__person-icon { width: var(--icon-size-lg); height: var(--icon-size-lg); }
+
+.ds-nav-item__icon--active { stroke-width: 2.2; }
+.ds-nav-item__icon--idle { stroke-width: 1.8; }
+.ds-nav-item__label { flex: 1; min-width: 0; }
+
+.ds-copy-btn {
+  width: auto;
+  height: auto;
+  padding: var(--space-2);
+  color: var(--color-text-light);
+}
+
+.ds-copy-btn--copied {
+  color: var(--color-success);
+}
+
+/* Error page */
+.ds-error-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+  padding: var(--spacing-xl) 0;
+}
+
+.ds-error-page__card {
+  width: 100%;
+  max-width: 420px;
+}
+
+.ds-error-page__title {
+  margin: 0;
+}
+
+.ds-error-page__digest {
+  font-family: monospace;
+  color: var(--color-text-light);
+  margin: 0;
+}
+
+.ds-error-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-10);
+  justify-content: center;
+  margin-top: var(--space-8);
+}

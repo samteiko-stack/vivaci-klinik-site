@@ -11,10 +11,13 @@ ROOT = Path(__file__).resolve().parents[1]
 FROM_PRODUCTION = ROOT / "content" / "from-production"
 OUT_DIR = ROOT / "content" / "treatment-pages"
 TREATMENT_PRICES_PATH = ROOT / "content" / "treatment-prices.json"
+SITE_URLS_PATH = ROOT / "content" / "site-urls.json"
+
+BOOKING_URL = json.loads(SITE_URLS_PATH.read_text(encoding="utf-8"))["bookingUrl"]
 
 DEFAULT_HERO_CTAS = {
-    "primaryCta": {"label": "Boka gratis konsultation", "href": "/kontakt"},
-    "secondaryCta": {"label": "Boka behandling", "href": "/kontakt"},
+    "primaryCta": {"label": "Boka gratis konsultation", "href": BOOKING_URL},
+    "secondaryCta": {"label": "Boka behandling", "href": BOOKING_URL},
 }
 
 DEFAULT_QUIZ_CTA = {
@@ -36,7 +39,7 @@ DEFAULT_BOTTOM_CTA = {
         "Vi hjälper dig att hitta rätt behandling för just dina behov. "
         "Välkommen till Vivaci Klinik i Solna."
     ),
-    "primaryCta": {"label": "Kontakta oss", "href": "/kontakt"},
+    "primaryCta": {"label": "Kontakta oss", "href": BOOKING_URL},
 }
 
 # FAQ left-column CTA: problem → method; behandling/plastik → boka konsultation.
@@ -46,7 +49,7 @@ DEFAULT_FAQ_CTA_PROBLEM = {
 }
 DEFAULT_FAQ_CTA_TREATMENT = {
     "label": "Boka kostnadsfri konsultation",
-    "href": "/kontakt",
+    "href": BOOKING_URL,
 }
 
 # Railway h2 titles for site-wide blocks on treatment pages

@@ -60,9 +60,22 @@
       });
   }
 
-  if (window.vivaciOnLocaleContentReady) {
-    window.vivaciOnLocaleContentReady(hydrate);
-  } else {
-    hydrate();
+  function boot() {
+    return hydrate();
   }
+
+  window.__vivaciHomeBlogReady = new Promise(function (resolve) {
+    function start() {
+      if (window.vivaciOnLocaleContentReady) {
+        window.vivaciOnLocaleContentReady(boot).then(resolve);
+      } else {
+        boot().then(resolve);
+      }
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", start, { once: true });
+    } else {
+      start();
+    }
+  });
 })();

@@ -1,0 +1,27 @@
+import type { Rewrite } from "next/dist/lib/load-custom-routes";
+
+/** Pretty URLs for pre-rendered Vivaci HTML (mirrors root vercel.json). */
+export const vivaciSiteBeforeFileRewrites: Rewrite[] = [
+  { source: "/", destination: "/index.html" },
+  { source: "/en", destination: "/index.html" },
+  { source: "/en/", destination: "/index.html" },
+  { source: "/en/:path*", destination: "/:path*" },
+  { source: "/kontakt", destination: "/kontakt.html" },
+  { source: "/om-oss", destination: "/om-oss.html" },
+  { source: "/prislista", destination: "/prislista.html" },
+  { source: "/behandlingar", destination: "/behandlingar.html" },
+  { source: "/utbildning", destination: "/utbildning.html" },
+  { source: "/blogg", destination: "/nyheter.html" },
+  { source: "/nyheter", destination: "/nyheter.html" },
+  { source: "/produkter", destination: "/webshop.html" },
+  { source: "/integritetspolicy", destination: "/legal/integritetspolicy.html" },
+  { source: "/villkor", destination: "/legal/kopvillkor.html" },
+  { source: "/avbokning", destination: "/legal/avbokning.html" },
+  { source: "/cookies", destination: "/legal/cookies.html" },
+  { source: "/problem/:slug", destination: "/treatment-page.html" },
+  { source: "/behandlingar/:slug", destination: "/treatment-page.html" },
+  { source: "/plastikkirurgi/:slug", destination: "/treatment-page.html" },
+  { source: "/produkter/:slug", destination: "/product-detail-page.html" },
+  { source: "/utbildning/:slug", destination: "/course-page.html" },
+  { source: "/nyheter/:slug", destination: "/blog-page.html" },
+];

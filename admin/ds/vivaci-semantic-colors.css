@@ -1,0 +1,129 @@
+/**
+ * Vivaci site palette → Tandfokus DS semantic slots.
+ * Colors from public/css/vivaci-dev.webflow.css (color-scheme-1).
+ * Loaded after Tandfokus globals.css so structure/spacing stay, colors don’t.
+ */
+
+:root {
+  --vivaci-brand-1: #f7f7f3;
+  --vivaci-brand-2: #15190d;
+  --vivaci-brand-3: #f5f2f0;
+  --vivaci-brand-4: #ebe7e4;
+
+  --color-white: #ffffff;
+  --color-page: var(--vivaci-brand-3);
+  --color-surface: var(--vivaci-brand-1);
+  --color-hover: var(--vivaci-brand-3);
+  --color-surface-muted: var(--vivaci-brand-3);
+  --color-surface-raised: var(--color-white);
+  --color-input: var(--color-surface-raised);
+  --color-row-focus-flash: color-mix(in srgb, var(--vivaci-brand-3) 72%, var(--color-white));
+  --color-row-focus-flash-ring: color-mix(in srgb, var(--vivaci-brand-2) 22%, transparent);
+
+  --color-ink: var(--vivaci-brand-2);
+  --color-text: var(--color-ink);
+  --color-text-dim: #333333;
+  --color-text-muted: rgba(21, 25, 13, 0.62);
+  --color-text-light: rgba(21, 25, 13, 0.45);
+  --color-text-secondary: var(--color-text-dim);
+  --color-table-header: var(--color-text);
+  --color-field-hint: var(--color-text-light);
+
+  --color-border: var(--vivaci-brand-4);
+  --color-border-light: var(--vivaci-brand-4);
+  --color-input-border: #ccc;
+
+  /* DS brand slots — all Vivaci ink/cream, no Tandfokus teal */
+  --color-brand-1: var(--vivaci-brand-2);
+  --color-brand-2: var(--vivaci-brand-4);
+  --color-brand-3: var(--vivaci-brand-3);
+  --color-brand-4: var(--vivaci-brand-1);
+  --color-brand-5: var(--vivaci-brand-2);
+  --color-brand-6: var(--vivaci-brand-3);
+  --color-brand-7: var(--vivaci-brand-2);
+
+  --color-brand: var(--vivaci-brand-2);
+  --color-brand-dark: var(--vivaci-brand-2);
+  --color-brand-bg: var(--vivaci-brand-3);
+  --color-brand-border: var(--vivaci-brand-4);
+  --color-brand-text: var(--vivaci-brand-2);
+  --color-brand-dim: var(--vivaci-brand-2);
+  --color-accent: var(--vivaci-brand-2);
+  --color-accent-dark: #333333;
+  --color-accent-bg: var(--vivaci-brand-3);
+  --color-dark: var(--vivaci-brand-2);
+
+  --color-chart-1: var(--vivaci-brand-2);
+  --color-chart-2: var(--vivaci-brand-4);
+  --color-chart-3: color-mix(in srgb, var(--vivaci-brand-2) 35%, var(--vivaci-brand-3));
+  --color-chart-4: var(--vivaci-brand-2);
+  --color-chart-muted: var(--vivaci-brand-4);
+
+  --color-panel-dark: var(--color-white);
+  --color-panel-darker: var(--color-white);
+  --color-panel-border: var(--vivaci-brand-4);
+  --color-panel-text: var(--color-text);
+  --color-panel-text-muted: var(--color-text-muted);
+  --color-panel-highlight: var(--color-text);
+  --color-panel-bright: var(--color-text);
+  --color-panel-light: var(--color-text-dim);
+  --color-panel-muted: var(--color-text-muted);
+  --color-panel-accent: var(--vivaci-brand-2);
+  --color-panel-subtle: var(--color-text-light);
+  --color-panel-inner-border: var(--vivaci-brand-4);
+
+  --color-success: #27885a;
+  --color-success-bg: #e2f5ec;
+  --color-success-border: #b3dfc7;
+  --color-green: var(--color-success);
+  --color-green-bg: var(--color-success-bg);
+
+  --color-danger: #c0392b;
+  --color-danger-bg: #fdeaea;
+  --color-danger-border: #f5c0c0;
+  --color-danger-hover: #a11919;
+  --color-red: var(--color-danger);
+  --color-red-bg: var(--color-danger-bg);
+
+  --color-warning: #8a5a00;
+  --color-warning-bg: #fff7d6;
+  --color-warning-border: #f0dfa0;
+  --color-amber: var(--color-warning);
+  --color-amber-bg: var(--color-warning-bg);
+
+  /* Light Vivaci chrome — not Tandfokus #222 sidebar */
+  --color-sidebar-shell: var(--vivaci-brand-3);
+  --sidebar-bg: var(--color-white);
+  --sidebar-bg-start: var(--color-white);
+  --sidebar-bg-end: var(--vivaci-brand-3);
+  --sidebar-border: var(--vivaci-brand-4);
+  --sidebar-divider: var(--vivaci-brand-4);
+  --sidebar-text: var(--color-text);
+  --sidebar-text-muted: var(--color-text-muted);
+  --sidebar-text-faint: var(--color-text-light);
+  --sidebar-hover-bg: var(--vivaci-brand-3);
+  --sidebar-active-bg: color-mix(in srgb, var(--vivaci-brand-3) 85%, var(--vivaci-brand-4));
+
+  --scrollbar-thumb: rgba(21, 25, 13, 0.1);
+  --scrollbar-thumb-visible: rgba(21, 25, 13, 0.18);
+  --scrollbar-thumb-hover: rgba(21, 25, 13, 0.2);
+  --scrollbar-table-track: color-mix(in srgb, var(--vivaci-brand-3) 55%, transparent);
+  --scrollbar-table-thumb: color-mix(in srgb, var(--vivaci-brand-2) 22%, var(--vivaci-brand-4));
+  --scrollbar-table-thumb-hover: color-mix(in srgb, var(--vivaci-brand-2) 38%, var(--color-text-muted));
+
+  --shadow-sm: 0 1px 2px rgba(21, 25, 13, 0.05);
+  --shadow-card:
+    0 1px 2px rgba(21, 25, 13, 0.04),
+    0 10px 24px -14px rgba(21, 25, 13, 0.1);
+  --shadow-dropdown:
+    0 2px 4px -1px rgba(21, 25, 13, 0.05),
+    0 14px 32px -10px rgba(21, 25, 13, 0.12);
+
+  --control-focus-border: var(--vivaci-brand-2);
+  --control-focus-ring: 0 0 0 3px rgba(21, 25, 13, 0.08);
+  --color-on-brand-spinner-track: rgba(255, 255, 255, 0.35);
+
+  --public-form-focus-ring: 0 0 0 3px rgba(21, 25, 13, 0.1);
+  --public-form-submit-glow: rgba(21, 25, 13, 0.12);
+  --public-form-success-icon-color: var(--color-success);
+}

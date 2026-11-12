@@ -1,0 +1,64 @@
+{
+  "posts": [
+    {
+      "slug": "forbered-dig-infor-behandling",
+      "title": "Så förbereder du dig inför din första behandling",
+      "excerpt": "Praktiska tips från vårt team inför konsultation och behandling — så att du känner dig trygg och förberedd.",
+      "category": "Bloggartikel",
+      "date": "12 feb 2026",
+      "readTime": "4 min läsning",
+      "heroImage": "/images/pexels/blog-1.jpg",
+      "path": "/nyheter/forbered-dig-infor-behandling"
+    },
+    {
+      "slug": "hudforandringar-kontroll",
+      "title": "Därför är det viktigare än någonsin att kontrollera dina hudförändringar",
+      "excerpt": "Nya eller förändrade leverfläckar ska tas på allvar. Våra hudläkare förklarar när du bör söka bedömning.",
+      "category": "Utbildande",
+      "date": "28 jan 2026",
+      "readTime": "5 min läsning",
+      "heroImage": "/images/pexels/blog-2.jpg",
+      "path": "/nyheter/hudforandringar-kontroll"
+    },
+    {
+      "slug": "mina-sidor-digital-portal",
+      "title": "Mina sidor — vår nya digitala kommunikationsportal",
+      "excerpt": "Få påminnelser, eftervårdsråd och enkel kontakt med kliniken via vår nya digitala portal.",
+      "category": "Nyhet",
+      "date": "15 jan 2026",
+      "readTime": "3 min läsning",
+      "heroImage": "/images/pexels/blog-3.jpg",
+      "path": "/nyheter/mina-sidor-digital-portal"
+    },
+    {
+      "slug": "naturliga-resultat-injektioner",
+      "title": "Så skapar vi naturliga resultat med injektionsbehandlingar",
+      "excerpt": "Mindre kan vara mer. Så tänker vi kring dosering, anatomi och uppföljning för resultat som känns som dig.",
+      "category": "Utbildande",
+      "date": "8 jan 2026",
+      "readTime": "5 min läsning",
+      "heroImage": "/images/pexels/blog-4.jpg",
+      "path": "/nyheter/naturliga-resultat-injektioner"
+    },
+    {
+      "slug": "sommarkonsultationer-2026",
+      "title": "Digitala videokonsultationer under sommaren",
+      "excerpt": "Boka en digital konsultation när det passar dig — även under semestern.",
+      "category": "Nyhet",
+      "date": "20 jun 2026",
+      "readTime": "4 min läsning",
+      "heroImage": "/images/pexels/blog-2.jpg",
+      "path": "/nyheter/sommarkonsultationer-2026"
+    },
+    {
+      "slug": "varens-hudvardspaket",
+      "title": "Vårens hudvårdspaket — begränsat antal",
+      "excerpt": "Kombinera konsultation och behandling till ett förmånligt paketpris inför sommaren.",
+      "category": "Erbjudande",
+      "date": "3 apr 2026",
+      "readTime": "3 min läsning",
+      "heroImage": "/images/pexels/blog-1.jpg",
+      "path": "/nyheter/varens-hudvardspaket"
+    }
+  ]
+}

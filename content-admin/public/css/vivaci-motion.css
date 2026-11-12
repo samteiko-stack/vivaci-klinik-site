@@ -1,0 +1,139 @@
+/**
+ * Vivaci motion language — smooth, snappy, minimal.
+ *
+ * Animate: modals (quiz, nav search), step/panel changes, progress, page-level reveals.
+ * Do not animate: every list item, form options, routine hover (use short CSS transitions).
+ * Respect prefers-reduced-motion (see @media block).
+ */
+
+:root {
+  --vivaci-motion-duration-instant: 120ms;
+  --vivaci-motion-duration-fast: 200ms;
+  --vivaci-motion-duration-normal: 320ms;
+  --vivaci-motion-duration-slow: 420ms;
+
+  --vivaci-motion-ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --vivaci-motion-ease-in: cubic-bezier(0.4, 0, 0.95, 1);
+  --vivaci-motion-ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+
+  --vivaci-motion-distance-sm: 0.75rem;
+  --vivaci-motion-distance-md: 1.25rem;
+
+  --vivaci-transition-interactive: border-color var(--vivaci-motion-duration-fast)
+      var(--vivaci-motion-ease-out),
+    background-color var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out),
+    color var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out),
+    box-shadow var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out),
+    opacity var(--vivaci-motion-duration-fast) var(--vivaci-motion-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --vivaci-motion-duration-instant: 0ms;
+    --vivaci-motion-duration-fast: 0ms;
+    --vivaci-motion-duration-normal: 0ms;
+    --vivaci-motion-duration-slow: 0ms;
+  }
+}
+
+/* Cross-document view transitions off — root fade caused image/logo flicker on MPA nav */
+@view-transition {
+  navigation: none;
+}
+
+/* Page body fade disabled — section/CTA content must never wait on a reveal gate */
+html.vivaci-page-loading body {
+  opacity: 1;
+}
+
+/* Treatment hero: keep export placeholder hidden until JSON + image decode */
+html.vivaci-content-pending .header50_background-image-wrapper .header50_background-image {
+  visibility: hidden;
+}
+
+/* Hide only pre-hydration empty grids — not mid-swap (populateGrid used to flash :empty) */
+html.vivaci-page-loading .treatment-grid:empty,
+[data-vivaci-category-finder] .treatment-grid.is-loading-treatments:empty {
+  visibility: hidden;
+  min-height: 10rem;
+}
+
+[data-vivaci-category-finder] .treatment-grid.is-swapping-treatments {
+  min-height: 10rem;
+}
+
+html.vivaci-page-ready body {
+  opacity: 1;
+}
+
+/* Never leave a blank screen if loading class stuck (mobile / slow fonts) */
+html.vivaci-page-ready body,
+html:not(.vivaci-page-loading) body {
+  opacity: 1;
+}
+
+@media (max-width: 991px) {
+  html.vivaci-page-loading body {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @view-transition {
+    navigation: none;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
+
+  html.vivaci-page-loading body {
+    opacity: 1;
+    transition: none;
+  }
+}
+
+/* Section scroll-reveal off (Webflow IX) — nav/modal motion unchanged */
+section.is-section,
+header.is-section,
+footer.is-section,
+section.is-section [data-w-id],
+header.is-section [data-w-id],
+footer.is-section [data-w-id],
+header.is-section .header6_content,
+header.is-section .header6_content * {
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  filter: none !important;
+  visibility: visible !important;
+}
+
+html.w-mod-js:not(.w-mod-ix) section.is-section [data-w-id],
+html.w-mod-js:not(.w-mod-ix) header.is-section [data-w-id],
+html.w-mod-js:not(.w-mod-ix) footer.is-section [data-w-id] {
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
+}
+
+.w-mod-ix section.is-section [data-w-id],
+.w-mod-ix header.is-section [data-w-id],
+.w-mod-ix footer.is-section [data-w-id] {
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* Homepage blog carousel — no GSAP [is-div] stagger on slides/cards */
+#vivaci-home-blog,
+#vivaci-home-blog .swiper-slide,
+#vivaci-home-blog .blog34_item,
+#vivaci-home-blog .blog34_item * {
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  filter: none !important;
+  visibility: visible !important;
+}

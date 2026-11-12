@@ -5,7 +5,7 @@
   "intro": "Här hittar du svar på de vanligaste frågorna om bokning, behandlingar och besök hos oss.",
   "cta": {
     "label": "Se alla frågor",
-    "href": "/faq"
+    "href": "/#vivaci-home-faq"
   },
   "items": [
     {
@@ -29,7 +29,7 @@
       "answer": "Det beror på behandlingen. Vissa resultat syns direkt, andra utvecklas under dagar till veckor."
     },
     {
-      "question": "Behöver jag sjukskriva mig efter behandling?",
+      "question": "Do I need to take sick leave after treatment?",
       "answer": "Vanligtvis inte. Många återgår till vardagen samma dag. Vi ger alltid individuella råd vid besöket."
     },
     {

@@ -13,7 +13,7 @@
         {
           "href": "/nyheter/sommarkonsultationer-2026",
           "label": "Digitala videokonsultationer under sommaren",
-          "description": "Boka en digital konsultation när det passar dig — även under semestern.",
+          "description": "Book a digital consultation at your convenience — even during the holidays.",
           "image": "/images/pexels/blog-2.jpg"
         }
       ]
@@ -36,7 +36,7 @@
       ]
     },
     {
-      "label": "Bloggartikel",
+      "label": "Blog article",
       "items": [
         {
           "href": "/nyheter/forbered-dig-infor-behandling",

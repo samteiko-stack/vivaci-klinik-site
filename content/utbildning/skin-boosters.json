@@ -10,8 +10,7 @@
     "audience": "Injektörer eller hudterapeuter i medicinsk estetisk miljö. Botox- eller filler-grund rekommenderas. Legitimering/klinikkoppling verifieras vid anmälan.",
     "image": "/images/2149152764_12149152764.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
@@ -26,14 +25,12 @@
     {
       "label": "4 apr 2026",
       "time": "13:00 – 17:00",
-      "seats": "12 platser",
-      "enrollHref": "/kontakt"
+      "seats": "12 platser"
     },
     {
       "label": "6 jun 2026",
       "time": "13:00 – 17:00",
-      "seats": "9 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "9 platser kvar"
     }
   ],
   "about": {
@@ -53,8 +50,12 @@
   },
   "faq": {
     "enabled": true,
-    "intro": "",
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
     "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Injektör eller hudterapeut i medicinsk estetisk miljö. Botox- eller filler-grund rekommenderas. Legitimation/klinikkoppling verifieras vid anmälan."
+      },
       {
         "question": "Kan hudterapeut delta?",
         "answer": "Ja, under medicinsk delegation på registrerad klinik."
@@ -62,6 +63,14 @@
       {
         "question": "Ingår produkter?",
         "answer": "Demo- och övningsmaterial ingår."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Avbokningsregler?",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
       }
     ]
   }

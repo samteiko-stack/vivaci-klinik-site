@@ -1,0 +1,6 @@
+{
+  "storeDomain": "your-store.myshopify.com",
+  "storefrontAccessToken": "your-storefront-api-public-token",
+  "apiVersion": "2024-10",
+  "defaultCurrency": "SEK"
+}

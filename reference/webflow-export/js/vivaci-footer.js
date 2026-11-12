@@ -7,6 +7,16 @@
 
   var DATA_URL = "/content/from-production/footer.json";
 
+  function localizedHref(href) {
+    if (!href || !window.VivaciLocaleRouting || !window.VivaciLocaleRouting.localizeHref) {
+      return href;
+    }
+    var locale =
+      window.VivaciLocaleRouting.localeFromPathname &&
+      window.VivaciLocaleRouting.localeFromPathname();
+    return window.VivaciLocaleRouting.localizeHref(href, locale);
+  }
+
   function fetchContent(path) {
     if (window.VivaciI18n && window.VivaciI18n.fetchContent) {
       return window.VivaciI18n.fetchContent(path);
@@ -38,6 +48,21 @@
     );
   }
 
+  var FOOTER_SOCIAL_ICONS = {
+    facebook: lucideIcon(
+      "facebook",
+      '<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>'
+    ),
+    instagram: lucideIcon(
+      "instagram",
+      '<rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>'
+    ),
+    tiktok: lucideIcon(
+      "tiktok",
+      '<path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>'
+    ),
+  };
+
   var FOOTER_CONTACT_ICONS = {
     address: lucideIcon(
       "map-pin",
@@ -61,7 +86,7 @@
 
   function setLink(a, item) {
     if (!a || !item) return;
-    a.href = item.href || "#";
+    a.href = localizedHref(item.href || "#");
     a.textContent = item.label || "";
   }
 
@@ -73,10 +98,12 @@
     var links = accordion.querySelectorAll(".footer5_link");
     if (contact.address && links[0]) {
       var addr = contact.address;
-      links[0].href = addr.href || "#";
+      links[0].href = localizedHref(addr.href || "#");
       var addrText = String(addr.label || "");
       if (addrText.indexOf("<br") === -1) {
-        addrText = addrText.replace(/,\s*Plan 2/, ",<br>Plan 2");
+        addrText = addrText
+          .replace(/,\s*Plan 2[,\s]+/, ", Plan 2,<br>")
+          .replace(/,\s*Plan 2$/, ", Plan 2");
       }
       links[0].innerHTML = addrText;
     }
@@ -88,11 +115,41 @@
     setContactRowIcon(rows[1], "phone");
     setContactRowIcon(rows[2], "email");
 
-    var wrap = accordion.querySelector(".footer-links-wrap");
-    if (wrap) {
-      wrap.querySelectorAll("[data-vivaci-footer-social]").forEach(function (el) {
-        el.remove();
-      });
+    if (contact.social && contact.social.length) {
+      applySocial(accordion, contact.social);
+    }
+  }
+
+  function applySocial(accordion, social) {
+    if (!accordion || !social || !social.length) return;
+    var answer = accordion.querySelector(".faq1_answer");
+    if (!answer) return;
+    answer.querySelectorAll("[data-vivaci-footer-social]").forEach(function (el) {
+      el.remove();
+    });
+
+    var list = document.createElement("div");
+    list.className = "vivaci-footer-social";
+    list.setAttribute("data-vivaci-footer-social", "");
+
+    social.forEach(function (item) {
+      if (!item || !item.href) return;
+      var a = document.createElement("a");
+      a.className = "vivaci-footer-social__link w-inline-block";
+      a.href = localizedHref(item.href);
+      a.setAttribute("aria-label", item.label || item.network || "Social");
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      var embed = document.createElement("div");
+      embed.className = "icon-embed-xsmall w-embed";
+      var net = (item.network || "").toLowerCase();
+      embed.innerHTML = FOOTER_SOCIAL_ICONS[net] || "";
+      a.appendChild(embed);
+      list.appendChild(a);
+    });
+
+    if (list.childNodes.length) {
+      answer.appendChild(list);
     }
   }
 
@@ -108,7 +165,7 @@
     column.links.forEach(function (item) {
       var a = document.createElement("a");
       a.className = "footer5_link";
-      a.href = item.href || "#";
+      a.href = localizedHref(item.href || "#");
       a.textContent = item.label || "";
       wrap.appendChild(a);
     });
@@ -123,11 +180,29 @@
     if (sectionLabel && data.sectionTitle) {
       sectionLabel.textContent = data.sectionTitle;
     }
-    block.querySelectorAll("[data-vivaci-footer-newsletter-subtitle]").forEach(function (el) {
-      var row = el.closest(".margin-bottom");
-      if (row) row.remove();
-      else el.remove();
-    });
+    var subtitle = block.querySelector("[data-vivaci-footer-newsletter-subtitle]");
+    if (data.title) {
+      if (!subtitle) {
+        var subWrap = document.createElement("div");
+        subWrap.className = "margin-bottom margin-xsmall";
+        subtitle = document.createElement("p");
+        subtitle.className = "vivaci-footer-newsletter-title";
+        subtitle.setAttribute("data-vivaci-footer-newsletter-subtitle", "");
+        subWrap.appendChild(subtitle);
+        var sectionWrap = block.querySelector(
+          ":scope > .margin-bottom.margin-xsmall"
+        );
+        if (sectionWrap) {
+          sectionWrap.insertAdjacentElement("afterend", subWrap);
+        } else {
+          block.insertBefore(subWrap, block.firstChild);
+        }
+      }
+      subtitle.textContent = data.title;
+    } else if (subtitle) {
+      var subRow = subtitle.closest(".margin-bottom");
+      if (subRow) subRow.remove();
+    }
     if (data.description && lines[0]) {
       lines[0].textContent = data.description;
     }
@@ -138,14 +213,134 @@
     }
   }
 
+  function restructureFooterLayout(root) {
+    if (!root || root.getAttribute("data-vivaci-footer-split") === "1") {
+      return;
+    }
+    var container = root.querySelector(".container-large");
+    if (!container) return;
+
+    var outer = container.querySelector(":scope > .padding-section-large");
+    if (!outer) return;
+
+    var paddingBottom = outer.querySelector(":scope > .padding-bottom");
+    var legal = outer.querySelector(":scope > .footer5_bottom-wrapper");
+    if (!paddingBottom || !legal) return;
+
+    var dividerWrap = paddingBottom.querySelector(
+      ":scope > .padding-vertical.padding-xlarge:last-child"
+    );
+
+    var main = document.createElement("div");
+    main.className = "padding-section-large vivaci-footer-main";
+
+    Array.prototype.forEach.call(paddingBottom.children, function (child) {
+      if (child === dividerWrap) return;
+      main.appendChild(child);
+    });
+
+    var dividerBand = document.createElement("div");
+    dividerBand.className = "vivaci-footer-divider";
+    dividerBand.setAttribute("data-vivaci-footer-divider", "");
+    var line = dividerWrap && dividerWrap.querySelector(".line-divider");
+    if (line) {
+      dividerBand.appendChild(line.cloneNode(true));
+    } else {
+      var fallback = document.createElement("div");
+      fallback.className = "line-divider text-style-muted is-white";
+      dividerBand.appendChild(fallback);
+    }
+
+    var legalWrap = document.createElement("div");
+    legalWrap.className = "padding-section-large vivaci-footer-legal";
+    legalWrap.appendChild(legal);
+
+    paddingBottom.remove();
+    outer.replaceWith(main);
+    container.appendChild(dividerBand);
+    container.appendChild(legalWrap);
+
+    root.setAttribute("data-vivaci-footer-split", "1");
+  }
+
+  function flattenFooterAccordions(root) {
+    if (!root) return;
+    var grid = root.querySelector(".footer5_top-wrapper-3");
+    if (!grid) return;
+
+    grid.querySelectorAll(".faq1_accordion").forEach(function (accordion) {
+      var question = accordion.querySelector(".faq1_question");
+      var answer = accordion.querySelector(".faq1_answer");
+      if (question) {
+        question.removeAttribute("data-w-id");
+      }
+      if (answer) {
+        answer.style.height = "auto";
+        answer.style.maxHeight = "none";
+        answer.style.overflow = "visible";
+        answer.style.display = "block";
+        try {
+          if (typeof gsap !== "undefined") {
+            gsap.killTweensOf(answer);
+            gsap.set(answer, {
+              height: "auto",
+              overflow: "visible",
+              clearProps: "maxHeight",
+            });
+          }
+        } catch (_) {}
+      }
+      accordion.classList.add("is-vivaci-footer-static");
+    });
+  }
+
+  function relocateFooterLogo(root) {
+    var topRow = root.querySelector(".top-row");
+    if (!topRow || topRow.getAttribute("data-vivaci-footer-logo-moved") === "1") {
+      return;
+    }
+    var logoImg = topRow.querySelector(".footer-logo_main");
+    var contactCol = root.querySelector(
+      ".footer5_top-wrapper-3 > .faq1_accordion"
+    );
+    if (!logoImg || !contactCol) return;
+
+    var brand = document.createElement("div");
+    brand.className = "vivaci-footer-brand";
+    brand.setAttribute("data-vivaci-footer-brand", "");
+    var link = document.createElement("a");
+    link.href = localizedHref("/");
+    link.className = "vivaci-footer-brand__link w-inline-block";
+    link.setAttribute("aria-label", "Vivaci");
+    link.appendChild(logoImg);
+    brand.appendChild(link);
+    contactCol.insertBefore(brand, contactCol.firstChild);
+
+    topRow.setAttribute("data-vivaci-footer-logo-moved", "1");
+    topRow.hidden = true;
+    var next = topRow.nextElementSibling;
+    if (
+      next &&
+      next.classList.contains("padding-vertical") &&
+      next.classList.contains("padding-xlarge")
+    ) {
+      next.hidden = true;
+    }
+  }
+
+  function initFooterLogoLayout() {
+    document.querySelectorAll("footer.is-section.bg-dark").forEach(function (el) {
+      restructureFooterLayout(el);
+      relocateFooterLogo(el);
+      flattenFooterAccordions(el);
+    });
+  }
+
   function applyLegal(footer, legal, copyright) {
     if (copyright) {
       var credit = footer.querySelector(".footer5_credit-text");
       if (credit) {
-        var peia = credit.querySelector("a.xtra, a[href*='peia']");
-        credit.textContent = "";
-        credit.appendChild(document.createTextNode(copyright + " "));
-        if (peia) credit.appendChild(peia);
+        credit.textContent = copyright;
       }
     }
     if (!legal || !legal.length) return;
@@ -155,7 +350,7 @@
     legal.forEach(function (item) {
       var a = document.createElement("a");
       a.className = "footer5_legal-link";
-      a.href = item.href || "#";
+      a.href = localizedHref(item.href || "#");
       a.textContent = item.label || "";
       list.appendChild(a);
     });
@@ -163,6 +358,10 @@
 
   function applyFooter(root, data) {
     if (!root || !data) return;
+
+    restructureFooterLayout(root);
+    relocateFooterLogo(root);
+    flattenFooterAccordions(root);
 
     var accordions = Array.prototype.slice.call(
       root.querySelectorAll(".footer5_top-wrapper-3 .faq1_accordion")
@@ -206,6 +405,7 @@
       wait && wait.then ? wait.then(hydrate) : hydrate();
   }
 
+  initFooterLogoLayout();
   scheduleHydrate();
   document.addEventListener("vivaci:i18n-ready", scheduleHydrate);
   document.addEventListener("vivaci:locale-change", function () {

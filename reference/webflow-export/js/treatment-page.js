@@ -41,8 +41,8 @@
   }
 
   var DEFAULT_BOOKING_CTAS = {
-    primaryCta: { label: "Boka gratis konsultation", href: "/kontakt" },
-    secondaryCta: { label: "Boka behandling", href: "/kontakt" },
+    primaryCta: { label: "Boka gratis konsultation", href: "https://www.bokadirekt.se/places/vivaci-klinik-51774" },
+    secondaryCta: { label: "Boka behandling", href: "https://www.bokadirekt.se/places/vivaci-klinik-51774" },
   };
 
   function applyCtaBlock(sectionKey, cfg, fields) {
@@ -303,9 +303,14 @@
       '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
   };
 
+  /** Default row marker for .is-vivaci-step-list (suitability good, care lists, fallbacks). */
+  var LUCIDE_CHECK_SVG =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" aria-hidden="true" role="img"><path d="M20 6 9 17l-5-5"/></svg>';
+
   var LUCIDE_TIMELINE_SVGS = {
     syringe: LUCIDE_FACT_SVGS.syringe,
     sparkles: LUCIDE_FACT_SVGS.sparkles,
+    check: LUCIDE_CHECK_SVG,
     "circle-check-big":
       '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big" aria-hidden="true"><path d="M21.801 10A10 10 0 1 1 17 3.335"/><path d="m9 11 3 3L22 4"/></svg>',
     "refresh-cw":
@@ -313,8 +318,6 @@
     timer: LUCIDE_FACT_SVGS.timer,
     "calendar-check": LUCIDE_FACT_SVGS["calendar-check"],
   };
-
-  var TIMELINE_ICON_DEFAULTS = ["syringe", "sparkles", "circle-check-big", "refresh-cw"];
 
   function timelineIconKey(item, index) {
     if (item && item.icon) return item.icon;
@@ -329,11 +332,11 @@
     if (/kontroll|uppföljning/.test(t)) return "calendar-check";
     if (/tid|minut|timme/.test(t)) return "timer";
 
-    return TIMELINE_ICON_DEFAULTS[index % TIMELINE_ICON_DEFAULTS.length];
+    return "check";
   }
 
   function timelineIconSvg(key) {
-    return LUCIDE_TIMELINE_SVGS[key] || LUCIDE_TIMELINE_SVGS.syringe;
+    return LUCIDE_TIMELINE_SVGS[key] || LUCIDE_CHECK_SVG;
   }
 
   function setTimelineItemIcon(row, item, index) {
@@ -404,34 +407,123 @@
     if (embed) embed.innerHTML = factIconSvg(label, explicitIcon);
   }
 
-  var LUCIDE_SUITABILITY_SVGS = {
-    good: LUCIDE_TIMELINE_SVGS["circle-check-big"],
-    assessment:
-      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope" aria-hidden="true"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>',
-  };
+  /** Step-list icons: check by default; assessment list keeps stethoscope. */
+  var LUCIDE_STETHOSCOPE_SVG =
+    '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-stethoscope" aria-hidden="true" role="img"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>';
 
-  function suitabilityListKind(container) {
-    if (!container) return "good";
-    var kind = container.getAttribute("data-vivaci-suitability-kind");
-    return kind === "assessment" ? "assessment" : "good";
+  function stepListVariant(container) {
+    if (!container) return null;
+    var careKind = container.getAttribute("data-vivaci-care-kind");
+    if (careKind === "before" || careKind === "after") return "body-muted";
+    var suitKind = container.getAttribute("data-vivaci-suitability-kind");
+    if (suitKind === "good" || suitKind === "assessment") return "on-brand-panel";
+    if (container.classList.contains("vivaci-results-timeline")) return null;
+    return null;
   }
 
-  function setSuitabilityItemIcon(row, kind) {
+  function ensureStepListComponent(container) {
+    if (!container) return;
+    container.classList.add("is-vivaci-step-list");
+    var variant = stepListVariant(container);
+    container.classList.remove(
+      "is-vivaci-step-list--on-brand-panel",
+      "is-vivaci-step-list--body-muted",
+      "is-vivaci-step-list--comfortable"
+    );
+    if (variant === "on-brand-panel") {
+      container.classList.add("is-vivaci-step-list--on-brand-panel");
+    } else if (variant === "body-muted") {
+      container.classList.add("is-vivaci-step-list--body-muted");
+    }
+  }
+
+  function setStepListItemIcon(row, container) {
     var embed = row.querySelector(".layout65_item-icon-wrapper .icon-embed-xsmall");
     if (!embed) return;
-    embed.innerHTML =
-      LUCIDE_SUITABILITY_SVGS[kind] || LUCIDE_SUITABILITY_SVGS.good;
+    var suitKind = container && container.getAttribute("data-vivaci-suitability-kind");
+    if (suitKind === "assessment") {
+      embed.innerHTML = LUCIDE_STETHOSCOPE_SVG;
+      return;
+    }
+    embed.innerHTML = LUCIDE_CHECK_SVG;
+  }
+
+  var STEP_LIST_ITEM_MULTI_CLASS = "is-vivaci-step-item--multi";
+  var stepListAlignObservers =
+    typeof WeakMap !== "undefined" ? new WeakMap() : null;
+
+  function stepListTextLooksMultiLine(textEl) {
+    if (!textEl) return false;
+    var style = window.getComputedStyle(textEl);
+    var lineHeight = parseFloat(style.lineHeight);
+    if (!isFinite(lineHeight) || lineHeight <= 0) {
+      lineHeight = parseFloat(style.fontSize) * 1.55;
+    }
+    if (textEl.scrollHeight > lineHeight * 1.6) return true;
+    var rects = textEl.getClientRects();
+    return rects.length > 1;
+  }
+
+  function syncStepListItemRow(row) {
+    if (!row) return;
+    var multi = false;
+    if (row.classList.contains("layout32_item")) {
+      var wrap = row.querySelector(".layout32_item-text-wrapper");
+      var body = wrap && wrap.querySelector(".text-style-muted");
+      if (body && String(body.textContent || "").trim()) {
+        multi = true;
+      } else {
+        var title =
+          (wrap &&
+            (wrap.querySelector(".text-size-medium") ||
+              wrap.querySelector(".text-weight-bold") ||
+              wrap.querySelector("p"))) ||
+          null;
+        multi = stepListTextLooksMultiLine(title);
+      }
+    } else {
+      var p =
+        row.querySelector(".layout65_item-text-wrapper p") || row.querySelector("p");
+      multi = stepListTextLooksMultiLine(p);
+    }
+    row.classList.toggle(STEP_LIST_ITEM_MULTI_CLASS, multi);
+  }
+
+  function ensureStepListAlignmentObserver(container) {
+    if (!container || typeof ResizeObserver === "undefined") return;
+    if (stepListAlignObservers && stepListAlignObservers.has(container)) return;
+    var ro = new ResizeObserver(function () {
+      syncStepListItemAlignment(container);
+    });
+    ro.observe(container);
+    if (stepListAlignObservers) stepListAlignObservers.set(container, ro);
+  }
+
+  function syncStepListItemAlignment(container) {
+    if (!container || !container.classList.contains("is-vivaci-step-list")) return;
+    container
+      .querySelectorAll(".layout65_item, .layout32_item")
+      .forEach(syncStepListItemRow);
+    ensureStepListAlignmentObserver(container);
+  }
+
+  function scheduleStepListItemAlignment(container) {
+    if (!container) return;
+    requestAnimationFrame(function () {
+      syncStepListItemAlignment(container);
+    });
   }
 
   function fillList(container, items, itemSelector) {
     if (!container) return;
+    ensureStepListComponent(container);
     var template = container.querySelector(itemSelector);
     if (!template) return;
     var parent = template.parentElement;
     var templateHtml = template.outerHTML;
-    var listKind = suitabilityListKind(container);
     if (!items || !items.length) {
       parent.innerHTML = "";
+      scheduleStepListItemAlignment(container);
       return;
     }
     parent.innerHTML = "";
@@ -442,9 +534,10 @@
       if (!node) return;
       var p = node.querySelector("p") || node;
       setText(p, text);
-      setSuitabilityItemIcon(node, listKind);
+      setStepListItemIcon(node, container);
       parent.appendChild(node);
     });
+    scheduleStepListItemAlignment(container);
   }
 
   /** Show section only when JSON enabled and required content exists (no empty shells). */
@@ -521,6 +614,7 @@
 
   function fillTimeline(listEl, items) {
     if (!listEl || !items || !items.length) return;
+    ensureStepListComponent(listEl);
     var template = listEl.querySelector(".layout32_item");
     if (!template) return;
     var parent = template.parentElement;
@@ -534,6 +628,7 @@
       setTimelineItemIcon(node, item, index);
       parent.appendChild(node);
     });
+    scheduleStepListItemAlignment(listEl);
   }
 
   function setBlockVisible(blockEl, enabled) {
@@ -622,42 +717,220 @@
       }
       wrapper.appendChild(slide);
     });
-    if (typeof window.vivaciInitSwiperTuesdayEl === "function") {
-      window.vivaciInitSwiperTuesdayEl(swiperEl);
-    }
+    scheduleSwiperTuesdayInit(swiperEl);
   }
 
-  function fillRelated(grid, items) {
-    if (!grid || !items || !items.length) return;
-    var template = grid.querySelector(".layout527_card-large");
-    if (!template) return;
-    var parent = template.parentElement;
-    parent.innerHTML = "";
-    items.forEach(function (item) {
-      var node = template.cloneNode(true);
-      var h = node.querySelector("h3");
-      if (h) setText(h, item.title || "");
-      var bg = node.querySelector(".layout527_background-image");
-      if (bg && item.href) {
-        var lookup = window.__vivaciTreatmentImageForHref;
-        var src = lookup && lookup(item.href);
-        if (src) {
-          bg.src = src;
-          bg.removeAttribute("srcset");
+  function scheduleSwiperTuesdayInit(swiperEl) {
+    if (!swiperEl) return;
+    function run() {
+      if (typeof window.vivaciInitSwiperTuesdayEl === "function") {
+        window.vivaciInitSwiperTuesdayEl(swiperEl);
+      }
+      if (typeof window.vivaciRetryDeferredSwiperTuesday === "function") {
+        window.vivaciRetryDeferredSwiperTuesday();
+      }
+    }
+    if (typeof Swiper !== "undefined") {
+      requestAnimationFrame(run);
+      return;
+    }
+    var attempts = 0;
+    var poll = window.setInterval(function () {
+      attempts += 1;
+      if (typeof Swiper !== "undefined") {
+        window.clearInterval(poll);
+        run();
+      } else if (attempts > 60) {
+        window.clearInterval(poll);
+      }
+    }, 100);
+    window.addEventListener("load", run, { once: true });
+  }
+
+  function slugToDisplayName(href) {
+    if (!href) return "";
+    var slug = href.split("?")[0].replace(/\/$/, "").split("/").pop() || "";
+    return slug
+      .split("-")
+      .filter(Boolean)
+      .map(function (part) {
+        return part.charAt(0).toUpperCase() + part.slice(1);
+      })
+      .join(" ");
+  }
+
+  var NAV_JSON_URL = "/content/from-production/nav.json";
+  var RELATED_MIN_ITEMS = 4;
+  var RELATED_MAX_ITEMS = 8;
+
+  function normalizeTreatmentHref(href) {
+    return (href || "").split("?")[0].replace(/\/$/, "") || "";
+  }
+
+  function isTreatmentCatalogHref(href) {
+    var h = normalizeTreatmentHref(href);
+    return (
+      /^\/(behandlingar|plastikkirurgi|injektion|hud|kropp|har|problem)\//.test(
+        h
+      ) && h.split("/").length >= 3
+    );
+  }
+
+  function loadNavCategories() {
+    if (window.__vivaciNavCategories) {
+      return Promise.resolve(window.__vivaciNavCategories);
+    }
+    var load = window.vivaciFetchJson
+      ? window.vivaciFetchJson(NAV_JSON_URL)
+      : fetch(NAV_JSON_URL).then(function (r) {
+          if (!r.ok) throw new Error("nav.json " + r.status);
+          return r.json();
+        });
+    return load
+      .then(function (data) {
+        window.__vivaciNavCategories = (data && data.categories) || [];
+        return window.__vivaciNavCategories;
+      })
+      .catch(function () {
+        window.__vivaciNavCategories = [];
+        return [];
+      });
+  }
+
+  function navSiblingsForPath(categories, currentPath) {
+    var current = normalizeTreatmentHref(currentPath);
+    if (!current || !categories || !categories.length) return [];
+    var match = null;
+    categories.some(function (cat) {
+      return (cat.items || []).some(function (item) {
+        if (normalizeTreatmentHref(item.href) === current) {
+          match = cat;
+          return true;
         }
-      }
-      var wrap = node.closest("a") || node;
-      if (item.href && wrap.tagName === "A") wrap.setAttribute("href", item.href);
-      else if (item.href) {
-        var link = document.createElement("a");
-        link.href = item.href;
-        link.className = "w-inline-block";
-        link.appendChild(node);
-        parent.appendChild(link);
-        return;
-      }
-      parent.appendChild(node);
+        return false;
+      });
     });
+    if (!match) return [];
+    return (match.items || [])
+      .filter(function (item) {
+        return normalizeTreatmentHref(item.href) !== current;
+      })
+      .map(function (item) {
+        return {
+          title: item.label,
+          name: item.label,
+          href: item.href,
+          image: item.image,
+        };
+      });
+  }
+
+  function buildRelatedItems(cmsItems, navItems, currentPath) {
+    var current = normalizeTreatmentHref(currentPath);
+    var seen = {};
+    var out = [];
+
+    function push(item) {
+      if (!item || out.length >= RELATED_MAX_ITEMS) return;
+      var href = normalizeTreatmentHref(item.href);
+      if (!href || href === current || seen[href]) return;
+      seen[href] = true;
+      var cardItem = {
+        label: item.label,
+        title: item.title || item.name || "",
+        name: item.name || item.title || "",
+        href: item.href,
+        image: item.image,
+      };
+      var displayName = relatedItemName(cardItem);
+      out.push({
+        title: displayName,
+        name: displayName,
+        label: item.label,
+        href: item.href,
+        image: item.image,
+      });
+    }
+
+    (cmsItems || []).forEach(function (item) {
+      if (isTreatmentCatalogHref(item.href)) push(item);
+    });
+    (navItems || []).forEach(push);
+    (cmsItems || []).forEach(push);
+    if (out.length < RELATED_MIN_ITEMS) {
+      (navItems || []).forEach(push);
+    }
+    return out;
+  }
+
+  function relatedItemName(item) {
+    if (window.vivaciResolveTreatmentCardLabel) {
+      return window.vivaciResolveTreatmentCardLabel(item);
+    }
+    var raw = (item.name || item.title || "").trim();
+    if (raw && raw.length <= 56 && !/premiumbehandling|utförs på vivaci/i.test(raw)) {
+      var stripped = raw.replace(
+        /^(problem|injektion|hud|kropp|hår|plastikkirurgi)\s+/i,
+        ""
+      );
+      var m = stripped.match(/^([A-Za-zÀ-ÿ0-9]+(?: [A-Za-zÀ-ÿ0-9]+){0,4})/);
+      if (m && m[1].length >= 3) return m[1];
+    }
+    return slugToDisplayName(item.href) || raw.slice(0, 48);
+  }
+
+  function fillRelatedSlide(slide, item) {
+    if (!slide || !item) return slide;
+
+    if (window.vivaciHydrateTreatmentCard) {
+      window.vivaciHydrateTreatmentCard(slide, item, {
+        linkMode: "overlay",
+        getTitleRaw: function (it) {
+          return relatedItemName(it);
+        },
+      });
+      return slide;
+    }
+
+    var card = slide.querySelector(".layout527_card-large");
+    if (!card) return slide;
+    var name = relatedItemName(item);
+    var href = item.href || "#";
+    var img = card.querySelector(".layout527_background-image");
+    if (img) {
+      img.alt = name;
+    }
+    var title = card.querySelector(".heading-medium, .heading-style-h6");
+    if (title) title.textContent = name;
+    var overlay = document.createElement("a");
+    overlay.href = href;
+    overlay.className = "layout527_card-hit";
+    overlay.setAttribute("aria-label", name);
+    card.appendChild(overlay);
+    return slide;
+  }
+
+  function fillRelated(section, items) {
+    if (!section || !items || items.length < 2) return;
+    var wrapper = $('[data-vivaci-field="related-slides"]', section);
+    var swiperEl = $('[data-vivaci-field="related-swiper"]', section);
+    if (!wrapper || !swiperEl) return;
+    var template = wrapper.querySelector("[data-vivaci-related-slide-template]");
+    if (!template) return;
+    var templateHtml = template.outerHTML;
+    destroySwiperTuesdayEl(swiperEl);
+    wrapper.innerHTML = "";
+    items.forEach(function (item) {
+      var mount = document.createElement("div");
+      mount.innerHTML = templateHtml;
+      var slide = mount.firstElementChild;
+      if (!slide) return;
+      slide.removeAttribute("hidden");
+      slide.removeAttribute("data-vivaci-related-slide-template");
+      fillRelatedSlide(slide, item);
+      wrapper.appendChild(slide);
+    });
+    scheduleSwiperTuesdayInit(swiperEl);
   }
 
   function applyOverview(section, overview) {
@@ -716,20 +989,51 @@
     fillList($('[data-vivaci-field="after-list"]', root), care.after, ".layout65_item");
   }
 
-  function applyHeroImage() {
+  function setTreatmentImage(img, src) {
+    if (!img || !src) return;
+    if (window.VivaciImage && window.VivaciImage.apply) {
+      window.VivaciImage.apply(img, src, "");
+      return;
+    }
+    img.src = src;
+    img.removeAttribute("srcset");
+    img.removeAttribute("sizes");
+  }
+
+  function applyHeroImage(pagePath) {
     var lookup = window.__vivaciTreatmentImageForHref;
     if (!lookup) return Promise.resolve();
-    var src = lookup(window.location.pathname);
+    var key =
+      pagePath ||
+      (window.location && window.location.pathname) ||
+      "";
+    var src = lookup(key);
     if (!src) return Promise.resolve();
     var img = document.querySelector(".header50_background-image");
     if (!img) return Promise.resolve();
     if (window.VivaciImage && window.VivaciImage.apply) {
       return window.VivaciImage.apply(img, src, "", { fetchPriority: "high" });
     }
-    img.src = src;
-    img.removeAttribute("srcset");
-    img.removeAttribute("sizes");
+    setTreatmentImage(img, src);
     return Promise.resolve();
+  }
+
+  function applyInlineSectionImages(pagePath) {
+    var lookup = window.__vivaciTreatmentImageForHref;
+    if (!lookup) return;
+    var key =
+      pagePath ||
+      (window.location && window.location.pathname) ||
+      "";
+    var src = lookup(key);
+    if (!src) return;
+    document
+      .querySelectorAll(
+        '[data-vivaci-section="howItWorks"] .section-img, [data-vivaci-section="resultsTimeline"] .section-img'
+      )
+      .forEach(function (img) {
+        setTreatmentImage(img, src);
+      });
   }
 
   var SHELL_SECTIONS = [
@@ -773,7 +1077,8 @@
         hero.secondaryCta || DEFAULT_BOOKING_CTAS.secondaryCta
       );
     }
-    var heroImagePromise = applyHeroImage();
+    var heroImagePromise = applyHeroImage(data.path);
+    applyInlineSectionImages(data.path);
 
     var facts = sections.facts || {};
     var factsRoot = $('[data-vivaci-section="facts"]');
@@ -872,14 +1177,6 @@
           pageTitle +
           ". Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.";
       setText($('[data-vivaci-field="faq-intro"]', faqSec), faqIntro);
-      var faqCtaLink = $('[data-vivaci-field="faq-method-cta"]', faqSec);
-      if (faqCtaLink) {
-        var defaultFaqCta =
-          category === "problem"
-            ? { label: "Läs mer om vår metod", href: "#vivaci-method" }
-            : { label: "Boka kostnadsfri konsultation", href: "/kontakt" };
-        setCta(faqCtaLink, faq.methodCta || defaultFaqCta);
-      }
       var faqList = $(".faq3_list", faqSec);
       fillFaqs(faqList, faq.items);
       if (window.VivaciFaqAccordion && faqList) {
@@ -890,11 +1187,25 @@
     var related = sections.related || {};
     setSectionVisible("related", shouldShowSection("related", related));
     if (shouldShowSection("related", related)) {
+      var relatedSec = $('[data-vivaci-section="related"]');
       setText(
-        $('[data-vivaci-section="related"] h2'),
-        related.heading || "Relaterat"
+        $('[data-vivaci-field="related-heading"]', relatedSec) ||
+          $("h2", relatedSec),
+        related.heading || "Relaterade behandlingar"
       );
-      fillRelated($('[data-vivaci-section="related"] .blog37_list'), related.items);
+      var currentPath = data.path || window.location.pathname;
+      Promise.all([
+        Promise.resolve(window.__vivaciTreatmentImagesReady),
+        loadNavCategories(),
+      ]).then(function (results) {
+        var navItems = navSiblingsForPath(results[1] || [], currentPath);
+        var merged = buildRelatedItems(related.items, navItems, currentPath);
+        if (merged.length < 2) {
+          setSectionVisible("related", false);
+          return;
+        }
+        fillRelated(relatedSec, merged);
+      });
     }
 
     (function applyQuizCtaBlock() {
@@ -938,15 +1249,49 @@
     document.dispatchEvent(new CustomEvent("vivaci:treatment-page-ready"));
   }
 
+  function fetchTreatmentJson() {
+    var localized = window.vivaciFetchJson
+      ? window.vivaciFetchJson(url)
+      : fetch(url).then(function (r) {
+          if (!r.ok) throw new Error("HTTP " + r.status);
+          return r.json();
+        });
+    var locale =
+      window.VivaciI18n && window.VivaciI18n.getLocale
+        ? window.VivaciI18n.getLocale()
+        : "sv";
+    if (locale === "sv") return localized;
+    return Promise.all([
+      localized,
+      fetch(url).then(function (r) {
+        if (!r.ok) throw new Error("HTTP " + r.status);
+        return r.json();
+      }),
+    ]).then(function (pair) {
+      var data = pair[0];
+      var sv = pair[1];
+      var ba = data.sections && data.sections.beforeAfterGallery;
+      var svBa = sv.sections && sv.sections.beforeAfterGallery;
+      var needsGallery =
+        svBa &&
+        svBa.enabled !== false &&
+        svBa.items &&
+        svBa.items.length;
+      var missingGallery =
+        !ba || ba.enabled === false || !(ba.items && ba.items.length);
+      if (needsGallery && missingGallery) {
+        data.sections = data.sections || {};
+        data.sections.beforeAfterGallery = svBa;
+      }
+      return data;
+    });
+  }
+
   function loadPage() {
     document.documentElement.classList.add("vivaci-content-pending");
     Promise.resolve(window.__vivaciTreatmentImagesReady)
       .then(function () {
-        if (window.vivaciFetchJson) return window.vivaciFetchJson(url);
-        return fetch(url).then(function (r) {
-          if (!r.ok) throw new Error("HTTP " + r.status);
-          return r.json();
-        });
+        return fetchTreatmentJson();
       })
       .then(apply)
       .then(function () {

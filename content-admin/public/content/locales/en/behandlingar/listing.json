@@ -1,0 +1,263 @@
+{
+  "source": "generated",
+  "categories": [
+    {
+      "label": "Injectables",
+      "items": [
+        {
+          "href": "/behandlingar/botulinum-toxin",
+          "label": "Botulinum Toxin",
+          "description": "Botulinum Toxin is one of our premium treatments at Vivaci Klinik in Solna. The treatment is performed by certified experts in a calm, exclusive environment.",
+          "image": "/images/ak/treatments/botulinum-toxin.jpg"
+        },
+        {
+          "href": "/behandlingar/dermal-fillers",
+          "label": "Dermal Fillers",
+          "description": "Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/dermal-fillers.png"
+        },
+        {
+          "href": "/behandlingar/sculptra",
+          "label": "Sculptra",
+          "description": "Sculptra är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/sculptra.jpg"
+        },
+        {
+          "href": "/behandlingar/skin-boosters",
+          "label": "Skin Boosters",
+          "description": "Skin Boosters är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/skin-boosters.jpg"
+        },
+        {
+          "href": "/behandlingar/plasma-lift",
+          "label": "Plasma Lift",
+          "description": "Plasma Lift är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/plasma-lift.png"
+        },
+        {
+          "href": "/behandlingar/vitamin-injections",
+          "label": "Vitamin Injections",
+          "description": "Vitamin Injections är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/vitamin-injections.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Skin",
+      "items": [
+        {
+          "href": "/behandlingar/hydrafacial",
+          "label": "HydraFacial",
+          "description": "HydraFacial är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/hydrafacial.jpg"
+        },
+        {
+          "href": "/behandlingar/chemical-peels",
+          "label": "Chemical Peels",
+          "description": "Chemical Peels är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/chemical-peels.png"
+        },
+        {
+          "href": "/behandlingar/co-fractional-laser",
+          "label": "CO₂ Fractional Laser",
+          "description": "CO₂ Fractional Laser is one of our premium treatments at Vivaci Klinik in Solna. The treatment is performed by certified experts in a calm, exclusive environment.",
+          "image": "/images/ak/treatments/co-fractional-laser.jpg"
+        },
+        {
+          "href": "/behandlingar/dermapen-4",
+          "label": "Dermapen 4",
+          "description": "Dermapen 4 är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/dermapen-4.jpg"
+        },
+        {
+          "href": "/behandlingar/prx-t33",
+          "label": "PRX-T33",
+          "description": "PRX-T33 är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/prx-t33.png"
+        },
+        {
+          "href": "/behandlingar/carboxy-therapy",
+          "label": "Carboxy Therapy",
+          "description": "Carboxy Therapy är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/carboxy-therapy.jpg"
+        },
+        {
+          "href": "/behandlingar/carboxy-therapy-body",
+          "label": "Carboxy Therapy",
+          "description": "Carboxy Therapy är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/carboxy-therapy-body.jpg"
+        },
+        {
+          "href": "/behandlingar/subcision",
+          "label": "Subcision",
+          "description": "Subcision är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/subcision.png"
+        },
+        {
+          "href": "/behandlingar/skin-lesion-removal",
+          "label": "Skin Lesion Removal",
+          "description": "Skin Lesion Removal är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/skin-lesion-removal.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Body",
+      "items": [
+        {
+          "href": "/behandlingar/ems-body-sculpting",
+          "label": "EMS Body Sculpting",
+          "description": "EMS Body Sculpting är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/ems-body-sculpting.jpg"
+        },
+        {
+          "href": "/behandlingar/emtone",
+          "label": "EMTONE",
+          "description": "EMTONE är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/emtone.jpg"
+        },
+        {
+          "href": "/behandlingar/exilis-ultra-360",
+          "label": "Exilis Ultra 360",
+          "description": "Exilis Ultra 360 är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/exilis-ultra-360.jpg"
+        },
+        {
+          "href": "/behandlingar/lpg-alliance",
+          "label": "LPG Alliance",
+          "description": "LPG Alliance är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/lpg-alliance.jpg"
+        },
+        {
+          "href": "/behandlingar/medical-weight-loss",
+          "label": "Medical Weight Loss",
+          "description": "Medical Weight Loss är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/medical-weight-loss.jpg"
+        },
+        {
+          "href": "/behandlingar/visbody-body-analysis",
+          "label": "Visbody Body Analysis",
+          "description": "Visbody Body Analysis är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/visbody-body-analysis.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Hair",
+      "items": [
+        {
+          "href": "/behandlingar/laser-hair-removal",
+          "label": "Laserhårborttagning",
+          "description": "Permanent reduktion av oönskat hår med Clarity II på Vivaci Klinik i Solna. Behandlingen utförs av utbildad personal i en lugn, medicinsk miljö — med…",
+          "image": "/images/ak/treatments/laser-hair-removal.png"
+        },
+        {
+          "href": "/behandlingar/hair-analysis",
+          "label": "Hair Analysis",
+          "description": "Hair Analysis är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/hair-analysis.jpg"
+        },
+        {
+          "href": "/behandlingar/hair-mesotherapy",
+          "label": "Hair Mesotherapy",
+          "description": "Hair Mesotherapy är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/hair-mesotherapy.jpg"
+        },
+        {
+          "href": "/behandlingar/prp-hair",
+          "label": "PRP Hair",
+          "description": "PRP Hair är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/prp-hair.jpg"
+        },
+        {
+          "href": "/behandlingar/prp-skin",
+          "label": "PRP Skin",
+          "description": "PRP Skin är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/prp-skin.png"
+        }
+      ]
+    },
+    {
+      "label": "Analysis & Health",
+      "items": [
+        {
+          "href": "/behandlingar/observ-520x-skin-analysis",
+          "label": "OBSERV 520X Skin Analysis",
+          "description": "OBSERV 520X Skin Analysis är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/observ-520x-skin-analysis.jpg"
+        },
+        {
+          "href": "/behandlingar/oligocheck",
+          "label": "OligoCheck",
+          "description": "OligoCheck är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/oligocheck.jpg"
+        },
+        {
+          "href": "/behandlingar/so-check",
+          "label": "SO/Check",
+          "description": "SO/Check är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/so-check.jpg"
+        },
+        {
+          "href": "/behandlingar/health-check-blood-tests",
+          "label": "Health Check & Blood Tests",
+          "description": "Health Check & Blood Tests är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/health-check-blood-tests.jpg"
+        },
+        {
+          "href": "/behandlingar/iv-therapy",
+          "label": "IV Therapy",
+          "description": "IV Therapy är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+          "image": "/images/ak/treatments/iv-therapy.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Plastic surgery",
+      "items": [
+        {
+          "href": "/plastikkirurgi/buccal-fat-removal",
+          "label": "Buccal fat removal",
+          "description": "Abdominal fat removal (buccal fat removal) is a surgical procedure that removes fatty tissue from the cheeks for a slimmer, more contoured face shape. On…",
+          "image": "/images/ak/treatments/buccal-fat-removal.png"
+        },
+        {
+          "href": "/plastikkirurgi/dimples",
+          "label": "Dimple creation",
+          "description": "Gropbildning är ett kirurgiskt ingrepp som skapar naturliga kindergropar för ett leende med mer karaktär och symmetri. På Vivaci Klinik i Solna planeras…",
+          "image": "/images/ak/treatments/dimples.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/eyebrow-lift",
+          "label": "Brow lift",
+          "description": "Ögonbrynslyft utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+          "image": "/images/ak/treatments/eyebrow-lift.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/eyelid-surgery",
+          "label": "Eyelid surgery",
+          "description": "Ögonlocksplastik utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+          "image": "/images/ak/treatments/eyelid-surgery.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/hair-transplant",
+          "label": "Hair transplant",
+          "description": "Hårtransplantation utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+          "image": "/images/ak/treatments/hair-transplant.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/liposuction",
+          "label": "Liposuction",
+          "description": "Fettsugning utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+          "image": "/images/ak/treatments/liposuction.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/otoplasty",
+          "label": "Otoplasty (ear correction)",
+          "description": "Otoplastik (öronkorrigering) utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+          "image": "/images/ak/treatments/otoplasty.jpg"
+        }
+      ]
+    }
+  ]
+}

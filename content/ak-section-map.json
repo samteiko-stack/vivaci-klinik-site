@@ -1,0 +1,51 @@
+{
+  "source": "https://ak.se",
+  "sections": {
+    "section-plastikkirurgi": {
+      "pageUrl": "https://ak.se/vart-utbud/fettsugning/",
+      "label": "Plastikkirurgi på Vivaci Klinik",
+      "imageUrl": "https://ak.se/wp-content/uploads/2026/02/anna-2061-final-hi-res-1200x800.jpeg",
+      "path": "/images/ak/sections/section-plastikkirurgi.jpg"
+    },
+    "section-method": {
+      "pageUrl": "https://ak.se/vart-utbud/ansiktsbehandlingar/",
+      "label": "Vår metod — konsultation på Vivaci",
+      "imageUrl": "https://ak.se/wp-content/uploads/2024/12/corinna-0661-low-res-2.jpg",
+      "path": "/images/ak/sections/section-method.jpg"
+    }
+  },
+  "team": {
+    "team-1": {
+      "pageUrl": "https://ak.se/var-personal/dr-angelica-hagelberg/",
+      "imageUrl": "https://ak.se/wp-content/uploads/2019/05/angelicahagelberg-2-1200x800.png",
+      "label": "Dr. Angelica Hagelberg",
+      "path": "/images/ak/team/team-1.png"
+    },
+    "team-2": {
+      "pageUrl": "https://ak.se/var-personal/dr-gabriella-sellman/",
+      "imageUrl": "https://ak.se/wp-content/uploads/2019/05/gabriellasellman-1-1200x800.png",
+      "label": "Dr. Gabriella Sellman",
+      "path": "/images/ak/team/team-2.png"
+    },
+    "team-3": {
+      "pageUrl": "https://ak.se/var-personal/dr-ulf-garpered/",
+      "label": "Dr. Ulf Samuelson",
+      "imageUrl": "https://ak.se/wp-content/uploads/2022/11/ulf-garpered-2022.png",
+      "path": "/images/ak/team/team-3.png"
+    },
+    "team-4": {
+      "pageUrl": "https://ak.se/var-personal/malin-medin/",
+      "label": "Malin Medin",
+      "imageUrl": "https://ak.se/wp-content/uploads/2019/06/malin-medin.jpg",
+      "path": "/images/ak/team/team-4.jpg"
+    }
+  },
+  "cta": {
+    "cta-bottom": {
+      "pageUrl": "https://ak.se/vart-utbud/ansiktsbehandlingar/",
+      "label": "Boka kostnadsfri konsultation",
+      "imageUrl": "https://ak.se/wp-content/uploads/2021/11/ak.jpeg",
+      "path": "/images/ak/cta/cta-bottom.jpg"
+    }
+  }
+}

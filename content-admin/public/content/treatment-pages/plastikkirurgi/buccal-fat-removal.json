@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "category": "plastikkirurgi",
+  "slug": "buccal-fat-removal",
+  "path": "/plastikkirurgi/buccal-fat-removal",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/buccal-fat-removal",
+  "title": "Bukfettborttagning",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Bukfettborttagning",
+      "intro": "Bukfettborttagning (buccal fat removal) är ett kirurgiskt ingrepp som avlägsnar fettvävnad från kinderna för en slankare, mer konturerad ansiktsform. På Vivaci Klinik i Solna utförs ingreppet av erfarna kirurger i en trygg, medicinsk miljö.",
+      "primaryCta": {
+        "label": "Boka gratis konsultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Boka behandling",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Behandlingstid",
+          "value": "30–45 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "1–7 dagar",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Lokal bedövning",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 45 000 kr",
+          "icon": "wallet"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Om behandlingen",
+      "heading": "Bukfettborttagning",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "Bukfettborttagning innebär att fettkuddarna på insidan av kinderna (buccal fat pads) avlägsnas via en liten incision i munhålan.\n\nMålet är att skapa en mer definierad kindkontur och ett slankare ansiktsuttryck utan att påverka hudens yta utifrån.\n\nIngreppet utförs ofta under lokal bedövning och tar vanligtvis cirka 30–45 minuter.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "1. Lokal bedövning av behandlingsområdet\n\n2. Liten incision på insidan av kinden (i munhålan)\n\n3. Försiktig avlägsnande av buccal fat pad\n\n4. Kontroll av symmetri och avslut med sutur\n\n5. Eftervårdsinstruktioner och uppföljningsplan",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Konsultationen börjar med en noggrann bedömning av ditt ansikte, kindvolym och hudkvalitet.\n\nVi går igenom dina mål, medicinsk historik, tidigare ingrepp och eventuella mediciner.\n\nDu får tydlig information om förväntade resultat, risker, återhämtning och kostnad innan du fattar beslut.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": true,
+      "items": [
+        {
+          "title": "Medicinsk expertis",
+          "body": "Behandlingen utförs av legitimerad personal med erfarenhet inom estetisk medicin."
+        },
+        {
+          "title": "Skräddarsydd plan",
+          "body": "Vi anpassar Bukfettborttagning efter dina mål och förutsättningar — med tydliga förväntningar från start."
+        },
+        {
+          "title": "Trygg klinikmiljö",
+          "body": "Du möter oss i en lugn, exklusiv miljö i Solna där vi går igenom varje steg innan behandling."
+        }
+      ]
+    },
+    "howItWorks": {
+      "enabled": true,
+      "heading": "Så fungerar det",
+      "body": "1. Lokal bedövning av behandlingsområdet\n\n2. Liten incision på insidan av kinden (i munhålan)\n\n3. Försiktig avlägsnande av buccal fat pad\n\n4. Kontroll av symmetri och avslut med sutur\n\n5. Eftervårdsinstruktioner och uppföljningsplan",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Bukfettborttagning. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Boka kostnadsfri konsultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "items": [
+        {
+          "question": "Vad är bukfettborttagning?",
+          "answer": "Det är ett kirurgiskt ingrepp där fettkuddarna på insidan av kinderna avlägsnas för att skapa en slankare, mer konturerad ansiktsform."
+        },
+        {
+          "question": "Är resultatet permanent?",
+          "answer": "Den borttagna fettvävnaden kommer inte tillbaka. Viktförändringar och naturligt åldrande kan dock påverka ansiktets utseende över tid."
+        },
+        {
+          "question": "Syns det ärr efter ingreppet?",
+          "answer": "Incisionen görs på insidan av munnen, så inga synliga ärr syns utvändigt på ansiktet."
+        },
+        {
+          "question": "Hur lång är återhämtningen?",
+          "answer": "De flesta kan återgå till vardagen inom några dagar. Svullnad kan kvarstå i 1–2 veckor, och slutresultatet utvecklas gradvis över flera veckor."
+        },
+        {
+          "question": "Kan bukfettborttagning kombineras med andra ingrepp?",
+          "answer": "Ja, det kan ofta kombineras med till exempel fettsugning eller ansiktskonturering. Vi planerar detta individuellt vid konsultation."
+        }
+      ]
+    },
+    "related": {
+      "enabled": false,
+      "heading": "Relaterat",
+      "items": []
+    },
+    "beforeAfterCare": {
+      "enabled": true,
+      "introBefore": "Sluta röka minst 4 veckor före ingreppet (rökning försämrar läkning).",
+      "before": [
+        "Informera oss om alla mediciner och kosttillskott — vissa kan behöva pausas.",
+        "Ät lätt före besöket om du får lokal bedövning, och planera för transport hem efteråt."
+      ],
+      "introAfter": "Följ munhygieninstruktioner noggrant och använd eventuellt munskölj enligt anvisning.",
+      "after": [
+        "Ät mjukt kost de första dagarna och undvik intensivt tuggande.",
+        "Ta ordinerade läkemedel vid behov och kom till planerade kontroller.",
+        "Kontakta kliniken vid kraftig smärta, feber eller tecken på infektion.",
+        "Omdömen"
+      ]
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Boka en kostnadsfri konsultation med en av våra erfarna behandlare. Vi lyssnar på dina mål, bedömer dina förutsättningar och tar fram en plan som är skräddarsydd för dig — helt utan köptvång.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Gör vårt gratis quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Boka din kostnadsfria konsultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Kontakta oss",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
+    }
+  }
+}

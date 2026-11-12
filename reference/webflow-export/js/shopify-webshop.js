@@ -11,6 +11,8 @@
   var allProducts = [];
   var cardTemplate = null;
   var paintQueued = false;
+  var gridRenderToken = 0;
+  var shopHydrated = false;
 
   function money(p) {
     if (!p) return "";
@@ -43,6 +45,15 @@
     return products.filter(function (p) {
       return (p.collections || []).indexOf(category) >= 0;
     });
+  }
+
+  function defaultVariantId(product) {
+    var variants = (product && product.variants) || [];
+    var pick =
+      variants.find(function (v) {
+        return v && v.availableForSale && v.id;
+      }) || variants[0];
+    return pick && pick.id;
   }
 
   function fillCard(template, product, index) {
@@ -78,11 +89,26 @@
 
     var btn = card.querySelector(".product4_content-bottom .button");
     if (btn) {
-      btn.textContent = "Visa produkt";
+      btn.textContent = "Lägg i varukorg";
+      btn.setAttribute(
+        "aria-label",
+        "Lägg " + (product.title || "produkten") + " i varukorgen"
+      );
       btn.addEventListener("click", function (e) {
         e.preventDefault();
         e.stopPropagation();
-        window.location.href = product.href;
+        var variantId = defaultVariantId(product);
+        if (!variantId || !window.VivaciShopifyCart) {
+          window.location.href = product.href;
+          return;
+        }
+        window.VivaciShopifyCart.addVariant(variantId, 1)
+          .then(function () {
+            window.VivaciShopifyCart.openDrawer();
+          })
+          .catch(function (err) {
+            alert(err.message || "Kunde inte lägga till i varukorgen.");
+          });
       });
     }
     return { card: card, imgReady: imgReady };
@@ -127,11 +153,13 @@
   }
 
   function renderGridAnimated(products, grid, template, root, onDone) {
+    var token = ++gridRenderToken;
     var reduced =
       window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     var existing = Array.prototype.slice.call(grid.querySelectorAll(".product4_item"));
 
     function insertCards() {
+      if (token !== gridRenderToken) return;
       grid.innerHTML = "";
       if (!products.length) {
         var empty = document.createElement("p");
@@ -148,6 +176,7 @@
         return fillCard(template, p, index);
       });
       Promise.all(built.map(function (b) { return b.imgReady; })).then(function () {
+        if (token !== gridRenderToken) return;
         built.forEach(function (b, index) {
           var card = b.card;
           if (!reduced) {
@@ -178,6 +207,7 @@
   function hydrate() {
     var root = document.getElementById("vivaci-shop");
     if (!root) return Promise.resolve();
+    if (shopHydrated) return Promise.resolve();
 
     cardTemplate = document.getElementById("vivaci-product-card-template");
     var grid = root.querySelector("[data-vivaci-shop-grid]") || root.querySelector(".product4_list");
@@ -195,6 +225,7 @@
         });
     return req
       .then(function (data) {
+        shopHydrated = true;
         allProducts = data.products || [];
         var categories = categoriesFromProducts(allProducts);
         if (categories.length === 1 && (data.categories || []).length > 1) {

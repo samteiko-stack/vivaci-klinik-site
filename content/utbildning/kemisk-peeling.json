@@ -10,8 +10,7 @@
     "audience": "Medicinsk estetisk personal och erfarna hudterapeuter under medicinskt ansvar.",
     "image": "/images/2149930751_12149930751.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
@@ -26,14 +25,12 @@
     {
       "label": "8 mar 2026",
       "time": "09:00 – 13:00",
-      "seats": "10 platser",
-      "enrollHref": "/kontakt"
+      "seats": "10 platser"
     },
     {
       "label": "19 maj 2026",
       "time": "09:00 – 13:00",
-      "seats": "7 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "7 platser kvar"
     }
   ],
   "about": {
@@ -58,8 +55,12 @@
   },
   "faq": {
     "enabled": true,
-    "intro": "",
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
     "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Medicinsk estetisk personal eller erfaren hudterapeut under medicinskt ansvar på registrerad klinik."
+      },
       {
         "question": "Ingår TCA?",
         "answer": "Ja, med fokus på säkerhetsgränser; djupare TCA kräver avancerad modul."
@@ -67,6 +68,14 @@
       {
         "question": "Praktik på modell?",
         "answer": "Demo alltid; praktik på kollega/modell under handledning när tid tillåter."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Avbokningsregler?",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
       }
     ]
   }

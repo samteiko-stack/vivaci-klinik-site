@@ -1,0 +1,291 @@
+/* ============================================================
+   MOTION — tokens + semantic hooks (import via globals.css)
+   Attach animations through shared DS classes, not per-page CSS.
+   ============================================================ */
+
+:root {
+  --motion-duration-instant: 0.1s;
+  --motion-duration-fast: 0.16s;
+  --motion-duration-normal: 0.24s;
+  --motion-duration-slow: 0.34s;
+  --motion-ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --motion-ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --motion-ease-spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+  --motion-enter-y: 8px;
+  --motion-enter-y-sm: 5px;
+  --motion-enter-scale: 0.96;
+  --motion-success-icon-enter-scale: 0.88;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --motion-duration-instant: 0.01ms;
+    --motion-duration-fast: 0.01ms;
+    --motion-duration-normal: 0.01ms;
+    --motion-duration-slow: 0.01ms;
+  }
+}
+
+@keyframes ds-motion-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ds-public-form-submit-glow {
+  from {
+    box-shadow: 0 0 0 0 transparent;
+  }
+  to {
+    box-shadow: 0 0 0 3px var(--public-form-submit-glow);
+  }
+}
+
+@keyframes ds-motion-pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--motion-enter-y-sm) * -1)) scale(var(--motion-enter-scale));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes ds-motion-slide-down-in {
+  from {
+    opacity: 0;
+    transform: translateY(calc(var(--motion-enter-y-sm) * -1));
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes ds-motion-page-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ds-motion-tab-in {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes ds-motion-bar-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-14px) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+}
+
+@keyframes ds-motion-check-pop {
+  0% { transform: scale(1); }
+  45% { transform: scale(1.12); }
+  100% { transform: scale(1); }
+}
+
+@keyframes ds-motion-success-icon-in {
+  from {
+    opacity: 0;
+    transform: scale(var(--motion-success-icon-enter-scale));
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes ds-motion-modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ── Page / route transitions ── */
+.ds-motion-page {
+  flex: 1 1 0;
+  min-height: 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Tab panel swaps (lead detail mobile, etc.) ── */
+.ds-motion-tab-panel {
+  animation: ds-motion-tab-in var(--motion-duration-normal) var(--motion-ease-out) both;
+  min-height: 0;
+}
+
+/* ── Dropdowns / menus ── */
+.ds-menu-panel:not(.ds-menu-panel--collapsible) {
+  animation: ds-motion-pop-in var(--motion-duration-fast) var(--motion-ease-out) both;
+  transform-origin: top center;
+}
+
+.ds-menu-panel--portal {
+  transform-origin: top left;
+  transition:
+    max-height var(--motion-duration-normal) var(--motion-ease-out),
+    clip-path var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.ds-menu-panel:not(.ds-menu-panel--collapsible) > .ds-menu-item {
+  animation: ds-motion-fade-in var(--motion-duration-fast) var(--motion-ease-out) both;
+}
+
+.ds-menu-panel:not(.ds-menu-panel--collapsible) > .ds-menu-item:nth-child(1) { animation-delay: 0ms; }
+.ds-menu-panel:not(.ds-menu-panel--collapsible) > .ds-menu-item:nth-child(2) { animation-delay: 20ms; }
+.ds-menu-panel:not(.ds-menu-panel--collapsible) > .ds-menu-item:nth-child(3) { animation-delay: 30ms; }
+.ds-menu-panel:not(.ds-menu-panel--collapsible) > .ds-menu-item:nth-child(4) { animation-delay: 40ms; }
+.ds-menu-panel:not(.ds-menu-panel--collapsible) > .ds-menu-item:nth-child(n+5) { animation-delay: 50ms; }
+
+.ds-menu-panel--collapsible.ds-menu-panel--open {
+  animation: ds-motion-slide-down-in var(--motion-duration-fast) var(--motion-ease-out) both;
+}
+
+.ds-filter-trigger__chevron {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.ds-select-trigger__chevron {
+  transition: transform var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+/* ── Side panel drawer accordions ── */
+.ds-side-panel-section-collapse {
+  transition: grid-template-rows var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-side-panel-section-collapse {
+    transition: none;
+  }
+}
+
+/* ── Modals ── */
+.ds-modal-backdrop {
+  animation: ds-motion-fade-in var(--motion-duration-normal) var(--motion-ease-out) both;
+}
+
+.ds-modal {
+  animation: ds-motion-modal-in var(--motion-duration-normal) var(--motion-ease-out) both;
+}
+
+/* Measured dialog shell height (ResizeObserver + inline px height) */
+.ds-modal--height-animate {
+  transition: height var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-modal--height-animate {
+    transition: none;
+  }
+}
+
+/* ── Bulk action bar ── */
+.ds-data-table-bulk {
+  transform: translateX(-50%) translateY(-12px) scale(0.96);
+  transition:
+    opacity var(--motion-duration-fast) var(--motion-ease-out),
+    visibility var(--motion-duration-fast),
+    transform var(--motion-duration-normal) var(--motion-ease-spring);
+}
+
+.ds-data-table-bulk--visible {
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+.ds-data-table-bulk--visible .ds-bulk-action {
+  animation: ds-motion-fade-in var(--motion-duration-fast) var(--motion-ease-out) both;
+}
+
+.ds-data-table-bulk--visible .ds-bulk-action:nth-child(1) { animation-delay: 60ms; }
+.ds-data-table-bulk--visible .ds-bulk-action:nth-child(2) { animation-delay: 80ms; }
+.ds-data-table-bulk--visible .ds-bulk-action:nth-child(3) { animation-delay: 100ms; }
+
+/* ── Table / list selection ── */
+.ds-data-table-grid td {
+  transition: background-color var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.ds-checkbox {
+  transition:
+    border-color var(--motion-duration-fast) var(--motion-ease-out),
+    background-color var(--motion-duration-fast) var(--motion-ease-out),
+    box-shadow var(--motion-duration-fast) var(--motion-ease-out),
+    transform var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.ds-checkbox:checked,
+.ds-checkbox:indeterminate {
+  animation: ds-motion-check-pop var(--motion-duration-normal) var(--motion-ease-spring);
+}
+
+.ds-leads-card {
+  transition: background var(--motion-duration-fast) var(--motion-ease-out);
+}
+
+.ds-leads-card--selected {
+  transition: background var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.ds-data-table-grid tbody tr.ds-table-row:not(.ds-table-row--empty):not(.ds-table-row--skeleton) td {
+  transition:
+    background var(--motion-duration-normal) var(--motion-ease-out),
+    box-shadow var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+.ds-leads-card--focus,
+.ds-leads-card--focus-leaving {
+  transition:
+    background var(--motion-duration-normal) var(--motion-ease-out),
+    box-shadow var(--motion-duration-normal) var(--motion-ease-out);
+}
+
+/* ── Softphone status beacon (fixed slot, subtle pulse) ── */
+@keyframes ds-softphone-beacon-pulse {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.35);
+    opacity: 0;
+  }
+}
+
+.ds-softphone__beacon--ready .ds-softphone__beacon-ring,
+.ds-softphone__beacon--connected .ds-softphone__beacon-ring {
+  animation: ds-softphone-beacon-pulse 2.4s var(--motion-ease-out) infinite;
+}
+
+.ds-softphone__beacon--placing .ds-softphone__beacon-ring,
+.ds-softphone__beacon--ringing .ds-softphone__beacon-ring {
+  animation: ds-softphone-beacon-pulse 1.15s var(--motion-ease-out) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ds-softphone__beacon-ring {
+    animation: none !important;
+  }
+}

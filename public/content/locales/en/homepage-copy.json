@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "image": "/images/Morpheus8_0146.webp",
+    "tagline": "Medical aesthetics · Solna · Stockholm",
+    "title": "Premium aesthetic medicine in Solna",
+    "intro": "Discover tailored treatments in a calm, exclusive setting.",
+    "primaryCta": {
+      "label": "Book a free consultation",
+      "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+    },
+    "secondaryCta": {
+      "label": "Explore treatments",
+      "href": "/behandlingar"
+    }
+  },
+  "problems": {
+    "tagline": "Concerns",
+    "heading": "Skin concerns",
+    "intro": "From acne and rosacea to pigmentation and enlarged pores — explore common skin concerns and how we assess and treat them at Vivaci.",
+    "cta": {
+      "label": "See all concerns",
+      "href": "/problem?kategori=hud"
+    }
+  },
+  "treatmentFinder": {
+    "heading": "Find the right treatment for you",
+    "intro": "Browse by category and find treatments based on your needs.",
+    "searchPlaceholder": "Search treatments",
+    "quizHint": "Not sure what you need?",
+    "quizCta": "Take our free quiz"
+  },
+  "featuredTreatments": {
+    "tagline": "Treatments",
+    "heading": "Featured treatments",
+    "intro": "Gentle, effective treatments designed for natural results — in a calm clinic environment.",
+    "cta": {
+      "label": "See all treatments",
+      "href": "/behandlingar"
+    }
+  },
+  "method": {
+    "tagline": "Our method",
+    "heading": "Advanced diagnostics. Personal treatments. Better results.",
+    "intro": "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
+    "cta": {
+      "label": "Learn about our method",
+      "href": "/om-oss"
+    },
+    "steps": [
+      {
+        "title": "Identifiera",
+        "body": "Varje resa börjar med en personlig konsultation. Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt. Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp."
+      },
+      {
+        "title": "day note",
+        "body": "Din behandling väljs och anpassas specifikt för dig. Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat."
+      },
+      {
+        "title": "Optimera",
+        "body": "De bästa resultaten kommer ofta från att kombinera rätt behandlingar. Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik. Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat."
+      },
+      {
+        "title": "Contain",
+        "body": "Långsiktiga resultat kräver rätt uppföljning och underhåll. Efter din behandling ger vi personliga rekommendationer baserat på dina behov och din utveckling. Det kan inkludera uppföljande besök, underhållsbehandlingar, professionell hudvård eller livsstilsråd. Vårt mål är inte bara att förbättra din problematik idag, utan också att hjälpa dig bevara och stödja dina resultat över tid."
+      }
+    ]
+  }
+}

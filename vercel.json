@@ -1,24 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "installCommand": "",
-  "buildCommand": "pip install --break-system-packages -r requirements.txt && python3 scripts/vercel-build.py",
-  "outputDirectory": "public",
-  "rewrites": [
-    { "source": "/kontakt", "destination": "/kontakt.html" },
-    { "source": "/prislista", "destination": "/prislista.html" },
-    { "source": "/behandlingar", "destination": "/behandlingar.html" },
-    { "source": "/utbildning", "destination": "/utbildning.html" },
-    { "source": "/nyheter", "destination": "/nyheter.html" },
-    { "source": "/produkter", "destination": "/webshop.html" },
-    { "source": "/integritetspolicy", "destination": "/legal/integritetspolicy.html" },
-    { "source": "/villkor", "destination": "/legal/kopvillkor.html" },
-    { "source": "/avbokning", "destination": "/legal/avbokning.html" },
-    { "source": "/cookies", "destination": "/legal/cookies.html" },
-    { "source": "/problem/:slug", "destination": "/treatment-page.html" },
-    { "source": "/behandlingar/:slug", "destination": "/treatment-page.html" },
-    { "source": "/plastikkirurgi/:slug", "destination": "/treatment-page.html" },
-    { "source": "/produkter/:slug", "destination": "/product-detail-page.html" },
-    { "source": "/utbildning/:slug", "destination": "/course-page.html" },
-    { "source": "/nyheter/:slug", "destination": "/blog-page.html" }
-  ]
+  "installCommand": "pip install --break-system-packages -r requirements.txt && npm install --prefix content-admin",
+  "buildCommand": "VIVACI_PUBLIC_DIR=content-admin/public python3 scripts/vercel-build.py && npm run build --prefix content-admin",
+  "framework": "nextjs"
 }

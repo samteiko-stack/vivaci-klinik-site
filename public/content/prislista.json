@@ -1,0 +1,227 @@
+{
+  "title": "Prislista",
+  "intro": "Indikativa från-priser per behandling. Exakt kostnad fastställs vid kostnadsfri konsultation utifrån omfattning och individuell plan.",
+  "disclaimer": "Alla priser är vägledande tills de bekräftas i kliniken.",
+  "sections": [
+    {
+      "title": "Injektion",
+      "items": [
+        {
+          "label": "Botulinum Toxin",
+          "href": "/behandlingar/botulinum-toxin",
+          "price": "fr. 2 990 kr"
+        },
+        {
+          "label": "Dermal Fillers",
+          "href": "/behandlingar/dermal-fillers",
+          "price": "fr. 4 990 kr"
+        },
+        {
+          "label": "Sculptra",
+          "href": "/behandlingar/sculptra",
+          "price": "fr. 5 990 kr"
+        },
+        {
+          "label": "Skin Boosters",
+          "href": "/behandlingar/skin-boosters",
+          "price": "fr. 3 990 kr"
+        },
+        {
+          "label": "Plasma Lift",
+          "href": "/behandlingar/plasma-lift",
+          "price": "fr. 3 490 kr"
+        },
+        {
+          "label": "Vitamin Injections",
+          "href": "/behandlingar/vitamin-injections",
+          "price": "fr. 1 290 kr"
+        }
+      ]
+    },
+    {
+      "title": "Hud",
+      "items": [
+        {
+          "label": "HydraFacial",
+          "href": "/behandlingar/hydrafacial",
+          "price": "fr. 1 995 kr"
+        },
+        {
+          "label": "Chemical Peels",
+          "href": "/behandlingar/chemical-peels",
+          "price": "fr. 1 895 kr"
+        },
+        {
+          "label": "CO₂ Fractional Laser",
+          "href": "/behandlingar/co-fractional-laser",
+          "price": "fr. 4 990 kr"
+        },
+        {
+          "label": "Dermapen 4",
+          "href": "/behandlingar/dermapen-4",
+          "price": "fr. 2 495 kr"
+        },
+        {
+          "label": "PRX-T33",
+          "href": "/behandlingar/prx-t33",
+          "price": "fr. 2 990 kr"
+        },
+        {
+          "label": "Carboxy Therapy",
+          "href": "/behandlingar/carboxy-therapy",
+          "price": "fr. 1 495 kr"
+        },
+        {
+          "label": "Carboxy Therapy",
+          "href": "/behandlingar/carboxy-therapy-body",
+          "price": "fr. 1 695 kr"
+        },
+        {
+          "label": "Subcision",
+          "href": "/behandlingar/subcision",
+          "price": "fr. 3 990 kr"
+        },
+        {
+          "label": "Skin Lesion Removal",
+          "href": "/behandlingar/skin-lesion-removal",
+          "price": "fr. 1 495 kr"
+        }
+      ]
+    },
+    {
+      "title": "Kropp",
+      "items": [
+        {
+          "label": "EMS Body Sculpting",
+          "href": "/behandlingar/ems-body-sculpting",
+          "price": "fr. 1 495 kr"
+        },
+        {
+          "label": "EMTONE",
+          "href": "/behandlingar/emtone",
+          "price": "fr. 1 695 kr"
+        },
+        {
+          "label": "Exilis Ultra 360",
+          "href": "/behandlingar/exilis-ultra-360",
+          "price": "fr. 2 495 kr"
+        },
+        {
+          "label": "LPG Alliance",
+          "href": "/behandlingar/lpg-alliance",
+          "price": "fr. 1 295 kr"
+        },
+        {
+          "label": "Medical Weight Loss",
+          "href": "/behandlingar/medical-weight-loss",
+          "price": "fr. 2 990 kr"
+        },
+        {
+          "label": "Visbody Body Analysis",
+          "href": "/behandlingar/visbody-body-analysis",
+          "price": "fr. 1 490 kr"
+        }
+      ]
+    },
+    {
+      "title": "Hår",
+      "items": [
+        {
+          "label": "Laserhårborttagning",
+          "href": "/behandlingar/laser-hair-removal",
+          "price": "fr. 995 kr"
+        },
+        {
+          "label": "Hair Analysis",
+          "href": "/behandlingar/hair-analysis",
+          "price": "fr. 990 kr"
+        },
+        {
+          "label": "Hair Mesotherapy",
+          "href": "/behandlingar/hair-mesotherapy",
+          "price": "fr. 2 490 kr"
+        },
+        {
+          "label": "PRP Hair",
+          "href": "/behandlingar/prp-hair",
+          "price": "fr. 3 990 kr"
+        },
+        {
+          "label": "PRP Skin",
+          "href": "/behandlingar/prp-skin",
+          "price": "fr. 3 490 kr"
+        }
+      ]
+    },
+    {
+      "title": "Analys & hälsa",
+      "items": [
+        {
+          "label": "OBSERV 520X Skin Analysis",
+          "href": "/behandlingar/observ-520x-skin-analysis",
+          "price": "fr. 1 290 kr"
+        },
+        {
+          "label": "OligoCheck",
+          "href": "/behandlingar/oligocheck",
+          "price": "fr. 990 kr"
+        },
+        {
+          "label": "SO/Check",
+          "href": "/behandlingar/so-check",
+          "price": "fr. 890 kr"
+        },
+        {
+          "label": "Health Check & Blood Tests",
+          "href": "/behandlingar/health-check-blood-tests",
+          "price": "fr. 1 990 kr"
+        },
+        {
+          "label": "IV Therapy",
+          "href": "/behandlingar/iv-therapy",
+          "price": "fr. 1 490 kr"
+        }
+      ]
+    },
+    {
+      "title": "Plastikkirurgi",
+      "items": [
+        {
+          "label": "Bukfettborttagning",
+          "href": "/plastikkirurgi/buccal-fat-removal",
+          "price": "fr. 45 000 kr"
+        },
+        {
+          "label": "Gropbildning (kindergropar)",
+          "href": "/plastikkirurgi/dimples",
+          "price": "fr. 35 000 kr"
+        },
+        {
+          "label": "Ögonbrynslyft",
+          "href": "/plastikkirurgi/eyebrow-lift",
+          "price": "fr. 55 000 kr"
+        },
+        {
+          "label": "Ögonlocksplastik",
+          "href": "/plastikkirurgi/eyelid-surgery",
+          "price": "fr. 42 000 kr"
+        },
+        {
+          "label": "Hårtransplantation",
+          "href": "/plastikkirurgi/hair-transplant",
+          "price": "fr. 65 000 kr"
+        },
+        {
+          "label": "Fettsugning",
+          "href": "/plastikkirurgi/liposuction",
+          "price": "fr. 75 000 kr"
+        },
+        {
+          "label": "Otoplastik (öronkorrigering)",
+          "href": "/plastikkirurgi/otoplasty",
+          "price": "fr. 48 000 kr"
+        }
+      ]
+    }
+  ]
+}

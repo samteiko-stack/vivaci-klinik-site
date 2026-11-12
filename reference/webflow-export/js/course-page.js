@@ -2,7 +2,12 @@
  * Hydrates course-page.html from embedded JSON or /content/utbildning/{slug}.json
  */
 (function () {
+  function signalCourseReady() {
+    document.dispatchEvent(new CustomEvent("vivaci:course-page-ready"));
+  }
+
   if (document.documentElement.getAttribute("data-vivaci-course-hydrated")) {
+    signalCourseReady();
     return;
   }
   var match = window.location.pathname.match(/^\/utbildning\/([^/]+)\/?$/);
@@ -136,13 +141,19 @@
     }
 
     var ctaPrimary = $('[data-vivaci-field="hero-cta-primary"]');
-    if (ctaPrimary && hero.ctaPrimary) {
-      ctaPrimary.className = "is-vivaci-enroll-trigger";
-      ctaPrimary.setAttribute("href", "#");
-      ctaPrimary.setAttribute("data-vivaci-course-enroll", "");
+    if (ctaPrimary) {
+      ctaPrimary.classList.add("is-vivaci-enroll-trigger");
+      ctaPrimary.setAttribute("href", "#vivaci-course-dates");
+      ctaPrimary.removeAttribute("data-vivaci-course-enroll");
+      ctaPrimary.setAttribute("data-vivaci-course-scroll-dates", "");
       var ctaLabel = ctaPrimary.querySelector("div");
-      if (ctaLabel && hero.ctaPrimary.label) setText(ctaLabel, hero.ctaPrimary.label);
+      var primaryLabel =
+        (hero.ctaPrimary && hero.ctaPrimary.label) || "Se tillgängliga datum";
+      if (ctaLabel) setText(ctaLabel, primaryLabel);
     }
+
+    var datesList = $('[data-vivaci-field="dates-list"]');
+    if (datesList && !datesList.id) datesList.id = "vivaci-course-dates";
 
     var summary = data.summary || {};
     setText($('[data-vivaci-field="summary-intro"]'), summary.intro || "");
@@ -181,12 +192,47 @@
       var showFaq = !!(faq && faq.enabled !== false && faq.items && faq.items.length);
       faqSec.hidden = !showFaq;
       if (showFaq) {
-        setText($('[data-vivaci-field="faq-intro"]', faqSec), faq.intro || "");
+        setText(
+          $('[data-vivaci-field="faq-intro"]', faqSec),
+          faq.intro || "Svar på vanliga frågor om kursen och anmälan."
+        );
+        var faqAside = $(".faq3_content-left", faqSec);
+        if (faqAside) {
+          var faqBtn = faqAside.querySelector(".button-group");
+          if (faqBtn) faqBtn.remove();
+        }
         var faqList = $(".faq3_list", faqSec);
         fillFaqs(faqList, faq.items);
         if (window.VivaciFaqAccordion && faqList) {
           window.VivaciFaqAccordion.refresh(faqList);
         }
+      }
+    }
+
+    var bottom = data.bottomCta || {
+      heading: "Redo att anmäla dig?",
+      body: "Välj ett tillfälle i listan och skicka anmälan med valt datum.",
+      label: "Se tillgängliga datum",
+      contactLabel: "Frågor om behörighet? Kontakta oss",
+      contactHref: "/kontakt",
+    };
+    var bottomSec = $('[data-vivaci-section="course-bottom-cta"]');
+    if (bottomSec) {
+      setText($('[data-vivaci-field="course-bottom-heading"]', bottomSec), bottom.heading || "");
+      setText($('[data-vivaci-field="course-bottom-body"]', bottomSec), bottom.body || "");
+      var bottomLink = $('[data-vivaci-field="course-bottom-link"]', bottomSec);
+      if (bottomLink) {
+        bottomLink.classList.add("is-vivaci-enroll-trigger");
+        bottomLink.setAttribute("href", "#vivaci-course-dates");
+        bottomLink.removeAttribute("data-vivaci-course-enroll");
+        bottomLink.setAttribute("data-vivaci-course-scroll-dates", "");
+        var bottomLabel = bottomLink.querySelector("div");
+        if (bottomLabel) setText(bottomLabel, bottom.label || "Se tillgängliga datum");
+      }
+      var bottomContact = $('[data-vivaci-field="course-bottom-contact"]', bottomSec);
+      if (bottomContact) {
+        bottomContact.setAttribute("href", bottom.contactHref || "/kontakt");
+        setText(bottomContact, bottom.contactLabel || "Frågor om behörighet? Kontakta oss");
       }
     }
   }
@@ -205,6 +251,7 @@
   var embedded = readEmbedded();
   if (embedded) {
     applyData(embedded);
+    signalCourseReady();
     return;
   }
 
@@ -215,9 +262,15 @@
           if (!res.ok) throw new Error(String(res.status));
           return res.json();
         });
-    req.then(applyData).catch(function (err) {
-      console.warn("[vivaci-course-page]", url, err);
-    });
+    req
+      .then(function (data) {
+        applyData(data);
+        signalCourseReady();
+      })
+      .catch(function (err) {
+        console.warn("[vivaci-course-page]", url, err);
+        signalCourseReady();
+      });
   }
 
   if (window.vivaciOnLocaleContentReady) {

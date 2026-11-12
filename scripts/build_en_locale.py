@@ -10,6 +10,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content"
 OUT = CONTENT / "locales" / "en"
+SITE_URLS = CONTENT / "site-urls.json"
+CONTENT_ADMIN_URL = json.loads(SITE_URLS.read_text(encoding="utf-8")).get(
+    "contentAdminUrl", "http://localhost:4000/treatment-pages"
+)
 
 LABELS = {
     "Acne": "Acne",
@@ -147,23 +151,23 @@ def main() -> None:
             {
                 "title": "Explore",
                 "links": [
-                    {"label": "Before & After", "href": "/fore-efter"},
-                    {"label": "Patient reviews", "href": "/recensioner"},
-                    {"label": "Brands", "href": "/varumarken"},
-                    {"label": "FAQ", "href": "/faq"},
+                    {"label": "Before & After", "href": "/behandlingar/hydrafacial#results"},
+                    {"label": "Patient reviews", "href": "/#vivaci-home-why"},
+                    {"label": "Brands", "href": "/#vivaci-home-brands"},
+                    {"label": "FAQ", "href": "/#vivaci-home-faq"},
                     {"label": "News & tips", "href": "/nyheter"},
-                    {"label": "Payment options", "href": "/betalning"},
+                    {"label": "Payment options", "href": "/#vivaci-home-faq"},
                 ],
             },
             {
                 "title": "About Vivaci",
                 "links": [
-                    {"label": "About us", "href": "/om-oss"},
-                    {"label": "Meet our experts", "href": "/experter"},
-                    {"label": "Our method", "href": "/var-metod"},
-                    {"label": "Why Vivaci", "href": "/varfor-vivaci"},
-                    {"label": "Patient safety", "href": "/patientsakerhet"},
-                    {"label": "Careers", "href": "/karriar"},
+                    {"label": "About us", "href": "/#vivaci-home-hero"},
+                    {"label": "Meet our experts", "href": "/#vivaci-home-team"},
+                    {"label": "Our method", "href": "/#vivaci-home-method"},
+                    {"label": "Why Vivaci", "href": "/#vivaci-home-why"},
+                    {"label": "Patient safety", "href": "/#vivaci-home-why"},
+                    {"label": "Careers", "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"},
                 ],
             },
         ],
@@ -179,6 +183,7 @@ def main() -> None:
             {"label": "Cookie policy", "href": "/cookies"},
             {"label": "Terms of purchase", "href": "/villkor"},
             {"label": "Cancellation & refunds", "href": "/avbokning"},
+            {"label": "Temporary admin link", "href": CONTENT_ADMIN_URL},
         ],
         "copyright": "© 2026 Vivaci Clinic. All rights reserved.",
     }
@@ -232,7 +237,7 @@ def main() -> None:
             "tagline": "Medical aesthetics · Solna · Stockholm",
             "title": "Premium aesthetic medicine in Solna",
             "intro": "Discover tailored treatments in a calm, exclusive setting.",
-            "primaryCta": {"label": "Book a free consultation", "href": "/kontakt"},
+            "primaryCta": {"label": "Book a free consultation", "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"},
             "secondaryCta": {"label": "Explore treatments", "href": "/behandlingar"},
         },
         "problems": {

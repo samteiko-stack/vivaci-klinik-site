@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "slug": "kemisk-peeling",
+  "path": "/utbildning/kemisk-peeling",
+  "title": "Kemisk peeling",
+  "metaDescription": "Kemisk peeling: syror, koncentrationer, hudtyper och behandlingsplaner — Vivaci Academy.",
+  "hero": {
+    "title": "Kemisk peeling",
+    "intro": "Strukturerad utbildning i kemisk peeling — från ytlig AHA till medeldjupa protokoll. Bedöm hud, välj syra, planera serier och hantera eftervård och pigmentrisk.",
+    "audience": "Medicinsk estetisk personal och erfarna hudterapeuter under medicinskt ansvar.",
+    "image": "/images/2149930751_12149930751.webp",
+    "ctaPrimary": {
+      "label": "Se tillgängliga datum"
+    }
+  },
+  "summary": {
+    "intro": "Halvdag teori, demo och behandlingsplanering. Inkluderar Vivacis peel-protokoll per indikation.",
+    "fee": "SEK 34,900",
+    "feeNote": " / deltagare exkl. moms",
+    "level": "Grund–medel",
+    "duration": "Halvdag · 09:00–13:00",
+    "location": "Vivaci Klinik, Råsundavägen 4, Solna"
+  },
+  "dates": [
+    {
+      "label": "Mar 8, 2026",
+      "time": "09:00 – 13:00",
+      "seats": "10 seats"
+    },
+    {
+      "label": "May 19, 2026",
+      "time": "09:00 – 13:00",
+      "seats": "7 spots left"
+    }
+  ],
+  "about": {
+    "html": "<p>Peeling är effektivt när indikation, koncentration och hudens tolerans matchar. Kursen ger beslutsstöd för acne, pigment, photoaging och känslig hud.</p>\n<h4>Innehåll</h4>\n<ul role=\"list\"><li>AHA, BHA, TCA, Jessner — egenskaper och indikationer</li><li>Hudtypning, Fitzpatrick och patch-test</li><li>Serieplan och kombination med hemmavård</li><li>Eftervård, solskydd och uppföljning</li></ul>\n<h4>Agenda</h4>\n<h5>09:00 – 10:30 · Syror &amp; säkerhet</h5>\n<h5>10:30 – 11:30 · Live-demo</h5>\n<h5>11:30 – 13:00 · Egna fall &amp; protokoll</h5>\n<p>Du tar med (eller får) exempelfall och skriver behandlingsplan enligt Vivacis mall.</p>"
+  },
+  "instructors": {
+    "enabled": true,
+    "heading": "Instruktörer",
+    "intro": "",
+    "items": [
+      {
+        "name": "Dr. Sofia Lindqvist",
+        "role": "Hudläkare",
+        "image": "/images/Fillers_0055.webp"
+      },
+      {
+        "name": "Lisa Nyström",
+        "role": "Peeling-specialist",
+        "image": "/images/Morpheus8_0146.webp"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
+    "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Medicinsk estetisk personal eller erfaren hudterapeut under medicinskt ansvar på registrerad klinik."
+      },
+      {
+        "question": "Ingår TCA?",
+        "answer": "Ja, med fokus på säkerhetsgränser; djupare TCA kräver avancerad modul."
+      },
+      {
+        "question": "Praktik på modell?",
+        "answer": "Demo alltid; praktik på kollega/modell under handledning när tid tillåter."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Cancellation Policy",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
+      }
+    ]
+  }
+}

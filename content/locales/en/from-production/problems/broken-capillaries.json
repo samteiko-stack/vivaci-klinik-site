@@ -2,9 +2,9 @@
   "type": "problem",
   "slug": "broken-capillaries",
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/broken-capillaries",
-  "name": "Brutna kapillärer",
+  "name": "Broken capillaries",
   "heroIntro": "Här förklarar vi vad brutna kapillärer är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
-  "whatIsIt": "Brutna kapillärer är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+  "whatIsIt": "Broken capillaries are a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
   "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
   "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till brutna kapillärer och skapar en behandlingsplan baserad på din unika situation.",
   "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
@@ -16,7 +16,7 @@
     },
     {
       "question": "Hur många behandlingar behövs?",
-      "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+      "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
     },
     {
       "question": "Finns det någon återhämtningstid?",
@@ -29,9 +29,9 @@
     "Orsaker",
     "Hur vi bedömer det",
     "Möt våra experter",
-    "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+    "Advanced diagnostics. Personal treatments. Better results.",
     "Därför väljer patienter Vivaci",
     "Vanliga frågor",
-    "Boka din kostnadsfria konsultation"
+    "Book your free consultation"
   ]
 }

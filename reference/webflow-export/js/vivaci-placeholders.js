@@ -7,6 +7,11 @@
   if (window.__vivaciPlaceholdersLoaded) return;
   window.__vivaciPlaceholdersLoaded = true;
 
+  if (document.documentElement.getAttribute("data-vivaci-course-hydrated")) {
+    window.__vivaciPlaceholdersReady = Promise.resolve();
+    return;
+  }
+
   var CATALOG_URL = "/content/placeholders.json";
 
   function setImg(img, path, alt) {
@@ -31,7 +36,45 @@
     if (!imgs.length || !ids.length) return;
     imgs.forEach(function (img, i) {
       var id = ids[i % ids.length];
-      setImg(img, path(catalog, id), "");
+      var item = catalog.items && catalog.items[id];
+      setImg(img, path(catalog, id), (item && item.label) || "");
+    });
+  }
+
+  function setTeamCardText(card, item) {
+    if (!card || !item) return;
+    var wrap = card.querySelector(".team8_title-wrapper");
+    if (!wrap) return;
+    var nameEl = wrap.querySelector(
+      ".text-weight-bold, .text-size-medium, .text-size-regular"
+    );
+    var roleEl = wrap.querySelector(".text-size-small");
+    if (nameEl && item.label) nameEl.textContent = item.label;
+    if (roleEl && item.role) roleEl.textContent = item.role;
+  }
+
+  function applyTeamCards(catalog) {
+    var ids = (catalog.pools && catalog.pools.team) || [];
+    if (!ids.length) return;
+    var items = catalog.items || {};
+    var cards = Array.prototype.slice.call(
+      document.querySelectorAll(".team8_list .team8_item")
+    );
+    if (!cards.length) {
+      applyPool(
+        Array.prototype.slice.call(document.querySelectorAll(".team8_image")),
+        ids,
+        catalog
+      );
+      return;
+    }
+    cards.forEach(function (card, i) {
+      var id = ids[i % ids.length];
+      var item = items[id];
+      if (!item) return;
+      var img = card.querySelector(".team8_image");
+      setImg(img, item.path, item.label || "");
+      setTeamCardText(card, item);
     });
   }
 
@@ -51,11 +94,7 @@
       "Vår metod"
     );
 
-    applyPool(
-      Array.prototype.slice.call(document.querySelectorAll(".team8_image")),
-      catalog.pools.team || [],
-      catalog
-    );
+    applyTeamCards(catalog);
 
     applyPool(
       Array.prototype.slice.call(document.querySelectorAll(".blog34_image")),
@@ -94,11 +133,12 @@
       );
     }
 
-    setImg(
-      document.querySelector(".header6_background-image"),
-      path(catalog, "cta-bottom"),
-      ""
-    );
+    var ctaPath = path(catalog, "cta-bottom");
+    var ctaItem = catalog.items && catalog.items["cta-bottom"];
+    var ctaLabel = (ctaItem && ctaItem.label) || "";
+    document.querySelectorAll(".header6_background-image").forEach(function (img) {
+      setImg(img, ctaPath, ctaLabel);
+    });
   }
 
   function hydrate() {

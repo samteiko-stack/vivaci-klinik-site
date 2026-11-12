@@ -41,8 +41,9 @@
   navigation: none;
 }
 
+/* Page body fade disabled — section/CTA content must never wait on a reveal gate */
 html.vivaci-page-loading body {
-  opacity: 0;
+  opacity: 1;
 }
 
 /* Treatment hero: keep export placeholder hidden until JSON + image decode */
@@ -50,16 +51,19 @@ html.vivaci-content-pending .header50_background-image-wrapper .header50_backgro
   visibility: hidden;
 }
 
-/* Avoid empty listing grids flashing before category-finder hydrates */
-.treatment-grid:empty {
+/* Hide only pre-hydration empty grids — not mid-swap (populateGrid used to flash :empty) */
+html.vivaci-page-loading .treatment-grid:empty,
+[data-vivaci-category-finder] .treatment-grid.is-loading-treatments:empty {
   visibility: hidden;
+  min-height: 10rem;
+}
+
+[data-vivaci-category-finder] .treatment-grid.is-swapping-treatments {
   min-height: 10rem;
 }
 
 html.vivaci-page-ready body {
   opacity: 1;
-  /* No transform on body — it breaks position:fixed nav and position:sticky sidebars */
-  transition: opacity var(--vivaci-motion-duration-normal) var(--vivaci-motion-ease-out);
 }
 
 /* Never leave a blank screen if loading class stuck (mobile / slow fonts) */
@@ -70,8 +74,7 @@ html:not(.vivaci-page-loading) body {
 
 @media (max-width: 991px) {
   html.vivaci-page-loading body {
-    opacity: 0;
-    transition: none;
+    opacity: 1;
   }
 }
 
@@ -89,4 +92,48 @@ html:not(.vivaci-page-loading) body {
     opacity: 1;
     transition: none;
   }
+}
+
+/* Section scroll-reveal off (Webflow IX) — nav/modal motion unchanged */
+section.is-section,
+header.is-section,
+footer.is-section,
+section.is-section [data-w-id],
+header.is-section [data-w-id],
+footer.is-section [data-w-id],
+header.is-section .header6_content,
+header.is-section .header6_content * {
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  filter: none !important;
+  visibility: visible !important;
+}
+
+html.w-mod-js:not(.w-mod-ix) section.is-section [data-w-id],
+html.w-mod-js:not(.w-mod-ix) header.is-section [data-w-id],
+html.w-mod-js:not(.w-mod-ix) footer.is-section [data-w-id] {
+  transform: none !important;
+  -webkit-transform: none !important;
+  opacity: 1 !important;
+}
+
+.w-mod-ix section.is-section [data-w-id],
+.w-mod-ix header.is-section [data-w-id],
+.w-mod-ix footer.is-section [data-w-id] {
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+}
+
+/* Homepage blog carousel — no GSAP [is-div] stagger on slides/cards */
+#vivaci-home-blog,
+#vivaci-home-blog .swiper-slide,
+#vivaci-home-blog .blog34_item,
+#vivaci-home-blog .blog34_item * {
+  opacity: 1 !important;
+  transform: none !important;
+  -webkit-transform: none !important;
+  filter: none !important;
+  visibility: visible !important;
 }

@@ -16,6 +16,7 @@
     if (typeof fn !== "function") {
       return Promise.resolve();
     }
+    var ranAfterI18n = false;
     var run = function () {
       var wait =
         window.VivaciI18n && window.VivaciI18n.whenReady
@@ -23,8 +24,14 @@
           : window.__vivaciI18nReady;
       return Promise.resolve(wait).then(fn);
     };
-    var first = run();
+    var first = run().then(function () {
+      if (window.__vivaciI18nReady) {
+        ranAfterI18n = true;
+      }
+    });
     document.addEventListener("vivaci:i18n-ready", function () {
+      if (ranAfterI18n) return;
+      ranAfterI18n = true;
       run();
     });
     document.addEventListener("vivaci:locale-change", function () {

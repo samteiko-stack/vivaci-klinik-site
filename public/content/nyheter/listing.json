@@ -1,0 +1,61 @@
+{
+  "source": "generated",
+  "categories": [
+    {
+      "label": "Nyhet",
+      "items": [
+        {
+          "href": "/nyheter/mina-sidor-digital-portal",
+          "label": "Mina sidor — vår nya digitala kommunikationsportal",
+          "description": "Få påminnelser, eftervårdsråd och enkel kontakt med kliniken via vår nya digitala portal.",
+          "image": "/images/pexels/blog-3.jpg"
+        },
+        {
+          "href": "/nyheter/sommarkonsultationer-2026",
+          "label": "Digitala videokonsultationer under sommaren",
+          "description": "Boka en digital konsultation när det passar dig — även under semestern.",
+          "image": "/images/pexels/blog-2.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Utbildande",
+      "items": [
+        {
+          "href": "/nyheter/hudforandringar-kontroll",
+          "label": "Därför är det viktigare än någonsin att kontrollera dina hudförändringar",
+          "description": "Nya eller förändrade leverfläckar ska tas på allvar. Våra hudläkare förklarar när du bör söka bedömning.",
+          "image": "/images/pexels/blog-2.jpg"
+        },
+        {
+          "href": "/nyheter/naturliga-resultat-injektioner",
+          "label": "Så skapar vi naturliga resultat med injektionsbehandlingar",
+          "description": "Mindre kan vara mer. Så tänker vi kring dosering, anatomi och uppföljning för resultat som känns som dig.",
+          "image": "/images/pexels/blog-4.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Bloggartikel",
+      "items": [
+        {
+          "href": "/nyheter/forbered-dig-infor-behandling",
+          "label": "Så förbereder du dig inför din första behandling",
+          "description": "Praktiska tips från vårt team inför konsultation och behandling — så att du känner dig trygg och förberedd.",
+          "image": "/images/pexels/blog-1.jpg"
+        }
+      ]
+    },
+    {
+      "label": "Erbjudande",
+      "items": [
+        {
+          "href": "/nyheter/varens-hudvardspaket",
+          "label": "Vårens hudvårdspaket — begränsat antal",
+          "description": "Kombinera konsultation och behandling till ett förmånligt paketpris inför sommaren.",
+          "image": "/images/pexels/blog-1.jpg"
+        }
+      ]
+    }
+  ]
+}

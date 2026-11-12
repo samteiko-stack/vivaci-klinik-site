@@ -2,18 +2,18 @@
   "source": "generated",
   "categories": [
     {
-      "label": "Injektion",
+      "label": "Injectables",
       "items": [
         {
           "href": "/utbildning/botox-grundkurs",
-          "label": "Botox — grundkurs",
+          "label": "Botox — Basic Course",
           "description": "Introduktionskurs för behörig medicinsk personal. Teori, demonstrationer och hands-on under handledning.",
           "image": "/images/Fillers_0055.webp"
         },
         {
           "href": "/utbildning/filler-grundkurs",
           "label": "Fillers — grundkurs",
-          "description": "Anatomi, produkter och injektionsteknik för säkra, naturliga resultat.",
+          "description": "Anatomy, products and injection techniques for safe, natural results.",
           "image": "/images/Fillers_0055.webp"
         },
         {

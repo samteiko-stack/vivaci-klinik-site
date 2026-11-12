@@ -15,6 +15,7 @@
   }
 
   global.VivaciMotion = {
+    sectionRevealsEnabled: false,
     prefersReducedMotion: prefersReducedMotion,
     gsapReady: gsapReady,
     duration: {

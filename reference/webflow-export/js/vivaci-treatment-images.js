@@ -1,12 +1,11 @@
 /**
- * Treatment imagery: homepage hero (Morpheus8) everywhere except /problem/* (Railway hud).
+ * Single catalog for treatment card + hero imagery (content/from-production/treatment-images.json).
  */
 (function () {
   if (window.__vivaciTreatmentImagesLoaded) return;
   window.__vivaciTreatmentImagesLoaded = true;
 
-  var RAILWAY_URL = "/content/from-production/treatment-images.json";
-  var HERO_IMAGE = "/images/Morpheus8_0146.webp";
+  var CATALOG_URL = "/content/from-production/treatment-images.json";
 
   function normalizeHref(href) {
     if (!href) return "";
@@ -19,8 +18,14 @@
     return normalizeHref(href).indexOf("/problem/") === 0;
   }
 
+  function isTreatmentPath(key) {
+    return (
+      key.indexOf("/behandlingar/") === 0 || key.indexOf("/plastikkirurgi/") === 0
+    );
+  }
+
   window.__vivaciTreatmentImageForHref = function (href) {
-    if (!href) return HERO_IMAGE;
+    if (!href) return null;
     var key = normalizeHref(href);
     var all = window.__vivaciImagesByHref || {};
     if (all[key]) return all[key];
@@ -28,32 +33,40 @@
       var hud = window.__vivaciHudImagesByHref || {};
       return hud[key] || null;
     }
-    if (key.indexOf("/behandlingar/") === 0 || key.indexOf("/plastikkirurgi/") === 0) {
-      return HERO_IMAGE;
-    }
-    return HERO_IMAGE;
+    if (isTreatmentPath(key)) return null;
+    return null;
   };
 
-  window.__vivaciTreatmentImagesReady = fetch(RAILWAY_URL)
+  function indexHud(byHref) {
+    var hud = {};
+    Object.keys(byHref).forEach(function (key) {
+      if (key.indexOf("/problem/") === 0) hud[key] = byHref[key];
+    });
+    window.__vivaciHudImagesByHref = hud;
+  }
+
+  function commitCatalog(byHref) {
+    window.__vivaciImagesByHref = byHref || {};
+    indexHud(window.__vivaciImagesByHref);
+    document.dispatchEvent(
+      new CustomEvent("vivaci:treatment-images-ready", {
+        detail: { byHref: window.__vivaciImagesByHref },
+      })
+    );
+  }
+
+  window.__vivaciTreatmentImagesReady = fetch(CATALOG_URL)
     .then(function (res) {
       if (!res.ok) throw new Error("treatment-images.json " + res.status);
       return res.json();
     })
     .then(function (data) {
       var byHref = (data && data.byHref) || {};
-      window.__vivaciImagesByHref = byHref;
-      var hud = {};
-      Object.keys(byHref).forEach(function (key) {
-        if (key.indexOf("/problem/") === 0) {
-          hud[key] = byHref[key];
-        }
-      });
-      window.__vivaciHudImagesByHref = hud;
+      commitCatalog(byHref);
       return byHref;
     })
     .catch(function (err) {
       console.warn("[vivaci] treatment images:", err);
-      window.__vivaciHudImagesByHref = {};
-      window.__vivaciImagesByHref = {};
+      commitCatalog({});
     });
 })();

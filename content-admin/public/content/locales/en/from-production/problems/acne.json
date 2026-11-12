@@ -1,0 +1,61 @@
+{
+  "type": "problem",
+  "slug": "acne",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/acne",
+  "name": "Acne",
+  "heroIntro": "Här förklarar vi vad acne är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
+  "whatIsIt": "Acne is a common aesthetic concern for which many seek help. It can affect both the appearance of the skin and the feeling of well-being.\n\nThe condition is completely normal and affects people of all ages and with different skin types. At Vivaci Clinic, we offer medically based treatments tailored to your individual needs.",
+  "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
+  "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till acne och skapar en behandlingsplan baserad på din unika situation.",
+  "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.",
+  "recommendedTreatments": [
+    {
+      "slug": "hydrafacial",
+      "name": "hud HydraFacial HydraFacial är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifier",
+      "url": "/behandlingar/hydrafacial"
+    },
+    {
+      "slug": "dermapen-4",
+      "name": "hud Dermapen 4 Dermapen 4 är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierad",
+      "url": "/behandlingar/dermapen-4"
+    },
+    {
+      "slug": "chemical-peels",
+      "name": "hud Chemical Peels Chemical Peels är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av cer",
+      "url": "/behandlingar/chemical-peels"
+    },
+    {
+      "slug": "prx-t33",
+      "name": "hud PRX-T33 PRX-T33 är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade expe",
+      "url": "/behandlingar/prx-t33"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Kan acne behandlas helt?",
+      "answer": "Resultat varierar beroende på individuella förutsättningar. Målet är att uppnå en tydlig förbättring med naturliga, harmoniska resultat."
+    },
+    {
+      "question": "Hur många behandlingar behövs?",
+      "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
+    },
+    {
+      "question": "Finns det någon återhämtningstid?",
+      "answer": "De flesta behandlingar har minimal eller ingen downtime. Du får tydliga instruktioner före och efter."
+    }
+  ],
+  "rawSectionHeadings": [
+    "Vad är det?",
+    "Tecken & symtom",
+    "Orsaker",
+    "Hur vi bedömer det",
+    "Rekommenderade behandlingar",
+    "Vilken behandling passar mig?",
+    "Före & Efter",
+    "Möt våra experter",
+    "Advanced diagnostics. Personal treatments. Better results.",
+    "Därför väljer patienter Vivaci",
+    "Vanliga frågor",
+    "Book your free consultation"
+  ]
+}

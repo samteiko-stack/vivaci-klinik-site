@@ -1,5 +1,5 @@
 /**
- * .swiper-tuesday carousels (problems, featured, etc.)
+ * .swiper-tuesday carousels (problems, featured, related, before/after, etc.)
  */
 (function () {
   if (window.__vivaciSwiperTuesdayLoaded) return;
@@ -13,8 +13,52 @@
     return ARROW_SVG;
   }
 
+  function visibleSlideCount(swiperEl) {
+    return swiperEl.querySelectorAll(
+      ".swiper-wrapper > .swiper-slide:not([hidden])"
+    ).length;
+  }
+
+  function isDeferredSwiper(swiperEl) {
+    if (swiperEl.getAttribute("data-vivaci-field") === "related-swiper") return true;
+    if (swiperEl.getAttribute("data-vivaci-field") === "ba-swiper") return true;
+    if (swiperEl.getAttribute("data-vivaci-field") === "product-rec-swiper") return true;
+    return !!(
+      swiperEl.closest('[data-vivaci-section="related"]') ||
+      swiperEl.closest('[data-vivaci-section="beforeAfterGallery"]') ||
+      swiperEl.closest("[data-vivaci-product-recommended]")
+    );
+  }
+
+  /** PDP related + before/after: fixed .is-50p width, no stack-blur (homepage keeps carousel). */
+  function isTreatmentCardSwiper(swiperEl) {
+    var field = swiperEl.getAttribute("data-vivaci-field");
+    if (field === "related-swiper") return true;
+    if (field === "ba-swiper") return true;
+    return !!(
+      swiperEl.closest('[data-vivaci-section="related"]') ||
+      swiperEl.closest('[data-vivaci-section="beforeAfterGallery"]')
+    );
+  }
+
+  function retryDeferredInits() {
+    if (typeof Swiper === "undefined") return;
+    document.querySelectorAll(".swiper-tuesday").forEach(function (el) {
+      if (!isDeferredSwiper(el)) return;
+      if (visibleSlideCount(el) < 1) return;
+      if (el.dataset.vivaciSwiperTuesdayInit === "1") return;
+      initTuesday(el);
+    });
+  }
+
   function initTuesday(swiperEl) {
-    if (swiperEl.dataset.vivaciSwiperTuesdayInit === "1") return;
+    if (!swiperEl || swiperEl.dataset.vivaciSwiperTuesdayInit === "1") return;
+    if (typeof Swiper === "undefined") return;
+
+    var slideCount = visibleSlideCount(swiperEl);
+    if (slideCount < 1) return;
+    if (isDeferredSwiper(swiperEl) && slideCount < 2) return;
+
     swiperEl.dataset.vivaciSwiperTuesdayInit = "1";
 
     var existingControls = swiperEl.nextElementSibling;
@@ -42,13 +86,27 @@
     var EASING = "cubic-bezier(.22, 1, .36, 1)";
     var MIN_SCALE = 0.72;
     var MAX_BLUR = 3;
+    var isProductRec =
+      swiperEl.getAttribute("data-vivaci-field") === "product-rec-swiper";
+    var isTreatmentCards = isTreatmentCardSwiper(swiperEl);
+    var useCarouselFx = !isProductRec && !isTreatmentCards;
+    var useLoop = useCarouselFx && slideCount >= 3;
+    if (isTreatmentCards) {
+      swiperEl.classList.add("is-vivaci-treatment-cards");
+    }
     swiperEl.style.setProperty("--swiper-wrapper-transition-timing-function", EASING);
+
+    function effectiveSlidesPerView(count, cap) {
+      if (count <= 1) return 1;
+      return Math.min(cap, count - 0.5);
+    }
 
     function clamp(value, min, max) {
       return Math.min(max, Math.max(min, value));
     }
 
     function updateCards(swiper) {
+      if (!useCarouselFx) return;
       if (!swiper || swiper.destroyed) return;
       var translate = swiper.translate || 0;
       var gap = Number(swiper.params.spaceBetween) || 0;
@@ -86,28 +144,63 @@
       });
     }
 
+    var productRecBreakpoints = {
+      480: {
+        slidesPerView: Math.min(1.35, slideCount),
+        spaceBetween: 12,
+      },
+      768: {
+        slidesPerView: Math.min(2.5, slideCount),
+        spaceBetween: 16,
+      },
+      992: {
+        slidesPerView: Math.min(3.25, slideCount),
+        spaceBetween: 20,
+      },
+      1200: {
+        slidesPerView: Math.min(4, slideCount),
+        spaceBetween: 20,
+      },
+    };
+
     var swiper = new Swiper(swiperEl, {
-      slidesPerView: 1,
+      slidesPerView: isTreatmentCards
+        ? "auto"
+        : isProductRec
+          ? Math.min(1.2, slideCount)
+          : effectiveSlidesPerView(slideCount, 1.25),
       slidesPerGroup: 1,
-      spaceBetween: 16,
-      speed: ANIMATION_SPEED,
+      spaceBetween: isTreatmentCards ? 20 : 16,
+      speed: isTreatmentCards ? 450 : ANIMATION_SPEED,
       grabCursor: true,
-      loop: true,
-      loopAdditionalSlides: 3,
-      watchSlidesProgress: true,
+      loop: useLoop,
+      loopAdditionalSlides: useLoop ? Math.min(slideCount, 6) : 0,
+      watchSlidesProgress: useCarouselFx,
       watchOverflow: true,
-      observer: true,
-      observeParents: true,
+      observer: isTreatmentCards,
+      observeParents: isTreatmentCards,
       updateOnWindowResize: true,
       resizeObserver: true,
-      breakpoints: {
-        768: { slidesPerView: 2, spaceBetween: 24 },
-      },
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-        pauseOnMouseEnter: true,
-      },
+      breakpoints: isTreatmentCards
+        ? {
+            768: { spaceBetween: 24 },
+          }
+        : isProductRec
+          ? productRecBreakpoints
+          : {
+              768: {
+                slidesPerView: effectiveSlidesPerView(slideCount, 2.25),
+                spaceBetween: 24,
+              },
+            },
+      autoplay:
+        !isTreatmentCards && slideCount >= 2
+          ? {
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }
+          : false,
       navigation: {
         nextEl: controls.querySelector(".swiper-tuesday-next"),
         prevEl: controls.querySelector(".swiper-tuesday-prev"),
@@ -116,33 +209,41 @@
         el: controls.querySelector(".swiper-tuesday-pagination"),
         clickable: true,
       },
-      on: {
-        init: function (sw) {
-          updateTransitions(sw, 0);
-          updateCards(sw);
-        },
-        setTranslate: function (sw) {
-          updateCards(sw);
-        },
-        setTransition: function (sw, duration) {
-          updateTransitions(sw, duration);
-        },
-        loopFix: function (sw) {
-          updateCards(sw);
-        },
-        resize: function (sw) {
-          updateCards(sw);
-        },
-        update: function (sw) {
-          updateCards(sw);
-        },
-        slidesUpdated: function (sw) {
-          updateCards(sw);
-        },
-        breakpoint: function (sw) {
-          updateCards(sw);
-        },
-      },
+      on: useCarouselFx
+        ? {
+            init: function (sw) {
+              updateTransitions(sw, 0);
+              updateCards(sw);
+            },
+            setTranslate: function (sw) {
+              updateCards(sw);
+            },
+            setTransition: function (sw, duration) {
+              updateTransitions(sw, duration);
+            },
+            loopFix: function (sw) {
+              updateCards(sw);
+            },
+            resize: function (sw) {
+              updateCards(sw);
+            },
+            update: function (sw) {
+              updateCards(sw);
+            },
+            slidesUpdated: function (sw) {
+              updateCards(sw);
+            },
+            breakpoint: function (sw) {
+              updateCards(sw);
+            },
+          }
+        : {
+            init: function (sw) {
+              requestAnimationFrame(function () {
+                if (!sw.destroyed) sw.update();
+              });
+            },
+          },
     });
 
     requestAnimationFrame(function () {
@@ -163,16 +264,34 @@
   }
 
   window.vivaciInitSwiperTuesdayEl = initTuesday;
+  window.vivaciRetryDeferredSwiperTuesday = retryDeferredInits;
 
   function boot() {
     if (typeof Swiper === "undefined") return;
-    document.querySelectorAll(".swiper-tuesday").forEach(initTuesday);
+    document.querySelectorAll(".swiper-tuesday").forEach(function (el) {
+      if (isDeferredSwiper(el)) return;
+      initTuesday(el);
+    });
+    retryDeferredInits();
   }
 
   document.addEventListener("DOMContentLoaded", function () {
     Promise.all([
       Promise.resolve(window.__vivaciHomeProblemsReady),
       Promise.resolve(window.__vivaciHomeFeaturedReady),
+      Promise.resolve(window.__vivaciHomeBlogReady),
     ]).then(boot);
+
+    var attempts = 0;
+    var poll = window.setInterval(function () {
+      attempts += 1;
+      retryDeferredInits();
+      if (typeof Swiper !== "undefined" || attempts > 50) {
+        window.clearInterval(poll);
+      }
+    }, 100);
   });
+
+  document.addEventListener("vivaci:treatment-page-ready", retryDeferredInits);
+  window.addEventListener("load", retryDeferredInits, { once: true });
 })();

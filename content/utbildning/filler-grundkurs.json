@@ -10,8 +10,7 @@
     "audience": "Legitimerad personal med injektionsvana eller genomförd botox-grundkurs. Du bör ha grundläggande kunskap i ansiktsanatomi (e-learning skickas i förväg).",
     "image": "/images/Morpheus8_0146.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
@@ -26,14 +25,12 @@
     {
       "label": "21 mar 2026",
       "time": "09:00 – 17:30",
-      "seats": "8 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "8 platser kvar"
     },
     {
       "label": "25 apr 2026",
       "time": "09:00 – 17:30",
-      "seats": "4 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "4 platser kvar"
     }
   ],
   "about": {
@@ -58,8 +55,12 @@
   },
   "faq": {
     "enabled": true,
-    "intro": "",
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
     "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Legitimerad personal med injektionsvana eller genomförd botox-grundkurs. Legitimation och vid behov klinikkoppling verifieras vid anmälan."
+      },
       {
         "question": "Måste jag gått botox-kurs först?",
         "answer": "Rekommenderas. Undantag görs vid dokumenterad injektionserfarenhet."
@@ -69,8 +70,12 @@
         "answer": "Grundkursen introducerar läppanatomi; full läppmodul erbjuds separat."
       },
       {
-        "question": "Max antal deltagare?",
-        "answer": "6–8 beroende på datum, för att säkerställa tillräcklig handledningstid."
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Avbokningsregler?",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
       }
     ]
   }

@@ -1,0 +1,37 @@
+{
+  "nav": {
+    "language": "Språk",
+    "search": "Sök",
+    "searchTitle": "Sök",
+    "searchPlaceholder": "Sök behandling eller sidor",
+    "searchEmpty": "Inga träffar.",
+    "close": "Stäng",
+    "cart": "Varukorg",
+    "popularTreatments": "Populära behandlingar"
+  },
+  "cart": {
+    "title": "Varukorg",
+    "empty": "Varukorgen är tom.",
+    "shippingNote": "Frakt beräknas i kassan.",
+    "subtotal": "Delsumma",
+    "checkout": "Gå till kassan",
+    "continueShopping": "Fortsätt handla",
+    "decrease": "Minska",
+    "increase": "Öka",
+    "remove": "Ta bort",
+    "payments": "Betalningsalternativ"
+  },
+  "footer": {
+    "contact": "Kontakt"
+  },
+  "finder": {
+    "searchPlaceholder": "Sök behandling",
+    "emptySearch": "Inga behandlingar matchar din sökning.",
+    "emptyCategory": "Inga behandlingar i den här kategorin."
+  },
+  "page404": {
+    "title": "Sidan hittades inte",
+    "lead": "Sidan du söker finns inte eller har flyttats.",
+    "homeCta": "Till startsidan"
+  }
+}

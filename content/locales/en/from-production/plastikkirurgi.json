@@ -3,12 +3,12 @@
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/buccal-fat-removal",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/buccal-fat-removal",
-    "title": "Bukfettborttagning",
-    "heroIntro": "Bukfettborttagning (buccal fat removal) är ett kirurgiskt ingrepp som avlägsnar fettvävnad från kinderna för en slankare, mer konturerad ansiktsform. På Vivaci Klinik i Solna utförs ingreppet av erfarna kirurger i en trygg, medicinsk miljö.",
+    "title": "Buccal fat removal",
+    "heroIntro": "Abdominal fat removal (buccal fat removal) is a surgical procedure that removes fatty tissue from the cheeks for a slimmer, more contoured face shape. At Vivaci Clinic in Solna, the procedure is performed by experienced surgeons in a safe, medical environment.",
     "sections": {
       "Om ingreppet": {
         "paragraphs": [
-          "Bukfettborttagning innebär att fettkuddarna på insidan av kinderna (buccal fat pads) avlägsnas via en liten incision i munhålan.",
+          "Abdominal fat removal means that the fat pads on the inside of the cheeks (buccal fat pads) are removed via a small incision in the oral cavity.",
           "Målet är att skapa en mer definierad kindkontur och ett slankare ansiktsuttryck utan att påverka hudens yta utifrån.",
           "Ingreppet utförs ofta under lokal bedövning och tar vanligtvis cirka 30–45 minuter."
         ],
@@ -35,11 +35,11 @@
       },
       "Ingreppssteg": {
         "paragraphs": [
-          "1. Lokal bedövning av behandlingsområdet",
-          "2. Liten incision på insidan av kinden (i munhålan)",
-          "3. Försiktig avlägsnande av buccal fat pad",
-          "4. Kontroll av symmetri och avslut med sutur",
-          "5. Eftervårdsinstruktioner och uppföljningsplan"
+          "1. Local anesthesia of the treatment area",
+          "2. Small incision on the inside of the cheek (in the oral cavity)",
+          "3. Careful removal of buccal fat pad",
+          "4. Checking symmetry and closing with suture",
+          "5. Aftercare instructions and follow-up plan"
         ],
         "items": [],
         "children": {}
@@ -111,7 +111,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -119,12 +119,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -141,7 +141,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -149,7 +149,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -157,7 +157,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -165,7 +165,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -173,7 +173,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -181,7 +181,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -247,17 +247,17 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/dimples",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/dimples",
-    "title": "Gropbildning (kindergropar)",
+    "title": "Dimple creation",
     "heroIntro": "Gropbildning är ett kirurgiskt ingrepp som skapar naturliga kindergropar för ett leende med mer karaktär och symmetri. På Vivaci Klinik i Solna planeras varje ingrepp individuellt för att passa ditt ansikte.",
     "sections": {
       "Om ingreppet": {
@@ -289,11 +289,11 @@
       },
       "Ingreppssteg": {
         "paragraphs": [
-          "1. Markering av optimal gropplacering i samråd med dig",
-          "2. Lokal bedövning",
-          "3. Liten incision på insidan av kinden",
-          "4. Formning av grop genom förbindelse mellan hud och muskel",
-          "5. Avslut och eftervårdsinstruktioner"
+          "1. Marking the optimal pit location in consultation with you",
+          "2. Local anesthesia",
+          "3. Small incision on the inside of the cheek",
+          "4. Formation of pit by connection between skin and muscle",
+          "5. Termination and aftercare instructions"
         ],
         "items": [],
         "children": {}
@@ -365,7 +365,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -373,12 +373,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -395,7 +395,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -403,7 +403,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -411,7 +411,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -419,7 +419,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -427,7 +427,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -435,7 +435,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -501,17 +501,17 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
       "Vanliga frågor",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/eyebrow-lift",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/eyebrow-lift",
-    "title": "Ögonbrynslyft",
+    "title": "Brow lift",
     "heroIntro": "Ögonbrynslyft utförs av erfarna kirurger på Vivaci Klinik i Solna.",
     "sections": {
       "Om ingreppet": {
@@ -602,7 +602,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -610,12 +610,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -632,7 +632,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -640,7 +640,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -648,7 +648,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -656,7 +656,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -664,7 +664,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -672,7 +672,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -705,16 +705,16 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/eyelid-surgery",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/eyelid-surgery",
-    "title": "Ögonlocksplastik",
+    "title": "Eyelid surgery",
     "heroIntro": "Ögonlocksplastik utförs av erfarna kirurger på Vivaci Klinik i Solna.",
     "sections": {
       "Om ingreppet": {
@@ -805,7 +805,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -813,12 +813,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -835,7 +835,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -843,7 +843,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -851,7 +851,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -859,7 +859,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -867,7 +867,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -875,7 +875,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -908,16 +908,16 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/hair-transplant",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/hair-transplant",
-    "title": "Hårtransplantation",
+    "title": "Hair transplant",
     "heroIntro": "Hårtransplantation utförs av erfarna kirurger på Vivaci Klinik i Solna.",
     "sections": {
       "Om ingreppet": {
@@ -1008,7 +1008,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -1016,12 +1016,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -1038,7 +1038,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -1046,7 +1046,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -1054,7 +1054,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -1062,7 +1062,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -1070,7 +1070,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -1078,7 +1078,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -1111,16 +1111,16 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/liposuction",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/liposuction",
-    "title": "Fettsugning",
+    "title": "Liposuction",
     "heroIntro": "Fettsugning utförs av erfarna kirurger på Vivaci Klinik i Solna.",
     "sections": {
       "Om ingreppet": {
@@ -1211,7 +1211,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -1219,12 +1219,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -1241,7 +1241,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -1249,7 +1249,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -1257,7 +1257,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -1265,7 +1265,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -1273,7 +1273,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -1281,7 +1281,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -1314,16 +1314,16 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   },
   {
     "type": "plastikkirurgi",
     "path": "/plastikkirurgi/otoplasty",
     "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/otoplasty",
-    "title": "Otoplastik (öronkorrigering)",
+    "title": "Otoplasty (ear correction)",
     "heroIntro": "Otoplastik (öronkorrigering) utförs av erfarna kirurger på Vivaci Klinik i Solna.",
     "sections": {
       "Om ingreppet": {
@@ -1414,7 +1414,7 @@
           "Maria Ekström": {
             "paragraphs": [
               "Sjuksköterska",
-              "Vår metod"
+              "Our method"
             ],
             "items": []
           }
@@ -1422,12 +1422,12 @@
       },
       "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
         "paragraphs": [
-          "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+          "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
           "Varje resa börjar med en personlig konsultation.",
           "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
           "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
           "Din behandling väljs och anpassas specifikt för dig.",
-          "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+          "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
           "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
           "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
           "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -1444,7 +1444,7 @@
           "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
         ],
         "items": [
-          "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+          "01 IVO registered clinic Highest standards in patient safety and quality."
         ],
         "children": {
           "IVO-registrerad klinik": {
@@ -1452,7 +1452,7 @@
               "Högsta standard inom patientsäkerhet och kvalitet."
             ],
             "items": [
-              "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+              "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
             ]
           },
           "Kvalificerade specialister": {
@@ -1460,7 +1460,7 @@
               "Erfarna läkare och behandlare inom estetisk medicin."
             ],
             "items": [
-              "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+              "03 Personalized treatment plans Each plan is tailored to your unique needs."
             ]
           },
           "Personliga behandlingsplaner": {
@@ -1468,7 +1468,7 @@
               "Varje plan skräddarsys efter dina unika behov."
             ],
             "items": [
-              "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+              "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
             ]
           },
           "Avancerad medicinsk teknik": {
@@ -1476,7 +1476,7 @@
               "Ledande utrustning och evidensbaserade metoder."
             ],
             "items": [
-              "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+              "05 Premium Products We only work with trusted medical brands."
             ]
           },
           "Premium produkter": {
@@ -1484,7 +1484,7 @@
               "Vi arbetar endast med pålitliga, medicinska varumärken."
             ],
             "items": [
-              "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+              "06 Natural Results Subtle enhancements that enhance your natural appearance."
             ]
           },
           "Naturliga resultat": {
@@ -1517,9 +1517,9 @@
       "Efter behandling",
       "Patientrecensioner",
       "Möt våra experter",
-      "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+      "Advanced diagnostics. Personal treatments. Better results.",
       "Därför väljer patienter Vivaci",
-      "Boka din kostnadsfria konsultation"
+      "Book your free consultation"
     ]
   }
 ]

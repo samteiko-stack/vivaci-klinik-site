@@ -4,12 +4,20 @@
   "slug": "eye-bags",
   "path": "/problem/eye-bags",
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/eye-bags",
-  "title": "Påsar under ögonen",
+  "title": "Under-eye bags",
   "sections": {
     "hero": {
       "enabled": true,
-      "title": "Påsar under ögonen",
-      "intro": "Här förklarar vi vad påsar under ögonen är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov."
+      "title": "Under-eye bags",
+      "intro": "Här förklarar vi vad påsar under ögonen är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
     },
     "facts": {
       "enabled": true,
@@ -18,19 +26,29 @@
       "items": [
         {
           "label": "Typ",
-          "value": "Hudproblem",
+          "value": "Skin concerns",
           "icon": "layout-grid"
         },
         {
           "label": "Konsultation",
           "value": "Kostnadsfri",
           "icon": "calendar-check"
+        },
+        {
+          "label": "Treatment time",
+          "value": "Varierar",
+          "icon": "timer"
+        },
+        {
+          "label": "Pris",
+          "value": "Vid konsultation",
+          "icon": "wallet"
         }
       ]
     },
     "overview": {
       "enabled": true,
-      "tagline": "Hudproblem",
+      "tagline": "Skin concerns",
       "heading": "Fakta om Påsar under ögonen",
       "blocks": [
         {
@@ -54,7 +72,7 @@
         {
           "id": "assessment",
           "heading": "Hur vi bedömer det",
-          "body": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
+          "body": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.",
           "enabled": true
         }
       ]
@@ -84,6 +102,11 @@
     },
     "faq": {
       "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Påsar under ögonen. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Learn about our method",
+        "href": "#vivaci-method"
+      },
       "items": [
         {
           "question": "Kan påsar under ögonen behandlas helt?",
@@ -91,11 +114,19 @@
         },
         {
           "question": "Hur många behandlingar behövs?",
-          "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+          "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
         },
         {
           "question": "Finns det någon återhämtningstid?",
           "answer": "De flesta behandlingar har minimal eller ingen downtime. Du får tydliga instruktioner före och efter."
+        },
+        {
+          "question": "Vad är Påsar under ögonen?",
+          "answer": "Påsar under ögonen är ett tillstånd som många söker hjälp för. Vid en kostnadsfri konsultation på Vivaci Klinik går vi igenom dina symtom, hud/historik och vilka behandlingsvägar som är realistiska."
+        },
+        {
+          "question": "Hur bedömer ni påsar under ögonen?",
+          "answer": "Vi gör en medicinsk och estetisk bedömning utifrån ditt utgångsläge och dina mål. Du får tydlig information om vad som kan förbättras och vilket upplägg som passar."
         }
       ]
     },
@@ -114,16 +145,35 @@
       "enabled": true
     },
     "quizCta": {
-      "enabled": true
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
     },
     "beforeAfterCare": {
       "enabled": false
-    },
-    "beforeAfterGallery": {
-      "enabled": false
-    },
-    "bottomCta": {
-      "enabled": true
     }
   }
 }

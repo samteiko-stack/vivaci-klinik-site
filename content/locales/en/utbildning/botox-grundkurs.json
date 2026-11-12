@@ -2,44 +2,40 @@
   "version": 1,
   "slug": "botox-grundkurs",
   "path": "/utbildning/botox-grundkurs",
-  "title": "Botox — grundkurs",
+  "title": "Botox — Basic Course",
   "metaDescription": "Heldags grundkurs i botulinumtoxin för legitimerad personal. Anatomi, dosering, demo och hands-on på Vivaci Academy.",
   "hero": {
-    "title": "Botox — grundkurs",
+    "title": "Botox — Basic Course",
     "intro": "En introduktionskurs för behörig medicinsk personal som vill komma igång med botulinumtoxin i klinisk vardag. Du får samma struktur som Vivaci använder i mottagningen: tydlig bedömning, låga doser och naturliga resultat.",
     "audience": "Legitimerad läkare, tandläkare med särskild behörighet eller sjuksköterska med vidareutbildning inom estetisk medicin. Minst ett års erfarenhet av kliniskt patientarbete. Vi begär legitimation vid anmälan.",
     "image": "/images/Fillers_0055.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
     "intro": "Heldagsutbildning med teori, live-demonstration och handledd praktik i små grupper (max 8 deltagare). Kursmaterial, lunch och kursintyg ingår.",
-    "fee": "49 900 kr",
+    "fee": "49,900 SEK",
     "feeNote": " / deltagare exkl. moms",
     "level": "Grundkurs",
-    "duration": "1 heldag · 09:00–17:00",
+    "duration": "1 full day · 09:00–17:00",
     "location": "Vivaci Klinik, Råsundavägen 4, Solna"
   },
   "dates": [
     {
-      "label": "14 mar 2026",
+      "label": "Mar 14, 2026",
       "time": "09:00 – 17:00",
-      "seats": "6 platser kvar",
-      "enrollHref": "/kontakt"
+      "seats": "6 spots left"
     },
     {
-      "label": "11 apr 2026",
+      "label": "Apr 11, 2026",
       "time": "09:00 – 17:00",
-      "seats": "Reservlista",
-      "enrollHref": "/kontakt"
+      "seats": "Reservlista"
     },
     {
-      "label": "16 maj 2026",
+      "label": "May 16, 2026",
       "time": "09:00 – 17:00",
-      "seats": "10 platser",
-      "enrollHref": "/kontakt"
+      "seats": "10 seats"
     }
   ],
   "about": {
@@ -80,10 +76,10 @@
       },
       {
         "question": "Hur anmäler jag mig?",
-        "answer": "Klicka Anmäl intresse eller Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
       },
       {
-        "question": "Avbokningsregler?",
+        "question": "Cancellation Policy",
         "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
       }
     ]

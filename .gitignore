@@ -5,3 +5,8 @@ scripts/.venv/
 content/shopify/storefront-config.json
 .env
 .env.*
+.vercel
+node_modules/
+content-admin/.next/
+__pycache__/
+*.pyc

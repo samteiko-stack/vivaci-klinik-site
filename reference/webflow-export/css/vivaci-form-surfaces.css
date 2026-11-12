@@ -1,0 +1,35 @@
+/**
+ * Forms & inputs sitewide — map Webflow fields to Vivaci beige ramp + ink.
+ * Bundled via css/vivaci.css.
+ */
+
+.form_input,
+.form_input.is-text-area,
+.form_input.is-select-input,
+.w-input,
+.w-select,
+textarea.w-input {
+  border-color: var(--vivaci-surface-deep);
+  background-color: var(--vivaci-surface-field);
+  color: var(--vivaci-text);
+}
+
+.form_input::placeholder,
+.w-input::placeholder {
+  color: var(--vivaci-text-muted);
+}
+
+.form_input:focus,
+.form_input.is-text-area:focus,
+.form_input.is-select-input:focus,
+.w-input:focus,
+.w-select:focus {
+  border-color: var(--vivaci-brand-2);
+  outline: none;
+}
+
+.filters5_keyword-search .form_input,
+[data-vivaci-category-finder] .form_input {
+  background-color: var(--vivaci-surface-field);
+  border-color: var(--vivaci-surface-deep);
+}

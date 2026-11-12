@@ -4,6 +4,16 @@
 
   var NAV_URL = "/content/from-production/nav.json";
 
+  function localizedHref(href) {
+    if (!href || !window.VivaciLocaleRouting || !window.VivaciLocaleRouting.localizeHref) {
+      return href;
+    }
+    var locale =
+      window.VivaciLocaleRouting.localeFromPathname &&
+      window.VivaciLocaleRouting.localeFromPathname();
+    return window.VivaciLocaleRouting.localizeHref(href, locale);
+  }
+
   function fetchContent(path) {
     if (window.VivaciI18n && window.VivaciI18n.fetchContent) {
       return window.VivaciI18n.fetchContent(path);
@@ -17,6 +27,12 @@
   function imageForHref(href) {
     var lookup = window.__vivaciTreatmentImageForHref;
     return lookup && href ? lookup(href) : null;
+  }
+
+  function treatmentPreviewImage(href, fallback) {
+    var mapped = imageForHref(href);
+    if (mapped) return mapped;
+    return fallback || null;
   }
 
   function isOverviewItem(item) {
@@ -49,7 +65,7 @@
         href: it.href,
         label: it.label,
         description: it.description,
-        image: it.image || imageForHref(it.href),
+        image: treatmentPreviewImage(it.href, it.image),
       };
     });
   }
@@ -93,14 +109,15 @@
       }
       card.style.display = "";
       card.removeAttribute("data-nav-hidden");
-      card.setAttribute("href", item.href);
+      card.setAttribute("href", localizedHref(item.href));
       var title = card.querySelector(".text-weight-semibold");
       if (title) title.textContent = item.label;
       var sub = card.querySelector(".text-size-tiny.text-style-muted");
       if (sub && item.description) sub.textContent = item.description;
       var img = card.querySelector(".navbar10_blog-item-image");
-      if (img && item.image) {
-        img.src = item.image;
+      var previewSrc = treatmentPreviewImage(item.href, item.image);
+      if (img && previewSrc) {
+        img.src = previewSrc;
         img.removeAttribute("srcset");
         img.alt = item.label;
       }
@@ -128,7 +145,7 @@
       }
       link.style.display = "";
       link.removeAttribute("data-nav-hidden");
-      link.setAttribute("href", item.href);
+      link.setAttribute("href", localizedHref(item.href));
       var title = link.querySelector(".text-weight-semibold");
       if (title) title.textContent = item.label;
       var sub = link.querySelector(".text-size-tiny.text-style-muted");
@@ -145,7 +162,7 @@
     document.querySelectorAll("a.navbar14_link.w-nav-link").forEach(function (a) {
       var label = (a.textContent || "").trim();
       if (label === "Utbildning" || label === "Training") {
-        a.setAttribute("href", "/utbildning");
+        a.setAttribute("href", localizedHref("/utbildning"));
       }
     });
   }
@@ -172,7 +189,7 @@
     list.innerHTML = "";
     links.forEach(function (item) {
       var a = template.cloneNode(true);
-      a.setAttribute("href", item.href || "#");
+      a.setAttribute("href", localizedHref(item.href || "#"));
       a.textContent = item.label || "";
       list.appendChild(a);
     });

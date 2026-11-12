@@ -12,11 +12,11 @@
       "intro": "Botulinum Toxin är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
       "primaryCta": {
         "label": "Boka gratis konsultation",
-        "href": "/kontakt"
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
       },
       "secondaryCta": {
         "label": "Boka behandling",
-        "href": "/kontakt"
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
       }
     },
     "facts": {
@@ -200,7 +200,7 @@
       "intro": "Här hittar du svar på vanliga frågor om Botulinum Toxin. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
       "methodCta": {
         "label": "Boka kostnadsfri konsultation",
-        "href": "/kontakt"
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
       },
       "items": [
         {
@@ -247,15 +247,23 @@
     },
     "related": {
       "enabled": true,
-      "heading": "Relaterat",
+      "heading": "Relaterade behandlingar",
       "items": [
         {
-          "title": "Fina linjer & rynkor",
-          "href": "/problem/fine-lines-wrinkles"
+          "title": "Dermal Fillers",
+          "href": "/behandlingar/dermal-fillers"
         },
         {
-          "title": "Rynkor",
-          "href": "/problem/wrinkles"
+          "title": "Sculptra",
+          "href": "/behandlingar/sculptra"
+        },
+        {
+          "title": "Skin boosters",
+          "href": "/behandlingar/skin-boosters"
+        },
+        {
+          "title": "PRP hud",
+          "href": "/behandlingar/prp-skin"
         }
       ]
     },
@@ -309,7 +317,7 @@
       "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
       "primaryCta": {
         "label": "Kontakta oss",
-        "href": "/kontakt"
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
       }
     },
     "beforeAfterGallery": {

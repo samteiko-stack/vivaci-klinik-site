@@ -8,40 +8,56 @@
       "label": "Clinic environment"
     },
     "section-plastikkirurgi": {
-      "path": "/images/stock/section-plastikkirurgi.jpg",
-      "source": "unsplash",
-      "remoteUrl": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=1200&q=85",
-      "label": "Medical consultation"
+      "path": "/images/ak/sections/section-plastikkirurgi.jpg",
+      "source": "ak.se",
+      "pexelsPhotoId": 5452293,
+      "label": "Plastikkirurgi på Vivaci Klinik",
+      "attribution": "Akademikliniken (ak.se)",
+      "pageUrl": "https://ak.se/vart-utbud/fettsugning/"
     },
     "section-method": {
-      "path": "/images/stock/section-method.jpg",
-      "source": "unsplash",
-      "remoteUrl": "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=85",
-      "label": "Calm clinical care"
+      "path": "/images/ak/sections/section-method.jpg",
+      "source": "ak.se",
+      "pexelsPhotoId": 6129507,
+      "label": "Vår metod — konsultation på Vivaci",
+      "attribution": "Akademikliniken (ak.se)",
+      "pageUrl": "https://ak.se/vart-utbud/ansiktsbehandlingar/"
     },
     "team-1": {
-      "path": "/images/stock/team-1.jpg",
-      "source": "unsplash",
+      "path": "/images/ak/team/team-1.png",
+      "source": "ak.se",
       "remoteUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=85",
-      "label": "Professional portrait"
+      "label": "Dr. Angelica Hagelberg",
+      "role": "Specialist i plastikkirurgi",
+      "pageUrl": "https://ak.se/var-personal/dr-angelica-hagelberg/",
+      "attribution": "Akademikliniken (ak.se)"
     },
     "team-2": {
-      "path": "/images/stock/team-2.jpg",
-      "source": "unsplash",
+      "path": "/images/ak/team/team-2.png",
+      "source": "ak.se",
       "remoteUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=85",
-      "label": "Professional portrait"
+      "label": "Dr. Gabriella Sellman",
+      "role": "Specialist i plastikkirurgi · medicinskt ansvarig",
+      "pageUrl": "https://ak.se/var-personal/dr-gabriella-sellman/",
+      "attribution": "Akademikliniken (ak.se)"
     },
     "team-3": {
-      "path": "/images/stock/team-3.jpg",
-      "source": "unsplash",
+      "path": "/images/ak/team/team-3.png",
+      "source": "ak.se",
       "remoteUrl": "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=85",
-      "label": "Professional portrait"
+      "label": "Dr. Ulf Samuelson",
+      "role": "Specialist i plastikkirurgi",
+      "pageUrl": "https://ak.se/var-personal/dr-ulf-garpered/",
+      "attribution": "Akademikliniken (ak.se)"
     },
     "team-4": {
-      "path": "/images/stock/team-4.jpg",
-      "source": "unsplash",
+      "path": "/images/ak/team/team-4.jpg",
+      "source": "ak.se",
       "remoteUrl": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=800&q=85",
-      "label": "Professional portrait"
+      "label": "Malin Medin",
+      "role": "Leg. specialistsköterska",
+      "pageUrl": "https://ak.se/var-personal/malin-medin/",
+      "attribution": "Akademikliniken (ak.se)"
     },
     "blog-1": {
       "path": "/images/stock/blog-1.jpg",
@@ -80,10 +96,12 @@
       "label": "Nav blog thumb"
     },
     "cta-bottom": {
-      "path": "/images/stock/cta-bottom.jpg",
-      "source": "unsplash",
-      "remoteUrl": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=2400&q=85",
-      "label": "Booking CTA background"
+      "path": "/images/ak/cta/cta-bottom.jpg",
+      "source": "ak.se",
+      "remoteUrl": "https://ak.se/wp-content/uploads/2021/11/ak.jpeg",
+      "label": "Book a free consultation",
+      "pageUrl": "https://ak.se/vart-utbud/ansiktsbehandlingar/",
+      "attribution": "Akademikliniken (ak.se)"
     },
     "blog-author": {
       "path": "/images/stock/blog-author.jpg",

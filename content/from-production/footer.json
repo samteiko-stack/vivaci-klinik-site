@@ -2,7 +2,7 @@
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
   "contact": {
     "address": {
-      "label": "Solna Centrum, Torg 3, Plan 2 171 45 Solna",
+      "label": "Solna Centrum, Torg 3, Plan 2,<br>171 45 Solna",
       "href": "https://www.google.com/maps/search/?api=1&query=Solna%20Torg%203%2C%20Plan%202%2C%20171%2045%20Solna"
     },
     "phone": {
@@ -37,64 +37,56 @@
       "links": [
         {
           "label": "Före & Efter",
-          "href": "/fore-efter"
+          "href": "/behandlingar/hydrafacial#results"
         },
         {
           "label": "Patientrecensioner",
-          "href": "/recensioner"
+          "href": "/#vivaci-home-why"
         },
         {
           "label": "Varumärken",
-          "href": "/varumarken"
+          "href": "/#vivaci-home-brands"
         },
         {
           "label": "Vanliga frågor",
-          "href": "/faq"
+          "href": "/#vivaci-home-faq"
         },
         {
           "label": "Nyheter & tips",
-          "href": "/nyheter"
+          "href": "/blogg"
         },
         {
           "label": "Betalningsalternativ",
-          "href": "/betalning"
+          "href": "/#vivaci-home-faq"
         }
       ]
     },
     {
-      "title": "Kliniken",
+      "title": "Om Vivaci",
       "links": [
-        {
-          "label": "Prislista",
-          "href": "/prislista"
-        },
-        {
-          "label": "Kontakt",
-          "href": "/kontakt"
-        },
         {
           "label": "Om oss",
           "href": "/om-oss"
         },
         {
           "label": "Möt våra experter",
-          "href": "/experter"
+          "href": "/om-oss#vivaci-om-team"
         },
         {
           "label": "Vår metod",
-          "href": "/var-metod"
+          "href": "/om-oss#vivaci-om-method"
         },
         {
           "label": "Varför Vivaci",
-          "href": "/varfor-vivaci"
+          "href": "/om-oss#vivaci-om-values"
         },
         {
           "label": "Patientsäkerhet",
-          "href": "/patientsakerhet"
+          "href": "/#vivaci-home-why"
         },
         {
           "label": "Karriär",
-          "href": "/karriar"
+          "href": "/kontakt"
         }
       ]
     }
@@ -112,17 +104,25 @@
       "href": "/integritetspolicy"
     },
     {
-      "label": "Cookiepolicy",
-      "href": "/cookies"
-    },
-    {
-      "label": "Köpvillkor",
+      "label": "Allmänna villkor",
       "href": "/villkor"
     },
     {
       "label": "Avbokning & återbetalning",
       "href": "/avbokning"
+    },
+    {
+      "label": "Franchisemöjligheter",
+      "href": "/kontakt"
+    },
+    {
+      "label": "Cookieinställningar",
+      "href": "/cookies"
+    },
+    {
+      "label": "Temporary admin link",
+      "href": "/content-admin"
     }
   ],
-  "copyright": "© 2026 Vivaci Klinik . Alla rättigheter förbehållna."
+  "copyright": "© 2026 Vivaci Klinik. Alla rättigheter förbehållna."
 }

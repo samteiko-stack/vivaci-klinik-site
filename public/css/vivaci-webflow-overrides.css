@@ -1,0 +1,56 @@
+/**
+ * Token bridge over Webflow export literals (incremental — extend as audits find stragglers).
+ * Bundled via css/vivaci.css.
+ */
+
+.navbar14_dropdown-link:hover,
+.navbar14_dropdown-link.w--current,
+.dropdown2_dropdown-link:hover {
+  background-color: var(--vivaci-brand-3) !important;
+}
+
+.dropdown2_toggle {
+  background-color: var(--vivaci-surface-field);
+  border-color: var(--vivaci-brand-2);
+}
+
+.dropdown2_dropdown-list.w--open {
+  background-color: var(--vivaci-surface-field);
+  border-color: var(--vivaci-brand-2);
+}
+
+.cookie-banner4_component {
+  background-color: var(--vivaci-brand-1) !important;
+  color: var(--vivaci-text);
+}
+
+.navbar14_dropdown-list.w--open,
+.navbar14_dropdown-list.shadow-small.w--open {
+  background-color: var(--vivaci-surface-field);
+  border-color: var(--vivaci-surface-deep);
+}
+
+.is-section.section_layout484.bg-light {
+  background-color: var(--vivaci-brand-3);
+}
+
+.button {
+  -webkit-backdrop-filter: blur(var(--vivaci-button-backdrop-blur));
+  backdrop-filter: blur(var(--vivaci-button-backdrop-blur));
+  background-color: var(--vivaci-button-filled-bg);
+}
+
+.button.is-link,
+.button.is-secondary,
+.button.is-secondary.is-alternate {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.button.is-secondary {
+  border-color: var(--vivaci-button-secondary-border-color, var(--vivaci-neutral-lighter));
+}
+
+.button.is-secondary:hover {
+  border-color: var(--vivaci-button-secondary-border-color-hover, var(--vivaci-neutral-light));
+}

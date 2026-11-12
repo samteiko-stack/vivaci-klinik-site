@@ -14,6 +14,8 @@
     "restart": "Gör om quizet",
     "stepOf": "Steg {current} av {total}",
     "selectOne": "Välj ett alternativ",
+    "selectOneAuto": "Tryck på ett alternativ för att gå vidare",
+    "selectOneVisual": "Tryck på det område som känns viktigast — du går vidare direkt.",
     "selectMany": "Välj alla som stämmer",
     "resultsTitle": "Dina rekommenderade behandlingar",
     "resultsLead": "Baserat på dina svar har vi tagit fram behandlingar som kan passa dig. Varje förslag bygger på det du berättat — en konsultation avgör alltid vad som är rätt i ditt fall.",
@@ -21,7 +23,7 @@
     "readMore": "Läs om behandlingen",
     "emptyResults": "Vi kunde inte matcha några behandlingar utifrån dina svar. Boka gärna en kostnadsfri konsultation så hjälper vi dig personligen.",
     "consultCta": "Boka gratis konsultation",
-    "consultHref": "/kontakt"
+    "consultHref": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
   },
   "intro": {
     "eyebrow": "Behandlingsguide",
@@ -33,48 +35,55 @@
     {
       "id": "main_goal",
       "type": "single",
+      "layout": "visual",
       "prompt": "Vad vill du främst förbättra?",
       "subtitle": "Välj det område som känns viktigast just nu.",
       "options": [
         {
           "id": "skin",
+          "image": "/images/railway/problem-uneven-skin-tone.webp",
           "label": "Hudton & hudproblem",
-          "hint": "Acne, pigment, porer, känslighet med mera",
+          "hint": "Acne, pigment, porer, känslighet",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "aging",
-          "label": "Rynkor & tecken på ålder",
-          "hint": "Linjer, volymförlust, slapp hud",
+          "image": "/images/railway/problem-fine-lines-wrinkles.webp",
+          "label": "Rynkor & ålder",
+          "hint": "Linjer, volym, slapp hud",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "face",
-          "label": "Form & uttryck i ansiktet",
-          "hint": "Läppar, konturer, ögonområdet",
+          "image": "/images/ak/treatments/dermal-fillers.png",
+          "label": "Form & uttryck",
+          "hint": "Läppar, konturer, ögon",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "body",
+          "image": "/images/railway/problem-body-contouring.webp",
           "label": "Kropp & silhuett",
-          "hint": "Fett, kontur, cellulite, vikt",
+          "hint": "Fett, kontur, cellulite",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "hair",
+          "image": "/images/railway/problem-hair-loss.webp",
           "label": "Hår & hårbotten",
-          "hint": "Håravfall, tunnare hår, oönskat hår",
+          "hint": "Håravfall, tunnare hår",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "surgery",
-          "label": "Kirurgi & ingrepp",
-          "hint": "Permanent förändring med kirurgi",
+          "image": "/images/ak/treatments/liposuction.jpg",
+          "label": "Kirurgi",
+          "hint": "Permanent kirurgi",
           "weights": {},
           "reasons": {}
         }
@@ -85,18 +94,28 @@
       "type": "multi",
       "prompt": "Vilka hudutmaningar känner du igen?",
       "subtitle": "Välj alla som stämmer.",
-      "showIf": { "questionId": "main_goal", "optionId": "skin" },
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "skin"
+      },
       "options": [
         {
           "id": "acne",
           "label": "Acne & utbrott",
-          "weights": { "/problem/acne": 4 },
-          "reasons": { "/problem/acne": "Du beskrev acne och utbrott som ett huvudproblem." }
+          "weights": {
+            "/problem/acne": 4
+          },
+          "reasons": {
+            "/problem/acne": "Du beskrev acne och utbrott som ett huvudproblem."
+          }
         },
         {
           "id": "acne_scars",
           "label": "Acnärr",
-          "weights": { "/problem/acne-scars": 4, "/problem/scars": 2 },
+          "weights": {
+            "/problem/acne-scars": 4,
+            "/problem/scars": 2
+          },
           "reasons": {
             "/problem/acne-scars": "Du nämnde märken efter acne.",
             "/problem/scars": "Ärrbehandling kan komplettera arbetet med hudtextur."
@@ -119,7 +138,10 @@
         {
           "id": "pores",
           "label": "Förstorade porer & struktur",
-          "weights": { "/problem/enlarged-pores": 4, "/problem/dull-skin": 2 },
+          "weights": {
+            "/problem/enlarged-pores": 4,
+            "/problem/dull-skin": 2
+          },
           "reasons": {
             "/problem/enlarged-pores": "Finare porer och struktur var centralt i dina svar.",
             "/problem/dull-skin": "Glans och lyster kan förbättras samtidigt."
@@ -156,7 +178,9 @@
         {
           "id": "lesions",
           "label": "Hudförändringar jag vill ha bedömda",
-          "weights": { "/problem/skin-lesions": 5 },
+          "weights": {
+            "/problem/skin-lesions": 5
+          },
           "reasons": {
             "/problem/skin-lesions": "Du vill få hudförändringar medicinskt bedömda."
           }
@@ -167,7 +191,10 @@
       "id": "aging_concerns",
       "type": "multi",
       "prompt": "Vad stör dig mest med ålder eller rynkor?",
-      "showIf": { "questionId": "main_goal", "optionId": "aging" },
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "aging"
+      },
       "options": [
         {
           "id": "lines",
@@ -210,7 +237,10 @@
         {
           "id": "quality",
           "label": "Huden känns tunnare eller trött",
-          "weights": { "/problem/skin-quality-hydration": 4, "/problem/dull-skin": 2 },
+          "weights": {
+            "/problem/skin-quality-hydration": 4,
+            "/problem/dull-skin": 2
+          },
           "reasons": {
             "/problem/skin-quality-hydration": "Du vill förbättra hudkvalitet och spänst.",
             "/problem/dull-skin": "Mer lyster kan kombineras i samma plan."
@@ -222,7 +252,10 @@
       "id": "face_concerns",
       "type": "multi",
       "prompt": "Vad vill du justera i ansiktet?",
-      "showIf": { "questionId": "main_goal", "optionId": "face" },
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "face"
+      },
       "options": [
         {
           "id": "lips",
@@ -251,7 +284,9 @@
         {
           "id": "sweat",
           "label": "Överdriven svettning",
-          "weights": { "/problem/excessive-sweating": 5 },
+          "weights": {
+            "/problem/excessive-sweating": 5
+          },
           "reasons": {
             "/problem/excessive-sweating": "Du beskrev svett som ett problem vi kan behandla medicinskt."
           }
@@ -259,7 +294,10 @@
         {
           "id": "skin_glow",
           "label": "Fräschare hud överlag",
-          "weights": { "/problem/skin-quality-hydration": 3, "/problem/dull-skin": 3 },
+          "weights": {
+            "/problem/skin-quality-hydration": 3,
+            "/problem/dull-skin": 3
+          },
           "reasons": {
             "/problem/skin-quality-hydration": "Hudkvalitet och hydrering stämmer med ditt önskade uttryck.",
             "/problem/dull-skin": "Du vill ha ett piggare, mer utvilat intryck."
@@ -271,7 +309,10 @@
       "id": "body_concerns",
       "type": "multi",
       "prompt": "Vad vill du förbättra kring kroppen?",
-      "showIf": { "questionId": "main_goal", "optionId": "body" },
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "body"
+      },
       "options": [
         {
           "id": "fat",
@@ -290,8 +331,12 @@
         {
           "id": "cellulite",
           "label": "Cellulite & ojämn yta",
-          "weights": { "/problem/cellulite": 5 },
-          "reasons": { "/problem/cellulite": "Du nämnde cellulite eller gropig hud." }
+          "weights": {
+            "/problem/cellulite": 5
+          },
+          "reasons": {
+            "/problem/cellulite": "Du nämnde cellulite eller gropig hud."
+          }
         },
         {
           "id": "loose",
@@ -308,7 +353,9 @@
         {
           "id": "weight",
           "label": "Vikt & livsstil",
-          "weights": { "/problem/overweight-weight-loss": 5 },
+          "weights": {
+            "/problem/overweight-weight-loss": 5
+          },
           "reasons": {
             "/problem/overweight-weight-loss": "Du sökte medicinskt stöd kring vikt."
           }
@@ -316,7 +363,9 @@
         {
           "id": "swelling",
           "label": "Svullnad & vätskeansamling",
-          "weights": { "/problem/swelling-lymphatic-drainage": 4 },
+          "weights": {
+            "/problem/swelling-lymphatic-drainage": 4
+          },
           "reasons": {
             "/problem/swelling-lymphatic-drainage": "Lymfdränage kan minska svullnad och stödja återhämtning."
           }
@@ -327,7 +376,10 @@
       "id": "hair_concerns",
       "type": "multi",
       "prompt": "Vad beskriver ditt hår eller hårbotten bäst?",
-      "showIf": { "questionId": "main_goal", "optionId": "hair" },
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "hair"
+      },
       "options": [
         {
           "id": "loss",
@@ -348,7 +400,9 @@
         {
           "id": "unwanted",
           "label": "Oönskat hår på kroppen",
-          "weights": { "/problem/unwanted-hair": 5 },
+          "weights": {
+            "/problem/unwanted-hair": 5
+          },
           "reasons": {
             "/problem/unwanted-hair": "Permanent hårminskning matchar ditt mål."
           }
@@ -359,7 +413,10 @@
       "id": "surgery_interest",
       "type": "multi",
       "prompt": "Vilket kirurgiskt område är du nyfiken på?",
-      "showIf": { "questionId": "main_goal", "optionId": "surgery" },
+      "showIf": {
+        "questionId": "main_goal",
+        "optionId": "surgery"
+      },
       "options": [
         {
           "id": "body_surgery",

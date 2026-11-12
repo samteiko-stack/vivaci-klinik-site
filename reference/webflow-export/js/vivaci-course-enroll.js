@@ -297,15 +297,45 @@
     });
   }
 
+  function scrollToCourseDates() {
+    var target =
+      document.getElementById("vivaci-course-dates") ||
+      document.querySelector('[data-vivaci-field="dates-list"]');
+    if (!target) return;
+    var prefersReduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    target.scrollIntoView({
+      behavior: prefersReduced ? "auto" : "smooth",
+      block: "start",
+    });
+  }
+
   document.addEventListener("click", function (e) {
+    var scrollTrigger = e.target.closest("[data-vivaci-course-scroll-dates]");
+    if (scrollTrigger) {
+      e.preventDefault();
+      scrollToCourseDates();
+      return;
+    }
+
     var trigger = e.target.closest("[data-vivaci-course-enroll]");
     if (!trigger) return;
     e.preventDefault();
-    openModal({
-      dateLabel: trigger.getAttribute("data-course-date") || "",
-      time: trigger.getAttribute("data-course-time") || "",
-    });
+
+    var dateLabel = trigger.getAttribute("data-course-date") || "";
+    var time = trigger.getAttribute("data-course-time") || "";
+    if (!dateLabel && !time) {
+      scrollToCourseDates();
+      return;
+    }
+
+    openModal({ dateLabel: dateLabel, time: time });
   });
 
-  window.VivaciCourseEnroll = { open: openModal, close: closeModal };
+  window.VivaciCourseEnroll = {
+    open: openModal,
+    close: closeModal,
+    scrollToDates: scrollToCourseDates,
+  };
 })();

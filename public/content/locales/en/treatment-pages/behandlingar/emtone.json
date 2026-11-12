@@ -1,0 +1,202 @@
+{
+  "version": 1,
+  "category": "behandlingar",
+  "slug": "emtone",
+  "path": "/behandlingar/emtone",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/behandlingar/emtone",
+  "title": "EMTONE",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "EMTONE",
+      "intro": "EMTONE är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs av certifierade experter i en lugn, exklusiv miljö.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Treatment time",
+          "value": "30–90 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "Ofta samma dag",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Låg till måttlig",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 1 695 kr",
+          "icon": "wallet"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Om behandlingen",
+      "heading": "EMTONE",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "EMTONE är en avancerad behandling inom klinisk estetik som används för att förbättra hudens eller kroppens utseende och kvalitet.\n\nPå Vivaci Klinik kombinerar vi medicinsk expertis med modern teknik för att leverera säkra, naturliga resultat.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "De flesta patienter upplever minimalt obehag. Vi prioriterar din komfort genom hela behandlingen.",
+          "enabled": true
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "The treatment works by stimulating the body's natural repair and renewal processes.\n\nThe exact mechanism and technology are explained in detail during your consultation so that you feel safe and informed.",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Under konsultationen bedömer vi om EMTONE är rätt behandling för dig baserat på hudtyp, medicinsk historik och estetiska mål.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": true,
+      "items": [
+        {
+          "title": "Förbättrad hudkvalitet",
+          "body": "Förbättrad hudkvalitet och synliga resultat över tid."
+        },
+        {
+          "title": "Minimal downtime",
+          "body": "Minimal downtime och skräddarsydd plan utifrån dina mål."
+        },
+        {
+          "title": "Enjoyable experience",
+          "body": "De flesta patienter upplever minimalt obehag. Vi prioriterar din komfort genom hela behandlingen."
+        }
+      ]
+    },
+    "howItWorks": {
+      "enabled": true,
+      "heading": "Så fungerar det",
+      "body": "The treatment works by stimulating the body's natural repair and renewal processes.\n\nThe exact mechanism and technology are explained in detail during your consultation so that you feel safe and informed.",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om EMTONE. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Book a free consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "items": [
+        {
+          "question": "Hur lång tid tar EMTONE?",
+          "answer": "Processing time varies but most sessions take between 30 and 90 minutes."
+        },
+        {
+          "question": "När ser jag resultat?",
+          "answer": "Resultat kan synas gradvis. Tidslinjen beror på behandlingstyp och individuella förutsättningar."
+        },
+        {
+          "question": "Hur bokar jag EMTONE?",
+          "answer": "Kontakta Vivaci Klinik i Solna eller boka via webbplatsen. Vi börjar med en kostnadsfri konsultation där vi går igenom om EMTONE passar dina mål och förutsättningar."
+        },
+        {
+          "question": "Finns det återhämtningstid?",
+          "answer": "Det varierar mellan behandlingar. Vi informerar om eventuell rodnad, svullnad eller vila och ger konkret eftervård så att du vet vad som gäller efteråt."
+        },
+        {
+          "question": "Vad kostar EMTONE?",
+          "answer": "Priset beror på omfattning och individuell plan. Efter konsultationen får du ett tydligt prisförslag innan du bokar behandling."
+        }
+      ]
+    },
+    "related": {
+      "enabled": true,
+      "heading": "Relaterat",
+      "items": [
+        {
+          "title": "Cellulite Här förklarar vi vad cellulite är, varför det uppstår och hur vi kan hjälpa till att förbättra hudens utseende",
+          "href": "/problem/cellulite"
+        }
+      ]
+    },
+    "beforeAfterCare": {
+      "enabled": true,
+      "introBefore": "Följ instruktionerna du får vid konsultationen. Undvik sol, vissa produkter och mediciner enligt anvisning.",
+      "before": [],
+      "introAfter": "Följ eftervårdsinstruktionerna noggrant. Undvik direkt solljus och använd rekommenderade produkter.",
+      "after": []
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
+    }
+  }
+}

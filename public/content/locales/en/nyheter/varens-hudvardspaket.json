@@ -1,0 +1,22 @@
+{
+  "title": "Vårens hudvårdspaket — begränsat antal",
+  "metaDescription": "Kombinera konsultation och behandling till paketpris — en nystart för huden inför sommaren.",
+  "category": "Erbjudande",
+  "excerpt": "Kombinera konsultation och behandling till ett förmånligt paketpris inför sommaren.",
+  "date": "3 Apr 2026",
+  "readTime": "3 min read",
+  "author": {
+    "name": "Sofia Bergman",
+    "role": "Hudterapeut, Vivaci Klinik",
+    "image": "/images/pexels/team-3.jpg",
+    "bio": "Sofia fokuserar på hudhälsa, produktval och skonsamma rutiner som kompletterar medicinska behandlingar."
+  },
+  "heroImage": "/images/pexels/blog-1.jpg",
+  "tags": [
+    "Paket",
+    "Hudvård",
+    "Erbjudande"
+  ],
+  "bodyHtml": "<p>Vårens hudvårdspaket är utformat för dig som vill ha en tydlig plan: konsultation, rekommenderad behandling och uppföljning — samlat till ett paketpris.</p><p>Efter konsultationen tar vi fram en individuell rekommendation baserad på din hudtyp, dina mål och eventuell tidigare behandlingshistorik.</p><p>Paketet kan till exempel inkludera medicinsk ansiktsbehandling eller en injektionsbehandling beroende på vad som passar dig. Antalet platser är begränsat under kampanjperioden.</p><p>Vill du veta om paketet passar dig? Boka en konsultation eller kontakta oss så går vi igenom innehåll, pris och tillgängliga tider.</p>",
+  "slug": "varens-hudvardspaket"
+}

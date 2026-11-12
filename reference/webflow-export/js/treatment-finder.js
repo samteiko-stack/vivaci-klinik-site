@@ -13,12 +13,21 @@
     "Hår",
   ];
 
+  function isAkTreatmentImage(src) {
+    return Boolean(src && String(src).indexOf("/images/ak/treatments/") === 0);
+  }
+
   function imageForItem(item) {
-    if (item && item.image) return item.image;
     var lookup = window.__vivaciTreatmentImageForHref;
-    if (lookup && item && item.href) return lookup(item.href);
+    if (lookup && item && item.href) {
+      var mapped = lookup(item.href);
+      if (mapped) return mapped;
+    }
+    if (item && isAkTreatmentImage(item.image)) return item.image;
     return null;
   }
+
+  var AK_TREATMENT_FALLBACK = "/images/ak/treatments/hydrafacial.jpg";
 
   function prefersReducedMotion() {
     return (
@@ -63,11 +72,61 @@
     var cardVariant = root.getAttribute("data-card-variant") || "overlay";
     var ctaLabel = root.getAttribute("data-cta-label") || "Läs mer";
     var ctaPrimaryHref =
-      root.getAttribute("data-cta-primary-href") || "/kontakt";
+      root.getAttribute("data-cta-primary-href") || "https://www.bokadirekt.se/places/vivaci-klinik-51774";
     var ctaPrimaryLabel =
       root.getAttribute("data-cta-primary-label") || "Anmäl intresse";
     var ctaSecondaryLabel =
       root.getAttribute("data-cta-secondary-label") || "Läs mer";
+    var gridOrphanUseQuiz =
+      root.getAttribute("data-grid-orphan-quiz") === "true";
+    var gridOrphanHref =
+      root.getAttribute("data-grid-orphan-href") || "https://www.bokadirekt.se/places/vivaci-klinik-51774";
+    var gridOrphanKicker =
+      root.getAttribute("data-grid-orphan-kicker") ||
+      "Behöver du vägledning?";
+    var gridOrphanLabel =
+      root.getAttribute("data-grid-orphan-label") || "Boka konsultation";
+
+    var CHEVRON_SVG =
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img"><path d="m9 18 6-6-6-6"/></svg>';
+
+    function createGridOrphanCta() {
+      var wrap = document.createElement("div");
+      wrap.className =
+        "vivaci-grid-orphan-cta layout527_card-large is-grid text-color-alternate";
+      wrap.setAttribute("data-vivaci-grid-orphan-cta", "");
+
+      var inner = document.createElement("div");
+      inner.className = "vivaci-grid-orphan-cta_inner";
+
+      var kicker = document.createElement("p");
+      kicker.className = "text-size-small text-style-muted";
+      kicker.textContent = gridOrphanKicker;
+
+      var btn = document.createElement("a");
+      btn.className = "button is-icon is-small w-inline-block";
+      if (gridOrphanUseQuiz) {
+        btn.setAttribute("href", "#");
+        btn.setAttribute("data-vivaci-quiz-trigger", "");
+        btn.setAttribute("data-vivaci-quiz-locale", "sv");
+      } else {
+        btn.setAttribute("href", gridOrphanHref);
+      }
+
+      var label = document.createElement("div");
+      label.textContent = gridOrphanLabel;
+
+      var iconWrap = document.createElement("div");
+      iconWrap.className = "icon-embed-xxsmall text-style-muted w-embed";
+      iconWrap.innerHTML = CHEVRON_SVG;
+
+      btn.appendChild(label);
+      btn.appendChild(iconWrap);
+      inner.appendChild(kicker);
+      inner.appendChild(btn);
+      wrap.appendChild(inner);
+      return wrap;
+    }
 
     if (cardVariant === "simple") {
       grid.classList.add("is-vivaci-simple-grid");
@@ -79,6 +138,7 @@
     var cardTemplate = null;
     var searchDebounce = null;
     var dataReady = false;
+    var dataLoadStarted = false;
     var gridSeq = 0;
 
     function isOverviewItem(item) {
@@ -124,7 +184,7 @@
       var card = template.cloneNode(true);
       card.setAttribute("data-treatment-label", item.label);
       var href = item.href || "#";
-      var src = imageForItem(item) || "/images/Morpheus8_0146.webp";
+      var src = imageForItem(item) || AK_TREATMENT_FALLBACK;
 
       var media = card.querySelector(".vivaci-listing-card__media");
       if (media) media.setAttribute("href", href);
@@ -137,7 +197,13 @@
       }
 
       var title = card.querySelector(".vivaci-listing-card__title");
-      if (title) title.textContent = item.label || "";
+      if (title) {
+        if (window.vivaciApplyTreatmentCardTitle) {
+          window.vivaciApplyTreatmentCardTitle(title, item.label || "");
+        } else {
+          title.textContent = item.label || "";
+        }
+      }
 
       var desc = card.querySelector(".vivaci-listing-card__desc");
       if (desc) {
@@ -177,6 +243,17 @@
         return cardFromSimpleTemplate(template, item);
       }
 
+      if (window.vivaciRenderTreatmentCard) {
+        return window.vivaciRenderTreatmentCard(item, {
+          template: template,
+          linkMode: "wrap",
+          fallbackImage: imageForItem(item) || AK_TREATMENT_FALLBACK,
+          getTitleRaw: function (it) {
+            return it.label || "";
+          },
+        });
+      }
+
       var shell = template.cloneNode(true);
       var link = document.createElement("a");
       link.href = item.href;
@@ -185,7 +262,13 @@
       while (shell.firstChild) link.appendChild(shell.firstChild);
 
       var title = link.querySelector(".heading-style-h6");
-      if (title) title.textContent = item.label;
+      if (title) {
+        if (window.vivaciApplyTreatmentCardTitle) {
+          window.vivaciApplyTreatmentCardTitle(title, item.label || "");
+        } else {
+          title.textContent = item.label || "";
+        }
+      }
 
       var img = link.querySelector(".layout527_background-image");
       if (img) {
@@ -226,23 +309,42 @@
     }
 
     function populateGrid(items) {
-      grid.innerHTML = "";
+      grid.classList.add("is-swapping-treatments");
 
       if (!items.length) {
         var empty = document.createElement("p");
         empty.className = "text-size-regular text-style-muted";
         empty.style.gridColumn = "1 / -1";
         empty.textContent = searchQuery ? emptySearch : emptyCategory;
-        grid.appendChild(empty);
+        if (typeof grid.replaceChildren === "function") {
+          grid.replaceChildren(empty);
+        } else {
+          grid.innerHTML = "";
+          grid.appendChild(empty);
+        }
+        grid.classList.remove("is-swapping-treatments");
         return [];
       }
 
+      var frag = document.createDocumentFragment();
       var cards = [];
       items.forEach(function (item) {
         var card = cardFromTemplate(cardTemplate, item);
-        grid.appendChild(card);
+        frag.appendChild(card);
         cards.push(card);
       });
+      if (cardVariant !== "simple" && items.length % 2 === 1) {
+        var orphanCta = createGridOrphanCta();
+        frag.appendChild(orphanCta);
+        cards.push(orphanCta);
+      }
+      if (typeof grid.replaceChildren === "function") {
+        grid.replaceChildren.apply(grid, Array.from(frag.childNodes));
+      } else {
+        grid.innerHTML = "";
+        grid.appendChild(frag);
+      }
+      grid.classList.remove("is-swapping-treatments");
       return cards;
     }
 
@@ -266,15 +368,14 @@
       grid.classList.add("is-animating");
       gsap.fromTo(
         cards,
-        { opacity: 0, y: 16, filter: "blur(6px)" },
+        { opacity: 0, y: 12 },
         {
           opacity: 1,
           y: 0,
-          filter: "blur(0px)",
-          duration: 0.48,
-          stagger: { each: 0.04, max: 0.36 },
+          duration: 0.36,
+          stagger: { each: 0.035, max: 0.28 },
           ease: "power2.out",
-          clearProps: "filter,transform,opacity",
+          clearProps: "transform,opacity",
           onComplete: function () {
             if (seq !== gridSeq) return;
             grid.classList.remove("is-animating");
@@ -403,6 +504,9 @@
 
     function startFinder() {
       applyFinderUiStrings();
+      if (dataLoadStarted) return;
+      dataLoadStarted = true;
+
       var req = window.vivaciFetchJson
         ? window.vivaciFetchJson(navUrl)
         : fetch(navUrl).then(function (r) {
@@ -439,7 +543,10 @@
     }
 
     Promise.resolve(window.__vivaciTreatmentImagesReady).then(startFinder);
-    document.addEventListener("vivaci:i18n-ready", startFinder);
+    document.addEventListener("vivaci:i18n-ready", function () {
+      applyFinderUiStrings();
+      if (!dataLoadStarted) startFinder();
+    });
   }
 
   var roots = document.querySelectorAll("[data-vivaci-category-finder]");

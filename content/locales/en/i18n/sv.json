@@ -1,37 +1,37 @@
 {
   "nav": {
-    "language": "Språk",
-    "search": "Sök",
-    "searchTitle": "Sök",
-    "searchPlaceholder": "Sök behandling eller sidor",
-    "searchEmpty": "Inga träffar.",
-    "close": "Stäng",
-    "cart": "Varukorg",
-    "popularTreatments": "Populära behandlingar"
+    "language": "Language",
+    "search": "Search",
+    "searchTitle": "Search",
+    "searchPlaceholder": "Search treatments or pages",
+    "searchEmpty": "No results.",
+    "close": "Close",
+    "cart": "Cart",
+    "popularTreatments": "Popular treatments"
   },
   "cart": {
-    "title": "Varukorg",
-    "empty": "Varukorgen är tom.",
-    "shippingNote": "Frakt beräknas i kassan.",
-    "subtotal": "Delsumma",
-    "checkout": "Gå till kassan",
-    "continueShopping": "Fortsätt handla",
-    "decrease": "Minska",
-    "increase": "Öka",
+    "title": "Cart",
+    "empty": "Your cart is empty.",
+    "shippingNote": "Shipping is calculated at checkout.",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout",
+    "continueShopping": "Continue shopping",
+    "decrease": "Decrease quantity",
+    "increase": "Increase quantity",
     "remove": "Ta bort",
-    "payments": "Betalningsalternativ"
+    "payments": "Payment options"
   },
   "footer": {
-    "contact": "Kontakt"
+    "contact": "Contact"
   },
   "finder": {
-    "searchPlaceholder": "Sök behandling",
+    "searchPlaceholder": "Search treatments",
     "emptySearch": "Inga behandlingar matchar din sökning.",
     "emptyCategory": "Inga behandlingar i den här kategorin."
   },
   "page404": {
-    "title": "Sidan hittades inte",
-    "lead": "Sidan du söker finns inte eller har flyttats.",
-    "homeCta": "Till startsidan"
+    "title": "Page not found",
+    "lead": "The page you are looking for does not exist or has moved.",
+    "homeCta": "Back to home"
   }
 }

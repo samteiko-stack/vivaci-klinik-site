@@ -1,0 +1,77 @@
+{
+  "version": 1,
+  "slug": "skin-boosters",
+  "path": "/utbildning/skin-boosters",
+  "title": "Skin boosters",
+  "metaDescription": "Utbildning skin boosters och biorevitalisering: protokoll, hudtyper och injektionsteknik.",
+  "hero": {
+    "title": "Skin boosters",
+    "intro": "Skin boosters och biorevitalisering för förbättrad hudkvalitet, lyster och fina linjer. Lär dig serieprotokoll, kombination med Vivacis hudprogram och patientkommunikation kring gradvisa resultat.",
+    "audience": "Injektörer eller hudterapeuter i medicinsk estetisk miljö. Botox- eller filler-grund rekommenderas. Legitimering/klinikkoppling verifieras vid anmälan.",
+    "image": "/images/2149152764_12149152764.webp",
+    "ctaPrimary": {
+      "label": "Se tillgängliga datum"
+    }
+  },
+  "summary": {
+    "intro": "Halvdagskurs med teori, demo och praktik. Protokollbank och prissättningsstöd för klinik ingår.",
+    "fee": "39 900 kr",
+    "feeNote": " / deltagare exkl. moms",
+    "level": "Fortsättning",
+    "duration": "Halvdag · 13:00–17:00",
+    "location": "Vivaci Klinik, Råsundavägen 4, Solna"
+  },
+  "dates": [
+    {
+      "label": "4 apr 2026",
+      "time": "13:00 – 17:00",
+      "seats": "12 platser"
+    },
+    {
+      "label": "6 jun 2026",
+      "time": "13:00 – 17:00",
+      "seats": "9 platser kvar"
+    }
+  ],
+  "about": {
+    "html": "<p>Skin boosters passar patienter som vill jobba med hudkvalitet snarare än volym. Kursen kopplar produktval till hudtyp, ålder och livsstil — och till hur du paketerar serier i kliniken.</p>\n<h4>Innehåll</h4>\n<ul role=\"list\"><li>Produktoversikt: hyaluronsyra, polyneucleotider och kombinationer</li><li>Injektionsdjup: face, neck, décolleté</li><li>Serieupplägg (typiskt 2–3 behandlingar) och underhåll</li><li>Kombination med laser, peeling och hemmavård</li></ul>\n<h4>Agenda</h4>\n<h5>13:00 – 14:15 · Teori &amp; fall</h5>\n<h5>14:15 – 15:00 · Demo</h5>\n<h5>15:00 – 17:00 · Hands-on &amp; protokollbank</h5>\n<p>Du får tillgång till Vivacis rekommenderade intervall, samtyckesmallar och prisexempel.</p>"
+  },
+  "instructors": {
+    "enabled": true,
+    "heading": "Instruktörer",
+    "intro": "",
+    "items": [
+      {
+        "name": "Dr. Sofia Lindqvist",
+        "role": "Hudläkare · academy-lead",
+        "image": "/images/Fillers_0055.webp"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
+    "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Injektör eller hudterapeut i medicinsk estetisk miljö. Botox- eller filler-grund rekommenderas. Legitimation/klinikkoppling verifieras vid anmälan."
+      },
+      {
+        "question": "Kan hudterapeut delta?",
+        "answer": "Ja, under medicinsk delegation på registrerad klinik."
+      },
+      {
+        "question": "Ingår produkter?",
+        "answer": "Demo- och övningsmaterial ingår."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Avbokningsregler?",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
+      }
+    ]
+  }
+}

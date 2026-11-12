@@ -1,0 +1,51 @@
+{
+  "photoshootId": "vivaci-warm-clinic",
+  "description": "One visual family for cards/heroes. Swap frames for your Freepik pack — use direct download URLs.",
+  "problemImages": "photoshoot",
+  "frames": [
+    {
+      "id": "frame-01",
+      "source": "pexels",
+      "photoId": 6579572,
+      "label": "Clinic facial — warm light"
+    },
+    {
+      "id": "frame-02",
+      "source": "pexels",
+      "photoId": 6579546,
+      "label": "Treatment room — same series"
+    },
+    {
+      "id": "frame-03",
+      "source": "pexels",
+      "photoId": 7574862,
+      "label": "Skincare application"
+    },
+    {
+      "id": "frame-04",
+      "source": "pexels",
+      "photoId": 7574858,
+      "label": "Client consultation"
+    },
+    {
+      "id": "frame-05",
+      "source": "pexels",
+      "photoId": 5069437,
+      "label": "Spa clinic interior"
+    },
+    {
+      "id": "frame-06",
+      "source": "pexels",
+      "photoId": 5478164,
+      "label": "Facial treatment close-up"
+    }
+  ],
+  "freepikExamples": [
+    {
+      "id": "frame-freepik-01",
+      "source": "freepik",
+      "url": "",
+      "label": "Paste licensed Freepik download URL here, then add to frames[]"
+    }
+  ]
+}

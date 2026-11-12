@@ -10,8 +10,7 @@
     "audience": "Hudterapeuter i medicinsk miljö, sjuksköterskor och läkare.",
     "image": "/images/Fillers_0055.webp",
     "ctaPrimary": {
-      "label": "Anmäl intresse",
-      "href": "/kontakt"
+      "label": "Se tillgängliga datum"
     }
   },
   "summary": {
@@ -26,14 +25,12 @@
     {
       "label": "22 mar 2026",
       "time": "13:00 – 17:30",
-      "seats": "8 platser",
-      "enrollHref": "/kontakt"
+      "seats": "8 platser"
     },
     {
       "label": "3 jul 2026",
       "time": "13:00 – 17:30",
-      "seats": "12 platser",
-      "enrollHref": "/kontakt"
+      "seats": "12 platser"
     }
   ],
   "about": {
@@ -58,8 +55,12 @@
   },
   "faq": {
     "enabled": true,
-    "intro": "",
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
     "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Hudterapeut i medicinsk miljö, sjuksköterska eller läkare. Du ska arbeta under klinikens medicinska ansvar."
+      },
       {
         "question": "Ingår leverantörscert?",
         "answer": "Vivaci klinisk modul; separat Dermapen-cert kan bokas om kliniken kräver det."
@@ -67,6 +68,14 @@
       {
         "question": "Kombination med PRP?",
         "answer": "Protokoll och kontraindikationer gås igenom under kursen."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Avbokningsregler?",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
       }
     ]
   }

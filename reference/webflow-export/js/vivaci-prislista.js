@@ -31,6 +31,84 @@
     return node ? node.cloneNode(true) : null;
   }
 
+  function prislistaBasePath() {
+    var p = window.location.pathname || "/prislista";
+    if (p.endsWith("/prislista.html")) {
+      return p.slice(0, -".html".length) || "/prislista";
+    }
+    if (p === "/prislista" || p.endsWith("/prislista/")) return "/prislista";
+    return "/prislista";
+  }
+
+  function sectionNavHref(sectionId) {
+    return prislistaBasePath() + "#" + sectionId;
+  }
+
+  function sectionIdFromLink(link) {
+    if (!link) return "";
+    var fromData = link.getAttribute("data-vivaci-prislista-section");
+    if (fromData) return fromData;
+    var href = link.getAttribute("href") || "";
+    if (href.charAt(0) === "#") return href.slice(1);
+    var hashAt = href.indexOf("#");
+    if (hashAt >= 0) return href.slice(hashAt + 1);
+    return "";
+  }
+
+  function bindNavFilters(root) {
+    var navHost = root.querySelector("[data-vivaci-prislista-nav]");
+    if (!navHost) return;
+
+    var links = navHost.querySelectorAll(".filters2_category-link");
+    var reduced =
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    function setActive(active) {
+      links.forEach(function (el) {
+        var on = el === active;
+        el.classList.toggle("is-active", on);
+        el.setAttribute("aria-current", on ? "location" : "false");
+      });
+    }
+
+    function scrollToSection(sectionId) {
+      var section = document.getElementById(sectionId);
+      if (!section) return;
+      section.scrollIntoView({
+        behavior: reduced ? "auto" : "smooth",
+        block: "start",
+      });
+    }
+
+    links.forEach(function (link) {
+      var sectionId = sectionIdFromLink(link);
+      if (!sectionId) return;
+      link.setAttribute("data-vivaci-prislista-section", sectionId);
+      link.setAttribute("href", sectionNavHref(sectionId));
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        scrollToSection(sectionId);
+        setActive(link);
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, "", sectionNavHref(sectionId));
+        }
+      });
+    });
+
+    var hash = window.location.hash;
+    if (!hash || hash.length < 2) return;
+    var targetId = hash.slice(1);
+    links.forEach(function (link) {
+      if (link.getAttribute("data-vivaci-prislista-section") === targetId) {
+        setActive(link);
+        window.requestAnimationFrame(function () {
+          scrollToSection(targetId);
+        });
+      }
+    });
+  }
+
   function render(data) {
     var root = document.getElementById("vivaci-prislista");
     if (!root) {
@@ -96,13 +174,15 @@
       if (navHost) {
         var navLink = cloneTemplate("vivaci-prislista-nav-link-tpl");
         if (navLink) {
-          navLink.setAttribute("href", "#" + sectionId);
+          navLink.setAttribute("data-vivaci-prislista-section", sectionId);
+          navLink.setAttribute("href", sectionNavHref(sectionId));
           navLink.textContent = section.title;
           navHost.appendChild(navLink);
         }
       }
     });
 
+    bindNavFilters(root);
     announceReady();
   }
 
@@ -113,10 +193,14 @@
           if (!res.ok) throw new Error("prislista.json " + res.status);
           return res.json();
         });
-    return req.then(render).catch(function (err) {
-      console.warn("[vivaci-prislista]", err);
-      announceReady();
-    });
+    return req
+      .then(render)
+      .catch(function (err) {
+        console.warn("[vivaci-prislista]", err);
+        var root = document.getElementById("vivaci-prislista");
+        if (root) bindNavFilters(root);
+        announceReady();
+      });
   }
 
   if (window.vivaciOnLocaleContentReady) {

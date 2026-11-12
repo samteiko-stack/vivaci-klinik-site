@@ -1,0 +1,3030 @@
+/**
+ * Stacking: Webflow sets .div-block-302 (nav shell) to z-index 99999, which
+ * beats quiz/cart on body. Keep nav on a normal layer; overlays sit above.
+ * Bundled via css/vivaci.css — do not @import here.
+ */
+
+:root {
+  /* Below shop filter drawer (9999) but above page content; modals/cart still higher */
+  --vivaci-z-nav: 9000;
+  --vivaci-z-nav-overlay: 9000;
+  --vivaci-z-modal: 10000;
+  --vivaci-z-cart: 10001;
+  /* Fixed bar height + breathing room for sticky sidebars (full-width nav, not floating pill) */
+  --vivaci-nav-offset: 8rem;
+  /* Left sticky columns (Webflow default: shop .25fr + 3rem gap; treatment .35fr + 5vw) */
+  --vivaci-sticky-sidebar-min: 18rem;
+  --vivaci-sticky-sidebar-max: 22rem;
+  --vivaci-sticky-gap: 4.5rem;
+  --vivaci-sticky-gap-vw: 6vw;
+  /* Page containers — padding-global → container-* */
+  --vivaci-container-large: 95rem;
+  --vivaci-container-main: 80rem;
+  --vivaci-container-medium: 64rem;
+  --vivaci-container-small: 48rem;
+  --vivaci-nav-drawer-pad-x: var(--vivaci-space-5);
+  --vivaci-nav-font-size: var(--vivaci-text-md);
+  --vivaci-nav-font-size-sub: var(--vivaci-text-sm);
+  --vivaci-nav-font-size-desc: var(--vivaci-text-2xs);
+  --vivaci-mega-menu-gap: 0.625rem;
+  --vivaci-mega-menu-hover-bridge: var(--vivaci-space-3);
+  --vivaci-nav-bar-height: 4.5rem;
+  --vivaci-nav-bar-height-relaxed: 5.25rem;
+  --vivaci-nav-logo-height: 2.5rem;
+  --vivaci-nav-desc-color: var(--vivaci-text-nav-desc);
+  --vivaci-nav-line-height: 1.25;
+  --vivaci-menu-line-shift: 8px;
+
+  /* Stroke width is shared; use --vivaci-border-light for soft dividers/outlines (brand-4) */
+  --vivaci-border-width: var(--_ui-styles---stroke--border-width, 1px);
+  --vivaci-divider-width: var(--_ui-styles---stroke--divider-width, 1px);
+  --vivaci-border-light-color: var(--vivaci-brand-4);
+  --vivaci-border-light: var(--vivaci-border-width) solid var(--vivaci-border-light-color);
+  --vivaci-divider-light: var(--vivaci-divider-width) solid var(--vivaci-border-light-color);
+  /* Stronger than brand-4 — PDP accordions, readable dividers */
+  --vivaci-divider-color: var(--vivaci-neutral-lighter);
+  --vivaci-divider: var(--vivaci-divider-width) solid var(--vivaci-divider-color);
+  /* Shorthand used by Vivaci CSS (cart, quiz, shop) — same light color */
+  --vivaci-border-color: var(--vivaci-border-light-color);
+  --vivaci-border: var(--vivaci-border-light);
+  /* Aliases */
+  --vivaci-border-color-faint: var(--vivaci-border-light-color);
+  --vivaci-border-faint: var(--vivaci-border-light);
+  /* Secondary outline — between brand-4 (too faint) and Webflow #000 */
+  --vivaci-button-secondary-border-color: var(--vivaci-neutral-lighter);
+  --vivaci-button-secondary-border-color-hover: var(--vivaci-neutral-light);
+  /* layout527 image cards — undo Webflow ≤479px min-height:auto (sliders, finder, related) */
+  --vivaci-layout527-card-min-height-md: 16rem;
+  --vivaci-layout527-card-aspect-md: 4 / 3;
+  --vivaci-layout527-card-min-height-sm: 14rem;
+  --vivaci-layout527-card-aspect-sm: 3 / 2;
+  --vivaci-layout527-card-grid-min-height-md: 12rem;
+  --vivaci-layout527-card-grid-min-height-sm: 11rem;
+  /* Treatment finder grid — compact overlay cards on small screens (not carousel) */
+  --vivaci-layout527-card-grid-min-height-finder-sm: 8.25rem;
+  --vivaci-layout527-card-grid-aspect-finder-sm: 4 / 3;
+  --vivaci-treatment-card-title-size-finder-grid-sm: 0.9375rem;
+  --vivaci-cursor-interactive: pointer;
+}
+
+/*
+ * Interactive hit targets — one cursor per control (no arrow/hand flicker on
+ * labels, icon embeds, SVG paths, or flex gaps inside the same button/link).
+ */
+:where(
+  a.button,
+  button.button,
+  input.button,
+  a.is-vivaci-enroll-trigger,
+  .button-fx,
+  a.w-inline-block[href]:where(.button, .button-fx),
+  .w-nav-link,
+  .w-nav-button,
+  .w-dropdown-toggle,
+  .w-dropdown-link,
+  .navbar14_link,
+  .navbar14_dropdown-toggle,
+  .navbar14_dropdown-link,
+  .navbar12_dropdown-link,
+  .navbar10_blog-item,
+  .vivaci-nav-search-trigger,
+  .vivaci-nav-lang-trigger,
+  .vivaci-nav-lang-option,
+  .vivaci-cart-nav-btn,
+  .vivaci-nav-search__close,
+  .is-vivaci-filter-chip,
+  .swiper-arrow,
+  [data-vivaci-category-finder] .left-treatment-nav-link,
+  #vivaci-treatment-finder .left-treatment-nav-link,
+  .faq1_question,
+  .faq3_question,
+  .faq6_question,
+  .cookie-banner3_close-button,
+  .cookie-prefs1_close-button,
+  .filters5_close-icon,
+  .form_input.is-select-input,
+  select.form_input.is-select-input.w-select
+) {
+  cursor: var(--vivaci-cursor-interactive);
+}
+
+:where(
+  a.button,
+  button.button,
+  input.button,
+  a.is-vivaci-enroll-trigger,
+  .button-fx,
+  a.w-inline-block[href]:where(.button, .button-fx),
+  .w-nav-link,
+  .w-nav-button,
+  .w-dropdown-toggle,
+  .w-dropdown-link,
+  .navbar14_link,
+  .navbar14_dropdown-toggle,
+  .navbar14_dropdown-link,
+  .navbar12_dropdown-link,
+  .navbar10_blog-item,
+  .vivaci-nav-search-trigger,
+  .vivaci-nav-lang-trigger,
+  .vivaci-nav-lang-option,
+  .vivaci-cart-nav-btn,
+  .vivaci-nav-search__close,
+  .is-vivaci-filter-chip,
+  .swiper-arrow,
+  [data-vivaci-category-finder] .left-treatment-nav-link,
+  #vivaci-treatment-finder .left-treatment-nav-link,
+  .faq1_question,
+  .faq3_question,
+  .faq6_question,
+  .cookie-banner3_close-button,
+  .cookie-prefs1_close-button,
+  .filters5_close-icon,
+  .form_input.is-select-input,
+  select.form_input.is-select-input.w-select
+)
+  :where(*, ::before, ::after) {
+  cursor: inherit;
+}
+
+:where(
+  button:disabled,
+  input:disabled,
+  .is-vivaci-filter-chip[aria-disabled="true"],
+  [data-vivaci-category-finder] .left-treatment-nav-link[aria-disabled="true"],
+  #vivaci-treatment-finder .left-treatment-nav-link[aria-disabled="true"]
+) {
+  cursor: not-allowed;
+}
+
+.navbar2_component :where(a[href], button, [role="button"], .w-dropdown-toggle) {
+  cursor: var(--vivaci-cursor-interactive);
+}
+
+.navbar2_component :where(a[href], button, [role="button"], .w-dropdown-toggle)
+  :where(*, ::before, ::after) {
+  cursor: inherit;
+}
+
+.div-block-302 {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: var(--vivaci-z-nav) !important;
+}
+
+/* Full-width fixed top bar (replaces floating pill + inset margins) */
+.navbar2_component.w-nav {
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: none;
+  box-shadow: none;
+  background-color: var(--vivaci-white);
+  /* Full-width bar — no pill scroll-shrink (legacy GSAP scale removed). */
+  transform: none !important;
+  transition: background-color 0.28s ease;
+}
+
+.navbar2_component .navbar14_container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+  padding-left: 5%;
+  padding-right: 5%;
+  /* Single paint layer on .w-nav — inner row is layout only */
+  background-color: transparent;
+}
+
+@media screen and (min-width: 992px) {
+  .navbar2_component.w-nav {
+    align-items: stretch;
+    min-height: var(--vivaci-nav-bar-height);
+    transition:
+      background-color 0.28s ease,
+      min-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .navbar2_component .navbar14_container {
+    align-self: stretch;
+    min-height: 0;
+  }
+
+  .navbar2_component .navbar14_logo {
+    height: var(--vivaci-nav-logo-height);
+  }
+
+  html:not(.vivaci-nav-reduced-motion).vivaci-nav-relaxed {
+    --vivaci-nav-offset: 9rem;
+  }
+
+  html:not(.vivaci-nav-reduced-motion).vivaci-nav-relaxed .navbar2_component.w-nav {
+    min-height: var(--vivaci-nav-bar-height-relaxed);
+  }
+}
+
+/* Kill legacy Webflow nav shadow (pill float) */
+.navbar2_component .navbar14_container.navbar14_container {
+  box-shadow: none;
+}
+
+/* Homepage hero — transparent shell on outer bar only (not drawer / mega panels) */
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar2_component.w-nav {
+  background-color: transparent;
+}
+
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-search-trigger,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-lang-trigger,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-lang-trigger__code,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-cart-nav-btn,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-cart-nav-btn svg,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-lang-trigger svg {
+  color: var(--vivaci-white);
+}
+
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-cart-nav-btn:hover,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-search-trigger:hover,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-lang-trigger:hover,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-lang.is-open .vivaci-nav-lang-trigger {
+  background-color: var(--vivaci-hero-nav-hover-bg);
+  color: var(--vivaci-hero-nav-fg);
+}
+
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-cart-nav-btn .vivaci-cart-trigger__count {
+  color: var(--vivaci-text);
+  background-color: var(--vivaci-hero-nav-badge-bg);
+  border-color: var(--vivaci-hero-nav-divider);
+  box-shadow: none;
+}
+
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar2_component .navbar14_logo-link::after,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-actions__divider {
+  background-color: var(--vivaci-hero-nav-divider);
+  border-color: var(--vivaci-hero-nav-divider);
+}
+
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-search-trigger:focus-visible,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-nav-lang-trigger:focus-visible,
+html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .vivaci-cart-nav-btn:focus-visible {
+  outline-color: var(--vivaci-hero-nav-outline);
+}
+
+/* Desktop — white primary links on hero only (in-bar menu, not dropdown panels) */
+@media screen and (min-width: 992px) {
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar14_container
+    > .navbar14_menu
+    .navbar14_menu-links
+    > .navbar14_link,
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar14_container
+    > .navbar14_menu
+    .navbar14_menu-links
+    > .w-dropdown
+    > .navbar14_dropdown-toggle {
+    color: var(--vivaci-white);
+    -webkit-text-fill-color: currentColor;
+  }
+
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar14_container
+    > .navbar14_menu
+    .navbar14_menu-links
+    .dropdown-chevron {
+    color: currentColor;
+  }
+
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar14_container
+    > .navbar14_menu
+    .navbar14_menu-links
+    > .navbar14_link:hover,
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar14_container
+    > .navbar14_menu
+    .navbar14_menu-links
+    > .w-dropdown
+    > .navbar14_dropdown-toggle:hover,
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar14_container
+    > .navbar14_menu
+    .navbar14_menu-links
+    > .w-dropdown.w--open
+    > .navbar14_dropdown-toggle {
+    background-color: var(--vivaci-hero-nav-hover-bg-strong) !important;
+    color: var(--vivaci-hero-nav-fg) !important;
+    -webkit-text-fill-color: currentColor;
+  }
+
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar2_component .navbar7_dropdown-list.w--open {
+    border-top: none;
+    box-shadow: none;
+  }
+
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled)
+    .navbar2_component
+    .navbar7_dropdown-list.w--open
+    .navbar7_container {
+    border-top: none;
+    box-shadow: none;
+  }
+}
+
+/* Drawer + nested dropdowns always use default text (never hero white) */
+html[data-vivaci-page="home"]
+  .navbar2_component
+  .w-nav-overlay
+  .navbar14_link,
+html[data-vivaci-page="home"]
+  .navbar2_component
+  .w-nav-overlay
+  .navbar14_dropdown-toggle,
+html[data-vivaci-page="home"]
+  .navbar2_component
+  .navbar14_menu.w-nav-menu[data-nav-menu-open]
+  .navbar14_link,
+html[data-vivaci-page="home"]
+  .navbar2_component
+  .navbar14_menu.w-nav-menu[data-nav-menu-open]
+  .navbar14_dropdown-toggle,
+html[data-vivaci-page="home"] .navbar2_component .navbar7_dropdown-list .navbar12_dropdown-link,
+html[data-vivaci-page="home"] .navbar2_component .navbar7_dropdown-list .navbar14_dropdown-link,
+html[data-vivaci-page="home"] .navbar2_component .navbar14_dropdown-list .navbar14_dropdown-link {
+  color: var(--vivaci-text);
+  -webkit-text-fill-color: currentColor;
+}
+
+/* Nav typography — one size on bar + utilities; sub only for mega descriptions */
+.navbar2_component .navbar14_dropdown-toggle,
+.navbar2_component .navbar14_link {
+  font-size: var(--vivaci-nav-font-size);
+  line-height: var(--vivaci-nav-line-height);
+}
+
+/* Desktop nav bar — even spacing + matching hover (links + dropdown triggers) */
+@media screen and (min-width: 992px) {
+  .navbar2_component .navbar14_logo-link {
+    margin-right: 0;
+    gap: 0.75rem;
+  }
+
+  .navbar2_component .navbar14_logo-link::after {
+    margin-left: 0;
+  }
+
+  .navbar2_component .navbar14_menu-link-wrapper {
+    align-items: center;
+  }
+
+  .navbar2_component .navbar14_menu-links {
+    align-items: center;
+    gap: 0.125rem;
+    margin-right: 0.75rem;
+  }
+
+  .navbar2_component .navbar14_menu-links > .w-dropdown {
+    margin: 0;
+  }
+
+  .navbar2_component .navbar14_container > .navbar14_menu .navbar14_link,
+  .navbar2_component .navbar14_container > .navbar14_menu .navbar14_dropdown-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--vivaci-radius-sm);
+    border: none;
+    box-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .navbar2_component .navbar14_dropdown-toggle .dropdown-chevron {
+    opacity: 1;
+    width: 0.875rem;
+    height: 0.875rem;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  html:not([data-vivaci-page="home"]) .navbar2_component .navbar14_container > .navbar14_menu .navbar14_menu-links > .navbar14_link:hover,
+  html:not([data-vivaci-page="home"]) .navbar2_component .navbar14_container > .navbar14_menu .navbar14_menu-links > .w-dropdown > .navbar14_dropdown-toggle:hover,
+  html:not([data-vivaci-page="home"]) .navbar2_component .navbar14_container > .navbar14_menu .navbar14_menu-links > .w-dropdown.w--open > .navbar14_dropdown-toggle,
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar2_component .navbar14_container > .navbar14_menu .navbar14_menu-links > .navbar14_link:hover,
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar2_component .navbar14_container > .navbar14_menu .navbar14_menu-links > .w-dropdown > .navbar14_dropdown-toggle:hover,
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar2_component .navbar14_container > .navbar14_menu .navbar14_menu-links > .w-dropdown.w--open > .navbar14_dropdown-toggle {
+    background-color: var(--vivaci-brand-3);
+    color: inherit;
+  }
+}
+
+.navbar2_component .navbar14_dropdown-link,
+.navbar2_component .navbar12_dropdown-link .text-weight-semibold {
+  font-size: var(--vivaci-nav-font-size);
+  line-height: var(--vivaci-nav-line-height);
+}
+
+.navbar2_component .navbar10_blog-list {
+  justify-items: start;
+  text-align: left;
+}
+
+.navbar2_component .vivaci-nav-highlights-label {
+  grid-column: 1 / -1;
+  justify-self: start;
+  align-self: start;
+  width: 100%;
+  margin: 0 0 0.35rem;
+  padding: 0.15rem 0 0;
+  font-size: var(--vivaci-nav-font-size-desc);
+  line-height: 1.35;
+  color: var(--vivaci-nav-desc-color);
+  text-align: left;
+  opacity: 1;
+}
+
+.navbar2_component .navbar12_dropdown-link .text-size-tiny.text-style-muted,
+.navbar2_component .navbar12_text-wrapper .text-size-tiny.text-style-muted,
+.navbar2_component .navbar10_blog-item .text-size-tiny.text-style-muted,
+.navbar2_component .navbar14_dropdown-link .text-size-tiny.text-style-muted {
+  font-size: var(--vivaci-nav-font-size-desc);
+  line-height: 1.35;
+  color: var(--vivaci-nav-desc-color);
+  opacity: 1;
+  margin: 0.125rem 0 0;
+  max-width: 22rem;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.vivaci-nav-actions__cluster {
+  font-size: var(--vivaci-nav-font-size);
+  line-height: var(--vivaci-nav-line-height);
+}
+
+/* Mobile menu button — hamburger morphs to X when open */
+.navbar14_menu-button .menu-icon2_line-top,
+.navbar14_menu-button .menu-icon2_line-middle,
+.navbar14_menu-button .menu-icon2_line-bottom {
+  transform: none;
+  transition:
+    transform 0.38s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.22s ease;
+  transform-origin: center center;
+  will-change: transform;
+}
+
+.navbar14_menu-button.w--open .menu-icon2_line-top {
+  transform: translateY(var(--vivaci-menu-line-shift)) rotate(45deg);
+}
+
+.navbar14_menu-button.w--open .menu-icon2_line-middle {
+  opacity: 0;
+  transform: scaleX(0.35);
+}
+
+.navbar14_menu-button.w--open .menu-icon2_line-bottom {
+  transform: translateY(calc(-1 * var(--vivaci-menu-line-shift))) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar14_menu-button .menu-icon2_line-top,
+  .navbar14_menu-button .menu-icon2_line-middle,
+  .navbar14_menu-button .menu-icon2_line-bottom {
+    transition: none;
+  }
+}
+
+/* Homepage hero — floating map preview (opens Google Maps on click) */
+.vivaci-hitta-oss-map {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--vivaci-radius-ui-medium);
+  line-height: 0;
+  background: var(--vivaci-brand-3);
+}
+
+.vivaci-hitta-oss-map__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.08);
+}
+
+/* 404 */
+#vivaci-404 .vivaci-404__inner {
+  max-width: 28rem;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#vivaci-404 .vivaci-404__code {
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.08em;
+}
+
+#vivaci-404 .vivaci-404__lead {
+  margin: 0.75rem 0 0;
+}
+
+.navbar2_component .navbar14_logo-link {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 0.75rem;
+  float: none;
+}
+
+.navbar2_component .navbar14_logo {
+  display: block;
+  width: auto;
+  max-width: none;
+}
+
+.navbar2_component .navbar14_logo-link::after {
+  content: "";
+  display: block;
+  width: var(--vivaci-divider-width, 1px);
+  height: 1.25rem;
+  margin-left: 1rem;
+  background-color: var(--vivaci-border-light-color);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+
+/* Hide nav utilities until JS mount (prevents cart badge / cluster flash) */
+html:not(.vivaci-nav-ready) [data-vivaci-nav-actions]:not([data-vivaci-nav-actions-mounted="true"]) {
+  visibility: hidden;
+  pointer-events: none;
+  min-height: var(--vivaci-nav-action-height, 2.5rem);
+}
+
+[data-vivaci-nav-actions][data-vivaci-nav-actions-mounted="true"] {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* Nav search + varukorg cluster */
+.navbar14_container .vivaci-nav-actions-slot {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: auto;
+  margin-right: 0.75rem;
+  flex-shrink: 0;
+}
+
+.vivaci-nav-actions,
+.navbar14_button-wrapper.vivaci-nav-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  grid-column-gap: 0.5rem;
+  margin-left: auto;
+}
+
+.vivaci-nav-actions__cluster {
+  --vivaci-nav-action-height: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0;
+  min-height: var(--vivaci-nav-action-height);
+}
+
+.vivaci-nav-actions__divider {
+  flex-shrink: 0;
+  align-self: center;
+  width: 0;
+  height: 1.25rem;
+  margin: 0 0.375rem;
+  border-left: var(--vivaci-divider-light);
+}
+
+.vivaci-nav-search-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: var(--vivaci-nav-action-height);
+  height: var(--vivaci-nav-action-height);
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--vivaci-radius-ui-medium);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-nav-search-trigger:hover {
+  background-color: var(--vivaci-brand-3);
+}
+
+.vivaci-nav-search-trigger:focus-visible {
+  outline: 2px solid var(--vivaci-black);
+  outline-offset: 2px;
+}
+
+.vivaci-nav-search-trigger svg {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+.vivaci-nav-lang {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: var(--vivaci-nav-action-height);
+}
+
+.vivaci-nav-lang-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  height: var(--vivaci-nav-action-height);
+  min-width: var(--vivaci-nav-action-height);
+  margin: 0;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: var(--vivaci-radius-ui-medium);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-nav-lang-trigger:hover,
+.vivaci-nav-lang.is-open .vivaci-nav-lang-trigger {
+  background-color: var(--vivaci-brand-3);
+}
+
+.vivaci-nav-lang-trigger:focus-visible {
+  outline: 2px solid var(--vivaci-black);
+  outline-offset: 2px;
+}
+
+.vivaci-nav-lang-trigger__code {
+  font-size: inherit;
+  letter-spacing: normal;
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.vivaci-nav-lang-trigger__icon {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  width: 1.125rem;
+  height: 1.125rem;
+  line-height: 0;
+}
+
+.vivaci-nav-lang-trigger__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.vivaci-nav-lang-menu {
+  position: absolute;
+  top: calc(100% + 0.35rem);
+  right: 0;
+  z-index: calc(var(--vivaci-z-modal, 10000) + 2);
+  min-width: 9rem;
+  margin: 0;
+  padding: 0.25rem;
+  list-style: none;
+  border: none;
+  border-radius: var(--vivaci-radius-ui-medium);
+  background-color: var(--vivaci-white);
+  box-shadow: 0 12px 32px var(--vivaci-overlay-shadow-soft);
+}
+
+.vivaci-nav-lang-option {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5rem 0.65rem;
+  border: none;
+  border-radius: calc(var(--vivaci-radius-ui-medium) - 2px);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: background-color 0.2s ease;
+}
+
+.vivaci-nav-lang-option:hover,
+.vivaci-nav-lang-option:focus-visible {
+  background-color: var(--vivaci-brand-3);
+  outline: none;
+}
+
+.vivaci-nav-lang-option.is-active {
+  background-color: var(--vivaci-brand-3);
+}
+
+.vivaci-cart-nav-btn {
+  --vivaci-cart-nav-badge-size: 0.875rem;
+  --vivaci-cart-nav-badge-font-size: 0.5625rem;
+  --vivaci-cart-nav-badge-offset-top: -0.25rem;
+  --vivaci-cart-nav-badge-offset-right: -0.3125rem;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  gap: 0.375rem;
+  height: var(--vivaci-nav-action-height);
+  margin: 0;
+  padding: 0 0.5rem;
+  border: none;
+  border-radius: var(--vivaci-radius-ui-medium);
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  box-shadow: none;
+  appearance: none;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-cart-nav-btn:hover {
+  background-color: var(--vivaci-brand-3);
+}
+
+.vivaci-cart-nav-btn:focus-visible {
+  outline: 2px solid var(--vivaci-black);
+  outline-offset: 2px;
+}
+
+.vivaci-cart-nav-btn__icon {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.vivaci-cart-nav-btn svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
+
+.vivaci-cart-nav-btn__label {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.vivaci-cart-nav-btn__label-text {
+  display: inline;
+}
+
+.vivaci-cart-nav-btn .vivaci-cart-trigger__count {
+  position: relative;
+  top: -0.5em;
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: baseline;
+  min-width: var(--vivaci-cart-nav-badge-size);
+  height: var(--vivaci-cart-nav-badge-size);
+  margin: 0 0 0 0.125rem;
+  padding: 0 0.125rem;
+  border: var(--vivaci-border-width, 1px) solid var(--vivaci-brand-2);
+  border-radius: 999px;
+  background-color: var(--vivaci-brand-2);
+  color: var(--vivaci-white);
+  font-size: var(--vivaci-cart-nav-badge-font-size);
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  pointer-events: none;
+}
+
+.vivaci-cart-nav-btn .vivaci-cart-trigger__count:empty,
+.vivaci-cart-nav-btn .vivaci-cart-trigger__count[data-count="0"] {
+  display: none;
+}
+
+html.vivaci-nav-search-open {
+  overflow: hidden;
+}
+
+.vivaci-nav-search {
+  position: fixed;
+  inset: 0;
+  z-index: var(--vivaci-z-modal, 10000);
+  pointer-events: none;
+}
+
+.vivaci-nav-search.is-open {
+  pointer-events: auto;
+}
+
+.vivaci-nav-search.is-open .vivaci-nav-search__panel {
+  will-change: transform, opacity;
+}
+
+.vivaci-nav-search__backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: var(--vivaci-overlay-scrim);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+}
+
+.vivaci-nav-search__dialog {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 6rem 1rem 1rem;
+  pointer-events: none;
+}
+
+.vivaci-nav-search.is-open .vivaci-nav-search__dialog {
+  pointer-events: auto;
+}
+
+.vivaci-nav-search__panel {
+  position: relative;
+  width: 100%;
+  max-width: 36rem;
+  padding: 1.25rem;
+  border: var(--vivaci-border-light, var(--vivaci-border));
+  border-radius: var(--vivaci-radius-sm);
+  background: var(--vivaci-brand-1);
+  box-shadow: 0 24px 64px var(--vivaci-overlay-shadow-soft);
+  opacity: 0;
+  pointer-events: auto;
+}
+
+.vivaci-nav-search__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.vivaci-nav-search__close {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  border: var(--vivaci-border);
+  border-radius: var(--vivaci-radius-ui-medium);
+  background: var(--vivaci-brand-1);
+  cursor: pointer;
+  transition: var(--vivaci-transition-interactive);
+}
+
+.vivaci-nav-search__close:hover {
+  background-color: var(--vivaci-brand-3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivaci-nav-search__backdrop,
+  .vivaci-nav-search__panel {
+    transition: none !important;
+  }
+}
+
+.vivaci-nav-search__results {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  max-height: 18rem;
+  overflow-y: auto;
+}
+
+.vivaci-nav-search__hit {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  padding: 0.65rem 0;
+  border-bottom: var(--vivaci-divider-light, var(--vivaci-border-light));
+  text-decoration: none;
+  color: inherit;
+}
+
+.vivaci-nav-search__empty {
+  padding: 0.5rem 0;
+  list-style: none;
+}
+
+.button {
+  -webkit-backdrop-filter: blur(var(--vivaci-button-backdrop-blur));
+  backdrop-filter: blur(var(--vivaci-button-backdrop-blur));
+  background-color: var(--vivaci-button-filled-bg);
+}
+
+.button.is-link,
+.button.is-secondary,
+.button.is-secondary.is-alternate {
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+}
+
+.button:not(.is-link) {
+  border-width: var(--vivaci-border-width);
+}
+
+.button.is-secondary:not(.is-alternate) {
+  border-color: var(--vivaci-button-secondary-border-color);
+  transition: var(--vivaci-transition-interactive);
+}
+
+.button.is-secondary:not(.is-alternate):hover {
+  border-color: var(--vivaci-button-secondary-border-color-hover);
+}
+
+.form_input {
+  border-width: var(--vivaci-border-width);
+}
+
+/* Desktop mega-menu — bridge gap between nav pill and full-width panel */
+@media screen and (min-width: 992px) {
+  /* Keep logo/actions above mega-menu; do NOT position .navbar14_menu — that
+     becomes the width containing block for left/right:0 dropdown panels. */
+  .navbar2_component .navbar14_logo-link,
+  .navbar2_component .vivaci-nav-actions-slot,
+  .navbar2_component .w-nav-button {
+    position: relative;
+    z-index: 3;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open,
+  .navbar2_component .navbar14_dropdown-list.w--open {
+    z-index: 2;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open {
+    pointer-events: auto;
+    margin-top: var(--vivaci-mega-menu-gap);
+  }
+
+  .navbar2_component .navbar14_dropdown-list.w--open {
+    margin-top: 0.375rem;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * (var(--vivaci-mega-menu-hover-bridge) + var(--vivaci-mega-menu-gap)));
+    left: 0;
+    right: 0;
+    height: calc(var(--vivaci-mega-menu-hover-bridge) + var(--vivaci-mega-menu-gap));
+  }
+
+  .navbar2_component .navbar14_dropdown-list.w--open::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * (0.5rem + 0.375rem));
+    left: 0;
+    right: 0;
+    height: calc(0.5rem + 0.375rem);
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar7_container {
+    border-radius: var(--vivaci-radius-sm);
+    background-color: var(--vivaci-brand-1);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+}
+
+/* Desktop mega-menu — instant show when user prefers reduced motion (GSAP skipped) */
+@media screen and (min-width: 992px) and (prefers-reduced-motion: reduce) {
+  .navbar2_component .navbar7_dropdown-list.w--open,
+  .navbar2_component .navbar14_dropdown-list.w--open,
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar12_dropdown-link,
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar14_dropdown-link,
+  .navbar2_component .navbar7_dropdown-list.w--open .navbar10_blog-item,
+  .navbar2_component .navbar14_dropdown-list.w--open .navbar14_dropdown-link {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --vivaci-nav-offset: 8rem;
+  }
+}
+
+/* Tablet/mobile nav — Webflow moves the menu into .w-nav-overlay when open */
+@media screen and (max-width: 991px) {
+  .div-block-302 {
+    overflow: visible;
+  }
+
+  .navbar2_component.w-nav {
+    position: relative;
+    z-index: 1000;
+    background-color: var(--vivaci-white);
+  }
+
+  .navbar2_component .navbar14_container {
+    position: relative;
+    z-index: 1001;
+    background-color: transparent;
+  }
+
+  /* Full-height drawer (Webflow overlay is otherwise document-tall) */
+  .navbar2_component .w-nav-overlay {
+    position: fixed !important;
+    top: 3.5rem !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    background-color: var(--vivaci-white) !important;
+    z-index: var(--vivaci-z-nav-overlay) !important;
+  }
+
+  .navbar2_component .w-nav-overlay .navbar14_menu.w-nav-menu[data-nav-menu-open] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    float: none !important;
+    position: relative !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background-color: var(--vivaci-white) !important;
+    z-index: 1 !important;
+    box-shadow: none;
+    text-align: left !important;
+  }
+
+  /* Fallback if menu opens in-place (not reparented) */
+  .navbar2_component .navbar14_container > .navbar14_menu.w-nav-menu[data-nav-menu-open] {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    top: 100% !important;
+    width: 100% !important;
+    max-height: calc(100dvh - 3.5rem) !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    background-color: var(--vivaci-white) !important;
+    z-index: var(--vivaci-z-nav-overlay) !important;
+    box-shadow: 0 12px 40px var(--vivaci-overlay-shadow-dropdown);
+    text-align: left !important;
+  }
+
+  .navbar2_component .navbar14_menu-link-wrapper {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    border: none !important;
+    padding: 0.5rem 0 1.25rem !important;
+    gap: 0;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar14_menu-links {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    margin-right: 0 !important;
+    display: flex !important;
+  }
+
+  .navbar2_component .navbar7_menu-dropdown,
+  .navbar2_component .navbar14_menu-dropdown {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    isolation: isolate;
+  }
+
+  .navbar2_component .navbar14_dropdown-toggle {
+    width: 100% !important;
+    justify-content: space-between !important;
+    border-bottom: var(--vivaci-divider-light) !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0.85rem var(--vivaci-nav-drawer-pad-x) !important;
+    font-size: var(--vivaci-nav-font-size) !important;
+    line-height: var(--vivaci-nav-line-height) !important;
+    position: relative;
+    z-index: 2;
+    flex: none;
+    box-sizing: border-box;
+    background-color: transparent;
+  }
+
+  .navbar2_component .w-dropdown.w--open > .navbar14_dropdown-toggle {
+    background-color: var(--vivaci-brand-3);
+    border-bottom-color: var(--vivaci-border-light-color);
+  }
+
+  .navbar2_component .navbar14_link {
+    width: 100% !important;
+    border-bottom: var(--vivaci-divider-light) !important;
+    padding: 0.85rem var(--vivaci-nav-drawer-pad-x) !important;
+    font-size: var(--vivaci-nav-font-size) !important;
+    line-height: var(--vivaci-nav-line-height) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar14_menu .navbar14_button-wrapper {
+    width: 100% !important;
+    margin-top: 1rem !important;
+    padding: 0 var(--vivaci-nav-drawer-pad-x) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar14_menu [data-vivaci-nav-actions] {
+    display: none !important;
+  }
+
+  .navbar14_container {
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+
+  .navbar14_container > .vivaci-nav-actions-slot,
+  .navbar14_container > .vivaci-nav-actions-slot.vivaci-nav-actions,
+  .navbar14_container > .navbar14_button-wrapper.vivaci-nav-actions[data-vivaci-nav-actions-mounted="true"] {
+    display: flex !important;
+    align-items: center;
+    order: 2;
+    width: auto !important;
+    margin-top: 0 !important;
+    margin-left: auto;
+    margin-right: 0.35rem;
+    padding: 0 !important;
+    flex-shrink: 0;
+  }
+
+  .navbar2_component .w-nav-button {
+    order: 3;
+    flex-shrink: 0;
+  }
+
+  .navbar14_container .navbar14_logo-link {
+    order: 0;
+    flex-shrink: 0;
+  }
+
+  .navbar14_container .navbar14_menu {
+    order: 1;
+  }
+
+  .navbar2_component .vivaci-nav-actions__cluster {
+    width: auto;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  .vivaci-cart-nav-btn__label {
+    position: absolute;
+    left: 0.5rem;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0;
+    padding: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .vivaci-cart-nav-btn__label-text {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .vivaci-cart-nav-btn .vivaci-cart-trigger__count {
+    position: absolute;
+    top: var(--vivaci-cart-nav-badge-offset-top);
+    right: var(--vivaci-cart-nav-badge-offset-right);
+    margin: 0;
+  }
+
+  .vivaci-cart-nav-btn {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .navbar2_component .nav-menu-divider,
+  .navbar2_component .navbar10_blog-list {
+    display: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-content,
+  .navbar2_component .div-7 {
+    display: block !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  .navbar2_component .navbar7_container.container-large {
+    padding: 0 !important;
+    max-width: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-list,
+  .navbar2_component .navbar14_dropdown-list {
+    position: relative !important;
+    z-index: 1;
+    width: 100% !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    background-color: var(--vivaci-brand-1);
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open::before,
+  .navbar2_component .navbar14_dropdown-list.w--open::before {
+    display: none;
+  }
+
+  .navbar2_component .navbar7_dropdown-list:not(.w--open),
+  .navbar2_component .navbar14_dropdown-list:not(.w--open) {
+    display: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-list.w--open,
+  .navbar2_component .navbar14_dropdown-list.w--open {
+    display: block !important;
+  }
+
+  .navbar2_component .navbar12_dropdown-content {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-height: none !important;
+    overflow: hidden !important;
+    padding: 0.35rem var(--vivaci-nav-drawer-pad-x) 0.65rem !important;
+    background: var(--vivaci-brand-1) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar12_dropdown-link,
+  .navbar2_component .navbar14_dropdown-link {
+    width: 100% !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    padding: 0.6rem 0 !important;
+    font-size: var(--vivaci-nav-font-size) !important;
+    line-height: var(--vivaci-nav-line-height) !important;
+    box-sizing: border-box;
+  }
+
+  .navbar2_component .navbar12_dropdown-link .text-size-tiny.text-style-muted,
+  .navbar2_component .navbar10_blog-item .text-size-tiny.text-style-muted,
+  .navbar2_component .navbar14_dropdown-link .text-size-tiny.text-style-muted {
+    font-size: var(--vivaci-nav-font-size-desc) !important;
+    line-height: 1.35 !important;
+    color: var(--vivaci-nav-desc-color) !important;
+    opacity: 1 !important;
+    max-width: none !important;
+  }
+
+  .navbar2_component .navbar12_text-wrapper .text-weight-semibold,
+  .navbar2_component .navbar10_blog-item {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .navbar2_component .navbar7_dropdown-list,
+  .navbar2_component .navbar14_dropdown-list {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  /* Override Webflow default horizontal flex on collapsed breakpoint */
+  .navbar2_component .navbar14_menu.w-nav-menu[data-nav-menu-open] {
+    justify-content: flex-start !important;
+    align-items: stretch !important;
+  }
+
+  /* Home hero — transparent shell on tablet/mobile (overrides white bar defaults above) */
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar2_component.w-nav {
+    background-color: transparent !important;
+  }
+
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar14_menu-button .menu-icon2_line-top,
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar14_menu-button .menu-icon2_line-middle,
+  html[data-vivaci-page="home"]:not(.vivaci-nav-scrolled) .navbar14_menu-button .menu-icon2_line-bottom {
+    background-color: var(--vivaci-white);
+  }
+
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar2_component.w-nav {
+    background-color: var(--vivaci-white) !important;
+  }
+
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar14_menu-button .menu-icon2_line-top,
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar14_menu-button .menu-icon2_line-middle,
+  html[data-vivaci-page="home"].vivaci-nav-scrolled .navbar14_menu-button .menu-icon2_line-bottom {
+    background-color: var(--vivaci-text);
+  }
+}
+
+/* Homepage hero — centered copy block (was bottom-left) */
+#vivaci-home-hero {
+  --vivaci-home-hero-title-size: clamp(2.5rem, 1.65rem + 2.4vw, 3.5rem);
+}
+
+#vivaci-home-hero [data-vivaci-field="hero-title"] {
+  font-size: var(--vivaci-home-hero-title-size);
+  line-height: 1.15;
+}
+
+#vivaci-home-hero .header5_content {
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0;
+  padding-top: var(--vivaci-nav-bar-height-relaxed, 5.25rem);
+  box-sizing: border-box;
+}
+
+#vivaci-home-hero .padding-section-large {
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+#vivaci-home-hero .max-width-medium {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#vivaci-home-hero .full-tag {
+  justify-content: center;
+}
+
+#vivaci-home-hero .button-group {
+  justify-content: center;
+}
+
+/* Scroll cue — label is white; Lottie strokes are ~#292 so invert() reads gray, not white */
+#vivaci-home-hero a.div-block-313 {
+  color: var(--vivaci-white, var(--_primitives---colors--white));
+}
+
+#vivaci-home-hero a.div-block-313 .lottie-animation {
+  filter: none;
+  color: currentColor;
+}
+
+#vivaci-home-hero a.div-block-313 .lottie-animation :is(path, line, polyline, polygon, circle, ellipse, rect) {
+  stroke: currentColor !important;
+  fill: none !important;
+}
+
+@media screen and (max-width: 991px) {
+  #vivaci-home-hero .header5_content {
+    padding-top: 4.5rem;
+    min-height: 100svh;
+    padding-bottom: 5rem;
+  }
+}
+
+/* Category finder (home, /behandlingar, /utbildning) */
+[data-vivaci-category-finder] .treatment-finder-category-links,
+#vivaci-treatment-finder .treatment-finder-category-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link,
+#vivaci-treatment-finder .left-treatment-nav-link {
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link[aria-disabled="true"],
+#vivaci-treatment-finder .left-treatment-nav-link[aria-disabled="true"] {
+  cursor: wait;
+  opacity: 0.55;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link:hover,
+[data-vivaci-category-finder] .left-treatment-nav-link.is-active,
+#vivaci-treatment-finder .left-treatment-nav-link:hover,
+#vivaci-treatment-finder .left-treatment-nav-link.is-active {
+  padding-right: 1rem;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-link.is-active,
+#vivaci-treatment-finder .left-treatment-nav-link.is-active {
+  background-color: var(--vivaci-brand-4);
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-wrapper .icon-embed-xsmall,
+#vivaci-treatment-finder .left-treatment-nav-wrapper .icon-embed-xsmall {
+  width: 1rem;
+  height: 1rem;
+}
+
+[data-vivaci-category-finder] .left-treatment-nav-wrapper .icon-embed-xsmall .lucide,
+#vivaci-treatment-finder .left-treatment-nav-wrapper .icon-embed-xsmall .lucide {
+  stroke-width: 1.5;
+}
+
+@keyframes vivaci-treatment-grid-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.75rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+[data-vivaci-category-finder] .treatment-grid .layout527_card-large.is-entering,
+#vivaci-treatment-finder .treatment-grid .layout527_card-large.is-entering {
+  animation: vivaci-treatment-grid-card-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+[data-vivaci-category-finder] a.layout527_card-large,
+#vivaci-treatment-finder a.layout527_card-large {
+  text-decoration: none;
+  color: var(--vivaci-white);
+}
+
+/* Treatment finder — 2-column grid from smallest viewports (overlay cards) */
+[data-vivaci-category-finder] .treatment-grid:not(.is-vivaci-simple-grid),
+#vivaci-treatment-finder .treatment-grid:not(.is-vivaci-simple-grid) {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Orphan slot filler (desktop 2-col grid) */
+.vivaci-grid-orphan-cta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 15rem;
+  padding: 1.5rem;
+  background-color: var(--vivaci-surface-cta-tile);
+  border: var(--vivaci-border-light);
+  border-radius: var(--vivaci-radius-ui-medium);
+  color: var(--vivaci-text);
+}
+
+.vivaci-grid-orphan-cta_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  height: 100%;
+  text-align: center;
+}
+
+.vivaci-grid-orphan-cta .button {
+  width: auto;
+  max-width: 100%;
+}
+
+/* Style guide — Vivaci surface ramp + orphan CTA sample */
+.vivaci-styleguide-surfaces {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(7.5rem, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.vivaci-styleguide-swatch {
+  padding: 1rem 0.75rem;
+  border: var(--vivaci-border-light);
+  border-radius: var(--vivaci-radius-ui-medium);
+  font-size: var(--vivaci-text-2xs);
+  line-height: 1.35;
+  color: var(--vivaci-text);
+}
+
+.vivaci-styleguide-swatch.is-page {
+  background-color: var(--vivaci-surface-page);
+}
+
+.vivaci-styleguide-swatch.is-raised {
+  background-color: var(--vivaci-surface-raised);
+}
+
+.vivaci-styleguide-swatch.is-muted {
+  background-color: var(--vivaci-surface-muted);
+}
+
+.vivaci-styleguide-swatch.is-deep {
+  background-color: var(--vivaci-surface-deep);
+}
+
+.vivaci-styleguide-swatch.is-cta-tile {
+  background-color: var(--vivaci-surface-cta-tile);
+}
+
+.vivaci-styleguide-orphan-demo.vivaci-grid-orphan-cta {
+  display: flex;
+  max-width: 18rem;
+  margin-top: 1rem;
+}
+
+/* layout527 cards — sliders, treatment finder, related treatments (link overlay + hover) */
+.layout527_card-large {
+  position: relative;
+}
+
+a.layout527_card-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  text-decoration: none;
+  color: transparent;
+}
+
+.layout527_card-large .layout527_background-image {
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.layout527_card-large .image-overlay-layer {
+  transition: background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .layout527_card-large:has(a.layout527_card-hit:hover) .layout527_background-image,
+  .layout527_card-large:has(a.layout527_card-hit:focus-visible) .layout527_background-image,
+  a.layout527_card-large:hover .layout527_background-image,
+  a.layout527_card-large:focus-visible .layout527_background-image {
+    transform: scale(1.05);
+  }
+
+  .layout527_card-large:has(a.layout527_card-hit:hover) .image-overlay-layer,
+  .layout527_card-large:has(a.layout527_card-hit:focus-visible) .image-overlay-layer,
+  a.layout527_card-large:hover .image-overlay-layer,
+  a.layout527_card-large:focus-visible .image-overlay-layer {
+    background-color: var(--vivaci-overlay-media-hover);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .layout527_card-large .layout527_background-image {
+    transition: none;
+  }
+}
+
+/* Background-image layout527 cards need explicit height when Webflow drops min-height on small screens */
+@media screen and (max-width: 991px) {
+  .layout527_card-large:has(.layout527_background-image-wrapper) {
+    width: 100%;
+    min-height: var(--vivaci-layout527-card-min-height-md);
+    aspect-ratio: var(--vivaci-layout527-card-aspect-md);
+  }
+
+  .layout527_card-large.is-grid:has(.layout527_background-image-wrapper) {
+    min-height: var(--vivaci-layout527-card-grid-min-height-md);
+  }
+
+  .swiper-tuesday .swiper-slide > .is-vivaci-treatment-card:has(.layout527_background-image-wrapper) {
+    height: auto;
+    min-height: var(--vivaci-treatment-card-min-height-md);
+    aspect-ratio: var(--vivaci-treatment-card-aspect-md);
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .layout527_card-large:has(.layout527_background-image-wrapper) {
+    min-height: var(--vivaci-layout527-card-min-height-sm);
+    aspect-ratio: var(--vivaci-layout527-card-aspect-sm);
+  }
+
+  .layout527_card-large.is-grid:has(.layout527_background-image-wrapper),
+  .is-vivaci-treatment-card.is-grid:has(.layout527_background-image-wrapper) {
+    min-height: var(--vivaci-layout527-card-grid-min-height-sm);
+  }
+
+  .swiper-tuesday .swiper-slide > .is-vivaci-treatment-card:has(.layout527_background-image-wrapper) {
+    min-height: var(--vivaci-treatment-card-min-height-sm);
+    aspect-ratio: var(--vivaci-treatment-card-aspect-sm);
+  }
+
+  [data-vivaci-category-finder] .treatment-grid .layout527_card-large.is-grid:has(.layout527_background-image-wrapper),
+  [data-vivaci-category-finder] .treatment-grid .is-vivaci-treatment-card.is-grid:has(.layout527_background-image-wrapper),
+  #vivaci-treatment-finder .treatment-grid .layout527_card-large.is-grid:has(.layout527_background-image-wrapper),
+  #vivaci-treatment-finder .treatment-grid .is-vivaci-treatment-card.is-grid:has(.layout527_background-image-wrapper) {
+    min-height: var(--vivaci-layout527-card-grid-min-height-finder-sm);
+    aspect-ratio: var(--vivaci-layout527-card-grid-aspect-finder-sm);
+  }
+
+  [data-vivaci-category-finder] .treatment-grid .is-vivaci-treatment-card .heading-style-h6,
+  [data-vivaci-category-finder] .treatment-grid .is-vivaci-treatment-card .vivaci-treatment-card__title-wrap > .heading-style-h6,
+  #vivaci-treatment-finder .treatment-grid .is-vivaci-treatment-card .heading-style-h6,
+  #vivaci-treatment-finder .treatment-grid .is-vivaci-treatment-card .vivaci-treatment-card__title-wrap > .heading-style-h6 {
+    font-size: var(--vivaci-treatment-card-title-size-finder-grid-sm);
+  }
+}
+
+[data-vivaci-section][hidden],
+[data-vivaci-block][hidden],
+.line-divider[hidden] {
+  display: none !important;
+}
+
+/* Treatment page — sticky snabba fakta column (page-shell) */
+.page-shell {
+  align-items: start;
+  grid-template-columns: minmax(var(--vivaci-sticky-sidebar-min), 0.42fr) minmax(0, 1fr);
+  grid-column-gap: var(--vivaci-sticky-gap-vw);
+  grid-row-gap: var(--vivaci-sticky-gap-vw);
+}
+
+.page-shell .floating-section {
+  position: sticky;
+  top: var(--vivaci-nav-offset);
+  align-self: start;
+  z-index: 1;
+}
+
+.page-shell .layout364_card-content {
+  position: relative;
+  top: auto;
+}
+
+.page-shell [data-vivaci-section="facts"] .icon-embed-xsmall {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
+/* Resultat över tid — section layout (list UI: .is-vivaci-step-list) */
+[data-vivaci-section="resultsTimeline"] .section-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
+}
+
+[data-vivaci-section="resultsTimeline"] .vivaci-results-timeline.is-vivaci-step-list {
+  padding: 0.25rem 0 0;
+  width: 100%;
+  max-width: 28rem;
+}
+
+/*
+ * Step list component — Lucide icon in circle + vertical connector.
+ * Webflow rows: layout65_item (suitability, care) or layout32_item (timeline).
+ */
+.is-vivaci-step-list {
+  --step-list-circle-size: var(--vivaci-step-list-circle-size);
+  --step-list-icon-size: var(--vivaci-step-list-icon-size);
+  --step-list-lucide-stroke: var(--vivaci-step-list-lucide-stroke);
+  --step-list-item-gap: var(--vivaci-step-list-item-gap);
+  --step-list-item-pad-bottom: var(--vivaci-step-list-item-pad-bottom);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.is-vivaci-step-list.is-vivaci-step-list--comfortable {
+  --step-list-circle-size: var(--vivaci-step-list-circle-size-comfortable);
+  --step-list-icon-size: var(--vivaci-step-list-icon-size-comfortable);
+  --step-list-lucide-stroke: var(--vivaci-step-list-lucide-stroke-comfortable);
+  --step-list-item-gap: var(--vivaci-step-list-item-gap-comfortable);
+  --step-list-item-pad-bottom: var(--vivaci-step-list-item-pad-bottom-comfortable);
+}
+
+/* Default: single-line copy — icon vertically centered with the line (.is-vivaci-step-item--multi via JS). */
+.is-vivaci-step-list .layout65_item,
+.is-vivaci-step-list .layout32_item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: var(--step-list-item-gap);
+  padding: 0 0 var(--step-list-item-pad-bottom);
+  margin: 0;
+}
+
+.is-vivaci-step-list .layout65_item.is-vivaci-step-item--multi,
+.is-vivaci-step-list .layout32_item.is-vivaci-step-item--multi {
+  align-items: flex-start;
+}
+
+.is-vivaci-step-list .layout65_item:last-child,
+.is-vivaci-step-list .layout32_item:last-child {
+  padding-bottom: 0;
+}
+
+.is-vivaci-step-list .layout65_item-icon-wrapper {
+  position: relative;
+  flex: none;
+  align-self: center;
+  width: var(--step-list-circle-size);
+  height: var(--step-list-circle-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--vivaci-surface-page);
+  border: var(--vivaci-border-light);
+  box-sizing: border-box;
+}
+
+.is-vivaci-step-list .layout32_item-icon-wrapper {
+  position: relative;
+  flex: none;
+  align-self: center;
+  width: var(--step-list-circle-size);
+  height: var(--step-list-circle-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--vivaci-surface-page);
+  border: var(--vivaci-border-light);
+  box-sizing: border-box;
+}
+
+/* Connector: from circle bottom through row padding to next item */
+.is-vivaci-step-list .layout65_item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--step-list-circle-size) / 2);
+  top: var(--step-list-circle-size);
+  bottom: 0;
+  width: var(--vivaci-divider-width, 1px);
+  transform: translateX(-50%);
+  background-color: var(--vivaci-divider-color);
+  pointer-events: none;
+}
+
+.is-vivaci-step-list .layout32_item:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--step-list-circle-size) / 2);
+  top: var(--step-list-circle-size);
+  bottom: 0;
+  width: var(--vivaci-divider-width, 1px);
+  transform: translateX(-50%);
+  background-color: var(--vivaci-divider-color);
+  pointer-events: none;
+}
+
+.is-vivaci-step-list .layout65_item-icon-wrapper .icon-embed-xsmall,
+.is-vivaci-step-list .layout32_item-icon-wrapper .icon-embed-xsmall {
+  width: var(--step-list-icon-size);
+  height: var(--step-list-icon-size);
+  color: var(--vivaci-text);
+}
+
+.is-vivaci-step-list .layout65_item-icon-wrapper .icon-embed-xsmall .lucide,
+.is-vivaci-step-list .layout32_item-icon-wrapper .icon-embed-xsmall .lucide {
+  stroke-width: var(--step-list-lucide-stroke);
+}
+
+.is-vivaci-step-list .layout65_item.is-vivaci-step-item--multi .layout65_item-icon-wrapper,
+.is-vivaci-step-list .layout32_item.is-vivaci-step-item--multi .layout32_item-icon-wrapper {
+  align-self: flex-start;
+  margin-top: var(--vivaci-step-list-first-line-nudge, 0);
+}
+
+.is-vivaci-step-list .layout65_item-text-wrapper,
+.is-vivaci-step-list .layout32_item-text-wrapper {
+  flex: 1;
+  min-width: 0;
+  align-self: center;
+  padding-top: 0;
+}
+
+.is-vivaci-step-list .layout65_item.is-vivaci-step-item--multi .layout65_item-text-wrapper,
+.is-vivaci-step-list .layout32_item.is-vivaci-step-item--multi .layout32_item-text-wrapper {
+  align-self: flex-start;
+}
+
+.is-vivaci-step-list .layout65_item-text-wrapper p,
+.is-vivaci-step-list .layout32_item-text-wrapper p {
+  margin: 0;
+  line-height: 1.55;
+  font-size: var(--vivaci-text-base);
+}
+
+.is-vivaci-step-list .layout32_item-text-wrapper {
+  gap: 0.375rem;
+}
+
+.is-vivaci-step-list .layout32_item-text-wrapper .text-size-medium {
+  margin: 0;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+}
+
+.is-vivaci-step-list .layout32_item-text-wrapper .text-style-muted {
+  margin: 0;
+  line-height: 1.55;
+  font-size: var(--vivaci-text-base);
+}
+
+.is-vivaci-step-list.is-vivaci-step-list--on-brand-panel .layout65_item-icon-wrapper {
+  border-color: var(--vivaci-divider-color);
+}
+
+.is-vivaci-step-list.is-vivaci-step-list--on-brand-panel
+  .layout65_item-text-wrapper
+  p.text-style-muted {
+  color: var(--vivaci-text);
+  opacity: 1;
+}
+
+.is-vivaci-step-list.is-vivaci-step-list--body-muted .layout65_item-text-wrapper p {
+  color: var(--vivaci-nav-desc-color);
+}
+
+/* Passar bra / Kräver bedömning — section grid (list UI: .is-vivaci-step-list) */
+.page-content [data-vivaci-section="suitability"].vivaci-suitability {
+  align-items: stretch;
+  gap: 1.25rem;
+}
+
+/* Override Webflow .section-text-wrap (justify-content: center + height: 100%) */
+[data-vivaci-section="suitability"] .vivaci-suitability-panel.section-text-wrap {
+  align-self: stretch;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+[data-vivaci-section="suitability"] .vivaci-suitability-panel .heading-style-h5 {
+  margin: 0;
+  line-height: 1.35;
+}
+
+/* Före & eftervård — tabs + panel */
+[data-vivaci-section="beforeAfterCare"] .layout503_tabs,
+[data-vivaci-section="beforeAfterCare"] .layout503_tabs-content,
+[data-vivaci-section="beforeAfterCare"] .layout503_tab-pane {
+  width: 100%;
+  min-width: 0;
+}
+
+[data-vivaci-section="beforeAfterCare"] .layout503_tabs-menu,
+[data-vivaci-section="beforeAfterCare"] .layout503_tabs-menu.no-scrollbar {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  border-bottom: var(--vivaci-divider-light);
+  margin-bottom: 1rem;
+  gap: 1.25rem;
+  align-items: flex-end;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+[data-vivaci-section="beforeAfterCare"] .layout503_tab-link {
+  position: relative;
+  z-index: 0;
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  margin-bottom: 0;
+  border: none;
+  border-bottom: var(--vivaci-border-width, 1px) solid transparent;
+  box-shadow: none;
+  background-color: transparent;
+  padding: 0.625rem 0;
+  font-size: var(--vivaci-text-base);
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--vivaci-nav-desc-color);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+[data-vivaci-section="beforeAfterCare"] .layout503_tab-link:hover {
+  color: var(--vivaci-text);
+  font-weight: 400;
+}
+
+[data-vivaci-section="beforeAfterCare"] .layout503_tab-link.w--current {
+  z-index: 1;
+  border-bottom-color: transparent;
+  box-shadow: inset 0 calc(-1 * var(--vivaci-border-width, 1px)) 0 0 var(--vivaci-brand-2);
+  color: var(--vivaci-text);
+  font-weight: 400;
+  background-color: transparent;
+}
+
+[data-vivaci-section="beforeAfterCare"] .layout503_tab-pane .layout65_content-right {
+  align-self: start;
+  border-radius: var(--vivaci-radius-md);
+  background-color: var(--vivaci-brand-3);
+  border: var(--vivaci-border-light);
+  padding: 1.125rem 1.25rem 1.25rem;
+  width: 100%;
+  max-width: none;
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+[data-vivaci-section="beforeAfterCare"] .layout65_item-list {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+[data-vivaci-section="beforeAfterCare"] .vivaci-care-list:empty {
+  display: none;
+}
+
+[data-vivaci-section="beforeAfterCare"]
+  .layout65_content-right:has(.vivaci-care-list:empty) {
+  padding: 0.875rem 1.125rem;
+}
+
+[data-vivaci-section="beforeAfterCare"]
+  .layout65_content-right:has(.vivaci-care-list:empty)
+  .margin-bottom.margin-small {
+  margin-bottom: 0;
+}
+
+[data-vivaci-section="beforeAfterCare"] [data-vivaci-field="before-intro"],
+[data-vivaci-section="beforeAfterCare"] [data-vivaci-field="after-intro"] {
+  margin: 0;
+  font-size: var(--vivaci-text-base);
+  line-height: 1.55;
+  color: var(--vivaci-text);
+}
+
+[data-vivaci-section="beforeAfterCare"]
+  .layout65_content-right:has(.vivaci-care-list:not(:empty))
+  [data-vivaci-field="before-intro"],
+[data-vivaci-section="beforeAfterCare"]
+  .layout65_content-right:has(.vivaci-care-list:not(:empty))
+  [data-vivaci-field="after-intro"] {
+  margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 768px) {
+  [data-vivaci-section="beforeAfterCare"] .layout503_tabs-menu.no-scrollbar {
+    margin-bottom: 1.25rem;
+    gap: 1.5rem;
+  }
+
+  [data-vivaci-section="beforeAfterCare"] .layout503_tab-pane .layout65_content-right {
+    padding: 1.375rem 1.5rem 1.5rem;
+  }
+
+  [data-vivaci-section="beforeAfterCare"]
+    .layout65_content-right:has(.vivaci-care-list:empty) {
+    padding: 1rem 1.375rem;
+  }
+}
+
+/* Treatment overview — Visa mer / mindre (animated expand) */
+.vivaci-read-more__content {
+  will-change: max-height;
+}
+
+.vivaci-read-more__content.is-truncated {
+  position: relative;
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    var(--vivaci-black) 0%,
+    var(--vivaci-black) calc(100% - 2.75rem),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    var(--vivaci-black) 0%,
+    var(--vivaci-black) calc(100% - 2.75rem),
+    transparent 100%
+  );
+}
+
+.vivaci-read-more__content.is-expanded {
+  -webkit-mask-image: none;
+  mask-image: none;
+}
+
+.vivaci-read-more__actions {
+  opacity: 0;
+  transform: translateY(0.25rem);
+  transition:
+    opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vivaci-read-more__actions.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.vivaci-read-more [data-vivaci-read-more-icon] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.vivaci-read-more [data-vivaci-read-more-toggle][aria-expanded="true"] [data-vivaci-read-more-icon] {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vivaci-read-more__content {
+    will-change: auto;
+  }
+
+  .vivaci-read-more__actions,
+  .vivaci-read-more [data-vivaci-read-more-icon] {
+    transition: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-shell .floating-section {
+    position: relative;
+    top: auto;
+  }
+
+  .page-shell .layout364_card-content {
+    position: relative;
+    top: auto;
+  }
+
+}
+
+/* Treatment page — text + image rows (Så fungerar det, Resultat över tid, etc.) */
+.page-content .inner-section-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: stretch;
+  gap: 1rem;
+}
+
+.page-content .inner-section-grid .section-image-wrapper {
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  overflow: hidden;
+  border-radius: var(--_ui-styles---radius--medium);
+}
+
+.page-content .inner-section-grid .section-img {
+  width: 100%;
+  height: 100%;
+  min-height: 18rem;
+  aspect-ratio: auto;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--_ui-styles---radius--medium);
+}
+
+@media (max-width: 991px) {
+  .page-content .inner-section-grid .section-img {
+    min-height: 14rem;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* Treatment (and course) pages — FAQ: title + intro above accordion, not side-by-side */
+.page-content [data-vivaci-section="faq"] .faq3_content {
+  grid-template-columns: 1fr;
+  grid-column-gap: 0;
+  grid-row-gap: 2.5rem;
+}
+
+.page-content [data-vivaci-section="faq"] .faq3_content-left {
+  width: 100%;
+  min-width: 0;
+}
+
+.page-content [data-vivaci-section="faq"] .faq3_list {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Treatment page — Så fungerar det (simple bullets) */
+.vivaci-how-list {
+  margin: 0;
+  padding: 0 0 0 1.25rem;
+  list-style: disc;
+}
+
+.vivaci-how-list li {
+  margin: 0 0 0.625rem;
+  padding: 0;
+  line-height: 1.55;
+}
+
+.vivaci-how-list li:last-child {
+  margin-bottom: 0;
+}
+
+.vivaci-ba-section {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.vivaci-ba-header {
+  max-width: var(--vivaci-max-width-medium, 40rem);
+}
+
+.vivaci-ba-intro {
+  margin: 0;
+}
+
+.vivaci-ba-slider-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+.vivaci-related-slider-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+[data-vivaci-section="related"] .swiper-tuesday .swiper-slide > *:first-child {
+  height: 100%;
+}
+
+.vivaci-ba-disclaimer {
+  margin-bottom: 0;
+  max-width: var(--vivaci-max-width-medium, 40rem);
+}
+
+.vivaci-ba-slide-card {
+  background: var(--vivaci-surface-page);
+  border: var(--vivaci-border-light);
+  border-radius: var(--vivaci-radius-md);
+  padding: var(--vivaci-space-4);
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.vivaci-ba-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--vivaci-space-3);
+}
+
+.vivaci-ba-frame {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--vivaci-space-2);
+  min-width: 0;
+}
+
+.vivaci-ba-label {
+  font-size: var(--vivaci-text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--vivaci-text-subtle);
+}
+
+.vivaci-ba-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border: var(--vivaci-border-light);
+}
+
+[data-vivaci-section="beforeAfterGallery"] .swiper-tuesday .swiper-slide > *:first-child {
+  height: 100%;
+}
+
+/* Treatment card component — one title scale (canonical: heading-style-h6) */
+.is-vivaci-treatment-card .heading-style-h6,
+.is-vivaci-treatment-card .vivaci-treatment-card__title-wrap > .heading-style-h6 {
+  font-family: var(--_typography---font-styles--heading);
+  font-size: var(--vivaci-treatment-card-title-size);
+  line-height: var(--vivaci-treatment-card-title-line-height);
+  margin: 0;
+  color: inherit;
+}
+
+@media screen and (max-width: 767px) {
+  .is-vivaci-treatment-card .heading-style-h6,
+  .is-vivaci-treatment-card .vivaci-treatment-card__title-wrap > .heading-style-h6 {
+    font-size: var(--vivaci-treatment-card-title-size-sm);
+  }
+}
+
+.vivaci-treatment-card__title-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.vivaci-treatment-card__subtitle {
+  margin: 0;
+  font-size: var(--vivaci-treatment-card-subtitle-size);
+  line-height: var(--vivaci-treatment-card-subtitle-line-height);
+  font-weight: 400;
+}
+
+.layout527_card-large.text-color-white .vivaci-treatment-card__subtitle,
+.text-color-white .vivaci-treatment-card__subtitle {
+  opacity: 0.78;
+}
+
+.treatments-grid-outer.is-vivaci-listing {
+  grid-template-columns: minmax(var(--vivaci-sticky-sidebar-min), 0.34fr) minmax(0, 1fr);
+  grid-column-gap: var(--vivaci-sticky-gap);
+  grid-row-gap: var(--vivaci-sticky-gap);
+  align-items: start;
+}
+
+@media screen and (min-width: 992px) {
+  [data-vivaci-category-finder] .left-treatment-nav-wrapper,
+  #vivaci-treatment-finder .left-treatment-nav-wrapper {
+    top: var(--vivaci-nav-offset);
+  }
+}
+
+@media screen and (max-width: 991px) {
+  [data-vivaci-category-finder] .left-treatment-nav-wrapper,
+  #vivaci-treatment-finder .left-treatment-nav-wrapper {
+    position: static;
+    top: auto;
+  }
+}
+
+/* Kontakt — info list reads as text, not inline links */
+.contact6_contact-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact6_contact-list a:hover {
+  color: var(--vivaci-text);
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+/* Form selects — single chevron, no native control */
+.form_input.is-select-input,
+select.form_input.is-select-input.w-select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 2.75rem;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right 0.875rem center;
+  background-size: 1.125rem 1.125rem;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2315190d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.form_input.is-select-input.is-alternate {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.form-select-wrapper {
+  width: 100%;
+}
+
+.form-select-wrapper .form_input.is-select-input {
+  width: 100%;
+}
+
+/* Kontakt page */
+.vivaci-contact-page .vivaci-contact-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.vivaci-contact-page .vivaci-contact-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.875rem;
+  padding: 1.25rem;
+  background-color: var(--vivaci-surface-page);
+  border: var(--vivaci-border-light);
+  border-radius: var(--vivaci-radius-md);
+  color: var(--vivaci-text);
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+/* header50 hero is text-color-white — cards stay ink-on-surface */
+.vivaci-contact-page #vivaci-contact-hero .vivaci-contact-card,
+.vivaci-contact-page #vivaci-contact-hero a.vivaci-contact-card:hover {
+  color: var(--vivaci-text);
+}
+
+.vivaci-contact-page #vivaci-contact-hero .vivaci-contact-card .vivaci-contact-card__label {
+  color: var(--vivaci-text-subtle);
+  opacity: 1;
+}
+
+.vivaci-contact-page a.vivaci-contact-card:hover {
+  border-color: var(--vivaci-brand-4);
+  background-color: var(--vivaci-surface-page);
+  opacity: 1;
+}
+
+.vivaci-contact-page .vivaci-contact-card__icon {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--vivaci-radius-sm);
+  background-color: var(--vivaci-brand-3);
+  color: var(--vivaci-text);
+}
+
+.vivaci-contact-page .vivaci-contact-card__label {
+  margin-bottom: 0.25rem;
+}
+
+.vivaci-contact-page .vivaci-contact-card__body p {
+  margin: 0;
+}
+
+.vivaci-contact-page .vivaci-contact-main {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.vivaci-contact-page .vivaci-contact-form-panel {
+  padding: 1.75rem;
+  background-color: var(--vivaci-surface-page);
+  border: var(--vivaci-border-light);
+  border-radius: var(--vivaci-radius-md);
+}
+
+.vivaci-contact-page .vivaci-contact-form-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 0.25rem;
+}
+
+.vivaci-contact-page .vivaci-contact-consent {
+  margin-bottom: 0;
+}
+
+.vivaci-contact-page .vivaci-contact-submit {
+  width: 100%;
+  max-width: none;
+}
+
+.vivaci-contact-page .vivaci-contact-form-note {
+  margin: 0;
+}
+
+.vivaci-contact-page .vivaci-contact-textarea {
+  min-height: 8.5rem;
+}
+
+.vivaci-contact-page .vivaci-contact-map-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 0;
+  height: 100%;
+}
+
+.vivaci-contact-page .vivaci-contact-map-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 14rem;
+  border: var(--vivaci-border-light);
+  border-radius: var(--vivaci-radius-md);
+  overflow: hidden;
+  background-color: var(--vivaci-surface-page);
+}
+
+.vivaci-contact-page .vivaci-contact-map {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vivaci-contact-page .vivaci-contact-location-card {
+  padding: 1.5rem;
+  border-radius: var(--vivaci-radius-md);
+  background-color: var(--vivaci-surface-inverse);
+  flex-shrink: 0;
+}
+
+.vivaci-contact-page .vivaci-contact-location-card__status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.75rem;
+}
+
+.vivaci-contact-page .vivaci-contact-location-card__dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: var(--vivaci-status-success);
+  flex-shrink: 0;
+}
+
+.vivaci-contact-page .vivaci-contact-location-card__note {
+  margin: 0.75rem 0 0;
+}
+
+.vivaci-contact-page .vivaci-contact-location-card .text-style-muted {
+  opacity: 0.85;
+}
+
+@media screen and (max-width: 991px) {
+  .vivaci-contact-page .vivaci-contact-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .vivaci-contact-page .vivaci-contact-main {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .vivaci-contact-page .vivaci-contact-map-col {
+    height: auto;
+  }
+
+  .vivaci-contact-page .vivaci-contact-map-wrap {
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 9;
+    min-height: 12.5rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .vivaci-contact-page .vivaci-contact-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .vivaci-contact-page .vivaci-contact-form-panel {
+    padding: 1.25rem;
+  }
+}
+
+/* Footer — split: main (padding-section-large) | full-width divider | legal */
+footer.is-section.bg-dark {
+  --vivaci-footer-pad-main: 8rem;
+  --vivaci-footer-pad-legal: 2rem;
+  --vivaci-footer-col-gap: clamp(1.75rem, 2.5vw, 2.75rem);
+  --vivaci-footer-link-gap: var(--vivaci-space-4);
+  --vivaci-footer-heading-gap: var(--vivaci-space-3);
+  --vivaci-footer-accordion-pad-y: 1.25rem;
+  --vivaci-footer-accordion-pad-bottom: var(--vivaci-footer-link-gap);
+  --vivaci-footer-radius: var(--vivaci-radius-ui-medium);
+}
+
+footer.is-section.bg-dark .vivaci-footer-main.padding-section-large {
+  padding-top: var(--vivaci-footer-pad-main);
+  padding-bottom: var(--vivaci-footer-pad-main);
+}
+
+footer.is-section.bg-dark .vivaci-footer-legal.padding-section-large {
+  padding-top: var(--vivaci-footer-pad-legal);
+  padding-bottom: var(--vivaci-footer-pad-legal);
+}
+
+footer.is-section.bg-dark .vivaci-footer-divider {
+  width: 100vw;
+  max-width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+footer.is-section.bg-dark .vivaci-footer-divider .line-divider {
+  width: 100%;
+  margin: 0;
+}
+
+footer.is-section.bg-dark .footer5_top-wrapper-3 {
+  margin-bottom: 0;
+  column-gap: var(--vivaci-footer-col-gap);
+  row-gap: 2rem;
+}
+
+/* Footer columns — always expanded (no accordion UX) */
+footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_icon-wrapper {
+  display: none !important;
+}
+
+footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_question {
+  cursor: default;
+  pointer-events: none;
+  justify-content: flex-start;
+}
+
+footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_answer {
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
+@media screen and (max-width: 991px) {
+  footer.is-section.bg-dark {
+    --vivaci-footer-pad-main: 6rem;
+    --vivaci-footer-pad-legal: 1.5rem;
+    --vivaci-footer-mobile-divider-color: color-mix(
+      in srgb,
+      var(--vivaci-border-light-color) 20%,
+      transparent
+    );
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 {
+    row-gap: 2rem;
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_accordion {
+    width: 100%;
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_question {
+    padding-top: 0;
+    padding-bottom: var(--vivaci-footer-heading-gap);
+    border-top: none;
+    border-bottom: none;
+  }
+
+  footer.is-section.bg-dark
+    .footer5_top-wrapper-3
+    .faq1_accordion:not(:first-child)
+    .faq1_question {
+    padding-top: var(--vivaci-footer-accordion-pad-y);
+    border-top: var(--vivaci-divider-width) solid var(--vivaci-footer-mobile-divider-color);
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_answer {
+    padding-bottom: var(--vivaci-footer-accordion-pad-bottom);
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_answer .margin-bottom.margin-small {
+    margin-bottom: 0;
+    padding-top: var(--vivaci-footer-heading-gap);
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .footer-links-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: var(--vivaci-footer-link-gap);
+  }
+
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .footer5_link {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  footer.is-section.bg-dark
+    .footer5_top-wrapper-3
+    .faq1_answer
+    > .vivaci-footer-social {
+    margin-top: var(--vivaci-footer-link-gap);
+  }
+
+  footer.is-section.bg-dark .logo4_list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  footer.is-section.bg-dark .footer5_legal-link {
+    display: block;
+    line-height: 1.4;
+  }
+}
+
+footer.is-section.bg-dark .footer-links-wrap {
+  gap: var(--vivaci-footer-link-gap);
+}
+
+@media screen and (min-width: 992px) {
+  footer.is-section.bg-dark .footer5_top-wrapper-3 .faq1_question {
+    padding-bottom: var(--vivaci-footer-heading-gap);
+  }
+}
+
+footer.is-section.bg-dark .footer-left-link-wrap {
+  gap: 0.875rem;
+}
+
+footer.is-section.bg-dark .faq1_answer .margin-bottom.margin-small {
+  margin-bottom: 0;
+}
+
+footer.is-section.bg-dark .vivaci-footer-brand {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  footer.is-section.bg-dark
+    .footer5_top-wrapper-3
+    > .faq1_accordion:first-child
+    .faq1_question {
+    display: none;
+  }
+}
+
+footer.is-section.bg-dark .vivaci-footer-brand__link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+footer.is-section.bg-dark .vivaci-footer-social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+footer.is-section.bg-dark .footer2_right-wrapper .margin-bottom.margin-xsmall {
+  margin-bottom: 0.625rem;
+}
+
+footer.is-section.bg-dark .footer2_right-wrapper .margin-bottom.margin-xsmall:last-of-type {
+  margin-bottom: 1rem;
+}
+
+footer.is-section.bg-dark .vivaci-footer-social__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: none;
+  border-radius: var(--vivaci-footer-radius);
+  background-color: var(--vivaci-footer-control-bg);
+  color: var(--vivaci-white);
+  text-decoration: none;
+  transition: background-color 0.2s ease, opacity 0.2s ease;
+}
+
+footer.is-section.bg-dark .vivaci-footer-social__link:hover {
+  background-color: var(--vivaci-footer-control-bg-hover);
+  opacity: 1;
+}
+
+footer.is-section.bg-dark .vivaci-footer-newsletter-title {
+  margin: 0;
+  font-size: var(--vivaci-text-lg);
+  line-height: 1.35;
+  color: var(--vivaci-white);
+  font-weight: 600;
+}
+
+footer.is-section.bg-dark .footer2_form {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.75rem;
+}
+
+footer.is-section.bg-dark .footer2_form .form_input,
+footer.is-section.bg-dark .footer2_form .w-button,
+footer.is-section.bg-dark .footer2_form .button {
+  width: 100%;
+  margin: 0;
+  border-radius: var(--vivaci-footer-radius);
+}
+
+footer.is-section.bg-dark .vivaci-footer-brand .footer-logo_main,
+footer.is-section.bg-dark .footer-logo_main {
+  height: 3.5rem;
+  width: auto;
+}
+
+footer.is-section.bg-dark .footer-left-link-wrap .icon-embed-xsmall {
+  width: 1.3125rem;
+  height: 1.3125rem;
+  flex-shrink: 0;
+}
+
+/* Prislista — table rows only (layout matches listing pages in Webflow) */
+#vivaci-prislista .filters2_category-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+#vivaci-prislista .vivaci-prislista-section {
+  scroll-margin-top: calc(var(--vivaci-nav-offset, 5rem) + 0.75rem);
+}
+
+.vivaci-prislista-table-head,
+.vivaci-prislista-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  padding: 0.75rem 0;
+  border-bottom: var(--vivaci-divider-light);
+}
+
+.vivaci-prislista-table-head {
+  padding-top: 0.25rem;
+}
+
+.vivaci-prislista-row:last-child {
+  border-bottom: none;
+}
+
+.vivaci-prislista-table-head__label,
+.vivaci-prislista-row__label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.vivaci-prislista-table-head__price,
+.vivaci-prislista-row__price {
+  flex: 0 0 auto;
+  max-width: 42%;
+  white-space: nowrap;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.vivaci-prislista-row__label {
+  color: inherit;
+  text-decoration: none;
+}
+
+.vivaci-prislista-row__label:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+@media screen and (max-width: 479px) {
+  .vivaci-prislista-table-head__price,
+  .vivaci-prislista-row__price {
+    max-width: none;
+  }
+}
+
+/* Breadcrumbs */
+.breadcrumb_component,
+.blog-post3-header_breadcrumb,
+nav.breadcrumb-group {
+  flex-wrap: wrap;
+  align-items: center;
+  row-gap: 0.375rem;
+}
+
+nav.breadcrumb-group {
+  display: flex;
+  column-gap: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .breadcrumb_component > .breadcrumb-link:first-of-type,
+  .blog-post3-header_breadcrumb > .breadcrumb-link:first-of-type,
+  nav.breadcrumb-group > .breadcrumb-link:first-of-type {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+  }
+
+  .breadcrumb_component > .breadcrumb-link:first-of-type::before,
+  .blog-post3-header_breadcrumb > .breadcrumb-link:first-of-type::before,
+  nav.breadcrumb-group > .breadcrumb-link:first-of-type::before {
+    content: "";
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    background-color: currentColor;
+    mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m15 18-6-6 6-6'/%3E%3C/svg%3E");
+    -webkit-mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+  }
+}
+
+/* Treatment page — Därför väljer patienter Vivaci (stacked: intro, then points) */
+.vivaci-trust__layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2.5rem;
+  align-items: start;
+}
+
+.vivaci-trust__intro {
+  width: 100%;
+  min-width: 0;
+}
+
+.vivaci-trust__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 0.75rem;
+  row-gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  min-width: 0;
+}
+
+.vivaci-trust__card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.25rem 1.375rem 1.375rem;
+  border-radius: var(--vivaci-radius-md);
+  background-color: var(--vivaci-brand-3);
+  border: var(--vivaci-border-light);
+  min-height: 100%;
+}
+
+.vivaci-trust__index {
+  display: block;
+  margin-bottom: 0.375rem;
+  font-size: var(--vivaci-text-2xs);
+  letter-spacing: 0.08em;
+  font-variant-numeric: tabular-nums;
+  color: var(--vivaci-nav-desc-color);
+  text-transform: uppercase;
+}
+
+.vivaci-trust__card .heading-style-h6 {
+  margin: 0;
+}
+
+.vivaci-trust__card .text-size-small {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 991px) {
+  .vivaci-trust__layout {
+    gap: 1.5rem;
+  }
+
+  .vivaci-trust__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 479px) {
+  .vivaci-trust__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/*
+ * header36 split block — no padding-global stack (homepage pattern).
+ * Add --pad-top / --pad-bottom when a neighbor lacks .padding-section-large or a different
+ * section background (e.g. bg-light) would make the image flush on the seam.
+ */
+header.is-section.is-vivaci-header36--pad-top {
+  padding-top: var(--vivaci-section-pad-y);
+}
+
+header.is-section.is-vivaci-header36--pad-bottom {
+  padding-bottom: var(--vivaci-section-pad-y);
+}
+
+@media screen and (max-width: 991px) {
+  :root {
+    --vivaci-section-pad-y: 6rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  :root {
+    --vivaci-section-pad-y: 4rem;
+  }
+}
+
+/*
+ * About (om-oss) — layout47 story image has no Webflow radius; round here only.
+ */
+#vivaci-om-story .layout47_image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: var(--vivaci-media-radius);
+}
+
+#vivaci-om-team .team8_image-wrapper {
+  border-radius: var(--vivaci-media-radius);
+}
+
+/* team8 — expert cards: bottom scrim above image, titles stay on top */
+.team8_image-wrapper::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 42%,
+    var(--vivaci-overlay-team-scrim-mid) 70%,
+    var(--vivaci-overlay-team-scrim-end) 100%
+  );
+}
+
+.team8_image-wrapper .team8_title-wrapper {
+  z-index: 2;
+}
+
+/* Page containers — tokenized (Webflow Client-First + Vivaci main) */
+.container-large {
+  max-width: var(--vivaci-container-large);
+}
+
+.container-main {
+  width: 100%;
+  max-width: var(--vivaci-container-main);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container-medium {
+  max-width: var(--vivaci-container-medium);
+}
+
+.container-small {
+  max-width: var(--vivaci-container-small);
+}

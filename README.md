@@ -10,15 +10,36 @@ scripts/.venv/bin/python scripts/build-nav.py
 scripts/.venv/bin/python scripts/build-treatment-pages.py
 ```
 
-## Site server (local + Railway)
+## Local development (site + content admin)
 
-Same Python app serves the site in dev and production. Missing pages return **`404.html`** (nav + footer, HTTP 404).
+One command, one URL — same origin as Vercel production:
 
 ```bash
-scripts/.venv/bin/python scripts/dev-server.py
+npm run dev
 ```
 
-Open **http://localhost:8765/** — same paths as production:
+Open **http://localhost:4000/** (home), **/login** (admin), **/treatment-pages** (editor). `/content-admin` in the footer redirects to `/treatment-pages` on the same host.
+
+Legacy Python site-only preview (Railway-style, port 8765):
+
+```bash
+npm run dev:legacy
+# or: scripts/.venv/bin/python scripts/dev-server.py
+```
+
+Missing pages return **`404.html`** (nav + footer, HTTP 404).
+
+## Site server (Railway)
+
+Same Python app serves the site on Railway. Missing pages return **`404.html`** (nav + footer, HTTP 404).
+
+### Content admin (treatment pages)
+
+Edit `content/treatment-pages/…` in the browser at **http://localhost:4000/treatment-pages** (after `npm run dev`). Sign in at **/login** when `VIVACI_ADMIN_PASSWORD` is set in `content-admin/.env.local`.
+
+Legacy Python admin (dev:legacy only): **http://localhost:8765/admin** — Tandfokus `ds-*` UI under `admin/`, not the Next.js editor.
+
+Marketing URLs on the unified dev server match production:
 
 Regenerate the 404 shell after nav/footer template changes:
 

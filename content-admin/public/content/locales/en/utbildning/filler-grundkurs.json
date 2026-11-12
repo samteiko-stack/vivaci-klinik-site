@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "slug": "filler-grundkurs",
+  "path": "/utbildning/filler-grundkurs",
+  "title": "Fillers — grundkurs",
+  "metaDescription": "Grundkurs hyaluronsyra-fillers: anatomi, kanyl och nål, riskzoner och hands-on på Vivaci Academy.",
+  "hero": {
+    "title": "Fillers — grundkurs",
+    "intro": "Lär dig bygga volym och kontur säkert — från patientbedömning till injektion i kind, käklinje och läppintroduktion. Kursen bygger på Vivacis filler-protokoll och fokus på naturliga proportioner.",
+    "audience": "Legitimerad personal med injektionsvana eller genomförd botox-grundkurs. Du bör ha grundläggande kunskap i ansiktsanatomi (e-learning skickas i förväg).",
+    "image": "/images/Morpheus8_0146.webp",
+    "ctaPrimary": {
+      "label": "Se tillgängliga datum"
+    }
+  },
+  "summary": {
+    "intro": "Heldagskurs med obligatorisk e-learning, fallgenomgångar och handledd praktik. Max 6 deltagare per tillfälle.",
+    "fee": "54,900 SEK",
+    "feeNote": " / deltagare exkl. moms",
+    "level": "Grundkurs",
+    "duration": "1 full day · 09:00–17:30",
+    "location": "Vivaci Klinik, Råsundavägen 4, Solna"
+  },
+  "dates": [
+    {
+      "label": "Mar 21, 2026",
+      "time": "09:00 – 17:30",
+      "seats": "8 spots left"
+    },
+    {
+      "label": "Apr 25, 2026",
+      "time": "09:00 – 17:30",
+      "seats": "4 spots left"
+    }
+  ],
+  "about": {
+    "html": "<p>Fillers ställer högre krav på anatomi än botox. På den här kursen lär du dig identifiera riskzoner, välja produktviskosite och arbeta med både nål och kanyl där det är indicerat.</p>\n<h4>Mål efter kursen</h4>\n<ul role=\"list\"><li>Planera och genomföra grundbehandling i medelansikte hos lämplig patient</li><li>Förklara förväntningar, risker och alternativ på ett patientcentrerat sätt</li><li>Hantera tidiga tecken på vaskulära komplikationer enligt checklista</li><li>Dokumentera behandling med foto enligt Vivaci-standard</li></ul>\n<h4>Kursagenda</h4>\n<h5>09:00 – 10:30 · Anatomi &amp; produkter</h5>\n<p>Fat compartments, artärkartor, hyaluronsyrans egenskaper, G-prime och produktval per indikation.</p>\n<h5>10:30 – 12:00 · Demo medfall</h5>\n<p>Live-behandling kind/käklinje. Diskussion kring asymmetri och touch-up-plan.</p>\n<h5>12:00 – 13:00 · Lunch</h5>\n<h5>13:00 – 16:30 · Hands-on</h5>\n<p>Rotation mellan stationer: kanyl kind, nål käklinje, läppintroduktion (teori + ev. observatör).</p>\n<h5>16:30 – 17:30 · Komplikationer &amp; uppföljning</h5>\n<p>Hyaluronidas, blåmärken, svullnad och tidsplan för kontroll.</p>\n<h4>Ingår</h4>\n<ul role=\"list\"><li>E-learning (2 h) före kurs</li><li>Produkter för praktik</li><li>Kursintyg och protokollbank</li><li>Lunch</li></ul>"
+  },
+  "instructors": {
+    "enabled": true,
+    "heading": "Instruktörer",
+    "intro": "",
+    "items": [
+      {
+        "name": "Dr. Erik Johansson",
+        "role": "Plastikkirurg · ansiktskontur",
+        "image": "/images/2149930751_12149930751.webp"
+      },
+      {
+        "name": "Maja Holm, RN",
+        "role": "Filler-specialist",
+        "image": "/images/2149152764_12149152764.webp"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
+    "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Legitimerad personal med injektionsvana eller genomförd botox-grundkurs. Legitimation och vid behov klinikkoppling verifieras vid anmälan."
+      },
+      {
+        "question": "Måste jag gått botox-kurs först?",
+        "answer": "Rekommenderas. Undantag görs vid dokumenterad injektionserfarenhet."
+      },
+      {
+        "question": "Do we treat full lips?",
+        "answer": "Grundkursen introducerar läppanatomi; full läppmodul erbjuds separat."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Cancellation Policy",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
+      }
+    ]
+  }
+}

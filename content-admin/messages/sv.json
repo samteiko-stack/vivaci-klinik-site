@@ -1,0 +1,1675 @@
+{
+  "common": {
+    "appName": "Tandfokus CRM",
+    "loading": "Laddar…",
+    "save": "Spara",
+    "saving": "Sparar…",
+    "working": "Arbetar…",
+    "deleting": "Tar bort…",
+    "cancel": "Avbryt",
+    "delete": "Ta bort",
+    "edit": "Redigera",
+    "add": "Lägg till",
+    "create": "Skapa",
+    "archive": "Arkivera",
+    "unarchive": "Återställ",
+    "yes": "Ja",
+    "no": "Nej",
+    "copy": "Kopiera",
+    "copied": "Kopierat!",
+    "search": "Sök",
+    "clear": "Rensa",
+    "clearSearch": "Rensa sökning",
+    "stepDown": "Minska",
+    "stepUp": "Öka",
+    "close": "Stäng",
+    "confirm": "Bekräfta",
+    "back": "Tillbaka",
+    "invite": "Bjud in",
+    "language": "Språk",
+    "english": "Engelska",
+    "swedish": "Svenska",
+    "switchingLanguage": "Byter språk…",
+    "switchToLanguage": "Byt till {language}",
+    "noResults": "Inga resultat",
+    "actions": "Åtgärder",
+    "rowActions": "Radåtgärder",
+    "status": "Status",
+    "name": "Namn",
+    "email": "E-post",
+    "phone": "Telefon",
+    "role": "Roll",
+    "slug": "Slug",
+    "clinics": "Kliniker",
+    "showInactive": "Visa inaktiva",
+    "hideInactive": "Dölj inaktiva",
+    "showDeactivated": "Visa inaktiverade",
+    "showActive": "Visa aktiva",
+    "users": "användare",
+    "signOut": "Logga ut",
+    "profile": "Profil",
+    "settings": "Inställningar",
+    "openMenu": "Öppna meny",
+    "today": "Idag",
+    "yesterday": "Igår",
+    "all": "Alla",
+    "from": "Från",
+    "to": "Till",
+    "networkError": "Nätverksfel",
+    "dismiss": "Stäng",
+    "selectDate": "Välj datum",
+    "clearDate": "Rensa datum",
+    "copyToClipboard": "Kopiera till urklipp",
+    "dismissNotification": "Stäng avisering",
+    "clearSelection": "Rensa markering",
+    "selectionCount": "{count, plural, one {# objekt markerat} other {# objekt markerade}}",
+    "bulkActions": "Massåtgärder",
+    "closePreview": "Stäng förhandsgranskning",
+    "deleteNote": "Ta bort anteckning",
+    "closeMenu": "Stäng meny",
+    "mainNavigation": "Huvudnavigering",
+    "filterList": "Filtrera lista",
+    "dates": {
+      "justNow": "just nu",
+      "minutesAgo": "{count, plural, one {# minut sedan} other {# minuter sedan}}",
+      "hoursAgo": "{count, plural, one {# timme sedan} other {# timmar sedan}}",
+      "daysAgo": "{count, plural, one {# dag sedan} other {# dagar sedan}}",
+      "unknown": "Okänt"
+    }
+  },
+  "auth": {
+    "welcome": "Välkommen",
+    "signInSubtitle": "Logga in på ditt konto för att fortsätta.",
+    "email": "E-post",
+    "password": "Lösenord",
+    "emailPlaceholder": "du@exempel.se",
+    "forgotPassword": "Glömt lösenord?",
+    "sending": "Skickar…",
+    "signIn": "Logga in",
+    "signingIn": "Loggar in…",
+    "showPassword": "Visa lösenord",
+    "hidePassword": "Dölj lösenord",
+    "resetSent": "Återställningsmejl skickat till {email}. Kontrollera inkorgen.",
+    "tagline": "CRM för Tandfokus",
+    "errors": {
+      "linkExpired": "Länken har gått ut eller är ogiltig. Begär ett nytt återställningsmejl nedan.",
+      "loginFailed": "Inloggningen misslyckades. Du kanske saknar åtkomst.",
+      "noAgentRecord": "Ingen CRM-användare hittades för denna e-postadress.",
+      "invalidCredentials": "Ogiltig e-post eller lösenord.",
+      "enterEmailForReset": "Ange din e-postadress ovan och klicka sedan på Glömt lösenord.",
+      "resetFailed": "Kunde inte skicka återställningsmejl. Kontrollera adressen och försök igen."
+    },
+    "resetPassword": {
+      "setPassword": "Välj ditt lösenord",
+      "setNewPassword": "Välj nytt lösenord",
+      "inviteIntro": "Välj ett lösenord för att aktivera ditt Tandfokus CRM-konto.",
+      "resetIntro": "Välj ett nytt lösenord för ditt konto.",
+      "newPassword": "Nytt lösenord",
+      "confirmPassword": "Bekräfta lösenord",
+      "updatePassword": "Uppdatera lösenord",
+      "passwordTooShort": "Lösenordet måste vara minst 8 tecken.",
+      "passwordMismatch": "Lösenorden matchar inte.",
+      "updateFailed": "Kunde inte uppdatera lösenordet.",
+      "updateFailedRetry": "Kunde inte uppdatera lösenordet. Begär en ny länk och försök igen."
+    }
+  },
+  "adminShell": {
+    "roles": {
+      "admin": "Systemadmin",
+      "agent": "Klinikpersonal",
+      "team_lead": "Teamledare",
+      "administrator": "Administratör"
+    }
+  },
+  "nav": {
+    "access": {
+      "adminOnly": "Endast för administratörer"
+    },
+    "sections": {
+      "insights": "Insikter",
+      "team": "Team",
+      "organization": "Organisation",
+      "system": "System"
+    },
+    "items": {
+      "leads": "Leads",
+      "contacts": "Kontakter",
+      "pipeline": "Pipeline",
+      "forms": "Formulär",
+      "analytics": "Analys",
+      "logs": "Aktivitetslogg",
+      "agents": "Användare",
+      "clinics": "Kliniker",
+      "practitioners": "Behandlare",
+      "campaigns": "Kampanjer",
+      "settings": "Inställningar",
+      "emailLog": "E-postlogg"
+    },
+    "pages": {
+      "leadDetails": "Lead-detaljer",
+      "contact": "Kontakt",
+      "contacts": "Kontakter",
+      "leads": "Leads",
+      "pipeline": "Pipeline",
+      "forms": "Formulär",
+      "users": "Användare",
+      "clinics": "Kliniker",
+      "practitioners": "Behandlare",
+      "campaigns": "Kampanjer",
+      "analytics": "Analys",
+      "settings": "Inställningar",
+      "profile": "Profil",
+      "activityLog": "Aktivitetslogg",
+      "default": "Tandfokus CRM",
+      "emailLog": "E-postlogg"
+    }
+  },
+  "dashboard": {
+    "greeting": {
+      "morning": "God morgon",
+      "afternoon": "God eftermiddag",
+      "evening": "God kväll"
+    },
+    "importCsv": "Importera CSV",
+    "newLead": "Nytt lead",
+    "fallbackName": "där"
+  },
+  "leads": {
+    "table": {
+      "searchPlaceholder": "Sök namn, telefon, e-post…",
+      "filters": {
+        "allStatuses": "Alla statusar",
+        "allPractitioners": "Alla behandlare",
+        "allCampaigns": "Alla kampanjer",
+        "allClinics": "Alla kliniker",
+        "clearDateFilter": "Rensa datumfilter"
+      },
+      "datePresets": {
+        "today": "Idag",
+        "thisWeek": "Denna vecka",
+        "thisMonth": "Denna månad",
+        "last30d": "Senaste 30 d"
+      },
+      "archived": {
+        "show": "Visa arkiverade",
+        "hide": "Dölj arkiverade"
+      },
+      "columns": {
+        "date": "Datum",
+        "name": "Namn",
+        "phone": "Telefon",
+        "email": "E-post",
+        "calls": "Samtal",
+        "status": "Status",
+        "comment": "Kommentar",
+        "clinic": "Klinik",
+        "contact": "Kontakt",
+        "lastActivity": "Senaste aktivitet",
+        "created": "Skapad"
+      },
+      "bulk": {
+        "archive": "Arkivera",
+        "archiveLeads": "Arkivera leads",
+        "unarchive": "Återställ",
+        "deletePermanently": "Ta bort permanent",
+        "noLeadsToArchive": "Valda kontakter har inga leads att arkivera.",
+        "archiveFailed": "Massarkivering misslyckades. Försök igen.",
+        "deleteFailed": "Massborttagning misslyckades. Försök igen."
+      },
+      "rowActions": {
+        "openLead": "Öppna lead",
+        "openContact": "Öppna kontakt",
+        "quickEdit": "Snabbredigera",
+        "archive": "Arkivera",
+        "unarchive": "Återställ",
+        "deletePermanently": "Ta bort permanent"
+      },
+      "empty": {
+        "noLeads": "Inga leads ännu",
+        "noLeadsFiltered": "Inga leads matchar dina filter",
+        "noContacts": "Inga kontakter i säljboken ännu",
+        "noContactsFiltered": "Inga kontakter matchar dina filter",
+        "noLeadsHint": "Nya förfrågningar hamnar här automatiskt. Du kan också lägga till manuellt eller importera en lista.",
+        "noArchivedLeads": "Inga arkiverade leads",
+        "noArchivedHint": "Arkiverade leads visas här när du arkiverar dem från huvudlistan. Stäng av ”Visa arkiverade” för att gå tillbaka till aktiva leads.",
+        "noContactsHint": "Kontakter visas här när ett lead har kvalificerats till säljboken.",
+        "filteredHint": "Prova att bredda datumintervallet eller rensa ett filter för att se fler resultat."
+      },
+      "pagination": {
+        "prev": "Föreg.",
+        "next": "Nästa",
+        "ariaLabel": "Sidnumrering"
+      },
+      "emailOnly": "Endast e-post",
+      "clearFilters": "Rensa filter",
+      "count": {
+        "matches": "träffar",
+        "contacts": "kontakter",
+        "leads": "leads",
+        "showingOfLeads": "Visar {shown} av {total} leads",
+        "showingOfMatches": "Visar {shown} av {total} träffar"
+      },
+      "contactsScopeHint": "Personer i säljboken — en rad per kontakt, kopplade till kvalificerade leads.",
+      "leadCount": "{count, plural, one {# lead} other {# leads}}",
+      "actionsFor": "Åtgärder för {name}",
+      "openFullPage": "Öppna {name} på helsida",
+      "openFullPageShort": "Öppna helsida",
+      "dateLabel": {
+        "lastActivity": "Senaste aktivitet",
+        "created": "Skapad",
+        "from": "Från {date}",
+        "until": "Till {date}",
+        "range": "{from} – {to}"
+      },
+      "errors": {
+        "refreshLeads": "Kunde inte uppdatera leads. Försök igen om en stund.",
+        "refreshContacts": "Kunde inte uppdatera kontakter. Försök igen om en stund.",
+        "deleteFailed": "Kunde inte ta bort leadet. Försök igen.",
+        "bulkArchiveFailedCount": "Kunde inte arkivera {count} lead.",
+        "bulkUnarchiveFailedCount": "Kunde inte återställa {count} lead.",
+        "bulkDeleteFailedCount": "Kunde inte ta bort {count} lead.",
+        "archiveLeadFailedArchive": "Kunde inte arkivera {name}.",
+        "archiveLeadFailedUnarchive": "Kunde inte återställa {name}."
+      }
+    },
+    "modals": {
+      "new": {
+        "title": "Nytt lead",
+        "nameRequired": "Namn *",
+        "namePlaceholder": "Anna Svensson",
+        "phoneHint": "Svenskt nummer, t.ex. 070-123 45 67. Lämna tomt om inte tillgängligt.",
+        "campaignPlaceholder": "Drop-in, remiss, etc.",
+        "phoneOrEmailRequired": "Telefon eller e-post krävs",
+        "createFailed": "Kunde inte skapa lead",
+        "createFailedRetry": "Kunde inte skapa lead. Försök igen.",
+        "creating": "Skapar…",
+        "createLead": "Skapa lead",
+        "campaign": "Kampanj"
+      },
+      "edit": {
+        "title": "Redigera lead",
+        "phoneHint": "Svenskt nummer, t.ex. 070-123 45 67. Lämna tomt om leadet bara har e-post.",
+        "locked": "Låst",
+        "emailLockedHint": "Leadet har e-posthistorik. Att ändra adressen skulle bryta svarsrouting för meddelanden skickade från nuvarande e-post.",
+        "loadFailed": "Kunde inte ladda lead",
+        "saveFailed": "Kunde inte spara",
+        "campaign": "Kampanj",
+        "campaignPlaceholder": "Sommarkampanj"
+      },
+      "quickEdit": {
+        "fullPage": "Helsida",
+        "commentPlaceholder": "Samtalsanteckningar, bokningsdetaljer…",
+        "organizationSection": "Organisation",
+        "none": "Ingen",
+        "nameRequired": "Namn krävs",
+        "loadPartial": "Kunde inte uppdatera alla fält — visar listdata.",
+        "loadFailed": "Kunde inte ladda lead",
+        "saveFailed": "Kunde inte spara lead",
+        "leadFallback": "Lead",
+        "comment": "Kommentar",
+        "clinic": "Klinik",
+        "practitioner": "Behandlare",
+        "campaign": "Kampanj",
+        "calls": "Samtal",
+        "decreaseCalls": "Minska antal samtal",
+        "increaseCalls": "Öka antal samtal",
+        "leadInfoSection": "Leadinfo",
+        "submissionsSection": "Formulärinlämningar",
+        "created": "Skapad",
+        "source": "Källa",
+        "form": "Formulär",
+        "language": "Språk",
+        "formMessage": "Meddelande från formulär",
+        "formMessageHint": "Från inbäddat intagningsformulär (endast läsning).",
+        "formMessageHintNamed": "Från formuläret ”{form}” (endast läsning)."
+      },
+      "import": {
+        "title": "Importera leads från CSV",
+        "intro": "Obligatoriska kolumner: {required}, plus telefon eller e-post · Valfritt: {optional}",
+        "requiredColumns": "name, source",
+        "optionalColumns": "campaign, form, language",
+        "csvOnly": "Ladda upp en .csv-fil.",
+        "dropzoneTitle": "Släpp CSV-filen här eller klicka för att bläddra",
+        "sourceHint": "Källa måste vara en av: meta, tiktok, website, manual",
+        "downloadTemplate": "Ladda ner CSV-mall",
+        "rowsParsed": "{count} rader analyserade",
+        "invalid": "{count} ogiltiga",
+        "changeFile": "Byt fil",
+        "importing": "Importerar…",
+        "importCount": "Importera {count, plural, one {# lead} other {# leads}}",
+        "done": "Klar",
+        "previewColumns": {
+          "index": "#",
+          "name": "Namn",
+          "phone": "Telefon",
+          "email": "E-post",
+          "source": "Källa",
+          "campaign": "Kampanj"
+        },
+        "missing": "saknas",
+        "importFailed": "Import misslyckades ({status})",
+        "resultCreated": "{count, plural, one {# nytt lead importerat} other {# nya leads importerade}}",
+        "resultReopened": "{count, plural, one {# befintligt lead återöppnat} other {# befintliga leads återöppnade}}",
+        "resultSkipped": "{count} hoppades över",
+        "moreErrors": "…och {count} fler fel"
+      }
+    },
+    "confirm": {
+      "archive": {
+        "title": "Arkivera {count, plural, one {lead} other {leads}}?",
+        "unarchiveTitle": "Återställ {count, plural, one {lead} other {leads}}?",
+        "contactBulkTitle": "Arkivera leads för {count, plural, one {# kontakt} other {# kontakter}}?",
+        "singleTitleArchive": "Arkivera {name}?",
+        "singleTitleUnarchive": "Återställ {name}?",
+        "contactArchiveDescription": "Kvalificerade leads kopplade till dessa kontakter arkiveras. Kontakterna finns kvar i katalogen.",
+        "unarchiveDescription": "Valda leads visas igen i din aktiva leadlista.",
+        "archiveDescription": "Valda leads flyttas till arkiverade leads. Du kan återställa dem senare.",
+        "singleUnarchiveDescription": "Detta lead visas igen i din aktiva leadlista.",
+        "singleArchiveDescription": "Detta lead flyttas till arkiverade leads. Du kan återställa det senare.",
+        "confirmArchive": "Arkivera",
+        "confirmUnarchive": "Återställ",
+        "confirmArchiveLeads": "Arkivera leads"
+      },
+      "delete": {
+        "bulkTitle": "Ta bort {count, plural, one {lead} other {leads}} permanent?",
+        "singleTitle": "Ta bort lead permanent?",
+        "singleTitleNamed": "Ta bort {name} permanent?",
+        "bulkDescription": "Detta tar permanent bort valda leads, inklusive meddelanden, anteckningar, filer och samtalshistorik. Detta kan inte ångras.",
+        "singleDescription": "Detta tar permanent bort leadet, inklusive meddelanden, anteckningar, filer och samtalshistorik. Detta kan inte ångras.",
+        "confirmLabel": "Ta bort permanent"
+      }
+    },
+    "lostReasons": {
+      "price": "Priset för högt",
+      "timing": "Fel timing",
+      "competitor": "Valde konkurrent",
+      "no_response": "Inget svar",
+      "not_interested": "Inte intresserad",
+      "other": "Annan anledning"
+    },
+    "clinicRail": {
+      "allClinics": "Alla kliniker",
+      "loading": "Laddar kliniker…"
+    },
+    "sources": {
+      "meta": "Meta",
+      "tiktok": "TikTok",
+      "website": "Webbplats",
+      "webflow": "Webflow",
+      "manual": "Manuell",
+      "unknown": "Okänd"
+    },
+    "assign": {
+      "unassigned": "Otilldelad",
+      "unassign": "Ta bort tilldelning",
+      "unassignConfirmTitle": "Ta bort tilldelning?",
+      "unassignConfirmDescription": "Leadet tilldelas inte längre till någon.",
+      "assignFailed": "Kunde inte tilldela lead"
+    },
+    "detail": {
+      "backToLeads": "Tillbaka till leads",
+      "added": "Tillagd {date}",
+      "tabs": {
+        "record": "Post",
+        "messages": "Meddelanden",
+        "phone": "Telefon",
+        "sectionsAriaLabel": "Lead-sektioner"
+      },
+      "sections": {
+        "contact": "Kontakt",
+        "details": "Detaljer",
+        "files": "Filer",
+        "submissions": "Formulärinlämningar",
+        "noSubmissions": "Inga formulärinlämningar för detta lead."
+      },
+      "fields": {
+        "phone": "Telefon",
+        "email": "E-post",
+        "altEmail": "Alt. e-post",
+        "altPhone": "Alt. telefon",
+        "contactRecord": "Kontaktpost",
+        "viewFullContact": "Visa fullständig kontakt",
+        "status": "Status",
+        "clinic": "Klinik",
+        "campaignLink": "Kampanjlänk",
+        "practitioner": "Behandlare",
+        "lostReason": "Förlustorsak",
+        "callCount": "Samtal"
+      },
+      "notProvided": "Ej angivet",
+      "identityConflict": {
+        "navLabel": "Konflikt",
+        "title": "Möjlig identitetskonflikt",
+        "description": "Telefon och e-post matchar olika befintliga kontakter. Granska innan du länkar eller slår ihop.",
+        "reviewAction": "Granska kontakter",
+        "markReviewed": "Markera som granskad"
+      },
+      "archiveFailed": "Kunde inte uppdatera arkiveringsstatus",
+      "deleteFailed": "Kunde inte ta bort lead",
+      "confirm": {
+        "unarchiveTitle": "Återställ lead?",
+        "archiveTitle": "Arkivera lead?",
+        "unarchiveDescription": "Leadet visas igen i din aktiva leadlista.",
+        "archiveDescription": "Leadet flyttas till arkiverade leads. Du kan återställa det senare.",
+        "deleteTitle": "Ta bort lead permanent?",
+        "deleteDescription": "Detta tar permanent bort {name}, inklusive anteckningar, filer och samtalshistorik. Detta kan inte ångras."
+      }
+    },
+    "email": {
+      "tab": "E-post",
+      "loading": "Laddar e-post…",
+      "noEmailTitle": "Ingen e-post registrerad",
+      "noEmailDescription": "Leadet skickades in utan e-postadress.",
+      "loadErrorTitle": "Kunde inte ladda e-post",
+      "loadErrorDescription": "Kunde inte ladda e-post. Uppdatera sidan och försök igen.",
+      "emptyTitle": "Ingen e-post ännu",
+      "emptyDescription": "Skicka det första meddelandet nedan.",
+      "subject": "Ämne",
+      "subjectPlaceholder": "Ämne (valfritt)",
+      "replyingTo": "Svarar på",
+      "placeholder": "Mejla {name}…",
+      "send": "Skicka e-post",
+      "sending": "Skickar…",
+      "emptyMessage": "Meddelandet kan inte vara tomt.",
+      "sendFailed": "Kunde inte skicka e-post",
+      "defaultSubject": "Meddelande från Tandfokus",
+      "rePrefix": "Sv: ",
+      "you": "Du",
+      "today": "Idag",
+      "yesterday": "Igår",
+      "unknownDate": "Okänt",
+      "noMessagesYet": "Inga meddelanden ännu",
+      "youPrefix": "Du: ",
+      "linkPlaceholder": "https://",
+      "editorPlaceholder": "Skriv ditt meddelande…",
+      "insertLinkTitle": "Infoga länk",
+      "insertLink": "Infoga länk",
+      "urlLabel": "URL"
+    },
+    "notes": {
+      "tab": "Anteckningar",
+      "placeholder": "Lägg till en anteckning om leadet…",
+      "addNote": "Lägg till anteckning",
+      "empty": "Inga anteckningar ännu.",
+      "title": "Anteckning",
+      "deleteConfirm": "Ta bort denna anteckning?",
+      "loadFailed": "Kunde inte ladda anteckningar.",
+      "saveFailed": "Kunde inte spara anteckning",
+      "deleteFailed": "Kunde inte ta bort anteckning"
+    },
+    "calls": {
+      "noPhoneTitle": "Inget telefonnummer",
+      "noPhoneDescription": "Leadet skickades in utan telefonnummer. Kontakta dem via e-post istället.",
+      "phoneSection": "Telefon",
+      "historySection": "Samtalshistorik",
+      "call": "Ring",
+      "hangUp": "Lägg på",
+      "resetLine": "Återställ linje",
+      "status": {
+        "ready": "Redo",
+        "calling": "Ringer…",
+        "ringing": "Signalerar",
+        "connected": "Ansluten",
+        "preparing": "Förbereder samtal…",
+        "almostReady": "Nästan redo…",
+        "connecting": "Ansluter linje…",
+        "tryingAgain": "Försöker igen…",
+        "refreshing": "Uppdaterar linje…",
+        "dialing": "Slår nummer…"
+      },
+      "notices": {
+        "noAnswer": "Inget svar",
+        "readyToCall": "Redo att ringa.",
+        "tapToRetry": "Tryck på Ring för att försöka igen.",
+        "historySaveFailed": "Samtalet avslutades men historiken kunde inte sparas",
+        "micBlocked": "Mikrofon blockerad — tillåt mikrofonåtkomst i webbläsaren",
+        "micBlockedSettings": "Mikrofon blockerad — tillåt mikrofonåtkomst i webbläsarinställningarna",
+        "callDropped": "Samtalet avbröts — tryck på Ring för att försöka igen",
+        "couldNotAnswer": "Kunde inte svara på samtalet — försök igen",
+        "customerUnavailable": "Kunden otillgänglig",
+        "noValidPhone": "Leadet har inget giltigt telefonnummer"
+      },
+      "logs": {
+        "loading": "Laddar samtalshistorik…",
+        "loadFailed": "Kunde inte ladda samtalshistorik.",
+        "loadErrorTitle": "Kunde inte ladda samtal",
+        "empty": "Inga samtal ännu",
+        "answered": "Besvarat · {duration}",
+        "failed": "Samtalet misslyckades",
+        "noAnswer": "Inget svar",
+        "unknownAgent": "Okänd agent"
+      }
+    },
+    "files": {
+      "title": "Filer",
+      "add": "Lägg till",
+      "addFile": "Lägg till fil",
+      "uploading": "Laddar upp…",
+      "empty": "Inga filer ännu.",
+      "deleteFile": "Ta bort fil",
+      "deleteConfirm": "Ta bort denna fil?",
+      "sourceEmail": "E-post",
+      "sourceUploaded": "Uppladdad",
+      "loadFailed": "Kunde inte ladda filer",
+      "uploadFailed": "Uppladdning misslyckades",
+      "deleteFailed": "Kunde inte ta bort fil",
+      "fileTooLarge": "{name} är för stor (max 10 MB)."
+    }
+  },
+  "pipeline": {
+    "toolbar": {
+      "searchPlaceholder": "Sök i pipeline…",
+      "activeCount": "{count} aktiva",
+      "activeLabel": "aktiva",
+      "undo": "Ångra",
+      "undoAriaLabel": "Ångra flytt för {leadName}"
+    },
+    "errors": {
+      "refresh": "Kunde inte uppdatera pipeline. Försök igen om en stund.",
+      "updateStatus": "Kunde inte uppdatera status",
+      "restoreLead": "Kunde inte återställa lead",
+      "undoMove": "Kunde inte ångra flytt"
+    },
+    "board": {
+      "noStages": "Inga pipeline-steg konfigurerade",
+      "noLeads": "Inga leads"
+    },
+    "lostModal": {
+      "title": "Markera som förlorat",
+      "intro": "Välj varför {leadName} förlorades. Leadet arkiveras.",
+      "introFallback": "Välj varför detta lead förlorades. Leadet arkiveras.",
+      "selectReasonPlaceholder": "Välj anledning…",
+      "selectReasonError": "Välj en anledning innan du bekräftar."
+    },
+    "wonModal": {
+      "title": "Markera {leadName} som vunnet?",
+      "titleFallback": "Markera lead som vunnet?",
+      "description": "Leadet arkiveras. Du hittar det igen via Visa arkiverade i leadlistan.",
+      "confirmLabel": "Markera som vunnet"
+    },
+    "statusSelect": {
+      "updated": "Status uppdaterad",
+      "changeTitle": "Ändra status till {status}?",
+      "changeDescription": "Detta uppdaterar leadet i pipeline och leadlistan.",
+      "confirm": "Ändra status"
+    }
+  },
+  "forms": {
+    "tabs": {
+      "build": "Bygg",
+      "settings": "Inställningar",
+      "share": "Dela",
+      "submissions": "Inskick",
+      "preview": "Förhandsgranska",
+      "customize": "Anpassa"
+    },
+    "status": {
+      "live": "Aktiv",
+      "paused": "Pausad",
+      "archived": "Arkiverad"
+    },
+    "filters": {
+      "activeForms": "Aktiva formulär",
+      "live": "Aktiva",
+      "paused": "Pausade",
+      "archived": "Arkiverade",
+      "allForms": "Alla formulär",
+      "allGroups": "Alla grupper",
+      "none": "Ingen"
+    },
+    "groupBy": {
+      "label": "Gruppera efter",
+      "none": "Ingen gruppering",
+      "group": "Grupp",
+      "status": "Status",
+      "source": "Källa",
+      "clinic": "Klinik",
+      "campaign": "Kampanj"
+    },
+    "groups": {
+      "manageAction": "Hantera grupper",
+      "manageTitle": "Formulärgrupper",
+      "manageDescription": "Byt namn på grupper eller se hur många formulär som tillhör varje grupp. Tilldela grupper från listan eller i formulärinställningarna.",
+      "newGroup": "Ny grupp…",
+      "createTitle": "Skapa grupp",
+      "createDescription": "Välj ett namn som används på flera formulär. Formuläret du började från tilldelas gruppen.",
+      "createLabel": "Skapa grupp",
+      "nameLabel": "Gruppnamn",
+      "namePlaceholder": "t.ex. Webbplats, Meta-annonser",
+      "renameAction": "Byt namn",
+      "renameLabel": "Byt namn på {name}",
+      "formCount": "{count, plural, one {# formulär} other {# formulär}}",
+      "empty": "Inga aktiva formulär ännu.",
+      "updated": "Grupp uppdaterad",
+      "created": "Gruppen ”{name}” skapades",
+      "renamed": "Gruppen bytte namn till ”{name}”",
+      "updateFailed": "Kunde inte uppdatera gruppen"
+    },
+    "list": {
+      "searchPlaceholder": "Sök formulär…",
+      "emptyTitle": "Inga formulär ännu",
+      "emptyFilteredTitle": "Inga matchande formulär",
+      "emptyDescription": "Bygg värdformulär och inbäddningar som matar leads direkt in i CRM:et.",
+      "emptyFilteredDescription": "Prova en annan sökning eller ett annat filter.",
+      "newForm": "Nytt formulär",
+      "untitledForm": "Namnlöst formulär",
+      "uncategorized": "Okategoriserade",
+      "showArchived": "Visa arkiverade",
+      "hideArchived": "Aktiva formulär",
+      "formCount": "{count, plural, one {# formulär} other {# formulär}}",
+      "countLabel": "formulär"
+    },
+    "table": {
+      "columns": {
+        "status": "Status",
+        "group": "Grupp",
+        "source": "Källa",
+        "campaign": "Kampanj",
+        "clinic": "Klinik",
+        "submissions": "Inskick",
+        "updated": "Uppdaterad"
+      }
+    },
+    "builder": {
+      "customize": "Anpassa",
+      "customizeHint": "Redigera etiketter, val och obligatoriska fält",
+      "previewHint": "Se hur besökare upplever ditt formulär",
+      "fieldDefault": "Fält",
+      "formNameRequired": "Formulärnamn krävs."
+    },
+    "fields": {
+      "formName": "Formulärnamn",
+      "group": "Grupp",
+      "urlSlug": "URL-slug",
+      "description": "Interna anteckningar",
+      "descriptionPlaceholder": "t.ex. vilka sidor som använder formuläret — visas inte för besökare",
+      "descriptionHint": "Endast för personal. Använd för routing, sidvägar eller påminnelser. Visas aldrig på publika formulär.",
+      "source": "Källa",
+      "clinic": "Klinik",
+      "practitioner": "Behandlare",
+      "campaign": "Kampanj",
+      "campaignHint": "Kopplar nya leads till en marknadsföringskampanj för rapportering och GTM-attribution. Valfritt.",
+      "metaVirtualUrlPath": "URL-sökväg",
+      "metaVirtualUrlPathPlaceholder": "/meta-submitform",
+      "metaVirtualUrlPathHint": "Samma sökväg som i din Meta custom conversion-regel (t.ex. /meta-submitform).",
+      "buttonText": "Knapptext",
+      "successMessage": "Bekräftelsemeddelande",
+      "redirectUrl": "Omdirigerings-URL",
+      "redirectPlaceholder": "https://…",
+      "redirectHint": "Valfri tack-sida efter inskick. Lämna tom för att visa bekräftelsemeddelandet i formuläret."
+    },
+    "defaults": {
+      "buttonText": "Skicka",
+      "successMessage": "Tack! Vi hör av oss snart."
+    },
+    "share": {
+      "copyHostedLink": "Kopiera värdad länk?",
+      "copyEmbedCode": "Kopiera inbäddningskod?",
+      "copyEmbed": "Kopiera inbäddningskod",
+      "copyLink": "Kopiera länk",
+      "openHosted": "Öppna formulär",
+      "hostedLink": "Värdad länk",
+      "hostedLinkHint": "Kopiera eller öppna det värdade formuläret — länken visas inte här."
+    },
+    "confirm": {
+      "saveTitle": "Spara detta formulär?",
+      "saveDescription": "Dina ändringar sparas och den värdade länken använder den uppdaterade versionen.",
+      "saveLabel": "Spara formulär",
+      "createTitle": "Skapa nytt formulär?",
+      "createDescription": "Öppnar en tom formulärbyggare. Spara när du är redo att publicera.",
+      "createLabel": "Skapa formulär",
+      "deleteTitle": "Ta bort formulär?",
+      "deleteDescription": "Detta tar bort formuläret permanent. Det har inga inskick, så inget sparas i CRM:et.",
+      "deleteLabel": "Ta bort formulär",
+      "archiveTitle": "Arkivera formulär?",
+      "archiveDescription": "Döljer formuläret från den aktiva listan och stoppar den värdade länken. Du kan återställa det senare.",
+      "archiveLabel": "Arkivera formulär",
+      "restoreTitle": "Återställ formulär?",
+      "restoreDescription": "Flyttar formuläret tillbaka till den aktiva listan. Det förblir pausat tills du aktiverar det.",
+      "restoreLabel": "Återställ formulär",
+      "duplicateTitle": "Duplicera formulär?",
+      "duplicateDescription": "Skapar en pausad kopia som du kan redigera separat.",
+      "duplicateLabel": "Duplicera",
+      "pauseTitle": "Pausa formulär?",
+      "pauseDescription": "Den värdade länken och inbäddningen slutar ta emot inskick tills du aktiverar igen.",
+      "pauseLabel": "Pausa formulär",
+      "goLiveTitle": "Aktivera formulär?",
+      "goLiveDescription": "Den värdade länken och inbäddningen börjar ta emot inskick.",
+      "goLiveLabel": "Aktivera",
+      "copyTitle": "Kopiera till urklipp?",
+      "copyLabel": "Kopiera",
+      "removeFieldTitle": "Ta bort fält?",
+      "removeFieldDescription": "Tar bort detta fält från formulärlayouten.",
+      "removeFieldLabel": "Ta bort fält"
+    },
+    "toast": {
+      "copied": "Kopierat till urklipp",
+      "copyFailed": "Kunde inte kopiera",
+      "created": "Formulär skapat",
+      "saved": "Formulär sparat",
+      "deleted": "Formulär borttaget",
+      "archived": "Formulär arkiverat",
+      "restored": "Formulär återställt",
+      "live": "Formulär är aktivt",
+      "paused": "Formulär pausat",
+      "duplicated": "Formulär duplicerat",
+      "error": "Något gick fel"
+    },
+    "actions": {
+      "createForm": "Skapa formulär",
+      "saveForm": "Spara formulär",
+      "loadError": "Kunde inte ladda formulär",
+      "createFirstForm": "Skapa ditt första formulär",
+      "copyLink": "Kopiera länk",
+      "viewSubmissions": "Visa inskick",
+      "duplicate": "Duplicera",
+      "pause": "Pausa",
+      "goLive": "Aktivera",
+      "restore": "Återställ"
+    },
+    "editor": {
+      "allForms": "Alla formulär",
+      "formDetails": "Formulärdetaljer",
+      "leadRouting": "Lead-routing",
+      "afterSubmit": "Efter inskick",
+      "shareTitle": "Dela",
+      "embedCode": "Inbäddningskod",
+      "hosted": "Värdad",
+      "embed": "Inbäddning",
+      "done": "Klar",
+      "preview": "Förhandsgranska",
+      "formIsLive": "Formuläret är aktivt",
+      "pausedFormsHint": "Pausade formulär kan inte öppnas eller bäddas in.",
+      "nameSlugHint": "Visningsnamn som visas för leads och i CRM.",
+      "groupHint": "Organisera formulär i listan. Du kan också tilldela grupp direkt i formulärtabellen.",
+      "groupPlaceholder": "t.ex. Webbplats, Meta-annonser",
+      "routingHint": "Valfritt — koppla klinik, behandlare eller kampanj till nya leads.",
+      "settingsNavLabel": "Formulärinställningar",
+      "settingsSections": {
+        "details": "Detaljer",
+        "routing": "Routing",
+        "meta": "Meta",
+        "submit": "Efter inskick"
+      },
+      "metaTrackingTitle": "Meta-konvertering",
+      "metaTrackingHint": "Matcha din custom conversion i Events Manager. Vi använder bara URL-regler — kopiera sökvägen från Meta (oftast /meta-submitform).",
+      "newFormName": "Nytt formulär",
+      "formCount": "{count, plural, one {# formulär} other {# formulär}}",
+      "updated": "Uppdaterad {date}",
+      "submissionCount": "{count, plural, one {# inskick} other {# inskick}}"
+    },
+    "submissions": {
+      "title": "Inskick",
+      "hint": "Varje inskick skapar en kontakt och ett nytt lead i CRM:et.",
+      "loading": "Laddar inskick…",
+      "loadFailed": "Kunde inte ladda inskick",
+      "emptyTitle": "Inga inskick ännu",
+      "emptyDescription": "Inskick visas här när någon fyller i formuläret.",
+      "openLead": "Öppna lead",
+      "unknownContact": "Okänd kontakt"
+    },
+    "palette": {
+      "addFields": "Lägg till fält",
+      "addFieldsHint": "Dra ett fält till formuläret",
+      "formLayout": "Formulärlayout",
+      "formLayoutHint": "Släpp, ordna om och klicka för att anpassa",
+      "canvasEmpty": "Dra fält hit för att börja",
+      "longAnswerPlaceholder": "Långt svar…",
+      "choosePlaceholder": "Välj…",
+      "addChoices": "Lägg till val…",
+      "choicesCount": "{count} val",
+      "reorderAria": "Ordna om {label}"
+    },
+    "fieldEditor": {
+      "choices": "Val",
+      "choicePlaceholder": "Val {index}",
+      "removeChoiceAria": "Ta bort val {index}",
+      "addChoice": "Lägg till val",
+      "required": "Obligatoriskt",
+      "placeholderOptional": "Platshållare (valfritt)",
+      "placeholderHint": "Visas i det tomma fältet",
+      "selectPlaceholderHint": "t.ex. Välj tjänst",
+      "removeField": "Ta bort fält",
+      "headingText": "Rubriktext",
+      "instructions": "Instruktioner",
+      "question": "Fråga",
+      "clinicOptionsHint": "Valen hämtas från aktiva kliniker i CRM och uppdateras automatiskt när kliniker ändras."
+    },
+    "public": {
+      "loading": "Laddar formulär…",
+      "selectPlaceholder": "Välj…",
+      "selectPlaceholderClinic": "Välj klinik…",
+      "selectPlaceholderFromLabel": "Välj {label}…",
+      "sending": "Skickar…",
+      "submitError": "Kunde inte skicka formuläret. Försök igen.",
+      "networkError": "Kunde inte nå servern. Kontrollera anslutningen och försök igen.",
+      "rateLimitError": "För många försök. Vänta en stund och försök igen.",
+      "serverError": "Något gick fel. Försök igen om några minuter.",
+      "validationRequired": "Fyll i alla obligatoriska fält.",
+      "captchaRequired": "Säkerhetskontroll krävs. Försök skicka igen.",
+      "captchaFailed": "Säkerhetskontrollen misslyckades. Försök igen.",
+      "captchaUnavailable": "Säkerhetskontrollen är tillfälligt otillgänglig. Försök igen om en stund.",
+      "invalidPhone": "Ange ett giltigt telefonnummer, t.ex. 070-123 45 67.",
+      "previewNote": "Endast förhandsgranskning — inskick är inaktiverat."
+    },
+    "errors": {
+      "saveFailed": "Kunde inte spara formulär",
+      "deleteFailed": "Kunde inte ta bort formulär",
+      "archiveFailed": "Kunde inte arkivera formulär",
+      "restoreFailed": "Kunde inte återställa formulär",
+      "updateFailed": "Kunde inte uppdatera formulär",
+      "duplicateFailed": "Kunde inte duplicera formulär",
+      "nameFieldRequired": "Lägg till ett namnfält.",
+      "contactFieldRequired": "Lägg till minst e-post eller telefon så att leads kan matchas.",
+      "dropdownNeedsChoice": "Rullgardinsmenyn ”{label}” behöver minst ett val."
+    },
+    "confirmNamed": {
+      "deleteTitle": "Ta bort ”{name}”?",
+      "archiveTitle": "Arkivera ”{name}”?",
+      "archiveWithSubmissions": "Detta formulär har {count, plural, one {# inskick} other {# inskick}}. Arkivering döljer det från den aktiva listan och stoppar den värdade länken. Inskick finns kvar i CRM:et.",
+      "restoreTitle": "Återställ ”{name}”?",
+      "duplicateTitle": "Duplicera ”{name}”?",
+      "pauseTitle": "Pausa ”{name}”?",
+      "goLiveTitle": "Aktivera ”{name}”?",
+      "copyLinkTitle": "Kopiera länk för ”{name}”?",
+      "removeFieldTitle": "Ta bort ”{label}”?"
+    }
+  },
+  "settings": {
+    "page": {
+      "title": "Inställningar",
+      "subtitle": "Hantera CRM-konfiguration, autentiseringsuppgifter och integrationer."
+    },
+    "tabs": {
+      "general": "Allmänt",
+      "webhooks": "Webhook-URL:er",
+      "intake": "Intag-API-nyckel",
+      "statuses": "Lead-statusar",
+      "integrations": "Integrationer",
+      "advanced": "Avancerat"
+    },
+    "sections": {
+      "branding": {
+        "title": "Varumärke",
+        "description": "Visas i hela appen."
+      },
+      "companyName": "Företagsnamn",
+      "appUrl": {
+        "title": "App-URL",
+        "description": "Din distribuerade app-URL. Används för att automatiskt generera webhook-URL:er."
+      },
+      "productionUrl": "Produktions-URL",
+      "webhooks": {
+        "title": "Webhook- och endpoint-URL:er",
+        "description": "Kopiera dessa till respektive kontrollpanel. De uppdateras automatiskt när du ändrar app-URL:en."
+      },
+      "importEmails": {
+        "title": "Importera mottagna e-postmeddelanden",
+        "description": "Om Resend tog emot ett svar som inte syntes i ett leadtråd, kör en synk för att importera nyligen mottagen inkommande e-post från Resend."
+      },
+      "intakeKey": {
+        "title": "Intag-API-nyckel",
+        "description": "Används för att autentisera POST-förfrågningar till /api/intake från externa källor som Meta, Zapier eller Webflow."
+      },
+      "pipelineStages": {
+        "title": "Pipeline-steg för leads",
+        "description": "Ändringar synkas automatiskt i pipeline och på leadsidor."
+      },
+      "telnyxVoice": {
+        "title": "Telnyx Voice (samtal i webbläsaren)",
+        "description": "Ring leads direkt från CRM:et."
+      },
+      "websiteForms": {
+        "title": "Webbformulär (alla plattformar)",
+        "description": "Koppla formulär från valfri webbplatsbyggare (Webflow, Framer, WordPress m.fl.) för att automatiskt fånga leads."
+      },
+      "systemDiagnostics": {
+        "title": "System och diagnostik",
+        "description": "Åtkomst till avancerade funktioner och systemloggar."
+      }
+    },
+    "statuses": {
+      "newStage": "Nytt steg",
+      "minOneStage": "Du måste ha minst ett pipeline-steg.",
+      "syncing": "Synkar…",
+      "synced": "Synkat",
+      "saveFailed": "Kunde inte spara statusar",
+      "loading": "Laddar statusar…",
+      "dragHint": "Dra steg för att ordna om din pipeline.",
+      "dropHere": "Släpp här",
+      "addStage": "Lägg till steg",
+      "labelPlaceholder": "t.ex. Kvalificerad",
+      "removeStatusTitle": "Ta bort status",
+      "removeConfirmTitle": "Ta bort ”{label}”?",
+      "removeConfirmDescription": "Detta steg tas bort från din pipeline omedelbart.",
+      "removeLabel": "Ta bort",
+      "reorderAria": "Dra {label}",
+      "tip": "Tips: Stegen visas i denna ordning i hela appen. Dra handtaget för att ordna om dem efter din säljprocess."
+    },
+    "actions": {
+      "rotateKey": "Rotera nyckel",
+      "generateKey": "Generera nyckel",
+      "generating": "Genererar…",
+      "syncInbound": "Synka inkommande e-post"
+    },
+    "confirm": {
+      "rotateKeyTitle": "Rotera intag-API-nyckel?",
+      "generateKeyTitle": "Generera intag-API-nyckel?",
+      "rotateKeyDescription": "Den nuvarande nyckeln slutar fungera omedelbart. Uppdatera alla externa källor med den nya nyckeln innan du fortsätter."
+    },
+    "errors": {
+      "saveFailed": "Kunde inte spara",
+      "rotateFailed": "Kunde inte rotera nyckel",
+      "inboundSyncFailed": "Synk av inkommande e-post misslyckades."
+    },
+    "general": {
+      "companyPlaceholder": "t.ex. Tandfokus",
+      "appUrlPlaceholder": "https://din-app.vercel.app",
+      "appUrlHint": "Inget avslutande snedstreck. Måste vara publikt tillgänglig för webhooks."
+    },
+    "saveBar": {
+      "saveChanges": "Spara ändringar",
+      "saved": "Sparat"
+    },
+    "webhooks": {
+      "intakeEndpoint": "Lead-intags-endpoint (POST)",
+      "resendInbound": "Resend webhook för inkommande e-post",
+      "telnyxVoice": "Telnyx Voice-webhook (Credential Connection)",
+      "whereToPaste": "Var du klistrar in dessa",
+      "metaZapierTitle": "Meta / Zapier → Leadkälla",
+      "metaZapierDesc": "Skicka leads via POST till lead-intags-endpointen med din API-nyckel i Authorization-headern.",
+      "resendTitle": "Resend → Inkommande e-post-webhook",
+      "resendDesc": "Använd din gratis @*.resend.app-adress (Resend → E-post → Mottagning). Sätt RESEND_INBOUND_DOMAIN och RESEND_WEBHOOK_SECRET i Vercel och prenumerera på webhooken email.received.",
+      "telnyxTitle": "Telnyx → Röst",
+      "telnyxDesc": "Konfigurera Telnyx Credential Connection-webhook för samtal i webbläsaren.",
+      "syncResult": "Synkade {processed} mottagna e-postmeddelanden: {stored} importerade, {duplicates} redan i CRM, {skipped} hoppades över."
+    },
+    "intake": {
+      "newKeyReveal": "Ny nyckel — kopiera den nu, den visas inte igen",
+      "currentKeyMasked": "Nuvarande nyckel (maskerad)",
+      "noKeyYet": "Ingen nyckel genererad ännu. Klicka Generera för att skapa en.",
+      "rotateWarning": "Rotation ogiltigförklarar den gamla nyckeln omedelbart.",
+      "rotateWarningDetail": "Uppdatera alla externa källor (Zapier, Meta m.fl.) med den nya nyckeln innan du roterar.",
+      "howToUse": "Så använder du nyckeln",
+      "generateDescription": "En ny API-nyckel skapas för lead-intagsförfrågningar.",
+      "requiredFields": "Obligatoriskt:",
+      "optionalFields": "Valfritt:",
+      "requiredFieldsList": "namn, källa och telefon eller e-post",
+      "optionalFieldsList": "kampanj, formulär, språk. Telefon accepterar svenska format (t.ex. 070-123 45 67) och sparas som +46…"
+    },
+    "advanced": {
+      "activityLogTitle": "Aktivitetslogg",
+      "activityLogDesc": "Agent- och adminåtgärder på leads",
+      "activityLogNote": "Obs: Aktivitetsloggen läser från databasen. Använd den sparsamt på stora datumintervall."
+    },
+    "integrations": {
+      "telnyx": {
+        "configStatus": "Konfigurationsstatus",
+        "checking": "Kontrollerar servermiljö…",
+        "ready": "Röstsamtal är redo",
+        "readyWithNumber": "Röstsamtal är redo · {number}",
+        "notReady": "Lägg till miljövariablerna nedan och distribuera om",
+        "refresh": "Uppdatera",
+        "loadFailed": "Kunde inte ladda Telnyx-status",
+        "step1Title": "Skapa en Credential Connection",
+        "step1Body": "I Telnyx → Programmable Voice, skapa en Credential-anslutning med t.ex. namnet Tandfokus CRM.",
+        "webhookUrl": "Webhook-URL (krävs av Telnyx):",
+        "webhookUrlHint": "Använd din produktions-URL från Inställningar → Allmänt → App-URL om den skiljer sig.",
+        "webhookApiVersion": "Webhook API-version:",
+        "step2Title": "Skapa en Outbound Voice Profile",
+        "step2Body": "Gå till Outbound Voice Profiles → Add new profile. Koppla din Credential Connection och tillåt Sverige (SE) under destinations — standardprofilen tillåter bara US/CA.",
+        "step3Title": "Tilldela ditt nummer",
+        "step3Body": "Öppna ditt köpta nummer och tilldela det till Credential Connection så att det kan användas som nummerpresentation vid utgående samtal.",
+        "step4Title": "Skapa en telephony credential",
+        "step4Body": "På Credential Connection, skapa en on-demand telephony credential. Kopiera dess ID till TELNYX_TELEPHONY_CREDENTIAL_ID. CRM:et använder detta för att skapa kortlivade inloggningstoken via /api/token.",
+        "step5Title": "Sätt servermiljövariabler",
+        "step5Body": "Lägg till dessa i Vercel (eller din host) och distribuera om:",
+        "step6Title": "Testa från ett lead",
+        "step6Body": "Öppna ett lead med telefonnummer → fliken Samtal → Ring via webbläsare. Tillåt mikrofon när du uppmanas — samtal kan inte kopplas utan det. Samtal loggas automatiskt i samtalshistoriken.",
+        "troubleshooting": "Felsökning.",
+        "troubleshootingBody": "Om gränssnittet visar att det ringer men den andra telefonen aldrig ringer, kontrollera Telnyx → Voice → Logs. WebRTC-samtal kräver mikrofontillstånd och en fungerande nätverksväg till Telnyx EU-mediaservrar. Ett +468 Stockholm-nummer kopplar ofta till svenska mobiler mer tillförlitligt än ett +4610 nationellt nummer.",
+        "docsLink": "Telnyx WebRTC-dokumentation",
+        "envHints": {
+          "apiKey": "API v2-nyckel från Telnyx Portal → API Keys",
+          "phoneNumber": "Ditt köpta nummer i E.164-format, t.ex. +46701234567",
+          "telephonyCredentialId": "On-demand telephony credential-ID från din Credential Connection",
+          "callControlAppId": "Call Control Application-ID (Programmable Voice → Call Control Apps)"
+        }
+      },
+      "shared": {
+        "url": "URL:",
+        "payloadType": "Payload-typ:",
+        "headers": "Headers:",
+        "data": "Data:",
+        "trigger": "Trigger:",
+        "action": "Åtgärd:",
+        "json": "JSON",
+        "tip": "Tips:",
+        "createZapierAccount": "Skapa ett Zapier-konto",
+        "zapierSignupPrefix": "Registrera dig på",
+        "zapierSignupSuffix": "(gratisnivån inkluderar 100 leads/månad)",
+        "createNewZap": "Skapa ny Zap",
+        "configureWebhook": "Konfigurera webhook-åtgärd",
+        "connectAccount": "Koppla ditt {platform}-konto",
+        "selectAdAccount": "Välj ditt annonskonto",
+        "selectLeadForm": "Välj ditt leadformulär",
+        "getApiKey": "Hämta din API-nyckel",
+        "testActivate": "Testa och aktivera",
+        "intakeApiKeyTab": "Intake API-nyckel"
+      },
+      "websiteForms": {
+        "gtmTitle": "Google Tag Manager",
+        "gtmBody": "Leadformulär skickar generate_lead till dataLayer först när CRM:et bekräftat att leadet sparats — inte vid klick. Använd samma GTM-container på Webflow och skapa en Custom Event-trigger.",
+        "gtmContainerLabel": "GTM container-ID (hostade formulär)",
+        "gtmContainerPlaceholder": "GTM-XXXXXXX",
+        "gtmHostedHint": "Injectas på hostade formulärsidor (/f/…). Webflow-sajter behåller GTM under Project Settings → Custom Code.",
+        "gtmSave": "Spara GTM-ID",
+        "gtmTriggerTitle": "GTM-trigger:",
+        "gtmTriggerType": "Triggertyp: Custom Event",
+        "gtmTriggerEvent": "Eventnamn:",
+        "gtmTriggerVars": "Valfria data layer-variabler: form_source, campaign, lead_source, form_slug",
+        "metaTitle": "Meta Lead-spårning",
+        "metaBody": "När ett värdat eller inbäddat formulär sparats i CRM skickar Meta Conversions API Lead (plus valfri virtuell PageView om en sökväg är satt på formuläret). Pixel-händelser i webbläsaren skickas bara om sajten laddar Meta-pixeln. GTM ska lyssna på generate_lead i dataLayer.",
+        "metaTest": "Testa Meta-anslutning",
+        "metaTesting": "Testar…",
+        "metaTestOk": "Meta accepterade Lead, test-konverteringen och den virtuella PageView. Kolla Events Manager om några minuter.",
+        "metaTestFail": "Meta-test misslyckades",
+        "openaiTitle": "OpenAI Ads",
+        "openaiBody": "Lyckade formulär skickar dataLayer-eventet generate_lead (samma signal som GTM). OpenAI lead_created körs samtidigt om pixeln är laddad. Sätt NEXT_PUBLIC_OPENAI_ADS_PIXEL_ID i Vercel för hostade /f/-formulär. På Webflow: Richards init-snippet i site head, ladda sedan /tandfokus-openai-ads.js (triggas vid generate_lead). Bokning och telefon: TandfokusOpenAi.measureAppointmentScheduled() och measurePhoneClick() på bekräftelse- respektive tel:-handlers.",
+        "step1Title": "Hämta dina API-uppgifter",
+        "step1BodyPrefix": "Generera först en API-nyckel under fliken",
+        "step1BodySuffix": "ovan. Kopiera båda värdena:",
+        "apiEndpoint": "API-endpoint:",
+        "apiKeyLine": "API-nyckel: Din genererade nyckel",
+        "step2Title": "Lägg till kampanjspårning i dina formulär",
+        "step2Body": "Lägg till attributet data-campaign på varje formulärelement för att spåra leadkällor:",
+        "step2Hint": "Byt värde för varje formulär/sida för att se var leads kommer ifrån",
+        "step3Title": "Lägg till anpassad JavaScript (hela webbplatsen)",
+        "step3BodyPrefix": "Lägg till denna kod i sidfoten. Den hanterar automatiskt ALLA formulär med",
+        "turnstileActiveHint": "Botskydd är aktiverat — snippeten inkluderar osynlig Cloudflare Turnstile. Klistra in den igen i Webflow efter att nycklarna uppdaterats.",
+        "turnstileNotConfiguredHint": "Botskydd är av — sätt TURNSTILE_SITE_KEY och TURNSTILE_SECRET_KEY i Vercel (Production) för att aktivera Cloudflare Turnstile på värdade, inbäddade och Webflow-formulär.",
+        "step4Title": "Uppdatera formulärfältnamn",
+        "step4Body": "Se till att dina formulärfält har exakt dessa name-attribut:",
+        "fieldNameRequired": "Obligatoriskt",
+        "fieldPhoneOrEmail": "Minst ett krävs",
+        "fieldEmailOptional": "Valfritt om telefon anges",
+        "fieldMessageOptional": "Valfritt (skapar en anteckning)",
+        "step5Title": "Koppla GTM på Webflow",
+        "step5Body": "Installera er befintliga GTM-container i Webflow och skapa en trigger för intake-skriptets event:",
+        "step5WebflowInstall": "Webflow → Project Settings → Custom Code → Footer — klistra in GTM-containern (samma som idag).",
+        "step5Trigger": "GTM → Triggers → New → Custom Event → Event name: generate_lead",
+        "step5Preview": "Använd GTM Preview, skicka ett testlead och bekräfta att generate_lead triggas med campaign från data-campaign.",
+        "highlightTitle": "Fungerar med alla webbplatsbyggare",
+        "webflowHint": "Webflow: Lägg till under Project Settings → Footer Code",
+        "framerHint": "Framer: Lägg till under Site Settings → Custom Code",
+        "wordpressHint": "WordPress: Lägg till via temats sidfot eller plugin",
+        "customHtmlHint": "Anpassad HTML: Lägg till före avslutande </body>-tagg",
+        "highlightFooter": "Alla formulär spåras automatiskt med source: \"website\""
+      },
+      "tiktok": {
+        "title": "TikTok Lead Generation-annonser",
+        "description": "Synka leads från TikTok-annonser automatiskt via Zapier.",
+        "trigger": "\"TikTok Lead Generation\" → \"New Lead\"",
+        "action": "\"Webhooks by Zapier\" → \"POST\"",
+        "dataMap": "Data (mappa TikTok-fält):",
+        "fieldHint": "TikTok-fältnamn kan variera — kontrollera formulärets fält i Zapier",
+        "apiKeyBodyPrefix": "Gå till fliken",
+        "apiKeyBodySuffix": "ovan och generera en API-nyckel. Ersätt YOUR_API_KEY i Authorization-headern.",
+        "testBody": "Klicka \"Test\" i Zapier för att skicka ett testlead, aktivera sedan din Zap. Nya TikTok-leads visas automatiskt i CRM:et!",
+        "tip": "Skapa separata Zaps per kampanj för att se vilka TikTok-annonser presterar bäst.",
+        "platform": "TikTok Business"
+      },
+      "meta": {
+        "title": "Meta Lead Ads (Facebook och Instagram)",
+        "description": "Synka leads från Facebook- och Instagram-annonser automatiskt via Zapier.",
+        "trigger": "\"Facebook Lead Ads\" → \"New Lead\"",
+        "action": "\"Webhooks by Zapier\" → \"POST\"",
+        "dataMap": "Data (mappa Facebook-fält):",
+        "testBody": "Klicka \"Test\" i Zapier för att skicka ett testlead, aktivera sedan din Zap. Nya Facebook-leads visas automatiskt i CRM:et!",
+        "tip": "Skapa separata Zaps per kampanj för att spåra leadkälla korrekt.",
+        "platform": "Facebook"
+      }
+    }
+  },
+  "profile": {
+    "title": "Profil",
+    "subtitle": "Hantera dina kontouppgifter och lösenord.",
+    "saved": "Sparat",
+    "account": {
+      "title": "Konto",
+      "description": "Ditt namn och inloggnings-e-post."
+    },
+    "fields": {
+      "fullName": "Fullständigt namn",
+      "email": "E-post"
+    },
+    "password": {
+      "title": "Lösenord",
+      "description": "Byt ditt inloggningslösenord.",
+      "current": "Nuvarande lösenord",
+      "new": "Nytt lösenord",
+      "confirm": "Bekräfta nytt lösenord",
+      "change": "Byt lösenord",
+      "changing": "Byter…",
+      "updated": "Lösenord uppdaterat",
+      "tooShort": "Lösenordet måste vara minst 8 tecken.",
+      "mismatch": "Lösenorden matchar inte.",
+      "updateFailed": "Kunde inte uppdatera lösenordet."
+    },
+    "errors": {
+      "updateNameFailed": "Kunde inte uppdatera namnet.",
+      "updateEmailFailed": "Kunde inte uppdatera e-postadressen."
+    },
+    "roles": {
+      "admin": "Admin",
+      "agent": "Agent"
+    },
+    "edit": "Redigera",
+    "memberSince": "Medlem sedan",
+    "emailUpdated": "E-post uppdaterad",
+    "passwordUpdatedSuccess": "Lösenordet uppdaterades.",
+    "currentPasswordIncorrect": "Nuvarande lösenord är felaktigt.",
+    "genericError": "Något gick fel. Försök igen.",
+    "passwordMismatchNew": "De nya lösenorden matchar inte.",
+    "passwordTooShortNew": "Nytt lösenord måste vara minst 8 tecken."
+  },
+  "analytics": {
+    "periods": {
+      "thisMonth": "Denna månad",
+      "lastMonth": "Förra månaden",
+      "lastQuarter": "Senaste kvartalet",
+      "thisYear": "I år"
+    },
+    "tabs": {
+      "allLeads": "Alla leads",
+      "new": "Nya",
+      "booked": "Bokade",
+      "lost": "Förlorade"
+    },
+    "metrics": {
+      "newLeads": "Nya leads",
+      "booked": "Bokade",
+      "unassigned": "Otilldelade",
+      "contactRate": "Kontaktfrekvens",
+      "needsAssignment": "Behöver tilldelning",
+      "allAssigned": "Alla leads tilldelade",
+      "activeAgents": "{count} aktiva agenter"
+    },
+    "overview": {
+      "title": "Leadöversikt"
+    },
+    "sections": {
+      "bySource": "Leads per källa",
+      "recentActivity": "Senaste aktivitet",
+      "pipelineBreakdown": "Pipeline-fördelning"
+    },
+    "page": {
+      "title": "Analys",
+      "subtitle": "Pipeline-prestanda och teamstatistik",
+      "emptyTitle": "Inga leads ännu",
+      "emptyDescription": "Analys visas när leads har lagts till i pipelinen."
+    },
+    "topSources": {
+      "title": "Toppkällor",
+      "subtitle": "Topp 5 kanaler efter leadvolym",
+      "empty": "Ingen källdata för denna period"
+    },
+    "recentActivityPanel": {
+      "subtitle": "Senaste leads i denna period",
+      "viewAll": "Visa alla",
+      "empty": "Inga leads matchar detta filter"
+    },
+    "emptyPeriod": {
+      "title": "Inga leads i denna period",
+      "hint": "Prova ett annat datumintervall."
+    },
+    "chart": {
+      "newLeads": "Nya leads",
+      "booked": "Bokade",
+      "ariaLabel": "Nya leads och bokade leads för {period}"
+    }
+  },
+  "errors": {
+    "page": {
+      "title": "Något gick fel",
+      "description": "Sidan kunde inte laddas. Försök igen, eller logga ut och in igen.",
+      "errorId": "Fel-ID: {digest}",
+      "tryAgain": "Försök igen",
+      "backToLogin": "Tillbaka till inloggning"
+    }
+  },
+  "users": {
+    "pageLead": "CRM-inloggningar — bjud in klinikpersonal eller systemadmins och tilldela kliniker.",
+    "searchPlaceholder": "Sök användare…",
+    "emptyActiveTitle": "Inga teammedlemmar ännu",
+    "emptyActiveDescription": "Bjud in din första teammedlem för att komma igång.",
+    "emptyDeactivatedTitle": "Inga inaktiverade användare",
+    "emptyDeactivatedDescription": "Inaktiverade konton visas här.",
+    "table": {
+      "columns": {
+        "role": "Roll",
+        "clinics": "Kliniker",
+        "status": "Status"
+      },
+      "allClinics": "Alla kliniker",
+      "noClinics": "—"
+    },
+    "status": {
+      "invitePending": "Inbjudan väntar",
+      "active": "Aktiv",
+      "inactive": "Inaktiv"
+    },
+    "roles": {
+      "agent": "Klinikpersonal",
+      "admin": "Systemadmin"
+    },
+    "gender": {
+      "female": "Kvinna",
+      "male": "Man"
+    },
+    "rowActions": {
+      "editAgent": "Redigera användare",
+      "resendInvite": "Skicka inbjudan igen",
+      "sendPasswordReset": "Skicka lösenordsåterställning",
+      "makeSuperadmin": "Gör till superadmin",
+      "removeSuperadmin": "Ta bort superadmin",
+      "deactivate": "Inaktivera",
+      "reactivate": "Återaktivera",
+      "deletePermanently": "Ta bort permanent"
+    },
+    "modals": {
+      "inviteTitle": "Bjud in teammedlem",
+      "inviteSubtitle": "De får ett mejl för att välja lösenord och logga in.",
+      "editTitle": "Redigera teammedlem",
+      "fullName": "Fullständigt namn",
+      "fullNamePlaceholder": "Anna Svensson",
+      "emailPlaceholder": "anna@foretag.se",
+      "gender": "Kön",
+      "sendInvite": "Skicka inbjudan",
+      "saveChanges": "Spara ändringar"
+    },
+    "confirm": {
+      "adminInviteTitle": "Bekräfta systemadmin-åtkomst",
+      "adminInviteDescription": "{name} får full kontroll över alla kliniker — hantera användare, se alla leads, redigera inställningar och ta bort data.",
+      "adminInviteFallback": "Denna person",
+      "adminInviteQuestion": "Är du säker på att du vill ge systemadmin-åtkomst?",
+      "adminInviteLabel": "Ja, bjud in som systemadmin",
+      "adminPromoteTitle": "Bekräfta befordran till systemadmin",
+      "adminPromoteQuestion": "Är du säker på att du vill befordra denna person till systemadmin?",
+      "adminPromoteLabel": "Ja, befordra till systemadmin",
+      "superadminPromoteTitle": "Befordra till superadmin",
+      "superadminRemoveTitle": "Ta bort superadmin-status",
+      "superadminPromoteLabel": "Ja, befordra",
+      "superadminRemoveLabel": "Ja, ta bort",
+      "reactivateTitle": "Återaktivera användare?",
+      "reactivateLabel": "Återaktivera",
+      "resendInviteTitle": "Skicka inbjudan igen?",
+      "resendInviteLabel": "Skicka inbjudan",
+      "passwordResetTitle": "Skicka lösenordsåterställning?",
+      "passwordResetLabel": "Skicka återställningsmejl",
+      "deactivateBulkTitle": "Inaktivera användare?",
+      "deactivateBulkDescription": "Valda användare förlorar omedelbart åtkomst till CRM:et.",
+      "deactivateLabel": "Inaktivera",
+      "reactivateBulkTitle": "Återaktivera användare?",
+      "reactivateBulkDescription": "Valda användare får tillbaka åtkomst till CRM:et.",
+      "deleteTitle": "Ta bort användare permanent?",
+      "deleteDescription": "Detta tar bort deras konton och inloggningar. Tilldelade leads blir otilldelade. Detta kan inte ångras.",
+      "deleteLabel": "Ta bort permanent"
+    },
+    "toast": {
+      "inviteSent": "Inbjudan skickad",
+      "inviteResent": "Inbjudan skickad igen",
+      "passwordResetSent": "Mejl för lösenordsåterställning skickat",
+      "updated": "Användare uppdaterad",
+      "deactivated": "Användare inaktiverad",
+      "reactivated": "Användare återaktiverad",
+      "deleted": "Användare borttagen",
+      "superadminUpdated": "Superadmin-status uppdaterad",
+      "bulkUpdateFailed": "Massuppdatering misslyckades",
+      "bulkDeleteFailed": "Massborttagning misslyckades",
+      "resendFailed": "Kunde inte skicka inbjudan igen",
+      "resetFailed": "Kunde inte skicka lösenordsåterställning",
+      "updateFailed": "Kunde inte uppdatera",
+      "deleteFailed": "Kunde inte ta bort användare",
+      "superadminFailed": "Kunde inte uppdatera superadmin-status"
+    },
+    "errors": {
+      "selectClinic": "Välj minst en klinik för klinikpersonal",
+      "inviteFailed": "Kunde inte skicka inbjudan"
+    },
+    "bulk": {
+      "deactivate": "Inaktivera",
+      "reactivate": "Återaktivera",
+      "deletePermanently": "Ta bort permanent",
+      "deactivateCount": "Inaktivera {count} användare?",
+      "reactivateCount": "Återaktivera {count} användare?",
+      "deleteCount": "Ta bort {count} användare permanent?",
+      "reactivatedToast": "{count} användare återaktiverade",
+      "deactivatedToast": "{count} användare inaktiverade",
+      "deletedToast": "{count, plural, one {# användare borttagen} other {# användare borttagna}}"
+    },
+    "superadmin": {
+      "badge": "Superadmin",
+      "promotePrivileges": "{name} får superadmin-behörigheter:",
+      "cannotDeactivate": "Kan inte inaktiveras",
+      "canPromoteDemote": "Kan befordra/avbefordra andra superadmins",
+      "fullAccess": "Har full systemåtkomst",
+      "maxNote": "Obs: Max 3 superadmins tillåtna. Endast admins kan befordras.",
+      "removeDescription": "{name} förlorar superadmin-skydd och kan hanteras normalt av andra admins.",
+      "promotedToast": "{name} befordrad till superadmin",
+      "removedToast": "{name} är inte längre superadmin",
+      "processing": "Bearbetar…",
+      "goBack": "Gå tillbaka",
+      "saving": "Sparar…",
+      "sending": "Skickar…"
+    },
+    "deactivate": {
+      "title": "Inaktivera {name}?",
+      "description": "{name} förlorar omedelbart åtkomst till CRM:et och kan inte logga in.",
+      "whatHappens": "Detta händer:",
+      "dataIntact": "All deras data finns kvar (leads, aktivitetsloggar, samtalshistorik)",
+      "leadsStay": "Tilldelade leads stannar hos dem tills de tilldelas om manuellt",
+      "canReactivate": "De kan återaktiveras när som helst",
+      "confirmLabel": "Ja, inaktivera",
+      "toast": "{name} inaktiverad",
+      "reactivatedToast": "{name} återaktiverad",
+      "updateFailed": "Kunde inte uppdatera {name}"
+    },
+    "delete": {
+      "title": "Ta bort {name}?",
+      "description": "Detta tar permanent bort {name} från CRM:et och raderar deras inloggning. Detta kan inte ångras.",
+      "whatHappens": "Detta händer:",
+      "accountDeleted": "Deras konto och inloggning raderas",
+      "leadsUnassigned": "Tilldelade leads blir otilldelade",
+      "notesStay": "Anteckningar och aktivitet finns kvar på leads men förlorar denna agents namn",
+      "historyRemoved": "Deras samtalshistorik och granskningposter för denna användare tas bort",
+      "removedToast": "{name} togs bort permanent"
+    },
+    "invite": {
+      "resentToast": "Inbjudan skickad igen till {email}",
+      "sentToast": "Inbjudan skickad till {email}",
+      "resendTitle": "Skicka inbjudan igen till {name}?",
+      "resendDescription": "Ett nytt inbjudningsmejl skickas till {email}. De kan använda länken för att välja lösenord och aktivera sitt konto. Länken går ut om 7 dagar.",
+      "resendLinkLabel": "Skicka inbjudningsmejl igen"
+    },
+    "passwordReset": {
+      "title": "Skicka lösenordsåterställning till {name}?",
+      "description": "Ett återställningsmejl skickas till {email}. Länken går ut om 1 timme.",
+      "sentToast": "Lösenordsåterställning skickad till {email}",
+      "linkLabel": "Skicka mejl för lösenordsåterställning"
+    },
+    "edit": {
+      "updatedToast": "{name} uppdaterad",
+      "clinicHint": "Personal ser bara leads från tilldelade kliniker.",
+      "clinicsLabel": "Kliniker"
+    },
+    "adminPromote": {
+      "editDescription": "{name} får full kontroll över alla kliniker — hantera användare, se alla leads, redigera inställningar och ta bort data."
+    },
+    "reactivate": {
+      "title": "Återaktivera {name}?",
+      "description": "{name} får tillbaka åtkomst till CRM:et och kan logga in igen."
+    }
+  },
+  "organization": {
+    "openClinic": "Öppna klinik",
+    "relatedPractitioners": "Behandlare",
+    "clinicsSubtitle": "Tandvårdskliniker. Leads och formulär kan kopplas till en klinik.",
+    "clinicsListHint": "Öppna en klinik för att ange leadnotiser och övriga uppgifter.",
+    "clinicsNotificationHint": "Leadnotiser — ange klinikens inkorg som får e-post när ett formulär skickar in ett nytt lead för den kliniken. Klicka i fältet, skriv adressen och tabba ut för att spara.",
+    "practitionersSubtitle": "Tandläkare och personal — tilldela kliniker. Inte CRM-inloggningar.",
+    "campaignsSubtitle": "Marknadsföringskampanjer — kan kopplas till en klinik. Formulär kan länka till en kampanj.",
+    "table": {
+      "columns": {
+        "slug": "Slug",
+        "notificationEmail": "Leadnotiser",
+        "title": "Titel",
+        "clinic": "Klinik",
+        "clinics": "Kliniker"
+      },
+      "notificationEmailPlaceholder": "epost@klinik.se",
+      "notificationEmailUnset": "Ej angiven — öppna klinik",
+      "noClinicsAssigned": "Inga kliniker tilldelade",
+      "allClinics": "Alla kliniker",
+      "allClinicsOrgWide": "Alla kliniker (organsationsövergripande)",
+      "orgWideCampaign": "Organisationsövergripande kampanj"
+    },
+    "search": {
+      "clinics": "Sök kliniker…",
+      "practitioners": "Sök behandlare…",
+      "campaigns": "Sök kampanjer…"
+    },
+    "empty": {
+      "clinicsTitle": "Inga kliniker ännu",
+      "clinicsDescription": "Lägg till din första klinik.",
+      "practitionersTitle": "Inga behandlare ännu",
+      "practitionersDescription": "Lägg till tandläkare och personal, och tilldela dem till kliniker.",
+      "campaignsTitle": "Inga kampanjer ännu",
+      "campaignsDescription": "Skapa en kampanj för att spåra marknadsföringskällor i formulär och leads."
+    },
+    "modals": {
+      "addClinic": "Lägg till klinik",
+      "addPractitioner": "Lägg till behandlare",
+      "addCampaign": "Lägg till kampanj",
+      "clinicName": "Kliniknamn",
+      "practitionerName": "Namn",
+      "practitionerNamePlaceholder": "Dr Anna Svensson",
+      "practitionerTitle": "Titel",
+      "practitionerTitlePlaceholder": "Tandläkare",
+      "campaignName": "Kampanjnamn",
+      "clinicOptional": "Klinik (valfritt)"
+    },
+    "rowActions": {
+      "deactivate": "Inaktivera",
+      "reactivate": "Återaktivera",
+      "deletePermanently": "Ta bort permanent",
+      "assignClinics": "Tilldela kliniker",
+      "openClinic": "Öppna klinik"
+    },
+    "confirm": {
+      "deleteClinicDescription": "Detta tar bort kliniken permanent. Kopplade leads, formulär och kampanjer finns kvar i systemet men refererar inte längre till denna klinik.",
+      "deletePractitionerDescription": "Detta tar bort behandlaren permanent. Kopplade leads och formulär finns kvar i systemet men refererar inte längre till dem.",
+      "deleteCampaignDescription": "Detta tar bort kampanjen permanent. Kopplade leads och formulär finns kvar i systemet men refererar inte längre till den.",
+      "deactivateLabel": "Inaktivera",
+      "reactivateLabel": "Återaktivera",
+      "deleteLabel": "Ta bort permanent"
+    },
+    "toast": {
+      "clinicCreated": "Klinik skapad",
+      "clinicUpdated": "Klinik uppdaterad",
+      "practitionerCreated": "Behandlare tillagd",
+      "practitionerUpdated": "Behandlare uppdaterad",
+      "campaignCreated": "Kampanj skapad",
+      "campaignUpdated": "Kampanj uppdaterad",
+      "deactivated": "Inaktiverad",
+      "deleted": "Borttagen",
+      "bulkDeleteFailed": "Massborttagning misslyckades",
+      "bulkUpdateFailed": "Massuppdatering misslyckades"
+    },
+    "countLabels": {
+      "clinics": "kliniker",
+      "practitioners": "behandlare",
+      "campaigns": "kampanjer"
+    },
+    "placeholders": {
+      "clinicName": "t.ex. Gränbystorget",
+      "campaignName": "t.ex. Våghustorget Invisalign"
+    },
+    "detail": {
+      "backToClinics": "Tillbaka till kliniker",
+      "nameRequired": "Kliniknamn krävs.",
+      "notificationEmailHint": "Den här inkorgen får e-post när ett formulär kopplat till kliniken skickar in ett nytt lead.",
+      "sections": {
+        "general": "Allmänt"
+      }
+    },
+    "assignClinicsTitle": "Tilldela kliniker — {name}",
+    "deactivateTitle": "Inaktivera {name}?",
+    "deactivateDescription": "Befintliga leads och formulär behåller sina länkar. Detta döljer posten i väljare.",
+    "bulkDeactivateTitle": "Inaktivera {count} valda?",
+    "bulkDeactivateDescription": "Befintliga leads och formulär behåller sina länkar. Valda poster döljs i väljare.",
+    "bulkReactivateTitle": "Återaktivera {count} valda?",
+    "bulkReactivateDescription": "Valda poster visas igen i väljare.",
+    "bulkDeleteTitle": "Ta bort {count} valda permanent?",
+    "deleteTitle": "Ta bort {name} permanent?",
+    "errors": {
+      "createClinicFailed": "Kunde inte skapa klinik",
+      "updateClinicFailed": "Kunde inte uppdatera klinik",
+      "createPractitionerFailed": "Kunde inte skapa behandlare",
+      "updatePractitionerFailed": "Kunde inte uppdatera behandlare",
+      "createCampaignFailed": "Kunde inte skapa kampanj",
+      "updateCampaignFailed": "Kunde inte uppdatera kampanj",
+      "deactivateFailed": "Kunde inte inaktivera",
+      "deleteFailed": "Kunde inte ta bort"
+    }
+  },
+  "logs": {
+    "pageLead": "Agent- och adminåtgärder på leads — inte inkommande kundmeddelanden.",
+    "searchPlaceholder": "Sök lead eller agent…",
+    "emptyTitle": "Ingen aktivitet hittades",
+    "eventCount": "{count, plural, one {# händelse} other {# händelser}}",
+    "showingCount": " · visar {shown}",
+    "filters": {
+      "allTypes": "Alla typer",
+      "allAgents": "Alla agenter",
+      "datePresets": {
+        "today": "Idag",
+        "last7d": "Senaste 7 d",
+        "last30d": "Senaste 30 d",
+        "last90d": "Senaste 90 d"
+      }
+    },
+    "eventTypes": {
+      "assign": "Tilldelning",
+      "status": "Statusändring",
+      "call": "Samtal",
+      "email_sent": "Skickade e-post",
+      "note": "Anteckningar",
+      "edit": "Fältändringar",
+      "created": "Lead skapat"
+    },
+    "actors": {
+      "agent": "Agent",
+      "admin": "Admin",
+      "unknownAgent": "Okänd agent",
+      "unknownLead": "Okänt lead"
+    },
+    "errors": {
+      "refreshFailed": "Kunde inte uppdatera aktivitet. Försök igen."
+    },
+    "actions": {
+      "added": "lade till",
+      "createdLead": "skapade lead",
+      "reassigned": "omtilldelade",
+      "updatedStatusOf": "uppdaterade status för",
+      "addedNoteOn": "lade till en anteckning på",
+      "emailed": "mejlade",
+      "sentWhatsAppTo": "skickade WhatsApp till",
+      "edited": "redigerade",
+      "called": "ringde",
+      "updated": "uppdaterade",
+      "toLeads": "till leads"
+    },
+    "changes": {
+      "assignedTo": "tilldelad till",
+      "reason": "Orsak:"
+    },
+    "callStatus": {
+      "initiated": "Initierat",
+      "completed": "Avslutat",
+      "no-answer": "Inget svar",
+      "failed": "Misslyckades"
+    },
+    "loadMore": "Ladda fler ({count} kvar)"
+  },
+  "contacts": {
+    "backToContacts": "Tillbaka till kontakter",
+    "duplicates": {
+      "listTitle": "Möjliga dubblettkontakter",
+      "listDescription": "{groups, plural, one {# grupp} other {# grupper}} · {contacts} kontakter kan behöva granskas",
+      "detailTitle": "Möjlig dubblett",
+      "matchOne": "Kan matcha {name}",
+      "matchMany": "Kan matcha {count} andra kontakter",
+      "samePhone": "samma telefon",
+      "sameEmail": "samma e-post",
+      "review": "Granska",
+      "reviewMerge": "Granska och slå ihop"
+    },
+    "merge": {
+      "title": "Granska möjlig dubblett",
+      "intro": "Dessa kontakter kan vara samma person ({match}). Välj vilken post som ska behållas — leadposter och formulärinskick från de andra flyttas hit.",
+      "noContactInfo": "Ingen telefon eller e-post",
+      "leadRecords": "{count, plural, one {# leadpost} other {# leadposter}}",
+      "mergeContacts": "Slå ihop kontakter",
+      "confirmTitle": "Slå ihop kontakter?",
+      "confirmDescription": "{count, plural, one {# kontakt tas bort} other {# kontakter tas bort}} och deras leadposter flyttas till kontakten du valde. Detta kan inte ångras.",
+      "merge": "Slå ihop",
+      "sharedPhone": "Delat telefonnummer {label}",
+      "sharedEmail": "Delad e-post {label}",
+      "failed": "Kunde inte slå ihop kontakter"
+    },
+    "submissions": {
+      "emptyTitle": "Inga formulärinskick",
+      "emptyDescription": "Webb- och annonsformulär visas här."
+    },
+    "leadRecordsList": {
+      "emptyTitle": "Inga leadposter ännu",
+      "emptyDescription": "När denna kontakt kopplas till en pipeline-lead visas den här så du kan öppna meddelanden och aktivitet.",
+      "pipelineLead": "Pipeline-lead",
+      "active": "Aktiv",
+      "archived": "Arkiverad",
+      "openLead": "Öppna {name}s lead-arbetsyta"
+    }
+  },
+  "emailLog": {
+    "searchPlaceholder": "Sök mottagare eller ämne…",
+    "countLabel": "{count, plural, one {# e-postmeddelande} other {# e-postmeddelanden}}",
+    "emptyTitle": "Inga e-postmeddelanden skickade ännu",
+    "emptyDescription": "Inbjudningar, lösenordsåterställningar, leadaviseringar och lead-mejl visas här när de skickats.",
+    "emptyFilteredTitle": "Inga e-postmeddelanden matchar dina filter",
+    "emptyFilteredDescription": "Prova en annan sökning, status, typ eller datumintervall.",
+    "columns": {
+      "sent": "Skickat",
+      "to": "Till",
+      "subject": "Ämne",
+      "type": "Typ"
+    },
+    "types": {
+      "invite": "Användarinbjudan",
+      "password_reset": "Lösenordsåterställning",
+      "new_lead": "Avisering om nytt lead",
+      "lead_outbound": "Lead-mejl"
+    },
+    "status": {
+      "sent": "Skickat",
+      "failed": "Misslyckades"
+    },
+    "filters": {
+      "allStatuses": "Alla statusar",
+      "allTypes": "Alla typer",
+      "clearDateFilter": "Rensa datumfilter"
+    },
+    "datePresets": {
+      "today": "Idag",
+      "last7d": "Senaste 7 d",
+      "last30d": "Senaste 30 d"
+    },
+    "dateLabel": {
+      "range": "{from} – {to}",
+      "from": "Från {date}",
+      "until": "Till {date}"
+    },
+    "detail": {
+      "from": "Från",
+      "providerId": "Leverantörs-ID",
+      "lead": "Lead",
+      "openLead": "Öppna lead",
+      "error": "Fel",
+      "preview": "Förhandsvisning",
+      "noPreview": "Ingen förhandsvisning sparad för detta e-postmeddelande."
+    },
+    "errors": {
+      "loadFailed": "Kunde inte ladda e-postloggen. Försök igen."
+    }
+  }
+}

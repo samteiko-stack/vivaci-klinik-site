@@ -4,29 +4,58 @@
   "slug": "buccal-fat-removal",
   "path": "/plastikkirurgi/buccal-fat-removal",
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/buccal-fat-removal",
-  "title": "Bukfettborttagning",
+  "title": "Buccal fat removal",
   "sections": {
     "hero": {
       "enabled": true,
-      "title": "Bukfettborttagning",
-      "intro": "Bukfettborttagning (buccal fat removal) är ett kirurgiskt ingrepp som avlägsnar fettvävnad från kinderna för en slankare, mer konturerad ansiktsform. På Vivaci Klinik i Solna utförs ingreppet av erfarna kirurger i en trygg, medicinsk miljö."
+      "title": "Buccal fat removal",
+      "intro": "Abdominal fat removal (buccal fat removal) is a surgical procedure that removes fatty tissue from the cheeks for a slimmer, more contoured face shape. At Vivaci Clinic in Solna, the procedure is performed by experienced surgeons in a safe, medical environment.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
     },
     "facts": {
       "enabled": true,
       "title": "Snabba fakta",
       "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
-      "items": []
+      "items": [
+        {
+          "label": "Treatment time",
+          "value": "30–45 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "1 to 7",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Lokal bedövning",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 45 000 kr",
+          "icon": "wallet"
+        }
+      ]
     },
     "overview": {
-      "enabled": false,
+      "enabled": true,
       "tagline": "Om behandlingen",
-      "heading": "Bukfettborttagning",
+      "heading": "Buccal fat removal",
       "blocks": [
         {
           "id": "whatIsIt",
           "heading": "Om behandlingen",
-          "body": "",
-          "enabled": false
+          "body": "Abdominal fat removal means that the fat pads on the inside of the cheeks (buccal fat pads) are removed via a small incision in the oral cavity.\n\nThe goal is to create a more defined cheek contour and a slimmer facial expression without affecting the skin's surface from the outside.\n\nThe procedure is often performed under local anesthesia and usually takes about 30–45 minutes.",
+          "enabled": true
         },
         {
           "id": "symptoms",
@@ -37,14 +66,14 @@
         {
           "id": "causes",
           "heading": "Orsaker",
-          "body": "",
-          "enabled": false
+          "body": "1. Local anesthesia of the treatment area\n\n2. Small incision on the inside of the cheek (in the oral cavity)\n\n3. Careful removal of buccal fat pad\n\n4. Checking symmetry and closing with suture\n\n5. Aftercare instructions and follow-up plan",
+          "enabled": true
         },
         {
           "id": "assessment",
           "heading": "Hur vi bedömer det",
-          "body": "",
-          "enabled": false
+          "body": "Konsultationen börjar med en noggrann bedömning av ditt ansikte, kindvolym och hudkvalitet.\n\nVi går igenom dina mål, medicinsk historik, tidigare ingrepp och eventuella mediciner.\n\nDu får tydlig information om förväntade resultat, risker, återhämtning och kostnad innan du fattar beslut.",
+          "enabled": true
         }
       ]
     },
@@ -54,13 +83,26 @@
       "needsAssessment": []
     },
     "benefits": {
-      "enabled": false,
-      "items": []
+      "enabled": true,
+      "items": [
+        {
+          "title": "Medicinsk expertis",
+          "body": "The treatment is performed by licensed personnel with experience in aesthetic medicine."
+        },
+        {
+          "title": "Skräddarsydd plan",
+          "body": "Vi anpassar Bukfettborttagning efter dina mål och förutsättningar — med tydliga förväntningar från start."
+        },
+        {
+          "title": "Trygg klinikmiljö",
+          "body": "Du möter oss i en lugn, exklusiv miljö i Solna där vi går igenom varje steg innan behandling."
+        }
+      ]
     },
     "howItWorks": {
-      "enabled": false,
+      "enabled": true,
       "heading": "Så fungerar det",
-      "body": "",
+      "body": "1. Local anesthesia of the treatment area\n\n2. Small incision on the inside of the cheek (in the oral cavity)\n\n3. Careful removal of buccal fat pad\n\n4. Checking symmetry and closing with suture\n\n5. Aftercare instructions and follow-up plan",
       "steps": []
     },
     "resultsTimeline": {
@@ -74,6 +116,11 @@
     },
     "faq": {
       "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Bukfettborttagning. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Book a free consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
       "items": [
         {
           "question": "Vad är bukfettborttagning?",
@@ -103,11 +150,19 @@
       "items": []
     },
     "beforeAfterCare": {
-      "enabled": false,
-      "introBefore": "",
-      "before": [],
-      "introAfter": "",
-      "after": []
+      "enabled": true,
+      "introBefore": "Sluta röka minst 4 veckor före ingreppet (rökning försämrar läkning).",
+      "before": [
+        "Informera oss om alla mediciner och kosttillskott — vissa kan behöva pausas.",
+        "Ät lätt före besöket om du får lokal bedövning, och planera för transport hem efteråt."
+      ],
+      "introAfter": "Följ munhygieninstruktioner noggrant och använd eventuellt munskölj enligt anvisning.",
+      "after": [
+        "Ät mjukt kost de första dagarna och undvik intensivt tuggande.",
+        "Ta ordinerade läkemedel vid behov och kom till planerade kontroller.",
+        "Kontakta kliniken vid kraftig smärta, feber eller tecken på infektion.",
+        "Omdömen"
+      ]
     },
     "method": {
       "enabled": true
@@ -119,13 +174,32 @@
       "enabled": true
     },
     "quizCta": {
-      "enabled": true
-    },
-    "beforeAfterGallery": {
-      "enabled": false
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
     },
     "bottomCta": {
-      "enabled": true
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
     }
   }
 }

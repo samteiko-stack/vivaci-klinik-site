@@ -1,9 +1,15 @@
 /**
  * Unified Swiper carousel + arrow controls (design system).
  */
+/* Bundled via css/vivaci.css */
 
 .layout47_content-right {
   min-width: 0;
+}
+
+[data-vivaci-section="related"] .layout47_content-right.is-full-width {
+  width: 100%;
+  max-width: 100%;
 }
 
 .swiper-tuesday {
@@ -27,6 +33,33 @@
   will-change: transform, opacity, filter;
 }
 
+/* PDP related + before/after — no homepage stack blur; respect .is-50p width */
+.swiper-tuesday.is-vivaci-treatment-cards {
+  overflow: hidden !important;
+  clip-path: none;
+}
+
+.swiper-tuesday.is-vivaci-treatment-cards .swiper-slide > *:first-child {
+  will-change: auto;
+  transform: none !important;
+  opacity: 1 !important;
+  filter: none !important;
+  transition: none !important;
+}
+
+.swiper-tuesday.is-vivaci-treatment-cards .swiper-slide.is-50p,
+[data-vivaci-section="beforeAfterGallery"] .swiper-tuesday .swiper-slide {
+  width: var(--vivaci-treatment-card-width);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 768px) {
+  .swiper-tuesday.is-vivaci-treatment-cards .swiper-slide.is-50p {
+    width: var(--vivaci-treatment-card-width-md);
+  }
+}
+
 .swiper-tuesday-controls {
   width: 100%;
   margin-top: 2rem;
@@ -42,33 +75,38 @@
   gap: 0.75rem;
 }
 
-/* —— Unified arrow buttons —— */
+/* —— Unified arrow buttons (round; contrast on white + beige) —— */
 .vivaci-swiper-btn,
 .swiper-tuesday-prev,
 .swiper-tuesday-next,
+a.swiper-arrow,
+button.swiper-arrow,
 a.swiper-arrow.button-prev-3,
 a.swiper-arrow.button-next-3,
 button.swiper-arrow.button-prev-3,
 button.swiper-arrow.button-next-3 {
   box-sizing: border-box;
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--vivaci-swiper-control-size, 2.5rem);
+  height: var(--vivaci-swiper-control-size, 2.5rem);
+  min-width: var(--vivaci-swiper-control-size, 2.5rem);
+  min-height: var(--vivaci-swiper-control-size, 2.5rem);
   padding: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: var(--vivaci-border);
-  border-radius: 0.25rem;
-  background: transparent !important;
+  border: var(--vivaci-border-width, 1px) solid var(--vivaci-swiper-control-border);
+  border-radius: 50%;
+  background-color: var(--vivaci-swiper-control-bg) !important;
   background-image: none !important;
+  box-shadow: var(--vivaci-swiper-control-shadow);
   filter: none !important;
-  color: #9c8b76;
+  color: var(--vivaci-ink);
   cursor: pointer;
   text-decoration: none;
-  border-width: var(--_ui-styles---stroke--border-width);
   transition:
     background-color 0.25s ease,
-    border-color 0.25s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .vivaci-swiper-btn svg,
@@ -99,13 +137,15 @@ button.swiper-arrow.button-prev-3 svg {
 .vivaci-swiper-btn:hover,
 .swiper-tuesday-prev:hover,
 .swiper-tuesday-next:hover,
+a.swiper-arrow:hover,
+button.swiper-arrow:hover,
 a.swiper-arrow.button-prev-3:hover,
 a.swiper-arrow.button-next-3:hover,
 button.swiper-arrow.button-prev-3:hover,
 button.swiper-arrow.button-next-3:hover {
-  background-color: #ddd5c9 !important;
-  border-color: var(--vivaci-border-color);
-  border-width: var(--vivaci-border-width);
+  background-color: var(--vivaci-swiper-control-hover-bg) !important;
+  border-color: var(--vivaci-swiper-control-hover-border);
+  box-shadow: 0 2px 6px rgb(21 25 13 / 0.12);
 }
 
 .swiper-tuesday-next:hover svg,
@@ -129,13 +169,14 @@ button.swiper-arrow.button-prev-3:hover {
 .vivaci-swiper-btn:active,
 .swiper-tuesday-prev:active,
 .swiper-tuesday-next:active,
+a.swiper-arrow:active,
+button.swiper-arrow:active,
 a.swiper-arrow.button-prev-3:active,
 a.swiper-arrow.button-next-3:active,
 button.swiper-arrow.button-prev-3:active,
 button.swiper-arrow.button-next-3:active {
-  background-color: #ddd5c9 !important;
-  border-color: var(--vivaci-border-color);
-  border-width: var(--vivaci-border-width);
+  background-color: var(--vivaci-swiper-control-hover-bg) !important;
+  border-color: var(--vivaci-swiper-control-hover-border);
 }
 
 .swiper-tuesday-prev.swiper-button-disabled,
@@ -169,7 +210,7 @@ a.swiper-arrow.swiper-button-disabled {
   margin: 0 !important;
   border: 0 !important;
   border-radius: 50% !important;
-  background: #ddd5c9 !important;
+  background: var(--vivaci-brand-4) !important;
   opacity: 1 !important;
   transform: none !important;
   transition:
@@ -178,8 +219,42 @@ a.swiper-arrow.swiper-button-disabled {
 }
 
 .swiper-tuesday-controls .swiper-tuesday-pagination .swiper-pagination-bullet-active {
-  background: #9c8b76 !important;
+  background: var(--vivaci-ink) !important;
   transform: scale(1.15) !important;
+}
+
+/* Dark / hero sections — same round control, light fill */
+.text-color-white .vivaci-swiper-btn,
+.text-color-white .swiper-tuesday-prev,
+.text-color-white .swiper-tuesday-next,
+.text-color-white a.swiper-arrow,
+.text-color-white button.swiper-arrow,
+.is-section.bg-dark .vivaci-swiper-btn,
+.is-section.bg-dark .swiper-tuesday-prev,
+.is-section.bg-dark .swiper-tuesday-next,
+.is-section.bg-dark a.swiper-arrow,
+.is-section.bg-dark button.swiper-arrow,
+header.text-color-white .vivaci-swiper-btn,
+header.text-color-white a.swiper-arrow,
+header.text-color-white button.swiper-arrow {
+  background-color: var(--vivaci-swiper-control-bg-on-dark) !important;
+  border-color: var(--vivaci-swiper-control-border-on-dark);
+  color: var(--vivaci-swiper-control-fg-on-dark);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.2);
+}
+
+.text-color-white .vivaci-swiper-btn:hover,
+.text-color-white .swiper-tuesday-prev:hover,
+.text-color-white .swiper-tuesday-next:hover,
+.text-color-white a.swiper-arrow:hover,
+.text-color-white button.swiper-arrow:hover,
+.is-section.bg-dark .vivaci-swiper-btn:hover,
+.is-section.bg-dark .swiper-tuesday-prev:hover,
+.is-section.bg-dark .swiper-tuesday-next:hover,
+.is-section.bg-dark a.swiper-arrow:hover,
+.is-section.bg-dark button.swiper-arrow:hover {
+  background-color: var(--vivaci-white) !important;
+  border-color: var(--vivaci-white);
 }
 
 .swiper3.swiper {

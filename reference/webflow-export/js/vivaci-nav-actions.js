@@ -2,13 +2,6 @@
  * Nav utilities: search + varukorg (visible next to menu button).
  */
 (function () {
-  if (!document.querySelector('script[src*="vivaci-i18n"]')) {
-    var i18nBoot = document.createElement("script");
-    i18nBoot.src = "/js/vivaci-i18n.js";
-    i18nBoot.defer = true;
-    document.head.appendChild(i18nBoot);
-  }
-
   if (window.__vivaciNavActionsLoaded) return;
   window.__vivaciNavActionsLoaded = true;
 
@@ -34,6 +27,27 @@
       return n > 0 && isFinite(n) ? n : 0;
     } catch (e) {
       return 0;
+    }
+  }
+
+  function ensureShopifyCartAssets() {
+    if (!document.querySelector('link[href*="vivaci-shop.css"]')) {
+      var link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = "/css/vivaci-shop.css";
+      document.head.appendChild(link);
+    }
+    if (!document.querySelector('script[src*="vivaci-shopify-client"]')) {
+      var client = document.createElement("script");
+      client.src = "/js/vivaci-shopify-client.js";
+      client.defer = true;
+      document.head.appendChild(client);
+    }
+    if (!document.querySelector('script[src*="vivaci-shopify-cart"]')) {
+      var cart = document.createElement("script");
+      cart.src = "/js/vivaci-shopify-cart.js";
+      cart.defer = true;
+      document.head.appendChild(cart);
     }
   }
 
@@ -110,14 +124,11 @@
     gsap.set(panel, {
       opacity: 0,
       y: dist("md"),
-      scale: 0.98,
-      transformOrigin: "50% 50%",
     });
     gsap.to(overlay, { opacity: 1, duration: dur("modalIn"), ease: ease("out") });
     gsap.to(panel, {
       opacity: 1,
       y: 0,
-      scale: 1,
       duration: dur("modalIn"),
       ease: ease("emphasis"),
       clearProps: "transform",
@@ -133,7 +144,6 @@
     gsap.to(panel, {
       opacity: 0,
       y: dist("sm"),
-      scale: 0.99,
       duration: dur("modalOut"),
       ease: ease("in"),
     });
@@ -292,6 +302,9 @@
   }
 
   function readStoredLocale() {
+    if (window.VivaciLocaleRouting && window.VivaciLocaleRouting.localeFromPathname) {
+      return normalizeLocale(window.VivaciLocaleRouting.localeFromPathname());
+    }
     try {
       var stored = localStorage.getItem(LOCALE_KEY);
       if (stored) return normalizeLocale(stored);
@@ -302,8 +315,25 @@
     return "sv";
   }
 
-  function applyLocale(localeId) {
+  function applyLocale(localeId, options) {
     var locale = normalizeLocale(localeId);
+    var skipNavigate = options && options.skipNavigate;
+    if (
+      !skipNavigate &&
+      window.VivaciLocaleRouting &&
+      window.VivaciLocaleRouting.localizePath
+    ) {
+      var targetPath = window.VivaciLocaleRouting.localizePath(
+        window.location.pathname,
+        locale
+      );
+      var full = targetPath + window.location.search + window.location.hash;
+      var current = window.location.pathname + window.location.search + window.location.hash;
+      if (full !== current) {
+        window.location.assign(full);
+        return locale;
+      }
+    }
     try {
       localStorage.setItem(LOCALE_KEY, locale);
     } catch (_) {}
@@ -389,7 +419,7 @@
     if (!root || root.getAttribute("data-vivaci-nav-lang-bound") === "true") return;
     root.setAttribute("data-vivaci-nav-lang-bound", "true");
 
-    var locale = applyLocale(readStoredLocale());
+    var locale = applyLocale(readStoredLocale(), { skipNavigate: true });
     syncLangSwitcherUI(root, locale);
 
     var trigger = root.querySelector("[data-vivaci-nav-lang-trigger]");
@@ -429,11 +459,6 @@
     wrapper.style.display = "";
 
     var cartQty = readCachedCartQty();
-    var cartCountAttrs =
-      ' data-vivaci-cart-count data-count="' +
-      cartQty +
-      '">' +
-      (cartQty > 0 ? String(cartQty) : "");
 
     wrapper.innerHTML =
       '<div class="vivaci-nav-actions__cluster">' +
@@ -448,17 +473,25 @@
       '<button type="button" class="vivaci-cart-nav-btn" data-vivaci-cart-trigger aria-label="' +
       ui("nav.cart", "Varukorg") +
       '">' +
+      '<span class="vivaci-cart-nav-btn__icon" aria-hidden="true">' +
       CART_ICON +
+      "</span>" +
       '<span class="vivaci-cart-nav-btn__label">' +
+      '<span class="vivaci-cart-nav-btn__label-text">' +
       ui("nav.cart", "Varukorg") +
       "</span>" +
-      '<span class="vivaci-cart-trigger__count"' +
-      cartCountAttrs +
-      "</span>" +
+      '<sup class="vivaci-cart-trigger__count" data-vivaci-cart-count data-count="' +
+      cartQty +
+      '">' +
+      (cartQty > 0 ? String(cartQty) : "") +
+      "</sup></span>" +
       "</button></div>";
 
     mountLangSwitcher(wrapper);
     wrapper.querySelector("[data-vivaci-nav-search-open]").addEventListener("click", openSearch);
+    if (window.VivaciShopifyCart && window.VivaciShopifyCart.syncNavCount) {
+      window.VivaciShopifyCart.syncNavCount();
+    }
     markShellNavReady();
   }
 
@@ -538,6 +571,9 @@
     cluster = target.querySelector(".vivaci-nav-actions__cluster");
     if (cluster) {
       target.setAttribute("data-vivaci-nav-actions-mounted", "true");
+      if (window.VivaciShopifyCart && window.VivaciShopifyCart.syncNavCount) {
+        window.VivaciShopifyCart.syncNavCount();
+      }
       markShellNavReady();
       return;
     }
@@ -573,10 +609,10 @@
     document.querySelectorAll("[data-vivaci-nav-search-open]").forEach(function (btn) {
       btn.setAttribute("aria-label", ui("nav.search", "Sök"));
     });
-    document.querySelectorAll("[data-vivaci-cart-nav-btn]").forEach(function (btn) {
+    document.querySelectorAll("[data-vivaci-cart-trigger].vivaci-cart-nav-btn").forEach(function (btn) {
       btn.setAttribute("aria-label", ui("nav.cart", "Varukorg"));
     });
-    document.querySelectorAll(".vivaci-cart-nav-btn__label").forEach(function (el) {
+    document.querySelectorAll(".vivaci-cart-nav-btn__label-text").forEach(function (el) {
       el.textContent = ui("nav.cart", "Varukorg");
     });
     document.querySelectorAll("[data-vivaci-nav-lang-trigger]").forEach(function (btn) {
@@ -595,6 +631,7 @@
   }
 
   function bootNavActions() {
+    ensureShopifyCartAssets();
     ensureHamburgerIcon();
     initNavActions();
     loadSearchIndex();

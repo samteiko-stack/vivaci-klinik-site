@@ -1,0 +1,47 @@
+{
+  "comment": "Search queries for placeholder images. Run: PEXELS_API_KEY=… scripts/.venv/bin/python scripts/fetch-pexels-placeholders.py",
+  "outputDir": "reference/webflow-export/images/pexels",
+  "catalogFile": "content/placeholders.json",
+  "items": [
+    {
+      "id": "treatment-card-1",
+      "query": "medical spa skincare treatment",
+      "orientation": "landscape"
+    },
+    {
+      "id": "treatment-card-2",
+      "query": "cosmetic dermatology clinic",
+      "orientation": "landscape"
+    },
+    {
+      "id": "treatment-card-3",
+      "query": "facial aesthetic treatment",
+      "orientation": "landscape"
+    },
+    {
+      "id": "treatment-card-4",
+      "query": "wellness clinic interior calm",
+      "orientation": "landscape"
+    },
+    {
+      "id": "treatment-card-5",
+      "query": "beauty clinic professional",
+      "orientation": "landscape"
+    },
+    {
+      "id": "featured-treatment-1",
+      "query": "hydrafacial skin treatment",
+      "orientation": "landscape"
+    },
+    {
+      "id": "featured-treatment-2",
+      "query": "dermal filler aesthetic",
+      "orientation": "landscape"
+    },
+    {
+      "id": "hero-clinic",
+      "query": "luxury aesthetic medicine clinic",
+      "orientation": "landscape"
+    }
+  ]
+}

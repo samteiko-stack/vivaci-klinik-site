@@ -1,0 +1,70 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
+  "heading": "Utvalda behandlingar",
+  "cta": {
+    "label": "Se alla behandlingar",
+    "href": "/behandlingar"
+  },
+  "items": [
+    {
+      "name": "Visbody Body Analysis",
+      "href": "/behandlingar/visbody-body-analysis",
+      "slug": "visbody-body-analysis",
+      "image": "/images/ak/treatments/visbody-body-analysis.jpg"
+    },
+    {
+      "name": "Hair Analysis",
+      "href": "/behandlingar/hair-analysis",
+      "slug": "hair-analysis",
+      "image": "/images/ak/treatments/hair-analysis.jpg"
+    },
+    {
+      "name": "OligoCheck",
+      "href": "/behandlingar/oligocheck",
+      "slug": "oligocheck",
+      "image": "/images/ak/treatments/oligocheck.jpg"
+    },
+    {
+      "name": "SO/Check",
+      "href": "/behandlingar/so-check",
+      "slug": "so-check",
+      "image": "/images/ak/treatments/so-check.jpg"
+    },
+    {
+      "name": "OBSERV 520X Skin Analysis",
+      "href": "/behandlingar/observ-520x-skin-analysis",
+      "slug": "observ-520x-skin-analysis",
+      "image": "/images/ak/treatments/observ-520x-skin-analysis.jpg"
+    },
+    {
+      "name": "IV Therapy",
+      "href": "/behandlingar/iv-therapy",
+      "slug": "iv-therapy",
+      "image": "/images/ak/treatments/iv-therapy.jpg"
+    },
+    {
+      "name": "Vitamin Injections",
+      "href": "/behandlingar/vitamin-injections",
+      "slug": "vitamin-injections",
+      "image": "/images/ak/treatments/vitamin-injections.jpg"
+    },
+    {
+      "name": "Health Check & Blood Tests",
+      "href": "/behandlingar/health-check-blood-tests",
+      "slug": "health-check-blood-tests",
+      "image": "/images/ak/treatments/health-check-blood-tests.jpg"
+    },
+    {
+      "name": "Medical Weight Loss",
+      "href": "/behandlingar/medical-weight-loss",
+      "slug": "medical-weight-loss",
+      "image": "/images/ak/treatments/medical-weight-loss.jpg"
+    },
+    {
+      "name": "Laserhårborttagning",
+      "href": "/behandlingar/laser-hair-removal",
+      "slug": "laser-hair-removal",
+      "image": "/images/ak/treatments/laser-hair-removal.png"
+    }
+  ]
+}

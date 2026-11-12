@@ -22,12 +22,15 @@
   }
 
   function getLocale() {
+    if (window.VivaciLocaleRouting && window.VivaciLocaleRouting.localeFromPathname) {
+      return normalizeLocale(window.VivaciLocaleRouting.localeFromPathname());
+    }
+    var attr = document.documentElement.getAttribute("data-vivaci-locale");
+    if (attr) return normalizeLocale(attr);
     try {
       var stored = localStorage.getItem(LOCALE_KEY);
       if (stored) return normalizeLocale(stored);
     } catch (_) {}
-    var attr = document.documentElement.getAttribute("data-vivaci-locale");
-    if (attr) return normalizeLocale(attr);
     /* Webflow export often has lang="en"; default site language is Swedish. */
     return DEFAULT_LOCALE;
   }

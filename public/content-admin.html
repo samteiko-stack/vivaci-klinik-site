@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <title>Content admin — Vivaci</title>
+  <meta http-equiv="refresh" content="0;url=http://127.0.0.1:4000/treatment-pages" />
+  <script>
+    (function () {
+      var port = "4000";
+      var target = "http://127.0.0.1:" + port + "/treatment-pages";
+      if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+        location.replace(target);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Öppnar content admin …</p>
+  <p>
+    Fungerar inte automatiskt?
+    <a href="http://127.0.0.1:4000/treatment-pages">Öppna http://127.0.0.1:4000/treatment-pages</a>
+    (kör <code>npm run dev</code> i <code>content-admin/</code> först).
+  </p>
+</body>
+</html>

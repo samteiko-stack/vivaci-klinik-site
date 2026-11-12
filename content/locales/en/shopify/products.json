@@ -1,8 +1,8 @@
 {
-  "syncedAt": "2026-11-04T20:48:16Z",
+  "syncedAt": "04/11/2026T20:48:16Z",
   "storeDomain": "n0darm-wy.myshopify.com",
   "categories": [
-    "Alla",
+    "All %s",
     "Hudvård",
     "Hälsa & livsstil",
     "Hårvård",
@@ -58,7 +58,7 @@
       "id": "gid://shopify/Product/15616393314653",
       "handle": "marine-collagen-vitamin-c",
       "title": "Marint kollagen + Vitamin C",
-      "description": "100% rent marint kollagen från Norge. Vi har valt att arbeta med det marina kollagenet eftersom kroppen absorberar det 1,5 gånger mer än bovint kollagen (nötköttskollagen). Förbättrar hudens elasticitet, återfuktning och minskar fina linjer",
+      "description": "100% pure marine collagen from Norway. We have chosen to work with the marine collagen because the body absorbs it 1.5 times more than bovine collagen (beef collagen). Improves skin elasticity, hydration and reduces fine lines",
       "productType": "Kosttillskott",
       "vendor": "Under the skin",
       "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Marinecollagen_2cb094e5-38e4-4b66-b441-68147a0767c6.webp?v=1763310916",
@@ -268,12 +268,12 @@
     {
       "id": "gid://shopify/Product/15616393511261",
       "handle": "bright-glutathione",
-      "title": "Bright (Glutathione) – Antioxidantstöd",
+      "title": "Bright (Glutathione) – Antioxidant support",
       "description": "Glutation hjälper till att lysa upp hudtonen och bibehålla normalt uttryck av hudpigment.",
       "productType": "Kosttillskott",
       "vendor": "Under the skin",
       "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Bright.webp?v=1763304739",
-      "imageAlt": "Bright (Glutathione) – Antioxidantstöd",
+      "imageAlt": "Bright (Glutathione) – Antioxidant support",
       "price": {
         "amount": "0.0",
         "currencyCode": "SEK"
@@ -354,12 +354,12 @@
     {
       "id": "gid://shopify/Product/15616393576797",
       "handle": "boost-her-womens-multinutrient",
-      "title": "Boost Her – Dagligt stöd för kvinnor",
+      "title": "Boost Her – Daily support for women",
       "description": "Utformad för att boost kvinnors energi, hormonbalans, förbättra fertilitet och lust samt främja optimal hälsa i urinvägarna.",
       "productType": "Kosttillskott",
       "vendor": "Under the skin",
       "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/boosther_6f91e874-5719-4ae6-8f4b-ae4e7eef5760.webp?v=1763304662",
-      "imageAlt": "Boost Her – Dagligt stöd för kvinnor",
+      "imageAlt": "Boost Her – Daily support for women",
       "price": {
         "amount": "0.0",
         "currencyCode": "SEK"
@@ -397,12 +397,12 @@
     {
       "id": "gid://shopify/Product/15616393609565",
       "handle": "boost-him-mens-multinutrient",
-      "title": "Boost Him – Dagligt stöd för män",
+      "title": "Boost Him – Daily support for men",
       "description": "Hormonbalans, reproduktiv hälsa, vitalitet och allmänt välbefinnande, perfekt för män som vill optimera sin energi, prestation och bibehålla en långvarig hälsa.",
       "productType": "Kosttillskott",
       "vendor": "Under the skin",
       "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Boosthim_3ee5b9c8-99db-4231-a074-8b0658a63bbb.webp?v=1763304545",
-      "imageAlt": "Boost Him – Dagligt stöd för män",
+      "imageAlt": "Boost Him – Daily support for men",
       "price": {
         "amount": "640.0",
         "currencyCode": "SEK"

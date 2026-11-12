@@ -1,0 +1,124 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
+  "contact": {
+    "address": {
+      "label": "Solna Centrum, Torg 3, Plan 2,<br>171 45 Solna",
+      "href": "https://www.google.com/maps/search/?api=1&query=Solna%20Torg%203%2C%20Plan%202%2C%20171%2045%20Solna"
+    },
+    "phone": {
+      "label": "08-509 275 08",
+      "href": "tel:+46850927508"
+    },
+    "email": {
+      "label": "info@vivaci.se",
+      "href": "mailto:info@vivaci.se"
+    },
+    "social": [
+      {
+        "network": "facebook",
+        "href": "https://www.facebook.com/Vivaciklinik",
+        "label": "Facebook"
+      },
+      {
+        "network": "instagram",
+        "href": "https://www.instagram.com/vivaciklinik",
+        "label": "Instagram"
+      },
+      {
+        "network": "tiktok",
+        "href": "https://www.tiktok.com/@vivaciklinik",
+        "label": "TikTok"
+      }
+    ]
+  },
+  "linkColumns": [
+    {
+      "title": "Explore",
+      "links": [
+        {
+          "label": "Before & After",
+          "href": "/behandlingar/hydrafacial#results"
+        },
+        {
+          "label": "Patient reviews",
+          "href": "/#vivaci-home-why"
+        },
+        {
+          "label": "Brands",
+          "href": "/#vivaci-home-brands"
+        },
+        {
+          "label": "FAQ",
+          "href": "/#vivaci-home-faq"
+        },
+        {
+          "label": "News & tips",
+          "href": "/nyheter"
+        },
+        {
+          "label": "Payment options",
+          "href": "/#vivaci-home-faq"
+        }
+      ]
+    },
+    {
+      "title": "About Vivaci",
+      "links": [
+        {
+          "label": "About us",
+          "href": "/#vivaci-home-hero"
+        },
+        {
+          "label": "Meet our experts",
+          "href": "/#vivaci-home-team"
+        },
+        {
+          "label": "Our method",
+          "href": "/#vivaci-home-method"
+        },
+        {
+          "label": "Why Vivaci",
+          "href": "/#vivaci-home-why"
+        },
+        {
+          "label": "Patient safety",
+          "href": "/#vivaci-home-why"
+        },
+        {
+          "label": "Careers",
+          "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+        }
+      ]
+    }
+  ],
+  "newsletter": {
+    "sectionTitle": "Newsletter",
+    "title": "Stay updated",
+    "description": "Get news, treatment tips and exclusive offers from Vivaci Clinic.",
+    "placeholder": "Your email address",
+    "submitLabel": "Subscribe"
+  },
+  "legal": [
+    {
+      "label": "Privacy policy",
+      "href": "/integritetspolicy"
+    },
+    {
+      "label": "Cookie policy",
+      "href": "/cookies"
+    },
+    {
+      "label": "Terms of purchase",
+      "href": "/villkor"
+    },
+    {
+      "label": "Cancellation & refunds",
+      "href": "/avbokning"
+    },
+    {
+      "label": "Temporary admin link",
+      "href": "/content-admin"
+    }
+  ],
+  "copyright": "© 2026 Vivaci Clinic. All rights reserved."
+}

@@ -1,0 +1,38 @@
+/** Client-safe helpers for `/images/…` paths in the admin UI. */
+
+/** Vivaci wordmark on light surfaces (repo `public/images/`). */
+export const VIVACI_LOGO_DARK_WEB_PATH = "/images/logo-vivaci-dark.webp";
+
+/** Vivaci wordmark on dark surfaces — same asset as marketing footer (`footer-logo_main`). */
+export const VIVACI_LOGO_FOR_DARK_BG_WEB_PATH =
+  "/images/logo-vivaci-white.webp";
+
+export function vivaciLogoDarkAdminUrl(): string {
+  return siteAssetAdminUrl(VIVACI_LOGO_DARK_WEB_PATH);
+}
+
+export function vivaciLogoForDarkBgAdminUrl(): string {
+  return siteAssetAdminUrl(VIVACI_LOGO_FOR_DARK_BG_WEB_PATH);
+}
+
+export function normalizeImageWebPath(input: string): string {
+  const trimmed = input.trim();
+  if (!trimmed) return "";
+  if (/^https?:\/\//i.test(trimmed)) return trimmed;
+  if (trimmed.startsWith("/")) return trimmed;
+  return `/${trimmed.replace(/^\/+/, "")}`;
+}
+
+export function isPreviewableLocalImage(path: string): boolean {
+  const p = normalizeImageWebPath(path);
+  return Boolean(p && p.startsWith("/") && !/^https?:\/\//i.test(p));
+}
+
+/** Serve repo marketing assets through content-admin without copying binaries. */
+export function siteAssetAdminUrl(webPath: string): string {
+  const normalized = normalizeImageWebPath(webPath);
+  if (!normalized) return "";
+  if (/^https?:\/\//i.test(normalized)) return normalized;
+  const relative = normalized.startsWith("/") ? normalized.slice(1) : normalized;
+  return `/api/site-assets/${relative.split("/").map(encodeURIComponent).join("/")}`;
+}

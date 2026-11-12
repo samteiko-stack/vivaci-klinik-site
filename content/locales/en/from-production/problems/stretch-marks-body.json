@@ -2,7 +2,7 @@
   "type": "problem",
   "slug": "stretch-marks-body",
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/stretch-marks-body",
-  "name": "Stretchmärken",
+  "name": "Stretch marks",
   "heroIntro": "Här förklarar vi vad stretchmärken är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
   "whatIsIt": "Stretchmärken är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
   "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -16,7 +16,7 @@
     },
     {
       "question": "Hur många behandlingar behövs?",
-      "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+      "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
     },
     {
       "question": "Finns det någon återhämtningstid?",
@@ -29,9 +29,9 @@
     "Orsaker",
     "Hur vi bedömer det",
     "Möt våra experter",
-    "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+    "Advanced diagnostics. Personal treatments. Better results.",
     "Därför väljer patienter Vivaci",
     "Vanliga frågor",
-    "Boka din kostnadsfria konsultation"
+    "Book your free consultation"
   ]
 }

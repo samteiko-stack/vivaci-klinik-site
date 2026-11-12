@@ -1,0 +1,72 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/",
+  "tagline": "Concerns",
+  "heading": "Skin concerns",
+  "intro": "From acne and rosacea to pigmentation and enlarged pores — explore common skin concerns and how we assess and treat them at Vivaci.",
+  "cta": {
+    "label": "See all concerns",
+    "href": "/problem?kategori=hud"
+  },
+  "items": [
+    {
+      "slug": "acne",
+      "name": "Acne",
+      "href": "/problem/acne",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/akne.webp"
+    },
+    {
+      "slug": "acne-scars",
+      "name": "Acne scars",
+      "href": "/problem/acne-scars",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/acnearr.webp"
+    },
+    {
+      "slug": "rosacea",
+      "name": "Rosacea",
+      "href": "/problem/rosacea",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/rosacea.webp"
+    },
+    {
+      "slug": "pigmentation",
+      "name": "Pigmentation",
+      "href": "/problem/pigmentation",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/pigmentflackar.webp"
+    },
+    {
+      "slug": "melasma",
+      "name": "Melasma",
+      "href": "/problem/melasma",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/melasma.webp"
+    },
+    {
+      "slug": "scars",
+      "name": "Scars",
+      "href": "/problem/scars",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/arr.webp"
+    },
+    {
+      "slug": "broken-capillaries",
+      "name": "Broken capillaries",
+      "href": "/problem/broken-capillaries",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/ytliga-blodkarl.webp"
+    },
+    {
+      "slug": "fine-lines-wrinkles",
+      "name": "Fine lines & wrinkles",
+      "href": "/problem/fine-lines-wrinkles",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/mogen-hy.webp"
+    },
+    {
+      "slug": "enlarged-pores",
+      "name": "Enlarged pores",
+      "href": "/problem/enlarged-pores",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/stora-porer.webp"
+    },
+    {
+      "slug": "skin-lesions",
+      "name": "Skin lesions",
+      "href": "/problem/skin-lesions",
+      "image": "https://www.acnespecialisten.se/bilder/hudproblem/424x324/hudforandringar.webp"
+    }
+  ]
+}

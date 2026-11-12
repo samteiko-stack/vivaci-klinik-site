@@ -9,7 +9,15 @@
     "hero": {
       "enabled": true,
       "title": "Cellulite",
-      "intro": "Här förklarar vi vad cellulite är, varför det uppstår och hur vi kan hjälpa till att förbättra hudens utseende. Du får också veta mer om olika typer av cellulite, bidragande faktorer och tillgängliga behandlingsalternativ för slätare, fastare hud."
+      "intro": "Här förklarar vi vad cellulite är, varför det uppstår och hur vi kan hjälpa till att förbättra hudens utseende. Du får också veta mer om olika typer av cellulite, bidragande faktorer och tillgängliga behandlingsalternativ för slätare, fastare hud.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
     },
     "facts": {
       "enabled": true,
@@ -18,19 +26,29 @@
       "items": [
         {
           "label": "Typ",
-          "value": "Hudproblem",
+          "value": "Skin concerns",
           "icon": "layout-grid"
         },
         {
           "label": "Konsultation",
           "value": "Kostnadsfri",
           "icon": "calendar-check"
+        },
+        {
+          "label": "Treatment time",
+          "value": "Varierar",
+          "icon": "timer"
+        },
+        {
+          "label": "Pris",
+          "value": "Vid konsultation",
+          "icon": "wallet"
         }
       ]
     },
     "overview": {
       "enabled": true,
-      "tagline": "Hudproblem",
+      "tagline": "Skin concerns",
       "heading": "Fakta om Cellulite",
       "blocks": [
         {
@@ -84,6 +102,11 @@
     },
     "faq": {
       "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Cellulite. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Learn about our method",
+        "href": "#vivaci-method"
+      },
       "items": [
         {
           "question": "Kan cellulite tas bort helt?",
@@ -91,7 +114,7 @@
         },
         {
           "question": "Hur många behandlingar behöver jag?",
-          "answer": "Antalet sessioner beror på cellulitens grad och den behandlingsplan som rekommenderas vid konsultationen."
+          "answer": "The number of sessions depends on the degree of cellulitis and the treatment plan recommended at the consultation."
         },
         {
           "question": "Vilken behandling är mest effektiv?",
@@ -139,16 +162,66 @@
       "enabled": true
     },
     "quizCta": {
-      "enabled": true
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": true,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": [
+        {
+          "title": "Exempel 1",
+          "beforeImage": "/images/photoshoot/frame-01.jpg",
+          "afterImage": "/images/photoshoot/frame-02.jpg"
+        },
+        {
+          "title": "Exempel 2",
+          "beforeImage": "/images/photoshoot/frame-02.jpg",
+          "afterImage": "/images/photoshoot/frame-03.jpg"
+        },
+        {
+          "title": "Exempel 3",
+          "beforeImage": "/images/photoshoot/frame-03.jpg",
+          "afterImage": "/images/photoshoot/frame-04.jpg"
+        },
+        {
+          "title": "Exempel 4",
+          "beforeImage": "/images/photoshoot/frame-04.jpg",
+          "afterImage": "/images/photoshoot/frame-05.jpg"
+        },
+        {
+          "title": "Exempel 5",
+          "beforeImage": "/images/photoshoot/frame-05.jpg",
+          "afterImage": "/images/photoshoot/frame-06.jpg"
+        },
+        {
+          "title": "Exempel 6",
+          "beforeImage": "/images/photoshoot/frame-06.jpg",
+          "afterImage": "/images/photoshoot/frame-01.jpg"
+        }
+      ]
     },
     "beforeAfterCare": {
       "enabled": false
-    },
-    "beforeAfterGallery": {
-      "enabled": false
-    },
-    "bottomCta": {
-      "enabled": true
     }
   }
 }

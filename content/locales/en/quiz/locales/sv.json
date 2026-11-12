@@ -6,7 +6,7 @@
     "navUrl": "/content/from-production/nav.json"
   },
   "ui": {
-    "close": "Stäng",
+    "close": "Close",
     "back": "Tillbaka",
     "next": "Nästa",
     "finish": "Se mina rekommendationer",
@@ -14,17 +14,19 @@
     "restart": "Gör om quizet",
     "stepOf": "Steg {current} av {total}",
     "selectOne": "Välj ett alternativ",
+    "selectOneAuto": "Tryck på ett alternativ för att gå vidare",
+    "selectOneVisual": "Tryck på det område som känns viktigast — du går vidare direkt.",
     "selectMany": "Välj alla som stämmer",
     "resultsTitle": "Dina rekommenderade behandlingar",
-    "resultsLead": "Baserat på dina svar har vi tagit fram behandlingar som kan passa dig. Varje förslag bygger på det du berättat — en konsultation avgör alltid vad som är rätt i ditt fall.",
+    "resultsLead": "Based on your answers, we have developed treatments that may suit you. Each suggestion is based on what you have told us — a consultation always determines what is right in your case.",
     "whyHeading": "Varför vi tror detta passar",
     "readMore": "Läs om behandlingen",
     "emptyResults": "Vi kunde inte matcha några behandlingar utifrån dina svar. Boka gärna en kostnadsfri konsultation så hjälper vi dig personligen.",
-    "consultCta": "Boka gratis konsultation",
-    "consultHref": "/kontakt"
+    "consultCta": "Free Consultation",
+    "consultHref": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
   },
   "intro": {
-    "eyebrow": "Behandlingsguide",
+    "eyebrow": "Treatment Guide",
     "heading": "Osäker på vad du behöver?",
     "body": "Svara på några korta frågor om dina mål och utmaningar. Vi matchar dig med behandlingar på Vivaci och förklarar varför de kan vara relevanta — utan förpliktelser.",
     "durationHint": "Ca 2–3 minuter · 7 frågor"
@@ -33,48 +35,55 @@
     {
       "id": "main_goal",
       "type": "single",
+      "layout": "visual",
       "prompt": "Vad vill du främst förbättra?",
       "subtitle": "Välj det område som känns viktigast just nu.",
       "options": [
         {
           "id": "skin",
+          "image": "/images/railway/problem-uneven-skin-tone.webp",
           "label": "Hudton & hudproblem",
-          "hint": "Acne, pigment, porer, känslighet med mera",
+          "hint": "Acne, Pigments, Pores, Sensitivity",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "aging",
-          "label": "Rynkor & tecken på ålder",
-          "hint": "Linjer, volymförlust, slapp hud",
+          "image": "/images/railway/problem-fine-lines-wrinkles.webp",
+          "label": "Rynkor & ålder",
+          "hint": "Linjer, volym, slapp hud",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "face",
-          "label": "Form & uttryck i ansiktet",
-          "hint": "Läppar, konturer, ögonområdet",
+          "image": "/images/ak/treatments/dermal-fillers.png",
+          "label": "Form & uttryck",
+          "hint": "Läppar, konturer, ögon",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "body",
+          "image": "/images/railway/problem-body-contouring.webp",
           "label": "Kropp & silhuett",
-          "hint": "Fett, kontur, cellulite, vikt",
+          "hint": "Fett, kontur, cellulite",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "hair",
+          "image": "/images/railway/problem-hair-loss.webp",
           "label": "Hår & hårbotten",
-          "hint": "Håravfall, tunnare hår, oönskat hår",
+          "hint": "Håravfall, tunnare hår",
           "weights": {},
           "reasons": {}
         },
         {
           "id": "surgery",
-          "label": "Kirurgi & ingrepp",
-          "hint": "Permanent förändring med kirurgi",
+          "image": "/images/ak/treatments/liposuction.jpg",
+          "label": "Kirurgi",
+          "hint": "Permanent kirurgi",
           "weights": {},
           "reasons": {}
         }
@@ -92,7 +101,7 @@
       "options": [
         {
           "id": "acne",
-          "label": "Acne & utbrott",
+          "label": "Acne & breakouts",
           "weights": {
             "/problem/acne": 4
           },
@@ -102,7 +111,7 @@
         },
         {
           "id": "acne_scars",
-          "label": "Acnärr",
+          "label": "Acne scars",
           "weights": {
             "/problem/acne-scars": 4,
             "/problem/scars": 2
@@ -189,7 +198,7 @@
       "options": [
         {
           "id": "lines",
-          "label": "Fina linjer & rynkor",
+          "label": "Fine lines & wrinkles",
           "weights": {
             "/problem/fine-lines-wrinkles": 4,
             "/problem/wrinkles": 4
@@ -268,13 +277,13 @@
             "/problem/double-chin": 3
           },
           "reasons": {
-            "/problem/facial-contouring": "Ansiktskonturering matchar dina mål om definition.",
+            "/problem/facial-contouring": "Face contouring matches your definition goals.",
             "/problem/double-chin": "Dubbelhaka kan definieras utan kirurgi i många fall."
           }
         },
         {
           "id": "sweat",
-          "label": "Överdriven svettning",
+          "label": "Excessive sweating",
           "weights": {
             "/problem/excessive-sweating": 5
           },
@@ -423,7 +432,7 @@
         },
         {
           "id": "face_surgery",
-          "label": "Ansikte — ögonlock, ögonbryn",
+          "label": "Face — eyelids, eyebrows",
           "weights": {
             "/plastikkirurgi/eyelid-surgery": 4,
             "/plastikkirurgi/eyebrow-lift": 3
@@ -467,7 +476,7 @@
         },
         {
           "id": "balanced",
-          "label": "Balans — tydlig effekt men vardagsvänligt",
+          "label": "Balance — clear effect but everyday friendly",
           "hint": "Kombinationer när det behövs",
           "weights": {},
           "reasons": {}

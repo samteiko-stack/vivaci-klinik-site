@@ -1,0 +1,465 @@
+{
+  "type": "behandling",
+  "path": "/behandlingar/botulinum-toxin",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/behandlingar/botulinum-toxin",
+  "title": "Botulinum Toxin",
+  "heroIntro": "Botulinum Toxin is one of our premium treatments at Vivaci Klinik in Solna. The treatment is performed by certified experts in a calm, exclusive environment.",
+  "sections": {
+    "Om behandlingen": {
+      "paragraphs": [
+        "Botulinum toxin — often called Botox — is one of the world's most proven aesthetic injection treatments. The treatment softens facial wrinkles by temporarily reducing the activity of selected facial muscles, giving a rested and natural expression.",
+        "När vi ler, kisar eller rynkar pannan drar små muskler i ansiktet ihop huden. Med tiden skapar dessa upprepade rörelser bestående linjer — så kallade dynamiska rynkor. Botulinumtoxin verkar direkt på orsaken: muskeln själv.",
+        "På Vivaci Klinik utgår varje behandling från din ansiktsanatomi och mimik. Vi arbetar med låga, exakta doser och bygger hellre upp resultatet gradvis än överbehandlar. Målet är aldrig ett \"fruset\" ansikte — utan du, fast mer utvilad.",
+        "The treatment is performed by licensed and experienced staff in a quiet, medical environment in Solna Centrum. Before each treatment, we make an individual assessment and go through your goals, your medical history and what you can realistically expect.",
+        "Snabb översikt"
+      ],
+      "items": [],
+      "children": {
+        "Passar bra för dig som": {
+          "paragraphs": [],
+          "items": [
+            "Vill mjuka upp mimiska rynkor i panna, glabella eller runt ögonen",
+            "Söker ett naturligt, utvilat resultat — inte ett \"fruset\" uttryck",
+            "Vill förebygga att dynamiska linjer blir djupare med tiden",
+            "Föredrar en snabb behandling utan återhämtningstid"
+          ]
+        },
+        "Kräver individuell bedömning": {
+          "paragraphs": [],
+          "items": [
+            "Graviditet eller amning — vi rekommenderar att vänta",
+            "Neuromuskulära sjukdomar eller vissa mediciner",
+            "Pågående hudinfektion i behandlingsområdet",
+            "Tidigare reaktioner på botulinumtoxin"
+          ]
+        }
+      }
+    },
+    "Fördelar": {
+      "paragraphs": [],
+      "items": [],
+      "children": {
+        "Naturligt resultat": {
+          "paragraphs": [
+            "Individuell dosering som bevarar din mimik. Du ser utvilad ut — inte behandlad."
+          ],
+          "items": []
+        },
+        "Snabb behandling": {
+          "paragraphs": [
+            "Själva injektionerna tar 15–30 minuter. De flesta återgår till vardagen direkt efteråt."
+          ],
+          "items": []
+        },
+        "Ingen återhämtningstid": {
+          "paragraphs": [
+            "Inga sjukdagar och ingen synlig läkningstid. Eventuell lätt rodnad lägger sig oftast inom någon timme."
+          ],
+          "items": []
+        },
+        "Förebyggande effekt": {
+          "paragraphs": [
+            "Regelbunden behandling kan bromsa utvecklingen av djupare, permanenta linjer över tid."
+          ],
+          "items": []
+        },
+        "Väldokumenterad säkerhet": {
+          "paragraphs": [
+            "Botulinum toxin has been used medically for decades and is one of the world's most studied aesthetic treatments."
+          ],
+          "items": []
+        },
+        "Reversibel effekt": {
+          "paragraphs": [
+            "Effekten avtar gradvis och naturligt. Du bestämmer själv om du vill upprepa behandlingen."
+          ],
+          "items": []
+        }
+      }
+    },
+    "Så fungerar det": {
+      "paragraphs": [
+        "The botulinum toxin temporarily blocks the nerve signals to the treated muscle. As the muscle relaxes, the skin above it smoothes out — and the lines created by the mimicry become softer or disappear.",
+        "Effekten utvecklas gradvis: de första förändringarna märks efter 3–7 dagar och full effekt nås efter cirka två veckor. Därefter håller resultatet vanligtvis i 3–6 månader innan muskelaktiviteten gradvis återkommer.",
+        "Eftersom effekten är tillfällig och reversibel kan behandlingen anpassas över tid — dos och områden justeras utifrån hur du svarar och vad du vill uppnå.",
+        "Resultat över tid",
+        "Dag 0",
+        "Treatment — 15–30 min, directly back to everyday life",
+        "Dag 3–7",
+        "Effekten börjar synas — musklerna slappnar gradvis av",
+        "Dag 14",
+        "Full effekt — eventuell uppföljning och finjustering",
+        "Månad 3–6",
+        "Effekten avtar gradvis — dags för påfyllnad om du vill behålla resultatet",
+        "Din behandlingsresa"
+      ],
+      "items": [
+        "Dag 0 Behandling — 15–30 min, direkt tillbaka till vardagen",
+        "Dag 3–7 Effekten börjar synas — musklerna slappnar gradvis av",
+        "Dag 14 Full effekt — eventuell uppföljning och finjustering",
+        "Månad 3–6 Effekten avtar gradvis — dags för påfyllnad om du vill behålla resultatet"
+      ],
+      "children": {
+        "Kostnadsfri konsultation": {
+          "paragraphs": [
+            "Vi går igenom din mimik, dina mål och din medicinska historik. Du får en ärlig bedömning av vad behandlingen kan — och inte kan — åstadkomma."
+          ],
+          "items": []
+        },
+        "Individuell plan": {
+          "paragraphs": [
+            "Vi markerar injektionspunkter och bestämmer dosering utifrån din ansiktsanatomi. Allt dokumenteras för att kunna finjusteras vid kommande besök."
+          ],
+          "items": []
+        },
+        "Behandling": {
+          "paragraphs": [
+            "Injektionerna görs med mycket fin nål och tar 15–30 minuter. De flesta upplever endast små, snabba stick."
+          ],
+          "items": []
+        },
+        "Uppföljning": {
+          "paragraphs": [
+            "Efter cirka två veckor utvärderar vi resultatet. Vid behov finjusterar vi doseringen — så att resultatet blir precis rätt.",
+            "Vanliga behandlingsområden"
+          ],
+          "items": []
+        },
+        "Pannan": {
+          "paragraphs": [
+            "Horisontella linjer som uppstår när du höjer ögonbrynen."
+          ],
+          "items": []
+        },
+        "Glabella": {
+          "paragraphs": [
+            "Worry wrinkle between the eyebrows — the area that gives an \"angry\" impression."
+          ],
+          "items": []
+        },
+        "Kråksparkar": {
+          "paragraphs": [
+            "Solfjäderformade linjer vid ögonens yttre hörn som syns när du ler."
+          ],
+          "items": []
+        },
+        "Ögonbrynslyft": {
+          "paragraphs": [
+            "Subtil lyftning av ögonbrynen för en öppnare blick."
+          ],
+          "items": []
+        },
+        "Gummy smile": {
+          "paragraphs": [
+            "Minskar hur mycket tandkött som syns när du ler."
+          ],
+          "items": []
+        },
+        "Käkmuskler": {
+          "paragraphs": [
+            "Relaxation of tense jaw muscles — can also soften the face shape."
+          ],
+          "items": []
+        }
+      }
+    },
+    "Före & eftervård": {
+      "paragraphs": [
+        "Små förberedelser gör behandlingen både säkrare och bekvämare.",
+        "Kom osminkad i behandlingsområdet, eller så rengör vi huden på plats.",
+        "Undvik alkohol i 24 timmar före behandlingen — det minskar risken för blåmärken.",
+        "Undvik blodförtunnande receptfria preparat (t.ex. ipren, omega-3) några dagar innan, om din läkare godkänner det.",
+        "Tell us about all the medications and supplements you take at the consultation.",
+        "Meddela oss om du är gravid, ammar eller har någon neuromuskulär sjukdom.",
+        "Planera inte behandlingen tätt inpå viktiga händelser — ge resultatet två veckor att sätta sig."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Före & Efter": {
+      "paragraphs": [
+        "Se resultat från våra behandlingar",
+        "Botulinum Toxin",
+        "Fine lines & wrinkles"
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Vanliga frågor": {
+      "paragraphs": [
+        "De första förändringarna brukar synas inom 3–7 dagar. Full effekt nås efter cirka två veckor — därför bokar vi eventuell uppföljning först då.",
+        "Vanligtvis 3–6 månader. Varaktigheten beror på område, dos, din muskelstyrka och ämnesomsättning. Vid regelbunden behandling upplever många att effekten håller längre över tid.",
+        "De flesta upplever endast små, snabba stick. Nålen är mycket tunn och varje injektion tar under en sekund. Bedövningskräm behövs sällan men kan användas om du önskar.",
+        "Nej — inte med rätt dosering. Vår filosofi är att bevara din naturliga mimik. Vi doserar hellre försiktigt och fyller på vid uppföljningen än överbehandlar från start.",
+        "Ja, det är vanligt. Botox behandlar mimiska rynkor medan fillers återställer volym och fyller statiska linjer. Vid konsultationen bedömer vi vad som ger bäst resultat för just dig.",
+        "Priset beror på antal områden och dosering, vilket vi fastställer vid en kostnadsfri konsultation. Du får alltid ett tydligt pris innan behandlingen påbörjas.",
+        "Vi rekommenderar att vänta under graviditet och amning, eftersom forskningen är begränsad. Vi hjälper dig gärna planera behandlingen till efteråt.",
+        "Lätt rodnad, svullnad eller små blåmärken vid injektionspunkterna är vanligast och går över inom timmar till dagar. Allvarligare biverkningar är ovanliga när behandlingen utförs av utbildad personal med korrekt teknik.",
+        "Vi behandlar endast personer över 18 år. Många väljer att börja i 25–35-årsåldern i förebyggande syfte, men rätt tidpunkt är individuell och något vi diskuterar vid konsultationen.",
+        "Muskelaktiviteten återgår gradvis till det normala och rynkorna återkommer långsamt till sitt ursprungliga läge. Huden blir inte sämre än innan — många upplever tvärtom att linjerna är mjukare efter en tids regelbunden behandling."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Relaterat": {
+      "paragraphs": [
+        "Problem den behandlar"
+      ],
+      "items": [],
+      "children": {
+        "Fina linjer & rynkor": {
+          "paragraphs": [
+            "Här förklarar vi vad fina linjer & rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov."
+          ],
+          "items": []
+        },
+        "Rynkor": {
+          "paragraphs": [
+            "Här förklarar vi vad rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov."
+          ],
+          "items": []
+        }
+      }
+    },
+    "Osäker på vilken behandling som passar dig?": {
+      "paragraphs": [
+        "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your skin and facial expressions, and come up with a plan that is tailored to you — without any compulsion to buy.",
+        "Teamet"
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Möt våra experter": {
+      "paragraphs": [
+        "Erfarna specialister inom estetisk medicin"
+      ],
+      "items": [],
+      "children": {
+        "Dr. Anna Lindström": {
+          "paragraphs": [
+            "Medicinsk direktör"
+          ],
+          "items": []
+        },
+        "Dr. Erik Johansson": {
+          "paragraphs": [
+            "Plastikkirurg"
+          ],
+          "items": []
+        },
+        "Sofia Bergman": {
+          "paragraphs": [
+            "Hudterapeut"
+          ],
+          "items": []
+        },
+        "Maria Ekström": {
+          "paragraphs": [
+            "Sjuksköterska",
+            "Our method"
+          ],
+          "items": []
+        }
+      }
+    },
+    "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
+      "paragraphs": [
+        "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
+        "Varje resa börjar med en personlig konsultation.",
+        "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
+        "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
+        "Din behandling väljs och anpassas specifikt för dig.",
+        "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
+        "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
+        "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
+        "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
+        "Långsiktiga resultat kräver rätt uppföljning och underhåll.",
+        "Efter din behandling ger vi personliga rekommendationer baserat på dina behov och din utveckling. Det kan inkludera uppföljande besök, underhållsbehandlingar, professionell hudvård eller livsstilsråd.",
+        "Vårt mål är inte bara att förbättra din problematik idag, utan också att hjälpa dig bevara och stödja dina resultat över tid.",
+        "Varför Vivaci"
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Därför väljer patienter Vivaci": {
+      "paragraphs": [
+        "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
+      ],
+      "items": [
+        "01 IVO registered clinic Highest standards in patient safety and quality."
+      ],
+      "children": {
+        "IVO-registrerad klinik": {
+          "paragraphs": [
+            "Högsta standard inom patientsäkerhet och kvalitet."
+          ],
+          "items": [
+            "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
+          ]
+        },
+        "Kvalificerade specialister": {
+          "paragraphs": [
+            "Erfarna läkare och behandlare inom estetisk medicin."
+          ],
+          "items": [
+            "03 Personalized treatment plans Each plan is tailored to your unique needs."
+          ]
+        },
+        "Personliga behandlingsplaner": {
+          "paragraphs": [
+            "Varje plan skräddarsys efter dina unika behov."
+          ],
+          "items": [
+            "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
+          ]
+        },
+        "Avancerad medicinsk teknik": {
+          "paragraphs": [
+            "Ledande utrustning och evidensbaserade metoder."
+          ],
+          "items": [
+            "05 Premium Products We only work with trusted medical brands."
+          ]
+        },
+        "Premium produkter": {
+          "paragraphs": [
+            "Vi arbetar endast med pålitliga, medicinska varumärken."
+          ],
+          "items": [
+            "06 Natural Results Subtle enhancements that enhance your natural appearance."
+          ]
+        },
+        "Naturliga resultat": {
+          "paragraphs": [
+            "Subtila förbättringar som framhäver ditt naturliga utseende."
+          ],
+          "items": []
+        }
+      }
+    },
+    "Boka din kostnadsfria konsultation": {
+      "paragraphs": [
+        "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Före behandling": {
+      "paragraphs": [
+        "Små förberedelser gör behandlingen både säkrare och bekvämare."
+      ],
+      "items": [
+        "Kom osminkad i behandlingsområdet, eller så rengör vi huden på plats.",
+        "Undvik alkohol i 24 timmar före behandlingen — det minskar risken för blåmärken.",
+        "Undvik blodförtunnande receptfria preparat (t.ex. ipren, omega-3) några dagar innan, om din läkare godkänner det.",
+        "Tell us about all the medications and supplements you take at the consultation.",
+        "Meddela oss om du är gravid, ammar eller har någon neuromuskulär sjukdom.",
+        "Planera inte behandlingen tätt inpå viktiga händelser — ge resultatet två veckor att sätta sig."
+      ],
+      "children": {}
+    },
+    "Efter behandling": {
+      "paragraphs": [
+        "Det första dygnet påverkar hur jämnt resultatet blir. Så här tar du hand om huden."
+      ],
+      "items": [
+        "Rör, gnugga eller massera inte det behandlade området under de första 4 timmarna.",
+        "Håll dig upprätt — undvik att ligga ner de första 4 timmarna efter behandlingen.",
+        "Träna gärna mimiken lätt (le, rynka pannan) första timmen — det kan hjälpa upptaget.",
+        "Undvik intensiv träning, bastu och varma bad det första dygnet.",
+        "Undvik alkohol och blodförtunnande preparat det första dygnet.",
+        "Vänta minst två veckor med ansiktsbehandlingar och massage i området.",
+        "Lätt rodnad eller små svullnader vid sticken är normalt och lägger sig inom några timmar.",
+        "Kontakta oss vid ovanliga besvär — vi finns här för dig även efter behandlingen."
+      ],
+      "children": {}
+    }
+  },
+  "facts": [
+    {
+      "label": "Treatment time",
+      "value": "15–30 min"
+    },
+    {
+      "label": "Återhämtning",
+      "value": "Ingen"
+    },
+    {
+      "label": "Smärtnivå",
+      "value": "Låg"
+    },
+    {
+      "label": "Pris",
+      "value": "från"
+    }
+  ],
+  "factsSummary": "",
+  "faqs": [
+    {
+      "question": "Hur snabbt ser jag resultat av botox?",
+      "answer": "De första förändringarna brukar synas inom 3–7 dagar. Full effekt nås efter cirka två veckor — därför bokar vi eventuell uppföljning först då."
+    },
+    {
+      "question": "Hur länge håller resultatet?",
+      "answer": "Vanligtvis 3–6 månader. Varaktigheten beror på område, dos, din muskelstyrka och ämnesomsättning. Vid regelbunden behandling upplever många att effekten håller längre över tid."
+    },
+    {
+      "question": "Gör behandlingen ont?",
+      "answer": "De flesta upplever endast små, snabba stick. Nålen är mycket tunn och varje injektion tar under en sekund. Bedövningskräm behövs sällan men kan användas om du önskar."
+    },
+    {
+      "question": "Kommer jag att se \"frusen\" ut?",
+      "answer": "Nej — inte med rätt dosering. Vår filosofi är att bevara din naturliga mimik. Vi doserar hellre försiktigt och fyller på vid uppföljningen än överbehandlar från start."
+    },
+    {
+      "question": "Kan jag kombinera botox med fillers?",
+      "answer": "Ja, det är vanligt. Botox behandlar mimiska rynkor medan fillers återställer volym och fyller statiska linjer. Vid konsultationen bedömer vi vad som ger bäst resultat för just dig."
+    },
+    {
+      "question": "Vad kostar behandlingen?",
+      "answer": "Priset beror på antal områden och dosering, vilket vi fastställer vid en kostnadsfri konsultation. Du får alltid ett tydligt pris innan behandlingen påbörjas."
+    },
+    {
+      "question": "Kan jag göra botox om jag är gravid eller ammar?",
+      "answer": "Vi rekommenderar att vänta under graviditet och amning, eftersom forskningen är begränsad. Vi hjälper dig gärna planera behandlingen till efteråt."
+    },
+    {
+      "question": "Finns det biverkningar?",
+      "answer": "Lätt rodnad, svullnad eller små blåmärken vid injektionspunkterna är vanligast och går över inom timmar till dagar. Allvarligare biverkningar är ovanliga när behandlingen utförs av utbildad personal med korrekt teknik."
+    },
+    {
+      "question": "Hur gammal måste jag vara?",
+      "answer": "Vi behandlar endast personer över 18 år. Många väljer att börja i 25–35-årsåldern i förebyggande syfte, men rätt tidpunkt är individuell och något vi diskuterar vid konsultationen."
+    },
+    {
+      "question": "Vad händer om jag slutar med botox?",
+      "answer": "Muskelaktiviteten återgår gradvis till det normala och rynkorna återkommer långsamt till sitt ursprungliga läge. Huden blir inte sämre än innan — många upplever tvärtom att linjerna är mjukare efter en tids regelbunden behandling."
+    }
+  ],
+  "related": [
+    {
+      "title": "Fina linjer & rynkor Här förklarar vi vad fina linjer & rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hj",
+      "href": "/problem/fine-lines-wrinkles"
+    },
+    {
+      "title": "Rynkor Här förklarar vi vad rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta ",
+      "href": "/problem/wrinkles"
+    }
+  ],
+  "rawSectionHeadings": [
+    "Om behandlingen",
+    "Fördelar",
+    "Så fungerar det",
+    "Före & eftervård",
+    "Före & Efter",
+    "Vanliga frågor",
+    "Relaterat",
+    "Osäker på vilken behandling som passar dig?",
+    "Möt våra experter",
+    "Advanced diagnostics. Personal treatments. Better results.",
+    "Därför väljer patienter Vivaci",
+    "Book your free consultation",
+    "Före behandling",
+    "Efter behandling"
+  ]
+}

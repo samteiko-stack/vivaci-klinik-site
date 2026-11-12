@@ -1,0 +1,199 @@
+{
+  "version": 1,
+  "category": "plastikkirurgi",
+  "slug": "hair-transplant",
+  "path": "/plastikkirurgi/hair-transplant",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/hair-transplant",
+  "title": "Hårtransplantation",
+  "sections": {
+    "hero": {
+      "enabled": true,
+      "title": "Hårtransplantation",
+      "intro": "Hårtransplantation utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Boka gratis konsultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Boka behandling",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "facts": {
+      "enabled": true,
+      "title": "Snabba fakta",
+      "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
+      "items": [
+        {
+          "label": "Behandlingstid",
+          "value": "20–90 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "1–7 dagar",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Lokal bedövning",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 65 000 kr",
+          "icon": "wallet"
+        }
+      ]
+    },
+    "overview": {
+      "enabled": true,
+      "tagline": "Om behandlingen",
+      "heading": "Hårtransplantation",
+      "blocks": [
+        {
+          "id": "whatIsIt",
+          "heading": "Om behandlingen",
+          "body": "Hårtransplantation utförs i vår moderna klinikmiljö med högsta säkerhetsstandard.",
+          "enabled": true
+        },
+        {
+          "id": "symptoms",
+          "heading": "Tecken & symtom",
+          "body": "",
+          "enabled": false
+        },
+        {
+          "id": "causes",
+          "heading": "Orsaker",
+          "body": "Ingrippe planeras individuellt vid konsultation.",
+          "enabled": true
+        },
+        {
+          "id": "assessment",
+          "heading": "Hur vi bedömer det",
+          "body": "Vi går igenom mål, medicinsk historik och förväntade resultat.",
+          "enabled": true
+        }
+      ]
+    },
+    "suitability": {
+      "enabled": false,
+      "goodFor": [],
+      "needsAssessment": []
+    },
+    "benefits": {
+      "enabled": true,
+      "items": [
+        {
+          "title": "Medicinsk expertis",
+          "body": "Behandlingen utförs av legitimerad personal med erfarenhet inom estetisk medicin."
+        },
+        {
+          "title": "Skräddarsydd plan",
+          "body": "Vi anpassar Hårtransplantation efter dina mål och förutsättningar — med tydliga förväntningar från start."
+        },
+        {
+          "title": "Trygg klinikmiljö",
+          "body": "Du möter oss i en lugn, exklusiv miljö i Solna där vi går igenom varje steg innan behandling."
+        }
+      ]
+    },
+    "howItWorks": {
+      "enabled": true,
+      "heading": "Så fungerar det",
+      "body": "Ingrippe planeras individuellt vid konsultation.",
+      "steps": []
+    },
+    "resultsTimeline": {
+      "enabled": false,
+      "heading": "Resultat över tid",
+      "items": []
+    },
+    "treatmentAreas": {
+      "enabled": false,
+      "items": []
+    },
+    "faq": {
+      "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Hårtransplantation. Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Boka kostnadsfri konsultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "items": [
+        {
+          "question": "Hur bokar jag Hårtransplantation?",
+          "answer": "Kontakta Vivaci Klinik i Solna eller boka via webbplatsen. Vi börjar med en kostnadsfri konsultation där vi går igenom om Hårtransplantation passar dina mål och förutsättningar."
+        },
+        {
+          "question": "Hur lång tid tar Hårtransplantation?",
+          "answer": "Behandlingstiden varierar beroende på område och omfattning. Vid konsultationen får du en tydlig tidsuppskattning för just ditt upplägg."
+        },
+        {
+          "question": "När ser jag resultat?",
+          "answer": "Tidslinjen beror på behandlingstyp och individuella förutsättningar. Vi sätter realistiska förväntningar redan vid första besöket."
+        },
+        {
+          "question": "Finns det återhämtningstid?",
+          "answer": "Det varierar mellan behandlingar. Vi informerar om eventuell rodnad, svullnad eller vila och ger konkret eftervård så att du vet vad som gäller efteråt."
+        },
+        {
+          "question": "Vad kostar Hårtransplantation?",
+          "answer": "Priset beror på omfattning och individuell plan. Efter konsultationen får du ett tydligt prisförslag innan du bokar behandling."
+        }
+      ]
+    },
+    "related": {
+      "enabled": false,
+      "heading": "Relaterat",
+      "items": []
+    },
+    "beforeAfterCare": {
+      "enabled": true,
+      "introBefore": "Medicinsk kontroll och specifika instruktioner inför ingreppet.",
+      "before": [],
+      "introAfter": "Regelbundna kontroller och support under återhämtningen.",
+      "after": [
+        "Omdömen"
+      ]
+    },
+    "method": {
+      "enabled": true
+    },
+    "experts": {
+      "enabled": true
+    },
+    "trust": {
+      "enabled": true
+    },
+    "quizCta": {
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Boka en kostnadsfri konsultation med en av våra erfarna behandlare. Vi lyssnar på dina mål, bedömer dina förutsättningar och tar fram en plan som är skräddarsydd för dig — helt utan köptvång.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Gör vårt gratis quiz",
+        "enabled": true
+      }
+    },
+    "bottomCta": {
+      "enabled": true,
+      "heading": "Boka din kostnadsfria konsultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Kontakta oss",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
+    }
+  }
+}

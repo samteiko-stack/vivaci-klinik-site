@@ -7,12 +7,15 @@ Vivaci site server — local dev and production (Railway).
   /behandlingar              → treatment listing
   /utbildning                → course listing
   /utbildning/{slug}         → course template
+  /blogg                     → blog listing (alias)
   /nyheter                   → news listing
   /nyheter/{slug}            → blog post template
   /behandlingar/{slug}       → treatment template
   /plastikkirurgi            → home (listing TBD)
   /plastikkirurgi/{slug}     → treatment template
   /kontakt                   → contact page
+  /om-oss                    → about page
+  /en, /en/*                 → English (same templates, /en URL prefix)
   /css, /js, /images, …      → Webflow export assets
 """
 
@@ -26,6 +29,8 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
+from vivaci_locale import split_locale_prefix
+
 ROOT = Path(__file__).resolve().parents[1]
 SCRIPTS = ROOT / "scripts"
 if str(SCRIPTS) not in sys.path:
@@ -34,10 +39,12 @@ EXPORT = ROOT / "reference/webflow-export"
 DEFAULT_PORT = 8765
 HOST = os.environ.get("HOST", "0.0.0.0")
 PORT = int(os.environ.get("PORT", str(DEFAULT_PORT)))
+CONTENT_ADMIN_ORIGIN = os.environ.get("CONTENT_ADMIN_ORIGIN", "same-origin")
 
 HTML_ROUTES: dict[str, str] = {
     "/": "index.html",
     "/kontakt": "kontakt.html",
+    "/om-oss": "om-oss.html",
     "/prislista": "prislista.html",
     "/behandlingar": "behandlingar.html",
     "/utbildning": "utbildning.html",
@@ -45,6 +52,7 @@ HTML_ROUTES: dict[str, str] = {
     "/problem": "index.html",
     "/faq": "index.html",
     "/produkter": "webshop.html",
+    "/blogg": "nyheter.html",
     "/nyheter": "nyheter.html",
     "/integritetspolicy": "legal/integritetspolicy.html",
     "/villkor": "legal/kopvillkor.html",
@@ -178,6 +186,28 @@ def _strip_async_webfont_loader(raw: str) -> str:
     )
 
 
+_NAVBAR_SCROLL_ANIM_RE = re.compile(
+    r"  // =+\r?\n  // NAVBAR SCROLL ANIMATION\r?\n  // =+\r?\n"
+    r'  const navbar = document\.querySelector\("\.navbar2_component"\);[\s\S]*?^  \}\r?\n',
+    re.MULTILINE,
+)
+
+_WEBFLOW_IX_PREROLL_STYLE = re.compile(
+    r"<style>@media[^<]*w-mod-js:not\(\.w-mod-ix\)[^<]*</style>\s*",
+    re.IGNORECASE,
+)
+
+
+def _strip_navbar_scroll_animation(raw: str) -> str:
+    """Full-width nav — drop legacy pill shrink (GSAP scale on scroll)."""
+    return _NAVBAR_SCROLL_ANIM_RE.sub("", raw)
+
+
+def _strip_webflow_ix_preroll_styles(raw: str) -> str:
+    """Remove Webflow export IX initial-state styles that hide content before ix2 boots."""
+    return _WEBFLOW_IX_PREROLL_STYLE.sub("", raw)
+
+
 def nyhet_slug_from_path(request_path: str) -> str | None:
     path = unquote(request_path.split("?", 1)[0])
     if path.endswith("/") and path != "/":
@@ -207,9 +237,27 @@ def hydrate_course_page_response(raw: str, request_path: str) -> str:
     slug = course_slug_from_path(request_path)
     if not slug:
         return raw
+    if f'data-vivaci-course-hydrated="{slug}"' in raw:
+        return raw
     from hydrate_course_page import hydrate_course_page
 
     return hydrate_course_page(raw, slug)
+
+
+def _is_home_html(raw: str) -> bool:
+    return 'id="vivaci-home-hero"' in raw
+
+
+def _is_course_html(raw: str) -> bool:
+    return "data-vivaci-course-enroll" in raw and "academy-hero-image" in raw
+
+
+def _is_treatment_html(raw: str) -> bool:
+    return 'data-vivaci-section="hero"' in raw
+
+
+def _is_shop_html(raw: str) -> bool:
+    return 'id="vivaci-shop"' in raw or 'id="vivaci-product"' in raw
 
 
 def wrap_html(raw: str) -> bytes:
@@ -227,7 +275,22 @@ def wrap_html(raw: str) -> bytes:
                 ),
             )
         raw = _strip_async_webfont_loader(raw)
+        raw = _strip_navbar_scroll_animation(raw)
+        raw = _strip_webflow_ix_preroll_styles(raw)
         raw = _inject_after_head(raw, '<base href="/">')
+        _locale_tag = (
+            '<script src="/js/vivaci-locale-routing.js" type="text/javascript"></script>'
+        )
+        if "vivaci-locale-routing.js" not in raw:
+            if "vivaci-i18n.js" in raw:
+                raw = re.sub(
+                    r"(<script[^>]*vivaci-i18n\.js[^>]*></script>)",
+                    _locale_tag + r"\n\1",
+                    raw,
+                    count=1,
+                )
+            else:
+                raw = _inject_after_head(raw, _locale_tag)
         if "vivaci-i18n.js" not in raw:
             raw = _inject_after_head(
                 raw,
@@ -262,42 +325,71 @@ def wrap_html(raw: str) -> bytes:
                 raw,
                 '<script src="/js/vivaci-nav-actions.js" type="text/javascript" defer></script>',
             )
-        if "treatment-finder.js" not in raw:
+        if "navbar2_component" in raw and "vivaci-nav-scroll.js" not in raw:
+            home_boot = ""
+            if 'id="vivaci-home-hero"' in raw:
+                home_boot = (
+                    '<script>document.documentElement.setAttribute("data-vivaci-page","home");</script>\n'
+                )
+            raw = _inject_after_head(
+                raw,
+                home_boot
+                + '<script src="/js/vivaci-nav-scroll.js" type="text/javascript" defer></script>',
+            )
+        if (
+            not _is_course_html(raw)
+            and "treatment-finder.js" not in raw
+            and (
+                _is_home_html(raw)
+                or "data-vivaci-category-finder" in raw
+                or 'id="vivaci-treatment-finder"' in raw
+            )
+        ):
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/treatment-finder.js" type="text/javascript" defer></script>',
             )
-        if "vivaci-treatment-images.js" not in raw:
+        needs_treatment_imagery = (
+            _is_treatment_html(raw)
+            or "data-vivaci-category-finder" in raw
+            or 'id="vivaci-treatment-finder"' in raw
+        )
+        if needs_treatment_imagery and "vivaci-treatment-images.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/vivaci-treatment-images.js" type="text/javascript" defer></script>',
             )
-        if "vivaci-placeholders.js" not in raw:
+        if not _is_course_html(raw) and "vivaci-placeholders.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/vivaci-placeholders.js" type="text/javascript" defer></script>',
             )
-        if "homepage-featured-treatments.js" not in raw:
+        if _is_home_html(raw) and "homepage-featured-treatments.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/homepage-featured-treatments.js" type="text/javascript" defer></script>',
             )
-        if "homepage-copy.js" not in raw:
+        if _is_home_html(raw) and "homepage-copy.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/homepage-copy.js" type="text/javascript" defer></script>',
             )
-        if "homepage-problems-slider.js" not in raw:
+        if _is_home_html(raw) and "homepage-problems-slider.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/homepage-problems-slider.js" type="text/javascript" defer></script>',
             )
-        if "homepage-brands-marquee.js" not in raw:
+        if _is_home_html(raw) and "vivaci-logo-marquee.js" not in raw:
+            raw = _inject_after_head(
+                raw,
+                '<script src="/js/vivaci-logo-marquee.js" type="text/javascript" defer></script>',
+            )
+        if _is_home_html(raw) and "homepage-brands-marquee.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/homepage-brands-marquee.js" type="text/javascript" defer></script>',
             )
-        if "vivaci-home-blog.js" not in raw:
+        if _is_home_html(raw) and "vivaci-home-blog.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/vivaci-home-blog.js" type="text/javascript" defer></script>',
@@ -307,20 +399,15 @@ def wrap_html(raw: str) -> bytes:
                 raw,
                 '<script src="/js/vivaci-footer.js" type="text/javascript" defer></script>',
             )
-        if "vivaci-quiz.css" not in raw:
-            raw = _inject_after_head(
-                raw,
-                '<link href="/css/vivaci-quiz.css" rel="stylesheet" type="text/css">',
-            )
-        if 'href="/css/vivaci-academy.css"' not in raw:
-            raw = _inject_after_head(
-                raw,
-                '<link href="/css/vivaci-academy.css" rel="stylesheet" type="text/css">',
-            )
         if "vivaci-motion.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/vivaci-motion.js" type="text/javascript" defer></script>',
+            )
+        if "vivaci-section-reveals-off.js" not in raw:
+            raw = _inject_after_head(
+                raw,
+                '<script src="/js/vivaci-section-reveals-off.js" type="text/javascript" defer></script>',
             )
         if "vivaci-page-transition.js" not in raw:
             raw = _inject_after_head(
@@ -342,27 +429,42 @@ def wrap_html(raw: str) -> bytes:
                 raw,
                 '<script src="/js/vivaci-course-enroll.js" type="text/javascript" defer></script>',
             )
-        if "vivaci-swiper.css" not in raw:
+        needs_swiper = "swiper-tuesday" in raw or "swiper3" in raw or 'class="swiper ' in raw
+        if needs_swiper and "swiper-bundle.min.js" not in raw:
             raw = _inject_after_head(
                 raw,
-                '<link href="/css/vivaci-swiper.css" rel="stylesheet" type="text/css">',
+                "\n".join(
+                    [
+                        '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">',
+                        '<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>',
+                    ]
+                ),
             )
-        if "vivaci-shop.css" not in raw:
+        if needs_swiper and "vivaci-swiper-arrows.js" not in raw:
             raw = _inject_after_head(
                 raw,
-                '<link href="/css/vivaci-shop.css" rel="stylesheet" type="text/css">',
+                '<script src="/js/vivaci-swiper-arrows.js" type="text/javascript" defer></script>',
             )
-        if "vivaci-blog.css" not in raw:
+        if needs_swiper and "vivaci-swiper-tuesday.js" not in raw:
             raw = _inject_after_head(
                 raw,
-                '<link href="/css/vivaci-blog.css" rel="stylesheet" type="text/css">',
+                '<script src="/js/vivaci-swiper-tuesday.js" type="text/javascript" defer></script>',
+            )
+        if "swiper3" in raw and "vivaci-swiper-blog.js" not in raw:
+            raw = _inject_after_head(
+                raw,
+                '<script src="/js/vivaci-swiper-blog.js" type="text/javascript" defer></script>',
             )
         if "vivaci-image.js" not in raw:
             raw = _inject_after_head(
                 raw,
                 '<script src="/js/vivaci-image.js" defer></script>',
             )
-        if "vivaci-shopify-client.js" not in raw and "shopify-webshop.js" not in raw:
+        if (
+            _is_shop_html(raw)
+            and "vivaci-shopify-client.js" not in raw
+            and "shopify-webshop.js" not in raw
+        ):
             if "vivaci-i18n.js" not in raw:
                 raw = _inject_after_head(
                     raw,
@@ -384,23 +486,18 @@ def wrap_html(raw: str) -> bytes:
                     ]
                 ),
             )
-        raw = _inject_before_head_close(
-            raw,
-            "\n".join(
-                [
-                    '<link href="/css/nav-fixes.css" rel="stylesheet" type="text/css">',
-                    '<link href="/css/vivaci-icons.css" rel="stylesheet" type="text/css">',
-                ]
-            ),
-        )
+        if "vivaci.css" not in raw:
+            raw = _inject_before_head_close(
+                raw,
+                '<link href="/css/vivaci.css" rel="stylesheet" type="text/css">',
+            )
         raw = _inject_after_head(
             raw,
             "\n".join(
                 [
                     "<style>",
-                    "html{background-color:#fff}",
-                    "html.vivaci-page-loading:not(.vivaci-page-ready) body{opacity:0}",
-                    "html.vivaci-page-ready body{opacity:1}",
+                    "html{background-color:var(--vivaci-surface-page,#fff)}",
+                    "html.vivaci-page-loading body,html.vivaci-page-ready body{opacity:1}",
                     "</style>",
                     "<script>(function(){var r=document.documentElement,n='vivaci-internal-nav';"
                     "try{if(sessionStorage.getItem(n)){r.classList.add('vivaci-page-nav');"
@@ -416,8 +513,13 @@ def wrap_html(raw: str) -> bytes:
                 [
                     '<script src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=6ad6ed7027482e411574e817" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>',
                     '<script src="/js/webflow.js" type="text/javascript"></script>',
+                    '<script src="/js/vivaci-section-reveals-off.js" type="text/javascript"></script>',
                     '<script src="/js/nav-preview.js" type="text/javascript"></script>',
                 ]
+            )
+        elif "vivaci-section-reveals-off.js" not in raw:
+            body_scripts.append(
+                '<script src="/js/vivaci-section-reveals-off.js" type="text/javascript"></script>'
             )
         if "vivaci-nav-dropdown-fix.js" not in raw:
             body_scripts.append(
@@ -444,10 +546,29 @@ def _path_suffix(path: str) -> str:
     return Path(clean).suffix.lower()
 
 
+def redirect_content_admin(path: str) -> tuple[int, dict[str, str], bytes] | None:
+    """Footer /content-admin → treatment-pages dashboard (local Next or same origin)."""
+    parsed_path = unquote(path.split("?", 1)[0].split("#", 1)[0])
+    _locale, route_path = split_locale_prefix(parsed_path)
+    if route_path.rstrip("/") != "/content-admin":
+        return None
+    origin = CONTENT_ADMIN_ORIGIN.strip()
+    if not origin or origin.lower() in {"same-origin", "same", "production"}:
+        target = "/treatment-pages"
+    elif origin.startswith("/"):
+        target = f"{origin.rstrip('/')}/treatment-pages"
+    elif "://" in origin:
+        target = f"{origin.rstrip('/')}/treatment-pages"
+    else:
+        target = f"http://{origin}/treatment-pages"
+    return 302, {"Location": target, "Content-Length": "0"}, b""
+
+
 def build_get_response(request_path: str) -> tuple[int, dict[str, str], bytes]:
     """Return (status, headers, body) for a GET request path (no query string)."""
     parsed_path = unquote(request_path.split("?", 1)[0].split("#", 1)[0])
-    file_path = resolve_file(parsed_path)
+    _locale, route_path = split_locale_prefix(parsed_path)
+    file_path = resolve_file(route_path)
 
     if file_path is None or not file_path.is_file():
         if _path_suffix(parsed_path) in ASSET_SUFFIXES:
@@ -467,12 +588,12 @@ def build_get_response(request_path: str) -> tuple[int, dict[str, str], bytes]:
     suffix = file_path.suffix.lower()
     if suffix in {".html", ".htm"}:
         raw_html = file_path.read_text(encoding="utf-8")
-        slug = course_slug_from_path(parsed_path)
+        slug = course_slug_from_path(route_path)
         if slug and file_path.name in ("course-page.html", f"{slug}.html"):
-            raw_html = hydrate_course_page_response(raw_html, parsed_path)
-        nslug = nyhet_slug_from_path(parsed_path)
+            raw_html = hydrate_course_page_response(raw_html, route_path)
+        nslug = nyhet_slug_from_path(route_path)
         if nslug and file_path.name in ("blog-page.html", f"{nslug}.html"):
-            raw_html = hydrate_blog_post_response(raw_html, parsed_path)
+            raw_html = hydrate_blog_post_response(raw_html, route_path)
         if file_path.name == "prislista.html":
             from hydrate_prislista import hydrate_prislista
 
@@ -493,19 +614,90 @@ class Handler(BaseHTTPRequestHandler):
     def log_message(self, fmt: str, *args) -> None:
         print(f"{self.address_string()} {fmt % args}")
 
-    def do_GET(self) -> None:
-        parsed = urlparse(self.path)
-        status, headers, body = build_get_response(parsed.path)
+    def _read_body(self) -> bytes:
+        length = int(self.headers.get("Content-Length") or 0)
+        if length <= 0:
+            return b""
+        return self.rfile.read(length)
+
+    def _send(self, status: int, headers: dict[str, str], body: bytes, extra_cookies: list[tuple[str, str]] | None = None) -> None:
         self.send_response(status)
         for key, value in headers.items():
             self.send_header(key, value)
+        if extra_cookies:
+            from vivaci_admin.api import format_set_cookie
+
+            for name, value in extra_cookies:
+                self.send_header("Set-Cookie", format_set_cookie(name, value))
         self.end_headers()
         self.wfile.write(body)
 
+    def _handle_admin(self, method: str) -> None:
+        from vivaci_admin.api import handle_admin_api, handle_admin_static
+
+        parsed = urlparse(self.path)
+        path = unquote(parsed.path.split("?", 1)[0])
+
+        if method == "GET":
+            static = handle_admin_static(path)
+            if static is not None:
+                self._send(*static)
+                return
+
+        if path.startswith("/admin/api"):
+            body = self._read_body() if method in ("POST", "PUT", "PATCH") else b""
+            cookie = self.headers.get("Cookie")
+            status, headers, payload, cookies = handle_admin_api(method, path, body, cookie)
+            self._send(status, headers, payload, cookies)
+            return
+
+        if method == "GET":
+            status, headers, body = build_get_response(parsed.path)
+            self._send(status, headers, body)
+            return
+
+        self._send(405, {"Content-Type": "text/plain; charset=utf-8"}, b"Method not allowed")
+
+    def do_GET(self) -> None:
+        parsed = urlparse(self.path)
+        path = unquote(parsed.path.split("?", 1)[0])
+        redirected = redirect_content_admin(path)
+        if redirected is not None:
+            self._send(*redirected)
+            return
+        if parsed.path == "/admin" or parsed.path.startswith("/admin/"):
+            self._handle_admin("GET")
+            return
+        status, headers, body = build_get_response(parsed.path)
+        self._send(status, headers, body)
+
+    def do_POST(self) -> None:
+        parsed = urlparse(self.path)
+        if parsed.path.startswith("/admin/api"):
+            self._handle_admin("POST")
+            return
+        self._send(405, {"Content-Type": "text/plain; charset=utf-8"}, b"Method not allowed")
+
+    def do_PUT(self) -> None:
+        parsed = urlparse(self.path)
+        if parsed.path.startswith("/admin/api"):
+            self._handle_admin("PUT")
+            return
+        self._send(405, {"Content-Type": "text/plain; charset=utf-8"}, b"Method not allowed")
+
 
 def main() -> None:
+    from vivaci_admin import auth
+
     server = ThreadingHTTPServer((HOST, PORT), Handler)
-    print(f"Vivaci site → http://{HOST}:{PORT}/")
+    print("Legacy Python site server (prefer `npm run dev` at repo root for one localhost).")
+    print(f"Vivaci site → http://localhost:{PORT}/")
+    print(f"Legacy Python admin → http://localhost:{PORT}/admin")
+    print(f"/content-admin → /treatment-pages (same origin when CONTENT_ADMIN_ORIGIN=same-origin)")
+    if auth.auth_required():
+        print("Admin: password required (VIVACI_ADMIN_PASSWORD)")
+    else:
+        print("Admin: no password (set VIVACI_ADMIN_PASSWORD to enable login)")
     print("Unknown page URLs → 404.html (HTTP 404)")
     try:
         server.serve_forever()

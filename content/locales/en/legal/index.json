@@ -12,12 +12,12 @@
     },
     {
       "slug": "kopvillkor",
-      "title": "Allmänna villkor",
+      "title": "General Terms and Conditions",
       "path": "/villkor"
     },
     {
       "slug": "avbokning",
-      "title": "Avbokning & återbetalning",
+      "title": "Cancellation & Refund",
       "path": "/avbokning"
     }
   ]

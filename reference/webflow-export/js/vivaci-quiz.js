@@ -232,6 +232,130 @@
     );
   }
 
+  var QUIZ_GOAL_ICON_DEFAULTS = {
+    skin: "sparkles",
+    aging: "hourglass",
+    face: "scan-face",
+    body: "person-standing",
+    hair: "brush",
+    surgery: "syringe",
+  };
+
+  var QUIZ_GOAL_IMAGE_DEFAULTS = {
+    skin: "/images/railway/problem-uneven-skin-tone.webp",
+    aging: "/images/railway/problem-fine-lines-wrinkles.webp",
+    face: "/images/ak/treatments/dermal-fillers.png",
+    body: "/images/railway/problem-body-contouring.webp",
+    hair: "/images/railway/problem-hair-loss.webp",
+    surgery: "/images/ak/treatments/liposuction.jpg",
+  };
+
+  var QUIZ_LUCIDE_SVGS = {
+    sparkles:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true" role="img"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>',
+    hourglass:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hourglass" aria-hidden="true" role="img"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 0 0-.586-1.414L12 12l-4.414 4.414A2 2 0 0 0 7 17.828V22"/><path d="M7 2v4.172a2 2 0 0 0 .586 1.414L12 12l4.414-4.414A2 2 0 0 0 17 6.172V2"/></svg>',
+    "scan-face":
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-scan-face" aria-hidden="true" role="img"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><path d="M9 9h.01"/><path d="M15 9h.01"/></svg>',
+    "person-standing":
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-person-standing" aria-hidden="true" role="img"><circle cx="12" cy="5" r="1"/><path d="m9 20 3-6 3 6"/><path d="m9 12 3-9 3 9"/></svg>',
+    brush:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brush" aria-hidden="true" role="img"><path d="m10 11 11 .9a1 1 0 0 1 .8 1.1l-.665 4.158a1 1 0 0 1-.988.842H20"/><path d="M16 4l3.33 3.33a1.414 1.414 0 0 1 0 2L8 21l-4 1 1-4L16 4"/></svg>',
+    syringe:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-syringe" aria-hidden="true" role="img"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3c-1 1-2.5 1-3.4 0l-.6-.6c-1-1-1-2.5 0-3.4L15 5"/><path d="m9 11 4 4"/><path d="m5 19-3 3"/><path d="m14 4 6 6"/></svg>',
+    info:
+      '<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info" aria-hidden="true" role="img"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>',
+  };
+
+  function quizLucideSvg(name) {
+    return QUIZ_LUCIDE_SVGS[name] || QUIZ_LUCIDE_SVGS.info;
+  }
+
+  function quizOptionIconSvg(opt) {
+    var name =
+      opt.icon || QUIZ_GOAL_ICON_DEFAULTS[opt.id] || "info";
+    return quizLucideSvg(name);
+  }
+
+  function quizOptionImageSrc(opt) {
+    return opt.image || QUIZ_GOAL_IMAGE_DEFAULTS[opt.id] || "";
+  }
+
+  function quizOptionVisualMediaHtml(opt) {
+    var src = quizOptionImageSrc(opt);
+    if (src) {
+      return (
+        '<span class="vivaci-quiz-option-visual-media" aria-hidden="true">' +
+        '<img src="' +
+        src +
+        '" alt="" width="80" height="80" loading="lazy" decoding="async">' +
+        "</span>"
+      );
+    }
+    return (
+      '<span class="vivaci-quiz-option-visual-icon" aria-hidden="true">' +
+      '<span class="vivaci-quiz-option-visual-icon-inner w-embed">' +
+      quizOptionIconSvg(opt) +
+      "</span></span>"
+    );
+  }
+
+  var autoAdvanceTimer = null;
+  var advanceLock = false;
+
+  function clearAutoAdvance() {
+    if (autoAdvanceTimer) {
+      clearTimeout(autoAdvanceTimer);
+      autoAdvanceTimer = null;
+    }
+  }
+
+  function goToNextStep() {
+    var q = currentQuestion();
+    var qs = visibleQuestions();
+    if (!q || !isStepValid(q)) return;
+    advanceLock = false;
+    if (state.stepIndex >= qs.length - 1) {
+      state.phase = "results";
+      render({ direction: 1 });
+      return;
+    }
+    state.stepIndex += 1;
+    render({ direction: 1 });
+  }
+
+  function scheduleAutoAdvance() {
+    if (advanceLock) return;
+    advanceLock = true;
+    clearAutoAdvance();
+    autoAdvanceTimer = setTimeout(function () {
+      autoAdvanceTimer = null;
+      goToNextStep();
+    }, 500);
+  }
+
+  function setQuestionPanelLayout(q) {
+    var shell = quizPanel();
+    if (!shell) return;
+    shell.classList.remove("vivaci-quiz-panel--wide");
+  }
+
+  function setQuizPanelPhase(phase) {
+    var shell = quizPanel();
+    if (!shell) return;
+    shell.classList.toggle("vivaci-quiz-panel--intro", phase === "intro");
+    shell.classList.toggle("vivaci-quiz-panel--results", phase === "results");
+  }
+
+  function focusQuizHeading() {
+    var title = rootEl && $("#vivaci-quiz-title", rootEl);
+    if (!title) return;
+    title.setAttribute("tabindex", "-1");
+    window.requestAnimationFrame(function () {
+      title.focus({ preventScroll: true });
+    });
+  }
+
   function syncOptionSelectionClasses(panel) {
     panel.querySelectorAll(".vivaci-quiz-option").forEach(function (label) {
       var inp = label.querySelector(".vivaci-quiz-option-input");
@@ -299,11 +423,75 @@
     return val === showIf.optionId;
   }
 
+  var BRANCH_QUESTION_BY_GOAL = {
+    skin: "skin_concerns",
+    aging: "aging_concerns",
+    face: "face_concerns",
+    body: "body_concerns",
+    hair: "hair_concerns",
+    surgery: "surgery_interest",
+  };
+
+  function questionById(id) {
+    if (!state.config || !id) return null;
+    return (
+      state.config.questions.find(function (q) {
+        return q.id === id;
+      }) || null
+    );
+  }
+
+  function isQuestionAnswered(q) {
+    if (!q) return true;
+    var val = answerFor(q.id);
+    if (q.type === "multi") {
+      return Array.isArray(val) && val.length > 0;
+    }
+    return val != null && val !== "";
+  }
+
+  function branchQuestionForGoal(goalId) {
+    var branchId = BRANCH_QUESTION_BY_GOAL[goalId];
+    if (!branchId) return null;
+    var branch = questionById(branchId);
+    if (!branch || !showIfMatches(branch.showIf)) return null;
+    return branch;
+  }
+
+  function branchStepComplete(goalId) {
+    var branch = branchQuestionForGoal(goalId);
+    if (!branch) return true;
+    return isQuestionAnswered(branch);
+  }
+
   function visibleQuestions() {
     if (!state.config) return [];
+    var goal = answerFor("main_goal");
     return state.config.questions.filter(function (q) {
-      return showIfMatches(q.showIf);
+      if (!showIfMatches(q.showIf)) return false;
+      if (q.id === "approach") {
+        if (!goal) return false;
+        return branchStepComplete(goal);
+      }
+      return true;
     });
+  }
+
+  function quizStepMeta() {
+    var qs = visibleQuestions();
+    var current = state.stepIndex + 1;
+    var goal = answerFor("main_goal");
+    var total = 3;
+    if (goal && branchStepComplete(goal) && isQuestionAnswered(questionById("approach"))) {
+      total = Math.max(current, qs.length);
+    } else if (qs.length > total) {
+      total = qs.length;
+    }
+    return {
+      current: current,
+      total: total,
+      progress: Math.min(100, (current / total) * 100),
+    };
   }
 
   function ui(key) {
@@ -380,6 +568,8 @@
 
   function closeQuiz() {
     if (!rootEl || modalClosing || state.phase === "idle") return;
+    clearAutoAdvance();
+    advanceLock = false;
     var dialog = $(".vivaci-quiz-dialog", rootEl);
     var overlay = $(".vivaci-quiz-overlay", rootEl);
     var panel = quizPanel();
@@ -498,10 +688,13 @@
   }
 
   function renderIntro() {
+    setQuestionPanelLayout(null);
+    setQuizPanelPhase("intro");
     var intro = state.config.intro || {};
     var panel = quizPanelInner();
     panel.innerHTML =
       '<div class="vivaci-quiz-intro">' +
+      '<div class="vivaci-quiz-intro-copy">' +
       (intro.eyebrow
         ? '<p class="text-size-small text-style-muted vivaci-quiz-eyebrow">' +
           intro.eyebrow +
@@ -513,8 +706,10 @@
       (intro.body
         ? '<p class="text-size-regular text-style-muted">' + intro.body + "</p>"
         : "") +
+      "</div>" +
+      '<div class="vivaci-quiz-intro-aside">' +
       (intro.durationHint
-        ? '<p class="text-size-small text-style-muted">' +
+        ? '<p class="text-size-small text-style-muted vivaci-quiz-intro-duration">' +
           intro.durationHint +
           "</p>"
         : "") +
@@ -522,7 +717,7 @@
       ui("start") +
       '<span class="icon-embed-xsmall w-embed">' +
       lucideChevronRight() +
-      "</span></button></div>";
+      "</span></button></div></div>";
 
     $("[data-quiz-start]", panel).addEventListener("click", function () {
       state.phase = "questions";
@@ -546,15 +741,48 @@
       total: qs.length,
     });
     var progress = ((state.stepIndex + 1) / qs.length) * 100;
+    var isVisual = q.layout === "visual";
+    var isMulti = q.type === "multi";
+    var autoAdvance = q.type === "single";
+    setQuestionPanelLayout(q);
+    setQuizPanelPhase("question");
+    clearAutoAdvance();
+    advanceLock = false;
+
+    var showStepActions = isMulti || state.stepIndex > 0;
 
     var optionsHtml = q.options
       .map(function (opt) {
         var val = answerFor(q.id);
-        var checked =
-          q.type === "multi"
-            ? Array.isArray(val) && val.indexOf(opt.id) !== -1
-            : val === opt.id;
-        var type = q.type === "multi" ? "checkbox" : "radio";
+        var checked = isMulti
+          ? Array.isArray(val) && val.indexOf(opt.id) !== -1
+          : val === opt.id;
+        var type = isMulti ? "checkbox" : "radio";
+
+        if (isVisual && !isMulti) {
+          return (
+            '<label class="vivaci-quiz-option vivaci-quiz-option--visual' +
+            (checked ? " is-selected" : "") +
+            '">' +
+            '<input class="vivaci-quiz-option-input" type="radio" name="q-' +
+            q.id +
+            '" value="' +
+            opt.id +
+            '"' +
+            (checked ? " checked" : "") +
+            ">" +
+            quizOptionVisualMediaHtml(opt) +
+            '<span class="vivaci-quiz-option-body">' +
+            '<span class="vivaci-quiz-option-label">' +
+            opt.label +
+            "</span>" +
+            (opt.hint
+              ? '<span class="vivaci-quiz-option-hint">' + opt.hint + "</span>"
+              : "") +
+            "</span></label>"
+          );
+        }
+
         var markHtml =
           type === "checkbox"
             ? '<span class="vivaci-quiz-control-mark"><span class="vivaci-quiz-control-icon w-embed">' +
@@ -593,44 +821,85 @@
       })
       .join("");
 
+    var optionsClass =
+      "vivaci-quiz-options" + (isVisual ? " vivaci-quiz-options--visual" : "");
+
+    var nextBtnHtml = isMulti
+      ? '<button type="button" class="button vivaci-quiz-primary" data-quiz-next' +
+        (isStepValid(q) ? "" : " disabled") +
+        ">" +
+        (state.stepIndex === qs.length - 1 ? ui("finish") : ui("next")) +
+        '<span class="icon-embed-xsmall w-embed">' +
+        lucideChevronRight() +
+        "</span></button>"
+      : "";
+
+    var headerLead = isVisual
+      ? ui("selectOneVisual") || q.subtitle || ""
+      : isMulti
+        ? q.subtitle || ""
+        : q.subtitle || ui("selectOneAuto") || ui("selectOne") || "";
+    var showMultiHint =
+      isMulti &&
+      headerLead.toLowerCase().replace(/[.!?]+$/, "").trim() !==
+        ui("selectMany").toLowerCase().replace(/[.!?]+$/, "").trim();
+
+    var actionsHtml = showStepActions
+      ? '<div class="vivaci-quiz-actions' +
+        (isMulti ? "" : " is-back-only") +
+        '">' +
+        (state.stepIndex > 0
+          ? '<button type="button" class="button is-secondary vivaci-quiz-back" data-quiz-back>' +
+            '<span class="icon-embed-xsmall w-embed">' +
+            lucideChevronLeft() +
+            "</span>" +
+            ui("back") +
+            "</button>"
+          : "<span></span>") +
+        nextBtnHtml +
+        "</div>"
+      : "";
+
     panel.innerHTML =
-      '<div class="vivaci-quiz-step">' +
-      '<p class="text-size-small text-style-muted">' +
+      '<div class="vivaci-quiz-step' +
+      (isVisual ? " vivaci-quiz-step--visual" : "") +
+      '">' +
+      '<header class="vivaci-quiz-step-header">' +
+      '<p class="text-size-small text-style-muted vivaci-quiz-step-count">' +
       stepLabel +
       "</p>" +
-      '<div class="vivaci-quiz-progress" aria-hidden="true"><span data-quiz-progress style="width:' +
+      '<div class="vivaci-quiz-progress" role="progressbar" aria-label="' +
+      stepLabel +
+      '" aria-valuemin="1" aria-valuemax="' +
+      qs.length +
+      '" aria-valuenow="' +
+      (state.stepIndex + 1) +
+      '"><span aria-hidden="true" data-quiz-progress style="width:' +
       progress +
       '%"></span></div>' +
-      '<h2 class="heading-style-h5" id="vivaci-quiz-title">' +
+      '<h2 class="heading-style-h4 vivaci-quiz-step-title" id="vivaci-quiz-title">' +
       q.prompt +
       "</h2>" +
-      (q.subtitle
-        ? '<p class="text-size-regular text-style-muted">' + q.subtitle + "</p>"
+      (headerLead
+        ? '<p class="text-size-small text-style-muted vivaci-quiz-step-lead">' +
+          headerLead +
+          "</p>"
         : "") +
-      '<p class="text-size-small text-style-muted vivaci-quiz-hint">' +
-      (q.type === "multi" ? ui("selectMany") : ui("selectOne")) +
-      "</p>" +
-      '<div class="vivaci-quiz-options" role="' +
-      (q.type === "multi" ? "group" : "radiogroup") +
+      (showMultiHint
+        ? '<p class="text-size-small text-style-muted vivaci-quiz-hint">' +
+          ui("selectMany") +
+          "</p>"
+        : "") +
+      "</header>" +
+      '<div class="' +
+      optionsClass +
+      '" role="' +
+      (isMulti ? "group" : "radiogroup") +
       '" aria-labelledby="vivaci-quiz-title">' +
       optionsHtml +
       "</div>" +
-      '<div class="vivaci-quiz-actions">' +
-      (state.stepIndex > 0
-        ? '<button type="button" class="button is-secondary vivaci-quiz-back" data-quiz-back>' +
-          '<span class="icon-embed-xsmall w-embed">' +
-          lucideChevronLeft() +
-          "</span>" +
-          ui("back") +
-          "</button>"
-        : "<span></span>") +
-      '<button type="button" class="button vivaci-quiz-primary" data-quiz-next' +
-      (isStepValid(q) ? "" : " disabled") +
-      ">" +
-      (state.stepIndex === qs.length - 1 ? ui("finish") : ui("next")) +
-      '<span class="icon-embed-xsmall w-embed">' +
-      lucideChevronRight() +
-      "</span></button></div></div>";
+      actionsHtml +
+      "</div>";
 
     var progressEl = $("[data-quiz-progress]", panel);
     if (progressEl && motionEnabled()) {
@@ -645,10 +914,12 @@
       input.addEventListener("change", function () {
         if (q.type === "multi") {
           toggleMultiAnswer(q.id, input.value);
-        } else {
-          state.answers[q.id] = input.value;
+          updateOptionSelection(panel, q);
+          return;
         }
+        state.answers[q.id] = input.value;
         updateOptionSelection(panel, q);
+        scheduleAutoAdvance();
       });
     });
     updateOptionSelection(panel, q);
@@ -656,6 +927,8 @@
     var back = $("[data-quiz-back]", panel);
     if (back) {
       back.addEventListener("click", function () {
+        clearAutoAdvance();
+        advanceLock = false;
         state.stepIndex -= 1;
         render({ direction: -1 });
       });
@@ -664,19 +937,16 @@
     var next = $("[data-quiz-next]", panel);
     if (next) {
       next.addEventListener("click", function () {
-        if (!isStepValid(q)) return;
-        if (state.stepIndex >= qs.length - 1) {
-          state.phase = "results";
-          render({ direction: 1 });
-          return;
-        }
-        state.stepIndex += 1;
-        render({ direction: 1 });
+        clearAutoAdvance();
+        goToNextStep();
       });
     }
+    focusQuizHeading();
   }
 
   function renderResults() {
+    setQuestionPanelLayout(null);
+    setQuizPanelPhase("results");
     var results = computeResults();
     var panel = quizPanelInner();
 
@@ -686,7 +956,7 @@
           ui("emptyResults") +
           "</p>"
         : results
-            .map(function (item) {
+            .map(function (item, index) {
               var why =
                 item.reasons.length === 0
                   ? ""
@@ -702,7 +972,9 @@
                       .join("") +
                     "</ul></div>";
               return (
-                '<article class="vivaci-quiz-result-card">' +
+                '<article class="vivaci-quiz-result-card' +
+                (index === 0 ? " vivaci-quiz-result-card--primary" : "") +
+                '">' +
                 '<h3 class="heading-style-h6">' +
                 item.label +
                 "</h3>" +
@@ -754,6 +1026,7 @@
         closeQuiz();
       });
     });
+    focusQuizHeading();
   }
 
   function render(options) {

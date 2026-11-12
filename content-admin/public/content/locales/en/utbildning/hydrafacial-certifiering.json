@@ -1,0 +1,82 @@
+{
+  "version": 1,
+  "slug": "hydrafacial-certifiering",
+  "path": "/utbildning/hydrafacial-certifiering",
+  "title": "HydraFacial — certifiering",
+  "metaDescription": "Certifieringsutbildning HydraFacial: enhet, serum, hudtyper och examination på Vivaci.",
+  "hero": {
+    "title": "HydraFacial — certifiering",
+    "intro": "Officiell certifieringsdag för HydraFacial — maskin, handstycken, serumval och patientflöde från konsultation till seriebehandling. Godkänd examination krävs för certifikat.",
+    "audience": "Hudterapeuter, sjuksköterskor och läkare som ska arbeta med HydraFacial på klinik. Ingen tidigare HydraFacial-erfarenhet krävs.",
+    "image": "/images/Morpheus8_0146.webp",
+    "ctaPrimary": {
+      "label": "Se tillgängliga datum"
+    }
+  },
+  "summary": {
+    "intro": "Certifiering enligt leverantörens krav med Vivacis kliniska tillägg. Examination samma dag.",
+    "fee": "29,900 SEK",
+    "feeNote": " / deltagare exkl. moms",
+    "level": "Certifiering",
+    "duration": "1 day · 10:00–16:00",
+    "location": "Vivaci Klinik, Råsundavägen 4, Solna"
+  },
+  "dates": [
+    {
+      "label": "Feb 28, 2026",
+      "time": "10:00 – 16:00",
+      "seats": "5 spots left"
+    },
+    {
+      "label": "Apr 18, 2026",
+      "time": "10:00 – 16:00",
+      "seats": "Atrium 6"
+    }
+  ],
+  "about": {
+    "html": "<p>HydraFacial är en av Vivacis mest bokade hudbehandlingar. Certifieringen säkerställer att hela teamet följer samma protokoll för säkerhet och resultat.</p>\n<h4>Moduler</h4>\n<ul role=\"list\"><li>Enhet, handstycken, filter och dagligt underhåll</li><li>Serum och boosters per hudtyp och indikation</li><li>Kontraindikationer, samtycke och foto</li><li>Praktisk examination med checklista</li></ul>\n<h4>Agenda</h4>\n<h5>10:00 – 11:30 · Teori &amp; säkerhet</h5>\n<h5>11:30 – 13:00 · Demo på patientfall</h5>\n<h5>13:00 – 14:00 · Lunch</h5>\n<h5>14:00 – 16:00 · Praktik &amp; examination</h5>\n<p>Efter godkänd nivå registreras du som certifierad behandlare och får tillgång till uppdaterade protokoll.</p>"
+  },
+  "instructors": {
+    "enabled": true,
+    "heading": "Instruktörer",
+    "intro": "Certifierade HydraFacial-trainers.",
+    "items": [
+      {
+        "name": "Lisa Nyström",
+        "role": "Senior hudterapeut · trainer",
+        "image": "/images/Morpheus8_0146.webp"
+      },
+      {
+        "name": "Karin Ek",
+        "role": "Klinikansvarig hud",
+        "image": "/images/2149152764_12149152764.webp"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "intro": "Praktisk information om anmälan, certifiering och kursdagen.",
+    "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Hudterapeut, sjuksköterska eller läkare som ska arbeta med HydraFacial på klinik. Ingen tidigare HydraFacial-erfarenhet krävs."
+      },
+      {
+        "question": "Does the clinic already need a device?",
+        "answer": "Nej — utbildning sker på Vivacis utrustning. Inköpsstöd kan ges efter certifiering."
+      },
+      {
+        "question": "Hur länge gäller certifikatet?",
+        "answer": "Enligt HydraFacials riktlinjer; refresher rekommenderas vart tredje år."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Cancellation Policy",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
+      }
+    ]
+  }
+}

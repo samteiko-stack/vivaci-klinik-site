@@ -1,10 +1,11 @@
 /**
  * Shopify cart drawer + shop UI (design-system aligned).
  */
+/* Bundled via css/vivaci.css */
 
 :root {
-  --vivaci-shop-overlay: rgba(21, 25, 13, 0.45);
-  --vivaci-cart-drawer-bg: var(--color-scheme-1--background, #fff);
+  --vivaci-shop-overlay: var(--vivaci-overlay-scrim);
+  --vivaci-cart-drawer-bg: var(--vivaci-surface-page);
 }
 
 .vivaci-cart-trigger {
@@ -29,16 +30,17 @@
 
 .vivaci-cart-trigger__count {
   position: absolute;
-  top: -0.35rem;
-  right: -0.35rem;
-  min-width: 1.125rem;
-  height: 1.125rem;
-  padding: 0 0.25rem;
+  top: -0.25rem;
+  right: -0.3125rem;
+  min-width: 0.875rem;
+  height: 0.875rem;
+  padding: 0 0.125rem;
+  border: var(--vivaci-border-width, 1px) solid var(--vivaci-brand-2);
   border-radius: 999px;
-  background: var(--color-scheme-1--brand-2, #15190d);
-  color: #fff;
-  font-size: 0.625rem;
-  line-height: 1.125rem;
+  background: var(--vivaci-brand-2);
+  color: var(--vivaci-white);
+  font-size: 0.5625rem;
+  line-height: 1;
   text-align: center;
   font-weight: 600;
 }
@@ -122,7 +124,7 @@
 }
 
 .vivaci-cart-empty {
-  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  color: var(--vivaci-text-muted);
   font-size: 0.875rem;
 }
 
@@ -140,12 +142,12 @@
   height: 4.5rem;
   object-fit: cover;
   border-radius: 0.25rem;
-  background: var(--color-scheme-1--brand-3, #f5f2f0);
+  background: var(--vivaci-brand-3);
   border: var(--vivaci-border-light);
 }
 
 .vivaci-cart-line__img--empty {
-  background: var(--color-scheme-1--brand-3, #f5f2f0);
+  background: var(--vivaci-brand-3);
 }
 
 .vivaci-cart-line__body {
@@ -173,7 +175,7 @@
 
 .vivaci-cart-line__meta {
   font-size: 0.75rem;
-  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  color: var(--vivaci-text-muted);
   margin: -0.25rem 0 0;
 }
 
@@ -189,7 +191,7 @@
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  color: var(--vivaci-text-muted);
   font-size: 0.75rem;
   line-height: 1.25;
   cursor: pointer;
@@ -197,13 +199,13 @@
 }
 
 .vivaci-cart-line__remove:hover {
-  color: var(--color-scheme-1--text, #15190d);
+  color: var(--vivaci-text);
   opacity: 0.75;
 }
 
 .vivaci-cart-line__remove:focus-visible {
   outline: none;
-  color: var(--color-scheme-1--text, #15190d);
+  color: var(--vivaci-text);
 }
 
 .vivaci-cart-qty {
@@ -229,6 +231,69 @@
   min-width: 1.25rem;
   text-align: center;
   font-size: 0.875rem;
+}
+
+/* Quantity stepper — PDP + reusable */
+.vivaci-qty-stepper__controls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vivaci-qty-stepper__btn {
+  box-sizing: border-box;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background-color: var(--vivaci-surface-page);
+  color: var(--vivaci-text);
+  cursor: pointer;
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.vivaci-qty-stepper__btn:hover:not(:disabled) {
+  border-color: var(--vivaci-brand-2);
+  background-color: var(--vivaci-brand-4);
+  opacity: 1;
+}
+
+.vivaci-qty-stepper__btn:focus-visible {
+  outline: 2px solid var(--vivaci-brand-2);
+  outline-offset: 2px;
+}
+
+.vivaci-qty-stepper__btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.vivaci-qty-stepper__btn svg {
+  display: block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.vivaci-qty-stepper__value {
+  box-sizing: border-box;
+  min-width: 2.75rem;
+  padding: 0.5rem 0.625rem;
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  border: var(--vivaci-border);
+  border-radius: var(--_ui-styles---radius--medium, 0.25rem);
+  background-color: var(--vivaci-brand-4);
+  color: var(--vivaci-text);
 }
 
 .vivaci-cart-line__price {
@@ -316,6 +381,46 @@
 
 #vivaci-product .product-header1_default-state {
   margin-bottom: 0;
+}
+
+#vivaci-product .vivaci-product-buy {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-items: end;
+  gap: 1rem;
+  width: 100%;
+  margin-top: 0.75rem;
+}
+
+#vivaci-product .vivaci-qty-stepper.is-pdp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.375rem;
+}
+
+#vivaci-product .vivaci-qty-stepper__label {
+  margin: 0;
+  line-height: 1.25;
+}
+
+#vivaci-product .vivaci-product-buy .is-add-to-cart-button {
+  width: 100%;
+  margin: 0;
+}
+
+@media screen and (min-width: 480px) {
+  #vivaci-product .vivaci-product-buy {
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: end;
+    column-gap: 1rem;
+    row-gap: 0.75rem;
+  }
+
+  #vivaci-product .vivaci-product-buy .is-add-to-cart-button {
+    width: auto;
+    min-width: 0;
+  }
 }
 
 #vivaci-product .product-header1_accordion-wrapper {
@@ -502,7 +607,7 @@
   padding: 0.45rem 1rem;
   border: var(--vivaci-border-light);
   border-radius: var(--_ui-styles---radius--medium, 0.25rem);
-  background-color: var(--color-scheme-1--brand-1, #f7f7f3);
+  background-color: var(--vivaci-brand-1);
   color: inherit;
   font-size: 0.875rem;
   line-height: 1.25;
@@ -514,7 +619,7 @@
 #vivaci-prislista .filters2_category-link.is-vivaci-filter-chip:hover {
   text-decoration: none;
   border: var(--vivaci-border-light);
-  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+  background-color: var(--vivaci-brand-3);
 }
 
 #vivaci-shop .filters2_category-link.is-vivaci-filter-chip.is-active,
@@ -522,8 +627,8 @@
   text-decoration: none;
   border-width: var(--vivaci-border-width);
   border-style: solid;
-  border-color: var(--color-scheme-1--brand-2, #15190d);
-  background-color: var(--color-scheme-1--brand-3, #f5f2f0);
+  border-color: var(--vivaci-brand-2);
+  background-color: var(--vivaci-brand-3);
 }
 
 #vivaci-shop .filters2_tablet-filters-button.is-vivaci-filter-chip {
@@ -532,7 +637,7 @@
 
 #vivaci-shop .filters2_results-text {
   font-size: 0.875rem;
-  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  color: var(--vivaci-text-muted);
 }
 
 #vivaci-shop .vivaci-shop-grid.is-filtering {
@@ -543,7 +648,7 @@
   grid-column: 1 / -1;
   margin: 0;
   padding: 2rem 0;
-  color: var(--_primitives---colors--neutral-dark, #575d5f);
+  color: var(--vivaci-text-muted);
 }
 
 @keyframes vivaci-shop-card-enter {
@@ -585,15 +690,59 @@
   }
 }
 
+.vivaci-product-rec-slider-wrap {
+  width: 100%;
+  min-width: 0;
+}
+
+#vivaci-product-recommended .swiper-tuesday .swiper-slide {
+  height: auto;
+}
+
+#vivaci-product-recommended .swiper-slide.is-50p {
+  width: auto;
+  max-width: none;
+}
+
+#vivaci-product-recommended .product4_item {
+  height: 100%;
+}
+
+#vivaci-product-recommended .product4_image-wrapper {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--vivaci-white);
+}
+
+#vivaci-product-recommended .product4_image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background-color: var(--vivaci-white);
+}
+
+#vivaci-product-recommended .product4_title-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+#vivaci-product-recommended .product4_title-wrapper .text-size-small {
+  opacity: 0.75;
+}
+
 .product4_image-wrapper,
 .product-header1_image-wrapper {
-  background-color: var(--color-scheme-1--brand-3);
+  background-color: var(--vivaci-brand-3);
 }
 
 .product4_image,
 .product-header1_image {
   object-fit: contain;
-  background-color: var(--color-scheme-1--brand-3);
+  background-color: var(--vivaci-brand-3);
 }
 
 .treatments-grid-outer.is-vivaci-grid-only {
@@ -626,7 +775,7 @@
   height: 100%;
   border: var(--vivaci-border-light, var(--vivaci-border));
   border-radius: var(--_ui-styles---radius--medium, 0.25rem);
-  background-color: var(--color-scheme-1--brand-1, #fff);
+  background-color: var(--vivaci-brand-1);
   overflow: hidden;
 }
 
@@ -642,7 +791,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  background-color: var(--color-scheme-1--brand-3);
+  background-color: var(--vivaci-brand-3);
 }
 
 .vivaci-listing-card__body {

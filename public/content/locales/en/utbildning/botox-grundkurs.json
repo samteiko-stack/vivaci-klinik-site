@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "slug": "botox-grundkurs",
+  "path": "/utbildning/botox-grundkurs",
+  "title": "Botox — Basic Course",
+  "metaDescription": "Heldags grundkurs i botulinumtoxin för legitimerad personal. Anatomi, dosering, demo och hands-on på Vivaci Academy.",
+  "hero": {
+    "title": "Botox — Basic Course",
+    "intro": "En introduktionskurs för behörig medicinsk personal som vill komma igång med botulinumtoxin i klinisk vardag. Du får samma struktur som Vivaci använder i mottagningen: tydlig bedömning, låga doser och naturliga resultat.",
+    "audience": "Legitimerad läkare, tandläkare med särskild behörighet eller sjuksköterska med vidareutbildning inom estetisk medicin. Minst ett års erfarenhet av kliniskt patientarbete. Vi begär legitimation vid anmälan.",
+    "image": "/images/Fillers_0055.webp",
+    "ctaPrimary": {
+      "label": "Se tillgängliga datum"
+    }
+  },
+  "summary": {
+    "intro": "Heldagsutbildning med teori, live-demonstration och handledd praktik i små grupper (max 8 deltagare). Kursmaterial, lunch och kursintyg ingår.",
+    "fee": "49,900 SEK",
+    "feeNote": " / deltagare exkl. moms",
+    "level": "Grundkurs",
+    "duration": "1 full day · 09:00–17:00",
+    "location": "Vivaci Klinik, Råsundavägen 4, Solna"
+  },
+  "dates": [
+    {
+      "label": "Mar 14, 2026",
+      "time": "09:00 – 17:00",
+      "seats": "6 spots left"
+    },
+    {
+      "label": "Apr 11, 2026",
+      "time": "09:00 – 17:00",
+      "seats": "Reservlista"
+    },
+    {
+      "label": "May 16, 2026",
+      "time": "09:00 – 17:00",
+      "seats": "10 seats"
+    }
+  ],
+  "about": {
+    "html": "<p>Botulinumtoxin (Botox® och motsvarande preparat) är en av de mest efterfrågade behandlingarna på Vivaci Klinik. Grundkursen speglar vår kliniska vardag: du lär dig bedöma mimik, välja områden och dosera så att patienten ser utvilad ut — inte masklik.</p>\n<p>Utbildningen följer svensk regelverk kring reklam, journal och IVO-krav för estetiska injektioner. All praktik sker på frivilliga modeller som screenats enligt vårt protokoll.</p>\n<h4>Mål efter kursen</h4>\n<ul role=\"list\"><li>Genomföra säker behandling av glabella, panna och periorbitala linjer hos lämplig patient</li><li>Dokumentera konsultation, samtycke och behandling enligt Vivacis mallar</li><li>Känna igen vanliga biverkningar och veta när du ska avbryta eller remittera</li><li>Planera uppföljning och kombination med andra behandlingar på ett realistiskt sätt</li></ul>\n<h4>Kursagenda</h4>\n<h5>09:00 – 10:15 · Teori &amp; patientbedömning</h5>\n<p>Muskelanatomi i övre ansikte, dynamiska vs statiska linjer, kontraindikationer, produkter och förvaring. Genomgång av konsultationsflöde och foto.</p>\n<h5>10:15 – 10:30 · Paus</h5>\n<h5>10:30 – 12:00 · Demonstration</h5>\n<p>Live-behandling av modell: markering, dosering, injektionsteknik och eftervård. Frågestund under demo.</p>\n<h5>12:00 – 13:00 · Lunch (ingår)</h5>\n<h5>13:00 – 16:30 · Hands-on i par</h5>\n<p>Handledd praktik — minst ett område per deltagare. Instruktör godkänner dos och teknik före varje behandling.</p>\n<h5>16:30 – 17:00 · Sammanfattning &amp; intyg</h5>\n<p>Checklista för hemgång, biverkningsrutiner och rekommenderad uppföljning efter 2 veckor.</p>\n<h4>Ingår i kursavgiften</h4>\n<ul role=\"list\"><li>Digitalt kursmaterial och Vivaci-protokoll</li><li>Produkter för demo och praktik</li><li>Modeller enligt schema (alternativt egen modell efter godkännande)</li><li>Lunch och fika</li><li>Kursintyg från Vivaci Academy</li></ul>\n<h4>Ta med dig</h4>\n<p>Legitimation, vit klinikrock om du har, och eventuell egen modell (vi skickar screeningformulär i förväg). Förberedande e-learning (ca 90 min) skickas två veckor före kursstart — den ska vara genomförd innan du praktiserar.</p>"
+  },
+  "instructors": {
+    "enabled": true,
+    "heading": "Instruktörer",
+    "intro": "Undervisning leds av injektörer som behandlar patienter dagligen på Vivaci Klinik.",
+    "items": [
+      {
+        "name": "Dr. Sofia Lindqvist",
+        "role": "Medicinsk direktör · estetisk dermatologi",
+        "image": "/images/Fillers_0055.webp"
+      },
+      {
+        "name": "Anna Bergström, RN",
+        "role": "Senior injektionsspecialist",
+        "image": "/images/Morpheus8_0146.webp"
+      }
+    ]
+  },
+  "faq": {
+    "enabled": true,
+    "intro": "Praktisk information om anmälan, behörighet och kursdagen.",
+    "items": [
+      {
+        "question": "Vilken behörighet krävs?",
+        "answer": "Legitimerad HCP enligt svensk lag. Vi verifierar legitimation och yrkeskategori innan plats bekräftas."
+      },
+      {
+        "question": "Får jag behandla patienter direkt efter kursen?",
+        "answer": "Intyget visar att du genomfört grundutbildningen. Du ska följa din arbetsgivares/kliniks medicinska ansvar och eventuella försäkringskrav."
+      },
+      {
+        "question": "Ingår produkter och modeller?",
+        "answer": "Ja — demo, praktikprodukter och bokade modeller ingår. Egen modell kan användas efter godkänd screening."
+      },
+      {
+        "question": "Hur anmäler jag mig?",
+        "answer": "Välj ett tillfälle och klicka Anmäl nu — ange önskat datum, titel och fakturauppgifter. Vi återkommer inom två arbetsdagar."
+      },
+      {
+        "question": "Cancellation Policy",
+        "answer": "Ombokning kostnadsfritt till 14 dagar före start. Senare avbokning debiteras 50 % av avgiften."
+      }
+    ]
+  }
+}

@@ -67,7 +67,8 @@ def _nav_html(sections: list[dict]) -> str:
         title = str(section.get("title") or "")
         sid = "vivaci-prislista-" + _slugify(title)
         links.append(
-            f'<a href="#{sid}" class="filters2_category-link is-vivaci-filter-chip w-inline-block" '
+            f'<a href="/prislista#{sid}" data-vivaci-prislista-section="{sid}" '
+            f'class="filters2_category-link is-vivaci-filter-chip w-inline-block" '
             f'role="listitem">{html.escape(title)}</a>'
         )
     return "\n".join(links)
@@ -108,8 +109,8 @@ def hydrate_prislista(raw: str) -> str:
 
     nav = _nav_html(sections)
     raw = re.sub(
-        r'(<div[^>]*data-vivaci-prislista-nav[^>]*>)\s*(</div>)',
-        rf"\1\n{nav}\n\2",
+        r"(<div[^>]*data-vivaci-prislista-nav[^>]*>)(.*?)(</div>)",
+        rf"\1\n{nav}\n\3",
         raw,
         count=1,
         flags=re.S,
@@ -120,8 +121,8 @@ def hydrate_prislista(raw: str) -> str:
         for s in sections
     )
     raw = re.sub(
-        r'(<div[^>]*data-vivaci-prislista-sections[^>]*>)\s*(</div>)',
-        rf"\1\n{body}\n\2",
+        r"(<div[^>]*data-vivaci-prislista-sections[^>]*>)(.*?)(</div>)",
+        rf"\1\n{body}\n\3",
         raw,
         count=1,
         flags=re.S,

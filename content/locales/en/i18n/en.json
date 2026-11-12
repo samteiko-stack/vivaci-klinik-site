@@ -18,16 +18,10 @@
     "continueShopping": "Continue shopping",
     "decrease": "Decrease quantity",
     "increase": "Increase quantity",
-    "remove": "Remove",
     "payments": "Payment options"
   },
   "footer": {
     "contact": "Contact"
-  },
-  "finder": {
-    "searchPlaceholder": "Search treatments",
-    "emptySearch": "No treatments match your search.",
-    "emptyCategory": "No treatments in this category."
   },
   "page404": {
     "title": "Page not found",

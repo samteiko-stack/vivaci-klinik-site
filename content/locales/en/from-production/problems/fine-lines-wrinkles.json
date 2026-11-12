@@ -2,7 +2,7 @@
   "type": "problem",
   "slug": "fine-lines-wrinkles",
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/fine-lines-wrinkles",
-  "name": "Fina linjer & rynkor",
+  "name": "Fine lines & wrinkles",
   "heroIntro": "Här förklarar vi vad fina linjer & rynkor är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
   "whatIsIt": "Fina linjer & rynkor är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
   "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
@@ -16,7 +16,7 @@
     },
     {
       "slug": "dermal-fillers",
-      "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs",
+      "name": "injektion Dermal Fillers Dermal Fillers är en av våra premiumbehandlingar på Vivaci Klinik i Solna. Behandlingen utförs ",
       "url": "/behandlingar/dermal-fillers"
     },
     {
@@ -37,7 +37,7 @@
     },
     {
       "question": "Hur många behandlingar behövs?",
-      "answer": "Antal sessioner bestäms vid konsultationen utifrån ditt tillstånd och vald behandlingsmetod."
+      "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
     },
     {
       "question": "Finns det någon återhämtningstid?",
@@ -53,9 +53,9 @@
     "Vilken behandling passar mig?",
     "Före & Efter",
     "Möt våra experter",
-    "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+    "Advanced diagnostics. Personal treatments. Better results.",
     "Därför väljer patienter Vivaci",
     "Vanliga frågor",
-    "Boka din kostnadsfria konsultation"
+    "Book your free consultation"
   ]
 }

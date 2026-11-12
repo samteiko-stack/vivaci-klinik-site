@@ -1,0 +1,441 @@
+{
+  "syncedAt": "04/11/2026T20:48:16Z",
+  "storeDomain": "n0darm-wy.myshopify.com",
+  "categories": [
+    "All %s",
+    "Hudvård",
+    "Hälsa & livsstil",
+    "Hårvård",
+    "Kroppsvård",
+    "Vitaminer",
+    "hello"
+  ],
+  "products": [
+    {
+      "id": "gid://shopify/Product/15616393281885",
+      "handle": "omega-3-salmon-oil-capsules",
+      "title": "Omega 3 – Ren laxolja",
+      "description": "Ren och naturlig laxolja.Innehåller de unika näringsämnena som finns i laxen, förhållandet mellan EPA och DHA – de essentiella fettsyrorna i omega-3, tillsammans stärker de den normala funktionen hos ditt hjärta, hjärna och inflammation i din kropp.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Omega3.webp?v=1763311032",
+      "imageAlt": "Omega 3 – Ren laxolja",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514509693277",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Omega3.webp?v=1763311032",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/omega-3-salmon-oil-capsules"
+    },
+    {
+      "id": "gid://shopify/Product/15616393314653",
+      "handle": "marine-collagen-vitamin-c",
+      "title": "Marint kollagen + Vitamin C",
+      "description": "100% pure marine collagen from Norway. We have chosen to work with the marine collagen because the body absorbs it 1.5 times more than bovine collagen (beef collagen). Improves skin elasticity, hydration and reduces fine lines",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Marinecollagen_2cb094e5-38e4-4b66-b441-68147a0767c6.webp?v=1763310916",
+      "imageAlt": "Marint kollagen + Vitamin C",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514509726045",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Marinecollagen_2cb094e5-38e4-4b66-b441-68147a0767c6.webp?v=1763310916",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/marine-collagen-vitamin-c"
+    },
+    {
+      "id": "gid://shopify/Product/15616393347421",
+      "handle": "weight-control-satiety-metabolism",
+      "title": "Weight Control – Aptit & Metabolism",
+      "description": "Kombinerade tre starka ingredienser som påverkar ditt sötsug, hunger och din ämnesomsättning.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Weight_22b9922d-7d41-4dee-905b-8b3124dd5fb2.webp?v=1763310775",
+      "imageAlt": "Weight Control – Aptit & Metabolism",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514509758813",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Weight_22b9922d-7d41-4dee-905b-8b3124dd5fb2.webp?v=1763310775",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/weight-control-satiety-metabolism"
+    },
+    {
+      "id": "gid://shopify/Product/15616393380189",
+      "handle": "vitamin-d3-k2-turmeric",
+      "title": "Vitamin D3 & K2 + Gurkmeja",
+      "description": "Vitamin D och K är båda vitaminer som hjälper dig och din kropp att behålla en normal benstruktur.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/D3_K2.webp?v=1763310637",
+      "imageAlt": "Vitamin D3 & K2 + Gurkmeja",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514509791581",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/D3_K2.webp?v=1763310637",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "Vitaminer"
+      ],
+      "href": "/produkter/vitamin-d3-k2-turmeric"
+    },
+    {
+      "id": "gid://shopify/Product/15616393445725",
+      "handle": "recovery-magnesium",
+      "title": "Recovery (Magnesium) – Dagligt stöd",
+      "description": "Magnesium och B6 bidrar till normal energiomsättning och muskelfunktion.För att minska trötthet och utmattning.Vitamin B12 bidrar till en normal funktion av hjärnan och nervsystemet.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Recovery_67b9d376-7cda-4554-a3c2-16885daf8628.webp?v=1763304965",
+      "imageAlt": "Recovery (Magnesium) – Dagligt stöd",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514509857117",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Recovery_67b9d376-7cda-4554-a3c2-16885daf8628.webp?v=1763304965",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/recovery-magnesium"
+    },
+    {
+      "id": "gid://shopify/Product/15616393478493",
+      "handle": "longevity-coq10-resveratrol-rosehip",
+      "title": "Longevity – CoQ10 + Resveratrol + Nypon",
+      "description": "CoQ10, Resveratrol och Nyponextrakt, inga andra tillsatser.Stöder cellulär hälsa.Anti-aging och energigivande.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Longevityeng.webp?v=1763304823",
+      "imageAlt": "Longevity – CoQ10 + Resveratrol + Nypon",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514510053725",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Longevityeng.webp?v=1763304823",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/longevity-coq10-resveratrol-rosehip"
+    },
+    {
+      "id": "gid://shopify/Product/15616393511261",
+      "handle": "bright-glutathione",
+      "title": "Bright (Glutathione) – Antioxidant support",
+      "description": "Glutation hjälper till att lysa upp hudtonen och bibehålla normalt uttryck av hudpigment.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Bright.webp?v=1763304739",
+      "imageAlt": "Bright (Glutathione) – Antioxidant support",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514510086493",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Bright.webp?v=1763304739",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/bright-glutathione"
+    },
+    {
+      "id": "gid://shopify/Product/15616393544029",
+      "handle": "probi-plus-prebiotic-probiotic",
+      "title": "Probi+ – Probiotika & Prebiotika",
+      "description": "Förbättrad balans i tarmfloran. Kombinationen förbättrar också miljön för de goda bakterierna.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Probieng_63691c45-6722-44e0-b488-459b35cc1f09.webp?v=1763304154",
+      "imageAlt": "Probi+ – Probiotika & Prebiotika",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514510119261",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Probieng_63691c45-6722-44e0-b488-459b35cc1f09.webp?v=1763304154",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/probi-plus-prebiotic-probiotic"
+    },
+    {
+      "id": "gid://shopify/Product/15616393576797",
+      "handle": "boost-her-womens-multinutrient",
+      "title": "Boost Her – Daily support for women",
+      "description": "Utformad för att boost kvinnors energi, hormonbalans, förbättra fertilitet och lust samt främja optimal hälsa i urinvägarna.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/boosther_6f91e874-5719-4ae6-8f4b-ae4e7eef5760.webp?v=1763304662",
+      "imageAlt": "Boost Her – Daily support for women",
+      "price": {
+        "amount": "0.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514510152029",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "0.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/boosther_6f91e874-5719-4ae6-8f4b-ae4e7eef5760.webp?v=1763304662",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/boost-her-womens-multinutrient"
+    },
+    {
+      "id": "gid://shopify/Product/15616393609565",
+      "handle": "boost-him-mens-multinutrient",
+      "title": "Boost Him – Daily support for men",
+      "description": "Hormonbalans, reproduktiv hälsa, vitalitet och allmänt välbefinnande, perfekt för män som vill optimera sin energi, prestation och bibehålla en långvarig hälsa.",
+      "productType": "Kosttillskott",
+      "vendor": "Under the skin",
+      "image": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Boosthim_3ee5b9c8-99db-4231-a074-8b0658a63bbb.webp?v=1763304545",
+      "imageAlt": "Boost Him – Daily support for men",
+      "price": {
+        "amount": "640.0",
+        "currencyCode": "SEK"
+      },
+      "variants": [
+        {
+          "id": "gid://shopify/ProductVariant/58514510184797",
+          "title": "Default Title",
+          "availableForSale": true,
+          "price": {
+            "amount": "640.0",
+            "currencyCode": "SEK"
+          },
+          "selectedOptions": [
+            {
+              "name": "Title",
+              "value": "Default Title"
+            }
+          ],
+          "image": {
+            "url": "https://cdn.shopify.com/s/files/1/0983/1658/3261/files/Boosthim_3ee5b9c8-99db-4231-a074-8b0658a63bbb.webp?v=1763304545",
+            "altText": null
+          }
+        }
+      ],
+      "collections": [
+        "hello",
+        "Hudvård",
+        "Hårvård",
+        "Kroppsvård",
+        "Hälsa & livsstil"
+      ],
+      "href": "/produkter/boost-him-mens-multinutrient"
+    }
+  ]
+}

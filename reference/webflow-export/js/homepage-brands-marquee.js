@@ -20,7 +20,7 @@
       img.className = LOGO_CLASS;
       img.src = item.image;
       img.alt = item.name || "";
-      img.loading = "lazy";
+      img.loading = "eager";
       img.removeAttribute("srcset");
       img.removeAttribute("sizes");
     }
@@ -43,6 +43,10 @@
     data.items.forEach(function (item) {
       track.appendChild(fillItem(template, item));
     });
+
+    if (typeof window.initLogoMarquees === "function") {
+      window.initLogoMarquees();
+    }
   }
 
   function hydrate() {

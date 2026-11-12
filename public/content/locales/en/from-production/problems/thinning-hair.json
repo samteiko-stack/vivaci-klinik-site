@@ -1,0 +1,37 @@
+{
+  "type": "problem",
+  "slug": "thinning-hair",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/problem/thinning-hair",
+  "name": "Thinning hair",
+  "heroIntro": "Här förklarar vi vad tunnare hår är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer om bedömning, behandlingsalternativ och vilken approach som passar just dina behov.",
+  "whatIsIt": "Tunnare hår är ett vanligt estetiskt bekymmer som många söker hjälp för. Det kan påverka både hudens utseende och känslan av välbefinnande.\n\nTillståndet är helt normalt och drabbar personer i alla åldrar och med olika hudtyper. På Vivaci Klinik erbjuder vi medicinskt grundade behandlingar anpassade efter dina individuella behov.",
+  "symptoms": "Vanliga tecken inkluderar förändringar i hudens struktur, färg eller kvalitet i det berörda området.\n\nSymtomen varierar från person till person. Under en kostnadsfri konsultation bedömer våra experter ditt specifika tillstånd.",
+  "causes": "Orsakerna är ofta multifaktoriella och kan innefatta genetik, hormoner, livsstil och naturlig åldrande.\n\nVi går igenom de faktorer som kan bidra till tunnare hår och skapar en behandlingsplan baserad på din unika situation.",
+  "assessment": "Varje behandlingsresa börjar med en professionell konsultation på Vivaci Klinik i Solna.\n\nVi bedömer hudkvalitet, område, tidigare behandlingar och dina mål. Vid behov rekommenderar vi kompletterande analys för att skräddarsy din plan.\n\nTeamet",
+  "recommendedTreatments": [],
+  "faqs": [
+    {
+      "question": "Kan tunnare hår behandlas helt?",
+      "answer": "Resultat varierar beroende på individuella förutsättningar. Målet är att uppnå en tydlig förbättring med naturliga, harmoniska resultat."
+    },
+    {
+      "question": "Hur många behandlingar behövs?",
+      "answer": "The number of sessions is determined at the consultation based on your condition and the chosen treatment method."
+    },
+    {
+      "question": "Finns det någon återhämtningstid?",
+      "answer": "De flesta behandlingar har minimal eller ingen downtime. Du får tydliga instruktioner före och efter."
+    }
+  ],
+  "rawSectionHeadings": [
+    "Vad är det?",
+    "Tecken & symtom",
+    "Orsaker",
+    "Hur vi bedömer det",
+    "Möt våra experter",
+    "Advanced diagnostics. Personal treatments. Better results.",
+    "Därför väljer patienter Vivaci",
+    "Vanliga frågor",
+    "Book your free consultation"
+  ]
+}

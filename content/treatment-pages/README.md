@@ -198,4 +198,8 @@ Every section supports `enabled: boolean`. Text sections use `heading`, `body`, 
 
 ## Admin / CMS
 
-Edit `content/treatment-pages/…` JSON only; the HTML template stays fixed. Re-run **build** after re-pulling production if you want to refresh from Railway without hand-editing.
+**Browser UI:** run `python3 scripts/dev-server.py` and open **http://localhost:8765/admin** (password via `VIVACI_ADMIN_PASSWORD`).
+
+Editors can change section copy, lists, toggles, and CTAs; saves write directly to `content/treatment-pages/{category}/{slug}.json`.
+
+Alternatively edit JSON by hand. The HTML template stays fixed. Re-run **build** after re-pulling production if you want to refresh from Railway without hand-editing.

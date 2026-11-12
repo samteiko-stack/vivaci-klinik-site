@@ -4,29 +4,58 @@
   "slug": "dimples",
   "path": "/plastikkirurgi/dimples",
   "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/dimples",
-  "title": "Gropbildning (kindergropar)",
+  "title": "Dimple creation",
   "sections": {
     "hero": {
       "enabled": true,
-      "title": "Gropbildning (kindergropar)",
-      "intro": "Gropbildning är ett kirurgiskt ingrepp som skapar naturliga kindergropar för ett leende med mer karaktär och symmetri. På Vivaci Klinik i Solna planeras varje ingrepp individuellt för att passa ditt ansikte."
+      "title": "Dimple creation",
+      "intro": "Gropbildning är ett kirurgiskt ingrepp som skapar naturliga kindergropar för ett leende med mer karaktär och symmetri. På Vivaci Klinik i Solna planeras varje ingrepp individuellt för att passa ditt ansikte.",
+      "primaryCta": {
+        "label": "Free Consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
+      "secondaryCta": {
+        "label": "Book treatment",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
     },
     "facts": {
       "enabled": true,
       "title": "Snabba fakta",
       "summary": "Det första steget är att boka en kostnadsfri konsultation hos oss.",
-      "items": []
+      "items": [
+        {
+          "label": "Treatment time",
+          "value": "20–30 min",
+          "icon": "timer"
+        },
+        {
+          "label": "Återhämtning",
+          "value": "1 to 7",
+          "icon": "heart-pulse"
+        },
+        {
+          "label": "Smärtnivå",
+          "value": "Lokal bedövning",
+          "icon": "bandage"
+        },
+        {
+          "label": "Pris",
+          "value": "fr. 35 000 kr",
+          "icon": "wallet"
+        }
+      ]
     },
     "overview": {
-      "enabled": false,
+      "enabled": true,
       "tagline": "Om behandlingen",
-      "heading": "Gropbildning (kindergropar)",
+      "heading": "Dimple creation",
       "blocks": [
         {
           "id": "whatIsIt",
           "heading": "Om behandlingen",
-          "body": "",
-          "enabled": false
+          "body": "Kindergropar skapas genom att kirurgen formar en liten förbindelse mellan huden och kindmuskeln.\n\nNär du ler dras huden försiktigt inåt och en naturlig grop uppstår.\n\nIngreppet utförs vanligtvis under lokal bedövning och tar cirka 20–30 minuter.",
+          "enabled": true
         },
         {
           "id": "symptoms",
@@ -37,14 +66,14 @@
         {
           "id": "causes",
           "heading": "Orsaker",
-          "body": "",
-          "enabled": false
+          "body": "1. Marking the optimal pit location in consultation with you\n\n2. Local anesthesia\n\n3. Small incision on the inside of the cheek\n\n4. Formation of pit by connection between skin and muscle\n\n5. Termination and aftercare instructions",
+          "enabled": true
         },
         {
           "id": "assessment",
           "heading": "Hur vi bedömer det",
-          "body": "",
-          "enabled": false
+          "body": "Vi diskuterar önskad gropform, placering och symmetri utifrån ditt ansikte.\n\nKirurgen förklarar hur ingreppet utförs, förväntad läkning och vilka resultat som är realistiska.\n\nDu får information om risker, eftervård och kostnad innan du bestämmer dig.",
+          "enabled": true
         }
       ]
     },
@@ -54,13 +83,26 @@
       "needsAssessment": []
     },
     "benefits": {
-      "enabled": false,
-      "items": []
+      "enabled": true,
+      "items": [
+        {
+          "title": "Medicinsk expertis",
+          "body": "The treatment is performed by licensed personnel with experience in aesthetic medicine."
+        },
+        {
+          "title": "Skräddarsydd plan",
+          "body": "Vi anpassar Gropbildning (kindergropar) efter dina mål och förutsättningar — med tydliga förväntningar från start."
+        },
+        {
+          "title": "Trygg klinikmiljö",
+          "body": "Du möter oss i en lugn, exklusiv miljö i Solna där vi går igenom varje steg innan behandling."
+        }
+      ]
     },
     "howItWorks": {
-      "enabled": false,
+      "enabled": true,
       "heading": "Så fungerar det",
-      "body": "",
+      "body": "1. Marking the optimal pit location in consultation with you\n\n2. Local anesthesia\n\n3. Small incision on the inside of the cheek\n\n4. Formation of pit by connection between skin and muscle\n\n5. Termination and aftercare instructions",
       "steps": []
     },
     "resultsTimeline": {
@@ -74,6 +116,11 @@
     },
     "faq": {
       "enabled": true,
+      "intro": "Här hittar du svar på vanliga frågor om Gropbildning (kindergropar). Boka gärna en kostnadsfri konsultation om du vill gå igenom dina förutsättningar.",
+      "methodCta": {
+        "label": "Book a free consultation",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      },
       "items": [
         {
           "question": "Är kindergropar permanenta?",
@@ -103,11 +150,19 @@
       "items": []
     },
     "beforeAfterCare": {
-      "enabled": false,
-      "introBefore": "",
-      "before": [],
-      "introAfter": "",
-      "after": []
+      "enabled": true,
+      "introBefore": "Informera oss om mediciner, allergier och tidigare ingrepp i ansiktet.",
+      "before": [
+        "Undvik blodförtunnande preparat enligt instruktion från kirurgen.",
+        "Kom utan smink på behandlingsområdet."
+      ],
+      "introAfter": "Håll området rent och följ munhygieninstruktioner.",
+      "after": [
+        "Undvik intensiv fysisk aktivitet och tryck mot kinderna de första dagarna.",
+        "Ät mjukt kost och undvik att röra området i onödan.",
+        "Kontakta kliniken vid ovanlig smärta, rodnad eller tecken på infektion.",
+        "Omdömen"
+      ]
     },
     "method": {
       "enabled": true
@@ -119,13 +174,32 @@
       "enabled": true
     },
     "quizCta": {
-      "enabled": true
-    },
-    "beforeAfterGallery": {
-      "enabled": false
+      "enabled": true,
+      "heading": "Osäker på vilken behandling som passar dig?",
+      "intro": "Book a free consultation with one of our experienced therapists. We listen to your goals, assess your prerequisites and develop a plan that is tailored to you — without any compulsion to buy.",
+      "primaryCta": {
+        "enabled": false
+      },
+      "quizLink": {
+        "label": "Take our free quiz",
+        "enabled": true
+      }
     },
     "bottomCta": {
-      "enabled": true
+      "enabled": true,
+      "heading": "Book your free consultation",
+      "intro": "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna.",
+      "primaryCta": {
+        "label": "Contact us",
+        "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+      }
+    },
+    "beforeAfterGallery": {
+      "enabled": false,
+      "heading": "Före & Efter",
+      "intro": "Se resultat från våra behandlingar.",
+      "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+      "items": []
     }
   }
 }

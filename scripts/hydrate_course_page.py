@@ -5,6 +5,7 @@ from __future__ import annotations
 import html
 import json
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -12,6 +13,7 @@ from bs4 import BeautifulSoup, Tag
 
 ROOT = Path(__file__).resolve().parents[1]
 CONTENT = ROOT / "content" / "utbildning"
+MIN_FAQ_ITEMS = 4
 
 
 def load_course(slug: str) -> dict[str, Any] | None:
@@ -19,6 +21,19 @@ def load_course(slug: str) -> dict[str, Any] | None:
     if not path.is_file():
         return None
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _warn_faq_count(slug: str, data: dict[str, Any]) -> None:
+    block = data.get("faq") or {}
+    if block.get("enabled") is False:
+        return
+    items = block.get("items") or []
+    if len(items) < MIN_FAQ_ITEMS:
+        print(
+            f"warning: {slug}.json has {len(items)} FAQ items "
+            f"(expected at least {MIN_FAQ_ITEMS})",
+            file=sys.stderr,
+        )
 
 
 def _set_field_text(soup: BeautifulSoup, field: str, text: str | None) -> None:
@@ -46,18 +61,38 @@ def _normalize_enroll_trigger(el) -> None:
     el["class"] = list(ENROLL_TRIGGER_CLASSES)
 
 
+def _normalize_dates_scroll_link(el: Tag) -> None:
+    classes = list(el.get("class") or [])
+    for c in ENROLL_TRIGGER_CLASSES:
+        if c not in classes:
+            classes.append(c)
+    el["class"] = classes
+    el["href"] = "#vivaci-course-dates"
+    el["data-vivaci-course-scroll-dates"] = ""
+    el.attrs.pop("data-vivaci-course-enroll", None)
+
+
 def _set_hero_cta(soup: BeautifulSoup, cta: dict[str, str] | None) -> None:
     el = soup.select_one('[data-vivaci-field="hero-cta-primary"]')
     if not el:
         return
-    _normalize_enroll_trigger(el)
-    el["href"] = "#"
-    el["data-vivaci-course-enroll"] = ""
+    _normalize_dates_scroll_link(el)
     if not cta:
+        label = el.select_one("div")
+        if label:
+            label.string = "Se tillgängliga datum"
         return
     label = el.select_one("div")
     if label and cta.get("label"):
         label.string = cta["label"]
+    elif label:
+        label.string = "Se tillgängliga datum"
+
+
+def _ensure_dates_anchor(soup: BeautifulSoup) -> None:
+    dates = soup.select_one('[data-vivaci-field="dates-list"]')
+    if dates and not dates.get("id"):
+        dates["id"] = "vivaci-course-dates"
 
 
 def _fill_dates(soup: BeautifulSoup, dates: list[dict[str, str]] | None) -> None:
@@ -151,7 +186,12 @@ def _fill_faq(soup: BeautifulSoup, block: dict[str, Any] | None) -> None:
     sec.attrs.pop("hidden", None)
     intro = sec.select_one('[data-vivaci-field="faq-intro"]')
     if intro is not None:
-        intro.string = block.get("intro") or ""
+        intro.string = block.get("intro") or "Svar på vanliga frågor om kursen och anmälan."
+    aside = sec.select_one(".faq3_content-left")
+    if aside:
+        btn_grp = aside.select_one(".button-group")
+        if btn_grp:
+            btn_grp.decompose()
     list_el = sec.select_one(".faq3_list")
     if not list_el:
         return
@@ -198,23 +238,30 @@ def _set_bottom_cta(soup: BeautifulSoup, data: dict[str, Any]) -> None:
     if not sec:
         return
     cta = data.get("bottomCta") or {
-        "heading": "Intresserad av den här utbildningen?",
-        "body": "Anmäl intresse eller ställ frågor om datum, behörighet och faktura — vi återkommer inom två arbetsdagar.",
-        "label": "Kontakta oss",
-        "href": "/kontakt",
+        "heading": "Redo att anmäla dig?",
+        "body": "Välj ett tillfälle i listan och skicka anmälan med valt datum.",
+        "label": "Se tillgängliga datum",
+        "contactLabel": "Frågor om behörighet? Kontakta oss",
+        "contactHref": "/kontakt",
     }
     h = sec.select_one('[data-vivaci-field="course-bottom-heading"]')
     p = sec.select_one('[data-vivaci-field="course-bottom-body"]')
     link = sec.select_one('[data-vivaci-field="course-bottom-link"]')
+    contact = sec.select_one('[data-vivaci-field="course-bottom-contact"]')
     if h:
         h.string = cta.get("heading", "")
     if p:
         p.string = cta.get("body", "")
     if link:
-        link["href"] = cta.get("href", "/kontakt")
+        _normalize_dates_scroll_link(link)
         label = link.select_one("div")
         if label:
-            label.string = cta.get("label", "Kontakta oss")
+            label.string = cta.get("label", "Se tillgängliga datum")
+    if contact:
+        contact["href"] = cta.get("contactHref", "/kontakt")
+        contact.string = cta.get(
+            "contactLabel", "Frågor om behörighet? Kontakta oss"
+        )
 
 
 def hydrate_course_html(raw: str, data: dict[str, Any]) -> str:
@@ -228,6 +275,7 @@ def hydrate_course_html(raw: str, data: dict[str, Any]) -> str:
     _set_field_text(soup, "hero-intro", hero.get("intro"))
     _set_field_text(soup, "hero-audience", hero.get("audience"))
     _set_hero_cta(soup, hero.get("ctaPrimary"))
+    _ensure_dates_anchor(soup)
 
     img = soup.select_one("[data-vivaci-hero-image]")
     if img and hero.get("image"):
@@ -269,20 +317,11 @@ def _ensure_course_scripts(soup: BeautifulSoup) -> None:
     if not head:
         return
     html = str(head)
-    if "vivaci-quiz.css" not in html:
+    if "vivaci.css" not in html:
         head.append(
             soup.new_tag(
                 "link",
-                href="/css/vivaci-quiz.css",
-                rel="stylesheet",
-                type="text/css",
-            )
-        )
-    if "vivaci-academy.css" not in html:
-        head.append(
-            soup.new_tag(
-                "link",
-                href="/css/vivaci-academy.css",
+                href="/css/vivaci.css",
                 rel="stylesheet",
                 type="text/css",
             )
@@ -323,6 +362,7 @@ def build_all(out_dir: Path, template_path: Path) -> list[Path]:
             continue
         slug = path.stem
         data = json.loads(path.read_text(encoding="utf-8"))
+        _warn_faq_count(slug, data)
         html_out = hydrate_course_html(template, data)
         dest = out_dir / f"{slug}.html"
         dest.write_text(html_out, encoding="utf-8")

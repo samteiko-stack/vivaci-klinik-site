@@ -1,0 +1,436 @@
+{
+  "source": "https://vivaci-klinik-production.up.railway.app",
+  "categories": [
+    {
+      "label": "Plastikkirurgi",
+      "items": [
+        {
+          "href": "/plastikkirurgi/buccal-fat-removal",
+          "label": "Bukfettborttagning",
+          "description": "Smalare kindkontur genom avlägsnande av buccalt fett.",
+          "image": "/images/ak/treatments/buccal-fat-removal.png"
+        },
+        {
+          "href": "/plastikkirurgi/liposuction",
+          "label": "Fettsugning",
+          "description": "Forma kroppen genom selektiv borttagning av fettvävnad.",
+          "image": "/images/ak/treatments/liposuction.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/dimples",
+          "label": "Gropbildning (kindergropar)",
+          "description": "Permanent kindgrop för ett naturligt, uttrycksfullt leende.",
+          "image": "/images/ak/treatments/dimples.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/hair-transplant",
+          "label": "Hårtransplantation",
+          "description": "Återställ hårlinjen med avancerad transplantationsmetod.",
+          "image": "/images/ak/treatments/hair-transplant.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/eyebrow-lift",
+          "label": "Ögonbrynslyft",
+          "description": "Lyft ögonbryn för ett piggare, mer vaket uttryck.",
+          "image": "/images/ak/treatments/eyebrow-lift.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/eyelid-surgery",
+          "label": "Ögonlocksplastik",
+          "description": "Minska tunga ögonlock och förbättra sikt och utseende.",
+          "image": "/images/ak/treatments/eyelid-surgery.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/otoplasty",
+          "label": "Otoplastik (öronkorrigering)",
+          "description": "Korrigera utstickande öron för bättre balans i profil.",
+          "image": "/images/ak/treatments/otoplasty.jpg"
+        }
+      ],
+      "highlights": [
+        {
+          "href": "/plastikkirurgi/dimples",
+          "label": "Gropbildning (kindergropar)",
+          "description": "Permanent kindgrop för ett naturligt, uttrycksfullt leende.",
+          "image": "/images/ak/treatments/dimples.jpg"
+        },
+        {
+          "href": "/plastikkirurgi/buccal-fat-removal",
+          "label": "Bukfettborttagning",
+          "description": "Smalare kindkontur genom avlägsnande av buccalt fett.",
+          "image": "/images/ak/treatments/buccal-fat-removal.png"
+        }
+      ]
+    },
+    {
+      "label": "Hud",
+      "items": [
+        {
+          "href": "/problem/acne-scars",
+          "label": "Acnärr",
+          "description": "Jämnare hudtextur och mindre synliga märken efter acne.",
+          "image": "/images/railway/problem-acne-scars.webp"
+        },
+        {
+          "href": "/problem/acne",
+          "label": "Acne",
+          "description": "Minska utbrott och återfå klarare, mer balanserad hud.",
+          "image": "/images/railway/problem-acne.webp"
+        },
+        {
+          "href": "/problem/scars",
+          "label": "Ärr",
+          "description": "Dämpa ärr och förbättra hudens struktur och färg.",
+          "image": "/images/railway/problem-scars.webp"
+        },
+        {
+          "href": "/problem/broken-capillaries",
+          "label": "Brutna kapillärer",
+          "description": "Minska synliga blodkärl och rodnad i huden.",
+          "image": "/images/railway/problem-broken-capillaries.webp"
+        },
+        {
+          "href": "/problem/fine-lines-wrinkles",
+          "label": "Fina linjer & rynkor",
+          "description": "Slätare linjer och ett fräschare, ungdomligare utseende.",
+          "image": "/images/railway/problem-fine-lines-wrinkles.webp"
+        },
+        {
+          "href": "/problem/enlarged-pores",
+          "label": "Förstorade porer",
+          "description": "Finare porer och en jämnare, mer polerad hudton.",
+          "image": "/images/railway/problem-enlarged-pores.webp"
+        },
+        {
+          "href": "/problem/skin-lesions",
+          "label": "Hudförändringar",
+          "description": "Säker bedömning och behandling av hudförändringar.",
+          "image": "/images/railway/problem-skin-lesions.webp"
+        },
+        {
+          "href": "/problem/sensitive-skin",
+          "label": "Känslig hud",
+          "description": "Stärk hudbarriären och lindra irritation och rodnad.",
+          "image": "/images/railway/problem-sensitive-skin.webp"
+        },
+        {
+          "href": "/problem/melasma",
+          "label": "Melasma",
+          "description": "Balansera pigmentfläckar för en mer enhetlig hudton.",
+          "image": "/images/railway/problem-melasma.webp"
+        },
+        {
+          "href": "/problem/dark-circles",
+          "label": "Mörka ringar",
+          "description": "Ljusna mörka ringar och ge ögonområdet mer vila.",
+          "image": "/images/railway/problem-dark-circles.webp"
+        },
+        {
+          "href": "/problem/uneven-skin-tone",
+          "label": "Ojämn hudton",
+          "description": "Jämna ut färg och få huden att se mer harmonisk ut.",
+          "image": "/images/railway/problem-uneven-skin-tone.webp"
+        },
+        {
+          "href": "/problem/eye-bags",
+          "label": "Påsar under ögonen",
+          "description": "Minska svullnad och påsar för ett utvilat intryck.",
+          "image": "/images/railway/problem-eye-bags.webp"
+        },
+        {
+          "href": "/problem/pigmentation",
+          "label": "Pigmentering",
+          "description": "Minska fläckar och ojämn pigmentering i huden.",
+          "image": "/images/railway/problem-pigmentation.webp"
+        },
+        {
+          "href": "/problem/rosacea",
+          "label": "Rosacea",
+          "description": "Dämpa rodnad och lindra inflammerad, känslig hud.",
+          "image": "/images/railway/problem-rosacea.webp"
+        },
+        {
+          "href": "/problem/loose-skin",
+          "label": "Slapp hud",
+          "description": "Stramare hud och mer definierad kontur i ansiktet.",
+          "image": "/images/railway/problem-loose-skin.webp"
+        },
+        {
+          "href": "/problem/stretch-marks",
+          "label": "Stretchmärken",
+          "description": "Minska synligheten av bristningar i huden.",
+          "image": "/images/railway/problem-stretch-marks.webp"
+        },
+        {
+          "href": "/problem/dry-skin",
+          "label": "Torr hud",
+          "description": "Återfukta och ge huden smidighet och komfort.",
+          "image": "/images/railway/problem-dry-skin.webp"
+        },
+        {
+          "href": "/problem/dull-skin",
+          "label": "Tråkig hud",
+          "description": "Återfå lyster och ett friskare, mer levande utseende.",
+          "image": "/images/railway/problem-dull-skin.webp"
+        }
+      ],
+      "highlights": [
+        {
+          "href": "/problem/dry-skin",
+          "label": "Torr hud",
+          "description": "Återfukta och ge huden smidighet och komfort.",
+          "image": "/images/railway/problem-dry-skin.webp"
+        },
+        {
+          "href": "/problem/dark-circles",
+          "label": "Mörka ringar",
+          "description": "Ljusna mörka ringar och ge ögonområdet mer vila.",
+          "image": "/images/railway/problem-dark-circles.webp"
+        }
+      ]
+    },
+    {
+      "label": "Injektion",
+      "items": [
+        {
+          "href": "/behandlingar/botulinum-toxin",
+          "label": "Botox",
+          "description": "Mjukt upp mimiska rynkor med naturligt resultat — ofta kallat Botox.",
+          "image": "/images/ak/treatments/botulinum-toxin.jpg"
+        },
+        {
+          "href": "/behandlingar/dermal-fillers",
+          "label": "Dermal Fillers",
+          "description": "Återställ volym och forma konturer med hyaluronsyra.",
+          "image": "/images/ak/treatments/dermal-fillers.png"
+        },
+        {
+          "href": "/behandlingar/sculptra",
+          "label": "Sculptra",
+          "description": "Stimulera kollagen för gradvis, naturlig volymförbättring.",
+          "image": "/images/ak/treatments/sculptra.jpg"
+        },
+        {
+          "href": "/behandlingar/skin-boosters",
+          "label": "Skin Boosters",
+          "description": "Djup återfuktning och bättre hudkvalitet från insidan.",
+          "image": "/images/ak/treatments/skin-boosters.jpg"
+        },
+        {
+          "href": "/behandlingar/plasma-lift",
+          "label": "Plasma Lift",
+          "description": "Egen plasma för spänst och lyster i huden.",
+          "image": "/images/ak/treatments/plasma-lift.png"
+        },
+        {
+          "href": "/behandlingar/vitamin-injections",
+          "label": "Vitamin Injections",
+          "description": "Vitaminer och näringsämnen direkt där kroppen behöver dem.",
+          "image": "/images/ak/treatments/vitamin-injections.jpg"
+        },
+        {
+          "href": "/problem/facial-contouring",
+          "label": "Ansiktskonturering",
+          "description": "Definiera kindben, haka och ansiktslinjer med fyllmedel.",
+          "image": "/images/railway/problem-facial-contouring.webp"
+        },
+        {
+          "href": "/problem/gummy-smile",
+          "label": "Gummy smile",
+          "description": "Balansera leendet så tandköttet syns mindre.",
+          "image": "/images/railway/problem-gummy-smile.webp"
+        },
+        {
+          "href": "/problem/skin-quality-hydration",
+          "label": "Hudkvalitet & hydrering",
+          "description": "Förbättra spänst, fukt och hudens totala kvalitet.",
+          "image": "/images/railway/problem-skin-quality-hydration.webp"
+        },
+        {
+          "href": "/problem/lip-enhancement",
+          "label": "Läppförstoring",
+          "description": "Forma läpparna med volym och naturlig symmetri.",
+          "image": "/images/railway/problem-lip-enhancement.webp"
+        },
+        {
+          "href": "/problem/excessive-sweating",
+          "label": "Överdriven svettning",
+          "description": "Minska svett i armhålor, händer eller panna.",
+          "image": "/images/railway/problem-excessive-sweating.webp"
+        },
+        {
+          "href": "/problem/wrinkles",
+          "label": "Rynkor",
+          "description": "Mjukt upp rynkor och fina linjer i ansiktet.",
+          "image": "/images/railway/problem-wrinkles.webp"
+        },
+        {
+          "href": "/problem/volume-loss",
+          "label": "Volymförlust",
+          "description": "Återställ volym och konturer där tiden tagit uttryck.",
+          "image": "/images/railway/problem-volume-loss.webp"
+        }
+      ],
+      "highlights": [
+        {
+          "href": "/behandlingar/botulinum-toxin",
+          "label": "Botox",
+          "description": "Mjukt upp mimiska rynkor med naturligt resultat — ofta kallat Botox.",
+          "image": "/images/ak/treatments/botulinum-toxin.jpg"
+        },
+        {
+          "href": "/behandlingar/dermal-fillers",
+          "label": "Dermal Fillers",
+          "description": "Återställ volym och forma konturer med hyaluronsyra.",
+          "image": "/images/ak/treatments/dermal-fillers.png"
+        }
+      ]
+    },
+    {
+      "label": "Kropp",
+      "items": [
+        {
+          "href": "/problem/cellulite",
+          "label": "Cellulite",
+          "description": "Jämna ut gropig hud och förbättra kontur på lår och rumpa.",
+          "image": "/images/railway/problem-cellulite.webp"
+        },
+        {
+          "href": "/problem/double-chin",
+          "label": "Dubbelhaka",
+          "description": "Definiera haka och käklinje utan kirurgi.",
+          "image": "/images/railway/problem-double-chin.webp"
+        },
+        {
+          "href": "/problem/stubborn-fat",
+          "label": "Envis fett",
+          "description": "Målriktad reducering av fett som sitter kvar trots livsstil.",
+          "image": "/images/railway/problem-stubborn-fat.webp"
+        },
+        {
+          "href": "/problem/body-contouring",
+          "label": "Kroppsskulptering",
+          "description": "Forma silhuett och kontur efter dina mål.",
+          "image": "/images/railway/problem-body-contouring.webp"
+        },
+        {
+          "href": "/problem/overweight-weight-loss",
+          "label": "Övervikt & viktnedgång",
+          "description": "Medicinskt stöd mot hållbar viktnedgång.",
+          "image": "/images/railway/problem-overweight-weight-loss.webp"
+        },
+        {
+          "href": "/problem/loose-skin-body",
+          "label": "Slapp hud",
+          "description": "Stramare hud och bättre kontur efter viktförändring.",
+          "image": "/images/railway/problem-loose-skin-body.webp"
+        },
+        {
+          "href": "/problem/stretch-marks-body",
+          "label": "Stretchmärken",
+          "description": "Minska bristningar på mage, lår och andra områden.",
+          "image": "/images/railway/problem-stretch-marks-body.webp"
+        },
+        {
+          "href": "/problem/swelling-lymphatic-drainage",
+          "label": "Svullnad & lymfdränage",
+          "description": "Minska svullnad och stöd kroppens lymfflöde.",
+          "image": "/images/railway/problem-swelling-lymphatic-drainage.webp"
+        }
+      ],
+      "highlights": [
+        {
+          "href": "/problem/body-contouring",
+          "label": "Kroppsskulptering",
+          "description": "Forma silhuett och kontur efter dina mål.",
+          "image": "/images/railway/problem-body-contouring.webp"
+        },
+        {
+          "href": "/problem/overweight-weight-loss",
+          "label": "Övervikt & viktnedgång",
+          "description": "Medicinskt stöd mot hållbar viktnedgång.",
+          "image": "/images/railway/problem-overweight-weight-loss.webp"
+        }
+      ]
+    },
+    {
+      "label": "Hår",
+      "items": [
+        {
+          "href": "/problem/alopecia",
+          "label": "Alopecia",
+          "description": "Individuell plan vid håravfall och fläckvis tunning.",
+          "image": "/images/railway/problem-alopecia.webp"
+        },
+        {
+          "href": "/problem/hair-loss",
+          "label": "Håravfall",
+          "description": "Stärk hårbottnen och bromsa eller återfå förlorat hår.",
+          "image": "/images/railway/problem-hair-loss.webp"
+        },
+        {
+          "href": "/problem/unwanted-hair",
+          "label": "Oönskat hår",
+          "description": "Permanent hårminskning på valda områden.",
+          "image": "/images/railway/problem-unwanted-hair.webp"
+        },
+        {
+          "href": "/problem/thinning-hair",
+          "label": "Tunnare hår",
+          "description": "Tätare intryck och förbättrad hårtjocklek över tid.",
+          "image": "/images/railway/problem-thinning-hair.webp"
+        }
+      ],
+      "highlights": [
+        {
+          "href": "/problem/unwanted-hair",
+          "label": "Oönskat hår",
+          "description": "Permanent hårminskning på valda områden.",
+          "image": "/images/railway/problem-unwanted-hair.webp"
+        },
+        {
+          "href": "/problem/hair-loss",
+          "label": "Håravfall",
+          "description": "Stärk hårbottnen och bromsa eller återfå förlorat hår.",
+          "image": "/images/railway/problem-hair-loss.webp"
+        }
+      ]
+    }
+  ],
+  "moreLinks": [
+    {
+      "href": "/blogg",
+      "label": "Blogg"
+    },
+    {
+      "href": "/om-oss",
+      "label": "Om oss"
+    },
+    {
+      "href": "/prislista",
+      "label": "Prislista"
+    },
+    {
+      "href": "/kontakt",
+      "label": "Kontakta oss"
+    }
+  ],
+  "utilityLinks": [
+    {
+      "href": "/behandlingar",
+      "label": "Behandlingar"
+    },
+    {
+      "href": "/prislista",
+      "label": "Prislista"
+    },
+    {
+      "href": "/kontakt",
+      "label": "Kontakta oss"
+    },
+    {
+      "href": "/en",
+      "label": "EN"
+    }
+  ]
+}

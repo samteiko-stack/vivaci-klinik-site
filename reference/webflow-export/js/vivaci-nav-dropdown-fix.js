@@ -11,6 +11,10 @@
   var closeTimers = new WeakMap();
   var boundDesktop = false;
   var CLOSE_MS = 450;
+  /** Gap after sync-close before next w--open (matches nav-dropdown panel out). */
+  var SWITCH_OPEN_MS = 180;
+  var pendingOpenTimer = null;
+  var pendingOpenDrop = null;
 
   function dropdowns() {
     return document.querySelectorAll(ROOT + " .w-dropdown");
@@ -27,6 +31,14 @@
     return !!(list && list.matches(":hover"));
   }
 
+  function applyClose(drop) {
+    var list = dropdownList(drop);
+    var toggle = drop.querySelector(".w-dropdown-toggle");
+    if (list) list.classList.remove("w--open");
+    if (toggle) toggle.classList.remove("w--open");
+    drop.classList.remove("w--open");
+  }
+
   function openDropdown(drop) {
     var list = drop.querySelector(".w-dropdown-list");
     var toggle = drop.querySelector(".w-dropdown-toggle");
@@ -35,19 +47,40 @@
     drop.classList.add("w--open");
   }
 
+  function isDropdownOpen(drop) {
+    return drop.classList.contains("w--open");
+  }
+
+  function anyOtherOpen(keep) {
+    var open = false;
+    dropdowns().forEach(function (drop) {
+      if (drop !== keep && isDropdownOpen(drop)) open = true;
+    });
+    return open;
+  }
+
+  function clearCloseTimer(drop) {
+    if (!closeTimers.has(drop)) return;
+    clearTimeout(closeTimers.get(drop));
+    closeTimers.delete(drop);
+  }
+
   function closeDropdown(drop, immediate) {
+    clearCloseTimer(drop);
+    if (immediate) {
+      applyClose(drop);
+      return;
+    }
     var list = dropdownList(drop);
     var toggle = drop.querySelector(".w-dropdown-toggle");
     var attrDelay = parseInt(drop.getAttribute("data-delay") || "0", 10);
-    var delay = immediate ? 0 : Math.max(CLOSE_MS, attrDelay || 0);
-    if (closeTimers.has(drop)) clearTimeout(closeTimers.get(drop));
+    var delay = Math.max(CLOSE_MS, attrDelay || 0);
     closeTimers.set(
       drop,
       setTimeout(function () {
+        closeTimers.delete(drop);
         if (isPointerOverDrop(drop)) return;
-        if (list) list.classList.remove("w--open");
-        if (toggle) toggle.classList.remove("w--open");
-        drop.classList.remove("w--open");
+        applyClose(drop);
       }, delay)
     );
   }
@@ -58,15 +91,49 @@
     });
   }
 
+  function cancelPendingOpen() {
+    if (pendingOpenTimer) {
+      clearTimeout(pendingOpenTimer);
+      pendingOpenTimer = null;
+    }
+    pendingOpenDrop = null;
+  }
+
   function onEnter(drop) {
     if (!mql.matches) return;
-    if (closeTimers.has(drop)) clearTimeout(closeTimers.get(drop));
+    clearCloseTimer(drop);
+    dropdowns().forEach(function (d) {
+      if (d !== drop) clearCloseTimer(d);
+    });
+
+    var switching = anyOtherOpen(drop);
+    cancelPendingOpen();
+    pendingOpenDrop = drop;
+
+    if (switching) {
+      closeAllExcept(drop);
+      pendingOpenTimer = setTimeout(function () {
+        pendingOpenTimer = null;
+        if (!mql.matches || pendingOpenDrop !== drop) return;
+        if (!isPointerOverDrop(drop)) {
+          pendingOpenDrop = null;
+          return;
+        }
+        closeAllExcept(drop);
+        openDropdown(drop);
+        pendingOpenDrop = null;
+      }, SWITCH_OPEN_MS);
+      return;
+    }
+
     closeAllExcept(drop);
     openDropdown(drop);
+    pendingOpenDrop = null;
   }
 
   function onLeave(drop) {
     if (!mql.matches) return;
+    if (pendingOpenDrop === drop) cancelPendingOpen();
     closeDropdown(drop, false);
   }
 

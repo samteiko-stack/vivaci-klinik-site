@@ -1,0 +1,22 @@
+{
+  "title": "Mina sidor — vår nya digitala kommunikationsportal",
+  "metaDescription": "Påminnelser, eftervårdsråd och enkel kontakt med kliniken via Vivacis digitala portal.",
+  "category": "Nyhet",
+  "excerpt": "Få påminnelser, eftervårdsråd och enkel kontakt med kliniken via vår nya digitala portal.",
+  "date": "Jan 15, 2026",
+  "readTime": "3 min read",
+  "author": {
+    "name": "Maria Ekström",
+    "role": "Sjuksköterska, Vivaci Klinik",
+    "image": "/images/pexels/blog-author.jpg",
+    "bio": "Maria arbetar nära patienter inför och efter behandling och sammanfattar praktiska råd från klinikens team."
+  },
+  "heroImage": "/images/pexels/blog-3.jpg",
+  "tags": [
+    "Mina sidor",
+    "Digitalt",
+    "Patient"
+  ],
+  "bodyHtml": "<p>Vi har lanserat Mina sidor — en trygg digital yta där du som patient kan följa bokningar, ta del av information efter besök och kommunicera med kliniken på ett mer strukturerat sätt.</p><p>Portalen är tänkt att komplettera, inte ersätta, det personliga mötet. Känsliga medicinska frågor hanteras fortsatt enligt våra rutiner och journalsäkerhet.</p><p>Du får inloggningsuppgifter i samband med ditt besök eller via den e-postadress du registrerat hos oss. Har du frågor om aktivering hjälper receptionen dig gärna.</p><p>Målet är enklare vardag för dig och bättre uppföljning för oss — så att din behandlingsresa blir tydlig från första kontakt till eftervård.</p>",
+  "slug": "mina-sidor-digital-portal"
+}

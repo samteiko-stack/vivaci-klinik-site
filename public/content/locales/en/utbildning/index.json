@@ -1,0 +1,51 @@
+{
+  "source": "generated",
+  "categories": [
+    {
+      "label": "Injectables",
+      "items": [
+        {
+          "href": "/utbildning/botox-grundkurs",
+          "label": "Botox — Basic Course",
+          "description": "Introduktionskurs för behörig medicinsk personal. Teori, demonstrationer och hands-on under handledning.",
+          "image": "/images/Fillers_0055.webp"
+        },
+        {
+          "href": "/utbildning/filler-grundkurs",
+          "label": "Fillers — grundkurs",
+          "description": "Anatomy, products and injection techniques for safe, natural results.",
+          "image": "/images/Fillers_0055.webp"
+        },
+        {
+          "href": "/utbildning/skin-boosters",
+          "label": "Skin boosters",
+          "description": "Protokoll, hudtyper och injektionsteknik för förbättrad hudkvalitet.",
+          "image": "/images/2149152764_12149152764.webp"
+        }
+      ]
+    },
+    {
+      "label": "Hud & laser",
+      "items": [
+        {
+          "href": "/utbildning/hydrafacial-certifiering",
+          "label": "HydraFacial — certifiering",
+          "description": "Certifieringsutbildning med protokoll, hudtyper och klinisk tillämpning.",
+          "image": "/images/Morpheus8_0146.webp"
+        },
+        {
+          "href": "/utbildning/kemisk-peeling",
+          "label": "Kemisk peeling",
+          "description": "Syror, koncentrationer och behandlingsplaner för olika hudtillstånd.",
+          "image": "/images/2149930751_12149930751.webp"
+        },
+        {
+          "href": "/utbildning/dermapen",
+          "label": "Dermapen / microneedling",
+          "description": "Teknik, djup och protokoll för hudföryngring och ärr.",
+          "image": "/images/Fillers_0055.webp"
+        }
+      ]
+    }
+  ]
+}

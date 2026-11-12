@@ -29,6 +29,14 @@
     if (label && cta.label) label.textContent = cta.label;
   }
 
+  function toSiteImageSrc(webPath) {
+    if (!webPath) return "";
+    if (webPath.indexOf("/images/") === 0) {
+      return "images/" + webPath.slice("/images/".length);
+    }
+    return webPath;
+  }
+
   function applyHero(data) {
     var root = document.getElementById("vivaci-home-hero");
     if (!root || !data) return;
@@ -37,17 +45,27 @@
     setText(root.querySelector('[data-vivaci-field="hero-intro"]'), data.intro);
     setCta(root.querySelector('[data-vivaci-field="hero-cta-primary"]'), data.primaryCta);
     setCta(root.querySelector('[data-vivaci-field="hero-cta-secondary"]'), data.secondaryCta);
+    if (data.image) {
+      var heroImg = root.querySelector(
+        '.header5_background-image.is-hero, [data-vivaci-field="hero-image"]'
+      );
+      if (heroImg) heroImg.src = toSiteImageSrc(data.image);
+    }
+  }
+
+  function applyMethodFields(root, data, withCta) {
+    if (!root || !data) return;
+    setText(root.querySelector('[data-vivaci-field="method-tagline"]'), data.tagline);
+    setText(root.querySelector('[data-vivaci-field="method-heading"]'), data.heading);
+    setText(root.querySelector('[data-vivaci-field="method-intro"]'), data.intro);
+    if (withCta) {
+      setCta(root.querySelector('[data-vivaci-field="method-cta"]'), data.cta);
+    }
   }
 
   function applyMethod(data) {
     if (!data) return;
-    var root = document.getElementById("vivaci-home-method");
-    if (root) {
-      setText(root.querySelector('[data-vivaci-field="method-tagline"]'), data.tagline);
-      setText(root.querySelector('[data-vivaci-field="method-heading"]'), data.heading);
-      setText(root.querySelector('[data-vivaci-field="method-intro"]'), data.intro);
-      setCta(root.querySelector('[data-vivaci-field="method-cta"]'), data.cta);
-    }
+    applyMethodFields(document.getElementById("vivaci-home-method"), data, true);
     if (!Array.isArray(data.steps)) return;
     var steps = document.querySelectorAll(
       "#vivaci-home-method [data-vivaci-field=\"method-step-body\"]"

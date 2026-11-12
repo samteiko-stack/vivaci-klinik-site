@@ -1,0 +1,48 @@
+{
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/fore-efter",
+  "disclaimer": "Varje resultat är unikt och baserat på individuella förutsättningar.",
+  "items": [
+    {
+      "title": "Rosacea",
+      "treatmentSlug": "hydrafacial",
+      "problemSlug": "rosacea",
+      "beforeImage": "/images/photoshoot/frame-01.jpg",
+      "afterImage": "/images/photoshoot/frame-02.jpg"
+    },
+    {
+      "title": "Acne",
+      "treatmentSlug": "hydrafacial",
+      "problemSlug": "acne",
+      "beforeImage": "/images/photoshoot/frame-03.jpg",
+      "afterImage": "/images/photoshoot/frame-04.jpg"
+    },
+    {
+      "title": "Dubbelhaka",
+      "treatmentSlug": "lpg-alliance",
+      "problemSlug": "double-chin",
+      "beforeImage": "/images/photoshoot/frame-02.jpg",
+      "afterImage": "/images/photoshoot/frame-05.jpg"
+    },
+    {
+      "title": "Pigmentering",
+      "treatmentSlug": "co-fractional-laser",
+      "problemSlug": "pigmentation",
+      "beforeImage": "/images/photoshoot/frame-04.jpg",
+      "afterImage": "/images/photoshoot/frame-06.jpg"
+    },
+    {
+      "title": "Fina linjer & rynkor",
+      "treatmentSlug": "botulinum-toxin",
+      "problemSlug": "fine-lines-wrinkles",
+      "beforeImage": "/images/photoshoot/frame-05.jpg",
+      "afterImage": "/images/photoshoot/frame-01.jpg"
+    },
+    {
+      "title": "Cellulite",
+      "treatmentSlug": "lpg-alliance",
+      "problemSlug": "cellulite",
+      "beforeImage": "/images/photoshoot/frame-06.jpg",
+      "afterImage": "/images/photoshoot/frame-03.jpg"
+    }
+  ]
+}

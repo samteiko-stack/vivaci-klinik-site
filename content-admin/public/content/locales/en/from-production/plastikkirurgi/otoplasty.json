@@ -1,0 +1,203 @@
+{
+  "type": "plastikkirurgi",
+  "path": "/plastikkirurgi/otoplasty",
+  "sourceUrl": "https://vivaci-klinik-production.up.railway.app/plastikkirurgi/otoplasty",
+  "title": "Otoplasty (ear correction)",
+  "heroIntro": "Otoplastik (öronkorrigering) utförs av erfarna kirurger på Vivaci Klinik i Solna.",
+  "sections": {
+    "Om ingreppet": {
+      "paragraphs": [
+        "Otoplastik (öronkorrigering) utförs i vår moderna klinikmiljö med högsta säkerhetsstandard."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Lämpliga kandidater": {
+      "paragraphs": [
+        "Friska vuxna med realistiska förväntningar."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Konsultation": {
+      "paragraphs": [
+        "Vi går igenom mål, medicinsk historik och förväntade resultat."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Ingreppssteg": {
+      "paragraphs": [
+        "Ingrippe planeras individuellt vid konsultation."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Återhämtning": {
+      "paragraphs": [
+        "Du får detaljerade instruktioner för optimal läkning."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Före behandling": {
+      "paragraphs": [
+        "Medicinsk kontroll och specifika instruktioner inför ingreppet."
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Efter behandling": {
+      "paragraphs": [
+        "Regelbundna kontroller och support under återhämtningen.",
+        "Omdömen"
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Patientrecensioner": {
+      "paragraphs": [
+        "Vad våra patienter säger",
+        "“ Fantastisk upplevelse från start till slut. Professionellt team och vackra resultat. ”",
+        "“ Mycket nöjd med min behandling. Kliniken känns exklusiv och trygg. ”",
+        "“ Bästa beslutet jag gjort. Naturliga resultat och otroligt trevlig personal. ”",
+        "Teamet"
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Möt våra experter": {
+      "paragraphs": [
+        "Erfarna specialister inom estetisk medicin"
+      ],
+      "items": [],
+      "children": {
+        "Dr. Anna Lindström": {
+          "paragraphs": [
+            "Medicinsk direktör"
+          ],
+          "items": []
+        },
+        "Dr. Erik Johansson": {
+          "paragraphs": [
+            "Plastikkirurg"
+          ],
+          "items": []
+        },
+        "Sofia Bergman": {
+          "paragraphs": [
+            "Hudterapeut"
+          ],
+          "items": []
+        },
+        "Maria Ekström": {
+          "paragraphs": [
+            "Sjuksköterska",
+            "Our method"
+          ],
+          "items": []
+        }
+      }
+    },
+    "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
+      "paragraphs": [
+        "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
+        "Varje resa börjar med en personlig konsultation.",
+        "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
+        "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
+        "Din behandling väljs och anpassas specifikt för dig.",
+        "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
+        "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
+        "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
+        "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
+        "Långsiktiga resultat kräver rätt uppföljning och underhåll.",
+        "Efter din behandling ger vi personliga rekommendationer baserat på dina behov och din utveckling. Det kan inkludera uppföljande besök, underhållsbehandlingar, professionell hudvård eller livsstilsråd.",
+        "Vårt mål är inte bara att förbättra din problematik idag, utan också att hjälpa dig bevara och stödja dina resultat över tid.",
+        "Varför Vivaci"
+      ],
+      "items": [],
+      "children": {}
+    },
+    "Därför väljer patienter Vivaci": {
+      "paragraphs": [
+        "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
+      ],
+      "items": [
+        "01 IVO registered clinic Highest standards in patient safety and quality."
+      ],
+      "children": {
+        "IVO-registrerad klinik": {
+          "paragraphs": [
+            "Högsta standard inom patientsäkerhet och kvalitet."
+          ],
+          "items": [
+            "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
+          ]
+        },
+        "Kvalificerade specialister": {
+          "paragraphs": [
+            "Erfarna läkare och behandlare inom estetisk medicin."
+          ],
+          "items": [
+            "03 Personalized treatment plans Each plan is tailored to your unique needs."
+          ]
+        },
+        "Personliga behandlingsplaner": {
+          "paragraphs": [
+            "Varje plan skräddarsys efter dina unika behov."
+          ],
+          "items": [
+            "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
+          ]
+        },
+        "Avancerad medicinsk teknik": {
+          "paragraphs": [
+            "Ledande utrustning och evidensbaserade metoder."
+          ],
+          "items": [
+            "05 Premium Products We only work with trusted medical brands."
+          ]
+        },
+        "Premium produkter": {
+          "paragraphs": [
+            "Vi arbetar endast med pålitliga, medicinska varumärken."
+          ],
+          "items": [
+            "06 Natural Results Subtle enhancements that enhance your natural appearance."
+          ]
+        },
+        "Naturliga resultat": {
+          "paragraphs": [
+            "Subtila förbättringar som framhäver ditt naturliga utseende."
+          ],
+          "items": []
+        }
+      }
+    },
+    "Boka din kostnadsfria konsultation": {
+      "paragraphs": [
+        "Vi hjälper dig att hitta rätt behandling för just dina behov. Välkommen till Vivaci Klinik i Solna."
+      ],
+      "items": [],
+      "children": {}
+    }
+  },
+  "facts": [],
+  "factsSummary": "",
+  "faqs": [],
+  "related": [],
+  "rawSectionHeadings": [
+    "Om ingreppet",
+    "Lämpliga kandidater",
+    "Konsultation",
+    "Ingreppssteg",
+    "Återhämtning",
+    "Före behandling",
+    "Efter behandling",
+    "Patientrecensioner",
+    "Möt våra experter",
+    "Advanced diagnostics. Personal treatments. Better results.",
+    "Därför väljer patienter Vivaci",
+    "Book your free consultation"
+  ]
+}

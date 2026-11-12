@@ -1,16 +1,26 @@
 {
   "hero": {
+    "image": "/images/Morpheus8_0146.webp",
     "tagline": "Medicinsk estetik · Solna · Stockholm",
     "title": "Premium estetisk medicin i Solna",
     "intro": "Upptäck skräddarsydda behandlingar i en lugn, exklusiv miljö.",
-    "primaryCta": { "label": "Boka kostnadsfri konsultation", "href": "/kontakt" },
-    "secondaryCta": { "label": "Utforska behandlingar", "href": "/behandlingar" }
+    "primaryCta": {
+      "label": "Boka kostnadsfri konsultation",
+      "href": "https://www.bokadirekt.se/places/vivaci-klinik-51774"
+    },
+    "secondaryCta": {
+      "label": "Utforska behandlingar",
+      "href": "/behandlingar"
+    }
   },
   "problems": {
     "tagline": "Problem",
     "heading": "Hudproblem",
     "intro": "Från acne och rosacea till pigmentering och förstorade porer — utforska vanliga hudproblem och läs mer om hur vi bedömer och behandlar dem på Vivaci.",
-    "cta": { "label": "Se alla problem", "href": "/problem?kategori=hud" }
+    "cta": {
+      "label": "Se alla problem",
+      "href": "/problem?kategori=hud"
+    }
   },
   "treatmentFinder": {
     "heading": "Hitta rätt behandling för dig",
@@ -23,13 +33,19 @@
     "tagline": "Behandlingar",
     "heading": "Utvalda behandlingar",
     "intro": "Skonsamma, effektiva behandlingar utformade för naturliga resultat — i en lugn klinikmiljö.",
-    "cta": { "label": "Se alla behandlingar", "href": "/behandlingar" }
+    "cta": {
+      "label": "Se alla behandlingar",
+      "href": "/behandlingar"
+    }
   },
   "method": {
     "tagline": "Vår metod",
     "heading": "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
     "intro": "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
-    "cta": { "label": "Läs mer om vår metod", "href": "/om-oss" },
+    "cta": {
+      "label": "Läs mer om vår metod",
+      "href": "/om-oss"
+    },
     "steps": [
       {
         "title": "Identifiera",

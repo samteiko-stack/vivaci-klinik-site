@@ -1,0 +1,24 @@
+{
+  "pages": [
+    {
+      "slug": "integritetspolicy",
+      "title": "Integritetspolicy",
+      "path": "/integritetspolicy"
+    },
+    {
+      "slug": "cookies",
+      "title": "Cookiepolicy",
+      "path": "/legal/cookies.html"
+    },
+    {
+      "slug": "kopvillkor",
+      "title": "General Terms and Conditions",
+      "path": "/villkor"
+    },
+    {
+      "slug": "avbokning",
+      "title": "Cancellation & Refund",
+      "path": "/avbokning"
+    }
+  ]
+}

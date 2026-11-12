@@ -15,7 +15,7 @@
     },
     "Hur fungerar det?": {
       "paragraphs": [
-        "Behandlingen verkar genom att stimulera kroppens naturliga reparations- och förnyelseprocesser.",
+        "The treatment works by stimulating the body's natural repair and renewal processes.",
         "Exakt mekanism och teknik förklaras i detalj under din konsultation så att du känner dig trygg och informerad."
       ],
       "items": [],
@@ -31,10 +31,10 @@
     },
     "Behandlingsprocess": {
       "paragraphs": [
-        "1. Kostnadsfri konsultation och bedömning",
-        "2. Personlig behandlingsplan",
-        "3. Behandling av certifierad specialist",
-        "4. Uppföljning och eftervård"
+        "1. Free consultation and assessment",
+        "2. Personalized treatment plan",
+        "3. Treatment by a certified specialist",
+        "4. Follow-up and aftercare"
       ],
       "items": [],
       "children": {}
@@ -120,7 +120,7 @@
         "Maria Ekström": {
           "paragraphs": [
             "Sjuksköterska",
-            "Vår metod"
+            "Our method"
           ],
           "items": []
         }
@@ -128,12 +128,12 @@
     },
     "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.": {
       "paragraphs": [
-        "På Vivaci börjar varje behandlingsresa med en konsultation. Vi tar oss tid att förstå dina funderingar, bedöma dina individuella behov och hitta den mest lämpliga approachen för dig.",
+        "At Vivaci every journey starts with a consultation. We take time to understand your concerns, assess your needs and find the most suitable approach for you.",
         "Varje resa börjar med en personlig konsultation.",
         "Vi lyssnar på dina funderingar, går igenom dina mål och bedömer det aktuella behandlingsområdet. När det är lämpligt använder vi avancerad diagnostisk teknik och klinisk fotografering för att få en djupare förståelse och etablera en tydlig utgångspunkt.",
         "Det gör att vi kan identifiera inte bara det som syns, utan även underliggande faktorer som kan påverka din hud, ditt hår, ditt ansikte eller din kropp.",
         "Din behandling väljs och anpassas specifikt för dig.",
-        "Baserat på konsultation och bedömning väljer våra specialister den mest lämpliga behandlingen, tekniken och protokollet för dina individuella behov. Varje behandling utförs med stark fokus på säkerhet, precision, komfort och naturliga resultat.",
+        "Based on consultation and assessment, our specialists select the most appropriate treatment, technology and protocol for your individual needs. Each treatment is performed with a strong focus on safety, precision, comfort and natural results.",
         "De bästa resultaten kommer ofta från att kombinera rätt behandlingar.",
         "Vivaci erbjuder ett brett utbud av avancerad teknik, medicinska behandlingar och specialistkompetens. Det gör att vi kan skapa noggrant planerade kombinationsbehandlingar som adresserar olika aspekter av samma problematik.",
         "Vi följer din utveckling och justerar behandlingsplanen vid behov för att hjälpa dig nå bästa möjliga resultat.",
@@ -150,7 +150,7 @@
         "Vi kombinerar medicinsk expertis, avancerad teknik och personlig vård."
       ],
       "items": [
-        "01 IVO-registrerad klinik Högsta standard inom patientsäkerhet och kvalitet."
+        "01 IVO registered clinic Highest standards in patient safety and quality."
       ],
       "children": {
         "IVO-registrerad klinik": {
@@ -158,7 +158,7 @@
             "Högsta standard inom patientsäkerhet och kvalitet."
           ],
           "items": [
-            "02 Kvalificerade specialister Erfarna läkare och behandlare inom estetisk medicin."
+            "02 Qualified specialists Experienced doctors and practitioners in the field of aesthetic medicine."
           ]
         },
         "Kvalificerade specialister": {
@@ -166,7 +166,7 @@
             "Erfarna läkare och behandlare inom estetisk medicin."
           ],
           "items": [
-            "03 Personliga behandlingsplaner Varje plan skräddarsys efter dina unika behov."
+            "03 Personalized treatment plans Each plan is tailored to your unique needs."
           ]
         },
         "Personliga behandlingsplaner": {
@@ -174,7 +174,7 @@
             "Varje plan skräddarsys efter dina unika behov."
           ],
           "items": [
-            "04 Avancerad medicinsk teknik Ledande utrustning och evidensbaserade metoder."
+            "04 Advanced Medical Technology Leading-edge equipment and evidence-based methods."
           ]
         },
         "Avancerad medicinsk teknik": {
@@ -182,7 +182,7 @@
             "Ledande utrustning och evidensbaserade metoder."
           ],
           "items": [
-            "05 Premium produkter Vi arbetar endast med pålitliga, medicinska varumärken."
+            "05 Premium Products We only work with trusted medical brands."
           ]
         },
         "Premium produkter": {
@@ -190,7 +190,7 @@
             "Vi arbetar endast med pålitliga, medicinska varumärken."
           ],
           "items": [
-            "06 Naturliga resultat Subtila förbättringar som framhäver ditt naturliga utseende."
+            "06 Natural Results Subtle enhancements that enhance your natural appearance."
           ]
         },
         "Naturliga resultat": {
@@ -204,7 +204,7 @@
     },
     "Vanliga frågor": {
       "paragraphs": [
-        "Behandlingstiden varierar men de flesta sessioner tar mellan 30 och 90 minuter.",
+        "Processing time varies but most sessions take between 30 and 90 minutes.",
         "Resultat kan synas gradvis. Tidslinjen beror på behandlingstyp och individuella förutsättningar."
       ],
       "items": [],
@@ -223,7 +223,7 @@
   "faqs": [
     {
       "question": "Hur lång tid tar Chemical Peels?",
-      "answer": "Behandlingstiden varierar men de flesta sessioner tar mellan 30 och 90 minuter."
+      "answer": "Processing time varies but most sessions take between 30 and 90 minutes."
     },
     {
       "question": "När ser jag resultat?",
@@ -232,7 +232,7 @@
   ],
   "related": [
     {
-      "title": "Acne Här förklarar vi vad acne är, varför det uppstår och hur vi på Vivaci Klinik kan hjälpa dig. Du får också veta mer",
+      "title": "Acne Here we explain what acne is, why it occurs and how we at Vivaci Clinic can help you. You'll also learn more",
       "href": "/problem/acne"
     },
     {
@@ -244,7 +244,7 @@
     "Vad är denna behandling?",
     "Hur fungerar det?",
     "Fördelar",
-    "Behandlingsprocess",
+    "Process of treatment",
     "Är denna behandling rätt för mig?",
     "Före behandling",
     "Efter behandling",
@@ -252,9 +252,9 @@
     "Rekommenderade sessioner",
     "Vilka problem kan den behandla?",
     "Möt våra experter",
-    "Avancerad diagnostik. Personliga behandlingar. Bättre resultat.",
+    "Advanced diagnostics. Personal treatments. Better results.",
     "Därför väljer patienter Vivaci",
     "Vanliga frågor",
-    "Boka din kostnadsfria konsultation"
+    "Book your free consultation"
   ]
 }
