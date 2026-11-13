@@ -40,6 +40,7 @@
       { label: "Allmänna villkor", href: "/villkor" },
       { label: "Avbokning & återbetalning", href: "/avbokning" },
       { label: "Cookieinställningar", href: "/cookies" },
+      { label: "Innehållsadmin", href: "/content-admin" },
     ],
     copyright: "© 2026 Vivaci Klinik. Alla rättigheter förbehållna.",
   };
