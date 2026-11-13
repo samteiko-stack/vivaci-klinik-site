@@ -5,6 +5,7 @@ import { Suspense } from "react";
 import { usePathname } from "next/navigation";
 import { ExternalLink, Save } from "lucide-react";
 import { AppSidebar } from "@/components/app-sidebar";
+import { CreateContentHeaderButton } from "@/components/create-content-ui";
 import {
   ADMIN_BLOGG,
   ADMIN_LEGAL,
@@ -124,6 +125,7 @@ function EditorHeader() {
       </div>
 
       <div className="flex shrink-0 items-center gap-2">
+        <CreateContentHeaderButton />
         {canSave ? (
           <Badge
             variant={dirty ? "secondary" : "outline"}

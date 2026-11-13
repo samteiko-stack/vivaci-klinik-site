@@ -157,7 +157,7 @@ export function CreateContentPageDialog({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-md">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="flex flex-col gap-0">
           <DialogHeader>
             <DialogTitle>{modeTitle}</DialogTitle>
             <DialogDescription>{modeDescription}</DialogDescription>
@@ -278,24 +278,3 @@ export function CreateContentPageDialog({
   );
 }
 
-export function CreateContentPageTrigger({
-  onClick,
-  disabled,
-}: {
-  onClick: () => void;
-  disabled?: boolean;
-}) {
-  return (
-    <Button
-      type="button"
-      variant="outline"
-      size="sm"
-      className="h-7 shrink-0 gap-1 px-2 text-xs"
-      onClick={onClick}
-      disabled={disabled}
-    >
-      <Plus className="size-3.5" aria-hidden />
-      Ny sida
-    </Button>
-  );
-}
