@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import { TREATMENT_PAGES_DIR } from "./content-path";
 import {
+  accessContentPath,
   joinContentPath,
   readContentFile,
   renameContentFile,
@@ -8,9 +9,18 @@ import {
   writeContentFile,
 } from "./fs-path";
 import { mirrorPublicContentJson } from "./content-mirror";
-import { validateTreatmentPageBody } from "./treatment-page-schema";
+import {
+  ensureAllSections,
+  validateTreatmentPageBody,
+  type TreatmentPageDoc,
+} from "./treatment-page-schema";
+import { scaffoldTreatmentPage } from "./content-scaffolds";
 
-const CATEGORIES = ["behandlingar", "problem", "plastikkirurgi"] as const;
+import { TREATMENT_PAGE_CATEGORIES } from "./treatment-page-categories";
+
+const CATEGORIES = TREATMENT_PAGE_CATEGORIES;
+
+export { TREATMENT_PAGE_CATEGORIES };
 const SLUG_RE = /^[a-z0-9]+(?:-[a-z0-9]+)*$/;
 
 export type TreatmentPageMeta = {
@@ -59,6 +69,32 @@ export async function readTreatmentPage(category: string, slug: string) {
   const file = pagePath(category, slug);
   const raw = await readContentFile(file);
   return JSON.parse(raw);
+}
+
+export async function treatmentPageExists(
+  category: string,
+  slug: string
+): Promise<boolean> {
+  try {
+    const file = pagePath(category, slug);
+    await accessContentPath(file);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export async function createTreatmentPage(
+  category: string,
+  slug: string,
+  title: string
+) {
+  if (await treatmentPageExists(category, slug)) {
+    throw new Error("Page already exists");
+  }
+  const doc = scaffoldTreatmentPage(category, slug, title);
+  const normalized = ensureAllSections(doc) as TreatmentPageDoc;
+  await writeTreatmentPage(category, slug, normalized);
 }
 
 export async function writeTreatmentPage(category: string, slug: string, data: unknown) {

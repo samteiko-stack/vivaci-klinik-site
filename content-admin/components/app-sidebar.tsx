@@ -14,6 +14,11 @@ import {
   Scale,
 } from "lucide-react";
 import { logoutAction } from "@/app/actions/auth";
+import {
+  CreateContentPageDialog,
+  CreateContentPageTrigger,
+  type CreateContentMode,
+} from "@/components/create-content-page-dialog";
 import { SidebarPagePicker } from "@/components/sidebar-page-picker";
 import { TreatmentPagePickerCommand } from "@/components/TreatmentPagePicker";
 import { useTreatmentPages } from "@/components/treatment-pages-context";
@@ -89,10 +94,13 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     setQuery,
     activePageId,
     requestPageSelect,
+    createAndSelectPage,
   } = useTreatmentPages();
 
   const [simplePages, setSimplePages] = React.useState<SimpleContentMeta[]>([]);
+  const [hubCategories, setHubCategories] = React.useState<string[]>([]);
   const [simpleQuery, setSimpleQuery] = React.useState("");
+  const [createOpen, setCreateOpen] = React.useState(false);
   const simpleListApi = onUtbildning
     ? "/api/utbildning"
     : onBlogg
@@ -119,16 +127,37 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           ? "Behandlingssidor"
           : "Innehåll";
 
+  const refreshSimpleList = React.useCallback(() => {
+    if (!simpleListApi) return;
+    fetch(simpleListApi, { credentials: "same-origin" })
+      .then((res) => (res.ok ? res.json() : Promise.reject()))
+      .then((data: { pages: SimpleContentMeta[]; hubCategories?: string[] }) => {
+        setSimplePages(data.pages ?? []);
+        setHubCategories(data.hubCategories ?? []);
+      })
+      .catch(() => {
+        setSimplePages([]);
+        setHubCategories([]);
+      });
+  }, [simpleListApi]);
+
   React.useEffect(() => {
     if (!simpleListApi) {
       setSimplePages([]);
+      setHubCategories([]);
       return;
     }
-    fetch(simpleListApi, { credentials: "same-origin" })
-      .then((res) => (res.ok ? res.json() : Promise.reject()))
-      .then((data: { pages: SimpleContentMeta[] }) => setSimplePages(data.pages ?? []))
-      .catch(() => setSimplePages([]));
-  }, [simpleListApi]);
+    refreshSimpleList();
+  }, [simpleListApi, refreshSimpleList]);
+
+  const createMode: CreateContentMode | null = onTreatments
+    ? "treatment"
+    : onUtbildning
+      ? "utbildning"
+      : onBlogg
+        ? "nyheter"
+        : null;
+  const canCreate = Boolean(createMode);
 
   const simplePickerPages = React.useMemo(
     () =>
@@ -203,8 +232,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </SidebarGroup>
 
         <SidebarGroup className="flex min-h-0 flex-1 flex-col pt-0">
-          <SidebarGroupLabel>
-            Sidor — {workspaceLabel}
+          <SidebarGroupLabel className="flex items-center justify-between gap-2 pr-1">
+            <span className="truncate">Sidor — {workspaceLabel}</span>
+            {canCreate ? (
+              <CreateContentPageTrigger onClick={() => setCreateOpen(true)} />
+            ) : null}
           </SidebarGroupLabel>
           <SidebarGroupContent className="flex min-h-0 flex-1 flex-col">
             {onTreatments ? (
@@ -277,6 +309,22 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         </form>
       </SidebarFooter>
       <SidebarRail />
+      {createMode ? (
+        <CreateContentPageDialog
+          open={createOpen}
+          onOpenChange={setCreateOpen}
+          mode={createMode}
+          hubCategories={hubCategories}
+          onCreated={(result) => {
+            if (createMode === "treatment" && result.category) {
+              createAndSelectPage(result.category, result.slug);
+            } else if (simpleRoute) {
+              refreshSimpleList();
+              router.push(`${simpleRoute}?slug=${encodeURIComponent(result.slug)}`);
+            }
+          }}
+        />
+      ) : null}
     </Sidebar>
   );
 }

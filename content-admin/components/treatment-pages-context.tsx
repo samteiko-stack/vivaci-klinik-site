@@ -36,6 +36,8 @@ type TreatmentPagesContextValue = {
   query: string;
   setQuery: (value: string) => void;
   activePageId: string;
+  loadPages: () => Promise<void>;
+  createAndSelectPage: (category: string, slug: string) => void;
   requestPageSelect: (pageId: string) => void;
   doc: TreatmentPageDoc | null;
   dirty: boolean;
@@ -261,6 +263,13 @@ export function TreatmentPagesProvider({ children }: { children: ReactNode }) {
         })()
       : "";
 
+  const createAndSelectPage = useCallback(
+    (category: string, slug: string) => {
+      void loadPages().then(() => requestPageSelect(`${category}/${slug}`));
+    },
+    [loadPages, requestPageSelect]
+  );
+
   const value = useMemo(
     () => ({
       pages,
@@ -268,6 +277,8 @@ export function TreatmentPagesProvider({ children }: { children: ReactNode }) {
       query,
       setQuery,
       activePageId,
+      loadPages,
+      createAndSelectPage,
       requestPageSelect,
       doc,
       dirty,
@@ -285,6 +296,8 @@ export function TreatmentPagesProvider({ children }: { children: ReactNode }) {
       filteredPages,
       query,
       activePageId,
+      loadPages,
+      createAndSelectPage,
       requestPageSelect,
       doc,
       dirty,

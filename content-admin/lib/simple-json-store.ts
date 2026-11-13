@@ -2,6 +2,7 @@ import fs from "node:fs/promises";
 import { resolveContentSubdir } from "./content-path";
 import { mirrorPublicContentJson } from "./content-mirror";
 import {
+  accessContentPath,
   joinContentPath,
   readContentFile,
   renameContentFile,
@@ -170,6 +171,35 @@ export async function readSimpleContent(kind: SimpleContentKind, slug: string) {
   const file = fileFor(kind, slug);
   const raw = await readContentFile(file);
   return JSON.parse(raw) as Record<string, unknown>;
+}
+
+const RESERVED_SIMPLE_SLUGS = new Set(["index", "listing", "blogg-layout"]);
+
+export async function simpleContentExists(
+  kind: SimpleContentKind,
+  slug: string
+): Promise<boolean> {
+  try {
+    const file = fileFor(kind, slug);
+    await accessContentPath(file);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+export async function createSimpleContent(
+  kind: SimpleContentKind,
+  slug: string,
+  data: Record<string, unknown>
+) {
+  if (RESERVED_SIMPLE_SLUGS.has(slug)) {
+    throw new Error("Reserved slug");
+  }
+  if (await simpleContentExists(kind, slug)) {
+    throw new Error("Page already exists");
+  }
+  await writeSimpleContent(kind, slug, data);
 }
 
 export async function writeSimpleContent(
